@@ -11,148 +11,85 @@
 
 return [
     'name' => 'Bacteria growth',
-    'meta' => ['title' => 'Bacteria growth Calculator: Units & Formula', 'description' => 'Bacteria growth works out final number of bacteria — N(t) and Doubling time (Td) in hours from initial number of bacteria — N(0) and elapsed time, in hours.', 'h1' => 'Bacteria growth Calculator', 'updated' => '2026-07-23'],
-    'raw' => [
-        'vars' => [
-            'doublingTime' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'elapsedTime' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'growthRate' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'numberOfBacteria' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'numberOfBacteria2' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'nKP-Smf_8TdUStN5qKUWp',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Bacteria growth Calculator: Units & Formula', 'description' => 'Bacteria growth works out final number of bacteria — N(t) and Doubling time (Td) from initial number of bacteria — N(0), elapsed time and growth rate (r).', 'h1' => 'Bacteria growth Calculator', 'updated' => '2026-07-23'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'numberOfBacteria', 'vt' => 'numerical', 'l' => 'Initial number of bacteria — N(0)'],
-                            ],
+                            'name' => 'numberOfBacteria',
+                            'label' => 'Initial number of bacteria — N(0)',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'numberOfBacteria2', 'vt' => 'numerical', 'l' => 'Final number of bacteria — N(t)'],
-                            ],
+                            'name' => 'numberOfBacteria2',
+                            'label' => 'Final number of bacteria — N(t)',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'elapsedTime',
-                                    'vt' => 'numerical',
-                                    'l' => 'Elapsed time',
-                                    'us' => '19',
-                                    'du' => 'hrs',
-                                ],
-                            ],
+                            'name' => 'elapsedTime',
+                            'label' => 'Elapsed time',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'hrs',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'growthRate', 'vt' => 'numerical', 'l' => 'Growth rate (r)'],
-                            ],
+                            'name' => 'growthRate',
+                            'label' => 'Growth rate (r)',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'doublingTime',
-                                    'vt' => 'numerical',
-                                    'l' => 'Doubling time (T==d==)',
-                                    'us' => '19',
-                                    'du' => 'hrs',
-                                ],
-                            ],
+                            'name' => 'doublingTime',
+                            'label' => 'Doubling time (T==d==)',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'hrs',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'numberOfBacteria2 = numberOfBacteria*(1+growthRate)^(elapsedTime )',
-                'var' => [
-                    [
-                        'l' => 'growthRate',
-                        'f' => 'pow(numberOfBacteria2/numberOfBacteria, 1/elapsedTime) - 1',
-                        'r' => ['elapsedTime', 'numberOfBacteria', 'numberOfBacteria2'],
-                    ],
-                    [
-                        'l' => 'elapsedTime',
-                        'f' => 'log(numberOfBacteria2/numberOfBacteria)/log(growthRate + 1)',
-                        'r' => ['growthRate', 'numberOfBacteria', 'numberOfBacteria2'],
-                    ],
-                    [
-                        'l' => 'numberOfBacteria',
-                        'f' => 'numberOfBacteria2*pow(growthRate + 1, -elapsedTime)',
-                        'r' => ['growthRate', 'elapsedTime', 'numberOfBacteria2'],
-                    ],
-                    [
-                        'l' => 'numberOfBacteria2',
-                        'f' => 'numberOfBacteria*pow(growthRate + 1, elapsedTime)',
-                        'r' => ['growthRate', 'elapsedTime', 'numberOfBacteria'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'doublingTime = (ln(2)*elapsedTime )/ln(numberOfBacteria2/numberOfBacteria)',
-                'var' => [
-                    [
-                        'l' => 'elapsedTime',
-                        'f' => 'doublingTime*log(numberOfBacteria2/numberOfBacteria)/log(2)',
-                        'r' => ['numberOfBacteria', 'numberOfBacteria2', 'doublingTime'],
-                    ],
-                    [
-                        'l' => 'numberOfBacteria',
-                        'f' => 'numberOfBacteria2*exp(-elapsedTime*log(2)/doublingTime)',
-                        'r' => ['elapsedTime', 'numberOfBacteria2', 'doublingTime'],
-                    ],
-                    [
-                        'l' => 'numberOfBacteria2',
-                        'f' => 'numberOfBacteria*exp(elapsedTime*log(2)/doublingTime)',
-                        'r' => ['elapsedTime', 'numberOfBacteria', 'doublingTime'],
-                    ],
-                    [
-                        'l' => 'doublingTime',
-                        'f' => 'elapsedTime*log(2)/log(numberOfBacteria2/numberOfBacteria)',
-                        'r' => ['elapsedTime', 'numberOfBacteria', 'numberOfBacteria2'],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'numberOfBacteria2 = numberOfBacteria*(1+growthRate)^(elapsedTime )',
+            'results' => ['growthRate' => 'pow(numberOfBacteria2/numberOfBacteria, 1/elapsedTime) - 1', 'elapsedTime' => 'log(numberOfBacteria2/numberOfBacteria)/log(growthRate + 1)', 'numberOfBacteria' => 'numberOfBacteria2*pow(growthRate + 1, -elapsedTime)', 'numberOfBacteria2' => 'numberOfBacteria*pow(growthRate + 1, elapsedTime)'],
+        ],
+        [
+            'title' => 'doublingTime = (ln(2)*elapsedTime )/ln(numberOfBacteria2/numberOfBacteria)',
+            'results' => ['elapsedTime' => 'doublingTime*log(numberOfBacteria2/numberOfBacteria)/log(2)', 'numberOfBacteria' => 'numberOfBacteria2*exp(-elapsedTime*log(2)/doublingTime)', 'numberOfBacteria2' => 'numberOfBacteria*exp(elapsedTime*log(2)/doublingTime)', 'doublingTime' => 'elapsedTime*log(2)/log(numberOfBacteria2/numberOfBacteria)'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Bacteria growth works out Final number of bacteria — N(t) and Doubling time (Td) from Initial number of bacteria — N(0), Elapsed time and Growth rate (r). It is a single relationship that reads final number of bacteria — N(t) out of initial number of bacteria — N(0), not a table of canned results keyed by them.
@@ -171,7 +108,7 @@ return [
             <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Final number of bacteria — N(t)</strong> = 1.105e+301 and <strong>Doubling time (Td)</strong> = 0.1003. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>The unit chip on Doubling time (Td) lists 8 options and opens on hours. Moving it changes the conversion applied to that row, not the number stored behind it.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time)</code></li><li><strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code></li><li><strong>Elapsed time</strong> = <code>ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(Growth rate (r) + 1)</code></li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × (Growth rate (r) + 1)^(− Elapsed time)</code></li><li><strong>Doubling time (Td)</strong> = <code>Elapsed time × ln(2) ÷ ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time)</code> — the form to use when Growth rate (r), Elapsed time and Initial number of bacteria — N(0) are the values you have.</li><li><strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code> — the form to use when Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t) are the values you have.</li><li><strong>Elapsed time</strong> = <code>ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(Growth rate (r) + 1)</code> — the form to use when Growth rate (r), Initial number of bacteria — N(0) and Final number of bacteria — N(t) are the values you have.</li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × (Growth rate (r) + 1)^(− Elapsed time)</code> — the form to use when Growth rate (r), Elapsed time and Final number of bacteria — N(t) are the values you have.</li><li><strong>Doubling time (Td)</strong> = <code>Elapsed time × ln(2) ÷ ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))</code> — the form to use when Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t) are the values you have.</li><li><strong>Elapsed time</strong> = <code>Doubling time (Td) × ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(2)</code> — the form to use when Initial number of bacteria — N(0), Final number of bacteria — N(t) and Doubling time (Td) are the values you have.</li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × e^( − Elapsed time × ln(2) ÷ Doubling time (Td))</code> — the form to use when Elapsed time, Final number of bacteria — N(t) and Doubling time (Td) are the values you have.</li><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × e^(Elapsed time × ln(2) ÷ Doubling time (Td))</code> — the form to use when Elapsed time, Initial number of bacteria — N(0) and Doubling time (Td) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final number of bacteria — N(t), Growth rate (r) and Elapsed time can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time)</code></li><li><strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code></li><li><strong>Elapsed time</strong> = <code>ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(Growth rate (r) + 1)</code></li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × (Growth rate (r) + 1)^(− Elapsed time)</code></li><li><strong>Doubling time (Td)</strong> = <code>Elapsed time × ln(2) ÷ ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time)</code> — the form to use when Initial number of bacteria — N(0), Growth rate (r) and Elapsed time are the values you have.</li><li><strong>Growth rate (r)</strong> = <code>(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))^(1 ÷ Elapsed time) − 1</code> — the form to use when Final number of bacteria — N(t), Initial number of bacteria — N(0) and Elapsed time are the values you have.</li><li><strong>Elapsed time</strong> = <code>ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(Growth rate (r) + 1)</code> — the form to use when Final number of bacteria — N(t), Initial number of bacteria — N(0) and Growth rate (r) are the values you have.</li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × (Growth rate (r) + 1)^(− Elapsed time)</code> — the form to use when Final number of bacteria — N(t), Growth rate (r) and Elapsed time are the values you have.</li><li><strong>Doubling time (Td)</strong> = <code>Elapsed time × ln(2) ÷ ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0))</code> — the form to use when Elapsed time, Final number of bacteria — N(t) and Initial number of bacteria — N(0) are the values you have.</li><li><strong>Elapsed time</strong> = <code>Doubling time (Td) × ln(Final number of bacteria — N(t) ÷ Initial number of bacteria — N(0)) ÷ ln(2)</code> — the form to use when Doubling time (Td), Final number of bacteria — N(t) and Initial number of bacteria — N(0) are the values you have.</li><li><strong>Initial number of bacteria — N(0)</strong> = <code>Final number of bacteria — N(t) × e^( − Elapsed time × ln(2) ÷ Doubling time (Td))</code> — the form to use when Final number of bacteria — N(t), Elapsed time and Doubling time (Td) are the values you have.</li><li><strong>Final number of bacteria — N(t)</strong> = <code>Initial number of bacteria — N(0) × e^(Elapsed time × ln(2) ÷ Doubling time (Td))</code> — the form to use when Initial number of bacteria — N(0), Elapsed time and Doubling time (Td) are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Final number of bacteria — N(t), Growth rate (r) and Elapsed time can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Take the example above and double Initial number of bacteria — N(0) from 10 to 20, leaving every other box alone. The panel moves from <strong>Final number of bacteria — N(t)</strong> 1.105e+301 and <strong>Doubling time (Td)</strong> 0.1003 hrs to <strong>Final number of bacteria — N(t)</strong> 2.210e+301 and <strong>Doubling time (Td)</strong> 0.1003 hrs.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
@@ -183,7 +120,7 @@ return [
             <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Initial number of bacteria — N(0)</strong> takes a plain number with no unit attached. The page reads it when it works out Growth rate (r), Elapsed time and Final number of bacteria — N(t). Have it to hand before you start: Initial number of bacteria — N(0) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Elapsed time</strong> is a hours quantity: the page opens it in hrs and converts anything else you pick before the formula runs. The page reads it when it works out Growth rate (r), Initial number of bacteria — N(0) and Final number of bacteria — N(t). Have it to hand before you start: Elapsed time is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Growth rate (r)</strong> takes a plain number with no unit attached. The page reads it when it works out Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t). Have it to hand before you start: Growth rate (r) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Final number of bacteria — N(t)</strong> is a plain number and the page's own defaults put it at 1.105e+301. The value follows from Growth rate (r), Elapsed time and Initial number of bacteria — N(0). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Doubling time (Td)</strong> is a hours figure and the page's own defaults put it at 0.1003 hrs. The value follows from Elapsed time, Initial number of bacteria — N(0) and Final number of bacteria — N(t). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Final number of bacteria — N(t)</strong> is a plain number and the page's own defaults put it at 1.105e+301. The value follows from Initial number of bacteria — N(0), Growth rate (r) and Elapsed time. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Doubling time (Td)</strong> is a hours figure and the page's own defaults put it at 0.1003 hrs. The value follows from Elapsed time, Final number of bacteria — N(t) and Initial number of bacteria — N(0). Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
             TXT],
             ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
             <p>A percentage change tells you where the answer is most fragile. Take the defaults this page opens with, raise one box by ten per cent, and re-solve:</p><table class="calc-table"><thead><tr><th>Box</th><th>Final number of bacteria — N(t)</th><th>Doubling time (Td)</th></tr></thead><tbody><tr><td><strong>Initial number of bacteria — N(0)</strong> +10%</td><td>+10%</td><td>+0%</td></tr><tr><td><strong>Elapsed time</strong> +10%</td><td>—</td><td>—</td></tr><tr><td><strong>Growth rate (r)</strong> +10%</td><td>+1.366e+6%</td><td>-1.36%</td></tr></tbody></table><p>The steepest column belongs to Growth rate (r): ten per cent there moves an answer by about 1.366e+6 per cent, which is why that is the number to measure twice. By contrast, Elapsed time barely move the answers at all, so a rough figure there costs you little.</p><p>This is the same arithmetic a spreadsheet model would do, done here with the page&#039;s own formulas. It is worth repeating at your own numbers rather than the defaults: sensitivity is a property of the formula, but the size of the effect depends where on the curve you are.</p>
@@ -195,12 +132,12 @@ return [
             <ul><li><strong>It does not scale in a straight line.</strong> Because the relationship behind Final number of bacteria — N(t) is not linear, doubling an input does not double the answer, and the error from a rounded input grows near the ends of the range. Use the check-by-hand section above at your own numbers rather than extrapolating from the defaults.</li><li><strong>Only the listed units.</strong> The unit tables here are hours and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Initial number of bacteria — N(0), Elapsed time and Growth rate (r) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Initial number of bacteria — N(0), Elapsed time and Growth rate (r) measured, Final number of bacteria — N(t) and Doubling time (Td) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/bone-length-to-body-height">Bone Length to Body Height Calculator</a>, <a href="/biology/bradford-assay-calculator">Bradford Assay (standard curve) Calculator</a> and <a href="/biology/henderson-hasselbalch-buffer">Buffer pH (Henderson–Hasselbalch) Calculator — Formula &amp; Resul</a>.</p>
+            <p>The typical use is one direction of the relationship: Initial number of bacteria — N(0), Elapsed time and Growth rate (r) measured, Final number of bacteria — N(t) and Doubling time (Td) wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the Bacteria growth calculator work out?', 'a' => <<<'TXT'
-            Final number of bacteria — N(t) and Doubling time (Td), from Growth rate (r), Elapsed time and Initial number of bacteria — N(0). The relationship is Final number of bacteria — N(t) = Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time).
+            Final number of bacteria — N(t) and Doubling time (Td), from Initial number of bacteria — N(0), Growth rate (r) and Elapsed time. The relationship is Final number of bacteria — N(t) = Initial number of bacteria — N(0) × (Growth rate (r) + 1)^(Elapsed time).
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             Initial number of bacteria — N(0), Elapsed time (hours), Growth rate (r). With initial number of bacteria — N(0), elapsed time and growth rate (r) in place, Final number of bacteria — N(t) can stay blank and the page will work it out.

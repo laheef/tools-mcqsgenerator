@@ -11,259 +11,145 @@
 
 return [
     'name' => 'DNA concentration',
-    'meta' => ['title' => 'DNA concentration Calculator: Units & Formula', 'description' => 'DNA concentration turns sample type and extinction coefficient into conversion factor. No sign-up: type the numbers, press Calculate and read the answer.', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'absorbance' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'concentration' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'conversion_factor' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'dilution_factor' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-                'dfl' => [
-                    ['v' => '1', 'c' => null],
-                    ['v' => '1', 'c' => 'userUsesImperialUnits()'],
+    'meta' => ['title' => 'DNA concentration Calculator: Units & Formula', 'description' => 'DNA concentration turns sample type and extinction coefficient into conversion factor. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'DNA concentration Calculator', 'updated' => '2026-08-10'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'sample_type',
+                            'label' => 'Sample type',
+                            'type' => 'select',
+                            'options' => ['Single-stranded DNA' => '1', 'Double-stranded DNA' => '2', 'RNA' => '3', 'Custom oligonucleotide' => '4'],
+                            'dataset' => 'conversion_factors_ds',
+                            'default' => 'Single-stranded DNA',
+                        ],
+                    ],
                 ],
-            ],
-            'extinction_coefficient' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'pathlength' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-                'dfl' => [
-                    ['v' => '1', 'c' => null],
-                    ['v' => '0.39', 'c' => 'userUsesImperialUnits()'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'extinction_coefficient',
+                            'label' => 'Extinction coefficient',
+                            'type' => 'number',
+                            'suffix' => 'M⁻¹ cm⁻¹',
+                            'help' => 'Sum up extinction coefficients of all nucleotides in your sequence to obtain this value.',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
                 ],
-            ],
-            'sample_type' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'UXxT0mSb4mzjOkoMvD-bV', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'weight',
+                            'label' => 'Molecular weight',
+                            'type' => 'number',
+                            'suffix' => 'g/mol',
+                            'help' => 'Add up molecular weights of all nucleotides in your sequence to obtain this value.',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
                 ],
-                'ds' => 'OkJqQvamvHFliIPpIN-bz',
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'oyvX0Fktn2FzJySGFH6l3',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sample_type',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Sample type',
-                                    'ds' => 'OkJqQvamvHFliIPpIN-bz',
-                                    'opts' => [
-                                        ['UXxT0mSb4mzjOkoMvD-bV', 'Single-stranded DNA', '1'],
-                                        ['08XgMYdm7Jtl2O2s6oaWj', 'Double-stranded DNA', '2'],
-                                        ['W2QQr7qvwM_pqZj4YN8yj', 'RNA', '3'],
-                                        ['38BNVHby_WiYHt5e6QMxz', 'Custom oligonucleotide', '4'],
-                                    ],
-                                ],
+                            'name' => 'conversion_factor',
+                            'label' => 'Conversion factor',
+                            'type' => 'result',
+                            'suffix' => 'μg/mL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'absorbance',
+                            'label' => 'Absorbance at λmax',
+                            'type' => 'number',
+                            'help' => 'For a typical nucleotide, λmax is 260 nm, but use the highest peak indicated by spectrophotometric reading.',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pathlength',
+                            'label' => 'Pathlength',
+                            'type' => 'number',
+                            'help' => 'Spectrophotometer cuvettes are typically 1 cm (0.39 in) long, but adjust if needed.',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['standard', '2'],
+                            'defaults' => [
+                                ['value' => '1', 'when' => null],
+                                ['value' => '0.39', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'place' => [0, 0],
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'extinction_coefficient',
-                                    'vt' => 'numerical',
-                                    'l' => 'Extinction coefficient',
-                                    'suf' => 'M⁻¹ cm⁻¹',
-                                    'h' => 'Sum up extinction coefficients of all nucleotides in your sequence to obtain this value.',
-                                ],
+                            'name' => 'dilution_factor',
+                            'label' => 'Dilution factor',
+                            'type' => 'number',
+                            'help' => 'Change only if the absorbance is obtained from a diluted sample. Leave one if the sample is not diluted.',
+                            'rounding' => ['standard', '3'],
+                            'defaults' => [
+                                ['value' => '1', 'when' => null],
+                                ['value' => '1', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
+                        ['type' => 'note', 'text' => 'If the dilution factor is less than 1, the solution isn\'t diluted!'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Molecular weight',
-                                    'suf' => 'g/mol',
-                                    'h' => 'Add up molecular weights of all nucleotides in your sequence to obtain this value.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'conversion_factor',
-                                    'vt' => 'dependent',
-                                    'l' => 'Conversion factor',
-                                    'suf' => 'μg/mL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'absorbance',
-                                    'vt' => 'numerical',
-                                    'l' => 'Absorbance at λmax',
-                                    'h' => 'For a typical nucleotide, λmax is 260 nm, but use the highest peak indicated by spectrophotometric reading.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'pathlength',
-                                    'vt' => 'numerical',
-                                    'l' => 'Pathlength',
-                                    'h' => 'Spectrophotometer cuvettes are typically 1 cm (0.39 in) long, but adjust if needed.',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dilution_factor',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dilution factor',
-                                    'h' => 'Change only if the absorbance is obtained from a diluted sample. Leave one if the sample is not diluted.',
-                                ],
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'If the dilution factor is less than 1, the solution isn\'t diluted!'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'concentration',
-                                    'vt' => 'numerical',
-                                    'l' => 'Concentration',
-                                    'h' => 'Concentration of the nucleic acid in the sample.',
-                                    'us' => '21',
-                                    'du' => 'ugml',
-                                ],
-                            ],
+                            'name' => 'concentration',
+                            'label' => 'Concentration',
+                            'type' => 'number',
+                            'help' => 'Concentration of the nucleic acid in the sample.',
+                            'unit' => '21',
+                            'unit_default' => 'ugml',
+                            'rounding' => ['standard', '3'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'concentration = (absorbance / pathlength) * conversion_factor * dilution_factor',
-                'var' => [
-                    [
-                        'l' => 'pathlength',
-                        'f' => 'absorbance*conversion_factor*dilution_factor/concentration',
-                        'r' => ['absorbance', 'dilution_factor', 'concentration', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'absorbance',
-                        'f' => 'concentration*pathlength/(conversion_factor*dilution_factor)',
-                        'r' => ['pathlength', 'dilution_factor', 'concentration', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'dilution_factor',
-                        'f' => 'concentration*pathlength/(absorbance*conversion_factor)',
-                        'r' => ['pathlength', 'absorbance', 'concentration', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'concentration',
-                        'f' => 'absorbance*conversion_factor*dilution_factor/pathlength',
-                        'r' => ['pathlength', 'absorbance', 'dilution_factor', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'conversion_factor',
-                        'f' => 'concentration*pathlength/(absorbance*dilution_factor)',
-                        'r' => ['pathlength', 'absorbance', 'dilution_factor', 'concentration'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'conversion_factor = weight  / extinction_coefficient',
-                'var' => [
-                    [
-                        'l' => 'extinction_coefficient',
-                        'f' => 'weight/conversion_factor',
-                        'r' => ['weight', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => 'conversion_factor*extinction_coefficient',
-                        'r' => ['extinction_coefficient', 'conversion_factor'],
-                    ],
-                    [
-                        'l' => 'conversion_factor',
-                        'f' => 'weight/extinction_coefficient',
-                        'r' => ['extinction_coefficient', 'weight'],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [
-            'OkJqQvamvHFliIPpIN-bz' => [
-                'name' => 'conversion_factors_ds',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'UXxT0mSb4mzjOkoMvD-bV', 'label' => 'Single-stranded DNA', 'value' => '1'],
-                    ['uid' => '08XgMYdm7Jtl2O2s6oaWj', 'label' => 'Double-stranded DNA', 'value' => '2'],
-                    ['uid' => 'W2QQr7qvwM_pqZj4YN8yj', 'label' => 'RNA', 'value' => '3'],
-                    ['uid' => '38BNVHby_WiYHt5e6QMxz', 'label' => 'Custom oligonucleotide', 'value' => '4'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'concentration = (absorbance / pathlength) * conversion_factor * dilution_factor',
+            'results' => [
+                'pathlength' => 'absorbance*conversion_factor*dilution_factor/concentration',
+                'absorbance' => 'concentration*pathlength/(conversion_factor*dilution_factor)',
+                'dilution_factor' => 'concentration*pathlength/(absorbance*conversion_factor)',
+                'concentration' => 'absorbance*conversion_factor*dilution_factor/pathlength',
+                'conversion_factor' => 'concentration*pathlength/(absorbance*dilution_factor)',
+            ],
+        ],
+        [
+            'title' => 'conversion_factor = weight  / extinction_coefficient',
+            'results' => ['extinction_coefficient' => 'weight/conversion_factor', 'weight' => 'conversion_factor*extinction_coefficient', 'conversion_factor' => 'weight/extinction_coefficient'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         DNA concentration turns Sample type, Extinction coefficient and Molecular weight into Conversion factor. It is a single relationship that reads conversion factor out of sample type, not a table of canned results keyed by them. Units for Conversion factor default to μg/mL and can be changed on the answer itself.
@@ -279,7 +165,7 @@ return [
             <p>Units are handled before the formula runs: Pathlength offers 7 units and opens on centimeters, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Concentration</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength</code></li><li><strong>Pathlength</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration</code></li><li><strong>Absorbance at λmax</strong> = <code>Concentration × Pathlength ÷ (Conversion factor × Dilution factor)</code></li><li><strong>Dilution factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Conversion factor)</code></li><li><strong>Conversion factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Dilution factor)</code></li><li><strong>Extinction coefficient</strong> = <code>Molecular weight ÷ Conversion factor</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Concentration</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength</code> — the form to use when Pathlength, Absorbance at λmax, Dilution factor and Conversion factor are the values you have.</li><li><strong>Pathlength</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration</code> — the form to use when Absorbance at λmax, Dilution factor, Concentration and Conversion factor are the values you have.</li><li><strong>Absorbance at λmax</strong> = <code>Concentration × Pathlength ÷ (Conversion factor × Dilution factor)</code> — the form to use when Pathlength, Dilution factor, Concentration and Conversion factor are the values you have.</li><li><strong>Dilution factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Conversion factor)</code> — the form to use when Pathlength, Absorbance at λmax, Concentration and Conversion factor are the values you have.</li><li><strong>Conversion factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Dilution factor)</code> — the form to use when Pathlength, Absorbance at λmax, Dilution factor and Concentration are the values you have.</li><li><strong>Conversion factor</strong> = <code>Molecular weight ÷ Extinction coefficient</code> — the form to use when Extinction coefficient and Molecular weight are the values you have.</li><li><strong>Extinction coefficient</strong> = <code>Molecular weight ÷ Conversion factor</code> — the form to use when Molecular weight and Conversion factor are the values you have.</li><li><strong>Molecular weight</strong> = <code>Conversion factor × Extinction coefficient</code> — the form to use when Extinction coefficient and Conversion factor are the values you have.</li></ul><p>Any one of Concentration, Pathlength and Absorbance at λmax can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Concentration</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength</code></li><li><strong>Pathlength</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration</code></li><li><strong>Absorbance at λmax</strong> = <code>Concentration × Pathlength ÷ (Conversion factor × Dilution factor)</code></li><li><strong>Dilution factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Conversion factor)</code></li><li><strong>Conversion factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Dilution factor)</code></li><li><strong>Extinction coefficient</strong> = <code>Molecular weight ÷ Conversion factor</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Concentration</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength</code> — the form to use when Absorbance at λmax, Conversion factor, Dilution factor and Pathlength are the values you have.</li><li><strong>Pathlength</strong> = <code>Absorbance at λmax × Conversion factor × Dilution factor ÷ Concentration</code> — the form to use when Absorbance at λmax, Conversion factor, Dilution factor and Concentration are the values you have.</li><li><strong>Absorbance at λmax</strong> = <code>Concentration × Pathlength ÷ (Conversion factor × Dilution factor)</code> — the form to use when Concentration, Pathlength, Conversion factor and Dilution factor are the values you have.</li><li><strong>Dilution factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Conversion factor)</code> — the form to use when Concentration, Pathlength, Absorbance at λmax and Conversion factor are the values you have.</li><li><strong>Conversion factor</strong> = <code>Concentration × Pathlength ÷ (Absorbance at λmax × Dilution factor)</code> — the form to use when Concentration, Pathlength, Absorbance at λmax and Dilution factor are the values you have.</li><li><strong>Conversion factor</strong> = <code>Molecular weight ÷ Extinction coefficient</code> — the form to use when Molecular weight and Extinction coefficient are the values you have.</li><li><strong>Extinction coefficient</strong> = <code>Molecular weight ÷ Conversion factor</code> — the form to use when Molecular weight and Conversion factor are the values you have.</li><li><strong>Molecular weight</strong> = <code>Conversion factor × Extinction coefficient</code> — the form to use when Conversion factor and Extinction coefficient are the values you have.</li></ul><p>Any one of Concentration, Pathlength and Absorbance at λmax can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
@@ -291,7 +177,7 @@ return [
             <p>The boxes on the DNA concentration form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Sample type</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Sample type is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Extinction coefficient</strong> is measured in M⁻¹ cm⁻¹. Sum up extinction coefficients of all nucleotides in your sequence to obtain this value. The page reads it when it works out Molecular weight and Conversion factor. Fill it from a measurement rather than a memory — Extinction coefficient is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Molecular weight</strong> is measured in g/mol. Add up molecular weights of all nucleotides in your sequence to obtain this value. The page reads it when it works out Extinction coefficient and Conversion factor. Fill it from a measurement rather than a memory — Molecular weight is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Absorbance at λmax</strong> takes a plain number with no unit attached. For a typical nucleotide, λmax is 260 nm, but use the highest peak indicated by spectrophotometric reading. The page reads it when it works out Pathlength, Dilution factor and Concentration. Fill it from a measurement rather than a memory — Absorbance at λmax is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Pathlength</strong> is a centimeters quantity: the page opens it in cm and converts anything else you pick before the formula runs. Spectrophotometer cuvettes are typically 1 cm (0.39 in) long, but adjust if needed. The page reads it when it works out Absorbance at λmax, Dilution factor and Concentration. Fill it from a measurement rather than a memory — Pathlength is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Dilution factor</strong> takes a plain number with no unit attached. Change only if the absorbance is obtained from a diluted sample. Leave one if the sample is not diluted. The page reads it when it works out Pathlength, Absorbance at λmax and Concentration. Fill it from a measurement rather than a memory — Dilution factor is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Concentration</strong> is a micrograms per milliliter quantity: the page opens it in ugml and converts anything else you pick before the formula runs. Concentration of the nucleic acid in the sample. The page reads it when it works out Pathlength, Absorbance at λmax and Dilution factor. Fill it from a measurement rather than a memory — Concentration is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 1 value. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Conversion factor</strong> is a plain number. The value follows from Pathlength, Absorbance at λmax, Dilution factor and Concentration. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <p>The panel reports 1 value. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Conversion factor</strong> is a plain number. The value follows from Concentration, Pathlength, Absorbance at λmax and Dilution factor. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
             TXT],
             ['title' => 'The units this page accepts', 'html' => <<<'TXT'
             <p>A unit chip is only useful if the conversion behind it is the right one, so here is what each chip on DNA concentration actually offers.</p><ul><li><strong>centimeters</strong> — opens in <em>cm</em>, and the chip also carries cm, m, in, ft, yd and μm. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li><li><strong>micrograms per milliliter</strong> — opens in <em>ugml</em>, and the chip also carries µg/mL, g/L, mg/L, kg/m³, mg/mL and lb/cu yd. Every one of them is converted to a single base unit before the formula sees the number, so the answer is the same quantity whichever chip you leave it on.</li></ul><p>Two things follow. First, the unit you pick changes the label and the conversion, never the formula: 2 metres and 200 centimetres take exactly the same path through the arithmetic. Second, a unit that is not in the table cannot be entered — if your measurement is in something else, convert it once, by hand, before typing it in.</p>
@@ -300,12 +186,12 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Conversion factor follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The chips cover centimeters and micrograms per milliliter. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Sample type, Extinction coefficient and Molecular weight is what you already know and Conversion factor is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/plant-available-water">Field Capacity and Plant Available Water Calculator</a>, <a href="/biology/field-capacity">Field Capacity Calculator</a> and <a href="/biology/fish-condition-factor">Fish Condition Factor Calculator</a>.</p>
+            <p>Reach for this page when Sample type, Extinction coefficient and Molecular weight is what you already know and Conversion factor is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [
             ['q' => 'What does the DNA concentration calculator work out?', 'a' => <<<'TXT'
-            Conversion factor, from Pathlength, Absorbance at λmax, Dilution factor and Conversion factor. The relationship is Concentration = Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength.
+            Conversion factor, from Absorbance at λmax, Conversion factor, Dilution factor and Pathlength. The relationship is Concentration = Absorbance at λmax × Conversion factor × Dilution factor ÷ Pathlength.
             TXT],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             Sample type, Extinction coefficient (M⁻¹ cm⁻¹), Molecular weight (g/mol), Absorbance at λmax, Pathlength (centimeters). Fill sample type, extinction coefficient and molecular weight and leave Conversion factor empty if you would rather have that one solved instead.

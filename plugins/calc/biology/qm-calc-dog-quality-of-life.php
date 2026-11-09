@@ -11,259 +11,126 @@
 
 return [
     'name' => 'Dog quality of life',
-    'meta' => ['title' => 'Dog quality of life Calculator: Steps & Units', 'description' => 'Dog quality of life works out results from mobility and nutrition (food intake). Leave mobility empty and the page will solve for it instead. No sign-up.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'item1' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => '8sGHxdXKoGDpxOFbptD01'],
-            'item2' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => 'bzbDGvhVn5TYWpBWwrTF6'],
-            'item3' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => 'tzm4ypFs70eS7p5T6HqVQ'],
-            'item4' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => 'XcazeDkn-_kri5kYngEIN'],
-            'item5' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => '3AKr1ovOIG40EiqDKHWlY'],
-            'item6' => ['type' => 'valueSelect', 'rnd' => null, 'ds' => 'VZo0_JsO_6YCinkqc2omQ'],
-            'results' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'RF19CQlhbVQGtIpWVUEDV',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Dog quality of life Calculator: Steps & Units', 'description' => 'Dog quality of life works out results from mobility and nutrition (food intake). Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Dog quality of life Calculator', 'updated' => '2026-08-10'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Below are key factors that contribute to your dog\'s quality of life. Use your honest judgment and select which options apply to your dog most accurately.'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Below are key factors that contribute to your dog\'s quality of life. Use your honest judgment and select which options apply to your dog most accurately.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item1',
+                            'label' => 'Mobility',
+                            'type' => 'select',
+                            'options' => ['Bare minimum' => '0', 'Poor' => '1', 'Good' => '2'],
+                            'help' => 'Your dog\'s ability to move and get from one place to another. &nbsp;',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item1',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Mobility',
-                                    'h' => 'Your dog\'s ability to move and get from one place to another. &nbsp;',
-                                    'ds' => '8sGHxdXKoGDpxOFbptD01',
-                                    'opts' => [
-                                        ['sap_OqDDR_lD-SmvJBHLi', 'Bare minimum', '0'],
-                                        ['ZlpHQ6FV7G9xpXrRTivoF', 'Poor', '1'],
-                                        ['qIVjB5jhoToIW9eYtS9xE', 'Good', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item2',
+                            'label' => 'Nutrition (food intake)',
+                            'type' => 'select',
+                            'options' => ['None' => '0', 'Poor or requires hand feeding' => '1', 'Good' => '2'],
+                            'dataset' => 'Appetite',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item2',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Nutrition (food intake)',
-                                    'ds' => 'bzbDGvhVn5TYWpBWwrTF6',
-                                    'opts' => [
-                                        ['d50lV-rVKZJ9Eoen6AIyu', 'None', '0'],
-                                        ['K4IYjOTCnrsoPuCiQvy2a', 'Poor or requires hand feeding', '1'],
-                                        ['YqVdZdclSsqT-25EOXh3D', 'Good', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item3',
+                            'label' => 'Hydration (water intake)',
+                            'type' => 'select',
+                            'options' => [' No intake (not drinking)' => '0', 'Poor or increased intake' => '1', ' Adequate intake' => '2'],
+                            'dataset' => 'Hydration',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item3',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Hydration (water intake)',
-                                    'ds' => 'tzm4ypFs70eS7p5T6HqVQ',
-                                    'opts' => [
-                                        ['9yQwTuF63xyIwaQCCYoeE', ' No intake (not drinking)', '0'],
-                                        ['YyuJEpevd_Zlhz9YVMEwE', 'Poor or increased intake', '1'],
-                                        ['xe4c0uRQTC_UCbDgVjjhw', ' Adequate intake', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item6',
+                            'label' => 'Urination and defecation.',
+                            'type' => 'select',
+                            'options' => ['None' => '0', 'Reduced or irregular ' => '1', 'Normal ' => '2'],
+                            'dataset' => 'elimination (urination and/or defecation)',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item6',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Urination and defecation.',
-                                    'ds' => 'VZo0_JsO_6YCinkqc2omQ',
-                                    'opts' => [
-                                        ['5TgC2ZLkQUP-NshTQ_TUU', 'None', '0'],
-                                        ['qlx4yBweHVxmu_GWWmh1e', 'Reduced or irregular ', '1'],
-                                        ['c4djlDL0McdcxrpIZ52-w', 'Normal ', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item4',
+                            'label' => 'Interaction and attitude',
+                            'type' => 'select',
+                            'options' => ['Hides in the closet or under the bed' => '0', 'Some Interaction' => '1', 'Interacts normally ' => '2'],
+                            'dataset' => 'INTERACTION',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item4',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Interaction and attitude',
-                                    'ds' => 'XcazeDkn-_kri5kYngEIN',
-                                    'opts' => [
-                                        ['e7atfEuSQIE57MDb42z3n', 'Hides in the closet or under the bed', '0'],
-                                        ['4O7nf2YN4MEY9oN30LdGp', 'Some Interaction', '1'],
-                                        ['fi_bxctRZAmmija8DEvLb', 'Interacts normally ', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'item5',
+                            'label' => 'Favorite things',
+                            'type' => 'select',
+                            'options' => ['No interest in their favorite toys and activities' => '0', 'Decrease of interest in their favorite toys and activities' => '1', ' Normal enthusiasm for favorite toys and activities' => '2'],
+                            'dataset' => 'FAVORITE THINGS',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'item5',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Favorite things',
-                                    'ds' => '3AKr1ovOIG40EiqDKHWlY',
-                                    'opts' => [
-                                        ['LDgNQXf_OG5TxsqJAw3ka', 'No interest in their favorite toys and activities', '0'],
-                                        ['6Y1rTYKGYX_3iecJCr_F6', 'Decrease of interest in their favorite toys and activities', '1'],
-                                        ['0q50aFAlJXN4y5nf0s1P-', ' Normal enthusiasm for favorite toys and activities', '2'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'results',
+                            'label' => '',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'results', 'vt' => 'numerical', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['results <= 5', 'Unfortunately, this result is low and it may be a reason to consider that your pet is suffering.&nbsp;'],
-                                        ['results >= 6 and results<=8', <<<'TXT'
-                                        According to this results, your dog's quality of life may require intervention. Consider making an appointment with your local veterinarian to address the necessary behavioral and health changes of your four-legged best friend's lifestyle
-                                        TXT],
-                                        ['results>=9 and  results<=12', ' Congratulations, this result means that everything is okay, and your dog has a good quality of life.'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'results <= 5', 'text' => 'Unfortunately, this result is low and it may be a reason to consider that your pet is suffering.&nbsp;'],
+                                ['when' => 'results >= 6 and results<=8', 'text' => <<<'TXT'
+                                According to this results, your dog's quality of life may require intervention. Consider making an appointment with your local veterinarian to address the necessary behavioral and health changes of your four-legged best friend's lifestyle
+                                TXT],
+                                ['when' => 'results>=9 and  results<=12', 'text' => ' Congratulations, this result means that everything is okay, and your dog has a good quality of life.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'results =  one_way(item1 + item2 + item3 + item4 + item5 + item6)',
-                'var' => [
-                    [
-                        'l' => 'results',
-                        'f' => '(item1 + item2 + item3 + item4 + item5 + item6)',
-                        'r' => [
-                            'item1',
-                            'item2',
-                            'item3',
-                            'item4',
-                            'item5',
-                            'item6',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [
-            '8sGHxdXKoGDpxOFbptD01' => [
-                'name' => 'Mobility',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'sap_OqDDR_lD-SmvJBHLi', 'label' => 'Bare minimum', 'value' => '0'],
-                    ['uid' => 'ZlpHQ6FV7G9xpXrRTivoF', 'label' => 'Poor', 'value' => '1'],
-                    ['uid' => 'qIVjB5jhoToIW9eYtS9xE', 'label' => 'Good', 'value' => '2'],
-                ],
-            ],
-            'bzbDGvhVn5TYWpBWwrTF6' => [
-                'name' => 'Appetite',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'd50lV-rVKZJ9Eoen6AIyu', 'label' => 'None', 'value' => '0'],
-                    ['uid' => 'K4IYjOTCnrsoPuCiQvy2a', 'label' => 'Poor or requires hand feeding', 'value' => '1'],
-                    ['uid' => 'YqVdZdclSsqT-25EOXh3D', 'label' => 'Good', 'value' => '2'],
-                ],
-            ],
-            'tzm4ypFs70eS7p5T6HqVQ' => [
-                'name' => 'Hydration',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '9yQwTuF63xyIwaQCCYoeE', 'label' => ' No intake (not drinking)', 'value' => '0'],
-                    ['uid' => 'YyuJEpevd_Zlhz9YVMEwE', 'label' => 'Poor or increased intake', 'value' => '1'],
-                    ['uid' => 'xe4c0uRQTC_UCbDgVjjhw', 'label' => ' Adequate intake', 'value' => '2'],
-                ],
-            ],
-            'XcazeDkn-_kri5kYngEIN' => [
-                'name' => 'INTERACTION',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'e7atfEuSQIE57MDb42z3n', 'label' => 'Hides in the closet or under the bed', 'value' => '0'],
-                    ['uid' => '4O7nf2YN4MEY9oN30LdGp', 'label' => 'Some Interaction', 'value' => '1'],
-                    ['uid' => 'fi_bxctRZAmmija8DEvLb', 'label' => 'Interacts normally ', 'value' => '2'],
-                ],
-            ],
-            'VZo0_JsO_6YCinkqc2omQ' => [
-                'name' => 'elimination (urination and/or defecation)',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '5TgC2ZLkQUP-NshTQ_TUU', 'label' => 'None', 'value' => '0'],
-                    ['uid' => 'qlx4yBweHVxmu_GWWmh1e', 'label' => 'Reduced or irregular ', 'value' => '1'],
-                    ['uid' => 'c4djlDL0McdcxrpIZ52-w', 'label' => 'Normal ', 'value' => '2'],
-                ],
-            ],
-            '3AKr1ovOIG40EiqDKHWlY' => [
-                'name' => 'FAVORITE THINGS',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'LDgNQXf_OG5TxsqJAw3ka', 'label' => 'No interest in their favorite toys and activities', 'value' => '0'],
-                    ['uid' => '6Y1rTYKGYX_3iecJCr_F6', 'label' => 'Decrease of interest in their favorite toys and activities', 'value' => '1'],
-                    ['uid' => '0q50aFAlJXN4y5nf0s1P-', 'label' => ' Normal enthusiasm for favorite toys and activities', 'value' => '2'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'results =  one_way(item1 + item2 + item3 + item4 + item5 + item6)',
+            'results' => ['results' => '(item1 + item2 + item3 + item4 + item5 + item6)'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Enter Mobility, Nutrition (food intake) and Hydration (water intake) into Dog quality of life and the answer comes back as Results. Nothing is looked up on this page: results is computed from mobility and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -298,10 +165,13 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Results is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Mobility, Nutrition (food intake) and Hydration (water intake) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Mobility, Nutrition (food intake) and Hydration (water intake) measured, Results wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/guinea-pig-age">Guinea pig years to human years</a>, <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a> and <a href="/biology/hamster-age">Hamster age Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Mobility, Nutrition (food intake) and Hydration (water intake) measured, Results wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>Dog quality of life is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.</p><p>Its own defaults are run through its own formulas every time the page is built, so the examples above are not illustrations: if the relationship changed, the numbers in the article would change with it, and a page whose arithmetic stopped agreeing with its text would fail the check rather than quietly drift.</p><p>What the page keeps is nothing. The calculation is unchanged between visits. has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.</p><p>It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.</p><p>The formula is printed in full above precisely so that the page can be argued with. Compare it with the reference you are working from; if they differ, the difference will be in a constant or a unit, and both are visible in the text.</p>
+            TXT],
+            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
+            <p>An answer from Dog quality of life is a number to act on, so the useful question is what to do with Results once the panel shows it.</p><ul><li><strong>Record the inputs with the answer.</strong> A number on its own is not reproducible. Write down Mobility, Nutrition (food intake), Hydration (water intake) and Urination and defecation alongside it — a week later the answer is checkable and the reasoning is not.</li><li><strong>Re-run it when a measurement changes.</strong> The page keeps nothing between visits, which is a feature: every figure is worked out from the numbers in front of it, so updating one input and pressing Calculate again gives a fresh answer rather than an average of the old and the new.</li><li><strong>Keep the formula with the figure.</strong> A number from a page like this one travels better than a number from a spreadsheet cell, because the formula that produced it is visible on the same page and does not depend on a file being kept.</li><li><strong>Compare rather than convert.</strong> Run it once for the case in front of you and once for a case you understand well. The gap between the two answers tells you more about your own situation than either number does on its own.</li></ul><p>The page is a calculator, not a system of record. Copy what you need out of it, keep it with the inputs that produced it, and come back with different numbers whenever the inputs change.</p>
             TXT],
         ],
         'faq' => [

@@ -12,194 +12,105 @@
 return [
     'name' => 'Dog age',
     'meta' => ['title' => 'Dog age Calculator: Formula, Steps & Example', 'description' => 'Dog age turns breed and size into human age. Every figure is computed. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog age Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'breed' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'KFXfXTPpOb6U8nxxWFQYm', 'c' => null],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'breed',
+                            'label' => 'Breed',
+                            'type' => 'select',
+                            'options' => ['Labrador' => '0.000000000000000', 'Other' => '1.000000000000000'],
+                            'dataset' => 'breed',
+                            'default' => 'Labrador',
+                        ],
+                    ],
                 ],
-                'ds' => '1519',
-            ],
-            'dog_age_labr' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'dog_years' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'human_age_labr' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'human_years' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'size' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'brO1i4l5PDGv8gOSiCqr-', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'size',
+                            'label' => 'Size',
+                            'type' => 'select',
+                            'options' => ['Small' => '0.000000000000000', 'Medium' => '1.000000000000000', 'Large' => '2.000000000000000'],
+                            'dataset' => 'size',
+                            'default' => 'Medium',
+                        ],
+                    ],
                 ],
-                'ds' => '182',
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'Rou0bxIeiKV9zdIi80dio',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'breed',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Breed',
-                                    'ds' => '1519',
-                                    'opts' => [
-                                        ['KFXfXTPpOb6U8nxxWFQYm', 'Labrador', '0.000000000000000'],
-                                        ['G_5a9oXwdg7tMrtwd90ig', 'Other', '1.000000000000000'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'dog_years',
+                            'label' => 'Dog age',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'size',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Size',
-                                    'ds' => '182',
-                                    'opts' => [
-                                        ['Om1v69CW4TjWZDDbyw-qH', 'Small', '0.000000000000000'],
-                                        ['brO1i4l5PDGv8gOSiCqr-', 'Medium', '1.000000000000000'],
-                                        ['cA4I_ciCmCzWQtdF9IltR', 'Large', '2.000000000000000'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'human_years',
+                            'label' => 'Human age',
+                            'type' => 'number',
+                            'help' => 'How old is your dog in human years?',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'dog_years', 'vt' => 'numerical', 'l' => 'Dog age'],
-                            ],
+                            'name' => 'dog_age_labr',
+                            'label' => 'Dog age',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'human_years',
-                                    'vt' => 'numerical',
-                                    'l' => 'Human age',
-                                    'h' => 'How old is your dog in human years?',
-                                ],
-                            ],
+                            'name' => 'human_age_labr',
+                            'label' => 'Human age',
+                            'type' => 'number',
+                            'help' => 'How old is your labrador in human years?',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'dog_age_labr', 'vt' => 'numerical', 'l' => 'Dog age'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'human_age_labr',
-                                    'vt' => 'numerical',
-                                    'l' => 'Human age',
-                                    'h' => 'How old is your labrador in human years?',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'What makes Labradors so special? Check out the section "Labrador dog research is here!" in the text to find out.'],
-                                    ],
-                                ],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'What makes Labradors so special? Check out the section "Labrador dog research is here!" in the text to find out.'],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'human_years = get_human_years(dog_years, size)',
-                'var' => [
-                    [
-                        'l' => 'human_years',
-                        'f' => 'get_human_years(dog_years, size)',
-                        'r' => ['dog_years', 'size'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => ' human_age_labr = 16 * ln(dog_age_labr) + 31',
-                'var' => [
-                    [
-                        'l' => 'dog_age_labr',
-                        'f' => 'exp((1/16)*human_age_labr - 31/16)',
-                        'r' => ['human_age_labr'],
-                    ],
-                    [
-                        'l' => 'human_age_labr',
-                        'f' => '16*log(dog_age_labr) + 31',
-                        'r' => ['dog_age_labr'],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [
-            '182' => [
-                'name' => 'size',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'Om1v69CW4TjWZDDbyw-qH', 'label' => 'Small', 'value' => '0.000000000000000'],
-                    ['uid' => 'brO1i4l5PDGv8gOSiCqr-', 'label' => 'Medium', 'value' => '1.000000000000000'],
-                    ['uid' => 'cA4I_ciCmCzWQtdF9IltR', 'label' => 'Large', 'value' => '2.000000000000000'],
-                ],
-            ],
-            '1519' => [
-                'name' => 'breed',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'KFXfXTPpOb6U8nxxWFQYm', 'label' => 'Labrador', 'value' => '0.000000000000000'],
-                    ['uid' => 'G_5a9oXwdg7tMrtwd90ig', 'label' => 'Other', 'value' => '1.000000000000000'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        "use strict";omni.define("get_human_years",function(dog_years,size){var roundedHumanYears=getRoundedValue(dog_years,function(index){return data[index][size]});return roundedHumanYears});var data=[[0,0,0],[15,15,15],[24,24,24],[28,28,28],[32,32,32],[36,36,36],[40,42,45],[44,47,50],[48,51,55],[52,56,61],[56,60,66],[60,65,72],[64,69,77],[68,74,82],[72,78,88],[76,83,93],[80,87,99],[84,92,104],[88,96,109],[92,101,115]];function getRoundedValue(index,getValue){var afterDecimalPoint=index%1;if(afterDecimalPoint===0){return getValue(index)}var lowerIndex=Math.floor(index);var lowerValue=getValue(lowerIndex);var higherIndex=Math.ceil(index);var higherValue=getValue(higherIndex);var difference=higherValue-lowerValue;return lowerValue+afterDecimalPoint*difference}//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'human_years = get_human_years(dog_years, size)',
+            'results' => ['human_years' => 'get_human_years(dog_years, size)'],
+        ],
+        [
+            'title' => ' human_age_labr = 16 * ln(dog_age_labr) + 31',
+            'results' => ['dog_age_labr' => 'exp((1/16)*human_age_labr - 31/16)', 'human_age_labr' => '16*log(dog_age_labr) + 31'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("get_human_years",function(dog_years,size){var roundedHumanYears=getRoundedValue(dog_years,function(index){return data[index][size]});return roundedHumanYears});var data=[[0,0,0],[15,15,15],[24,24,24],[28,28,28],[32,32,32],[36,36,36],[40,42,45],[44,47,50],[48,51,55],[52,56,61],[56,60,66],[60,65,72],[64,69,77],[68,74,82],[72,78,88],[76,83,93],[80,87,99],[84,92,104],[88,96,109],[92,101,115]];function getRoundedValue(index,getValue){var afterDecimalPoint=index%1;if(afterDecimalPoint===0){return getValue(index)}var lowerIndex=Math.floor(index);var lowerValue=getValue(lowerIndex);var higherIndex=Math.ceil(index);var higherValue=getValue(higherIndex);var difference=higherValue-lowerValue;return lowerValue+afterDecimalPoint*difference}//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => 'Dog age works out Human age and Dog age from Size. There is no hidden constant here: change human age and size moves with it.',
         'sections' => [
@@ -234,13 +145,10 @@ return [
             <ul><li><strong>It does not scale in a straight line.</strong> Because the relationship behind Human age is not linear, doubling an input does not double the answer, and the error from a rounded input grows near the ends of the range. Use the check-by-hand section above at your own numbers rather than extrapolating from the defaults.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Size and Dog age is what you already know and Human age and Dog age is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/grass-seed">Grass seed Calculator</a>, <a href="/biology/growing-degree-days">Growing Degree Days Calculator</a> and <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a>.</p>
+            <p>Reach for this page when Size and Dog age is what you already know and Human age and Dog age is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
-            TXT],
-            ['title' => 'Where this fits among the other calculators', 'html' => <<<'TXT'
-            <p>Neighbouring pages resolve the parts of the same job that Dog age leaves alone. Knowing which is which saves running the wrong one:</p><p>Worth opening next: <a href="/biology/grass-seed">Grass seed Calculator</a>, <a href="/biology/growing-degree-days">Growing Degree Days Calculator</a> and <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a>. They follow the same pattern as this page (form, formula, worked example, answer), so a reader who understands one understands the others.</p><p>Using the page that already answers the question you have is better than adapting this one: the formula and the units will match what you expect, and the worked example will be about your case.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>Getting the figure is half the job. The other half is what Dog age is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Size and Dog age beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>

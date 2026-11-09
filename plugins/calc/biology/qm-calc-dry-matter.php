@@ -11,741 +11,384 @@
 
 return [
     'name' => 'Dry matter',
-    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Example', 'description' => 'Dry matter puts protein, fat, fibre, moisture and other figures on a dry-matter basis, so two foods holding different amounts of water compare fairly.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
-    'raw' => [
-        'vars' => [
-            'compareOption' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'tieX8RyYIZZ1MV9CjETnv', 'c' => null],
-                    ['v' => 'tieX8RyYIZZ1MV9CjETnv', 'c' => 'userUsesImperialUnits()'],
-                ],
-                'ds' => 'dDVjxG-B81feSrAjtIqs8',
-            ],
-            'dryMatterFat0' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterFat1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterFiber0' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterFiber1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterOthers0' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterOthers1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterProtein0' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'dryMatterProtein1' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'finalTotal0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'finalTotal1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'moisture0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'moisture1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterFat0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterFat1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterFiber0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterFiber1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterOthers0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterOthers1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterProtein0' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wetMatterProtein1' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => '2_pER1K4CML2-OaySd1HZ',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Dry matter Calculator: Formula, Steps & Example', 'description' => 'Dry matter takes i want to..., protein and fat and returns others and final total. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Dry matter Calculator', 'updated' => '2026-08-06'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'compareOption',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'I want to...',
-                                    'ds' => 'dDVjxG-B81feSrAjtIqs8',
-                                    'opts' => [
-                                        ['tieX8RyYIZZ1MV9CjETnv', 'check a product', '1'],
-                                        ['7H2YX9KACEU0nz39ixXHs', 'compare 2 products', '2'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => '7j3PFgVSlVfIh1_RDZiE1',
-                'title' => 'Guaranteed analysis - Product 1',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterProtein0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Protein',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterFat0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fat',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterFiber0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fiber',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'moisture0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Moisture',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterOthers0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Others',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'OjlPrHGIFgcenwZ-Pusl2',
-                'title' => 'Guaranteed analysis - Product 2',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterProtein1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Protein',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterFat1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fat',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterFiber1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Fiber',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'moisture1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Moisture',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wetMatterOthers1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Others',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'CbvbyKJxDoDjTTF2nvxQN',
-                'title' => 'Always hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterFat0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter fat',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterProtein0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter protein',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterFiber0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter fiber',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterOthers0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter others',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'finalTotal0',
-                                    'vt' => 'numerical',
-                                    'l' => 'Final total',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterProtein1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter protein',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterFat1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter fat',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterFiber1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter fiber',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dryMatterOthers1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter others',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'finalTotal1',
-                                    'vt' => 'numerical',
-                                    'l' => 'Final total1',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
+                            'name' => 'compareOption',
+                            'label' => 'I want to...',
+                            'type' => 'select',
+                            'options' => ['check a product' => '1', 'compare 2 products' => '2'],
+                            'dataset' => 'compare option',
+                            'defaults' => [
+                                ['value' => 'check a product', 'when' => null],
+                                ['value' => 'check a product', 'when' => 'userUsesImperialUnits()'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'dryMatterProtein0 = wetMatterProtein0/(1-moisture0)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterProtein0',
-                        'f' => 'wetMatterProtein0/(1-moisture0)',
-                        'r' => ['wetMatterProtein0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterProtein0',
-                        'f' => 'dryMatterProtein0*(1-moisture0)',
-                        'r' => ['dryMatterProtein0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '1 - wetMatterProtein0/dryMatterProtein0',
-                        'r' => ['dryMatterProtein0', 'wetMatterProtein0'],
+        [
+            'title' => 'Guaranteed analysis - Product 1',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterProtein0',
+                            'label' => 'Protein',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'dryMatterFat0 = wetMatterFat0/(1-moisture0)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFat0',
-                        'f' => 'wetMatterFat0/(1-moisture0)',
-                        'r' => ['wetMatterFat0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterFat0',
-                        'f' => 'dryMatterFat0*(1-moisture0)',
-                        'r' => ['dryMatterFat0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '1 - wetMatterFat0/dryMatterFat0',
-                        'r' => ['dryMatterFat0', 'wetMatterFat0'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterFat0',
+                            'label' => 'Fat',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'dryMatterFiber0 = wetMatterFiber0/(1-moisture0)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFiber0',
-                        'f' => 'wetMatterFiber0/(1-moisture0)',
-                        'r' => ['wetMatterFiber0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterFiber0',
-                        'f' => 'dryMatterFiber0*(1-moisture0)',
-                        'r' => ['dryMatterFiber0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '1 - wetMatterFiber0/dryMatterFiber0',
-                        'r' => ['dryMatterFiber0', 'wetMatterFiber0'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterFiber0',
+                            'label' => 'Fiber',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'dryMatterOthers0 = wetMatterOthers0/(1-moisture0)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterOthers0',
-                        'f' => 'wetMatterOthers0/(1-moisture0)',
-                        'r' => ['wetMatterOthers0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterOthers0',
-                        'f' => 'dryMatterOthers0*(1-moisture0)',
-                        'r' => ['dryMatterOthers0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'moisture0',
-                        'f' => '1 - wetMatterOthers0/dryMatterOthers0',
-                        'r' => ['dryMatterOthers0', 'wetMatterOthers0'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'moisture0',
+                            'label' => 'Moisture',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'wetMatterOthers0 = 1 - (wetMatterProtein0 + wetMatterFat0 + wetMatterFiber0 + moisture0)',
-                'var' => [
-                    [
-                        'l' => 'moisture0',
-                        'f' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 + 1',
-                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterFiber0', 'wetMatterOthers0'],
-                    ],
-                    [
-                        'l' => 'wetMatterOthers0',
-                        'f' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - moisture0 + 1',
-                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterFiber0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterFiber0',
-                        'f' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterOthers0 - moisture0 + 1',
-                        'r' => ['wetMatterProtein0', 'wetMatterFat0', 'wetMatterOthers0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterProtein0',
-                        'f' => '-wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
-                        'r' => ['wetMatterFat0', 'wetMatterFiber0', 'wetMatterOthers0', 'moisture0'],
-                    ],
-                    [
-                        'l' => 'wetMatterFat0',
-                        'f' => '-wetMatterProtein0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
-                        'r' => ['wetMatterProtein0', 'wetMatterFiber0', 'wetMatterOthers0', 'moisture0'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'finalTotal0 =  dryMatterProtein0 + dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFat0',
-                        'f' => '-dryMatterProtein0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
-                        'r' => ['dryMatterProtein0', 'dryMatterFiber0', 'dryMatterOthers0', 'finalTotal0'],
-                    ],
-                    [
-                        'l' => 'finalTotal0',
-                        'f' => 'dryMatterProtein0 + dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0',
-                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterFiber0', 'dryMatterOthers0'],
-                    ],
-                    [
-                        'l' => 'dryMatterOthers0',
-                        'f' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterFiber0 + finalTotal0',
-                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterFiber0', 'finalTotal0'],
-                    ],
-                    [
-                        'l' => 'dryMatterFiber0',
-                        'f' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterOthers0 + finalTotal0',
-                        'r' => ['dryMatterProtein0', 'dryMatterFat0', 'dryMatterOthers0', 'finalTotal0'],
-                    ],
-                    [
-                        'l' => 'dryMatterProtein0',
-                        'f' => '-dryMatterFat0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
-                        'r' => ['dryMatterFat0', 'dryMatterFiber0', 'dryMatterOthers0', 'finalTotal0'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'dryMatterProtein1 = wetMatterProtein1/(1-moisture1)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterProtein1',
-                        'f' => 'wetMatterProtein1/(1-moisture1)',
-                        'r' => ['wetMatterProtein1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterProtein1',
-                        'f' => 'dryMatterProtein1*(1-moisture1)',
-                        'r' => ['dryMatterProtein1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'moisture1',
-                        'f' => '1 - wetMatterProtein1/dryMatterProtein1',
-                        'r' => ['dryMatterProtein1', 'wetMatterProtein1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'dryMatterFat1 = wetMatterFat1/(1-moisture1)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFat1',
-                        'f' => 'wetMatterFat1/(1-moisture1)',
-                        'r' => ['wetMatterFat1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFat1',
-                        'f' => 'dryMatterFat1*(1-moisture1)',
-                        'r' => ['dryMatterFat1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'moisture1',
-                        'f' => '1 - wetMatterFat1/dryMatterFat1',
-                        'r' => ['dryMatterFat1', 'wetMatterFat1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'dryMatterFiber1 = wetMatterFiber1/(1-moisture1)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFiber1',
-                        'f' => 'wetMatterFiber1/(1-moisture1)',
-                        'r' => ['wetMatterFiber1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFiber1',
-                        'f' => 'dryMatterFiber1*(1-moisture1)',
-                        'r' => ['dryMatterFiber1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'moisture1',
-                        'f' => '1 - wetMatterFiber1/dryMatterFiber1',
-                        'r' => ['dryMatterFiber1', 'wetMatterFiber1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'dryMatterOthers1 = wetMatterOthers1/(1-moisture1)',
-                'var' => [
-                    [
-                        'l' => 'dryMatterOthers1',
-                        'f' => 'wetMatterOthers1/(1-moisture1)',
-                        'r' => ['wetMatterOthers1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterOthers1',
-                        'f' => 'dryMatterOthers1*(1-moisture1)',
-                        'r' => ['dryMatterOthers1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'moisture1',
-                        'f' => '1 - wetMatterOthers1/dryMatterOthers1',
-                        'r' => ['dryMatterOthers1', 'wetMatterOthers1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'wetMatterOthers1 = 1 - (wetMatterProtein1 + wetMatterFat1 + wetMatterFiber1 + moisture1)',
-                'var' => [
-                    [
-                        'l' => 'moisture1',
-                        'f' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 + 1',
-                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterFiber1', 'wetMatterOthers1'],
-                    ],
-                    [
-                        'l' => 'wetMatterOthers1',
-                        'f' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - moisture1 + 1',
-                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterFiber1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFiber1',
-                        'f' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterOthers1 - moisture1 + 1',
-                        'r' => ['wetMatterProtein1', 'wetMatterFat1', 'wetMatterOthers1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterProtein1',
-                        'f' => '-wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
-                        'r' => ['wetMatterFat1', 'wetMatterFiber1', 'wetMatterOthers1', 'moisture1'],
-                    ],
-                    [
-                        'l' => 'wetMatterFat1',
-                        'f' => '-wetMatterProtein1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
-                        'r' => ['wetMatterProtein1', 'wetMatterFiber1', 'wetMatterOthers1', 'moisture1'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'finalTotal1 =  dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
-                'var' => [
-                    [
-                        'l' => 'dryMatterFat1',
-                        'f' => '-dryMatterProtein1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFiber1', 'dryMatterOthers1', 'finalTotal1'],
-                    ],
-                    [
-                        'l' => 'finalTotal1',
-                        'f' => 'dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterFiber1', 'dryMatterOthers1'],
-                    ],
-                    [
-                        'l' => 'dryMatterOthers1',
-                        'f' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterFiber1 + finalTotal1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterFiber1', 'finalTotal1'],
-                    ],
-                    [
-                        'l' => 'dryMatterFiber1',
-                        'f' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterOthers1 + finalTotal1',
-                        'r' => ['dryMatterProtein1', 'dryMatterFat1', 'dryMatterOthers1', 'finalTotal1'],
-                    ],
-                    [
-                        'l' => 'dryMatterProtein1',
-                        'f' => '-dryMatterFat1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
-                        'r' => ['dryMatterFat1', 'dryMatterFiber1', 'dryMatterOthers1', 'finalTotal1'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterOthers0',
+                            'label' => 'Others',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'dDVjxG-B81feSrAjtIqs8' => [
-                'name' => 'compare option',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'tieX8RyYIZZ1MV9CjETnv', 'label' => 'check a product', 'value' => '1'],
-                    ['uid' => '7H2YX9KACEU0nz39ixXHs', 'label' => 'compare 2 products', 'value' => '2'],
+        [
+            'title' => 'Guaranteed analysis - Product 2',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterProtein1',
+                            'label' => 'Protein',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterFat1',
+                            'label' => 'Fat',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterFiber1',
+                            'label' => 'Fiber',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'moisture1',
+                            'label' => 'Moisture',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wetMatterOthers1',
+                            'label' => 'Others',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
+        [
+            'title' => 'Always hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterFat0',
+                            'label' => 'Dry matter fat',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterProtein0',
+                            'label' => 'Dry matter protein',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterFiber0',
+                            'label' => 'Dry matter fiber',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterOthers0',
+                            'label' => 'Dry matter others',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'finalTotal0',
+                            'label' => 'Final total',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterProtein1',
+                            'label' => 'Dry matter protein',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterFat1',
+                            'label' => 'Dry matter fat',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterFiber1',
+                            'label' => 'Dry matter fiber',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dryMatterOthers1',
+                            'label' => 'Dry matter others',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'finalTotal1',
+                            'label' => 'Final total1',
+                            'type' => 'number',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
+    'formula' => [
+        [
+            'title' => 'dryMatterProtein0 = wetMatterProtein0/(1-moisture0)',
+            'results' => ['dryMatterProtein0' => 'wetMatterProtein0/(1-moisture0)', 'wetMatterProtein0' => 'dryMatterProtein0*(1-moisture0)', 'moisture0' => '1 - wetMatterProtein0/dryMatterProtein0'],
+        ],
+        [
+            'title' => 'dryMatterFat0 = wetMatterFat0/(1-moisture0)',
+            'results' => ['dryMatterFat0' => 'wetMatterFat0/(1-moisture0)', 'wetMatterFat0' => 'dryMatterFat0*(1-moisture0)', 'moisture0' => '1 - wetMatterFat0/dryMatterFat0'],
+        ],
+        [
+            'title' => 'dryMatterFiber0 = wetMatterFiber0/(1-moisture0)',
+            'results' => ['dryMatterFiber0' => 'wetMatterFiber0/(1-moisture0)', 'wetMatterFiber0' => 'dryMatterFiber0*(1-moisture0)', 'moisture0' => '1 - wetMatterFiber0/dryMatterFiber0'],
+        ],
+        [
+            'title' => 'dryMatterOthers0 = wetMatterOthers0/(1-moisture0)',
+            'results' => ['dryMatterOthers0' => 'wetMatterOthers0/(1-moisture0)', 'wetMatterOthers0' => 'dryMatterOthers0*(1-moisture0)', 'moisture0' => '1 - wetMatterOthers0/dryMatterOthers0'],
+        ],
+        [
+            'title' => 'wetMatterOthers0 = 1 - (wetMatterProtein0 + wetMatterFat0 + wetMatterFiber0 + moisture0)',
+            'results' => [
+                'moisture0' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 + 1',
+                'wetMatterOthers0' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterFiber0 - moisture0 + 1',
+                'wetMatterFiber0' => '-wetMatterProtein0 - wetMatterFat0 - wetMatterOthers0 - moisture0 + 1',
+                'wetMatterProtein0' => '-wetMatterFat0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
+                'wetMatterFat0' => '-wetMatterProtein0 - wetMatterFiber0 - wetMatterOthers0 - moisture0 + 1',
+            ],
+        ],
+        [
+            'title' => 'finalTotal0 =  dryMatterProtein0 + dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0',
+            'results' => [
+                'dryMatterFat0' => '-dryMatterProtein0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
+                'finalTotal0' => 'dryMatterProtein0 + dryMatterFat0 + dryMatterFiber0 + dryMatterOthers0',
+                'dryMatterOthers0' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterFiber0 + finalTotal0',
+                'dryMatterFiber0' => '-dryMatterProtein0 - dryMatterFat0 - dryMatterOthers0 + finalTotal0',
+                'dryMatterProtein0' => '-dryMatterFat0 - dryMatterFiber0 - dryMatterOthers0 + finalTotal0',
+            ],
+        ],
+        [
+            'title' => 'dryMatterProtein1 = wetMatterProtein1/(1-moisture1)',
+            'results' => ['dryMatterProtein1' => 'wetMatterProtein1/(1-moisture1)', 'wetMatterProtein1' => 'dryMatterProtein1*(1-moisture1)', 'moisture1' => '1 - wetMatterProtein1/dryMatterProtein1'],
+        ],
+        [
+            'title' => 'dryMatterFat1 = wetMatterFat1/(1-moisture1)',
+            'results' => ['dryMatterFat1' => 'wetMatterFat1/(1-moisture1)', 'wetMatterFat1' => 'dryMatterFat1*(1-moisture1)', 'moisture1' => '1 - wetMatterFat1/dryMatterFat1'],
+        ],
+        [
+            'title' => 'dryMatterFiber1 = wetMatterFiber1/(1-moisture1)',
+            'results' => ['dryMatterFiber1' => 'wetMatterFiber1/(1-moisture1)', 'wetMatterFiber1' => 'dryMatterFiber1*(1-moisture1)', 'moisture1' => '1 - wetMatterFiber1/dryMatterFiber1'],
+        ],
+        [
+            'title' => 'dryMatterOthers1 = wetMatterOthers1/(1-moisture1)',
+            'results' => ['dryMatterOthers1' => 'wetMatterOthers1/(1-moisture1)', 'wetMatterOthers1' => 'dryMatterOthers1*(1-moisture1)', 'moisture1' => '1 - wetMatterOthers1/dryMatterOthers1'],
+        ],
+        [
+            'title' => 'wetMatterOthers1 = 1 - (wetMatterProtein1 + wetMatterFat1 + wetMatterFiber1 + moisture1)',
+            'results' => [
+                'moisture1' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 + 1',
+                'wetMatterOthers1' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterFiber1 - moisture1 + 1',
+                'wetMatterFiber1' => '-wetMatterProtein1 - wetMatterFat1 - wetMatterOthers1 - moisture1 + 1',
+                'wetMatterProtein1' => '-wetMatterFat1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
+                'wetMatterFat1' => '-wetMatterProtein1 - wetMatterFiber1 - wetMatterOthers1 - moisture1 + 1',
+            ],
+        ],
+        [
+            'title' => 'finalTotal1 =  dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
+            'results' => [
+                'dryMatterFat1' => '-dryMatterProtein1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
+                'finalTotal1' => 'dryMatterProtein1 + dryMatterFat1 + dryMatterFiber1 + dryMatterOthers1',
+                'dryMatterOthers1' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterFiber1 + finalTotal1',
+                'dryMatterFiber1' => '-dryMatterProtein1 - dryMatterFat1 - dryMatterOthers1 + finalTotal1',
+                'dryMatterProtein1' => '-dryMatterFat1 - dryMatterFiber1 - dryMatterOthers1 + finalTotal1',
+            ],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Dry matter reads one of fat and fiber from the other, so either can be the value you fill in. Fat comes back in percent unless you switch the unit chip beside the box.
@@ -761,7 +404,7 @@ return [
             <p>Units are handled before the formula runs: Fat offers 6 units and opens on percent, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Dry matter protein</strong> = <code>Protein ÷ (1 − Moisture)</code></li><li><strong>Protein</strong> = <code>Dry matter protein × (1 − Moisture)</code></li><li><strong>Moisture</strong> = <code>1 − Protein ÷ Dry matter protein</code></li><li><strong>Dry matter fat</strong> = <code>Fat ÷ (1 − Moisture)</code></li><li><strong>Fat</strong> = <code>Dry matter fat × (1 − Moisture)</code></li><li><strong>Dry matter fiber</strong> = <code>Fiber ÷ (1 − Moisture)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Dry matter protein</strong> = <code>Protein ÷ (1 − Moisture)</code> — the form to use when Protein and Moisture are the values you have.</li><li><strong>Protein</strong> = <code>Dry matter protein × (1 − Moisture)</code> — the form to use when Dry matter protein and Moisture are the values you have.</li><li><strong>Moisture</strong> = <code>1 − Protein ÷ Dry matter protein</code> — the form to use when Dry matter protein and Protein are the values you have.</li><li><strong>Dry matter fat</strong> = <code>Fat ÷ (1 − Moisture)</code> — the form to use when Fat and Moisture are the values you have.</li><li><strong>Fat</strong> = <code>Dry matter fat × (1 − Moisture)</code> — the form to use when Dry matter fat and Moisture are the values you have.</li><li><strong>Moisture</strong> = <code>1 − Fat ÷ Dry matter fat</code> — the form to use when Dry matter fat and Fat are the values you have.</li><li><strong>Dry matter fiber</strong> = <code>Fiber ÷ (1 − Moisture)</code> — the form to use when Fiber and Moisture are the values you have.</li><li><strong>Fiber</strong> = <code>Dry matter fiber × (1 − Moisture)</code> — the form to use when Dry matter fiber and Moisture are the values you have.</li></ul><p>Any one of Dry matter protein, Protein and Moisture can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Dry matter protein</strong> = <code>Protein ÷ (1 − Moisture)</code></li><li><strong>Protein</strong> = <code>Dry matter protein × (1 − Moisture)</code></li><li><strong>Moisture</strong> = <code>1 − Protein ÷ Dry matter protein</code></li><li><strong>Dry matter fat</strong> = <code>Fat ÷ (1 − Moisture)</code></li><li><strong>Fat</strong> = <code>Dry matter fat × (1 − Moisture)</code></li><li><strong>Dry matter fiber</strong> = <code>Fiber ÷ (1 − Moisture)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Dry matter protein</strong> = <code>Protein ÷ (1 − Moisture)</code> — the form to use when Protein and Moisture are the values you have.</li><li><strong>Protein</strong> = <code>Dry matter protein × (1 − Moisture)</code> — the form to use when Dry matter protein and Moisture are the values you have.</li><li><strong>Moisture</strong> = <code>1 − Protein ÷ Dry matter protein</code> — the form to use when Protein and Dry matter protein are the values you have.</li><li><strong>Dry matter fat</strong> = <code>Fat ÷ (1 − Moisture)</code> — the form to use when Fat and Moisture are the values you have.</li><li><strong>Fat</strong> = <code>Dry matter fat × (1 − Moisture)</code> — the form to use when Dry matter fat and Moisture are the values you have.</li><li><strong>Moisture</strong> = <code>1 − Fat ÷ Dry matter fat</code> — the form to use when Fat and Dry matter fat are the values you have.</li><li><strong>Dry matter fiber</strong> = <code>Fiber ÷ (1 − Moisture)</code> — the form to use when Fiber and Moisture are the values you have.</li><li><strong>Fiber</strong> = <code>Dry matter fiber × (1 − Moisture)</code> — the form to use when Dry matter fiber and Moisture are the values you have.</li></ul><p>Any one of Dry matter protein, Protein and Moisture can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -777,7 +420,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Fat follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are percent and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Protein and Moisture are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Protein and Moisture is what you already know and Fat and Fiber is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/maximum-sustainable-yield">Maximum Sustainable Yield Calculator</a>, <a href="/biology/medullary-index">Medullary Index Calculator</a> and <a href="/biology/metacam-dosage-cat">Metacam dosage for cats</a>.</p>
+            <p>Reach for this page when Protein and Moisture is what you already know and Fat and Fiber is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>Dry matter is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.</p><p>Its own defaults are run through its own formulas every time the page is built, so the examples above are not illustrations: if the relationship changed, the numbers in the article would change with it, and a page whose arithmetic stopped agreeing with its text would fail the check rather than quietly drift.</p><p>What the page keeps is nothing. The calculation is unchanged between visits. has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.</p><p>It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.</p><p>The formula is printed in full above precisely so that the page can be argued with. Compare it with the reference you are working from; if they differ, the difference will be in a constant or a unit, and both are visible in the text.</p>

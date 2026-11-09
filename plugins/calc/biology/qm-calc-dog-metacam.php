@@ -11,296 +11,216 @@
 
 return [
     'name' => 'Dog Metacam dosage',
-    'meta' => ['title' => 'Dog Metacam dosage Calculator: Steps & Units', 'description' => 'Metacam dosing from your dog\'s weight: how many tablets or millilitres to give on the first day, and on the days after, for either of the solution strengths.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
-    'raw' => [
-        'vars' => [
-            'firstAmount' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'firstDay' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'firstDay1' => [
-                'type' => 'presentation',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'firstDay25' => [
-                'type' => 'presentation',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'form' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => '7VGWgiiuqgQ9oauf9Y-FX', 'c' => null],
+    'meta' => ['title' => 'Dog Metacam dosage Calculator: Steps & Units', 'description' => 'Dog Metacam dosage works out tablets Maintain1 and Tablets Maintain25 from dog\'s weight, metacam form and solution\'s strength. Every figure is computed.', 'h1' => 'Dog Metacam dosage Calculator', 'updated' => '2026-08-19'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Did you know that you can create your own tailored calculator using our AI Editor? Try it now '],
+                    ],
                 ],
-                'ds' => 'TRR5AsgdrtJ17KJeQBZ3f',
-            ],
-            'otherAmount' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'otherDoses' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'strength' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'DEJeWo4vYzTQZEAzJycqy', 'c' => null],
-                ],
-                'ds' => 'tnJx2UvaK7hQR0FxEcECK',
-            ],
-            'tabletsMaintain1' => [
-                'type' => 'dependent',
-                'rnd' => ['standard', '4'],
-            ],
-            'tabletsMaintain25' => [
-                'type' => 'dependent',
-                'rnd' => ['standard', '4'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'QF2XHGxne2uhU569dzfgD',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Did you know that you can create your own tailored calculator using our AI Editor? Try it now '],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dog\'s weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'form',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Metacam form',
-                                    'ds' => 'TRR5AsgdrtJ17KJeQBZ3f',
-                                    'opts' => [
-                                        ['7VGWgiiuqgQ9oauf9Y-FX', 'Solution', '1'],
-                                        ['7Q_N5DWXImC3WsRqelNZD', 'Tablets', '0'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'strength',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Solution\'s strength',
-                                    'ds' => 'tnJx2UvaK7hQR0FxEcECK',
-                                    'opts' => [
-                                        ['DEJeWo4vYzTQZEAzJycqy', '0.5 mg/mL', '0.5'],
-                                        ['rStrmtF9SxWuO_2VmDhlj', '1.5 mg/mL', '1.5'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['not(hasValue(weight))', 'Input your dog\'s weight to get the results...&nbsp;'],
-                                        ['form==1 and weight>0', <<<'TXT'
-                                        1⃣ On the first day of therapy, your dog should receive {{firstDay.value}}&nbsp;mg of Metacam, which translates to {{firstAmount.value}} ml of the solution.  For the treatments after day 1, your dog should receive {{otherDoses.value}}&nbsp;mg of Metacam daily, which is {{otherAmount.value}}&nbsp;ml of the solution.
-                                        TXT],
-                                        ['form==0 and weight<=20', <<<'TXT'
-                                        1⃣ On the first day of therapy, your dog should receive {{firstDay1.value}} tablet(s) of Metacam 1&nbsp;mg.  For the treatments after day 1, your dog should receive about {{tabletsMaintain1.value}}&nbsp;tablet(s) of Metacam 1&nbsp;mg.&nbsp;
-                                        TXT],
-                                        ['form==0 and weight>20', <<<'TXT'
-                                        1⃣ On the first day of therapy, your dog should receive {{firstDay25.value}} tablet(s) of Metacam 2.5 mg.  For the treatments after day 1, your dog should receive {{tabletsMaintain25.value}} tablet(s) of Metacam 2.5 mg.
-                                        TXT],
-                                        ['form==0 and weight<4', 'For smaller dogs, Metacam solution would be a better choice.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Dog\'s weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'sBSHW3h1ZlN_39P6Nkb1z',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'firstDay', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'otherDoses', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'firstAmount', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'otherAmount', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'tabletsMaintain1', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'tabletsMaintain25', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'firstDay1', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'firstDay25', 'vt' => 'presentation', 'l' => ''],
-                            ],
+                            'name' => 'form',
+                            'label' => 'Metacam form',
+                            'type' => 'select',
+                            'options' => ['Solution' => '1', 'Tablets' => '0'],
+                            'dataset' => 'form',
+                            'default' => 'Solution',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'supp-results',
-                'title' => 'Results',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'tabletsMaintain1', 'vt' => 'dependent', 'l' => 'Tablets Maintain1'],
-                            ],
+                            'name' => 'strength',
+                            'label' => 'Solution\'s strength',
+                            'type' => 'select',
+                            'options' => ['0.5 mg/mL' => '0.5', '1.5 mg/mL' => '1.5'],
+                            'dataset' => 'tablets_strength',
+                            'default' => '0.5 mg/mL',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'tabletsMaintain25', 'vt' => 'dependent', 'l' => 'Tablets Maintain25'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'not(hasValue(weight))', 'text' => 'Input your dog\'s weight to get the results...&nbsp;'],
+                                ['when' => 'form==1 and weight>0', 'text' => <<<'TXT'
+                                1⃣ On the first day of therapy, your dog should receive {{firstDay.value}}&nbsp;mg of Metacam, which translates to {{firstAmount.value}} ml of the solution.  For the treatments after day 1, your dog should receive {{otherDoses.value}}&nbsp;mg of Metacam daily, which is {{otherAmount.value}}&nbsp;ml of the solution.
+                                TXT],
+                                ['when' => 'form==0 and weight<=20', 'text' => <<<'TXT'
+                                1⃣ On the first day of therapy, your dog should receive {{firstDay1.value}} tablet(s) of Metacam 1&nbsp;mg.  For the treatments after day 1, your dog should receive about {{tabletsMaintain1.value}}&nbsp;tablet(s) of Metacam 1&nbsp;mg.&nbsp;
+                                TXT],
+                                ['when' => 'form==0 and weight>20', 'text' => <<<'TXT'
+                                1⃣ On the first day of therapy, your dog should receive {{firstDay25.value}} tablet(s) of Metacam 2.5 mg.  For the treatments after day 1, your dog should receive {{tabletsMaintain25.value}} tablet(s) of Metacam 2.5 mg.
+                                TXT],
+                                ['when' => 'form==0 and weight<4', 'text' => 'For smaller dogs, Metacam solution would be a better choice.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'tabletsMaintain1 = get_tablets_1(weight)',
-                'var' => [
-                    [
-                        'l' => 'tabletsMaintain1',
-                        'f' => 'get_tablets_1(weight)',
-                        'r' => ['weight'],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'firstDay',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'tabletsMaintain25 = get_tablets_25(weight)',
-                'var' => [
-                    [
-                        'l' => 'tabletsMaintain25',
-                        'f' => 'get_tablets_25(weight)',
-                        'r' => ['weight'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'otherDoses',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'firstAmount',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'otherAmount',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tabletsMaintain1',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '4'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tabletsMaintain25',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '4'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'firstDay1',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'firstDay25',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'TRR5AsgdrtJ17KJeQBZ3f' => [
-                'name' => 'form',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '7VGWgiiuqgQ9oauf9Y-FX', 'label' => 'Solution', 'value' => '1'],
-                    ['uid' => '7Q_N5DWXImC3WsRqelNZD', 'label' => 'Tablets', 'value' => '0'],
+        [
+            'title' => 'Results',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tabletsMaintain1',
+                            'label' => 'Tablets Maintain1',
+                            'type' => 'result',
+                            'rounding' => ['standard', '4'],
+                        ],
+                    ],
                 ],
-            ],
-            'tnJx2UvaK7hQR0FxEcECK' => [
-                'name' => 'tablets_strength',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'DEJeWo4vYzTQZEAzJycqy', 'label' => '0.5 mg/mL', 'value' => '0.5'],
-                    ['uid' => 'rStrmtF9SxWuO_2VmDhlj', 'label' => '1.5 mg/mL', 'value' => '1.5'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tabletsMaintain25',
+                            'label' => 'Tablets Maintain25',
+                            'type' => 'result',
+                            'rounding' => ['standard', '4'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => <<<'TXT'
-        "use strict";omni.define("get_tablets_1",function(weight){if(weight>=4&&weight<=7){return 0.5}else if(weight<=10){return 1}else if(weight<=15){return 1.5}else if(weight<=20){return 2}else{return 1}});omni.define("get_tablets_25",function(weight){if(weight>20&&weight<=25){return 1}else if(weight<=35){return 1.5}else if(weight<=50){return 2}else{return 1}});//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'tabletsMaintain1 = get_tablets_1(weight)',
+            'results' => ['tabletsMaintain1' => 'get_tablets_1(weight)'],
+        ],
+        [
+            'title' => 'tabletsMaintain25 = get_tablets_25(weight)',
+            'results' => ['tabletsMaintain25' => 'get_tablets_25(weight)'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("get_tablets_1",function(weight){if(weight>=4&&weight<=7){return 0.5}else if(weight<=10){return 1}else if(weight<=15){return 1.5}else if(weight<=20){return 2}else{return 1}});omni.define("get_tablets_25",function(weight){if(weight>20&&weight<=25){return 1}else if(weight<=35){return 1.5}else if(weight<=50){return 2}else{return 1}});//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Enter Dog's weight, Metacam form and Solution's strength into Dog Metacam dosage and the answer comes back as Tablets Maintain1 and Tablets Maintain25. Nothing is looked up on this page: tablets Maintain1 is computed from dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -338,7 +258,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Tablets Maintain1 is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The unit tables here are kilograms and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Dog&#039;s weight, Metacam form and Solution&#039;s strength are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Dog&#039;s weight, Metacam form and Solution&#039;s strength measured, Tablets Maintain1 and Tablets Maintain25 wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/specific-growth-rate-od">Specific Growth Rate from OD Calculator</a>, <a href="/biology/specific-growth-rate-from-od">Specific Growth Rate from OD Readings Calculator</a> and <a href="/biology/specific-productivity-qp">Specific Productivity (qP) Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Dog&#039;s weight, Metacam form and Solution&#039;s strength measured, Tablets Maintain1 and Tablets Maintain25 wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>Dog Metacam dosage is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.</p><p>Its own defaults are run through its own formulas every time the page is built, so the examples above are not illustrations: if the relationship changed, the numbers in the article would change with it, and a page whose arithmetic stopped agreeing with its text would fail the check rather than quietly drift.</p><p>What the page keeps is nothing. The calculation is unchanged between visits. has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.</p><p>It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.</p><p>The formula is printed in full above precisely so that the page can be argued with. Compare it with the reference you are working from; if they differ, the difference will be in a constant or a unit, and both are visible in the text.</p>

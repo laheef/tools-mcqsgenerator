@@ -11,355 +11,241 @@
 
 return [
     'name' => 'Cat quality of life',
-    'meta' => ['title' => 'Cat quality of life Calculator: Steps & Units', 'description' => 'Cat quality of life turns hurt, hunger and hydration into quality of life score. Leave hydration empty and the page will solve for it instead. No sign-up.', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
-    'raw' => [
-        'vars' => [
-            'days' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+    'meta' => ['title' => 'Cat quality of life Calculator: Steps & Units', 'description' => 'Cat quality of life turns hurt, hunger and hydration into quality of life score. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Cat quality of life Calculator', 'updated' => '2026-07-23'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'place' => [0, 0],
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        You can use this Quality of Life (QOL) Scale to determine your beloved cat's quality of life, and assess whether to proceed with hospice care or to consider euthanasia. For each item below, score your pet on a scale of 1 to 10, where 1 is unacceptable and 10 is excellent.
+                        TXT],
+                        ['type' => 'note', 'text' => 'To learn more about the scale and each item, see the "How is quality of life measured for cats?" section in the article.'],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'happiness' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hurt',
+                            'label' => 'Hurt  ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Is your cat\'s pain under adequate control?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'hunger' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hunger',
+                            'label' => 'Hunger  ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Is your cat eating enough? Do you need to hand-feed them?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'hurt' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hydration',
+                            'label' => 'Hydration ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Is your cat hydrated? Do they need subcutaneous fluids to stay hydrated?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'hydration' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hygiene',
+                            'label' => 'Hygiene  ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Does your cat need to be cleaned, especially after elimination?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'hygiene' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'happiness',
+                            'label' => 'Happiness ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Does your cat express joy and show other emotional signs?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'mobility' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SS2XgPaqlNvwlBBURKTMS', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mobility',
+                            'label' => 'Mobility ',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Can your cat get up without assistance? Do they regularly want to go for a walk?',
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-                'ds' => 'wt1ODljx_oIWh6OA__HbM',
-            ],
-            'sum_total' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => '3KRMsZt-2najZwJzKUt9j',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        You can use this Quality of Life (QOL) Scale to determine your beloved cat's quality of life, and assess whether to proceed with hospice care or to consider euthanasia. For each item below, score your pet on a scale of 1 to 10, where 1 is unacceptable and 10 is excellent.
-                                        TXT],
-                                    ],
-                                ],
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'To learn more about the scale and each item, see the "How is quality of life measured for cats?" section in the article.'],
-                                    ],
-                                ],
+                            'name' => 'days',
+                            'label' => 'More good days than bad',
+                            'type' => 'select',
+                            'options' => [
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
                             ],
+                            'dataset' => 'Scale',
+                            'control' => 'DROPDOWN',
+                            'help' => 'Do your cat\'s good days outnumber their bad days?&nbsp;',
+                            'default' => '10',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hurt',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Hurt  ',
-                                    'h' => 'Is your cat\'s pain under adequate control?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'sum_total',
+                            'label' => 'Quality of life score',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hunger',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Hunger  ',
-                                    'h' => 'Is your cat eating enough? Do you need to hand-feed them?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hydration',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Hydration ',
-                                    'h' => 'Is your cat hydrated? Do they need subcutaneous fluids to stay hydrated?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hygiene',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Hygiene  ',
-                                    'h' => 'Does your cat need to be cleaned, especially after elimination?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'happiness',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Happiness ',
-                                    'h' => 'Does your cat express joy and show other emotional signs?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mobility',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Mobility ',
-                                    'h' => 'Can your cat get up without assistance? Do they regularly want to go for a walk?',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'days',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'More good days than bad',
-                                    'h' => 'Do your cat\'s good days outnumber their bad days?&nbsp;',
-                                    'ds' => 'wt1ODljx_oIWh6OA__HbM',
-                                    'opts' => [
-                                        ['u6A6KohvHvINpKMr6aoXD', '1', '1'],
-                                        ['QOA9k6O82M9MAPYLe82jY', '2', '2'],
-                                        ['crawt8292GWtS4FGAoM-F', '3', '3'],
-                                        ['xr2oj07lPMfKatR5YELky', '4', '4'],
-                                        ['TFKpHh2rPxA5rotwuuWt2', '5', '5'],
-                                        ['3dYDPOgAYGSumWQAmvWiP', '6', '6'],
-                                        ['puH7C6lyFAkn1w5yXy7Zv', '7', '7'],
-                                        ['6KhqfKTRq5WEFBhxELurv', '8', '8'],
-                                        ['wmkUplOaY-3uDoQdbWG5U', '9', '9'],
-                                        ['SS2XgPaqlNvwlBBURKTMS', '10', '10'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'sum_total', 'vt' => 'numerical', 'l' => 'Quality of life score'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['sum_total <= 35', <<<'TXT'
-                                        According to your score, your cat has an unaccaptable quality of life and shouldn't continue with hospice care. This score could serve as a starting point for you to further explore your cat's quality of life with the help of your veterinarian.
-                                        TXT],
-                                        ['sum_total > 35 and sum_total < 70', 'Your score of {{sum_total.formattedValue}} points indicates an acceptable quality of life for your cat, and that they can continue with hospice care.'],
-                                        ['sum_total == 70', 'Your score of {{sum_total.formattedValue}} points is an excellent (purrfect) result! You can confidently continue with cat hospice care '],
-                                        [null, ' This tool should not replace the professional recommendation of a veterinarian.'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'sum_total <= 35', 'text' => <<<'TXT'
+                                According to your score, your cat has an unaccaptable quality of life and shouldn't continue with hospice care. This score could serve as a starting point for you to further explore your cat's quality of life with the help of your veterinarian.
+                                TXT],
+                                ['when' => 'sum_total > 35 and sum_total < 70', 'text' => 'Your score of {{sum_total.formattedValue}} points indicates an acceptable quality of life for your cat, and that they can continue with hospice care.'],
+                                ['when' => 'sum_total == 70', 'text' => 'Your score of {{sum_total.formattedValue}} points is an excellent (purrfect) result! You can confidently continue with cat hospice care '],
+                                ['when' => null, 'text' => ' This tool should not replace the professional recommendation of a veterinarian.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'sum_total = one_way(hurt + hunger + hydration + hygiene + happiness + mobility + days)',
-                'var' => [
-                    [
-                        'l' => 'sum_total',
-                        'f' => '(days + happiness + hunger + hurt + hydration + hygiene + mobility)',
-                        'r' => [
-                            'days',
-                            'happiness',
-                            'hunger',
-                            'hurt',
-                            'hydration',
-                            'hygiene',
-                            'mobility',
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [
-            'wt1ODljx_oIWh6OA__HbM' => [
-                'name' => 'Scale',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'u6A6KohvHvINpKMr6aoXD', 'label' => '1', 'value' => '1'],
-                    ['uid' => 'QOA9k6O82M9MAPYLe82jY', 'label' => '2', 'value' => '2'],
-                    ['uid' => 'crawt8292GWtS4FGAoM-F', 'label' => '3', 'value' => '3'],
-                    ['uid' => 'xr2oj07lPMfKatR5YELky', 'label' => '4', 'value' => '4'],
-                    ['uid' => 'TFKpHh2rPxA5rotwuuWt2', 'label' => '5', 'value' => '5'],
-                    ['uid' => '3dYDPOgAYGSumWQAmvWiP', 'label' => '6', 'value' => '6'],
-                    ['uid' => 'puH7C6lyFAkn1w5yXy7Zv', 'label' => '7', 'value' => '7'],
-                    ['uid' => '6KhqfKTRq5WEFBhxELurv', 'label' => '8', 'value' => '8'],
-                    ['uid' => 'wmkUplOaY-3uDoQdbWG5U', 'label' => '9', 'value' => '9'],
-                    ['uid' => 'SS2XgPaqlNvwlBBURKTMS', 'label' => '10', 'value' => '10'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'sum_total = one_way(hurt + hunger + hydration + hygiene + happiness + mobility + days)',
+            'results' => ['sum_total' => '(days + happiness + hunger + hurt + hydration + hygiene + mobility)'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Cat quality of life takes Hurt, Hunger and Hydration and returns Quality of life score. The arithmetic is the whole method: quality of life score is worked out from hurt by one formula, applied once.
@@ -402,7 +288,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Quality of life score follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Hurt, Hunger and Hydration are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Hurt, Hunger and Hydration measured, Quality of life score wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-pregnancy">Cat pregnancy Calculator</a>, <a href="/biology/catch-per-unit-effort">Catch Per Unit Effort Calculator</a> and <a href="/biology/catculator">Catculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Hurt, Hunger and Hydration measured, Quality of life score wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

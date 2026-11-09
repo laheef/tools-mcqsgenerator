@@ -11,192 +11,111 @@
 
 return [
     'name' => 'Dog onion toxicity',
-    'meta' => ['title' => 'Dog onion toxicity Calculator: Units & Formula', 'description' => 'Dog onion toxicity turns your dog\'s weight and consumed amount into toxic dose. Leave toxic dose empty and the page will solve for it instead. No sign-up.', 'h1' => 'Dog onion toxicity Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'consumedAmount' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'seriousToxicity' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'toxicDose' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'ZaxCNrKRhIBNTgtOR2RKh',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Dog onion toxicity Calculator: Units & Formula', 'description' => 'Dog onion toxicity turns your dog\'s weight and consumed amount into toxic dose. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Dog onion toxicity Calculator', 'updated' => '2026-08-10'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog\'s weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'consumedAmount',
-                                    'vt' => 'numerical',
-                                    'l' => 'Consumed amount',
-                                    'h' => 'A medium onion weights around 150 g/ 6 oz.&nbsp;',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Your dog\'s weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => '8h-gstSEAbkyxDAhUjKck',
-                'title' => 'Your dog\'s toxic doses',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'toxicDose',
-                                    'vt' => 'numerical',
-                                    'l' => 'Toxic dose',
-                                    'h' => 'Lowest reported dose to cause onion-related toxicosis.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'seriousToxicity',
-                                    'vt' => 'numerical',
-                                    'l' => 'Serious toxicity',
-                                    'h' => 'This amount will probably cause toxic effects and hematologic changes that might be life-threatening.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'The amount eaten by your dog is below the calculated possible toxic dose. Your dog should be fine; however, you still need to observe it.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'The amount eaten by your dog is greater than the calculated toxic dose. Look for professional help and observe your dog carefully!'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Always consult your vet if you have any doubt, or if your pet displays any suspicious behavior.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Remember that onions contain the same poisonous substance as garlic, chives, and leeks.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'consumedAmount',
+                            'label' => 'Consumed amount',
+                            'type' => 'number',
+                            'help' => 'A medium onion weights around 150 g/ 6 oz.&nbsp;',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'toxicDose = (weight/20) * 50',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(2/5)*toxicDose',
-                        'r' => ['toxicDose'],
-                    ],
-                    [
-                        'l' => 'toxicDose',
-                        'f' => '(5/2)*weight',
-                        'r' => ['weight'],
+        [
+            'title' => 'Your dog\'s toxic doses',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'toxicDose',
+                            'label' => 'Toxic dose',
+                            'type' => 'number',
+                            'help' => 'Lowest reported dose to cause onion-related toxicosis.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'seriousToxicity = weight*5',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/5)*seriousToxicity',
-                        'r' => ['seriousToxicity'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'seriousToxicity',
+                            'label' => 'Serious toxicity',
+                            'type' => 'number',
+                            'help' => 'This amount will probably cause toxic effects and hematologic changes that might be life-threatening.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
-                    [
-                        'l' => 'seriousToxicity',
-                        'f' => '5*weight',
-                        'r' => ['weight'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'The amount eaten by your dog is below the calculated possible toxic dose. Your dog should be fine; however, you still need to observe it.'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'The amount eaten by your dog is greater than the calculated toxic dose. Look for professional help and observe your dog carefully!'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Always consult your vet if you have any doubt, or if your pet displays any suspicious behavior.'],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Remember that onions contain the same poisonous substance as garlic, chives, and leeks.'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'toxicDose = (weight/20) * 50',
+            'results' => ['weight' => '(2/5)*toxicDose', 'toxicDose' => '(5/2)*weight'],
+        ],
+        [
+            'title' => 'seriousToxicity = weight*5',
+            'results' => ['weight' => '(1/5)*seriousToxicity', 'seriousToxicity' => '5*weight'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Enter Your dog's weight into Dog onion toxicity and the answer comes back as Toxic dose and Serious toxicity. It is a single relationship that reads toxic dose out of your dog's weight, not a table of canned results keyed by them. Units for Toxic dose default to grams and can be changed on the answer itself.
@@ -234,7 +153,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Toxic dose is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The unit tables here are grams and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Your dog&#039;s weight are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Your dog&#039;s weight is what you already know and Toxic dose and Serious toxicity is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/pcr-annealing-temperature">PCR Annealing Temperature Calculator</a>, <a href="/biology/pcr-cycle-calculator">PCR Cycle Calculator</a> and <a href="/biology/pcr-master-mix-calculator">PCR Master Mix Calculator</a>.</p>
+            <p>Reach for this page when Your dog&#039;s weight is what you already know and Toxic dose and Serious toxicity is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>Dog onion toxicity is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.</p><p>Its own defaults are run through its own formulas every time the page is built, so the examples above are not illustrations: if the relationship changed, the numbers in the article would change with it, and a page whose arithmetic stopped agreeing with its text would fail the check rather than quietly drift.</p><p>What the page keeps is nothing. The calculation is unchanged between visits. has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.</p><p>It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.</p><p>The formula is printed in full above precisely so that the page can be argued with. Compare it with the reference you are working from; if they differ, the difference will be in a constant or a unit, and both are visible in the text.</p>

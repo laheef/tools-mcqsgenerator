@@ -11,192 +11,113 @@
 
 return [
     'name' => 'Cat age',
-    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Example', 'description' => 'Enter conversion type, cat years and human years and Cat age returns human years and cat years. Runs in the browser, so the numbers never leave the page.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'cat_age' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '1'],
-            ],
-            'cat_age_calculation' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'conversion_type' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => '4X77jFp-6t5pdHA5T_BEA', 'c' => null],
-                ],
-                'ds' => '2654',
-            ],
-            'human_age' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'human_age_calculation' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'IMSxu0UxtUGvEesSVM7Ew',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Cat age Calculator: Formula, Steps & Example', 'description' => 'Enter conversion type, cat years and human years and Cat age returns human years and cat years. Every box can be solved for, not only the one in the title.', 'h1' => 'Cat age Calculator', 'updated' => '2026-08-10'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'conversion_type',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Conversion type',
-                                    'ds' => '2654',
-                                    'opts' => [
-                                        ['4X77jFp-6t5pdHA5T_BEA', 'Cat  to humanyears', '1'],
-                                        ['WQCvl0o64H2OwiinKy7Nq', 'Humanto cat  years', '0'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'cat_age_calculation',
-                                    'vt' => 'numerical',
-                                    'l' => 'Cat years',
-                                    'us' => '19',
-                                    'du' => 'yrsmos',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'human_age',
-                                    'vt' => 'numerical',
-                                    'l' => 'Human years',
-                                    'us' => '19',
-                                    'du' => 'yrs',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'human_age_calculation',
-                                    'vt' => 'numerical',
-                                    'l' => 'Human years',
-                                    'us' => '19',
-                                    'du' => 'yrs',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'cat_age',
-                                    'vt' => 'numerical',
-                                    'l' => 'Cat years',
-                                    'us' => '19',
-                                    'du' => 'yrs',
-                                ],
-                            ],
+                            'name' => 'conversion_type',
+                            'label' => 'Conversion type',
+                            'type' => 'select',
+                            'options' => ['Cat  to humanyears' => '1', 'Humanto cat  years' => '0'],
+                            'dataset' => 'if_cat_to_human',
+                            'default' => 'Cat  to humanyears',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'xq_NIzo6SER20PzhouYDj',
-                'title' => 'Create a cat-care tool for free',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        Want to check your cat’s well-being without hard math? Type the following prompt into our  AI Calculator Builder to instantly make a working tool or check the ready example of the Cat Quality of Life Scale Calculator that we built for you.
-                                        TXT],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'cat_age_calculation',
+                            'label' => 'Cat years',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'yrsmos',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Build me a calculator that estimates my cat’s quality of life scale'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'human_age',
+                            'label' => 'Human years',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'yrs',
+                            'rounding' => ['standard', '0'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'human_age_calculation',
+                            'label' => 'Human years',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'yrs',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'cat_age',
+                            'label' => 'Cat years',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'yrs',
+                            'rounding' => ['standard', '1'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'human_age = get_cat_age(cat_age_calculation)',
-                'var' => [
-                    [
-                        'l' => 'human_age',
-                        'f' => 'get_cat_age(cat_age_calculation)',
-                        'r' => ['cat_age_calculation'],
+        [
+            'title' => 'Create a cat-care tool for free',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        Want to check your cat’s well-being without hard math? Type the following prompt into our  AI Calculator Builder to instantly make a working tool or check the ready example of the Cat Quality of Life Scale Calculator that we built for you.
+                        TXT],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'cat_age = get_human_age(human_age_calculation)',
-                'var' => [
-                    [
-                        'l' => 'cat_age',
-                        'f' => 'get_human_age(human_age_calculation)',
-                        'r' => ['human_age_calculation'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Build me a calculator that estimates my cat’s quality of life scale'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '2654' => [
-                'name' => 'if_cat_to_human',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '4X77jFp-6t5pdHA5T_BEA', 'label' => 'Cat  to humanyears', 'value' => '1'],
-                    ['uid' => 'WQCvl0o64H2OwiinKy7Nq', 'label' => 'Humanto cat  years', 'value' => '0'],
-                ],
-            ],
-        ],
-        'js' => <<<'TXT'
-        "use strict";omni.define("get_cat_age",function(cat_age){if(cat_age<=0.5){return 20*cat_age}else if(cat_age<=1){return 10+(cat_age-0.5)*10}else if(cat_age<=2){return 15+(cat_age-1)*9}else{return 24+4*(cat_age-2)}});omni.define("get_human_age",function(human_age_calculation){if(human_age_calculation<=10){return human_age_calculation/20}else if(human_age_calculation<=15){return(human_age_calculation-5)/10}else if(human_age_calculation<=24){return(human_age_calculation-6)/9}else{return(human_age_calculation-16)/4}});//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'human_age = get_cat_age(cat_age_calculation)',
+            'results' => ['human_age' => 'get_cat_age(cat_age_calculation)'],
+        ],
+        [
+            'title' => 'cat_age = get_human_age(human_age_calculation)',
+            'results' => ['cat_age' => 'get_human_age(human_age_calculation)'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("get_cat_age",function(cat_age){if(cat_age<=0.5){return 20*cat_age}else if(cat_age<=1){return 10+(cat_age-0.5)*10}else if(cat_age<=2){return 15+(cat_age-1)*9}else{return 24+4*(cat_age-2)}});omni.define("get_human_age",function(human_age_calculation){if(human_age_calculation<=10){return human_age_calculation/20}else if(human_age_calculation<=15){return(human_age_calculation-5)/10}else if(human_age_calculation<=24){return(human_age_calculation-6)/9}else{return(human_age_calculation-16)/4}});//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => 'Cat age reads one of human years and cat years from the other, so either can be the value you fill in. The main result, Human years, is reported in years.',
         'sections' => [
@@ -232,13 +153,10 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Human years is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The chips cover years. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Cat years measured, Human years and Cat years wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/dsdna-ug-to-pmol-converter">dsDNA µg to pmol Converter Calculator</a>, <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a> and <a href="/biology/encounter-rate">Encounter Rate Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Cat years measured, Human years and Cat years wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
-            TXT],
-            ['title' => 'Where this fits among the other calculators', 'html' => <<<'TXT'
-            <p>Neighbouring pages resolve the parts of the same job that Cat age leaves alone. Knowing which is which saves running the wrong one:</p><p>Worth opening next: <a href="/biology/dsdna-ug-to-pmol-converter">dsDNA µg to pmol Converter Calculator</a>, <a href="/biology/egg-incubation-hatch-date">Egg Incubation Hatch Date Calculator</a> and <a href="/biology/encounter-rate">Encounter Rate Calculator</a>. They follow the same pattern as this page (form, formula, worked example, answer), so a reader who understands one understands the others.</p><p>Using the page that already answers the question you have is better than adapting this one: the formula and the units will match what you expect, and the worked example will be about your case.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>Getting the figure is half the job. The other half is what Cat age is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Cat years beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
