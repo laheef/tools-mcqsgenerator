@@ -11,1382 +11,749 @@
 
 return [
     'name' => 'Wastewater',
-    'meta' => ['title' => 'Wastewater Calculator: Formula, Steps & Example', 'description' => 'Influent and effluent loads from COD, BOD and flow, so a treatment plant\'s suspended solids, organic load and removal rate can be checked against its permit.', 'h1' => 'Wastewater Calculator', 'updated' => '2026-08-12'],
-    'raw' => [
-        'vars' => [
-            'SS_lbs_influent' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'SS_lbs_leaving' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'aeration_vol_mg' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'average_primary_treated_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'average_primary_treated_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'average_untreated_influent_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'average_untreated_influent_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'bod_lb_day' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'bod_or_cod' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'QeLjjpQrmuAFEawRCiiDk', 'c' => null],
-                ],
-                'ds' => 'Y6rdzfBjpDe6s0mEfABtk',
-            ],
-            'calculation_type' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'CvmMwmtYYDiXNMToHX8Xw', 'c' => null],
-                ],
-                'ds' => '7c7eHN5GSvkpmEK20wseW',
-            ],
-            'clarifier_vol_mg' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'clarifier_volume' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'W499kOkFTlv2I7DzbLUOe', 'c' => null],
-                ],
-                'ds' => 'pjX3R3xQVUoBcI5odMQ0V',
-            ],
-            'cod_lb_day' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'effluence_flow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'effluence_sludge' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'effluent_flow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'flow_through' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'fm_ratio_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'fm_ratio_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'free_board' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'free_board_2_clarifier' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'hrt' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length_2_clarifier' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length_tank' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mcrt' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlss' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlss_lbs_aeration' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlss_lbs_total' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlvss_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlvss_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlvss_lbs_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'mlvss_lbs_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pri_clarifier_effluent_SS' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'primary_effluent_bod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'primary_effluent_cod' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'settled_solids' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'side_wall_depth' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'side_wall_depth_2_clarifier' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'sludge_age' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'svi' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'volume' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'W499kOkFTlv2I7DzbLUOe', 'c' => null],
-                ],
-                'ds' => 'pjX3R3xQVUoBcI5odMQ0V',
-            ],
-            'wasted_flow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wasted_sludge' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'width_2_clarifier' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'width_tank' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => '1BrM1jRlsQzaIuMsh--J9',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Wastewater Calculator: Formula, Steps & Example', 'description' => 'Wastewater reports influent SS weight, Effluent BOD, Effluent COD and volume. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Wastewater Calculator', 'updated' => '2026-08-12'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'calculation_type',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'I\'d like to find...',
-                                    'ds' => '7c7eHN5GSvkpmEK20wseW',
-                                    'opts' => [
-                                        ['CvmMwmtYYDiXNMToHX8Xw', 'F/M ratio/MLVSS', '1'],
-                                        ['Q2xt-kDoJ0M6yPsJIKGkQ', 'HRT (hydraulic retention time)', '2'],
-                                        ['uqJLRxGnji8rM1Dflj2-h', 'MCRT (mean cell residence time)', '3'],
-                                        ['GKT4SSMNs0EL93YqVoQn-', 'Sludge age', '4'],
-                                        ['hxp25T2C6TmH87yR6cwVZ', 'SVI (sludge volume index)', '5'],
-                                        ['fNgXlfOY9DD5TZIm9QDyx', 'Everything', '6'],
-                                    ],
-                                ],
+                            'name' => 'calculation_type',
+                            'label' => 'I\'d like to find...',
+                            'type' => 'select',
+                            'options' => [
+                                'F/M ratio/MLVSS' => '1',
+                                'HRT (hydraulic retention time)' => '2',
+                                'MCRT (mean cell residence time)' => '3',
+                                'Sludge age' => '4',
+                                'SVI (sludge volume index)' => '5',
+                                'Everything' => '6',
                             ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bod_or_cod',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'using...',
-                                    'ds' => 'Y6rdzfBjpDe6s0mEfABtk',
-                                    'opts' => [
-                                        ['QeLjjpQrmuAFEawRCiiDk', 'BOD (biochemical oxygen demand)', '1'],
-                                        ['jlA2uTWpAWPRa54Qi46Gy', 'COD (chemical oxygen demand)', '2'],
-                                        ['IPsoq6J7VUSdWQ3NQ8RCw', 'Both', '3'],
-                                    ],
-                                ],
-                            ],
+                            'dataset' => 'calculate',
+                            'control' => 'DROPDOWN',
+                            'default' => 'F/M ratio/MLVSS',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'ZXWmKbXCEr6TsmKmsvnnl',
-                'title' => 'Primary clarifier',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'SS_lbs_influent',
-                                    'vt' => 'numerical',
-                                    'l' => 'Influent SS weight',
-                                    'h' => 'Weight of suspended solids flowing in.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'average_untreated_influent_bod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Average untreated influent BOD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'average_untreated_influent_cod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Average untreated influent COD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'average_primary_treated_bod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Average primary treated BOD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'average_primary_treated_cod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Average primary treated COD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'primary_effluent_bod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Effluent BOD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'primary_effluent_cod',
-                                    'vt' => 'numerical',
-                                    'l' => 'Effluent COD',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'effluent_flow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Effluent flow',
-                                    'h' => 'Also the influent flow into the aeration tank.',
-                                    'us' => '146',
-                                    'du' => 'm-day',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'pri_clarifier_effluent_SS',
-                                    'vt' => 'numerical',
-                                    'l' => 'Effluent SS concentration',
-                                    'h' => 'Suspended solids concentration exiting the primary clarifier.',
-                                    'us' => '21',
-                                    'du' => 'mgpL',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'ohEgij4El7Vn8zXgRfHHM',
-                'title' => 'Aeration tank',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'volume',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Is the volume known?',
-                                    'ds' => 'pjX3R3xQVUoBcI5odMQ0V',
-                                    'opts' => [
-                                        ['1H3nfboQGGGha4V74TrHb', 'No', '0'],
-                                        ['W499kOkFTlv2I7DzbLUOe', 'Yes', '1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length_tank',
-                                    'vt' => 'numerical',
-                                    'l' => 'Length',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'width_tank',
-                                    'vt' => 'numerical',
-                                    'l' => 'Width',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'side_wall_depth',
-                                    'vt' => 'numerical',
-                                    'l' => 'Side wall depth',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'free_board',
-                                    'vt' => 'numerical',
-                                    'l' => 'Free-board',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'aeration_vol_mg',
-                                    'vt' => 'numerical',
-                                    'l' => 'Volume',
-                                    'us' => '20',
-                                    'du' => 'm3',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'flow_through',
-                                    'vt' => 'numerical',
-                                    'l' => 'Flow rate through tank',
-                                    'us' => '146',
-                                    'du' => 'm-hour',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'bod_lb_day',
-                                    'vt' => 'numerical',
-                                    'l' => 'BOD loading',
-                                    'h' => 'The BOD added to aeration.',
-                                    'us' => '147',
-                                    'du' => 'kgd',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'cod_lb_day',
-                                    'vt' => 'numerical',
-                                    'l' => 'COD loading',
-                                    'h' => 'The COD added to aeration.',
-                                    'us' => '147',
-                                    'du' => 'kgd',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hrt',
-                                    'vt' => 'numerical',
-                                    'l' => 'HRT',
-                                    'h' => 'Hydraulic retention time.',
-                                    'us' => '19',
-                                    'du' => 'hrsmin',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlss_lbs_aeration',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLSS weight',
-                                    'h' => 'Weight of suspended solids.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'G9DJHm194_Nst6APxyGng',
-                'title' => 'Secondary clarifiers',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'clarifier_volume',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Is the volume known?',
-                                    'ds' => 'pjX3R3xQVUoBcI5odMQ0V',
-                                    'opts' => [
-                                        ['1H3nfboQGGGha4V74TrHb', 'No', '0'],
-                                        ['W499kOkFTlv2I7DzbLUOe', 'Yes', '1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length_2_clarifier',
-                                    'vt' => 'numerical',
-                                    'l' => 'Length',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'width_2_clarifier',
-                                    'vt' => 'numerical',
-                                    'l' => 'Width',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'side_wall_depth_2_clarifier',
-                                    'vt' => 'numerical',
-                                    'l' => 'Side wall depth',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'free_board_2_clarifier',
-                                    'vt' => 'numerical',
-                                    'l' => 'Free-board',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'clarifier_vol_mg',
-                                    'vt' => 'numerical',
-                                    'l' => 'Volume',
-                                    'us' => '20',
-                                    'du' => 'm3',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'effluence_flow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Flow of secondary effluence',
-                                    'us' => '146',
-                                    'du' => 'm-day',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'effluence_sludge',
-                                    'vt' => 'numerical',
-                                    'l' => 'Solids in secondary effluence',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wasted_flow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Flow of waste sludge',
-                                    'us' => '146',
-                                    'du' => 'm-day',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'wasted_sludge',
-                                    'vt' => 'numerical',
-                                    'l' => 'Solids in waste sludge',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'SS_lbs_leaving',
-                                    'vt' => 'numerical',
-                                    'l' => 'SS leaving activated sludge process',
-                                    'h' => 'Where SS is suspended solids.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => '-5tV1SKKDfuskrArGpj5u',
-                'title' => 'BOD calculation',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'fm_ratio_bod', 'vt' => 'numerical', 'l' => 'F/M ratio'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlvss_bod',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLVSS conc.',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlvss_lbs_bod',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLVSS weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'nBXy266RaF2pZQ8Net-N4',
-                'title' => 'COD calculation',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'fm_ratio_cod', 'vt' => 'numerical', 'l' => 'F/M ratio'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlvss_cod',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLVSS conc.',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlvss_lbs_cod',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLVSS weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'NEL_fGiyjQPjZ-tOE0TXT',
-                'title' => 'Values for entire activated sludge process',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlss',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLSS conc.',
-                                    'us' => '21',
-                                    'du' => 'gperL',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mlss_lbs_total',
-                                    'vt' => 'numerical',
-                                    'l' => 'MLSS total weight',
-                                    'h' => 'In both the aeration tank and secondary clarifiers.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'mcrt',
-                                    'vt' => 'numerical',
-                                    'l' => 'MCRT',
-                                    'h' => 'Mean cell residence time. Also known as SRT (solid retention time).',
-                                    'us' => '19',
-                                    'du' => 'hrsmin',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'sludge_age',
-                                    'vt' => 'numerical',
-                                    'l' => 'Sludge age',
-                                    'us' => '19',
-                                    'du' => 'hrsmin',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => '8xByG5FhsYeazD2GRBaqo',
-                'title' => 'Laboratory calculations',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'settled_solids',
-                                    'vt' => 'numerical',
-                                    'l' => 'Settled solids',
-                                    'us' => '20',
-                                    'du' => 'ml',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'svi',
-                                    'vt' => 'numerical',
-                                    'l' => 'SVI',
-                                    'suf' => 'mL/g',
-                                    'h' => 'Sludge volume index.',
-                                ],
-                            ],
+                            'name' => 'bod_or_cod',
+                            'label' => 'using...',
+                            'type' => 'select',
+                            'options' => ['BOD (biochemical oxygen demand)' => '1', 'COD (chemical oxygen demand)' => '2', 'Both' => '3'],
+                            'dataset' => 'bod/cod',
+                            'default' => 'BOD (biochemical oxygen demand)',
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'primary_effluent_cod = average_untreated_influent_cod - average_primary_treated_cod',
-                'var' => [
-                    [
-                        'l' => 'primary_effluent_cod',
-                        'f' => '-average_primary_treated_cod + average_untreated_influent_cod',
-                        'r' => ['average_primary_treated_cod', 'average_untreated_influent_cod'],
-                    ],
-                    [
-                        'l' => 'average_primary_treated_cod',
-                        'f' => 'average_untreated_influent_cod - primary_effluent_cod',
-                        'r' => ['primary_effluent_cod', 'average_untreated_influent_cod'],
-                    ],
-                    [
-                        'l' => 'average_untreated_influent_cod',
-                        'f' => 'average_primary_treated_cod + primary_effluent_cod',
-                        'r' => ['primary_effluent_cod', 'average_primary_treated_cod'],
+        [
+            'title' => 'Primary clarifier',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'SS_lbs_influent',
+                            'label' => 'Influent SS weight',
+                            'type' => 'number',
+                            'help' => 'Weight of suspended solids flowing in.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'primary_effluent_bod = average_untreated_influent_bod - average_primary_treated_bod',
-                'var' => [
-                    [
-                        'l' => 'average_primary_treated_bod',
-                        'f' => 'average_untreated_influent_bod - primary_effluent_bod',
-                        'r' => ['average_untreated_influent_bod', 'primary_effluent_bod'],
-                    ],
-                    [
-                        'l' => 'average_untreated_influent_bod',
-                        'f' => 'average_primary_treated_bod + primary_effluent_bod',
-                        'r' => ['average_primary_treated_bod', 'primary_effluent_bod'],
-                    ],
-                    [
-                        'l' => 'primary_effluent_bod',
-                        'f' => '-average_primary_treated_bod + average_untreated_influent_bod',
-                        'r' => ['average_primary_treated_bod', 'average_untreated_influent_bod'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'average_untreated_influent_bod',
+                            'label' => 'Average untreated influent BOD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'cod_lb_day = effluent_flow * primary_effluent_cod',
-                'var' => [
-                    [
-                        'l' => 'primary_effluent_cod',
-                        'f' => 'cod_lb_day/effluent_flow',
-                        'r' => ['effluent_flow', 'cod_lb_day'],
-                    ],
-                    [
-                        'l' => 'effluent_flow',
-                        'f' => 'cod_lb_day/primary_effluent_cod',
-                        'r' => ['primary_effluent_cod', 'cod_lb_day'],
-                    ],
-                    [
-                        'l' => 'cod_lb_day',
-                        'f' => 'effluent_flow*primary_effluent_cod',
-                        'r' => ['primary_effluent_cod', 'effluent_flow'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'average_untreated_influent_cod',
+                            'label' => 'Average untreated influent COD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'bod_lb_day = effluent_flow * primary_effluent_bod',
-                'var' => [
-                    [
-                        'l' => 'effluent_flow',
-                        'f' => 'bod_lb_day/primary_effluent_bod',
-                        'r' => ['primary_effluent_bod', 'bod_lb_day'],
-                    ],
-                    [
-                        'l' => 'primary_effluent_bod',
-                        'f' => 'bod_lb_day/effluent_flow',
-                        'r' => ['effluent_flow', 'bod_lb_day'],
-                    ],
-                    [
-                        'l' => 'bod_lb_day',
-                        'f' => 'effluent_flow*primary_effluent_bod',
-                        'r' => ['effluent_flow', 'primary_effluent_bod'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'average_primary_treated_bod',
+                            'label' => 'Average primary treated BOD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'aeration_vol_mg = length_tank * width_tank * (side_wall_depth - free_board) ',
-                'var' => [
-                    [
-                        'l' => 'free_board',
-                        'f' => '-aeration_vol_mg/(length_tank*width_tank) + side_wall_depth',
-                        'r' => ['width_tank', 'length_tank', 'aeration_vol_mg', 'side_wall_depth'],
-                    ],
-                    [
-                        'l' => 'width_tank',
-                        'f' => '-aeration_vol_mg/(length_tank*(free_board - side_wall_depth))',
-                        'r' => ['free_board', 'length_tank', 'aeration_vol_mg', 'side_wall_depth'],
-                    ],
-                    [
-                        'l' => 'length_tank',
-                        'f' => '-aeration_vol_mg/(width_tank*(free_board - side_wall_depth))',
-                        'r' => ['free_board', 'width_tank', 'aeration_vol_mg', 'side_wall_depth'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => 'length_tank*width_tank*(-free_board + side_wall_depth)',
-                        'r' => ['free_board', 'width_tank', 'length_tank', 'side_wall_depth'],
-                    ],
-                    [
-                        'l' => 'side_wall_depth',
-                        'f' => 'aeration_vol_mg/(length_tank*width_tank) + free_board',
-                        'r' => ['free_board', 'width_tank', 'length_tank', 'aeration_vol_mg'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'average_primary_treated_cod',
+                            'label' => 'Average primary treated COD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'clarifier_vol_mg = length_2_clarifier * width_2_clarifier * (side_wall_depth_2_clarifier  - free_board_2_clarifier )',
-                'var' => [
-                    [
-                        'l' => 'width_2_clarifier',
-                        'f' => '-clarifier_vol_mg/(length_2_clarifier*(free_board_2_clarifier - side_wall_depth_2_clarifier))',
-                        'r' => ['side_wall_depth_2_clarifier', 'free_board_2_clarifier', 'clarifier_vol_mg', 'length_2_clarifier'],
-                    ],
-                    [
-                        'l' => 'side_wall_depth_2_clarifier',
-                        'f' => 'clarifier_vol_mg/(length_2_clarifier*width_2_clarifier) + free_board_2_clarifier',
-                        'r' => ['width_2_clarifier', 'free_board_2_clarifier', 'clarifier_vol_mg', 'length_2_clarifier'],
-                    ],
-                    [
-                        'l' => 'free_board_2_clarifier',
-                        'f' => '-clarifier_vol_mg/(length_2_clarifier*width_2_clarifier) + side_wall_depth_2_clarifier',
-                        'r' => ['width_2_clarifier', 'side_wall_depth_2_clarifier', 'clarifier_vol_mg', 'length_2_clarifier'],
-                    ],
-                    [
-                        'l' => 'clarifier_vol_mg',
-                        'f' => 'length_2_clarifier*width_2_clarifier*(-free_board_2_clarifier + side_wall_depth_2_clarifier)',
-                        'r' => ['width_2_clarifier', 'side_wall_depth_2_clarifier', 'free_board_2_clarifier', 'length_2_clarifier'],
-                    ],
-                    [
-                        'l' => 'length_2_clarifier',
-                        'f' => '-clarifier_vol_mg/(width_2_clarifier*(free_board_2_clarifier - side_wall_depth_2_clarifier))',
-                        'r' => ['width_2_clarifier', 'side_wall_depth_2_clarifier', 'free_board_2_clarifier', 'clarifier_vol_mg'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'primary_effluent_bod',
+                            'label' => 'Effluent BOD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'hrt = aeration_vol_mg / (flow_through)',
-                'var' => [
-                    [
-                        'l' => 'flow_through',
-                        'f' => 'aeration_vol_mg/hrt',
-                        'r' => ['hrt', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'hrt',
-                        'f' => 'aeration_vol_mg/flow_through',
-                        'r' => ['flow_through', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => 'flow_through*hrt',
-                        'r' => ['flow_through', 'hrt'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'primary_effluent_cod',
+                            'label' => 'Effluent COD',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'mlvss_lbs_bod = bod_lb_day / fm_ratio_bod',
-                'var' => [
-                    [
-                        'l' => 'mlvss_lbs_bod',
-                        'f' => 'bod_lb_day/fm_ratio_bod',
-                        'r' => ['fm_ratio_bod', 'bod_lb_day'],
-                    ],
-                    [
-                        'l' => 'fm_ratio_bod',
-                        'f' => 'bod_lb_day/mlvss_lbs_bod',
-                        'r' => ['mlvss_lbs_bod', 'bod_lb_day'],
-                    ],
-                    [
-                        'l' => 'bod_lb_day',
-                        'f' => 'fm_ratio_bod*mlvss_lbs_bod',
-                        'r' => ['mlvss_lbs_bod', 'fm_ratio_bod'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'effluent_flow',
+                            'label' => 'Effluent flow',
+                            'type' => 'number',
+                            'help' => 'Also the influent flow into the aeration tank.',
+                            'unit' => '146',
+                            'unit_default' => 'm-day',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'mlvss_lbs_cod = cod_lb_day / fm_ratio_cod',
-                'var' => [
-                    [
-                        'l' => 'mlvss_lbs_cod',
-                        'f' => 'cod_lb_day/fm_ratio_cod',
-                        'r' => ['fm_ratio_cod', 'cod_lb_day'],
-                    ],
-                    [
-                        'l' => 'fm_ratio_cod',
-                        'f' => 'cod_lb_day/mlvss_lbs_cod',
-                        'r' => ['mlvss_lbs_cod', 'cod_lb_day'],
-                    ],
-                    [
-                        'l' => 'cod_lb_day',
-                        'f' => 'fm_ratio_cod*mlvss_lbs_cod',
-                        'r' => ['mlvss_lbs_cod', 'fm_ratio_cod'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'mlvss_bod = mlvss_lbs_bod / aeration_vol_mg ',
-                'var' => [
-                    [
-                        'l' => 'mlvss_lbs_bod',
-                        'f' => 'aeration_vol_mg*mlvss_bod',
-                        'r' => ['mlvss_bod', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'mlvss_bod',
-                        'f' => 'mlvss_lbs_bod/aeration_vol_mg',
-                        'r' => ['mlvss_lbs_bod', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => 'mlvss_lbs_bod/mlvss_bod',
-                        'r' => ['mlvss_lbs_bod', 'mlvss_bod'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'mlvss_cod = mlvss_lbs_cod / aeration_vol_mg ',
-                'var' => [
-                    [
-                        'l' => 'mlvss_lbs_cod',
-                        'f' => 'aeration_vol_mg*mlvss_cod',
-                        'r' => ['mlvss_cod', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'mlvss_cod',
-                        'f' => 'mlvss_lbs_cod/aeration_vol_mg',
-                        'r' => ['mlvss_lbs_cod', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => 'mlvss_lbs_cod/mlvss_cod',
-                        'r' => ['mlvss_lbs_cod', 'mlvss_cod'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'mlss_lbs_total = mlss * (aeration_vol_mg + clarifier_vol_mg)',
-                'var' => [
-                    [
-                        'l' => 'mlss_lbs_total',
-                        'f' => 'mlss*(aeration_vol_mg + clarifier_vol_mg)',
-                        'r' => ['clarifier_vol_mg', 'mlss', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'clarifier_vol_mg',
-                        'f' => '-aeration_vol_mg + mlss_lbs_total/mlss',
-                        'r' => ['mlss_lbs_total', 'mlss', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'mlss',
-                        'f' => 'mlss_lbs_total/(aeration_vol_mg + clarifier_vol_mg)',
-                        'r' => ['mlss_lbs_total', 'clarifier_vol_mg', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => '-clarifier_vol_mg + mlss_lbs_total/mlss',
-                        'r' => ['mlss_lbs_total', 'clarifier_vol_mg', 'mlss'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'SS_lbs_leaving = (wasted_sludge * wasted_flow) +  (effluence_sludge * effluence_flow)',
-                'var' => [
-                    [
-                        'l' => 'SS_lbs_leaving',
-                        'f' => 'effluence_flow*effluence_sludge + wasted_flow*wasted_sludge',
-                        'r' => ['wasted_flow', 'wasted_sludge', 'effluence_flow', 'effluence_sludge'],
-                    ],
-                    [
-                        'l' => 'wasted_flow',
-                        'f' => '(SS_lbs_leaving - effluence_flow*effluence_sludge)/wasted_sludge',
-                        'r' => ['SS_lbs_leaving', 'wasted_sludge', 'effluence_flow', 'effluence_sludge'],
-                    ],
-                    [
-                        'l' => 'wasted_sludge',
-                        'f' => '(SS_lbs_leaving - effluence_flow*effluence_sludge)/wasted_flow',
-                        'r' => ['SS_lbs_leaving', 'wasted_flow', 'effluence_flow', 'effluence_sludge'],
-                    ],
-                    [
-                        'l' => 'effluence_flow',
-                        'f' => '(SS_lbs_leaving - wasted_flow*wasted_sludge)/effluence_sludge',
-                        'r' => ['SS_lbs_leaving', 'wasted_flow', 'wasted_sludge', 'effluence_sludge'],
-                    ],
-                    [
-                        'l' => 'effluence_sludge',
-                        'f' => '(SS_lbs_leaving - wasted_flow*wasted_sludge)/effluence_flow',
-                        'r' => ['SS_lbs_leaving', 'wasted_flow', 'wasted_sludge', 'effluence_flow'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'mcrt = mlss_lbs_total / SS_lbs_leaving',
-                'var' => [
-                    [
-                        'l' => 'SS_lbs_leaving',
-                        'f' => 'mlss_lbs_total/mcrt',
-                        'r' => ['mlss_lbs_total', 'mcrt'],
-                    ],
-                    [
-                        'l' => 'mlss_lbs_total',
-                        'f' => 'SS_lbs_leaving*mcrt',
-                        'r' => ['SS_lbs_leaving', 'mcrt'],
-                    ],
-                    [
-                        'l' => 'mcrt',
-                        'f' => 'mlss_lbs_total/SS_lbs_leaving',
-                        'r' => ['SS_lbs_leaving', 'mlss_lbs_total'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'mlss_lbs_aeration = mlss * aeration_vol_mg ',
-                'var' => [
-                    [
-                        'l' => 'mlss',
-                        'f' => 'mlss_lbs_aeration/aeration_vol_mg',
-                        'r' => ['mlss_lbs_aeration', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'mlss_lbs_aeration',
-                        'f' => 'aeration_vol_mg*mlss',
-                        'r' => ['mlss', 'aeration_vol_mg'],
-                    ],
-                    [
-                        'l' => 'aeration_vol_mg',
-                        'f' => 'mlss_lbs_aeration/mlss',
-                        'r' => ['mlss', 'mlss_lbs_aeration'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'SS_lbs_influent = pri_clarifier_effluent_SS * effluent_flow',
-                'var' => [
-                    [
-                        'l' => 'SS_lbs_influent',
-                        'f' => 'effluent_flow*pri_clarifier_effluent_SS',
-                        'r' => ['pri_clarifier_effluent_SS', 'effluent_flow'],
-                    ],
-                    [
-                        'l' => 'pri_clarifier_effluent_SS',
-                        'f' => 'SS_lbs_influent/effluent_flow',
-                        'r' => ['SS_lbs_influent', 'effluent_flow'],
-                    ],
-                    [
-                        'l' => 'effluent_flow',
-                        'f' => 'SS_lbs_influent/pri_clarifier_effluent_SS',
-                        'r' => ['SS_lbs_influent', 'pri_clarifier_effluent_SS'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'sludge_age = mlss_lbs_aeration / SS_lbs_influent',
-                'var' => [
-                    [
-                        'l' => 'SS_lbs_influent',
-                        'f' => 'mlss_lbs_aeration/sludge_age',
-                        'r' => ['sludge_age', 'mlss_lbs_aeration'],
-                    ],
-                    [
-                        'l' => 'sludge_age',
-                        'f' => 'mlss_lbs_aeration/SS_lbs_influent',
-                        'r' => ['SS_lbs_influent', 'mlss_lbs_aeration'],
-                    ],
-                    [
-                        'l' => 'mlss_lbs_aeration',
-                        'f' => 'SS_lbs_influent*sludge_age',
-                        'r' => ['SS_lbs_influent', 'sludge_age'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'svi = (settled_solids ) / (mlss )',
-                'var' => [
-                    [
-                        'l' => 'svi',
-                        'f' => 'settled_solids/mlss',
-                        'r' => ['mlss', 'settled_solids'],
-                    ],
-                    [
-                        'l' => 'mlss',
-                        'f' => 'settled_solids/svi',
-                        'r' => ['svi', 'settled_solids'],
-                    ],
-                    [
-                        'l' => 'settled_solids',
-                        'f' => 'mlss*svi',
-                        'r' => ['svi', 'mlss'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pri_clarifier_effluent_SS',
+                            'label' => 'Effluent SS concentration',
+                            'type' => 'number',
+                            'help' => 'Suspended solids concentration exiting the primary clarifier.',
+                            'unit' => '21',
+                            'unit_default' => 'mgpL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'Y6rdzfBjpDe6s0mEfABtk' => [
-                'name' => 'bod/cod',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'QeLjjpQrmuAFEawRCiiDk', 'label' => 'BOD (biochemical oxygen demand)', 'value' => '1'],
-                    ['uid' => 'jlA2uTWpAWPRa54Qi46Gy', 'label' => 'COD (chemical oxygen demand)', 'value' => '2'],
-                    ['uid' => 'IPsoq6J7VUSdWQ3NQ8RCw', 'label' => 'Both', 'value' => '3'],
+        [
+            'title' => 'Aeration tank',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'volume',
+                            'label' => 'Is the volume known?',
+                            'type' => 'select',
+                            'options' => ['No' => '0', 'Yes' => '1'],
+                            'dataset' => 'volume',
+                            'default' => 'Yes',
+                        ],
+                    ],
                 ],
-            ],
-            '7c7eHN5GSvkpmEK20wseW' => [
-                'name' => 'calculate',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'CvmMwmtYYDiXNMToHX8Xw', 'label' => 'F/M ratio/MLVSS', 'value' => '1'],
-                    ['uid' => 'Q2xt-kDoJ0M6yPsJIKGkQ', 'label' => 'HRT (hydraulic retention time)', 'value' => '2'],
-                    ['uid' => 'uqJLRxGnji8rM1Dflj2-h', 'label' => 'MCRT (mean cell residence time)', 'value' => '3'],
-                    ['uid' => 'GKT4SSMNs0EL93YqVoQn-', 'label' => 'Sludge age', 'value' => '4'],
-                    ['uid' => 'hxp25T2C6TmH87yR6cwVZ', 'label' => 'SVI (sludge volume index)', 'value' => '5'],
-                    ['uid' => 'fNgXlfOY9DD5TZIm9QDyx', 'label' => 'Everything', 'value' => '6'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'length_tank',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
-            ],
-            'pjX3R3xQVUoBcI5odMQ0V' => [
-                'name' => 'volume',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => '1H3nfboQGGGha4V74TrHb', 'label' => 'No', 'value' => '0'],
-                    ['uid' => 'W499kOkFTlv2I7DzbLUOe', 'label' => 'Yes', 'value' => '1'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'width_tank',
+                            'label' => 'Width',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'side_wall_depth',
+                            'label' => 'Side wall depth',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'free_board',
+                            'label' => 'Free-board',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'aeration_vol_mg',
+                            'label' => 'Volume',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'm3',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'flow_through',
+                            'label' => 'Flow rate through tank',
+                            'type' => 'number',
+                            'unit' => '146',
+                            'unit_default' => 'm-hour',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'bod_lb_day',
+                            'label' => 'BOD loading',
+                            'type' => 'number',
+                            'help' => 'The BOD added to aeration.',
+                            'unit' => '147',
+                            'unit_default' => 'kgd',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'cod_lb_day',
+                            'label' => 'COD loading',
+                            'type' => 'number',
+                            'help' => 'The COD added to aeration.',
+                            'unit' => '147',
+                            'unit_default' => 'kgd',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'hrt',
+                            'label' => 'HRT',
+                            'type' => 'number',
+                            'help' => 'Hydraulic retention time.',
+                            'unit' => '19',
+                            'unit_default' => 'hrsmin',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlss_lbs_aeration',
+                            'label' => 'MLSS weight',
+                            'type' => 'number',
+                            'help' => 'Weight of suspended solids.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
+        [
+            'title' => 'Secondary clarifiers',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'clarifier_volume',
+                            'label' => 'Is the volume known?',
+                            'type' => 'select',
+                            'options' => ['No' => '0', 'Yes' => '1'],
+                            'dataset' => 'volume',
+                            'default' => 'Yes',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'length_2_clarifier',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'width_2_clarifier',
+                            'label' => 'Width',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'side_wall_depth_2_clarifier',
+                            'label' => 'Side wall depth',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'free_board_2_clarifier',
+                            'label' => 'Free-board',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'clarifier_vol_mg',
+                            'label' => 'Volume',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'm3',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'effluence_flow',
+                            'label' => 'Flow of secondary effluence',
+                            'type' => 'number',
+                            'unit' => '146',
+                            'unit_default' => 'm-day',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'effluence_sludge',
+                            'label' => 'Solids in secondary effluence',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wasted_flow',
+                            'label' => 'Flow of waste sludge',
+                            'type' => 'number',
+                            'unit' => '146',
+                            'unit_default' => 'm-day',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'wasted_sludge',
+                            'label' => 'Solids in waste sludge',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'SS_lbs_leaving',
+                            'label' => 'SS leaving activated sludge process',
+                            'type' => 'number',
+                            'help' => 'Where SS is suspended solids.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => 'BOD calculation',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'fm_ratio_bod',
+                            'label' => 'F/M ratio',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlvss_bod',
+                            'label' => 'MLVSS conc.',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlvss_lbs_bod',
+                            'label' => 'MLVSS weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => 'COD calculation',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'fm_ratio_cod',
+                            'label' => 'F/M ratio',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlvss_cod',
+                            'label' => 'MLVSS conc.',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlvss_lbs_cod',
+                            'label' => 'MLVSS weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Values for entire activated sludge process',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlss',
+                            'label' => 'MLSS conc.',
+                            'type' => 'number',
+                            'unit' => '21',
+                            'unit_default' => 'gperL',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mlss_lbs_total',
+                            'label' => 'MLSS total weight',
+                            'type' => 'number',
+                            'help' => 'In both the aeration tank and secondary clarifiers.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'mcrt',
+                            'label' => 'MCRT',
+                            'type' => 'number',
+                            'help' => 'Mean cell residence time. Also known as SRT (solid retention time).',
+                            'unit' => '19',
+                            'unit_default' => 'hrsmin',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'sludge_age',
+                            'label' => 'Sludge age',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'hrsmin',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Laboratory calculations',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'settled_solids',
+                            'label' => 'Settled solids',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'ml',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'svi',
+                            'label' => 'SVI',
+                            'type' => 'number',
+                            'suffix' => 'mL/g',
+                            'help' => 'Sludge volume index.',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
+    'formula' => [
+        [
+            'title' => 'primary_effluent_cod = average_untreated_influent_cod - average_primary_treated_cod',
+            'results' => ['primary_effluent_cod' => '-average_primary_treated_cod + average_untreated_influent_cod', 'average_primary_treated_cod' => 'average_untreated_influent_cod - primary_effluent_cod', 'average_untreated_influent_cod' => 'average_primary_treated_cod + primary_effluent_cod'],
+        ],
+        [
+            'title' => 'primary_effluent_bod = average_untreated_influent_bod - average_primary_treated_bod',
+            'results' => ['average_primary_treated_bod' => 'average_untreated_influent_bod - primary_effluent_bod', 'average_untreated_influent_bod' => 'average_primary_treated_bod + primary_effluent_bod', 'primary_effluent_bod' => '-average_primary_treated_bod + average_untreated_influent_bod'],
+        ],
+        [
+            'title' => 'cod_lb_day = effluent_flow * primary_effluent_cod',
+            'results' => ['primary_effluent_cod' => 'cod_lb_day/effluent_flow', 'effluent_flow' => 'cod_lb_day/primary_effluent_cod', 'cod_lb_day' => 'effluent_flow*primary_effluent_cod'],
+        ],
+        [
+            'title' => 'bod_lb_day = effluent_flow * primary_effluent_bod',
+            'results' => ['effluent_flow' => 'bod_lb_day/primary_effluent_bod', 'primary_effluent_bod' => 'bod_lb_day/effluent_flow', 'bod_lb_day' => 'effluent_flow*primary_effluent_bod'],
+        ],
+        [
+            'title' => 'aeration_vol_mg = length_tank * width_tank * (side_wall_depth - free_board) ',
+            'results' => [
+                'free_board' => '-aeration_vol_mg/(length_tank*width_tank) + side_wall_depth',
+                'width_tank' => '-aeration_vol_mg/(length_tank*(free_board - side_wall_depth))',
+                'length_tank' => '-aeration_vol_mg/(width_tank*(free_board - side_wall_depth))',
+                'aeration_vol_mg' => 'length_tank*width_tank*(-free_board + side_wall_depth)',
+                'side_wall_depth' => 'aeration_vol_mg/(length_tank*width_tank) + free_board',
+            ],
+        ],
+        [
+            'title' => 'clarifier_vol_mg = length_2_clarifier * width_2_clarifier * (side_wall_depth_2_clarifier  - free_board_2_clarifier )',
+            'results' => [
+                'width_2_clarifier' => '-clarifier_vol_mg/(length_2_clarifier*(free_board_2_clarifier - side_wall_depth_2_clarifier))',
+                'side_wall_depth_2_clarifier' => 'clarifier_vol_mg/(length_2_clarifier*width_2_clarifier) + free_board_2_clarifier',
+                'free_board_2_clarifier' => '-clarifier_vol_mg/(length_2_clarifier*width_2_clarifier) + side_wall_depth_2_clarifier',
+                'clarifier_vol_mg' => 'length_2_clarifier*width_2_clarifier*(-free_board_2_clarifier + side_wall_depth_2_clarifier)',
+                'length_2_clarifier' => '-clarifier_vol_mg/(width_2_clarifier*(free_board_2_clarifier - side_wall_depth_2_clarifier))',
+            ],
+        ],
+        [
+            'title' => 'hrt = aeration_vol_mg / (flow_through)',
+            'results' => ['flow_through' => 'aeration_vol_mg/hrt', 'hrt' => 'aeration_vol_mg/flow_through', 'aeration_vol_mg' => 'flow_through*hrt'],
+        ],
+        [
+            'title' => 'mlvss_lbs_bod = bod_lb_day / fm_ratio_bod',
+            'results' => ['mlvss_lbs_bod' => 'bod_lb_day/fm_ratio_bod', 'fm_ratio_bod' => 'bod_lb_day/mlvss_lbs_bod', 'bod_lb_day' => 'fm_ratio_bod*mlvss_lbs_bod'],
+        ],
+        [
+            'title' => 'mlvss_lbs_cod = cod_lb_day / fm_ratio_cod',
+            'results' => ['mlvss_lbs_cod' => 'cod_lb_day/fm_ratio_cod', 'fm_ratio_cod' => 'cod_lb_day/mlvss_lbs_cod', 'cod_lb_day' => 'fm_ratio_cod*mlvss_lbs_cod'],
+        ],
+        [
+            'title' => 'mlvss_bod = mlvss_lbs_bod / aeration_vol_mg ',
+            'results' => ['mlvss_lbs_bod' => 'aeration_vol_mg*mlvss_bod', 'mlvss_bod' => 'mlvss_lbs_bod/aeration_vol_mg', 'aeration_vol_mg' => 'mlvss_lbs_bod/mlvss_bod'],
+        ],
+        [
+            'title' => 'mlvss_cod = mlvss_lbs_cod / aeration_vol_mg ',
+            'results' => ['mlvss_lbs_cod' => 'aeration_vol_mg*mlvss_cod', 'mlvss_cod' => 'mlvss_lbs_cod/aeration_vol_mg', 'aeration_vol_mg' => 'mlvss_lbs_cod/mlvss_cod'],
+        ],
+        [
+            'title' => 'mlss_lbs_total = mlss * (aeration_vol_mg + clarifier_vol_mg)',
+            'results' => ['mlss_lbs_total' => 'mlss*(aeration_vol_mg + clarifier_vol_mg)', 'clarifier_vol_mg' => '-aeration_vol_mg + mlss_lbs_total/mlss', 'mlss' => 'mlss_lbs_total/(aeration_vol_mg + clarifier_vol_mg)', 'aeration_vol_mg' => '-clarifier_vol_mg + mlss_lbs_total/mlss'],
+        ],
+        [
+            'title' => 'SS_lbs_leaving = (wasted_sludge * wasted_flow) +  (effluence_sludge * effluence_flow)',
+            'results' => [
+                'SS_lbs_leaving' => 'effluence_flow*effluence_sludge + wasted_flow*wasted_sludge',
+                'wasted_flow' => '(SS_lbs_leaving - effluence_flow*effluence_sludge)/wasted_sludge',
+                'wasted_sludge' => '(SS_lbs_leaving - effluence_flow*effluence_sludge)/wasted_flow',
+                'effluence_flow' => '(SS_lbs_leaving - wasted_flow*wasted_sludge)/effluence_sludge',
+                'effluence_sludge' => '(SS_lbs_leaving - wasted_flow*wasted_sludge)/effluence_flow',
+            ],
+        ],
+        [
+            'title' => 'mcrt = mlss_lbs_total / SS_lbs_leaving',
+            'results' => ['SS_lbs_leaving' => 'mlss_lbs_total/mcrt', 'mlss_lbs_total' => 'SS_lbs_leaving*mcrt', 'mcrt' => 'mlss_lbs_total/SS_lbs_leaving'],
+        ],
+        [
+            'title' => 'mlss_lbs_aeration = mlss * aeration_vol_mg ',
+            'results' => ['mlss' => 'mlss_lbs_aeration/aeration_vol_mg', 'mlss_lbs_aeration' => 'aeration_vol_mg*mlss', 'aeration_vol_mg' => 'mlss_lbs_aeration/mlss'],
+        ],
+        [
+            'title' => 'SS_lbs_influent = pri_clarifier_effluent_SS * effluent_flow',
+            'results' => ['SS_lbs_influent' => 'effluent_flow*pri_clarifier_effluent_SS', 'pri_clarifier_effluent_SS' => 'SS_lbs_influent/effluent_flow', 'effluent_flow' => 'SS_lbs_influent/pri_clarifier_effluent_SS'],
+        ],
+        [
+            'title' => 'sludge_age = mlss_lbs_aeration / SS_lbs_influent',
+            'results' => ['SS_lbs_influent' => 'mlss_lbs_aeration/sludge_age', 'sludge_age' => 'mlss_lbs_aeration/SS_lbs_influent', 'mlss_lbs_aeration' => 'SS_lbs_influent*sludge_age'],
+        ],
+        [
+            'title' => 'svi = (settled_solids ) / (mlss )',
+            'results' => ['svi' => 'settled_solids/mlss', 'mlss' => 'settled_solids/svi', 'settled_solids' => 'mlss*svi'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Wastewater turns Average untreated influent COD and Average primary treated COD into Influent SS weight and Average untreated influent BOD. Nothing is looked up on this page: influent SS weight is computed from average untreated influent COD and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Influent SS weight is opened in kilograms; the chip beside it switches to any unit of the same quantity.
@@ -1402,7 +769,7 @@ return [
             <p>Units are handled before the formula runs: Influent SS weight offers 7 units and opens on kilograms, so a value typed in another one is converted on the way in and the arithmetic always happens in a single base unit.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Effluent COD</strong> = <code>− Average primary treated COD + Average untreated influent COD</code></li><li><strong>Average primary treated COD</strong> = <code>Average untreated influent COD − Effluent COD</code></li><li><strong>Average untreated influent COD</strong> = <code>Average primary treated COD + Effluent COD</code></li><li><strong>Effluent BOD</strong> = <code>− Average primary treated BOD + Average untreated influent BOD</code></li><li><strong>Average primary treated BOD</strong> = <code>Average untreated influent BOD − Effluent BOD</code></li><li><strong>Average untreated influent BOD</strong> = <code>Average primary treated BOD + Effluent BOD</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Effluent COD</strong> = <code>− Average primary treated COD + Average untreated influent COD</code> — the form to use when Average primary treated COD and Average untreated influent COD are the values you have.</li><li><strong>Average primary treated COD</strong> = <code>Average untreated influent COD − Effluent COD</code> — the form to use when Effluent COD and Average untreated influent COD are the values you have.</li><li><strong>Average untreated influent COD</strong> = <code>Average primary treated COD + Effluent COD</code> — the form to use when Effluent COD and Average primary treated COD are the values you have.</li><li><strong>Effluent BOD</strong> = <code>− Average primary treated BOD + Average untreated influent BOD</code> — the form to use when Average primary treated BOD and Average untreated influent BOD are the values you have.</li><li><strong>Average primary treated BOD</strong> = <code>Average untreated influent BOD − Effluent BOD</code> — the form to use when Average untreated influent BOD and Effluent BOD are the values you have.</li><li><strong>Average untreated influent BOD</strong> = <code>Average primary treated BOD + Effluent BOD</code> — the form to use when Average primary treated BOD and Effluent BOD are the values you have.</li><li><strong>COD loading</strong> = <code>Effluent flow × Effluent COD</code> — the form to use when Effluent COD and Effluent flow are the values you have.</li><li><strong>Effluent COD</strong> = <code>COD loading ÷ Effluent flow</code> — the form to use when Effluent flow and COD loading are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Effluent COD, Average primary treated COD and Average untreated influent COD can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Effluent COD</strong> = <code>− Average primary treated COD + Average untreated influent COD</code></li><li><strong>Average primary treated COD</strong> = <code>Average untreated influent COD − Effluent COD</code></li><li><strong>Average untreated influent COD</strong> = <code>Average primary treated COD + Effluent COD</code></li><li><strong>Effluent BOD</strong> = <code>− Average primary treated BOD + Average untreated influent BOD</code></li><li><strong>Average primary treated BOD</strong> = <code>Average untreated influent BOD − Effluent BOD</code></li><li><strong>Average untreated influent BOD</strong> = <code>Average primary treated BOD + Effluent BOD</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Effluent COD</strong> = <code>− Average primary treated COD + Average untreated influent COD</code> — the form to use when Average primary treated COD and Average untreated influent COD are the values you have.</li><li><strong>Average primary treated COD</strong> = <code>Average untreated influent COD − Effluent COD</code> — the form to use when Average untreated influent COD and Effluent COD are the values you have.</li><li><strong>Average untreated influent COD</strong> = <code>Average primary treated COD + Effluent COD</code> — the form to use when Average primary treated COD and Effluent COD are the values you have.</li><li><strong>Effluent BOD</strong> = <code>− Average primary treated BOD + Average untreated influent BOD</code> — the form to use when Average primary treated BOD and Average untreated influent BOD are the values you have.</li><li><strong>Average primary treated BOD</strong> = <code>Average untreated influent BOD − Effluent BOD</code> — the form to use when Average untreated influent BOD and Effluent BOD are the values you have.</li><li><strong>Average untreated influent BOD</strong> = <code>Average primary treated BOD + Effluent BOD</code> — the form to use when Average primary treated BOD and Effluent BOD are the values you have.</li><li><strong>COD loading</strong> = <code>Effluent flow × Effluent COD</code> — the form to use when Effluent flow and Effluent COD are the values you have.</li><li><strong>Effluent COD</strong> = <code>COD loading ÷ Effluent flow</code> — the form to use when COD loading and Effluent flow are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Effluent COD, Average primary treated COD and Average untreated influent COD can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
@@ -1418,7 +785,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Influent SS weight follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are kilograms, grams per liter and cubic meters per day and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Average untreated influent COD and Average primary treated COD are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Average untreated influent COD and Average primary treated COD is what you already know and Influent SS weight and Average untreated influent BOD is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/shannon-wiener-index">Shannon–Wiener Diversity Index Calculator</a>, <a href="/biology/sheep-gestation">Sheep gestation Calculator</a> and <a href="/biology/simpson-diversity-index">Simpson&#039;s Diversity Index Calculator</a>.</p>
+            <p>Reach for this page when Average untreated influent COD and Average primary treated COD is what you already know and Influent SS weight and Average untreated influent BOD is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

@@ -756,6 +756,14 @@ foreach ($rows as $row) {
         );
     }
 
+    /* A heading with nothing under it is worse than no heading. */
+    if (!empty($def['article']['sections']) && is_array($def['article']['sections'])) {
+        $def['article']['sections'] = array_values(array_filter(
+            $def['article']['sections'],
+            static fn (array $sec): bool => trim(strip_tags((string) ($sec['html'] ?? ''))) !== ''
+        ));
+    }
+
     /*
      * A unit chip is a promise that the same quantity gives the same answer
      * whichever unit it is shown in. On three kinds of box it cannot keep that

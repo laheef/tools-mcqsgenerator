@@ -11,152 +11,90 @@
 
 return [
     'name' => 'Turtle tank',
-    'meta' => ['title' => 'Turtle tank Calculator: Formula, Steps & Example', 'description' => 'Turtle tank works out recommended tank size from your turtle\'s species. Press Calculate once and every figure on the page is refreshed together. Free.', 'h1' => 'Turtle tank Calculator', 'updated' => '2026-08-06'],
-    'raw' => [
-        'vars' => [
-            'Species' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'DhYe1EUnYPhZkgmD2b74o', 'c' => null],
+    'meta' => ['title' => 'Turtle tank Calculator: Formula, Steps & Example', 'description' => 'Turtle tank works out recommended tank size from your turtle\'s species. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Turtle tank Calculator', 'updated' => '2026-08-06'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'Species',
+                            'label' => 'Your turtle\'s species',
+                            'type' => 'select',
+                            'options' => [
+                                'Red-Eared Slider' => '12',
+                                'Eastern Box Turtle' => '7',
+                                'Western Painted Turtle' => '8',
+                                'Map Turtle' => '10',
+                                'Wood Turtle' => '9',
+                                'Musk Turtle' => '5',
+                            ],
+                            'dataset' => 'Kind of Turtle',
+                            'control' => 'DROPDOWN',
+                            'default' => 'Red-Eared Slider',
+                        ],
+                    ],
                 ],
-                'ds' => 'zh72X8ejC9bEIwoepe40m',
-            ],
-            'my_turtle_size' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'size' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'tank_size' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '1'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'wbb8m21twQbxpjUasmPC6',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'image', 'url' => 'redear.jpg '],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'Species',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Your turtle\'s species',
-                                    'ds' => 'zh72X8ejC9bEIwoepe40m',
-                                    'opts' => [
-                                        ['DhYe1EUnYPhZkgmD2b74o', 'Red-Eared Slider', '12'],
-                                        ['AEFduDoq8mO0bjV1diiaA', 'Eastern Box Turtle', '7'],
-                                        ['d83qXX9XSSNFvmGPPbp06', 'Western Painted Turtle', '8'],
-                                        ['zQ7qtwm7wiDsRSdjZUEZ2', 'Map Turtle', '10'],
-                                        ['jI-DZX2uCZHfhWB7-B31X', 'Wood Turtle', '9'],
-                                        ['0V9HvO84z4-k9yCFpMzWo', 'Musk Turtle', '5'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'size',
+                            'label' => 'This species can grow up to',
+                            'type' => 'result',
+                            'help' => 'Turtles come in many different sizes depending on their species.',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'i',
-                                    'u' => ['redear.jpg '],
-                                ],
-                            ],
+                            'name' => 'my_turtle_size',
+                            'label' => 'My turtle\'s length',
+                            'type' => 'number',
+                            'help' => 'Input the length of your turtle\'s shell in inches (or cm) here!',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'size',
-                                    'vt' => 'dependent',
-                                    'l' => 'This species can grow up to',
-                                    'h' => 'Turtles come in many different sizes depending on their species.',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'my_turtle_size',
-                                    'vt' => 'numerical',
-                                    'l' => 'My turtle\'s length',
-                                    'h' => 'Input the length of your turtle\'s shell in inches (or cm) here!',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'tank_size',
-                                    'vt' => 'numerical',
-                                    'l' => 'Recommended tank size',
-                                    'us' => '20',
-                                    'du' => 'liters',
-                                ],
-                            ],
+                            'name' => 'tank_size',
+                            'label' => 'Recommended tank size',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'liters',
+                            'rounding' => ['standard', '1'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'tank_size = my_turtle_size * 10',
-                'var' => [
-                    [
-                        'l' => 'tank_size',
-                        'f' => '10*my_turtle_size',
-                        'r' => ['my_turtle_size'],
-                    ],
-                    [
-                        'l' => 'my_turtle_size',
-                        'f' => '(1/10)*tank_size',
-                        'r' => ['tank_size'],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [
-            'zh72X8ejC9bEIwoepe40m' => [
-                'name' => 'Kind of Turtle',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'DhYe1EUnYPhZkgmD2b74o', 'label' => 'Red-Eared Slider', 'value' => '12'],
-                    ['uid' => 'AEFduDoq8mO0bjV1diiaA', 'label' => 'Eastern Box Turtle', 'value' => '7'],
-                    ['uid' => 'd83qXX9XSSNFvmGPPbp06', 'label' => 'Western Painted Turtle', 'value' => '8'],
-                    ['uid' => 'zQ7qtwm7wiDsRSdjZUEZ2', 'label' => 'Map Turtle', 'value' => '10'],
-                    ['uid' => 'jI-DZX2uCZHfhWB7-B31X', 'label' => 'Wood Turtle', 'value' => '9'],
-                    ['uid' => '0V9HvO84z4-k9yCFpMzWo', 'label' => 'Musk Turtle', 'value' => '5'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'tank_size = my_turtle_size * 10',
+            'results' => ['tank_size' => '10*my_turtle_size', 'my_turtle_size' => '(1/10)*tank_size'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Turtle tank works out This species can grow up to from Your turtle's species, My turtle's length and Recommended tank size. Nothing is looked up on this page: this species can grow up to is computed from your turtle's species and the other boxes, so an unusual pair of values gives an honest answer rather than an error. This species can grow up to is opened in centimeters; the chip beside it switches to any unit of the same quantity.
@@ -194,7 +132,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind This species can grow up to is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The chips cover centimeters and liters. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Your turtle&#039;s species, My turtle&#039;s length and Recommended tank size measured, This species can grow up to wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Related work in the same category: <a href="/biology/crop-water-stress-index">Crop Water Stress Index Calculator</a>, <a href="/biology/daily-light-integral-dli">Daily light integral (DLI) Calculator</a> and <a href="/biology/days-to-maturity">Days to Maturity Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Your turtle&#039;s species, My turtle&#039;s length and Recommended tank size measured, This species can grow up to wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>Turtle tank is a calculator, not an article with a form attached: the numbers in the panel come from the formulas on this page, applied to whatever is in the boxes, and nothing is looked up in a table.</p><p>Its own defaults are run through its own formulas every time the page is built, so the examples above are not illustrations: if the relationship changed, the numbers in the article would change with it, and a page whose arithmetic stopped agreeing with its text would fail the check rather than quietly drift.</p><p>What the page keeps is nothing. The calculation is unchanged between visits. has no account, no history and no server-side record of what you typed; the fields hold your numbers for as long as the tab is open, and the share button builds a link from them only if you ask it to.</p><p>It belongs to the same catalogue as the rest of the site, and follows the same rule as all of them: the formula is printed, the working is shown, and the answer can be checked by hand if you want to.</p><p>The formula is printed in full above precisely so that the page can be argued with. Compare it with the reference you are working from; if they differ, the difference will be in a constant or a unit, and both are visible in the text.</p>
