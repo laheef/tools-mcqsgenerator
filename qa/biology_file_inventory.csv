@@ -1,0 +1,321 @@
+slug,name,file_class,class_label,spec_file,equations,js_bytes,datasets,output_boxes,words,faq,readonly_result,updated,browser_rows
+absorbance-transmittance,Absorbance to Transmittance Converter,A-spec,Authored (builder spec),specs_h.py,,,,,1873,7,1,2026-10-29,
+acid-base-balance,Acid–Base Balance Calculator (ABG),A-spec,Authored (builder spec),specs_f.py,,,,,2311,7,1,2026-10-29,
+agarose-gel-calculator,Agarose Gel Calculator (gel percentage and loading),A-spec,Authored (builder spec),specs_d.py,,,,,2278,7,1,2026-10-29,
+alamarblue-cell-viability,AlamarBlue Cell Viability / Percent Reduction Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,1865,7,1,2026-10-29,
+allometric-equation,Allometric Equation Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2010,7,1,2026-10-29,
+aquarium-water-volume,Aquarium Water Volume Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2236,7,1,2026-10-29,
+atp-cellular-respiration-energy-yield,ATP / Cellular Respiration Energy Yield Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,2073,7,1,2026-10-29,
+autosomal-dominant-pedigree,Autosomal Dominant Pedigree Analyzer,A-spec,Authored (builder spec),specs_e.py,,,,,2319,7,1,2026-10-29,
+autosomal-recessive-risk,Autosomal Recessive Inheritance Risk,A-spec,Authored (builder spec),specs_e.py,,,,,2333,7,1,2026-10-29,
+bacterial-concentration-calculator,Bacterial Concentration Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2059,7,1,2026-10-29,
+bacterial-growth-curve,Bacterial Growth Curve Calculator (generation time),A-spec,Authored (builder spec),specs_d.py,,,,,2165,7,1,2026-10-29,
+basal-metabolic-rate,Basal Metabolic Rate Calculator (Mifflin–St Jeor),A-spec,Authored (builder spec),specs_f.py,,,,,2190,7,1,2026-10-29,
+base-pair-to-dalton,Base Pair to Dalton Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2034,7,1,2026-10-29,
+base-pair-to-kda,Base Pair to kDa Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,1836,7,1,2026-10-29,
+bca-assay-calculator,BCA Assay Calculator (standard curve),A-spec,Authored (builder spec),specs_b.py,,,,,2026,6,1,2026-10-29,
+beer-lambert-a280-protein-concentration,Beer-Lambert A280 Protein Concentration,A-spec,Authored (builder spec),specs_b.py,,,,,2070,7,1,2026-10-29,
+berger-parker-index,Berger–Parker Index Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,1921,7,1,2026-10-29,
+biodiversity-index,Biodiversity Index Calculator (Simpson),A-spec,Authored (builder spec),specs_f.py,,,,,2044,7,1,2026-10-29,
+bod-load,BOD Load Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2243,7,1,2026-10-29,
+bone-length-to-body-height,Bone Length to Body Height Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1962,6,1,2026-10-29,
+bradford-assay-calculator,Bradford Assay Calculator (standard curve),A-spec,Authored (builder spec),specs_b.py,,,,,1916,6,1,2026-10-29,
+buffer-preparation-calculator,Buffer Preparation Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2117,7,1,2026-10-29,
+catch-per-unit-effort,Catch Per Unit Effort Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,1950,7,1,2026-10-29,
+cedar-tree-value,Standing Timber Value Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2297,7,1,2026-10-29,
+cell-counting-calculator,Cell Counting Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2282,7,1,2026-10-29,
+cell-culture-vessel-reference,Cell Culture Dish / Plate / Flask Reference,A-spec,Authored (builder spec),specs_c.py,,,,,2157,7,1,2026-10-29,
+cell-density,Cell Density Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2014,7,1,2026-10-29,
+cell-density-unit-converter,Cell Density Unit Converter,A-spec,Authored (builder spec),specs_c.py,,,,,1949,7,1,2026-10-29,
+cell-seeding-density,Cell Seeding Density Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2287,7,1,2026-10-29,
+cell-surface-area-volume-ratio,Cell Surface Area to Volume Ratio Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2028,7,1,2026-10-29,
+centimorgan-to-percentage,Centimorgan to Percentage Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2017,7,1,2026-10-29,
+centrifuge-rcf-rpm,Centrifuge RCF to RPM Converter,A-spec,Authored (builder spec),specs_h.py,,,,,2052,7,1,2026-10-29,
+cephalic-index,Cephalic Index Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1887,7,1,2026-10-29,
+cfu-g-calculator,CFU/g Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2075,7,1,2026-10-29,
+cfu-ml-calculator,CFU/mL Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2052,6,1,2026-10-29,
+cheng-prusoff-equation,Cheng-Prusoff Equation Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,2073,7,1,2026-10-29,
+chi-square-genetics-test,Chi-Square Test for Genetics,A-spec,Authored (builder spec),specs_e.py,,,,,2039,7,1,2026-10-29,
+chicken-density,Chicken Density Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1912,7,1,2026-10-29,
+chicken-feed-amount,Chicken Feed Amount Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1862,6,1,2026-10-29,
+chicken-hatch-date,Chicken Hatch Date Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2261,7,1,2026-10-29,
+chicken-years-to-human-years,Chicken Years to Human Years Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1860,7,1,2026-10-29,
+coding-capacity-of-dna,Coding Capacity of DNA Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,1960,7,1,2026-10-29,
+coefficient-of-coincidence,Coefficient of Coincidence Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2028,7,1,2026-10-29,
+compost-application-rate,Compost Application Rate Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,1963,7,1,2026-10-29,
+crop-coefficient,Crop Coefficient Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2317,7,1,2026-10-29,
+crop-water-requirement,Crop Water Requirement Calculator (ETc),A-spec,Authored (builder spec),specs_g.py,,,,,2346,7,1,2026-10-29,
+crop-water-stress-index,Crop Water Stress Index Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,1975,7,1,2026-10-29,
+days-to-maturity,Days to Maturity Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2232,7,1,2026-10-29,
+dihybrid-cross,Dihybrid Cross Calculator (9:3:3:1),A-spec,Authored (builder spec),specs_e.py,,,,,2073,7,1,2026-10-29,
+dilution-calculator-c1v1,Dilution Calculator (C1V1 = C2V2),A-spec,Authored (builder spec),specs_d.py,,,,,2048,7,1,2026-10-29,
+dna-molarity-calculator,DNA Molarity Calculator,A-spec,Authored (builder spec),specs_k.py,,,,,1866,6,1,2026-10-29,
+dna-molarity-from-mass,DNA Molarity from Mass or A260,A-spec,Authored (builder spec),specs_d.py,,,,,1909,7,1,2026-10-29,
+dna-percentage,DNA Percentage Calculator,A-spec,Authored (builder spec),specs_p.py,,,,,2128,7,1,2026-10-29,
+dry-matter-intake,Dry Matter Intake Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2038,7,1,2026-10-29,
+dsdna-ug-to-pmol,dsDNA µg to pmol Calculator,A-spec,Authored (builder spec),specs_j.py,,,,,1966,6,1,2026-10-29,
+dsdna-ug-to-pmol-converter,dsDNA µg to pmol Converter,A-spec,Authored (builder spec),specs_d.py,,,,,1881,7,1,2026-10-29,
+egg-incubation-hatch-date,Egg Incubation Hatch Date Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2316,7,1,2026-10-29,
+encounter-rate,Encounter Rate Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2091,7,1,2026-10-29,
+enzyme-activity-units,Enzyme Activity Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,2163,7,1,2026-10-29,
+enzyme-specific-activity-yield,Enzyme Kinetics: Specific Activity and Yield,A-spec,Authored (builder spec),specs_b.py,,,,,2239,7,1,2026-10-29,
+enzyme-unit-converter,"Enzyme Unit Converter (U/mg, kcat)",A-spec,Authored (builder spec),specs_b.py,,,,,2017,6,1,2026-10-29,
+exponential-population-growth,Exponential Population Growth Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,1996,7,1,2026-10-29,
+farm-pond-fish-stocking,Farm Pond Fish Stocking Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1958,6,1,2026-10-29,
+feed-conversion-ratio,Feed Conversion Ratio Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,1908,7,1,2026-10-29,
+femur-to-foot-ratio,Femur to Foot Ratio Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1887,7,1,2026-10-29,
+fertilizer-injector-ratio,Fertilizer Injector Ratio Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2092,7,1,2026-10-29,
+field-capacity,Field Capacity Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2186,7,1,2026-10-29,
+fish-condition-factor,Fish Condition Factor Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2065,7,1,2026-10-29,
+fish-density,Fish Density Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1849,6,1,2026-10-29,
+fish-per-liter,Fish Per Liter Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2079,7,1,2026-10-29,
+fish-tank-stocking,Fish Tank Stocking Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2303,7,1,2026-10-29,
+fixation-index-fst,Fixation Index Calculator (Fst),A-spec,Authored (builder spec),specs_h.py,,,,,2263,7,1,2026-10-29,
+fold-change,Fold Change Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2043,7,1,2026-10-29,
+fruit-tree-spacing,Fruit Tree Spacing Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2254,7,1,2026-10-29,
+fwhr-facial-width-to-height-ratio,FWHR (Facial Width-to-Height Ratio) Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2050,7,1,2026-10-29,
+gc-content-calculator,GC Content Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2146,7,1,2026-10-29,
+genetic-linkage-distance,Recombination to Centimorgans,A-spec,Authored (builder spec),specs_n.py,,,,,2180,7,1,2026-10-29,
+genetic-map-distance,Genetic Linkage Distance Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2011,7,1,2026-10-29,
+genetic-odds-ratio,Odds Ratio Calculator for Genetics,A-spec,Authored (builder spec),specs_l.py,,,,,2258,7,1,2026-10-29,
+genome-copy-number,Genome Copy Number Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,1951,7,1,2026-10-29,
+ghk-membrane-potential,Goldman–Hodgkin–Katz Membrane Potential Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2221,7,1,2026-10-29,
+goat-years-to-human-years,Goat Years to Human Years Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1887,7,1,2026-10-29,
+goldfish-years-to-human-years,Goldfish Years to Human Years Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1905,7,1,2026-10-29,
+growing-degree-days,Growing Degree Days Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2233,7,1,2026-10-29,
+gypsum-application-rate,Gypsum Application Rate Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,1947,7,1,2026-10-29,
+hardy-weinberg-dominant-allele,Hardy–Weinberg from the Dominant Allele Frequency,A-spec,Authored (builder spec),specs_e.py,,,,,2152,7,1,2026-10-29,
+hardy-weinberg-dominant-homozygote,Hardy–Weinberg from the Dominant Homozygote Frequency,A-spec,Authored (builder spec),specs_e.py,,,,,1919,7,1,2026-10-29,
+hardy-weinberg-heterozygote,Hardy–Weinberg from the Heterozygote Frequency,A-spec,Authored (builder spec),specs_e.py,,,,,1966,7,1,2026-10-29,
+hardy-weinberg-recessive-allele,Hardy–Weinberg from the Recessive Allele Frequency,A-spec,Authored (builder spec),specs_e.py,,,,,2179,7,1,2026-10-29,
+hardy-weinberg-recessive-homozygote,Hardy–Weinberg from the Recessive Homozygote Frequency,A-spec,Authored (builder spec),specs_e.py,,,,,2095,7,1,2026-10-29,
+hatch-rate,Hatch Rate Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1846,6,1,2026-10-29,
+height-to-finger-length,Height to Finger Length Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1958,7,1,2026-10-29,
+hemocytometer-cell-counter,Hemocytometer Cell Counter (cells/mL),A-spec,Authored (builder spec),specs_c.py,,,,,2272,7,1,2026-10-29,
+henderson-hasselbalch-buffer,Buffer pH Calculator (Henderson–Hasselbalch),A-spec,Authored (builder spec),specs_k.py,,,,,1915,6,1,2026-10-29,
+heritability-coefficient,Heritability Coefficient Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2350,7,1,2026-10-29,
+huglin-index,Huglin Index Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2209,7,1,2026-10-29,
+hunting-tooth-ratio,Hunting Tooth Ratio Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2347,7,1,2026-10-29,
+ideal-fish-tank-size,Ideal Fish Tank Size Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2264,7,1,2026-10-29,
+in-vivo-formulation,In Vivo Formulation Calculator,A-spec,Authored (builder spec),specs_p.py,,,,,2241,7,1,2026-10-29,
+inbreeding-coefficient,Inbreeding Coefficient Calculator (COI),A-spec,Authored (builder spec),specs_e.py,,,,,2081,7,1,2026-10-29,
+land-equivalent-ratio,Land Equivalent Ratio Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2249,7,1,2026-10-29,
+lawn-fertilizer-rate,Lawn Fertilizer Rate Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2352,7,1,2026-10-29,
+ligation-calculator,Ligation Calculator,A-spec,Authored (builder spec),specs_k.py,,,,,1837,6,1,2026-10-29,
+ligation-molar-ratio,Ligation Molar Ratio Calculator (Insert : Vector),A-spec,Authored (builder spec),specs_d.py,,,,,2164,7,1,2026-10-29,
+lime-requirement,Lime Requirement Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2276,7,1,2026-10-29,
+linear-dna-ends-ug-pmol,Linear DNA µg to pmol of Ends Converter,A-spec,Authored (builder spec),specs_l.py,,,,,1888,7,1,2026-10-29,
+lineweaver-burk-plot,Lineweaver-Burk Plot / Km & Vmax Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,1926,7,1,2026-10-29,
+linkage-disequilibrium,Linkage Disequilibrium Calculator,A-spec,Authored (builder spec),specs_n.py,,,,,2194,7,1,2026-10-29,
+livestock-water-requirement,Livestock Water Requirement Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2170,7,1,2026-10-29,
+logistic-population-growth,Logistic Population Growth Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2345,7,1,2026-10-29,
+mark-recapture,Mark-Recapture Population Calculator,A-spec,Authored (builder spec),specs_k.py,,,,,2351,7,1,2026-10-29,
+mark-recapture-population,Mark–Recapture Population Calculator (Lincoln–Petersen),A-spec,Authored (builder spec),specs_f.py,,,,,2282,7,1,2026-10-29,
+mass-molarity-conversion,Mass to Molarity Converter,A-spec,Authored (builder spec),specs_l.py,,,,,1967,6,1,2026-10-29,
+maximum-sustainable-yield,Maximum Sustainable Yield Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2048,7,1,2026-10-29,
+medullary-index,Medullary Index Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,2035,7,1,2026-10-29,
+mic-zone-of-inhibition,MIC and Zone of Inhibition Calculator,A-spec,Authored (builder spec),specs_n.py,,,,,2133,7,1,2026-10-29,
+microscope-field-of-view,Microscope Field of View Calculator,A-spec,Authored (builder spec),specs_l.py,,,,,2323,7,1,2026-10-29,
+microscope-magnification,Microscope Magnification Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,1980,7,1,2026-10-29,
+mitotic-index,Mitotic Index Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2025,7,1,2026-10-29,
+mouse-to-human-age,Mouse to Human Age Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1925,7,1,2026-10-29,
+mushroom-yield,Mushroom Yield Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2176,7,1,2026-10-29,
+ndvi-calculator,NDVI Calculator (Normalised Difference Vegetation Index),A-spec,Authored (builder spec),specs_g.py,,,,,2081,7,1,2026-10-29,
+net-primary-productivity,Net Primary Productivity Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2304,7,1,2026-10-29,
+net-reproductive-rate,Net Reproductive Rate Calculator (R₀),A-spec,Authored (builder spec),specs_h.py,,,,,2260,7,1,2026-10-29,
+npk-fertilizer-blend,NPK Fertilizer Blend Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2281,7,1,2026-10-29,
+od260-nucleic-acid-concentration,OD260 to Nucleic Acid Concentration Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2029,7,1,2026-10-29,
+od600-to-cell-density,OD600 to Cell Density Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2090,7,1,2026-10-29,
+oligo-converter,Oligo pmol/µL to µg/mL Converter,A-spec,Authored (builder spec),specs_l.py,,,,,1925,7,1,2026-10-29,
+oligo-tm-calculator,Oligo Tm (Melting Temperature) Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2262,7,1,2026-10-29,
+osmolarity-osmotic-pressure,Osmolarity / Osmotic Pressure Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,2075,7,1,2026-10-29,
+pasture-stocking-rate,Pasture Stocking Rate Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1934,6,1,2026-10-29,
+pcr-annealing-temperature,PCR Annealing Temperature Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2235,7,1,2026-10-29,
+pcr-cycle-calculator,PCR Cycle Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2331,7,1,2026-10-29,
+pcr-master-mix-calculator,PCR Master Mix Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2328,7,1,2026-10-29,
+pedigree-probability,Pedigree Probability Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2351,7,1,2026-10-29,
+percent-germination,Percent Germination Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2070,7,1,2026-10-29,
+percent-inhibition,Percent Inhibition Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,1866,7,1,2026-10-29,
+percent-viability,Percent Viability Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,1826,7,1,2026-10-29,
+phenotypic-ratio,Phenotypic Ratio Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2071,7,1,2026-10-29,
+photosynthesis-rate,Photosynthesis Rate Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2076,7,1,2026-10-29,
+pig-weight,Pig Weight Calculator,A-spec,Authored (builder spec),specs_a.py,,,,,1836,6,1,2026-10-29,
+plant-available-water,Field Capacity and Plant Available Water Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2275,7,1,2026-10-29,
+plant-population,Plant population,A-spec,Authored (builder spec),specs_g.py,,,,,2343,7,0,2026-08-12,
+plants-per-hectare,Plants Per Hectare Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2076,7,1,2026-10-29,
+plasmid-copy-number,Plasmid Copy Number Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,1943,7,1,2026-10-29,
+plasmid-molar-ratio,Plasmid Molar Ratio Calculator,A-spec,Authored (builder spec),specs_n.py,,,,,2340,7,1,2026-10-29,
+primer-resuspension-working-stock,Primer Resuspension and Working Stock Calculator,A-spec,Authored (builder spec),specs_d.py,,,,,2237,7,1,2026-10-29,
+protein-extinction-coefficient,Protein Extinction Coefficient (ε280) Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,1847,7,1,2026-10-29,
+protein-gravy-calculator,Protein GRAVY (Hydropathy) Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,2270,7,1,2026-10-29,
+protein-hydrodynamic-radius,Protein Hydrodynamic Radius Calculator,A-spec,Authored (builder spec),specs_b.py,,,,,1897,7,1,2026-10-29,
+protein-molar-conversions,Protein Molar Conversions,A-spec,Authored (builder spec),specs_b.py,,,,,2019,6,1,2026-10-29,
+puppy-adult-weight-predictor,Puppy Adult Weight Predictor,A-spec,Authored (builder spec),specs_a.py,,,,,1933,6,1,2026-10-29,
+q10-temperature-coefficient,Q10 Temperature Coefficient Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2004,7,1,2026-10-29,
+quadrat-sampling-density,Quadrat Sampling Density Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2229,7,1,2026-10-29,
+recombination-frequency,Recombination Frequency Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,1900,7,1,2026-10-29,
+relatedness-coefficient,Relatedness Coefficient Calculator,A-spec,Authored (builder spec),specs_e.py,,,,,2026,7,1,2026-10-29,
+relative-abundance,Relative Abundance Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2082,7,1,2026-10-29,
+respiratory-quotient,Respiratory Quotient Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,1909,7,1,2026-10-29,
+restriction-digest-setup,Restriction Digest Reaction Setup,A-spec,Authored (builder spec),specs_d.py,,,,,2318,7,1,2026-10-29,
+restriction-reaction-setup,Restriction Digest Recipe,A-spec,Authored (builder spec),specs_l.py,,,,,2310,7,1,2026-10-29,
+sds-page-gel,SDS-PAGE Gel Calculator,A-spec,Authored (builder spec),specs_l.py,,,,,2324,7,1,2026-10-29,
+seeding-rate,Seeding Rate and Plants per Hectare Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2250,7,1,2026-10-29,
+serial-dilution-planner,Serial Dilution Planner,A-spec,Authored (builder spec),specs_d.py,,,,,2220,7,1,2026-10-29,
+shannon-wiener-index,Shannon–Wiener Diversity Index Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2289,7,1,2026-10-29,
+simpson-diversity-index,Simpson\,A-spec,Authored (builder spec),specs_n.py,,,,,2302,7,1,2026-10-29,
+solids-retention-time,Solids Retention Time Calculator (SRT),A-spec,Authored (builder spec),specs_h.py,,,,,2307,7,1,2026-10-29,
+solute-potential,Solute Potential Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2016,7,1,2026-10-29,
+sorensen-index,Sørensen Similarity Index Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2342,7,1,2026-10-29,
+species-richness,Species Richness Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2128,7,1,2026-10-29,
+specific-growth-rate-from-od,Specific Growth Rate from OD Readings,A-spec,Authored (builder spec),specs_d.py,,,,,2222,7,1,2026-10-29,
+specific-growth-rate-od,Specific Growth Rate from OD,A-spec,Authored (builder spec),specs_k.py,,,,,2104,7,1,2026-10-29,
+specific-productivity-qp,Specific Productivity Calculator (qP),A-spec,Authored (builder spec),specs_h.py,,,,,2200,7,1,2026-10-29,
+specimen-size-from-image,Actual Specimen Size from Image Calculator,A-spec,Authored (builder spec),specs_n.py,,,,,1983,7,1,2026-10-29,
+stems-per-hectare,Stems Per Hectare Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2235,7,1,2026-10-29,
+stomatal-density,Stomatal Density Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2131,7,1,2026-10-29,
+sulfur-soil-acidifier,Sulfur Soil Acidifier Calculator,A-spec,Authored (builder spec),specs_m.py,,,,,2259,7,1,2026-10-29,
+svi-sludge-volume-index,Sludge Volume Index Calculator (SVI),A-spec,Authored (builder spec),specs_h.py,,,,,2209,7,1,2026-10-29,
+tajimas-d,Tajima\,A-spec,Authored (builder spec),specs_n.py,,,,,2227,7,1,2026-10-29,
+tff-membrane-area,TFF Membrane Area and Flux Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,1911,7,1,2026-10-29,
+thousand-seed-weight,Thousand Seed Weight Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2060,7,1,2026-10-29,
+tidal-volume-lung-capacity,Tidal Volume and Lung Capacity Calculator,A-spec,Authored (builder spec),specs_f.py,,,,,2064,7,1,2026-10-29,
+transfection-setup,Transfection Setup Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2295,7,1,2026-10-29,
+transformation-efficiency,Transformation Efficiency Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2125,7,1,2026-10-29,
+transpiration-rate,Transpiration Rate Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2063,7,1,2026-10-29,
+trypan-blue-cell-viability,Trypan Blue Cell Viability Calculator,A-spec,Authored (builder spec),specs_c.py,,,,,2047,7,1,2026-10-29,
+vine-density,Vine Density Calculator,A-spec,Authored (builder spec),specs_g.py,,,,,2165,7,1,2026-10-29,
+watterson-estimator,Watterson Estimator Calculator,A-spec,Authored (builder spec),specs_h.py,,,,,2182,7,1,2026-10-29,
+western-blot-loading,Western Blot Protein Loading Calculator,A-spec,Authored (builder spec),specs_l.py,,,,,2244,7,1,2026-10-29,
+acres-per-hour,Acres per hour,B-direct,Authored (hand-written),,,,,,2327,7,0,2026-09-28,
+animal-mortality-rate,Animal mortality rate,B-direct,Authored (hand-written),,,,,,2138,7,1,2026-08-06,
+benadryl-dosage-for-dogs,Benadryl dosage for dogs,B-direct,Authored (hand-written),,,,,,2104,7,0,2026-09-28,
+cat-bmi,Cat BMI,B-direct,Authored (hand-written),,,,,,1863,7,0,2026-09-05,
+cat-calorie,Cat calorie,B-direct,Authored (hand-written),,,,,,1919,6,0,2026-07-23,
+cell-dilution,Cell dilution,B-direct,Authored (hand-written),,,,,,1868,7,0,2026-08-10,
+cell-doubling-time,Cell doubling time,B-direct,Authored (hand-written),,,,,,2120,7,0,2024-07-30,
+cephalexin-for-cats-dosage,Cephalexin for cats dosage,B-direct,Authored (hand-written),,,,,,2332,7,1,2026-05-25,
+co2-grow-room,CO₂ grow room,B-direct,Authored (hand-written),,,,,,2254,7,0,2026-08-12,
+corn-yield,Corn yield,B-direct,Authored (hand-written),,,,,,2241,7,0,2026-08-12,
+cricket-chirp-thermometer,Crickets chirping thermometer,B-direct,Authored (hand-written),,,,,,1806,6,0,2025-12-18,
+dna-copy-number,DNA copy number,B-direct,Authored (hand-written),,,,,,2242,7,0,2026-08-06,
+dog-food,Dog food,B-direct,Authored (hand-written),,,,,,1975,7,0,2026-08-10,
+fertilizer,Fertilizer,B-direct,Authored (hand-written),,,,,,2200,7,0,2026-08-12,
+fish-oil-dosage-for-cats,Fish oil dosage for cats,B-direct,Authored (hand-written),,,,,,1987,7,0,2026-05-25,
+ligation,Ligation,B-direct,Authored (hand-written),,,,,,2078,7,0,2026-08-06,
+log-reduction,Log Reduction,B-direct,Authored (hand-written),,,,,,2115,7,0,2026-08-10,
+mutation-frequency,Mutation frequency,B-direct,Authored (hand-written),,,,,,2089,7,0,2026-07-06,
+mutation-rate,Mutation rate,B-direct,Authored (hand-written),,,,,,2040,6,0,2026-09-28,
+omega-3-for-dogs,Omega-3 for dogs,B-direct,Authored (hand-written),,,,,,1828,6,0,2026-08-10,
+pet-sitter-rates,Pet sitter rates,B-direct,Authored (hand-written),,,,,,2122,7,0,2024-07-12,
+pine-straw,Pine straw,B-direct,Authored (hand-written),,,,,,1933,7,0,2026-06-02,
+protein-concentration,Protein concentration,B-direct,Authored (hand-written),,,,,,1848,6,1,2026-08-06,
+qpcr-efficiency,qPCR efficiency,B-direct,Authored (hand-written),,,,,,1848,7,1,2026-08-10,
+rabbit-cage-size,Rabbit cage size,B-direct,Authored (hand-written),,,,,,2054,7,0,2026-08-06,
+raised-bed-soil,Raised bed soil,B-direct,Authored (hand-written),,,,,,2327,6,0,2026-06-17,
+soil,Soil,B-direct,Authored (hand-written),,,,,,2333,7,0,2026-09-28,
+tree-height,Tree height,B-direct,Authored (hand-written),,,,,,2092,6,0,2026-08-10,
+tree-leaves,Leaves on tree,B-direct,Authored (hand-written),,,,,,2075,6,0,2026-07-24,
+tree-spacing,Tree spacing,B-direct,Authored (hand-written),,,,,,2030,6,1,2026-08-10,
+vegetable-seed,Vegetable seed,B-direct,Authored (hand-written),,,,,,1907,6,0,2026-08-12,
+water-potential,Water potential,B-direct,Authored (hand-written),,,,,,2300,7,0,2026-08-12,
+annealing-temperature,Annealing temperature,C-eq,Harvested — PHP equations,,1,0,0,1,2026,7,0,2026-07-23,1
+bird-age,Bird age,C-eq,Harvested — PHP equations,,2,0,2,2,2179,6,0,2026-08-06,2
+compost,Compost,C-eq,Harvested — PHP equations,,4,0,1,4,2056,6,0,2026-08-21,3
+daily-light-integral-dli,Daily light integral (DLI),C-eq,Harvested — PHP equations,,1,0,0,1,1931,7,0,2026-08-12,1
+dog-heat-cycle,Dog heat cycle,C-eq,Harvested — PHP equations,,5,0,2,0,2321,7,0,2026-08-19,3
+dog-size,Dog size,C-eq,Harvested — PHP equations,,1,0,0,1,1818,6,0,2026-10-05,1
+gdu,GDU (growing degree units),C-eq,Harvested — PHP equations,,2,0,1,2,2330,7,0,2026-08-12,2
+grain-conversion,Grain conversion,C-eq,Harvested — PHP equations,,8,0,2,8,2070,6,0,2026-08-12,3
+guinea-pig-pregnancy,Guinea pig pregnancy,C-eq,Harvested — PHP equations,,6,0,0,0,1942,7,0,2026-08-06,2
+hardy-weinberg-equilibrium,Hardy-Weinberg equilibrium,C-eq,Harvested — PHP equations,specs_e.py,22,0,2,18,2088,7,0,2026-07-17,3
+livestock-fence,Livestock fence cost,C-eq,Harvested — PHP equations,,48,0,10,48,2338,7,0,2026-08-06,3
+metacam-dosage-cat,Metacam dosage for cats,C-eq,Harvested — PHP equations,,5,0,1,5,2308,7,0,2026-08-10,3
+rabbit-gestation,Rabbit gestation,C-eq,Harvested — PHP equations,,3,0,1,0,2066,7,0,2026-08-06,0
+swine-gestation,Swine gestation,C-eq,Harvested — PHP equations,,8,0,0,0,2073,7,0,2026-08-06,2
+allele-frequency,Allele frequency,C-eq+js,Harvested — equations + page JS,,8,38,1,6,1931,6,0,2024-07-19,3
+bacteria-growth,Bacteria growth,C-eq+js,Harvested — equations + page JS,,2,38,0,2,2330,7,0,2026-07-23,2
+basal-area,Basal area,C-eq+js,Harvested — equations + page JS,,1,1336,1,1,1979,6,0,2025-07-04,1
+bulb-spacing,Bulb spacing,C-eq+js,Harvested — equations + page JS,,9,38,2,3,2288,7,0,2026-08-12,3
+cat-age,Cat age,C-eq+js,Harvested — equations + page JS,,2,544,1,2,1909,6,0,2026-08-10,2
+cat-benadryl-dosage,Cat Benadryl dosage,C-eq+js,Harvested — equations + page JS,,6,38,0,0,2293,7,0,2026-09-28,3
+cat-chocolate-toxicity,Cat chocolate toxicity,C-eq+js,Harvested — equations + page JS,,2,893,1,2,1907,6,0,2026-05-25,2
+cat-pregnancy,Cat pregnancy,C-eq+js,Harvested — equations + page JS,,7,184,0,0,2040,7,0,2026-09-28,3
+cat-quality-of-life,Cat quality of life,C-eq+js,Harvested — equations + page JS,,1,38,1,1,1987,6,0,2026-07-23,1
+catculator,Catculator,C-eq+js,Harvested — equations + page JS,,7,1693,5,0,2205,6,0,2025-02-18,3
+cattle-per-acre,Cattle per acre,C-eq+js,Harvested — equations + page JS,,13,1612,4,12,1975,6,0,2026-08-06,3
+cephalexin-for-dogs-dosage,Cephalexin for dogs dosage,C-eq+js,Harvested — equations + page JS,,6,38,1,6,2362,7,0,2026-05-22,3
+cow-gestation,Cow gestation,C-eq+js,Harvested — equations + page JS,,2,38,1,0,2053,7,0,2026-08-06,0
+dihybrid-cross-punnett-square,Dihybrid cross Punnett square,C-eq+js,Harvested — equations + page JS,,9,1750,2,9,2129,6,0,2025-02-06,3
+dna-concentration,DNA concentration,C-eq+js,Harvested — equations + page JS,,2,38,1,2,2071,6,0,2026-08-10,2
+dog-age,Dog age,C-eq+js,Harvested — equations + page JS,,2,788,2,2,1962,6,0,2026-08-10,2
+dog-bmi,Dog BMI,C-eq+js,Harvested — equations + page JS,,1,38,1,1,1872,6,0,2026-05-22,1
+dog-calorie,Dog calorie,C-eq+js,Harvested — equations + page JS,,18,38,3,18,1910,6,0,2026-08-10,3
+dog-chocolate-toxicity,Dog chocolate toxicity,C-eq+js,Harvested — equations + page JS,,2,893,1,2,1934,6,0,2026-09-28,2
+dog-crate-size,Dog crate size,C-eq+js,Harvested — equations + page JS,,2,38,1,2,2078,7,0,2026-08-10,2
+dog-harness-size,Dog harness size,C-eq+js,Harvested — equations + page JS,,4,1923,0,0,1923,6,0,2026-08-10,0
+dog-metacam,Dog Metacam dosage,C-eq+js,Harvested — equations + page JS,,2,383,2,2,1894,6,0,2026-08-19,2
+dog-onion-toxicity,Dog onion toxicity,C-eq+js,Harvested — equations + page JS,,2,38,0,2,1983,6,0,2026-08-10,2
+dog-pregnancy,Dog pregnancy,C-eq+js,Harvested — equations + page JS,,4,154,0,0,1875,7,0,2026-10-05,1
+dog-quality-of-life,Dog quality of life,C-eq+js,Harvested — equations + page JS,,1,38,6,1,1814,5,0,2026-08-10,1
+dog-raisin-toxicity,Dog raisin toxicity,C-eq+js,Harvested — equations + page JS,,2,38,1,2,2026,7,0,2026-09-28,2
+dog-water-intake,Dog water intake,C-eq+js,Harvested — equations + page JS,,1,38,1,1,1908,7,0,2026-08-10,1
+dry-matter,Dry matter,C-eq+js,Harvested — equations + page JS,,12,38,1,12,1908,6,0,2026-08-06,3
+fcr,Feed conversion ratio,C-eq+js,Harvested — equations + page JS,,13,38,1,13,1898,6,0,2026-08-06,3
+goat-gestation,Goat gestation,C-eq+js,Harvested — equations + page JS,,5,154,1,0,2240,7,0,2025-04-07,1
+grain-bin,Grain bin,C-eq+js,Harvested — equations + page JS,,22,38,3,19,1978,7,0,2026-08-06,3
+grass-seed,Grass seed,C-eq+js,Harvested — equations + page JS,,8,38,1,8,1965,6,0,2026-08-12,3
+guinea-pig-age,Guinea pig years to human years,C-eq+js,Harvested — equations + page JS,,1,218,0,0,1799,5,0,2026-08-06,1
+hamster-age,Hamster age,C-eq+js,Harvested — equations + page JS,,1,457,0,0,1821,5,0,2026-08-06,0
+horse-gestation,Horse gestation,C-eq+js,Harvested — equations + page JS,,7,147,0,0,2075,7,0,2026-08-06,3
+horse-weight,Horse weight,C-eq+js,Harvested — equations + page JS,,2,377,1,2,1850,6,0,2026-08-06,2
+how-big-will-my-cat-get,How big will my cat get,C-eq+js,Harvested — equations + page JS,,1,38,0,1,1947,7,0,2026-08-19,1
+llama,Llama,C-eq+js,Harvested — equations + page JS,,7,138,0,0,1898,7,0,2025-04-07,3
+mlvss,Mixed liquor volatile suspended solids,C-eq+js,Harvested — equations + page JS,,9,38,1,8,1938,6,0,2026-08-12,3
+mowing-cost,Lawn mowing,C-eq+js,Harvested — equations + page JS,,4,38,2,4,2200,6,0,2026-08-12,3
+mulch,Mulch,C-eq+js,Harvested — equations + page JS,,17,38,4,17,1951,6,0,2026-08-12,3
+plants,Plant spacing,C-eq+js,Harvested — equations + page JS,,21,232,4,11,1947,7,0,2026-09-28,3
+potting-soil-calculator,Potting soil,C-eq+js,Harvested — equations + page JS,,3,38,1,3,2068,6,0,2026-09-28,3
+protein-molecular-weight,Protein molecular weight,C-eq+js,Harvested — equations + page JS,,1,2083,1,1,1678,6,0,2026-08-06,2
+punnett-square,Punnett square,C-eq+js,Harvested — equations + page JS,,3,1821,1,3,2032,6,0,2026-07-31,3
+rat-cage,Rat cage,C-eq+js,Harvested — equations + page JS,,2,38,1,2,1850,6,0,2026-08-06,2
+raw-dog-food,Raw dog food,C-eq+js,Harvested — equations + page JS,,15,233,2,15,2369,6,0,2026-05-25,3
+sheep-gestation,Sheep gestation,C-eq+js,Harvested — equations + page JS,,3,38,0,0,2020,7,0,2026-08-06,0
+sod,Sod,C-eq+js,Harvested — equations + page JS,,6,38,0,6,2307,7,0,2026-08-12,3
+the-cost-of-owning-a-dog,Cost of owning a dog,C-eq+js,Harvested — equations + page JS,,13,38,1,13,2150,7,0,2026-05-22,3
+tramadol-for-dogs,Tramadol for dogs,C-eq+js,Harvested — equations + page JS,,4,38,0,0,2000,7,0,2026-05-22,0
+tree-age,Tree age,C-eq+js,Harvested — equations + page JS,,3,38,1,3,2107,7,0,2026-08-10,3
+tree-diameter,Tree diameter,C-eq+js,Harvested — equations + page JS,,4,144,0,4,2319,6,0,2026-09-28,3
+tree-value,Tree value,C-eq+js,Harvested — equations + page JS,,1,38,1,1,1910,7,0,2026-09-28,1
+trihybrid-cross-punnett-square,Trihybrid cross Punnett square,C-eq+js,Harvested — equations + page JS,,27,6966,3,27,2010,6,0,2025-02-06,3
+turtle-tank,Turtle tank,C-eq+js,Harvested — equations + page JS,,1,38,1,1,1969,6,0,2026-08-06,1
+vapor-pressure-deficit,Vapor pressure deficit,C-eq+js,Harvested — equations + page JS,,18,906,3,8,1668,6,0,2026-08-12,3
+vegetable-yield,Vegetable yield,C-eq+js,Harvested — equations + page JS,,5,38,1,5,2355,7,0,2026-08-12,3
+wastewater,Wastewater,C-eq+js,Harvested — equations + page JS,,18,38,3,18,1879,6,0,2026-08-12,3
+water-soluble-fertilizer,Water soluble fertilizer,C-eq+js,Harvested — equations + page JS,,42,926,3,40,1869,7,0,2026-08-12,3
+amino-acid-composition,Amino Acid Composition Calculator,D-js,Harvested — page JS only,specs_j.py,0,5996,0,6,1837,5,0,2026-10-29,3
+codon-adaptation-index,Codon Adaptation Index Calculator,D-js,Harvested — page JS only,specs_o.py,0,8493,1,4,1838,5,0,2026-10-29,3
+codon-plot,Codon Plot Calculator,D-js,Harvested — page JS only,specs_p.py,0,6459,0,3,1902,5,0,2026-10-29,3
+codon-usage-calculator,Codon Usage Calculator,D-js,Harvested — page JS only,specs_j.py,0,5631,1,5,1799,5,0,2026-10-29,3
+cpg-island-finder,CpG Island Finder,D-js,Harvested — page JS only,specs_j.py,0,5546,0,5,1891,5,0,2026-10-29,3
+dna-molecular-weight-calculator,DNA Molecular Weight Calculator,D-js,Harvested — page JS only,specs_j.py,0,5256,1,6,1814,5,0,2026-10-29,3
+dna-pattern-finder,DNA Pattern Finder,D-js,Harvested — page JS only,specs_j.py,0,5612,1,4,1996,5,0,2026-10-29,3
+dna-to-mrna,DNA to mRNA,D-js,Harvested — page JS only,,0,13356,1,6,1925,5,0,2026-01-27,3
+dna-to-protein,DNA to Protein Translation Calculator,D-js,Harvested — page JS only,specs_i.py,0,5216,1,4,1842,5,0,2026-10-29,3
+dog-coat-color,Dog Coat Colour Calculator,D-js,Harvested — page JS only,specs_p.py,0,5736,5,1,1805,5,0,2026-10-29,1
+dog-life-expectancy,Dog life expectancy,D-js,Harvested — page JS only,,0,11231,2,0,1892,5,0,2026-08-10,0
+fuzzy-protein-search,Fuzzy Protein Search Calculator,D-js,Harvested — page JS only,specs_o.py,0,5550,0,3,1803,5,0,2026-10-29,3
+gc-content-sequence,GC Content from a Sequence,D-js,Harvested — page JS only,specs_i.py,0,3198,0,5,1780,5,0,2026-10-29,3
+multi-reverse-translate,Multi Reverse Translate Calculator,D-js,Harvested — page JS only,specs_o.py,0,9323,2,3,2018,5,0,2026-10-29,3
+orf-finder,ORF Finder,D-js,Harvested — page JS only,specs_k.py,0,5359,1,5,1825,5,0,2026-10-29,3
+pcr-primer-stats,PCR Primer Stats Calculator,D-js,Harvested — page JS only,specs_j.py,0,7284,0,9,1935,5,0,2026-10-29,3
+primer-dimer-checker,Primer Dimer Checker,D-js,Harvested — page JS only,specs_k.py,0,5511,0,7,2022,5,0,2026-10-29,3
+protein-isoelectric-point,Protein Isoelectric Point Calculator,D-js,Harvested — page JS only,specs_j.py,0,6808,0,7,1937,5,0,2026-10-29,3
+rabbit-color,Rabbit color,D-js,Harvested — page JS only,,0,15794,37,58,1819,5,0,2026-08-06,3
+random-sequence-generator,Random Sequence Generator Calculator,D-js,Harvested — page JS only,specs_o.py,0,5770,2,1,1958,5,0,2026-10-29,1
+restriction-buffer-compatibility,Double Digest Buffer Compatibility Calculator,D-js,Harvested — page JS only,specs_o.py,0,6388,3,3,1900,5,0,2026-10-29,3
+restriction-digest,Restriction Digest Calculator,D-js,Harvested — page JS only,specs_k.py,0,7064,3,5,1845,5,0,2026-10-29,3
+restriction-enzyme-finder,Restriction Enzyme Finder Calculator,D-js,Harvested — page JS only,specs_o.py,0,7037,1,3,2024,5,0,2026-10-29,3
+reverse-complement,Reverse Complement Calculator,D-js,Harvested — page JS only,specs_i.py,0,3255,1,3,2001,5,0,2026-10-29,3
+reverse-translate,Reverse Translate Calculator,D-js,Harvested — page JS only,specs_j.py,0,6594,2,5,2014,5,0,2026-10-29,3
+sequence-shuffler,DNA Sequence Shuffler,D-js,Harvested — page JS only,specs_j.py,0,5550,2,4,1980,5,0,2026-10-29,3
