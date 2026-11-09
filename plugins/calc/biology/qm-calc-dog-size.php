@@ -12,176 +12,124 @@
 return [
     'name' => 'Dog size',
     'meta' => ['title' => 'Dog size Calculator: Formula, Steps & Example', 'description' => 'Enter your puppy’s age and weight and Dog size returns adult weight. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'Dog size Calculator', 'updated' => '2026-10-05'],
-    'raw' => [
-        'vars' => [
-            'age' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'finalSize' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'finalSize_110' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'finalSize_90' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'ZcCCUjrPOAyKM8W2kCK-b',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'age',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your puppy’s age',
-                                    'us' => '19',
-                                    'du' => 'wk',
-                                ],
-                            ],
+                            'name' => 'age',
+                            'label' => 'Your puppy’s age',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'wk',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Weight',
-                                    'h' => 'Your puppy’s weight at the age specified above.',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Weight',
+                            'type' => 'number',
+                            'help' => 'Your puppy’s weight at the age specified above.',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'finalSize',
-                                    'vt' => 'numerical',
-                                    'l' => 'Adult weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
+                            'name' => 'finalSize',
+                            'label' => 'Adult weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['hasValue(finalSize)', 'Your dog\'s adult weight should fall into this range: {{finalSize_90.formattedValue}}-{{finalSize_110.formattedValue}}&nbsp;{{finalSize.unit}}.'],
-                                        ['finalSize > 0 and finalSize <= 12', 'Your pet\'s going to be a Toy dog &nbsp;'],
-                                        ['finalSize > 12 and finalSize <=22', 'Your pet\'s going to be a Small dog &nbsp;'],
-                                        ['finalSize > 22 and finalSize <=57', 'Your pet\'s going to be a Medium dog &nbsp;'],
-                                        ['finalSize > 57 and finalSize <=99', 'Your pet\'s going to be a Large dog &nbsp;'],
-                                        ['finalSize > 99', 'Your pet\'s going to be a Giant dog '],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'i',
-                                    'u' => ['Dogs/toydog22.jpg'],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['finalSize > 0 and finalSize <= 12', 'This type of dog can measure up to 12&nbsp;inches (30.5&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
-                                        ['finalSize > 12 and finalSize <=22', 'This type of dog can measure up to 18&nbsp;inches (45.7&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
-                                        ['finalSize > 22 and finalSize <=57', 'This type of dog can measure up to 25&nbsp;inches (63.5&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
-                                        ['finalSize > 57 and finalSize <=99', 'This type of dog can measure up to 30&nbsp;inches (76.2&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
-                                        ['finalSize > 99', 'This type of dog can measure up to 44&nbsp;inches (111.8&nbsp;cm) in height, from paw to shoulder.'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'hasValue(finalSize)', 'text' => 'Your dog\'s adult weight should fall into this range: {{finalSize_90.formattedValue}}-{{finalSize_110.formattedValue}}&nbsp;{{finalSize.unit}}.'],
+                                ['when' => 'finalSize > 0 and finalSize <= 12', 'text' => 'Your pet\'s going to be a Toy dog &nbsp;'],
+                                ['when' => 'finalSize > 12 and finalSize <=22', 'text' => 'Your pet\'s going to be a Small dog &nbsp;'],
+                                ['when' => 'finalSize > 22 and finalSize <=57', 'text' => 'Your pet\'s going to be a Medium dog &nbsp;'],
+                                ['when' => 'finalSize > 57 and finalSize <=99', 'text' => 'Your pet\'s going to be a Large dog &nbsp;'],
+                                ['when' => 'finalSize > 99', 'text' => 'Your pet\'s going to be a Giant dog '],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'uCg9lNYg8pSLCsL1Xy77c',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'finalSize_90', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'image', 'url' => 'Dogs/toydog22.jpg'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'finalSize_110', 'vt' => 'presentation', 'l' => ''],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'finalSize > 0 and finalSize <= 12', 'text' => 'This type of dog can measure up to 12&nbsp;inches (30.5&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
+                                ['when' => 'finalSize > 12 and finalSize <=22', 'text' => 'This type of dog can measure up to 18&nbsp;inches (45.7&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
+                                ['when' => 'finalSize > 22 and finalSize <=57', 'text' => 'This type of dog can measure up to 25&nbsp;inches (63.5&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
+                                ['when' => 'finalSize > 57 and finalSize <=99', 'text' => 'This type of dog can measure up to 30&nbsp;inches (76.2&nbsp;cm) in height, from paw to shoulder.&nbsp;'],
+                                ['when' => 'finalSize > 99', 'text' => 'This type of dog can measure up to 44&nbsp;inches (111.8&nbsp;cm) in height, from paw to shoulder.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'finalSize = (weight / age) * 52',
-                'var' => [
-                    [
-                        'l' => 'finalSize',
-                        'f' => '52*weight/age',
-                        'r' => ['weight', 'age'],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'finalSize_90',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
                     ],
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/52)*age*finalSize',
-                        'r' => ['finalSize', 'age'],
-                    ],
-                    [
-                        'l' => 'age',
-                        'f' => '52*weight/finalSize',
-                        'r' => ['finalSize', 'weight'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'finalSize_110',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
+    ],
+    'formula' => [
+        [
+            'title' => 'finalSize = (weight / age) * 52',
+            'results' => ['finalSize' => '52*weight/age', 'weight' => '(1/52)*age*finalSize', 'age' => '52*weight/finalSize'],
+        ],
     ],
     'article' => [
         'intro' => <<<'TXT'
@@ -243,6 +191,5 @@ return [
             ['path' => '/biology/compost-application-rate', 'name' => 'Compost Application Rate Calculator'],
             ['path' => '/biology/compost', 'name' => 'Compost Calculator'],
         ],
-        'authors' => [],
     ],
 ];

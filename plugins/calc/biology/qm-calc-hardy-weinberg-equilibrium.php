@@ -12,891 +12,471 @@
 return [
     'name' => 'Hardy-Weinberg equilibrium',
     'meta' => ['title' => 'Hardy-Weinberg equilibrium Calculator: Steps & Units', 'description' => 'Hardy-Weinberg equilibrium takes allele counts for two to five alleles and returns genotype frequencies and carrier risk. Risk follows from the same counts.', 'h1' => 'Hardy-Weinberg equilibrium Calculator', 'updated' => '2026-07-17'],
-    'raw' => [
-        'vars' => [
-            'carrier_1_in' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '0'],
-            ],
-            'carrier_perc' => [
-                'type' => 'presentation',
-                'rnd' => ['standard', '2'],
-            ],
-            'genotypes' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'model' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'utrZMwzy0-vfQWUoZwxE3', 'c' => null],
-                ],
-                'ds' => 'SMSPuEkBbZ9Ay_ZSmDLT9',
-            ],
-            'number' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'nTCK7Ah9dOyRLTHRkzbmm', 'c' => null],
-                ],
-                'ds' => '972',
-            ],
-            'p' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'p_risk' => [
-                'type' => 'presentation',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'p_risk2' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pp' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'pq' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'pq_risk' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pr' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'ps' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'pt' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'q' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'q_risk' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'qq' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'qr' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'qs' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'qt' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'r' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rr' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'rs' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'rt' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            's' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'ss' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            'st' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-            't' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'tt' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '3'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'Z15VgId2-NgsvVTDfWYEj',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'model',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'What do you want to calculate?',
-                                    'ds' => 'SMSPuEkBbZ9Ay_ZSmDLT9',
-                                    'opts' => [
-                                        ['utrZMwzy0-vfQWUoZwxE3', 'Genotype frequencies', '1'],
-                                        ['VWX-bMabSmE4szPIJDsXy', 'Carrier frequency and disease risk', '2'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'number',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Number of alleles',
-                                    'ds' => '972',
-                                    'opts' => [
-                                        ['nTCK7Ah9dOyRLTHRkzbmm', '2 alleles (p, q)', '2'],
-                                        ['n6MTrzVY5CkEKD2i6TlUS', '3 alleles (p, q, r)', '3'],
-                                        ['eYK3MC2czftLaY_WDuG3N', '4 alleles (p, q, r, s)', '4'],
-                                        ['jHg-4vp4eIjzANiSdKooK', '5 alleles (p, q, r, s, t)', '5'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'q_risk',
-                                    'vt' => 'numerical',
-                                    'l' => 'Enter how many people in the population are affected, expressed as “1 in N”',
-                                    'pre' => '1 in',
-                                    'suf' => 'people',
-                                    'h' => 'Enter how common is the recessive trait.',
-                                ],
-                            ],
+                            'name' => 'model',
+                            'label' => 'What do you want to calculate?',
+                            'type' => 'select',
+                            'options' => ['Genotype frequencies' => '1', 'Carrier frequency and disease risk' => '2'],
+                            'dataset' => 'mode',
+                            'default' => 'Genotype frequencies',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'ZOv_CSbnIZr3QeQU2JdjL',
-                'title' => 'Allele frequencies',
-                'desc' => 'The allele frequencies need to add up to 1 for the calculation to be correct!',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'p', 'vt' => 'numerical', 'l' => 'p'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'q', 'vt' => 'numerical', 'l' => 'q'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'r', 'vt' => 'numerical', 'l' => 'r'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 's', 'vt' => 'numerical', 'l' => 's'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 't', 'vt' => 'numerical', 'l' => 't'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'The above frequencies don\'t add up to 1. Try reloading the calculator and trying again.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'number',
+                            'label' => 'Number of alleles',
+                            'type' => 'select',
+                            'options' => ['2 alleles (p, q)' => '2', '3 alleles (p, q, r)' => '3', '4 alleles (p, q, r, s)' => '4', '5 alleles (p, q, r, s, t)' => '5'],
+                            'default' => '2 alleles (p, q)',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'QohhRK8g1ke_P_C-Ub9iq',
-                'title' => 'Genotype frequencies',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'genotypes',
-                                    'vt' => 'numerical',
-                                    'l' => 'Genotypes',
-                                    'h' => 'Number of genotypes for a given number of alleles.',
-                                    'oo' => 1,
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pp', 'vt' => 'numerical', 'l' => 'Homozygous AA — p^^2^^'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => 'Heterozygous AB — 2pq'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'qq', 'vt' => 'numerical', 'l' => 'Homozygous BB — q^^2^^'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pr', 'vt' => 'numerical', 'l' => 'Heterozygous AC — 2pr'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'qr', 'vt' => 'numerical', 'l' => 'Heterozygous BC — 2qr'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rr', 'vt' => 'numerical', 'l' => 'Homozygous CC — r^^2^^'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'ps', 'vt' => 'numerical', 'l' => 'Heterozygous AD — 2ps'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'qs', 'vt' => 'numerical', 'l' => 'Heterozygous BD — 2qs'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rs', 'vt' => 'numerical', 'l' => 'Heterozygous CD — 2rs'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'ss', 'vt' => 'numerical', 'l' => 'Homozygous DD — s^^2^^'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pt', 'vt' => 'numerical', 'l' => 'Heterozygous AE — 2pt'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'qt', 'vt' => 'numerical', 'l' => 'Heterozygous BE — 2qt'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rt', 'vt' => 'numerical', 'l' => 'Heterozygous CE — 2rt'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'st', 'vt' => 'numerical', 'l' => 'Heterozygous DE — 2st'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'tt', 'vt' => 'numerical', 'l' => 'Homozygous EE — t^^2^^'],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'ErkU8pnxnvJv4g9Ji0wrD',
-                'title' => 'Carrier frequency',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pq_risk', 'vt' => 'numerical', 'l' => 'Carrier (Aa)'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'p_risk2', 'vt' => 'numerical', 'l' => 'Unaffected, non-carrier (AA)'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, 'Carrier frequency in population: {{carrier_perc.value}}% This means that approximately 1 in {{carrier_1_in.value}} people carry this trait without knowing it.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'oE6ldGeYiShpHA6U1Gf5P',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'p_risk', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'carrier_perc', 'vt' => 'presentation', 'l' => ''],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'carrier_1_in', 'vt' => 'presentation', 'l' => ''],
-                            ],
+                            'name' => 'q_risk',
+                            'label' => 'Enter how many people in the population are affected, expressed as “1 in N”',
+                            'type' => 'number',
+                            'prefix' => '1 in',
+                            'suffix' => 'people',
+                            'help' => 'Enter how common is the recessive trait.',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'pp= p*p',
-                'var' => [
-                    [
-                        'l' => 'pp',
-                        'f' => 'pow(p, 2)',
-                        'r' => ['p'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => 'sqrt(pp)',
-                        'r' => ['pp'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'pq= 2*p*q',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '(1/2)*pq/p',
-                        'r' => ['pq', 'p'],
-                    ],
-                    [
-                        'l' => 'pq',
-                        'f' => '2*p*q',
-                        'r' => ['q', 'p'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '(1/2)*pq/q',
-                        'r' => ['q', 'pq'],
+        [
+            'title' => 'Allele frequencies',
+            'note' => 'The allele frequencies need to add up to 1 for the calculation to be correct!',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'p',
+                            'label' => 'p',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'qq=q*q',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => 'sqrt(qq)',
-                        'r' => ['qq'],
-                    ],
-                    [
-                        'l' => 'qq',
-                        'f' => 'pow(q, 2)',
-                        'r' => ['q'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'q',
+                            'label' => 'q',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'genotypes=(number*(number+1))/2',
-                'var' => [
-                    [
-                        'l' => 'genotypes',
-                        'f' => '(1/2)*number*(number + 1)',
-                        'r' => ['number'],
-                    ],
-                    [
-                        'l' => 'number',
-                        'f' => '(1/2)*sqrt(8*genotypes + 1) - 1/2',
-                        'r' => ['genotypes'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'r',
+                            'label' => 'r',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'pr = 2*p*r',
-                'var' => [
-                    [
-                        'l' => 'r',
-                        'f' => '(1/2)*pr/p',
-                        'r' => ['p', 'pr'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '(1/2)*pr/r',
-                        'r' => ['r', 'pr'],
-                    ],
-                    [
-                        'l' => 'pr',
-                        'f' => '2*p*r',
-                        'r' => ['r', 'p'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 's',
+                            'label' => 's',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'qr = 2*q*r',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '(1/2)*qr/r',
-                        'r' => ['r', 'qr'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '(1/2)*qr/q',
-                        'r' => ['q', 'qr'],
-                    ],
-                    [
-                        'l' => 'qr',
-                        'f' => '2*q*r',
-                        'r' => ['q', 'r'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 't',
+                            'label' => 't',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'rr= r*r',
-                'var' => [
-                    [
-                        'l' => 'r',
-                        'f' => 'sqrt(rr)',
-                        'r' => ['rr'],
-                    ],
-                    [
-                        'l' => 'rr',
-                        'f' => 'pow(r, 2)',
-                        'r' => ['r'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'ps=2*p*s',
-                'var' => [
-                    [
-                        'l' => 'ps',
-                        'f' => '2*p*s',
-                        'r' => ['s', 'p'],
-                    ],
-                    [
-                        'l' => 's',
-                        'f' => '(1/2)*ps/p',
-                        'r' => ['ps', 'p'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '(1/2)*ps/s',
-                        'r' => ['ps', 's'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'qs=2*q*s',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '(1/2)*qs/s',
-                        'r' => ['s', 'qs'],
-                    ],
-                    [
-                        'l' => 's',
-                        'f' => '(1/2)*qs/q',
-                        'r' => ['q', 'qs'],
-                    ],
-                    [
-                        'l' => 'qs',
-                        'f' => '2*q*s',
-                        'r' => ['q', 's'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'rs=2*r*s',
-                'var' => [
-                    [
-                        'l' => 's',
-                        'f' => '(1/2)*rs/r',
-                        'r' => ['rs', 'r'],
-                    ],
-                    [
-                        'l' => 'rs',
-                        'f' => '2*r*s',
-                        'r' => ['s', 'r'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '(1/2)*rs/s',
-                        'r' => ['s', 'rs'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'ss=s*s',
-                'var' => [
-                    [
-                        'l' => 'ss',
-                        'f' => 'pow(s, 2)',
-                        'r' => ['s'],
-                    ],
-                    [
-                        'l' => 's',
-                        'f' => 'sqrt(ss)',
-                        'r' => ['ss'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'pt=2*p*t',
-                'var' => [
-                    [
-                        'l' => 't',
-                        'f' => '(1/2)*pt/p',
-                        'r' => ['p', 'pt'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '(1/2)*pt/t',
-                        'r' => ['t', 'pt'],
-                    ],
-                    [
-                        'l' => 'pt',
-                        'f' => '2*p*t',
-                        'r' => ['t', 'p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'qt=2*q*t',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '(1/2)*qt/t',
-                        'r' => ['t', 'qt'],
-                    ],
-                    [
-                        'l' => 't',
-                        'f' => '(1/2)*qt/q',
-                        'r' => ['q', 'qt'],
-                    ],
-                    [
-                        'l' => 'qt',
-                        'f' => '2*q*t',
-                        'r' => ['q', 't'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'rt=2*r*t',
-                'var' => [
-                    [
-                        'l' => 't',
-                        'f' => '(1/2)*rt/r',
-                        'r' => ['rt', 'r'],
-                    ],
-                    [
-                        'l' => 'rt',
-                        'f' => '2*r*t',
-                        'r' => ['t', 'r'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '(1/2)*rt/t',
-                        'r' => ['t', 'rt'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'st=2*s*t',
-                'var' => [
-                    [
-                        'l' => 's',
-                        'f' => '(1/2)*st/t',
-                        'r' => ['t', 'st'],
-                    ],
-                    [
-                        'l' => 't',
-                        'f' => '(1/2)*st/s',
-                        'r' => ['s', 'st'],
-                    ],
-                    [
-                        'l' => 'st',
-                        'f' => '2*s*t',
-                        'r' => ['s', 't'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'tt=t*t',
-                'var' => [
-                    [
-                        'l' => 't',
-                        'f' => 'sqrt(tt)',
-                        'r' => ['tt'],
-                    ],
-                    [
-                        'l' => 'tt',
-                        'f' => 'pow(t, 2)',
-                        'r' => ['t'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p + q = 1',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '1 - p',
-                        'r' => ['p'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '1 - q',
-                        'r' => ['q'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p + q + r = 1',
-                'var' => [
-                    [
-                        'l' => 'q',
-                        'f' => '-p - r + 1',
-                        'r' => ['r', 'p'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '-p - q + 1',
-                        'r' => ['q', 'p'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '-q - r + 1',
-                        'r' => ['q', 'r'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p + q + r + s = 1',
-                'var' => [
-                    [
-                        'l' => 's',
-                        'f' => '-p - q - r + 1',
-                        'r' => ['r', 'p', 'q'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '-p - q - s + 1',
-                        'r' => ['s', 'p', 'q'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '-q - r - s + 1',
-                        'r' => ['s', 'r', 'q'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => '-p - r - s + 1',
-                        'r' => ['s', 'r', 'p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p + q + r + s + t = 1',
-                'var' => [
-                    [
-                        'l' => 's',
-                        'f' => '-p - q - r - t + 1',
-                        'r' => ['p', 'q', 't', 'r'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '-q - r - s - t + 1',
-                        'r' => ['s', 'q', 't', 'r'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => '-p - r - s - t + 1',
-                        'r' => ['s', 'p', 't', 'r'],
-                    ],
-                    [
-                        'l' => 't',
-                        'f' => '-p - q - r - s + 1',
-                        'r' => ['s', 'p', 'q', 'r'],
-                    ],
-                    [
-                        'l' => 'r',
-                        'f' => '-p - q - s - t + 1',
-                        'r' => ['s', 'p', 'q', 't'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p_risk2 = p_risk *p_risk',
-                'var' => [
-                    [
-                        'l' => 'p_risk2',
-                        'f' => 'pow(((1 - sqrt(1/q_risk))), 2)',
-                        'r' => ['q_risk'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'pq_risk = 2 * p_risk * sqrt(1/q_risk)',
-                'var' => [
-                    [
-                        'l' => 'pq_risk',
-                        'f' => '2*sqrt(1/q_risk)*((1 - sqrt(1/q_risk)))',
-                        'r' => ['q_risk', 'q_risk'],
-                    ],
-                    [
-                        'l' => 'q_risk',
-                        'f' => '4*pow(((1 - sqrt(1/q_risk))), 2)/pow(pq_risk, 2)',
-                        'r' => ['pq_risk', 'q_risk'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'The above frequencies don\'t add up to 1. Try reloading the calculator and trying again.'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '972' => [
-                'name' => 'Number of alleles',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'nTCK7Ah9dOyRLTHRkzbmm', 'label' => '2 alleles (p, q)', 'value' => '2'],
-                    ['uid' => 'n6MTrzVY5CkEKD2i6TlUS', 'label' => '3 alleles (p, q, r)', 'value' => '3'],
-                    ['uid' => 'eYK3MC2czftLaY_WDuG3N', 'label' => '4 alleles (p, q, r, s)', 'value' => '4'],
-                    ['uid' => 'jHg-4vp4eIjzANiSdKooK', 'label' => '5 alleles (p, q, r, s, t)', 'value' => '5'],
+        [
+            'title' => 'Genotype frequencies',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'genotypes',
+                            'label' => 'Genotypes',
+                            'type' => 'number',
+                            'help' => 'Number of genotypes for a given number of alleles.',
+                            'readonly' => true,
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pp',
+                            'label' => 'Homozygous AA — p^^2^^',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pq',
+                            'label' => 'Heterozygous AB — 2pq',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'qq',
+                            'label' => 'Homozygous BB — q^^2^^',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pr',
+                            'label' => 'Heterozygous AC — 2pr',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'qr',
+                            'label' => 'Heterozygous BC — 2qr',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rr',
+                            'label' => 'Homozygous CC — r^^2^^',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'ps',
+                            'label' => 'Heterozygous AD — 2ps',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'qs',
+                            'label' => 'Heterozygous BD — 2qs',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rs',
+                            'label' => 'Heterozygous CD — 2rs',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'ss',
+                            'label' => 'Homozygous DD — s^^2^^',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pt',
+                            'label' => 'Heterozygous AE — 2pt',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'qt',
+                            'label' => 'Heterozygous BE — 2qt',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rt',
+                            'label' => 'Heterozygous CE — 2rt',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'st',
+                            'label' => 'Heterozygous DE — 2st',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tt',
+                            'label' => 'Homozygous EE — t^^2^^',
+                            'type' => 'number',
+                            'rounding' => ['standard', '3'],
+                        ],
+                    ],
                 ],
             ],
-            'SMSPuEkBbZ9Ay_ZSmDLT9' => [
-                'name' => 'mode',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'utrZMwzy0-vfQWUoZwxE3', 'label' => 'Genotype frequencies', 'value' => '1'],
-                    ['uid' => 'VWX-bMabSmE4szPIJDsXy', 'label' => 'Carrier frequency and disease risk', 'value' => '2'],
+        ],
+        [
+            'title' => 'Carrier frequency',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pq_risk',
+                            'label' => 'Carrier (Aa)',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'p_risk2',
+                            'label' => 'Unaffected, non-carrier (AA)',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => 'Carrier frequency in population: {{carrier_perc.value}}% This means that approximately 1 in {{carrier_1_in.value}} people carry this trait without knowing it.'],
+                    ],
                 ],
             ],
+        ],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'p_risk',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'carrier_perc',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'carrier_1_in',
+                            'label' => '',
+                            'type' => 'presentation',
+                            'rounding' => ['standard', '0'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'formula' => [
+        [
+            'title' => 'pp= p*p',
+            'results' => ['pp' => 'pow(p, 2)', 'p' => 'sqrt(pp)'],
+        ],
+        [
+            'title' => 'pq= 2*p*q',
+            'results' => ['q' => '(1/2)*pq/p', 'pq' => '2*p*q', 'p' => '(1/2)*pq/q'],
+        ],
+        [
+            'title' => 'qq=q*q',
+            'results' => ['q' => 'sqrt(qq)', 'qq' => 'pow(q, 2)'],
+        ],
+        [
+            'title' => 'genotypes=(number*(number+1))/2',
+            'results' => ['genotypes' => '(1/2)*number*(number + 1)', 'number' => '(1/2)*sqrt(8*genotypes + 1) - 1/2'],
+        ],
+        [
+            'title' => 'pr = 2*p*r',
+            'results' => ['r' => '(1/2)*pr/p', 'p' => '(1/2)*pr/r', 'pr' => '2*p*r'],
+        ],
+        [
+            'title' => 'qr = 2*q*r',
+            'results' => ['q' => '(1/2)*qr/r', 'r' => '(1/2)*qr/q', 'qr' => '2*q*r'],
+        ],
+        [
+            'title' => 'rr= r*r',
+            'results' => ['r' => 'sqrt(rr)', 'rr' => 'pow(r, 2)'],
+        ],
+        [
+            'title' => 'ps=2*p*s',
+            'results' => ['ps' => '2*p*s', 's' => '(1/2)*ps/p', 'p' => '(1/2)*ps/s'],
+        ],
+        [
+            'title' => 'qs=2*q*s',
+            'results' => ['q' => '(1/2)*qs/s', 's' => '(1/2)*qs/q', 'qs' => '2*q*s'],
+        ],
+        [
+            'title' => 'rs=2*r*s',
+            'results' => ['s' => '(1/2)*rs/r', 'rs' => '2*r*s', 'r' => '(1/2)*rs/s'],
+        ],
+        [
+            'title' => 'ss=s*s',
+            'results' => ['ss' => 'pow(s, 2)', 's' => 'sqrt(ss)'],
+        ],
+        [
+            'title' => 'pt=2*p*t',
+            'results' => ['t' => '(1/2)*pt/p', 'p' => '(1/2)*pt/t', 'pt' => '2*p*t'],
+        ],
+        [
+            'title' => 'qt=2*q*t',
+            'results' => ['q' => '(1/2)*qt/t', 't' => '(1/2)*qt/q', 'qt' => '2*q*t'],
+        ],
+        [
+            'title' => 'rt=2*r*t',
+            'results' => ['t' => '(1/2)*rt/r', 'rt' => '2*r*t', 'r' => '(1/2)*rt/t'],
+        ],
+        [
+            'title' => 'st=2*s*t',
+            'results' => ['s' => '(1/2)*st/t', 't' => '(1/2)*st/s', 'st' => '2*s*t'],
+        ],
+        [
+            'title' => 'tt=t*t',
+            'results' => ['t' => 'sqrt(tt)', 'tt' => 'pow(t, 2)'],
+        ],
+        [
+            'title' => 'p + q = 1',
+            'results' => ['q' => '1 - p', 'p' => '1 - q'],
+        ],
+        [
+            'title' => 'p + q + r = 1',
+            'results' => ['q' => '-p - r + 1', 'r' => '-p - q + 1', 'p' => '-q - r + 1'],
+        ],
+        [
+            'title' => 'p + q + r + s = 1',
+            'results' => ['s' => '-p - q - r + 1', 'r' => '-p - q - s + 1', 'p' => '-q - r - s + 1', 'q' => '-p - r - s + 1'],
+        ],
+        [
+            'title' => 'p + q + r + s + t = 1',
+            'results' => [
+                's' => '-p - q - r - t + 1',
+                'p' => '-q - r - s - t + 1',
+                'q' => '-p - r - s - t + 1',
+                't' => '-p - q - r - s + 1',
+                'r' => '-p - q - s - t + 1',
+            ],
+        ],
+        [
+            'title' => 'p_risk2 = p_risk *p_risk',
+            'results' => ['p_risk2' => 'pow(((1 - sqrt(1/q_risk))), 2)'],
+        ],
+        [
+            'title' => 'pq_risk = 2 * p_risk * sqrt(1/q_risk)',
+            'results' => ['pq_risk' => '2*sqrt(1/q_risk)*((1 - sqrt(1/q_risk)))', 'q_risk' => '4*pow(((1 - sqrt(1/q_risk))), 2)/pow(pq_risk, 2)'],
         ],
     ],
     'article' => [
@@ -942,7 +522,6 @@ return [
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Hardy-Weinberg equilibrium calculator work out?', 'a' => 'Genotypes, from p. The relationship is Homozygous AA — p^^2^^ = (p)^(2).'],
             ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
             What do you want to calculate?, Number of alleles, Enter how many people in the population are affected, expressed as “1 in N” (people), p, q. Enter what do you want to calculate?, number of alleles and enter how many people in the population are affected, expressed as “1 in N”; Genotypes is the box to leave alone unless it is the value you came for.
             TXT],
@@ -965,6 +544,5 @@ return [
             ['path' => '/biology/ghk-membrane-potential', 'name' => 'Goldman–Hodgkin–Katz Membrane Potential Calculator'],
             ['path' => '/biology/grain-bin', 'name' => 'Grain bin Calculator'],
         ],
-        'authors' => [],
     ],
 ];

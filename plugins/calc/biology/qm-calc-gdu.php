@@ -12,266 +12,170 @@
 return [
     'name' => 'GDU (growing degree units)',
     'meta' => ['title' => 'GDU Calculator: Worked Example and Formulas', 'description' => 'GDU converts daily maximum and minimum temperatures into growing degree units, in Celsius or Fahrenheit, above a chosen base. Station numbers go in as they are.', 'h1' => 'GDU (growing degree units) Calculator', 'updated' => '2026-08-12'],
-    'raw' => [
-        'vars' => [
-            'base_temp' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '10', 'c' => null],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'temp_unit',
+                            'label' => 'Which temperature unit will you be using?',
+                            'type' => 'select',
+                            'options' => ['Celsius' => '0', 'Fahrenheit' => '1'],
+                            'dataset' => 'temp_unit',
+                            'defaults' => [
+                                ['value' => 'Celsius', 'when' => null],
+                                ['value' => 'Fahrenheit', 'when' => 'userUsesImperialUnits()'],
+                            ],
+                        ],
+                    ],
                 ],
-            ],
-            'base_temp_f' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '50', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'max_crop_temp',
+                            'label' => 'Maximum growing temperature for crop',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '30',
+                        ],
+                    ],
                 ],
-            ],
-            'gdu' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gdu_f' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'max_crop_temp' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '30', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'base_temp',
+                            'label' => 'Base temperature',
+                            'type' => 'number',
+                            'help' => 'Minimum growing temperature for crop.',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '10',
+                        ],
+                    ],
                 ],
-            ],
-            'max_crop_temp_f' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '86', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'max_temp',
+                            'label' => 'Daily maximum temperature',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
-            ],
-            'max_temp' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'max_temp_f' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'min_temp' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'min_temp_f' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'temp_unit' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'BRcKqLQ6G32GI0q9eXgXZ', 'c' => null],
-                    ['v' => 'htrN5K5xfwHTqz_YdDI3N', 'c' => 'userUsesImperialUnits()'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'min_temp',
+                            'label' => 'Daily minimum temperature',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'C',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
-                'ds' => '1ablvJg37Q8wFXmG0w4Gy',
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => '2aCsGlh8a2vNCo_FJ-JXY',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'temp_unit',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Which temperature unit will you be using?',
-                                    'ds' => '1ablvJg37Q8wFXmG0w4Gy',
-                                    'opts' => [
-                                        ['BRcKqLQ6G32GI0q9eXgXZ', 'Celsius', '0'],
-                                        ['htrN5K5xfwHTqz_YdDI3N', 'Fahrenheit', '1'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'gdu',
+                            'label' => 'Growing degree units (GDU)',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'max_crop_temp', 'vt' => 'numerical', 'l' => 'Maximum growing temperature for crop'],
-                            ],
+                            'name' => 'max_crop_temp_f',
+                            'label' => 'Maximum growing temperature for crop',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'F',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '86',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'base_temp',
-                                    'vt' => 'numerical',
-                                    'l' => 'Base temperature',
-                                    'h' => 'Minimum growing temperature for crop.',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'base_temp_f',
+                            'label' => 'Base temperature',
+                            'type' => 'number',
+                            'help' => 'Minimum growing temperature for crop.',
+                            'unit' => '40',
+                            'unit_default' => 'F',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '50',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'max_temp',
-                                    'vt' => 'numerical',
-                                    'l' => 'Daily maximum temperature',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'max_temp_f',
+                            'label' => 'Daily maximum temperature',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'F',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'min_temp',
-                                    'vt' => 'numerical',
-                                    'l' => 'Daily minimum temperature',
-                                    'us' => '40',
-                                    'du' => 'C',
-                                ],
-                            ],
+                            'name' => 'min_temp_f',
+                            'label' => 'Daily minimum temperature',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'F',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'gdu', 'vt' => 'numerical', 'l' => 'Growing degree units (GDU)'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'max_crop_temp_f',
-                                    'vt' => 'numerical',
-                                    'l' => 'Maximum growing temperature for crop',
-                                    'us' => '40',
-                                    'du' => 'F',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'base_temp_f',
-                                    'vt' => 'numerical',
-                                    'l' => 'Base temperature',
-                                    'h' => 'Minimum growing temperature for crop.',
-                                    'us' => '40',
-                                    'du' => 'F',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'max_temp_f',
-                                    'vt' => 'numerical',
-                                    'l' => 'Daily maximum temperature',
-                                    'us' => '40',
-                                    'du' => 'F',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'min_temp_f',
-                                    'vt' => 'numerical',
-                                    'l' => 'Daily minimum temperature',
-                                    'us' => '40',
-                                    'du' => 'F',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'gdu_f',
-                                    'vt' => 'numerical',
-                                    'l' => 'Growing degree units (GDU)',
-                                    'us' => '40',
-                                    'du' => 'F',
-                                ],
-                            ],
+                            'name' => 'gdu_f',
+                            'label' => 'Growing degree units (GDU)',
+                            'type' => 'number',
+                            'unit' => '40',
+                            'unit_default' => 'F',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'gdu = (min(max_temp, max_crop_temp) + max(min_temp, base_temp)) / 2 - base_temp',
-                'var' => [
-                    [
-                        'l' => 'gdu',
-                        'f' => '-base_temp + (1/2)*max(base_temp, min_temp) + (1/2)*min(max_crop_temp, max_temp)',
-                        'r' => ['base_temp', 'max_crop_temp', 'max_temp', 'min_temp'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'gdu_f = (min(max_temp_f, max_crop_temp_f) + max(min_temp_f, base_temp_f)) / 2 - base_temp_f ',
-                'var' => [
-                    [
-                        'l' => 'gdu_f',
-                        'f' => '-base_temp_f + (1/2)*max(base_temp_f, min_temp_f) + (1/2)*min(max_crop_temp_f, max_temp_f)',
-                        'r' => ['base_temp_f', 'max_crop_temp_f', 'max_temp_f', 'min_temp_f'],
-                    ],
-                ],
-            ],
+    ],
+    'formula' => [
+        [
+            'title' => 'gdu = (min(max_temp, max_crop_temp) + max(min_temp, base_temp)) / 2 - base_temp',
+            'results' => ['gdu' => '-base_temp + (1/2)*max(base_temp, min_temp) + (1/2)*min(max_crop_temp, max_temp)'],
         ],
-        'datasets' => [
-            '1ablvJg37Q8wFXmG0w4Gy' => [
-                'name' => 'temp_unit',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'BRcKqLQ6G32GI0q9eXgXZ', 'label' => 'Celsius', 'value' => '0'],
-                    ['uid' => 'htrN5K5xfwHTqz_YdDI3N', 'label' => 'Fahrenheit', 'value' => '1'],
-                ],
-            ],
+        [
+            'title' => 'gdu_f = (min(max_temp_f, max_crop_temp_f) + max(min_temp_f, base_temp_f)) / 2 - base_temp_f ',
+            'results' => ['gdu_f' => '-base_temp_f + (1/2)*max(base_temp_f, min_temp_f) + (1/2)*min(max_crop_temp_f, max_temp_f)'],
         ],
     ],
     'article' => [
@@ -294,7 +198,6 @@ return [
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
             <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Growing degree units (GDU)</strong> = <code>− Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature)</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Growing degree units (GDU)</strong> = <code>− Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature)</code> — the form to use when Base temperature, Maximum growing temperature for crop, Daily maximum temperature and Daily minimum temperature are the values you have.</li><li><strong>Growing degree units (GDU)</strong> = <code>− Base temperature + (1 ÷ 2) × max(Base temperature, Daily minimum temperature) + (1 ÷ 2) × min(Maximum growing temperature for crop, Daily maximum temperature)</code> — the form to use when Base temperature, Maximum growing temperature for crop, Daily maximum temperature and Daily minimum temperature are the values you have.</li></ul><p>Any one of Growing degree units (GDU) and Growing degree units (GDU) can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => ''],
             ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
             <ul><li><strong>Units left where they were.</strong> The chip beside Maximum growing temperature for crop, Base temperature and Daily maximum temperature is part of the input. A figure entered in millimetres while the chip reads centimetres is out by a factor of ten, and nothing on the page will warn you.</li><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Growing degree units (GDU) and Growing degree units (GDU) are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Maximum growing temperature for crop left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Maximum growing temperature for crop is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Base temperature left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Base temperature is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Maximum growing temperature for crop to one scale before entering anything.</li></ul>
             TXT],
@@ -346,6 +249,5 @@ return [
             ['path' => '/biology/tff-membrane-area', 'name' => 'TFF Membrane Area and Flux Calculator'],
             ['path' => '/biology/thousand-seed-weight', 'name' => 'Thousand Seed Weight Calculator'],
         ],
-        'authors' => [],
     ],
 ];

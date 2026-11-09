@@ -11,74 +11,50 @@
 
 return [
     'name' => 'Hamster age',
-    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Example', 'description' => 'Hamster age takes My hamster is and returns In human years it\'s. Nothing is stored between visits: the boxes are the only place your numbers live. Free.', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
-    'raw' => [
-        'vars' => [
-            'age' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'hamster_age' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'yQx0Po6zgZk_QuiJjcI5A',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Hamster age Calculator: Formula, Steps & Example', 'description' => 'Hamster age works out in human years it\'s. The formula is printed in the form\'s own words, so the arithmetic can be checked. Any box can be the unknown.', 'h1' => 'Hamster age Calculator', 'updated' => '2026-08-06'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'hamster_age',
-                                    'vt' => 'numerical',
-                                    'l' => ' My hamster is ',
-                                    'us' => '19',
-                                    'du' => 'mos',
-                                ],
-                            ],
+                            'name' => 'hamster_age',
+                            'label' => ' My hamster is ',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'mos',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'age',
-                                    'vt' => 'numerical',
-                                    'l' => ' In human years it\'s',
-                                    'us' => '19',
-                                    'du' => 'yrs',
-                                ],
-                            ],
+                            'name' => 'age',
+                            'label' => ' In human years it\'s',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'yrs',
+                            'rounding' => ['standard', '0'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'age = get_age (hamster_age)',
-                'var' => [
-                    [
-                        'l' => 'age',
-                        'f' => 'get_age(hamster_age)',
-                        'r' => ['hamster_age'],
-                    ],
-                ],
-            ],
-        ],
-        'datasets' => [],
-        'js' => <<<'TXT'
-        "use strict";omni.define("get_age",function(hamster_age){var age=0;if(hamster_age<=1){age=hamster_age*14}else if(hamster_age<=2){age=14+6*(hamster_age-1)}else if(hamster_age<=4){age=14+6*hamster_age/2}else if(hamster_age<=6){age=20+14*(hamster_age-2)/4}else if(hamster_age<=12){age=34+24*(hamster_age-6)/6}else if(hamster_age<=24){age=58+12*(hamster_age-12)/12}else if(hamster_age<=36){age=70+30*(hamster_age-24)/12}return age*12});//# sourceURL=customJs.js
-        TXT,
     ],
+    'formula' => [
+        [
+            'title' => 'age = get_age (hamster_age)',
+            'results' => ['age' => 'get_age(hamster_age)'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("get_age",function(hamster_age){var age=0;if(hamster_age<=1){age=hamster_age*14}else if(hamster_age<=2){age=14+6*(hamster_age-1)}else if(hamster_age<=4){age=14+6*hamster_age/2}else if(hamster_age<=6){age=20+14*(hamster_age-2)/4}else if(hamster_age<=12){age=34+24*(hamster_age-6)/6}else if(hamster_age<=24){age=58+12*(hamster_age-12)/12}else if(hamster_age<=36){age=70+30*(hamster_age-24)/12}return age*12});//# sourceURL=customJs.js
+    TXT,
     'article' => [
         'intro' => <<<'TXT'
         Enter My hamster is into Hamster age and the answer comes back as In human years it's. It is a single relationship that reads in human years it's out of my hamster is, not a table of canned results keyed by them. Units for In human years it's default to years and can be changed on the answer itself.
@@ -118,13 +94,10 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind In human years it&#039;s is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The unit tables here are years and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes My hamster is are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when My hamster is is what you already know and In human years it&#039;s is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/cat-age">Cat age</a>, <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage Calculator</a> and <a href="/biology/cat-bmi">Cat BMI Calculator</a>.</p>
+            <p>Reach for this page when My hamster is is what you already know and In human years it&#039;s is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
             ['title' => 'About this page', 'html' => <<<'TXT'
             <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
-            TXT],
-            ['title' => 'Where this fits among the other calculators', 'html' => <<<'TXT'
-            <p>Neighbouring pages resolve the parts of the same job that Hamster age leaves alone. Knowing which is which saves running the wrong one:</p><p>Worth opening next: <a href="/biology/cat-age">Cat age</a>, <a href="/biology/cat-benadryl-dosage">Cat Benadryl dosage Calculator</a> and <a href="/biology/cat-bmi">Cat BMI Calculator</a>. They follow the same pattern as this page (form, formula, worked example, answer), so a reader who understands one understands the others.</p><p>Using the page that already answers the question you have is better than adapting this one: the formula and the units will match what you expect, and the worked example will be about your case.</p>
             TXT],
             ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
             <p>An answer from Hamster age is a number to act on, so the useful question is what to do with In human years it&#039;s (yrs) once the panel shows it.</p><ul><li><strong>Record the inputs with the answer.</strong> A number on its own is not reproducible. Write down My hamster is alongside it — a week later the answer is checkable and the reasoning is not.</li><li><strong>Re-run it when a measurement changes.</strong> The page keeps nothing between visits, which is a feature: every figure is worked out from the numbers in front of it, so updating one input and pressing Calculate again gives a fresh answer rather than an average of the old and the new.</li><li><strong>Keep the formula with the figure.</strong> A number from a page like this one travels better than a number from a spreadsheet cell, because the formula that produced it is visible on the same page and does not depend on a file being kept.</li><li><strong>Compare rather than convert.</strong> Run it once for the case in front of you and once for a case you understand well. The gap between the two answers tells you more about your own situation than either number does on its own.</li></ul><p>The page is a calculator, not a system of record. Copy what you need out of it, keep it with the inputs that produced it, and come back with different numbers whenever the inputs change.</p>

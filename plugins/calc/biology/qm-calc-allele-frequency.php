@@ -11,343 +11,185 @@
 
 return [
     'name' => 'Allele frequency',
-    'meta' => ['title' => 'Allele frequency Calculator: Units & Formula', 'description' => 'Allele frequency calculator: give the healthy and mutant allele frequencies (p and q) and it returns the genotype split they imply, with the working shown.', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
-    'raw' => [
-        'vars' => [
-            'a_percentage' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'a_proportion' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'b' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '5'],
-            ],
-            'choice' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'yPeX_tq-wGFJmcq_i6HMj', 'c' => null],
-                ],
-                'ds' => '4lknRWs5Lxsg-usnWFTNl',
-            ],
-            'inv_pq' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '2'],
-            ],
-            'p' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pq' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '5'],
-            ],
-            'q' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'truea' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '5'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'NwtGBFWX_Xm1UuLGEzJTF',
-                'title' => 'Frequency of the disease in the population',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Allele frequency Calculator: Units & Formula', 'description' => 'Allele frequency works out occurrence of the disease: and truea and reports both. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Allele frequency Calculator', 'updated' => '2024-07-19'],
+    'sections' => [
+        [
+            'title' => 'Frequency of the disease in the population',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'choice',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Given in: ',
-                                    'ds' => '4lknRWs5Lxsg-usnWFTNl',
-                                    'opts' => [
-                                        ['yPeX_tq-wGFJmcq_i6HMj', 'Proportion', '0'],
-                                        ['6yCy7-Mf-OGSkbsLBUmnY', 'Percentage', '1'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'a_percentage',
-                                    'vt' => 'numerical',
-                                    'l' => 'Occurrence of the disease: ',
-                                    'h' => 'E.g., people with cystic fibrosis constitute 0.00029% of the Caucasian population.&nbsp;',
-                                    'us' => '37',
-                                    'du' => 'perc',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'a_proportion',
-                                    'vt' => 'numerical',
-                                    'l' => 'Occurrence of the disease:',
-                                    'pre' => '1 in ',
-                                    'h' => 'For example, people with cystic fibrosis constitute 1 in 3500 of the Caucasian population.&nbsp;',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['choice == 1', '{{a_percentage.formattedValue}}% = 1 in {{a_proportion.formattedValue}} people&nbsp;'],
-                                        ['choice == 0', '1 in {{a_proportion.formattedValue}} people = {{a_percentage.formattedValue}}%'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'choice',
+                            'label' => 'Given in: ',
+                            'type' => 'select',
+                            'options' => ['Proportion' => '0', 'Percentage' => '1'],
+                            'dataset' => 'given in',
+                            'default' => 'Proportion',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'sdPEn0laE49spDKic5Z4h',
-                'title' => 'Allele frequency',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'p',
-                                    'vt' => 'numerical',
-                                    'l' => 'Healthy allele frequency (p)',
-                                    'h' => 'So-called "wild type allele".',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'q',
-                                    'vt' => 'numerical',
-                                    'l' => 'Mutant allele frequency (q)',
-                                    'h' => 'The recessive allele that carries the disease.',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, <<<'TXT'
-                                        Carrier frequency: The mutant allele is present in 1 out of {{inv_pq.formattedValue}} people. Our calculations: People with two healthy alleles: p² = {{b.formattedValue}} People with one healthy, and one mutant allele: 2pq = {{pq.formattedValue}} People with two mutant alleles: q² = {{truea.formattedValue}}
-                                        TXT],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'a_percentage',
+                            'label' => 'Occurrence of the disease: ',
+                            'type' => 'number',
+                            'help' => 'E.g., people with cystic fibrosis constitute 0.00029% of the Caucasian population.&nbsp;',
+                            'unit' => '37',
+                            'unit_default' => 'perc',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => '_lPDv7Kew7xorjVY7pdwb',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1_FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'truea', 'vt' => 'numerical', 'l' => 'Truea'],
-                            ],
-                            [
-                                ['t' => 'v', 'n' => 'b', 'vt' => 'numerical', 'l' => 'B'],
-                            ],
+                            'name' => 'a_proportion',
+                            'label' => 'Occurrence of the disease:',
+                            'type' => 'number',
+                            'prefix' => '1 in ',
+                            'help' => 'For example, people with cystic fibrosis constitute 1 in 3500 of the Caucasian population.&nbsp;',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1_FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'pq', 'vt' => 'numerical', 'l' => '2pq'],
-                            ],
-                            [
-                                ['t' => 'v', 'n' => 'inv_pq', 'vt' => 'numerical', 'l' => '1/2pq'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'choice == 1', 'text' => '{{a_percentage.formattedValue}}% = 1 in {{a_proportion.formattedValue}} people&nbsp;'],
+                                ['when' => 'choice == 0', 'text' => '1 in {{a_proportion.formattedValue}} people = {{a_percentage.formattedValue}}%'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'p^2+ (2*p*q)+ q^2 = 1',
-                'var' => [
-                    [
-                        'l' => 'p',
-                        'f' => '-q - 1',
-                        'r' => ['q'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => '-p - 1',
-                        'r' => ['p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => '1/a_percentage = a_proportion',
-                'var' => [
-                    [
-                        'l' => 'a_percentage',
-                        'f' => '1/a_proportion',
-                        'r' => ['a_proportion'],
-                    ],
-                    [
-                        'l' => 'a_proportion',
-                        'f' => '1/a_percentage',
-                        'r' => ['a_percentage'],
+        [
+            'title' => 'Allele frequency',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'p',
+                            'label' => 'Healthy allele frequency (p)',
+                            'type' => 'number',
+                            'help' => 'So-called "wild type allele".',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => '(q^2) = a_percentage',
-                'var' => [
-                    [
-                        'l' => 'a_percentage',
-                        'f' => 'pow(q, 2)',
-                        'r' => ['q'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => 'sqrt(a_percentage)',
-                        'r' => ['a_percentage'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'q',
+                            'label' => 'Mutant allele frequency (q)',
+                            'type' => 'number',
+                            'help' => 'The recessive allele that carries the disease.',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => '(p^2) = b',
-                'var' => [
-                    [
-                        'l' => 'p',
-                        'f' => 'sqrt(b)',
-                        'r' => ['b'],
-                    ],
-                    [
-                        'l' => 'b',
-                        'f' => 'pow(p, 2)',
-                        'r' => ['p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'p + q = 1',
-                'var' => [
-                    [
-                        'l' => 'p',
-                        'f' => '1 - q',
-                        'r' => ['q'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => '1 - p',
-                        'r' => ['p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'truea = 1 / a_proportion',
-                'var' => [
-                    [
-                        'l' => 'truea',
-                        'f' => '1/a_proportion',
-                        'r' => ['a_proportion'],
-                    ],
-                    [
-                        'l' => 'a_proportion',
-                        'f' => '1/truea',
-                        'r' => ['truea'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'pq= 2*p*q',
-                'var' => [
-                    [
-                        'l' => 'pq',
-                        'f' => '2*p*q',
-                        'r' => ['p', 'q'],
-                    ],
-                    [
-                        'l' => 'p',
-                        'f' => '(1/2)*pq/q',
-                        'r' => ['pq', 'q'],
-                    ],
-                    [
-                        'l' => 'q',
-                        'f' => '(1/2)*pq/p',
-                        'r' => ['pq', 'p'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'inv_pq = 1/pq',
-                'var' => [
-                    [
-                        'l' => 'inv_pq',
-                        'f' => '1/pq',
-                        'r' => ['pq'],
-                    ],
-                    [
-                        'l' => 'pq',
-                        'f' => '1/inv_pq',
-                        'r' => ['inv_pq'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => <<<'TXT'
+                        Carrier frequency: The mutant allele is present in 1 out of {{inv_pq.formattedValue}} people. Our calculations: People with two healthy alleles: p² = {{b.formattedValue}} People with one healthy, and one mutant allele: 2pq = {{pq.formattedValue}} People with two mutant alleles: q² = {{truea.formattedValue}}
+                        TXT],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '4lknRWs5Lxsg-usnWFTNl' => [
-                'name' => 'given in',
-                'uiType' => 'RADIO',
-                'options' => [
-                    ['uid' => 'yPeX_tq-wGFJmcq_i6HMj', 'label' => 'Proportion', 'value' => '0'],
-                    ['uid' => '6yCy7-Mf-OGSkbsLBUmnY', 'label' => 'Percentage', 'value' => '1'],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'truea',
+                            'label' => 'Truea',
+                            'type' => 'number',
+                            'rounding' => ['standard', '5'],
+                        ],
+                        [
+                            'name' => 'b',
+                            'label' => 'B',
+                            'type' => 'number',
+                            'rounding' => ['standard', '5'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'pq',
+                            'label' => '2pq',
+                            'type' => 'number',
+                            'rounding' => ['standard', '5'],
+                        ],
+                        [
+                            'name' => 'inv_pq',
+                            'label' => '1/2pq',
+                            'type' => 'number',
+                            'rounding' => ['standard', '2'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'p^2+ (2*p*q)+ q^2 = 1',
+            'results' => ['p' => '-q - 1', 'q' => '-p - 1'],
+        ],
+        [
+            'title' => '1/a_percentage = a_proportion',
+            'results' => ['a_percentage' => '1/a_proportion', 'a_proportion' => '1/a_percentage'],
+        ],
+        [
+            'title' => '(q^2) = a_percentage',
+            'results' => ['a_percentage' => 'pow(q, 2)', 'q' => 'sqrt(a_percentage)'],
+        ],
+        [
+            'title' => '(p^2) = b',
+            'results' => ['p' => 'sqrt(b)', 'b' => 'pow(p, 2)'],
+        ],
+        [
+            'title' => 'p + q = 1',
+            'results' => ['p' => '1 - q', 'q' => '1 - p'],
+        ],
+        [
+            'title' => 'truea = 1 / a_proportion',
+            'results' => ['truea' => '1/a_proportion', 'a_proportion' => '1/truea'],
+        ],
+        [
+            'title' => 'pq= 2*p*q',
+            'results' => ['pq' => '2*p*q', 'p' => '(1/2)*pq/q', 'q' => '(1/2)*pq/p'],
+        ],
+        [
+            'title' => 'inv_pq = 1/pq',
+            'results' => ['inv_pq' => '1/pq', 'pq' => '1/inv_pq'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
-        Allele frequency works in both directions, between occurrence of the disease: and healthy allele frequency (p). Occurrence of the disease: is opened in percent; the chip beside it switches to any unit of the same quantity.
+        Allele frequency works in both directions, between occurrence of the disease and healthy allele frequency (p). Occurrence of the disease is opened in percent; the chip beside it switches to any unit of the same quantity.
         TXT,
         'sections' => [
             ['title' => 'How the Allele frequency calculator works', 'html' => <<<'TXT'
@@ -382,7 +224,7 @@ return [
             <ul><li><strong>It does not scale in a straight line.</strong> Occurrence of the disease is computed through a relationship that is not a simple proportion, so the size of an error depends on where in the range you are. The defaults are a starting point, not a scale factor.</li><li><strong>Only the listed units.</strong> The chips cover percent. A measurement in anything else has to be converted before it is typed in — the page will accept the number, but it will read it as the unit the chip shows.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Occurrence of the disease is what you already know and Occurrence of the disease and Healthy allele frequency (p) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/pedigree-probability">Pedigree Probability Calculator</a>, <a href="/biology/percent-germination">Percent Germination Calculator</a> and <a href="/biology/percent-inhibition">Percent Inhibition Calculator</a>.</p>
+            <p>Reach for this page when Occurrence of the disease is what you already know and Occurrence of the disease and Healthy allele frequency (p) is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

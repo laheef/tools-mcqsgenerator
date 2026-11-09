@@ -12,1053 +12,521 @@
 return [
     'name' => 'Dog calorie',
     'meta' => ['title' => 'Dog calorie Calculator: Formula, Steps & Example', 'description' => 'Dog calorie works out your dog needs and your dog should eat and reports both. Nothing is stored between visits: the boxes are the only place your numbers live.', 'h1' => 'Dog calorie Calculator', 'updated' => '2026-08-10'],
-    'raw' => [
-        'vars' => [
-            'BNW' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'act' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'Au60jBv9_1gemgM45zds3', 'c' => null],
-                ],
-                'ds' => '1740',
-            ],
-            'caloricContent100gr' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'calorieHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'calorieLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'calorieModHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'calorieModLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.001'],
-            ],
-            'crude_ash' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '5', 'c' => null],
-                ],
-            ],
-            'crude_fat' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '3.5', 'c' => null],
-                ],
-            ],
-            'crude_fiber' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '16', 'c' => null],
-                ],
-            ],
-            'crude_protein' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '25', 'c' => null],
-                ],
-            ],
-            'days' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'daysHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'daysLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'daysModHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'daysModLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'digestible_energy' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'dry_matter' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '90', 'c' => null],
-                ],
-            ],
-            'dry_pulse_fiber' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'energyContent' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'extra' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'gg4o-u7oFC2Q6I5zZ5jIR', 'c' => null],
-                ],
-                'ds' => '1741',
-            ],
-            'extra2' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'ByUbchfIz-i9XDN87jyTU', 'c' => null],
-                ],
-                'ds' => '2S8_2yHXM-a5H-lQP1JZ6',
-            ],
-            'foodHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'foodLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'foodModHigh' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'foodModLow' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'gross_energy' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'wspStrEB' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'ENLCdgRHtTkC41Q3mItMX',
-                'title' => 'How many calories does my dog need?',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'sections' => [
+        [
+            'title' => 'How many calories does my dog need?',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'act',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Activity',
-                                    'h' => <<<'TXT'
-                                    Choose the level of activity your dog typically gets. Check the "How to use" paragraph of the text for more detail if you're unsure what kind of activity your dog gets!
-                                    TXT,
-                                    'ds' => '1740',
-                                    'opts' => [
-                                        ['t6Riwb0CzmpwS1_nqp8cJ', 'Low (including senior): <1h/day', '0'],
-                                        ['Au60jBv9_1gemgM45zds3', 'Moderate (low intensity): 1-3h/day', '1'],
-                                        ['DM_wuMtm-_dAe7_if3vOZ', 'Moderate (high intensity): 3-6h/day', '2'],
-                                        ['J34_rKj23FJrsilxRAgoQ', 'High (working dogs): 3-6h/day', '3'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'act',
+                            'label' => 'Activity',
+                            'type' => 'select',
+                            'options' => ['Low (including senior): <1h/day' => '0', 'Moderate (low intensity): 1-3h/day' => '1', 'Moderate (high intensity): 3-6h/day' => '2', 'High (working dogs): 3-6h/day' => '3'],
+                            'control' => 'DROPDOWN',
+                            'help' => <<<'TXT'
+                            Choose the level of activity your dog typically gets. Check the "How to use" paragraph of the text for more detail if you're unsure what kind of activity your dog gets!
+                            TXT,
+                            'default' => 'Moderate (low intensity): 1-3h/day',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['act == 0', 'Characterized as less than 1 hour of low-intensity activity per day, for example, walking on a leash. It also applies to elderly dogs.'],
-                                        ['act == 1', 'This is the most common type. It means 1−3 hours a day of low-intensity activity, such as walking on a leash.'],
-                                        ['act == 2', '3−6 hours a day of high-intensity activity, such as unleashed walks with considerate amounts of running, games, playing with other dogs, etc.'],
-                                        ['act == 3', '3−6 hours of work per day, such as sheepdogs.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'calorieLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog needs',
-                                    'us' => '44',
-                                    'du' => 'kcal',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'calorieModLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog needs',
-                                    'us' => '44',
-                                    'du' => 'kcal',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'calorieModHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog needs',
-                                    'us' => '44',
-                                    'du' => 'kcal',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'calorieHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog needs',
-                                    'us' => '44',
-                                    'du' => 'kcal',
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'act == 0', 'text' => 'Characterized as less than 1 hour of low-intensity activity per day, for example, walking on a leash. It also applies to elderly dogs.'],
+                                ['when' => 'act == 1', 'text' => 'This is the most common type. It means 1−3 hours a day of low-intensity activity, such as walking on a leash.'],
+                                ['when' => 'act == 2', 'text' => '3−6 hours a day of high-intensity activity, such as unleashed walks with considerate amounts of running, games, playing with other dogs, etc.'],
+                                ['when' => 'act == 3', 'text' => '3−6 hours of work per day, such as sheepdogs.'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'DO7qbA3B4CSxmzOtOaEjk',
-                'title' => 'Do you also want to calculate the...',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'extra',
-                                    'vt' => 'valueSelect',
-                                    'l' => '',
-                                    'h' => 'Select "Yes" here if you want to calculate the amount of food required based on its caloric content.',
-                                    'ds' => '1741',
-                                    'opts' => [
-                                        ['gg4o-u7oFC2Q6I5zZ5jIR', 'amount of food?', '55'],
-                                        ['P_TgX1meVG_cDAEMe44V4', '', '66'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'extra2',
-                                    'vt' => 'valueSelect',
-                                    'l' => '',
-                                    'h' => 'Pick "Yes" here if you want to manually calculate the metabolic energy in a specific food.',
-                                    'ds' => '2S8_2yHXM-a5H-lQP1JZ6',
-                                    'opts' => [
-                                        ['ZoO4WM5qeNrVyLAa27h55', 'calorie content of a specific food?', '55'],
-                                        ['ByUbchfIz-i9XDN87jyTU', '', '66'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => '4ZbApOJEx1zoCAC3KBPPQ',
-                'title' => 'How much food is that?',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'energyContent',
-                                    'vt' => 'numerical',
-                                    'l' => 'Energy content in food',
-                                    'suf' => 'kcal/100g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'foodLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog should eat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'foodModLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog should eat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'foodModHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog should eat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'foodHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog should eat',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'days', 'vt' => 'numerical', 'l' => 'How many days do you need food for?'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'daysLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Amount of food for given the number of days:',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'daysModLow',
-                                    'vt' => 'numerical',
-                                    'l' => 'Amount of food for given the number of days:',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'daysModHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Amount of food for given the number of days:',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'daysHigh',
-                                    'vt' => 'numerical',
-                                    'l' => 'Amount of food for given the number of days:',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
+                            'name' => 'calorieLow',
+                            'label' => 'Your dog needs',
+                            'type' => 'number',
+                            'unit' => '44',
+                            'unit_default' => 'kcal',
+                            'rounding' => ['omni', '0.001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'jvoXr-YwDRG1p3JxnWdtp',
-                'title' => 'How caloric is my dog\'s food?',
-                'desc' => <<<'TXT'
-                If you're unsure of the precise caloric content of your dog's food, use this part of the dog calorie calculator to figure it out based on the information about its specific components, which is always provided on the food's packaging. Below, you will see how much of each component is in a typical example of dog food. Feel free to change the values according to the brand you use.
-                TXT,
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'dry_matter',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry matter',
-                                    'h' => 'What would stay if you evaporated all the water from your dog\'s food.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crude_protein',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crude protein',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crude_ash',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crude ash',
-                                    'h' => 'Although it sounds scary, "crude ash" actually means all the essential minerals.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crude_fat',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crude fat',
-                                    'h' => 'Total amount of fats in your dog\'s food.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'crude_fiber',
-                                    'vt' => 'numerical',
-                                    'l' => 'Crude fiber',
-                                    'h' => 'Fiber, the indigestible part of the food, is crucial for the digestive system\'s health.',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'caloricContent100gr',
-                                    'vt' => 'numerical',
-                                    'l' => 'Caloric content of food',
-                                    'suf' => 'kcal/100g',
-                                ],
-                            ],
+                            'name' => 'calorieModLow',
+                            'label' => 'Your dog needs',
+                            'type' => 'number',
+                            'unit' => '44',
+                            'unit_default' => 'kcal',
+                            'rounding' => ['omni', '0.001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'oeAmbcRzItOc4UevP5BaK',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'digestible_energy',
-                                    'vt' => 'numerical',
-                                    'l' => 'Digestible energy',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
+                            'name' => 'calorieModHigh',
+                            'label' => 'Your dog needs',
+                            'type' => 'number',
+                            'unit' => '44',
+                            'unit_default' => 'kcal',
+                            'rounding' => ['omni', '0.001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'BNW', 'vt' => 'numerical', 'l' => 'Bnw'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'gross_energy', 'vt' => 'numerical', 'l' => 'Gross energy'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'wspStrEB', 'vt' => 'numerical', 'l' => 'Wspstreb'],
-                                [
-                                    't' => 'v',
-                                    'n' => 'dry_pulse_fiber',
-                                    'vt' => 'numerical',
-                                    'l' => 'Dry Pulse Fiber',
-                                    'us' => '22',
-                                    'du' => 'g',
-                                ],
-                            ],
+                            'name' => 'calorieHigh',
+                            'label' => 'Your dog needs',
+                            'type' => 'number',
+                            'unit' => '44',
+                            'unit_default' => 'kcal',
+                            'rounding' => ['omni', '0.001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'calorieLow = 95 * weight^0.75',
-                'var' => [
-                    [
-                        'l' => 'calorieLow',
-                        'f' => '95*pow(weight, 3/4)',
-                        'r' => ['weight'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/9025)*pow(95, 2/3)*pow(calorieLow, 4/3)',
-                        'r' => ['calorieLow'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'calorieModLow = 110 * weight^0.75',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/12100)*pow(110, 2/3)*pow(calorieModLow, 4/3)',
-                        'r' => ['calorieModLow'],
-                    ],
-                    [
-                        'l' => 'calorieModLow',
-                        'f' => '110*pow(weight, 3/4)',
-                        'r' => ['weight'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'calorieModHigh = 125 * weight^0.75',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/625)*pow(calorieModHigh, 4/3)',
-                        'r' => ['calorieModHigh'],
-                    ],
-                    [
-                        'l' => 'calorieModHigh',
-                        'f' => '125*pow(weight, 3/4)',
-                        'r' => ['weight'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'calorieHigh = 175 * weight^0.75',
-                'var' => [
-                    [
-                        'l' => 'calorieHigh',
-                        'f' => '175*pow(weight, 3/4)',
-                        'r' => ['weight'],
-                    ],
-                    [
-                        'l' => 'weight',
-                        'f' => '(1/6125)*cbrt(245)*pow(calorieHigh, 4/3)',
-                        'r' => ['calorieHigh'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'foodLow = (calorieLow * 100) / energyContent',
-                'var' => [
-                    [
-                        'l' => 'calorieLow',
-                        'f' => '(1/100)*energyContent*foodLow',
-                        'r' => ['energyContent', 'foodLow'],
-                    ],
-                    [
-                        'l' => 'energyContent',
-                        'f' => '100*calorieLow/foodLow',
-                        'r' => ['calorieLow', 'foodLow'],
-                    ],
-                    [
-                        'l' => 'foodLow',
-                        'f' => '100*calorieLow/energyContent',
-                        'r' => ['calorieLow', 'energyContent'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'foodModLow = (calorieModLow * 100) / energyContent',
-                'var' => [
-                    [
-                        'l' => 'foodModLow',
-                        'f' => '100*calorieModLow/energyContent',
-                        'r' => ['energyContent', 'calorieModLow'],
-                    ],
-                    [
-                        'l' => 'energyContent',
-                        'f' => '100*calorieModLow/foodModLow',
-                        'r' => ['foodModLow', 'calorieModLow'],
-                    ],
-                    [
-                        'l' => 'calorieModLow',
-                        'f' => '(1/100)*energyContent*foodModLow',
-                        'r' => ['foodModLow', 'energyContent'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'foodModHigh = (calorieModHigh * 100) / energyContent',
-                'var' => [
-                    [
-                        'l' => 'energyContent',
-                        'f' => '100*calorieModHigh/foodModHigh',
-                        'r' => ['calorieModHigh', 'foodModHigh'],
-                    ],
-                    [
-                        'l' => 'calorieModHigh',
-                        'f' => '(1/100)*energyContent*foodModHigh',
-                        'r' => ['energyContent', 'foodModHigh'],
-                    ],
-                    [
-                        'l' => 'foodModHigh',
-                        'f' => '100*calorieModHigh/energyContent',
-                        'r' => ['energyContent', 'calorieModHigh'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'foodHigh = (calorieHigh * 100) / energyContent',
-                'var' => [
-                    [
-                        'l' => 'foodHigh',
-                        'f' => '100*calorieHigh/energyContent',
-                        'r' => ['calorieHigh', 'energyContent'],
-                    ],
-                    [
-                        'l' => 'calorieHigh',
-                        'f' => '(1/100)*energyContent*foodHigh',
-                        'r' => ['foodHigh', 'energyContent'],
-                    ],
-                    [
-                        'l' => 'energyContent',
-                        'f' => '100*calorieHigh/foodHigh',
-                        'r' => ['foodHigh', 'calorieHigh'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'gross_energy = (crude_protein * 5.70) + (crude_fat * 9.40) + (4.10* (crude_fiber +BNW))',
-                'var' => [
-                    [
-                        'l' => 'BNW',
-                        'f' => '-94/41*crude_fat - crude_fiber - 57/41*crude_protein + (10/41)*gross_energy',
-                        'r' => ['crude_fat', 'crude_protein', 'gross_energy', 'crude_fiber'],
-                    ],
-                    [
-                        'l' => 'crude_fat',
-                        'f' => '-41/94*BNW - 41/94*crude_fiber - 57/94*crude_protein + (5/47)*gross_energy',
-                        'r' => ['BNW', 'crude_protein', 'gross_energy', 'crude_fiber'],
-                    ],
-                    [
-                        'l' => 'crude_protein',
-                        'f' => '-41/57*BNW - 94/57*crude_fat - 41/57*crude_fiber + (10/57)*gross_energy',
-                        'r' => ['BNW', 'crude_fat', 'gross_energy', 'crude_fiber'],
-                    ],
-                    [
-                        'l' => 'gross_energy',
-                        'f' => '(41/10)*BNW + (47/5)*crude_fat + (41/10)*crude_fiber + (57/10)*crude_protein',
-                        'r' => ['BNW', 'crude_fat', 'crude_protein', 'crude_fiber'],
-                    ],
-                    [
-                        'l' => 'crude_fiber',
-                        'f' => '-BNW - 94/41*crude_fat - 57/41*crude_protein + (10/41)*gross_energy',
-                        'r' => ['BNW', 'crude_fat', 'crude_protein', 'gross_energy'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'BNW = dry_matter - crude_ash - crude_protein - crude_fat - crude_fiber',
-                'var' => [
-                    [
-                        'l' => 'crude_ash',
-                        'f' => '-BNW - crude_fat - crude_fiber - crude_protein + dry_matter',
-                        'r' => [
-                            'BNW',
-                            'crude_fat',
-                            'crude_protein',
-                            'dry_matter',
-                            'crude_fiber',
-                        ],
-                    ],
-                    [
-                        'l' => 'BNW',
-                        'f' => '-crude_ash - crude_fat - crude_fiber - crude_protein + dry_matter',
-                        'r' => [
-                            'crude_ash',
-                            'crude_fat',
-                            'crude_protein',
-                            'dry_matter',
-                            'crude_fiber',
-                        ],
-                    ],
-                    [
-                        'l' => 'crude_fat',
-                        'f' => '-BNW - crude_ash - crude_fiber - crude_protein + dry_matter',
-                        'r' => [
-                            'crude_ash',
-                            'BNW',
-                            'crude_protein',
-                            'dry_matter',
-                            'crude_fiber',
-                        ],
-                    ],
-                    [
-                        'l' => 'crude_protein',
-                        'f' => '-BNW - crude_ash - crude_fat - crude_fiber + dry_matter',
-                        'r' => [
-                            'crude_ash',
-                            'BNW',
-                            'crude_fat',
-                            'dry_matter',
-                            'crude_fiber',
-                        ],
-                    ],
-                    [
-                        'l' => 'dry_matter',
-                        'f' => 'BNW + crude_ash + crude_fat + crude_fiber + crude_protein',
-                        'r' => [
-                            'crude_ash',
-                            'BNW',
-                            'crude_fat',
-                            'crude_protein',
-                            'crude_fiber',
-                        ],
-                    ],
-                    [
-                        'l' => 'crude_fiber',
-                        'f' => '-BNW - crude_ash - crude_fat - crude_protein + dry_matter',
-                        'r' => [
-                            'crude_ash',
-                            'BNW',
-                            'crude_fat',
-                            'crude_protein',
-                            'dry_matter',
+        [
+            'title' => 'Do you also want to calculate the...',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'extra',
+                            'label' => '',
+                            'type' => 'select',
+                            'options' => ['amount of food?' => '55', '' => '66'],
+                            'dataset' => 'Amount of food?',
+                            'control' => 'CHECKBOX',
+                            'help' => 'Select "Yes" here if you want to calculate the amount of food required based on its caloric content.',
+                            'default' => 'amount of food?',
                         ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'wspStrEB = 91.2 - (1.43 * dry_pulse_fiber)',
-                'var' => [
-                    [
-                        'l' => 'wspStrEB',
-                        'f' => '456/5 - 143/100*dry_pulse_fiber',
-                        'r' => ['dry_pulse_fiber'],
-                    ],
-                    [
-                        'l' => 'dry_pulse_fiber',
-                        'f' => '9120/143 - 100/143*wspStrEB',
-                        'r' => ['wspStrEB'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'dry_pulse_fiber = 100 * crude_fiber / dry_matter',
-                'var' => [
-                    [
-                        'l' => 'crude_fiber',
-                        'f' => '(1/100)*dry_matter*dry_pulse_fiber',
-                        'r' => ['dry_matter', 'dry_pulse_fiber'],
-                    ],
-                    [
-                        'l' => 'dry_matter',
-                        'f' => '100*crude_fiber/dry_pulse_fiber',
-                        'r' => ['crude_fiber', 'dry_pulse_fiber'],
-                    ],
-                    [
-                        'l' => 'dry_pulse_fiber',
-                        'f' => '100*crude_fiber/dry_matter',
-                        'r' => ['crude_fiber', 'dry_matter'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'digestible_energy = gross_energy * wspStrEB / 100',
-                'var' => [
-                    [
-                        'l' => 'gross_energy',
-                        'f' => '100*digestible_energy/wspStrEB',
-                        'r' => ['wspStrEB', 'digestible_energy'],
-                    ],
-                    [
-                        'l' => 'wspStrEB',
-                        'f' => '100*digestible_energy/gross_energy',
-                        'r' => ['gross_energy', 'digestible_energy'],
-                    ],
-                    [
-                        'l' => 'digestible_energy',
-                        'f' => '(1/100)*gross_energy*wspStrEB',
-                        'r' => ['gross_energy', 'wspStrEB'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'caloricContent100gr = digestible_energy - (1.04 * crude_protein)',
-                'var' => [
-                    [
-                        'l' => 'crude_protein',
-                        'f' => '-25/26*caloricContent100gr + (25/26)*digestible_energy',
-                        'r' => ['caloricContent100gr', 'digestible_energy'],
-                    ],
-                    [
-                        'l' => 'caloricContent100gr',
-                        'f' => '-26/25*crude_protein + digestible_energy',
-                        'r' => ['crude_protein', 'digestible_energy'],
-                    ],
-                    [
-                        'l' => 'digestible_energy',
-                        'f' => 'caloricContent100gr + (26/25)*crude_protein',
-                        'r' => ['crude_protein', 'caloricContent100gr'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'daysModLow = foodModLow * days',
-                'var' => [
-                    [
-                        'l' => 'foodModLow',
-                        'f' => 'daysModLow/days',
-                        'r' => ['daysModLow', 'days'],
-                    ],
-                    [
-                        'l' => 'daysModLow',
-                        'f' => 'days*foodModLow',
-                        'r' => ['foodModLow', 'days'],
-                    ],
-                    [
-                        'l' => 'days',
-                        'f' => 'daysModLow/foodModLow',
-                        'r' => ['foodModLow', 'daysModLow'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'daysLow = foodLow * days',
-                'var' => [
-                    [
-                        'l' => 'daysLow',
-                        'f' => 'days*foodLow',
-                        'r' => ['foodLow', 'days'],
-                    ],
-                    [
-                        'l' => 'foodLow',
-                        'f' => 'daysLow/days',
-                        'r' => ['daysLow', 'days'],
-                    ],
-                    [
-                        'l' => 'days',
-                        'f' => 'daysLow/foodLow',
-                        'r' => ['daysLow', 'foodLow'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'daysModHigh = foodModHigh * days',
-                'var' => [
-                    [
-                        'l' => 'days',
-                        'f' => 'daysModHigh/foodModHigh',
-                        'r' => ['daysModHigh', 'foodModHigh'],
-                    ],
-                    [
-                        'l' => 'daysModHigh',
-                        'f' => 'days*foodModHigh',
-                        'r' => ['days', 'foodModHigh'],
-                    ],
-                    [
-                        'l' => 'foodModHigh',
-                        'f' => 'daysModHigh/days',
-                        'r' => ['days', 'daysModHigh'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'daysHigh = foodHigh * days',
-                'var' => [
-                    [
-                        'l' => 'foodHigh',
-                        'f' => 'daysHigh/days',
-                        'r' => ['days', 'daysHigh'],
-                    ],
-                    [
-                        'l' => 'days',
-                        'f' => 'daysHigh/foodHigh',
-                        'r' => ['foodHigh', 'daysHigh'],
-                    ],
-                    [
-                        'l' => 'daysHigh',
-                        'f' => 'days*foodHigh',
-                        'r' => ['foodHigh', 'days'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'extra2',
+                            'label' => '',
+                            'type' => 'select',
+                            'options' => ['calorie content of a specific food?' => '55', '' => '66'],
+                            'dataset' => 'Calorie content of specific food?',
+                            'control' => 'CHECKBOX',
+                            'help' => 'Pick "Yes" here if you want to manually calculate the metabolic energy in a specific food.',
+                            'default' => '',
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            '1740' => [
-                'name' => 'Activity',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 't6Riwb0CzmpwS1_nqp8cJ', 'label' => 'Low (including senior): <1h/day', 'value' => '0'],
-                    ['uid' => 'Au60jBv9_1gemgM45zds3', 'label' => 'Moderate (low intensity): 1-3h/day', 'value' => '1'],
-                    ['uid' => 'DM_wuMtm-_dAe7_if3vOZ', 'label' => 'Moderate (high intensity): 3-6h/day', 'value' => '2'],
-                    ['uid' => 'J34_rKj23FJrsilxRAgoQ', 'label' => 'High (working dogs): 3-6h/day', 'value' => '3'],
+        [
+            'title' => 'How much food is that?',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'energyContent',
+                            'label' => 'Energy content in food',
+                            'type' => 'number',
+                            'suffix' => 'kcal/100g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
-            ],
-            '1741' => [
-                'name' => 'Amount of food?',
-                'uiType' => 'CHECKBOX',
-                'options' => [
-                    ['uid' => 'gg4o-u7oFC2Q6I5zZ5jIR', 'label' => 'amount of food?', 'value' => '55'],
-                    ['uid' => 'P_TgX1meVG_cDAEMe44V4', 'label' => '', 'value' => '66'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'foodLow',
+                            'label' => 'Your dog should eat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
-            ],
-            '2S8_2yHXM-a5H-lQP1JZ6' => [
-                'name' => 'Calorie content of specific food?',
-                'uiType' => 'CHECKBOX',
-                'options' => [
-                    ['uid' => 'ZoO4WM5qeNrVyLAa27h55', 'label' => 'calorie content of a specific food?', 'value' => '55'],
-                    ['uid' => 'ByUbchfIz-i9XDN87jyTU', 'label' => '', 'value' => '66'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'foodModLow',
+                            'label' => 'Your dog should eat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'foodModHigh',
+                            'label' => 'Your dog should eat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'foodHigh',
+                            'label' => 'Your dog should eat',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'days',
+                            'label' => 'How many days do you need food for?',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'daysLow',
+                            'label' => 'Amount of food for given the number of days:',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'daysModLow',
+                            'label' => 'Amount of food for given the number of days:',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'daysModHigh',
+                            'label' => 'Amount of food for given the number of days:',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'daysHigh',
+                            'label' => 'Amount of food for given the number of days:',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
                 ],
             ],
         ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
+        [
+            'title' => 'How caloric is my dog\'s food?',
+            'note' => <<<'TXT'
+            If you're unsure of the precise caloric content of your dog's food, use this part of the dog calorie calculator to figure it out based on the information about its specific components, which is always provided on the food's packaging. Below, you will see how much of each component is in a typical example of dog food. Feel free to change the values according to the brand you use.
+            TXT,
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'dry_matter',
+                            'label' => 'Dry matter',
+                            'type' => 'number',
+                            'help' => 'What would stay if you evaporated all the water from your dog\'s food.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '90',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'crude_protein',
+                            'label' => 'Crude protein',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '25',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'crude_ash',
+                            'label' => 'Crude ash',
+                            'type' => 'number',
+                            'help' => 'Although it sounds scary, "crude ash" actually means all the essential minerals.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '5',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'crude_fat',
+                            'label' => 'Crude fat',
+                            'type' => 'number',
+                            'help' => 'Total amount of fats in your dog\'s food.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '3.5',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'crude_fiber',
+                            'label' => 'Crude fiber',
+                            'type' => 'number',
+                            'help' => 'Fiber, the indigestible part of the food, is crucial for the digestive system\'s health.',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '16',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'caloricContent100gr',
+                            'label' => 'Caloric content of food',
+                            'type' => 'number',
+                            'suffix' => 'kcal/100g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'digestible_energy',
+                            'label' => 'Digestible energy',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'BNW',
+                            'label' => 'Bnw',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'gross_energy',
+                            'label' => 'Gross energy',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'place' => [0, 0],
+                    'fields' => [
+                        [
+                            'name' => 'wspStrEB',
+                            'label' => 'Wspstreb',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'dry_pulse_fiber',
+                            'label' => 'Dry Pulse Fiber',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'g',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
+    'formula' => [
+        [
+            'title' => 'calorieLow = 95 * weight^0.75',
+            'results' => ['calorieLow' => '95*pow(weight, 3/4)', 'weight' => '(1/9025)*pow(95, 2/3)*pow(calorieLow, 4/3)'],
+        ],
+        [
+            'title' => 'calorieModLow = 110 * weight^0.75',
+            'results' => ['weight' => '(1/12100)*pow(110, 2/3)*pow(calorieModLow, 4/3)', 'calorieModLow' => '110*pow(weight, 3/4)'],
+        ],
+        [
+            'title' => 'calorieModHigh = 125 * weight^0.75',
+            'results' => ['weight' => '(1/625)*pow(calorieModHigh, 4/3)', 'calorieModHigh' => '125*pow(weight, 3/4)'],
+        ],
+        [
+            'title' => 'calorieHigh = 175 * weight^0.75',
+            'results' => ['calorieHigh' => '175*pow(weight, 3/4)', 'weight' => '(1/6125)*cbrt(245)*pow(calorieHigh, 4/3)'],
+        ],
+        [
+            'title' => 'foodLow = (calorieLow * 100) / energyContent',
+            'results' => ['calorieLow' => '(1/100)*energyContent*foodLow', 'energyContent' => '100*calorieLow/foodLow', 'foodLow' => '100*calorieLow/energyContent'],
+        ],
+        [
+            'title' => 'foodModLow = (calorieModLow * 100) / energyContent',
+            'results' => ['foodModLow' => '100*calorieModLow/energyContent', 'energyContent' => '100*calorieModLow/foodModLow', 'calorieModLow' => '(1/100)*energyContent*foodModLow'],
+        ],
+        [
+            'title' => 'foodModHigh = (calorieModHigh * 100) / energyContent',
+            'results' => ['energyContent' => '100*calorieModHigh/foodModHigh', 'calorieModHigh' => '(1/100)*energyContent*foodModHigh', 'foodModHigh' => '100*calorieModHigh/energyContent'],
+        ],
+        [
+            'title' => 'foodHigh = (calorieHigh * 100) / energyContent',
+            'results' => ['foodHigh' => '100*calorieHigh/energyContent', 'calorieHigh' => '(1/100)*energyContent*foodHigh', 'energyContent' => '100*calorieHigh/foodHigh'],
+        ],
+        [
+            'title' => 'gross_energy = (crude_protein * 5.70) + (crude_fat * 9.40) + (4.10* (crude_fiber +BNW))',
+            'results' => [
+                'BNW' => '-94/41*crude_fat - crude_fiber - 57/41*crude_protein + (10/41)*gross_energy',
+                'crude_fat' => '-41/94*BNW - 41/94*crude_fiber - 57/94*crude_protein + (5/47)*gross_energy',
+                'crude_protein' => '-41/57*BNW - 94/57*crude_fat - 41/57*crude_fiber + (10/57)*gross_energy',
+                'gross_energy' => '(41/10)*BNW + (47/5)*crude_fat + (41/10)*crude_fiber + (57/10)*crude_protein',
+                'crude_fiber' => '-BNW - 94/41*crude_fat - 57/41*crude_protein + (10/41)*gross_energy',
+            ],
+        ],
+        [
+            'title' => 'BNW = dry_matter - crude_ash - crude_protein - crude_fat - crude_fiber',
+            'results' => [
+                'crude_ash' => '-BNW - crude_fat - crude_fiber - crude_protein + dry_matter',
+                'BNW' => '-crude_ash - crude_fat - crude_fiber - crude_protein + dry_matter',
+                'crude_fat' => '-BNW - crude_ash - crude_fiber - crude_protein + dry_matter',
+                'crude_protein' => '-BNW - crude_ash - crude_fat - crude_fiber + dry_matter',
+                'dry_matter' => 'BNW + crude_ash + crude_fat + crude_fiber + crude_protein',
+                'crude_fiber' => '-BNW - crude_ash - crude_fat - crude_protein + dry_matter',
+            ],
+        ],
+        [
+            'title' => 'wspStrEB = 91.2 - (1.43 * dry_pulse_fiber)',
+            'results' => ['wspStrEB' => '456/5 - 143/100*dry_pulse_fiber', 'dry_pulse_fiber' => '9120/143 - 100/143*wspStrEB'],
+        ],
+        [
+            'title' => 'dry_pulse_fiber = 100 * crude_fiber / dry_matter',
+            'results' => ['crude_fiber' => '(1/100)*dry_matter*dry_pulse_fiber', 'dry_matter' => '100*crude_fiber/dry_pulse_fiber', 'dry_pulse_fiber' => '100*crude_fiber/dry_matter'],
+        ],
+        [
+            'title' => 'digestible_energy = gross_energy * wspStrEB / 100',
+            'results' => ['gross_energy' => '100*digestible_energy/wspStrEB', 'wspStrEB' => '100*digestible_energy/gross_energy', 'digestible_energy' => '(1/100)*gross_energy*wspStrEB'],
+        ],
+        [
+            'title' => 'caloricContent100gr = digestible_energy - (1.04 * crude_protein)',
+            'results' => ['crude_protein' => '-25/26*caloricContent100gr + (25/26)*digestible_energy', 'caloricContent100gr' => '-26/25*crude_protein + digestible_energy', 'digestible_energy' => 'caloricContent100gr + (26/25)*crude_protein'],
+        ],
+        [
+            'title' => 'daysModLow = foodModLow * days',
+            'results' => ['foodModLow' => 'daysModLow/days', 'daysModLow' => 'days*foodModLow', 'days' => 'daysModLow/foodModLow'],
+        ],
+        [
+            'title' => 'daysLow = foodLow * days',
+            'results' => ['daysLow' => 'days*foodLow', 'foodLow' => 'daysLow/days', 'days' => 'daysLow/foodLow'],
+        ],
+        [
+            'title' => 'daysModHigh = foodModHigh * days',
+            'results' => ['days' => 'daysModHigh/foodModHigh', 'daysModHigh' => 'days*foodModHigh', 'foodModHigh' => 'daysModHigh/days'],
+        ],
+        [
+            'title' => 'daysHigh = foodHigh * days',
+            'results' => ['foodHigh' => 'daysHigh/days', 'days' => 'daysHigh/foodHigh', 'daysHigh' => 'days*foodHigh'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Dog calorie works out Your dog needs and Your dog needs from Weight. It is a single relationship that reads your dog needs out of weight, not a table of canned results keyed by them. Units for Your dog needs default to kilocalories and can be changed on the answer itself.
@@ -1120,6 +588,5 @@ return [
             ['path' => '/biology/dna-molarity-from-mass', 'name' => 'DNA Molarity from Mass or A260 Calculator'],
             ['path' => '/biology/dna-molecular-weight-calculator', 'name' => 'DNA Molecular Weight Calculator'],
         ],
-        'authors' => [],
     ],
 ];

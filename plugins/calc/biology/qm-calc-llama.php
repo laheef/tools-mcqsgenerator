@@ -11,266 +11,156 @@
 
 return [
     'name' => 'Llama',
-    'meta' => ['title' => 'Llama Calculator: Worked Example and Formulas', 'description' => 'Llama gestation dates the cria from the mating date: 342 days on average, with the 332 to 352 day window, the weekday it falls on and the days still to go.', 'h1' => 'Llama Calculator', 'updated' => '2025-04-07'],
-    'raw' => [
-        'vars' => [
-            'currentDate' => ['type' => 'date', 'rnd' => null],
-            'difference_negative' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'difference_positive' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'difference_value' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'dueDate' => ['type' => 'date', 'rnd' => null],
-            'earliest' => ['type' => 'date', 'rnd' => null],
-            'latest' => ['type' => 'date', 'rnd' => null],
-            'matingDate' => ['type' => 'date', 'rnd' => null],
-            'weekday' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'Kdz1dFDTJtt6e9cE1HlIv',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'matingDate', 'vt' => 'date', 'l' => ' Mating date'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'dueDate', 'vt' => 'date', 'l' => '  Due date'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['difference_value == 0', 'Your llama or alpaca is going to give birth today!'],
-                                        ['difference_value == 1', 'Your llama or alpaca is going to give birth in {{difference_positive.formattedValue}} day!'],
-                                        ['difference_value > 1', 'Your llama or alpaca is going to give birth in {{difference_positive.formattedValue}} days!'],
-                                        ['difference_value == -1', 'Your llama or alpaca gave birth 1 day ago!'],
-                                        ['difference_value < -1', 'Your llama or alpaca gave birth {{difference_negative.formattedValue}} days ago!'],
-                                        ['difference_value == 0', 'Today is&nbsp;'],
-                                        ['difference_value > 0', 'Your llama\'s or alpaca\'s due date is on a&nbsp;'],
-                                        ['difference_value < 0', 'Your llama\'s or alpaca\'s due date was on a&nbsp;'],
-                                        ['weekday==0', 'Sunday!'],
-                                        ['weekday==1', 'Monday!'],
-                                        ['weekday==2', 'Tuesday!'],
-                                        ['weekday==3', 'Wednesday!'],
-                                        ['weekday==4', 'Thursday!'],
-                                        ['weekday==5', 'Friday!'],
-                                        ['weekday==6', 'Saturday!'],
-                                        [null, 'The earliest normal delivery: {{earliest.shortValue}} The latest normal delivery: {{latest.shortValue}}'],
-                                    ],
-                                ],
-                            ],
-                        ],
+    'meta' => ['title' => 'Llama Calculator: Worked Example and Formulas', 'description' => 'Llama works out due date from mating date. The formula is printed in the form\'s own words. Every box can be solved for, not only the one in the title.', 'h1' => 'Llama Calculator', 'updated' => '2025-04-07'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'matingDate', 'label' => ' Mating date', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'njm_51Yf4CE5qtBB5rF1b',
-                'title' => 'Hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'currentDate', 'vt' => 'date', 'l' => 'Current date'],
-                            ],
-                        ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'dueDate', 'label' => '  Due date', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'weekday', 'vt' => 'numerical', 'l' => 'Weekday'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'earliest', 'vt' => 'date', 'l' => 'Earliest'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'latest', 'vt' => 'date', 'l' => 'Latest'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'difference_positive',
-                                    'vt' => 'numerical',
-                                    'l' => 'Difference',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'difference_negative',
-                                    'vt' => 'numerical',
-                                    'l' => 'Difference negative',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'difference_value', 'vt' => 'numerical', 'l' => 'Difference value'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'difference_value == 0', 'text' => 'Your llama or alpaca is going to give birth today!'],
+                                ['when' => 'difference_value == 1', 'text' => 'Your llama or alpaca is going to give birth in {{difference_positive.formattedValue}} day!'],
+                                ['when' => 'difference_value > 1', 'text' => 'Your llama or alpaca is going to give birth in {{difference_positive.formattedValue}} days!'],
+                                ['when' => 'difference_value == -1', 'text' => 'Your llama or alpaca gave birth 1 day ago!'],
+                                ['when' => 'difference_value < -1', 'text' => 'Your llama or alpaca gave birth {{difference_negative.formattedValue}} days ago!'],
+                                ['when' => 'difference_value == 0', 'text' => 'Today is&nbsp;'],
+                                ['when' => 'difference_value > 0', 'text' => 'Your llama\'s or alpaca\'s due date is on a&nbsp;'],
+                                ['when' => 'difference_value < 0', 'text' => 'Your llama\'s or alpaca\'s due date was on a&nbsp;'],
+                                ['when' => 'weekday==0', 'text' => 'Sunday!'],
+                                ['when' => 'weekday==1', 'text' => 'Monday!'],
+                                ['when' => 'weekday==2', 'text' => 'Tuesday!'],
+                                ['when' => 'weekday==3', 'text' => 'Wednesday!'],
+                                ['when' => 'weekday==4', 'text' => 'Thursday!'],
+                                ['when' => 'weekday==5', 'text' => 'Friday!'],
+                                ['when' => 'weekday==6', 'text' => 'Saturday!'],
+                                ['when' => null, 'text' => 'The earliest normal delivery: {{earliest.shortValue}} The latest normal delivery: {{latest.shortValue}}'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'dueDate = matingDate + 342*86400000',
-                'var' => [
-                    [
-                        'l' => 'matingDate',
-                        'f' => 'dueDate - 29548800000',
-                        'r' => ['dueDate'],
-                    ],
-                    [
-                        'l' => 'dueDate',
-                        'f' => 'matingDate + 29548800000',
-                        'r' => ['matingDate'],
+        [
+            'title' => 'Hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'currentDate', 'label' => 'Current date', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'earliest = matingDate + 332*86400000',
-                'var' => [
-                    [
-                        'l' => 'matingDate',
-                        'f' => 'earliest - 28684800000',
-                        'r' => ['earliest'],
-                    ],
-                    [
-                        'l' => 'earliest',
-                        'f' => 'matingDate + 28684800000',
-                        'r' => ['matingDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'weekday',
+                            'label' => 'Weekday',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'latest = matingDate + 352*86400000',
-                'var' => [
-                    [
-                        'l' => 'matingDate',
-                        'f' => 'latest - 30412800000',
-                        'r' => ['latest'],
-                    ],
-                    [
-                        'l' => 'latest',
-                        'f' => 'matingDate + 30412800000',
-                        'r' => ['matingDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'earliest', 'label' => 'Earliest', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'difference_positive = dueDate - (currentDate - mod(currentDate,86400000))',
-                'var' => [
-                    [
-                        'l' => 'dueDate',
-                        'f' => 'currentDate + difference_positive - mod(currentDate, 86400000)',
-                        'r' => ['difference_positive', 'currentDate'],
-                    ],
-                    [
-                        'l' => 'difference_positive',
-                        'f' => '-currentDate + dueDate + mod(currentDate, 86400000)',
-                        'r' => ['dueDate', 'currentDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'latest', 'label' => 'Latest', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'difference_negative = (currentDate - mod(currentDate,86400000)) - dueDate',
-                'var' => [
-                    [
-                        'l' => 'dueDate',
-                        'f' => 'currentDate - difference_negative - mod(currentDate, 86400000)',
-                        'r' => ['difference_negative', 'currentDate'],
-                    ],
-                    [
-                        'l' => 'difference_negative',
-                        'f' => 'currentDate - dueDate - mod(currentDate, 86400000)',
-                        'r' => ['dueDate', 'currentDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'difference_positive',
+                            'label' => 'Difference',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'weekday = getDayOfWeek(dueDate)',
-                'var' => [
-                    [
-                        'l' => 'weekday',
-                        'f' => 'getDayOfWeek(dueDate)',
-                        'r' => ['dueDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'difference_negative',
+                            'label' => 'Difference negative',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'difference_value = difference_positive/86400000',
-                'var' => [
-                    [
-                        'l' => 'difference_value',
-                        'f' => '(1/86400000)*difference_positive',
-                        'r' => ['difference_positive'],
-                    ],
-                    [
-                        'l' => 'difference_positive',
-                        'f' => '86400000*difference_value',
-                        'r' => ['difference_value'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'difference_value',
+                            'label' => 'Difference value',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";omni.define("getDayOfWeek",function(dateInput){var day=new Date(dateInput);return day.getUTCDay()});//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'dueDate = matingDate + 342*86400000',
+            'results' => ['matingDate' => 'dueDate - 29548800000', 'dueDate' => 'matingDate + 29548800000'],
+        ],
+        [
+            'title' => 'earliest = matingDate + 332*86400000',
+            'results' => ['matingDate' => 'earliest - 28684800000', 'earliest' => 'matingDate + 28684800000'],
+        ],
+        [
+            'title' => 'latest = matingDate + 352*86400000',
+            'results' => ['matingDate' => 'latest - 30412800000', 'latest' => 'matingDate + 30412800000'],
+        ],
+        [
+            'title' => 'difference_positive = dueDate - (currentDate - mod(currentDate,86400000))',
+            'results' => ['dueDate' => 'currentDate + difference_positive - mod(currentDate, 86400000)', 'difference_positive' => '-currentDate + dueDate + mod(currentDate, 86400000)'],
+        ],
+        [
+            'title' => 'difference_negative = (currentDate - mod(currentDate,86400000)) - dueDate',
+            'results' => ['dueDate' => 'currentDate - difference_negative - mod(currentDate, 86400000)', 'difference_negative' => 'currentDate - dueDate - mod(currentDate, 86400000)'],
+        ],
+        [
+            'title' => 'weekday = getDayOfWeek(dueDate)',
+            'results' => ['weekday' => 'getDayOfWeek(dueDate)'],
+        ],
+        [
+            'title' => 'difference_value = difference_positive/86400000',
+            'results' => ['difference_value' => '(1/86400000)*difference_positive', 'difference_positive' => '86400000*difference_value'],
+        ],
+    ],
+    'js' => '"use strict";omni.define("getDayOfWeek",function(dateInput){var day=new Date(dateInput);return day.getUTCDay()});//# sourceURL=customJs.js',
     'article' => [
         'intro' => 'Enter Mating date into Llama and the answer comes back as Due date and Weekday. There is no hidden constant here: change due date and mating date moves with it.',
         'sections' => [
@@ -287,7 +177,7 @@ return [
             <p>A sanity check costs one glance: the page&#039;s defaults give <strong>Due date</strong> = Sat 6 February 2027, <strong>Earliest</strong> = Wed 27 January 2027, <strong>Latest</strong> = Tue 16 February 2027 and <strong>Weekday</strong> = 6. An answer far from that is more often a unit entered on the wrong row than a formula that has stopped working.</p><p>As far as Due date is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Due date</strong> = <code>Mating date + 342 days</code></li><li><strong>Mating date</strong> = <code>Due date − 342 days</code></li><li><strong>Earliest</strong> = <code>Mating date + 332 days</code></li><li><strong>Latest</strong> = <code>Mating date + 352 days</code></li><li><strong>Difference</strong> = <code>− Current date + Due date + mod(Current date, 1 day)</code></li><li><strong>Difference negative</strong> = <code>Current date − Due date − mod(Current date, 1 day)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Due date</strong> = <code>Mating date + 342 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Due date − 342 days</code> — the form to use when Due date are the values you have.</li><li><strong>Earliest</strong> = <code>Mating date + 332 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Earliest − 332 days</code> — the form to use when Earliest are the values you have.</li><li><strong>Latest</strong> = <code>Mating date + 352 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Latest − 352 days</code> — the form to use when Latest are the values you have.</li><li><strong>Difference</strong> = <code>− Current date + Due date + mod(Current date, 1 day)</code> — the form to use when Due date and Current date are the values you have.</li><li><strong>Due date</strong> = <code>Current date + Difference − mod(Current date, 1 day)</code> — the form to use when Difference and Current date are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Due date, Mating date and Earliest can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Due date</strong> = <code>Mating date + 342 days</code></li><li><strong>Mating date</strong> = <code>Due date − 342 days</code></li><li><strong>Earliest</strong> = <code>Mating date + 332 days</code></li><li><strong>Latest</strong> = <code>Mating date + 352 days</code></li><li><strong>Difference</strong> = <code>− Current date + Due date + mod(Current date, 1 day)</code></li><li><strong>Difference negative</strong> = <code>Current date − Due date − mod(Current date, 1 day)</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Due date</strong> = <code>Mating date + 342 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Due date − 342 days</code> — the form to use when Due date are the values you have.</li><li><strong>Earliest</strong> = <code>Mating date + 332 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Earliest − 332 days</code> — the form to use when Earliest are the values you have.</li><li><strong>Latest</strong> = <code>Mating date + 352 days</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Latest − 352 days</code> — the form to use when Latest are the values you have.</li><li><strong>Difference</strong> = <code>− Current date + Due date + mod(Current date, 1 day)</code> — the form to use when Current date and Due date are the values you have.</li><li><strong>Due date</strong> = <code>Current date + Difference − mod(Current date, 1 day)</code> — the form to use when Current date and Difference are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Due date, Mating date and Earliest can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Take the example above and double Mating date from Sun 1 March 2026 to Wed 29 April 2082, leaving every other box alone. The panel moves from <strong>Due date</strong> Sat 6 February 2027, <strong>Earliest</strong> Wed 27 January 2027, <strong>Latest</strong> Tue 16 February 2027 and <strong>Weekday</strong> 6 to <strong>Due date</strong> Tue 6 April 2083, <strong>Earliest</strong> Sat 27 March 2083, <strong>Latest</strong> Fri 16 April 2083 and <strong>Weekday</strong> 2.</p><p>Repeating that one input at a time is how a spreadsheet model of the same calculation gets audited. The direction of each move tells you whether a box sits in the numerator or the denominator, and how sensitive the answer is to it.</p>
@@ -299,7 +189,7 @@ return [
             <p>The boxes on the Llama form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Mating date</strong> takes a plain number with no unit attached. The page reads it when it works out Due date, Earliest and Latest. Fill it from a measurement rather than a memory — Mating date is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Due date</strong> is a plain number and the page's own defaults put it at Sat 6 February 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Weekday</strong> is a plain number and the page's own defaults put it at 6. The value follows from Due date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Earliest</strong> is a plain number and the page's own defaults put it at Wed 27 January 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Latest</strong> is a plain number and the page's own defaults put it at Tue 16 February 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference</strong> is a plain number. The value follows from Due date and Current date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference negative</strong> is a plain number. The value follows from Due date and Current date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference value</strong> is a plain number. The value follows from Difference. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Due date</strong> is a plain number and the page's own defaults put it at Sat 6 February 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Weekday</strong> is a plain number and the page's own defaults put it at 6. The value follows from Due date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Earliest</strong> is a plain number and the page's own defaults put it at Wed 27 January 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Latest</strong> is a plain number and the page's own defaults put it at Tue 16 February 2027. The value follows from Mating date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference</strong> is a plain number. The value follows from Current date and Due date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference negative</strong> is a plain number. The value follows from Current date and Due date. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference value</strong> is a plain number. The value follows from Difference. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
             TXT],
             ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
             <p>A percentage change tells you where the answer is most fragile. Take the defaults this page opens with, raise one box by ten per cent, and re-solve:</p><table class="calc-table"><thead><tr><th>Box</th><th>Due date</th><th>Earliest</th><th>Latest</th><th>Weekday</th></tr></thead><tbody><tr><td><strong>Mating date</strong> +10%</td><td>+9.84%</td><td>+9.84%</td><td>+9.83%</td><td>-100%</td></tr></tbody></table><p>The steepest column belongs to Mating date: ten per cent there moves an answer by about 100 per cent, which is why that is the number to measure twice. Every box on the form carries some of the answer; none of them can be estimated without moving the result.</p><p>This is the same arithmetic a spreadsheet model would do, done here with the page&#039;s own formulas. It is worth repeating at your own numbers rather than the defaults: sensitivity is a property of the formula, but the size of the effect depends where on the curve you are.</p>
@@ -311,7 +201,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Due date is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It counts in whole days.</strong> Dates are compared as calendar days, not as moments: two dates that differ by a few hours on the same day give the same answer, and there is no time-of-day input to set.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Mating date are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Mating date measured, Due date and Weekday wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/grass-seed">Grass seed Calculator</a>, <a href="/biology/growing-degree-days">Growing Degree Days Calculator</a> and <a href="/biology/guinea-pig-pregnancy">Guinea pig pregnancy</a>.</p>
+            <p>The typical use is one direction of the relationship: Mating date measured, Due date and Weekday wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [

@@ -11,242 +11,137 @@
 
 return [
     'name' => 'Cat Benadryl dosage',
-    'meta' => ['title' => 'Cat Benadryl dosage Calculator: Units & Formula', 'description' => 'Cat Benadryl dosage turns your cat\'s weight into diphenhydramine in milligrams, then into tablets, chewable tablets or millilitres of the 12.4 mg/5 mL liquid.', 'h1' => 'Cat Benadryl dosage Calculator', 'updated' => '2026-09-28'],
-    'raw' => [
-        'vars' => [
-            'benadryl_mg' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '1'],
-            ],
-            'chewable_tablets' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'chewable_tablets_show' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'liquid' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '1'],
-            ],
-            'tablets' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'tablets_show' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => '6urlD_DdtN5Fmd6R8z-uJ',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Cat Benadryl dosage Calculator: Units & Formula', 'description' => 'Cat Benadryl dosage works out your cat\'s weight and liquid (12.4 mg/5ml concentration) from in mg. Every box can be solved for, not only the one in the title.', 'h1' => 'Cat Benadryl dosage Calculator', 'updated' => '2026-09-28'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => '  Your cat\'s weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'KRNcuXDqY2iB17zcIAlMG',
-                'title' => 'Benadryl dosage',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'benadryl_mg',
-                                    'vt' => 'numerical',
-                                    'l' => 'In mg',
-                                    'us' => '22',
-                                    'du' => 'mg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'liquid',
-                                    'vt' => 'numerical',
-                                    'l' => 'Liquid (12.4 mg/5ml concentration)',
-                                    'us' => '20',
-                                    'du' => 'ml',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'tablets_show',
-                                    'vt' => 'numerical',
-                                    'l' => 'Tablets of 25 mg',
-                                    'suf' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'chewable_tablets_show',
-                                    'vt' => 'numerical',
-                                    'l' => 'Chewable tablets of 12.5 mg',
-                                    'suf' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-            [
-                'uid' => 'eVerNpQDYbAdL3eb8Zfmc',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1_FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'tablets',
-                                    'vt' => 'numerical',
-                                    'l' => 'Tablets',
-                                    'suf' => '#',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'chewable_tablets',
-                                    'vt' => 'numerical',
-                                    'l' => 'Chewable tablets',
-                                    'suf' => '#',
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => '  Your cat\'s weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'weight = benadryl_mg',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => 'benadryl_mg',
-                        'r' => ['benadryl_mg'],
-                    ],
-                    [
-                        'l' => 'benadryl_mg',
-                        'f' => 'weight',
-                        'r' => ['weight'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'benadryl_mg/ 25 = tablets',
-                'var' => [
-                    [
-                        'l' => 'tablets',
-                        'f' => '(1/25)*benadryl_mg',
-                        'r' => ['benadryl_mg'],
-                    ],
-                    [
-                        'l' => 'benadryl_mg',
-                        'f' => '25*tablets',
-                        'r' => ['tablets'],
+        [
+            'title' => 'Benadryl dosage',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'benadryl_mg',
+                            'label' => 'In mg',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'mg',
+                            'rounding' => ['standard', '1'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'benadryl_mg/ 2.5 = liquid',
-                'var' => [
-                    [
-                        'l' => 'liquid',
-                        'f' => '(2/5)*benadryl_mg',
-                        'r' => ['benadryl_mg'],
-                    ],
-                    [
-                        'l' => 'benadryl_mg',
-                        'f' => '(5/2)*liquid',
-                        'r' => ['liquid'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'liquid',
+                            'label' => 'Liquid (12.4 mg/5ml concentration)',
+                            'type' => 'number',
+                            'unit' => '20',
+                            'unit_default' => 'ml',
+                            'rounding' => ['standard', '1'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'benadryl_mg/ 12.5 = chewable_tablets',
-                'var' => [
-                    [
-                        'l' => 'chewable_tablets',
-                        'f' => '(2/25)*benadryl_mg',
-                        'r' => ['benadryl_mg'],
-                    ],
-                    [
-                        'l' => 'benadryl_mg',
-                        'f' => '(25/2)*chewable_tablets',
-                        'r' => ['chewable_tablets'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'tablets_show',
+                            'label' => 'Tablets of 25 mg',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'tablets_show = floor(4*tablets)/4',
-                'var' => [
-                    [
-                        'l' => 'tablets_show',
-                        'f' => '(1/4)*floor(4*tablets)',
-                        'r' => ['tablets'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => ' chewable_tablets_show = floor(chewable_tablets*4)/4',
-                'var' => [
-                    [
-                        'l' => 'chewable_tablets_show',
-                        'f' => '(1/4)*floor(4*chewable_tablets)',
-                        'r' => ['chewable_tablets'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'chewable_tablets_show',
+                            'label' => 'Chewable tablets of 12.5 mg',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";//# sourceURL=customJs.js',
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'tablets',
+                            'label' => 'Tablets',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'rounding' => ['standard', '0'],
+                        ],
+                        [
+                            'name' => 'chewable_tablets',
+                            'label' => 'Chewable tablets',
+                            'type' => 'number',
+                            'suffix' => '#',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
+    'formula' => [
+        [
+            'title' => 'weight = benadryl_mg',
+            'results' => ['weight' => 'benadryl_mg', 'benadryl_mg' => 'weight'],
+        ],
+        [
+            'title' => 'benadryl_mg/ 25 = tablets',
+            'results' => ['tablets' => '(1/25)*benadryl_mg', 'benadryl_mg' => '25*tablets'],
+        ],
+        [
+            'title' => 'benadryl_mg/ 2.5 = liquid',
+            'results' => ['liquid' => '(2/5)*benadryl_mg', 'benadryl_mg' => '(5/2)*liquid'],
+        ],
+        [
+            'title' => 'benadryl_mg/ 12.5 = chewable_tablets',
+            'results' => ['chewable_tablets' => '(2/25)*benadryl_mg', 'benadryl_mg' => '(25/2)*chewable_tablets'],
+        ],
+        [
+            'title' => 'tablets_show = floor(4*tablets)/4',
+            'results' => ['tablets_show' => '(1/4)*floor(4*tablets)'],
+        ],
+        [
+            'title' => ' chewable_tablets_show = floor(chewable_tablets*4)/4',
+            'results' => ['chewable_tablets_show' => '(1/4)*floor(4*chewable_tablets)'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Cat Benadryl dosage takes In mg and returns Your cat's weight and Liquid (12.4 mg/5ml concentration). It is a single relationship that reads your cat's weight out of in mg, not a table of canned results keyed by them. Units for Your cat's weight default to kilograms and can be changed on the answer itself.
@@ -292,7 +187,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Your cat&#039;s weight follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>Only the listed units.</strong> The unit tables here are kilograms and milliliters and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes In mg are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are In mg and the number you are missing is Your cat&#039;s weight and Liquid (12.4 mg/5ml concentration).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/biology/simpson-diversity-index">Simpson&#039;s Diversity Index Calculator</a>, <a href="/biology/svi-sludge-volume-index">Sludge Volume Index (SVI) Calculator</a> and <a href="/biology/sod">Sod Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are In mg and the number you are missing is Your cat&#039;s weight and Liquid (12.4 mg/5ml concentration).</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

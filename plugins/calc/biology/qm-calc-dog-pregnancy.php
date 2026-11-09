@@ -12,189 +12,122 @@
 return [
     'name' => 'Dog pregnancy',
     'meta' => ['title' => 'Dog pregnancy Calculator: Formula & Example', 'description' => 'Dog pregnancy works out due date. Each figure is computed from the boxes you fill, never read from a table. The formula is printed in the form\'s own words.', 'h1' => 'Dog pregnancy Calculator', 'updated' => '2026-10-05'],
-    'raw' => [
-        'vars' => [
-            'currentDate' => ['type' => 'date', 'rnd' => null],
-            'day' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'difference' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'dueDate' => ['type' => 'date', 'rnd' => null],
-            'matingDate' => ['type' => 'date', 'rnd' => null],
-            'negDifference' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'D5WPUuaJyeIQwS3__K-g1',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'matingDate', 'vt' => 'date', 'l' => 'Mating date'],
-                            ],
-                        ],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'matingDate', 'label' => 'Mating date', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'dueDate', 'vt' => 'date', 'l' => 'Due date'],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'dueDate', 'label' => 'Due date', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['difference > 1', ' Your dog is going to give birth in {{difference.formattedValue}}&nbsp;days!'],
-                                        ['difference < 1', ' Your dog is going to give birth in {{difference.formattedValue}}&nbsp;day!'],
-                                        ['dueDate == currentDate', ' Your dog gives birth today!!'],
-                                        ['dueDate < currentDate', ' Your dog gave birth {{negDifference.formattedValue}}&nbsp;day(s) ago!'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Your dog\'s due date is on&nbsp;'],
-                                        ['day == 0', 'Sunday!'],
-                                        ['day == 1', 'Monday!'],
-                                        ['day == 2', 'Tuesday!'],
-                                        ['day == 3', 'Wednesday!'],
-                                        ['day == 4', 'Thursday!'],
-                                        ['day == 5', 'Friday!'],
-                                        ['day == 6', 'Saturday!'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'difference > 1', 'text' => ' Your dog is going to give birth in {{difference.formattedValue}}&nbsp;days!'],
+                                ['when' => 'difference < 1', 'text' => ' Your dog is going to give birth in {{difference.formattedValue}}&nbsp;day!'],
+                                ['when' => 'dueDate == currentDate', 'text' => ' Your dog gives birth today!!'],
+                                ['when' => 'dueDate < currentDate', 'text' => ' Your dog gave birth {{negDifference.formattedValue}}&nbsp;day(s) ago!'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'UkmKtR1gNIVMnwHRqrfev',
-                'title' => 'Hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'currentDate', 'vt' => 'date', 'l' => 'Currentdate'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'difference', 'vt' => 'numerical', 'l' => 'Difference'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'day', 'vt' => 'numerical', 'l' => 'Day'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'negDifference', 'vt' => 'numerical', 'l' => 'Neg difference'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => null, 'text' => ' Your dog\'s due date is on&nbsp;'],
+                                ['when' => 'day == 0', 'text' => 'Sunday!'],
+                                ['when' => 'day == 1', 'text' => 'Monday!'],
+                                ['when' => 'day == 2', 'text' => 'Tuesday!'],
+                                ['when' => 'day == 3', 'text' => 'Wednesday!'],
+                                ['when' => 'day == 4', 'text' => 'Thursday!'],
+                                ['when' => 'day == 5', 'text' => 'Friday!'],
+                                ['when' => 'day == 6', 'text' => 'Saturday!'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'dueDate = matingDate + 63',
-                'var' => [
-                    [
-                        'l' => 'dueDate',
-                        'f' => 'matingDate + 63',
-                        'r' => ['matingDate'],
-                    ],
-                    [
-                        'l' => 'matingDate',
-                        'f' => 'dueDate - 63',
-                        'r' => ['dueDate'],
+        [
+            'title' => 'Hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'currentDate', 'label' => 'Currentdate', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'difference = dueDate - currentDate',
-                'var' => [
-                    [
-                        'l' => 'difference',
-                        'f' => '-currentDate + dueDate',
-                        'r' => ['dueDate', 'currentDate'],
-                    ],
-                    [
-                        'l' => 'dueDate',
-                        'f' => 'currentDate + difference',
-                        'r' => ['difference', 'currentDate'],
-                    ],
-                    [
-                        'l' => 'currentDate',
-                        'f' => '-difference + dueDate',
-                        'r' => ['difference', 'dueDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'difference',
+                            'label' => 'Difference',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'day = getDayOfWeek (dueDate)',
-                'var' => [
-                    [
-                        'l' => 'day',
-                        'f' => 'getDayOfWeek(dueDate)',
-                        'r' => ['dueDate'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'day',
+                            'label' => 'Day',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'negDifference = difference * -1',
-                'var' => [
-                    [
-                        'l' => 'negDifference',
-                        'f' => '-difference',
-                        'r' => ['difference'],
-                    ],
-                    [
-                        'l' => 'difference',
-                        'f' => '-negDifference',
-                        'r' => ['negDifference'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'negDifference',
+                            'label' => 'Neg difference',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";omni.define("getDayOfWeek",function(dateInput){var date=new Date(dateInput*1000*60*60*24);return date.getUTCDay()});//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'dueDate = matingDate + 63',
+            'results' => ['dueDate' => 'matingDate + 63', 'matingDate' => 'dueDate - 63'],
+        ],
+        [
+            'title' => 'difference = dueDate - currentDate',
+            'results' => ['difference' => '-currentDate + dueDate', 'dueDate' => 'currentDate + difference', 'currentDate' => '-difference + dueDate'],
+        ],
+        [
+            'title' => 'day = getDayOfWeek (dueDate)',
+            'results' => ['day' => 'getDayOfWeek(dueDate)'],
+        ],
+        [
+            'title' => 'negDifference = difference * -1',
+            'results' => ['negDifference' => '-difference', 'difference' => '-negDifference'],
+        ],
+    ],
+    'js' => '"use strict";omni.define("getDayOfWeek",function(dateInput){var date=new Date(dateInput*1000*60*60*24);return date.getUTCDay()});//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Dog pregnancy turns Mating date into Due date and Currentdate. Nothing is looked up on this page: due date is computed from mating date and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -213,7 +146,7 @@ return [
             <p>Treat the size of a result as part of the answer: <strong>Due date</strong> = Sun 3 May 2026 and <strong>Day</strong> = 0 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Due date takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
             TXT],
             ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
-            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code></li><li><strong>Mating date</strong> = <code>Due date − 63</code></li><li><strong>Difference</strong> = <code>− Currentdate + Due date</code></li><li><strong>Currentdate</strong> = <code>− Difference + Due date</code></li><li><strong>Day</strong> = <code>getDayOfWeek(Due date)</code></li><li><strong>Neg difference</strong> = <code>− Difference</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Due date − 63</code> — the form to use when Due date are the values you have.</li><li><strong>Difference</strong> = <code>− Currentdate + Due date</code> — the form to use when Due date and Currentdate are the values you have.</li><li><strong>Due date</strong> = <code>Currentdate + Difference</code> — the form to use when Difference and Currentdate are the values you have.</li><li><strong>Currentdate</strong> = <code>− Difference + Due date</code> — the form to use when Difference and Due date are the values you have.</li><li><strong>Day</strong> = <code>getDayOfWeek(Due date)</code> — the form to use when Due date are the values you have.</li><li><strong>Neg difference</strong> = <code>− Difference</code> — the form to use when Difference are the values you have.</li><li><strong>Difference</strong> = <code>− Neg difference</code> — the form to use when Neg difference are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Due date, Mating date and Difference can be the unknown.</p>
+            <p>The relationship is shown here as the page solves it, with the form&#039;s labels standing where the variable names would.</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code></li><li><strong>Mating date</strong> = <code>Due date − 63</code></li><li><strong>Difference</strong> = <code>− Currentdate + Due date</code></li><li><strong>Currentdate</strong> = <code>− Difference + Due date</code></li><li><strong>Day</strong> = <code>getDayOfWeek(Due date)</code></li><li><strong>Neg difference</strong> = <code>− Difference</code></li></ul><p>Each line below is the same relationship arranged for a different unknown. That is what makes the page work in both directions, and it is worth knowing which line the page used for your answer:</p><ul><li><strong>Due date</strong> = <code>Mating date + 63</code> — the form to use when Mating date are the values you have.</li><li><strong>Mating date</strong> = <code>Due date − 63</code> — the form to use when Due date are the values you have.</li><li><strong>Difference</strong> = <code>− Currentdate + Due date</code> — the form to use when Currentdate and Due date are the values you have.</li><li><strong>Due date</strong> = <code>Currentdate + Difference</code> — the form to use when Currentdate and Difference are the values you have.</li><li><strong>Currentdate</strong> = <code>− Difference + Due date</code> — the form to use when Difference and Due date are the values you have.</li><li><strong>Day</strong> = <code>getDayOfWeek(Due date)</code> — the form to use when Due date are the values you have.</li><li><strong>Neg difference</strong> = <code>− Difference</code> — the form to use when Difference are the values you have.</li><li><strong>Difference</strong> = <code>− Neg difference</code> — the form to use when Neg difference are the values you have.</li></ul><p>Because the equation is written once per variable, the page works in either direction: any one of Due date, Mating date and Difference can be the unknown.</p>
             TXT],
             ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
             <p>Change one box only — Mating date, from Sun 1 March 2026 to Wed 29 April 2082 — and the answers go from <strong>Due date</strong> Sun 3 May 2026 and <strong>Day</strong> 0 to <strong>Due date</strong> Wed 1 July 2082 and <strong>Day</strong> 3.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
@@ -225,7 +158,7 @@ return [
             <p>The boxes on the Dog pregnancy form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Mating date</strong> takes a plain number with no unit attached. It feeds Due date. Fill it from a measurement rather than a memory — Mating date is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Due date</strong> is a plain number and the page's own defaults put it at Sun 3 May 2026. It is computed from Mating date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Currentdate</strong> is a plain number. It is computed from Difference and Due date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference</strong> is a plain number. It is computed from Due date and Currentdate, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Day</strong> is a plain number and the page's own defaults put it at 0. It is computed from Due date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Neg difference</strong> is a plain number. It is computed from Difference, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Due date</strong> is a plain number and the page's own defaults put it at Sun 3 May 2026. It is computed from Mating date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Currentdate</strong> is a plain number. It is computed from Difference and Due date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Difference</strong> is a plain number. It is computed from Currentdate and Due date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Day</strong> is a plain number and the page's own defaults put it at 0. It is computed from Due date, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Neg difference</strong> is a plain number. It is computed from Difference, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
             TXT],
             ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
             <p>Which box should you measure most carefully? The table answers it. Each row raises one input by ten per cent from the page&#039;s own defaults and records what happens to every answer:</p><table class="calc-table"><thead><tr><th>Box</th><th>Due date</th><th>Day</th></tr></thead><tbody><tr><td><strong>Mating date</strong> +10%</td><td>+9.97%</td><td>—</td></tr></tbody></table><p>Ranked by leverage, Mating date sits at the top — a ten per cent error in that box shows up as roughly 10 per cent in the answer. Every box on the form carries some of the answer; none of them can be estimated without moving the result.</p><p>The numbers above come from the page&#039;s defaults, not a general rule of thumb. Re-run them with your own figures in the boxes — a box that is harmless at the defaults can dominate at the values you actually work with.</p>
@@ -240,7 +173,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Due date follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It counts in whole days.</strong> Dates are compared as calendar days, not as moments: two dates that differ by a few hours on the same day give the same answer, and there is no time-of-day input to set.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Mating date are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Mating date measured, Due date and Currentdate wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/plant-population">Plant population Calculator</a>, <a href="/biology/plants">Plant spacing Calculator</a> and <a href="/biology/plants-per-hectare">Plants Per Hectare Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Mating date measured, Due date and Currentdate wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

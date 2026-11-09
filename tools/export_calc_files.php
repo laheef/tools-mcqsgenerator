@@ -47,6 +47,7 @@ $only  = isset($opts['only']) ? (string) $opts['only'] : '';
 $force = isset($opts['force']);
 $rawOnly = isset($opts['raw']);
 $rewrite = isset($opts['rewrite']);
+$fromShard = isset($opts['from-shard']);
 
 $units = Data::units();
 $rows  = array_values(array_filter(
@@ -121,30 +122,21 @@ function raw_record(array $row): ?array
  */
 function to_shorthand(array $rec): array
 {
-    if (trim((string) ($rec['js'] ?? '')) !== '') {
-        return [null, 'page script'];
-    }
-
-    /** The var record for a field: rounding and the value it opens with. */
+    /**
+     * The var record for a field: rounding and the value it opens with.
+     */
     $varOf = static function (string $name) use ($rec): array {
         return is_array($rec['vars'][$name] ?? null) ? $rec['vars'][$name] : [];
     };
-    $defaultOf = static function (string $name, array $field) use ($varOf, $rec): string {
-        $var = $varOf($name);
-        $v = $var['dfl'][0]['v'] ?? null;
-        if ($v === null) {
-            return '__none__';
-        }
-        if ((string) ($field['vt'] ?? '') === 'valueSelect') {
-            $ds = (string) ($field['ds'] ?? '');
-            foreach ($rec['datasets'][$ds]['options'] ?? [] as $o) {
-                if ((string) ($o['uid'] ?? '') === (string) $v) {
-                    return (string) ($o['label'] ?? '');
-                }
+
+    /** An option's label for its uid, so a default is written as words. */
+    $labelOf = static function (string $dsUid, string $uid) use ($rec): ?string {
+        foreach ($rec['datasets'][$dsUid]['options'] ?? [] as $o) {
+            if ((string) ($o['uid'] ?? '') === $uid) {
+                return (string) ($o['label'] ?? '');
             }
-            return '__none__';
         }
-        return (string) $v;
+        return null;
     };
 
     $sections = [];
@@ -153,30 +145,55 @@ function to_shorthand(array $rec): array
         foreach ($g['m'] ?? [] as $matrix) {
             $columns = $matrix[1] ?? [];
             $count   = count($columns);
-            if ($count > 3) {
-                return [null, 'matrix with ' . $count . ' columns'];
+            if ($count < 1) {
+                continue;
             }
+            /* The matrix's own name for its layout, carried through as it is:
+               the page shows the columns, and this string is how the record
+               remembers them. */
+            $grid = (string) ($matrix[0] ?? '');
             $fields = [];
-            foreach ($columns as $column) {
+            $places = [];                       // which column each field sits in
+            foreach ($columns as $ci => $column) {
                 foreach ((is_array($column) ? $column : []) as $f) {
+                    $places[] = (int) $ci;
                     if (!is_array($f)) {
                         return [null, 'odd field'];
                     }
                     $type = (string) ($f['t'] ?? '');
                     if ($type === 'x') {
+                        /* A note is either one unconditional line or several
+                           that take turns behind conditions. */
                         $chunks = $f['c'] ?? [];
-                        if (count($chunks) !== 1 || ($chunks[0][0] ?? null) !== null) {
-                            return [null, 'conditional note'];
+                        $cases  = [];
+                        $plain  = true;
+                        foreach ($chunks as $chunk) {
+                            if (!is_array($chunk)) {
+                                continue;
+                            }
+                            $when = $chunk[0] ?? null;
+                            $text = (string) ($chunk[1] ?? '');
+                            if ($when !== null) {
+                                $plain = false;
+                            }
+                            $cases[] = ['when' => $when === null ? null : (string) $when, 'text' => $text];
                         }
-                        $fields[] = ['type' => 'note', 'text' => (string) ($chunks[0][1] ?? '')];
+                        if ($cases === []) {
+                            continue;
+                        }
+                        if ($plain && count($cases) === 1) {
+                            $fields[] = ['type' => 'note', 'text' => $cases[0]['text']];
+                        } else {
+                            $fields[] = ['type' => 'note', 'cases' => $cases];
+                        }
                         continue;
                     }
                     if ($type === 'i') {
-                        $urls = $f['u'] ?? [];
-                        if (count($urls) !== 1) {
-                            return [null, 'image set'];
+                        $urls = array_values(array_filter(array_map('strval', (array) ($f['u'] ?? []))));
+                        if ($urls === []) {
+                            continue;
                         }
-                        $fields[] = ['type' => 'image', 'url' => (string) $urls[0]];
+                        $fields[] = ['type' => 'image', 'url' => count($urls) === 1 ? $urls[0] : $urls];
                         continue;
                     }
                     if ($type !== 'v') {
@@ -185,14 +202,14 @@ function to_shorthand(array $rec): array
                     $vt   = (string) ($f['vt'] ?? 'numerical');
                     $name = (string) ($f['n'] ?? '');
                     $out  = ['name' => $name, 'label' => (string) ($f['l'] ?? '')];
+                    $dsUid = (string) ($f['ds'] ?? '');
                     if ($vt === 'valueSelect') {
                         $out['type']    = 'select';
                         $out['options'] = [];
                         foreach ($f['opts'] ?? [] as $o) {
                             $out['options'][(string) $o[1]] = $o[2];
                         }
-                        $dsUid = (string) ($f['ds'] ?? '');
-                        $ds    = $rec['datasets'][$dsUid] ?? [];
+                        $ds = $rec['datasets'][$dsUid] ?? [];
                         if (isset($ds['name']) && (string) $ds['name'] !== (string) ($f['l'] ?? '')) {
                             $out['dataset'] = (string) $ds['name'];
                         }
@@ -203,6 +220,12 @@ function to_shorthand(array $rec): array
                         $out['type'] = 'result';
                     } elseif ($vt === 'numerical') {
                         $out['type'] = 'number';
+                    } elseif ($vt === 'text') {
+                        $out['type'] = 'text';
+                    } elseif ($vt === 'date') {
+                        $out['type'] = 'date';
+                    } elseif ($vt === 'presentation') {
+                        $out['type'] = 'presentation';
                     } else {
                         return [null, 'control ' . $vt];
                     }
@@ -218,26 +241,72 @@ function to_shorthand(array $rec): array
                     if (is_array($var['rnd'] ?? null)) {
                         $out['rounding'] = array_values($var['rnd']);
                     }
-                    /* A second default is a refill rule ("when the unit chip
-                       changes, refill with this"), and the shorthand has no
-                       way to say it. */
-                    if (count($var['dfl'] ?? []) > 1) {
-                        return [null, 'several defaults'];
+                    if (isset($var['min']) && is_numeric($var['min'])) {
+                        $out['min'] = 0 + $var['min'];
                     }
-                    foreach ($var['dfl'] ?? [] as $d) {
-                        if (($d['c'] ?? null) !== null) {
-                            return [null, 'conditional default'];
+                    /*
+                     * The value the box opens with. One default is `default`;
+                     * several are `defaults`, each with the condition that makes
+                     * it the right one — the harvested refill rules.
+                     */
+                    $dfl = $var['dfl'] ?? [];
+                    if (count($dfl) === 1 && ($dfl[0]['c'] ?? null) === null) {
+                        $value = $dfl[0]['v'] ?? null;
+                        if ($value !== null) {
+                            if ($vt === 'valueSelect') {
+                                $label = $labelOf($dsUid, (string) $value);
+                                if ($label === null) {
+                                    return [null, 'default outside its options'];
+                                }
+                                $out['default'] = $label;
+                            } else {
+                                $out['default'] = $value;
+                            }
                         }
-                    }
-                    $default = $defaultOf($name, $f);
-                    if ($default !== '__none__') {
-                        $out['default'] = $default;
+                    } elseif (count($dfl) > 0) {
+                        $list = [];
+                        foreach ($dfl as $d) {
+                            $value = $d['v'] ?? null;
+                            if ($value === null) {
+                                continue;
+                            }
+                            if ($vt === 'valueSelect') {
+                                $label = $labelOf($dsUid, (string) $value);
+                                if ($label === null) {
+                                    return [null, 'default outside its options'];
+                                }
+                                $value = $label;
+                            }
+                            $when = $d['c'] ?? null;
+                            $list[] = ['value' => $value, 'when' => $when === null ? null : (string) $when];
+                        }
+                        if ($list !== []) {
+                            $out['defaults'] = $list;
+                        }
                     }
                     $fields[] = $out;
                 }
             }
             if ($fields !== []) {
-                $blocks[] = ['columns' => $count, 'fields' => $fields];
+                /*
+                 * `place` is written whenever the layout is not the plain one
+                 * (several columns, or a column holding more than one box), so
+                 * the page keeps the matrix it was harvested with. A form
+                 * written by hand does not need it: the columns are dealt out.
+                 */
+                $block = ['columns' => $count];
+                /* Only when it says something the default cannot. */
+                if ($grid !== '' && $grid !== implode('_', array_fill(0, $count, 'FR1'))) {
+                    $block['grid'] = $grid;
+                }
+                $plain = $count === 1
+                    && count(array_filter($places, static fn (int $p): bool => $p !== 0)) === 0
+                    && count($columns[0] ?? []) <= 1;
+                if (!$plain) {
+                    $block['place'] = $places;
+                }
+                $block['fields'] = $fields;
+                $blocks[] = $block;
             }
         }
         $sections[] = [
@@ -263,6 +332,9 @@ function to_shorthand(array $rec): array
             ? $passes[0]['results']
             : $passes,
     ];
+    if (trim((string) ($rec['js'] ?? '')) !== '') {
+        $def['js'] = (string) $rec['js'];
+    }
     if (!empty($rec['showIf'])) {
         $def['showIf'] = $rec['showIf'];
     }
@@ -307,13 +379,40 @@ function same_record(array $a, array $b): array
             return implode(',', $out);
         };
 
+        /* Where a var names no dataset, the field's own list is what the record
+           means: the control renders from it either way. */
+        $fieldOpts = [];
+        $fieldDs   = [];
+        foreach ($rec['groups'] ?? [] as $g) {
+            foreach ($g['m'] ?? [] as $matrix) {
+                foreach ($matrix[1] ?? [] as $column) {
+                    foreach ($column ?? [] as $f) {
+                        if (($f['t'] ?? '') === 'v' && isset($f['ds'])) {
+                            $fieldDs[(string) ($f['n'] ?? '')] = (string) $f['ds'];
+                        }
+                        if (($f['t'] ?? '') === 'v' && isset($f['opts']) && is_array($f['opts'])) {
+                            $labels = [];
+                            foreach ($f['opts'] as $o) {
+                                $labels[] = (string) $o[1] . '=' . (string) $o[2];
+                            }
+                            $fieldOpts[(string) ($f['n'] ?? '')] = implode(',', $labels);
+                        }
+                    }
+                }
+            }
+        }
+
         $vars = [];
         foreach ($rec['vars'] ?? [] as $name => $v) {
             $vars[(string) $name] = [
                 'type' => (string) ($v['type'] ?? ''),
                 'rnd'  => json_encode($v['rnd'] ?? null),
                 'dfl'  => $defaultText($rec, (string) $name),
-                'ds'   => isset($v['ds']) ? $dsName($rec, (string) $v['ds']) : '',
+                'ds'   => isset($v['ds'])
+                    ? $dsName($rec, (string) $v['ds'])
+                    : (isset($fieldDs[(string) $name])
+                        ? $dsName($rec, $fieldDs[(string) $name])
+                        : ($fieldOpts[(string) $name] ?? '')),
             ];
         }
         ksort($vars);          // the order of `vars` decides nothing
@@ -354,19 +453,35 @@ function same_record(array $a, array $b): array
                 }
                 $fields[] = count($matrix[1] ?? []) . 'col[' . implode(' / ', $row) . ']';
             }
+            if ($fields === [] && trim((string) ($g['title'] ?? '')) === '' && trim((string) ($g['desc'] ?? '')) === '') {
+                continue;      // an empty group renders nothing
+            }
             $groups[] = (string) ($g['title'] ?? '') . '|' . (string) ($g['desc'] ?? '') . '|' . implode(' + ', $fields);
         }
         $eq = [];
         foreach ($rec['eq'] ?? [] as $entry) {
             $variants = [];
             foreach ($entry['var'] ?? [] as $v) {
-                $rhs = array_map('strval', $v['r'] ?? []);
+                /* `r` names the values an equation reads, and the solver only
+                   asks whether each is known: the list is a set, and a record
+                   that names one twice reads the same. */
+                $rhs = array_values(array_unique(array_map('strval', $v['r'] ?? [])));
                 sort($rhs);
                 $variants[] = (string) ($v['l'] ?? '') . '=' . (string) ($v['f'] ?? '') . ':' . implode('+', $rhs);
             }
             $eq[] = (string) ($entry['formula'] ?? '') . '[' . implode(' ; ', $variants) . ']';
         }
-        return ['vars' => $vars, 'groups' => $groups, 'eq' => $eq];
+        /* The script, the conditional notes and the cross-field rules are part
+           of the page's behaviour: a conversion that drops one has changed the
+           calculator, whatever the form looks like. */
+        return [
+            'vars'   => $vars,
+            'groups' => $groups,
+            'eq'     => $eq,
+            'js'     => (string) ($rec['js'] ?? ''),
+            'showIf' => json_encode($rec['showIf'] ?? null),
+            'checks' => json_encode($rec['checks'] ?? null),
+        ];
     };
 
     $A = $norm($a);
@@ -503,7 +618,43 @@ foreach ($rows as $row) {
         continue;
     }
 
-    $rec = raw_record($row);
+    /*
+     * What the page renders today is the source of truth.
+     *
+     * A file that already holds a `raw` block is the record the site serves —
+     * supplements are applied to the shard, never to a file — so converting
+     * from the shard could quietly add a unit chip or an equation the live page
+     * does not have. The file's own record is converted instead.
+     */
+    $rec = null;
+    if (!$fromShard && is_file($abs)) {
+        $existing = CalcFile::read($file);
+        if ($existing['ok'] && isset($existing['def']['raw']) && is_array($existing['def']['raw'])) {
+            $old = $existing['def'];
+            $raw = $old['raw'];
+            $rec = [
+                'path'     => $path,
+                'slug'     => $slug,
+                'cat'      => $c,
+                'name'     => (string) ($old['name'] ?? ''),
+                'title'    => (string) ($old['meta']['title'] ?? ''),
+                'desc'     => (string) ($old['meta']['description'] ?? ''),
+                'updated'  => (string) ($old['meta']['updated'] ?? ''),
+                'vars'     => (array) ($raw['vars'] ?? []),
+                'groups'   => (array) ($raw['groups'] ?? []),
+                'eq'       => (array) ($raw['eq'] ?? []),
+                'datasets' => (array) ($raw['datasets'] ?? []),
+            ];
+            foreach (['js', 'showIf', 'checks'] as $extra) {
+                if (!empty($raw[$extra])) {
+                    $rec[$extra] = $raw[$extra];
+                }
+            }
+        }
+    }
+    if ($rec === null) {
+        $rec = raw_record($row);
+    }
     if ($rec === null) {
         $written['failed']++;
         echo "  ! no record for $path\n";

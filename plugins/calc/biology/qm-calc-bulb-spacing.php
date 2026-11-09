@@ -12,500 +12,323 @@
 return [
     'name' => 'Bulb spacing',
     'meta' => ['title' => 'Bulb spacing Calculator: Units and Formulas', 'description' => 'Bulb spacing turns plant grid, length and width into area and number of plants. Enter plant grid and length; the answer follows without a table lookup.', 'h1' => 'Bulb spacing Calculator', 'updated' => '2026-08-12'],
-    'raw' => [
-        'vars' => [
-            'area' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'border' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'even_row_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'length' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'odd_row_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plant_grid' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'vs2EMycLiGr81S6xh3gq_', 'c' => null],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plant_grid',
+                            'label' => 'Plant grid',
+                            'type' => 'select',
+                            'options' => ['Rectangular' => '1', 'Triangle' => '2'],
+                            'dataset' => 'plant_grid',
+                            'control' => 'DROPDOWN',
+                            'default' => 'Rectangular',
+                        ],
+                    ],
                 ],
-                'ds' => 'LeJPFH1--tbE2eGWY_G9s',
-            ],
-            'plant_select' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'GmfVGCFfWzbCmtOdryWvG', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'image', 'url' => 'plants-spacing-rectangles.png'],
+                    ],
                 ],
-                'ds' => 'wzTgIAwBbIqkC1ueDYG2j',
-            ],
-            'plant_spacing' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.1'],
-            ],
-            'plants_per_row' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'row_spacing' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'rows' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_plants' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_row_spacing' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'triangle_rows' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'width' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'length',
+                            'label' => 'Length',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'width',
+                            'label' => 'Width',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 2,
+                    'place' => [0, 1],
+                    'fields' => [
+                        [
+                            'name' => 'border',
+                            'label' => 'Border',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                        [
+                            'name' => 'area',
+                            'label' => 'Area',
+                            'type' => 'number',
+                            'unit' => '28',
+                            'unit_default' => 'm2',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
             ],
         ],
-        'groups' => [
-            [
-                'uid' => 'bmXTAW12SoD2gJtM8sQHF',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+        [
+            'title' => 'Plant information',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'plant_grid',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Plant grid',
-                                    'ds' => 'LeJPFH1--tbE2eGWY_G9s',
-                                    'opts' => [
-                                        ['vs2EMycLiGr81S6xh3gq_', 'Rectangular', '1'],
-                                        ['Fou7nfktaiq3Ci70oQJw5', 'Triangle', '2'],
-                                    ],
-                                ],
+                            'name' => 'plant_select',
+                            'label' => 'Plant select',
+                            'type' => 'select',
+                            'options' => [
+                                'Allium' => '1',
+                                'Anemones' => '2',
+                                'Bluebells' => '3',
+                                'Crocus' => '4',
+                                'Cyclamen' => '5',
+                                'Daffodil' => '6',
+                                'Dwarf Daffodil' => '7',
+                                'Fritillaria' => '8',
+                                'Hyacinths' => '9',
+                                'Iris Reticulata' => '10',
+                                'Muscari' => '11',
+                                'Snowdrops' => '12',
+                                'Tulips' => '13',
+                                'Custom plant' => '14',
                             ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'i',
-                                    'u' => ['plants-spacing-rectangles.png'],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1_FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'vt' => 'numerical',
-                                    'l' => 'Length',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'width',
-                                    'vt' => 'numerical',
-                                    'l' => 'Width',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1_FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'border', 'vt' => 'numerical', 'l' => 'Border'],
-                            ],
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'area',
-                                    'vt' => 'numerical',
-                                    'l' => 'Area',
-                                    'us' => '28',
-                                    'du' => 'm2',
-                                ],
-                            ],
+                            'dataset' => 'plant_spacing',
+                            'control' => 'DROPDOWN',
+                            'default' => 'Allium',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'vI4bPuhBVBHSaGLlj0kjo',
-                'title' => 'Plant information',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'plant_select',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Plant select',
-                                    'ds' => 'wzTgIAwBbIqkC1ueDYG2j',
-                                    'opts' => [
-                                        ['GmfVGCFfWzbCmtOdryWvG', 'Allium', '1'],
-                                        ['MTpHE1VFqioaezTwnyGyO', 'Anemones', '2'],
-                                        ['Sjo_bVdJHR95-p_X97BPy', 'Bluebells', '3'],
-                                        ['8H8thqA3BzmwG-1AAwodm', 'Crocus', '4'],
-                                        ['oQqPPA3da8hHuKjI6-XaT', 'Cyclamen', '5'],
-                                        ['vGwkaUYsiDu_r7MTLJXAl', 'Daffodil', '6'],
-                                        ['JwhgnV3rPzFhe2CMdsXyv', 'Dwarf Daffodil', '7'],
-                                        ['pfuO8kC9FD09i6gZ-kiOp', 'Fritillaria', '8'],
-                                        ['5xRVrXDuvK_g5VAuqhffP', 'Hyacinths', '9'],
-                                        ['lXygS6Cek2-zBTLC7nerE', 'Iris Reticulata', '10'],
-                                        ['tFvslhn4scEFHIbnaCoVO', 'Muscari', '11'],
-                                        ['X6iOf1qllM6ND8W-aJDZG', 'Snowdrops', '12'],
-                                        ['Xs97OgZzsXynG8ZrpcOQ5', 'Tulips', '13'],
-                                        ['IaQbOlX4M8Gn0Mc9UcabQ', 'Custom plant', '14'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'plant_spacing',
-                                    'vt' => 'dependent',
-                                    'l' => 'Plant spacing (s)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'row_spacing',
-                                    'vt' => 'numerical',
-                                    'l' => 'Row spacing (r)',
-                                    'us' => '4',
-                                    'du' => 'cm',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'triangle_plants', 'vt' => 'numerical', 'l' => 'Number of plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants', 'vt' => 'numerical', 'l' => 'Number of plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['plant_select == 1', <<<'TXT'
-                                        Allium Type: Perennial Height: 30-90 cm (12-36 in) Width: 8-10 cm (3-4 in) Spacing: 10 cm (4 in) Plant in: Mid-summer to early autumn Flowers in: Spring or early autumn Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 2', <<<'TXT'
-                                        Anemone (Wildflowers) Type: Perennial Height: 30-100 cm (12-39 in) Width: 15-23 cm (6-9 in) Spacing: 5-8 cm (2-3 in) Plant in: Spring or early autumn, depending on species Flowers in: Spring or Sept, depending on species Plant likes: Full sun, semi-shade, and shade
-                                        TXT],
-                                        ['plant_select == 3', <<<'TXT'
-                                        Bluebells Type: Perennial Height: 50 cm (20 in) Width: 10 cm (4 in) Spacing: 5-8 cm (2-3 in) Plant in: Sep-Oct Flowers in: Apr-May Plant likes: Semi-shade and shade
-                                        TXT],
-                                        ['plant_select == 4', <<<'TXT'
-                                        Crocus Type: Perennial Height: 10-40 cm (4-16 in) Width: 5 cm (2 in) Spacing: 8-10 cm (3-4 in) Plant in: Aug-Nov Flowers in: Feb-Apr Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 5', <<<'TXT'
-                                        Cyclamen Type: Perennial Height: 5-13 cm (2-5 in) Width: 8-15 cm (3-6 in) Spacing: 3 cm (1 in) Plant in: Spring and from Autumn until the first frost Flowers in: Oct-Nov Plant likes: Semi-shade and shade
-                                        TXT],
-                                        ['plant_select == 6', <<<'TXT'
-                                        Daffodil (Narcissus) Type: Perennial Height: 40-45 cm (16-18 in) Width: 5-8 cm (2-3 in) Spacing: 10-20 cm (4-8 in) Plant in: Autumn Flowers in: Feb-May Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 7', <<<'TXT'
-                                        Dwarf Daffodil (Narcissus) Type: Perennial Height: 5–8 cm (2-3 in) Width: 5-8 cm (2-3 in) Spacing: 10-15 cm (4-6 in) Plant in: Autumn Flowers in: Feb-May Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 8', <<<'TXT'
-                                        Fritillaria Type: Perennial Height: 30-150 cm (12-60 in) Width: 10-50 cm (4-20 in) Spacing: 10-15 cm (4-6 in) Plant in: Sep-Oct Flowers in: Apr-May Plant likes: Semi-shade, shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 9', <<<'TXT'
-                                        Hyacinths Type: Perennial Height: 20-30 cm (8-12 in) Width: 10 cm (4 in) Spacing: 10 cm (4 in) Plant in: Sep-Nov Flowers in: Dec-Apr Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 10', <<<'TXT'
-                                        Iris Type: Perennial Height: 15-50 cm (6-20 in) Width: 8-10 cm (3-4 in) Spacing: 5-10 cm (2-4 in) Plant in: Autumn Flowers in: Apr-Jun Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 11', <<<'TXT'
-                                        Muscari (Grape hyacinth) Type: Perennial Height: 20 cm (8 in) Width: 5 cm (2 in) Spacing: 10 cm (4 in) Plant in: Sep-Nov Flowers in: Apr-May Plant likes: Full sun and semi-shade
-                                        TXT],
-                                        ['plant_select == 12', <<<'TXT'
-                                        Snowdrops Type: Perennial Height: 15-30 cm (6-12 in) Width: 20 cm (8 in) Spacing: 8-10 cm (3-4 in) Plant in: Apr-May Flowers in: Jan-Mar Plant likes: Semi-shade, shade, and moist soil
-                                        TXT],
-                                        ['plant_select == 13', <<<'TXT'
-                                        Tulips Type: Perennial Height: 25-60 cm (10-24 in) Width: 15 cm (6 in) Spacing: 10-15 cm (4-6 in) Plant in: Oct-Nov Flowers in: Mar-May Plant likes: Full sun, semi-shade, and moist soil
-                                        TXT],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'plant_spacing',
+                            'label' => 'Plant spacing (s)',
+                            'type' => 'result',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'wjZKhlYGfT86R9-UQ7Lwm',
-                'title' => 'hidden parameters',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'triangle_rows', 'vt' => 'numerical', 'l' => 'Triangle rows'],
-                            ],
+                            'name' => 'row_spacing',
+                            'label' => 'Row spacing (r)',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'cm',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'triangle_row_spacing',
-                                    'vt' => 'numerical',
-                                    'l' => 'Triangle row spacing',
-                                    'us' => '4',
-                                    'du' => 'm',
-                                ],
-                            ],
+                            'name' => 'triangle_plants',
+                            'label' => 'Number of plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'even_row_plants', 'vt' => 'numerical', 'l' => 'Even row plants'],
-                            ],
+                            'name' => 'plants',
+                            'label' => 'Number of plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.1'],
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'odd_row_plants', 'vt' => 'numerical', 'l' => 'Odd row plants'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'rows', 'vt' => 'numerical', 'l' => 'Rows'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'plants_per_row', 'vt' => 'numerical', 'l' => 'Plants per row'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'plant_select == 1', 'text' => <<<'TXT'
+                                Allium Type: Perennial Height: 30-90 cm (12-36 in) Width: 8-10 cm (3-4 in) Spacing: 10 cm (4 in) Plant in: Mid-summer to early autumn Flowers in: Spring or early autumn Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 2', 'text' => <<<'TXT'
+                                Anemone (Wildflowers) Type: Perennial Height: 30-100 cm (12-39 in) Width: 15-23 cm (6-9 in) Spacing: 5-8 cm (2-3 in) Plant in: Spring or early autumn, depending on species Flowers in: Spring or Sept, depending on species Plant likes: Full sun, semi-shade, and shade
+                                TXT],
+                                ['when' => 'plant_select == 3', 'text' => <<<'TXT'
+                                Bluebells Type: Perennial Height: 50 cm (20 in) Width: 10 cm (4 in) Spacing: 5-8 cm (2-3 in) Plant in: Sep-Oct Flowers in: Apr-May Plant likes: Semi-shade and shade
+                                TXT],
+                                ['when' => 'plant_select == 4', 'text' => <<<'TXT'
+                                Crocus Type: Perennial Height: 10-40 cm (4-16 in) Width: 5 cm (2 in) Spacing: 8-10 cm (3-4 in) Plant in: Aug-Nov Flowers in: Feb-Apr Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 5', 'text' => <<<'TXT'
+                                Cyclamen Type: Perennial Height: 5-13 cm (2-5 in) Width: 8-15 cm (3-6 in) Spacing: 3 cm (1 in) Plant in: Spring and from Autumn until the first frost Flowers in: Oct-Nov Plant likes: Semi-shade and shade
+                                TXT],
+                                ['when' => 'plant_select == 6', 'text' => <<<'TXT'
+                                Daffodil (Narcissus) Type: Perennial Height: 40-45 cm (16-18 in) Width: 5-8 cm (2-3 in) Spacing: 10-20 cm (4-8 in) Plant in: Autumn Flowers in: Feb-May Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 7', 'text' => <<<'TXT'
+                                Dwarf Daffodil (Narcissus) Type: Perennial Height: 5–8 cm (2-3 in) Width: 5-8 cm (2-3 in) Spacing: 10-15 cm (4-6 in) Plant in: Autumn Flowers in: Feb-May Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 8', 'text' => <<<'TXT'
+                                Fritillaria Type: Perennial Height: 30-150 cm (12-60 in) Width: 10-50 cm (4-20 in) Spacing: 10-15 cm (4-6 in) Plant in: Sep-Oct Flowers in: Apr-May Plant likes: Semi-shade, shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 9', 'text' => <<<'TXT'
+                                Hyacinths Type: Perennial Height: 20-30 cm (8-12 in) Width: 10 cm (4 in) Spacing: 10 cm (4 in) Plant in: Sep-Nov Flowers in: Dec-Apr Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 10', 'text' => <<<'TXT'
+                                Iris Type: Perennial Height: 15-50 cm (6-20 in) Width: 8-10 cm (3-4 in) Spacing: 5-10 cm (2-4 in) Plant in: Autumn Flowers in: Apr-Jun Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 11', 'text' => <<<'TXT'
+                                Muscari (Grape hyacinth) Type: Perennial Height: 20 cm (8 in) Width: 5 cm (2 in) Spacing: 10 cm (4 in) Plant in: Sep-Nov Flowers in: Apr-May Plant likes: Full sun and semi-shade
+                                TXT],
+                                ['when' => 'plant_select == 12', 'text' => <<<'TXT'
+                                Snowdrops Type: Perennial Height: 15-30 cm (6-12 in) Width: 20 cm (8 in) Spacing: 8-10 cm (3-4 in) Plant in: Apr-May Flowers in: Jan-Mar Plant likes: Semi-shade, shade, and moist soil
+                                TXT],
+                                ['when' => 'plant_select == 13', 'text' => <<<'TXT'
+                                Tulips Type: Perennial Height: 25-60 cm (10-24 in) Width: 15 cm (6 in) Spacing: 10-15 cm (4-6 in) Plant in: Oct-Nov Flowers in: Mar-May Plant likes: Full sun, semi-shade, and moist soil
+                                TXT],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'area = length * width',
-                'var' => [
-                    [
-                        'l' => 'length',
-                        'f' => 'area/width',
-                        'r' => ['area', 'width'],
-                    ],
-                    [
-                        'l' => 'area',
-                        'f' => 'length*width',
-                        'r' => ['length', 'width'],
-                    ],
-                    [
-                        'l' => 'width',
-                        'f' => 'area/length',
-                        'r' => ['length', 'area'],
+        [
+            'title' => 'hidden parameters',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangle_rows',
+                            'label' => 'Triangle rows',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'triangle_rows = floor((width - border*2)/(plant_spacing*0.866) + 1)',
-                'var' => [
-                    [
-                        'l' => 'triangle_rows',
-                        'f' => 'floor((500/433)*(-2*border + width)/plant_spacing) + 1',
-                        'r' => ['border', 'plant_spacing', 'width'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'triangle_row_spacing',
+                            'label' => 'Triangle row spacing',
+                            'type' => 'number',
+                            'unit' => '4',
+                            'unit_default' => 'm',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'triangle_row_spacing = one_way(plant_spacing* 0.866)',
-                'var' => [
-                    [
-                        'l' => 'triangle_row_spacing',
-                        'f' => '((433/500)*plant_spacing)',
-                        'r' => ['plant_spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'even_row_plants',
+                            'label' => 'Even row plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'odd_row_plants = floor((length - border*2)/plant_spacing+ 1)',
-                'var' => [
-                    [
-                        'l' => 'odd_row_plants',
-                        'f' => 'floor((-2*border + length)/plant_spacing) + 1',
-                        'r' => ['border', 'length', 'plant_spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'odd_row_plants',
+                            'label' => 'Odd row plants',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'even_row_plants = floor((length - border*2 - 0.5*plant_spacing)/plant_spacing+ 1)',
-                'var' => [
-                    [
-                        'l' => 'even_row_plants',
-                        'f' => 'floor((1/2)*(-4*border + 2*length - plant_spacing)/plant_spacing) + 1',
-                        'r' => ['border', 'length', 'plant_spacing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rows',
+                            'label' => 'Rows',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'triangle_plants = one_way(floor(triangle_rows/2) * even_row_plants + ceil(triangle_rows/2) * odd_row_plants)',
-                'var' => [
-                    [
-                        'l' => 'triangle_plants',
-                        'f' => <<<'TXT'
-                        ((floor((-2*border + length)/plant_spacing) + 1)*ceil((1/2)*floor((500/433)*(-2*border + width)/plant_spacing) + 1/2) + (floor((1/2)*(-4*border + 2*length - plant_spacing)/plant_spacing) + 1)*floor((1/2)*floor((500/433)*(-2*border + width)/plant_spacing) + 1/2))
-                        TXT,
-                        'r' => ['border', 'length', 'plant_spacing', 'width'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'rows = floor((width - border*2)/row_spacing+1)',
-                'var' => [
-                    [
-                        'l' => 'rows',
-                        'f' => 'floor((-2*border + width)/row_spacing) + 1',
-                        'r' => ['border', 'row_spacing', 'width'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'plants_per_row = floor((length - border*2)/plant_spacing+1)',
-                'var' => [
-                    [
-                        'l' => 'plants_per_row',
-                        'f' => 'floor((-2*border + length)/plant_spacing) + 1',
-                        'r' => ['border', 'length', 'plant_spacing'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'plants = one_way(rows * plants_per_row)',
-                'var' => [
-                    [
-                        'l' => 'plants',
-                        'f' => '((floor((-2*border + length)/plant_spacing) + 1)*(floor((-2*border + width)/row_spacing) + 1))',
-                        'r' => [
-                            'border',
-                            'length',
-                            'plant_spacing',
-                            'row_spacing',
-                            'width',
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'plants_per_row',
+                            'label' => 'Plants per row',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [
-            'LeJPFH1--tbE2eGWY_G9s' => [
-                'name' => 'plant_grid',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'vs2EMycLiGr81S6xh3gq_', 'label' => 'Rectangular', 'value' => '1'],
-                    ['uid' => 'Fou7nfktaiq3Ci70oQJw5', 'label' => 'Triangle', 'value' => '2'],
-                ],
-            ],
-            'wzTgIAwBbIqkC1ueDYG2j' => [
-                'name' => 'plant_spacing',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'GmfVGCFfWzbCmtOdryWvG', 'label' => 'Allium', 'value' => '1'],
-                    ['uid' => 'MTpHE1VFqioaezTwnyGyO', 'label' => 'Anemones', 'value' => '2'],
-                    ['uid' => 'Sjo_bVdJHR95-p_X97BPy', 'label' => 'Bluebells', 'value' => '3'],
-                    ['uid' => '8H8thqA3BzmwG-1AAwodm', 'label' => 'Crocus', 'value' => '4'],
-                    ['uid' => 'oQqPPA3da8hHuKjI6-XaT', 'label' => 'Cyclamen', 'value' => '5'],
-                    ['uid' => 'vGwkaUYsiDu_r7MTLJXAl', 'label' => 'Daffodil', 'value' => '6'],
-                    ['uid' => 'JwhgnV3rPzFhe2CMdsXyv', 'label' => 'Dwarf Daffodil', 'value' => '7'],
-                    ['uid' => 'pfuO8kC9FD09i6gZ-kiOp', 'label' => 'Fritillaria', 'value' => '8'],
-                    ['uid' => '5xRVrXDuvK_g5VAuqhffP', 'label' => 'Hyacinths', 'value' => '9'],
-                    ['uid' => 'lXygS6Cek2-zBTLC7nerE', 'label' => 'Iris Reticulata', 'value' => '10'],
-                    ['uid' => 'tFvslhn4scEFHIbnaCoVO', 'label' => 'Muscari', 'value' => '11'],
-                    ['uid' => 'X6iOf1qllM6ND8W-aJDZG', 'label' => 'Snowdrops', 'value' => '12'],
-                    ['uid' => 'Xs97OgZzsXynG8ZrpcOQ5', 'label' => 'Tulips', 'value' => '13'],
-                    ['uid' => 'IaQbOlX4M8Gn0Mc9UcabQ', 'label' => 'Custom plant', 'value' => '14'],
-                ],
-            ],
-        ],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'area = length * width',
+            'results' => ['length' => 'area/width', 'area' => 'length*width', 'width' => 'area/length'],
+        ],
+        [
+            'title' => 'triangle_rows = floor((width - border*2)/(plant_spacing*0.866) + 1)',
+            'results' => ['triangle_rows' => 'floor((500/433)*(-2*border + width)/plant_spacing) + 1'],
+        ],
+        [
+            'title' => 'triangle_row_spacing = one_way(plant_spacing* 0.866)',
+            'results' => ['triangle_row_spacing' => '((433/500)*plant_spacing)'],
+        ],
+        [
+            'title' => 'odd_row_plants = floor((length - border*2)/plant_spacing+ 1)',
+            'results' => ['odd_row_plants' => 'floor((-2*border + length)/plant_spacing) + 1'],
+        ],
+        [
+            'title' => 'even_row_plants = floor((length - border*2 - 0.5*plant_spacing)/plant_spacing+ 1)',
+            'results' => ['even_row_plants' => 'floor((1/2)*(-4*border + 2*length - plant_spacing)/plant_spacing) + 1'],
+        ],
+        [
+            'title' => 'triangle_plants = one_way(floor(triangle_rows/2) * even_row_plants + ceil(triangle_rows/2) * odd_row_plants)',
+            'results' => ['triangle_plants' => <<<'TXT'
+            ((floor((-2*border + length)/plant_spacing) + 1)*ceil((1/2)*floor((500/433)*(-2*border + width)/plant_spacing) + 1/2) + (floor((1/2)*(-4*border + 2*length - plant_spacing)/plant_spacing) + 1)*floor((1/2)*floor((500/433)*(-2*border + width)/plant_spacing) + 1/2))
+            TXT],
+        ],
+        [
+            'title' => 'rows = floor((width - border*2)/row_spacing+1)',
+            'results' => ['rows' => 'floor((-2*border + width)/row_spacing) + 1'],
+        ],
+        [
+            'title' => 'plants_per_row = floor((length - border*2)/plant_spacing+1)',
+            'results' => ['plants_per_row' => 'floor((-2*border + length)/plant_spacing) + 1'],
+        ],
+        [
+            'title' => 'plants = one_way(rows * plants_per_row)',
+            'results' => ['plants' => '((floor((-2*border + length)/plant_spacing) + 1)*(floor((-2*border + width)/row_spacing) + 1))'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Bulb spacing works out Plant spacing (s) from Plant grid, Length and Width. Nothing is looked up on this page: plant spacing (s) is computed from plant grid and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Plant spacing (s) is opened in centimeters; the chip beside it switches to any unit of the same quantity.
@@ -574,6 +397,5 @@ return [
             ['path' => '/biology/animal-mortality-rate', 'name' => 'Animal mortality rate'],
             ['path' => '/biology/annealing-temperature', 'name' => 'Annealing temperature Calculator'],
         ],
-        'authors' => [],
     ],
 ];

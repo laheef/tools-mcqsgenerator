@@ -192,10 +192,14 @@ final class CalcFile
 
         $fields  = self::fields($def);
         $formula = self::formulaMap($def);
+        $script  = trim((string) ($def['js'] ?? ''));
         if ($fields === []) {
             return $fail('the form has no fields');
         }
-        if ($formula === []) {
+        /* A page whose arithmetic lives in its own script (a DNA reverse
+           complement, a protein digest) has no formula entry and does not need
+           one; everything else must answer from a formula. */
+        if ($formula === [] && $script === '') {
             return $fail('there is no formula');
         }
 
@@ -216,9 +220,15 @@ final class CalcFile
                 return $fail('formula for "' . $lhs . '", which is not a field on the form');
             }
             foreach (Expr::dependencies((string) $expr) as $dep) {
-                if (!isset($inputs[$dep]) && !\Onim\Functions::knows($dep)) {
-                    return $fail('"' . $lhs . '" reads "' . $dep . '", which is not a field on the form');
+                if (isset($inputs[$dep]) || \Onim\Functions::knows($dep)) {
+                    continue;
                 }
+                /* A function the page defines in its own script is part of the
+                   page, not a missing field. */
+                if ($script !== '' && preg_match('~omni\.define\(\s*["\']' . preg_quote($dep, '~') . '["\']~', $script) === 1) {
+                    continue;
+                }
+                return $fail('"' . $lhs . '" reads "' . $dep . '", which is not a field on the form');
             }
         }
         $article = $def['article'] ?? [];
@@ -278,7 +288,18 @@ final class CalcFile
                     }
                     $fields = self::onlyFields((array) ($b['fields'] ?? []));
                     if ($fields !== []) {
-                        $blocks[] = ['columns' => max(1, (int) ($b['columns'] ?? 1)), 'fields' => $fields];
+                        $block = ['columns' => max(1, (int) ($b['columns'] ?? 1))];
+                        /* A converted matrix can say how wide its columns are
+                           and which column each box sits in; both have to
+                           survive normalisation or the page is re-dealt. */
+                        if (isset($b['grid']) && is_string($b['grid']) && $b['grid'] !== '') {
+                            $block['grid'] = $b['grid'];
+                        }
+                        if (isset($b['place']) && is_array($b['place'])) {
+                            $block['place'] = array_values(array_map('intval', $b['place']));
+                        }
+                        $block['fields'] = $fields;
+                        $blocks[] = $block;
                     }
                 }
             }
@@ -465,41 +486,65 @@ final class CalcFile
                     continue;
                 }
                 $cols = max(1, (int) $block['columns']);
-                if ($cols === 1) {
+                $places = $block['place'] ?? null;
+                if ($cols === 1 && !(is_array($places) && count($places) === count($fields))) {
                     /* One column: each field is its own full-width row. */
                     foreach ($fields as $field) {
                         $matrices[] = ['FR1', [[$field]]];
                     }
                     continue;
                 }
-                /* N columns: the inputs are dealt out top to bottom, the first
-                   columns taking the extra one — the same split the harvested
-                   matrices have (six and five across two columns). The result
-                   boxes ride along at the end of the last column, where their
-                   empty placeholders cost no visible space. */
-                $inputs  = [];
-                $outputs = [];
-                foreach ($fields as $i => $field) {
-                    if (!empty($isOut[$i])) {
-                        $outputs[] = $field;
-                    } else {
-                        $inputs[] = $field;
+                /*
+                 * N columns. Two ways to say where a field sits:
+                 *
+                 *   `place` — one column index per field, in form order. It is
+                 *             how a converted page keeps the exact matrix it
+                 *             was harvested with, including a column that holds
+                 *             nothing but answers.
+                 *   (none)  — the inputs are dealt out top to bottom, the first
+                 *             columns taking the extra one. The result boxes
+                 *             ride along at the end of the last column, where
+                 *             their placeholders cost no visible space.
+                 */
+                if (is_array($places) && count($places) === count($fields)) {
+                    $columns = array_fill(0, $cols, []);
+                    foreach ($fields as $i => $field) {
+                        $p = max(0, min($cols - 1, (int) $places[$i]));
+                        $columns[$p][] = $field;
+                    }
+                } else {
+                    $inputs  = [];
+                    $outputs = [];
+                    foreach ($fields as $i => $field) {
+                        if (!empty($isOut[$i])) {
+                            $outputs[] = $field;
+                        } else {
+                            $inputs[] = $field;
+                        }
+                    }
+                    if ($inputs === []) {          // nothing typeable: keep the page as it was
+                        $inputs  = $outputs;
+                        $outputs = [];
+                    }
+                    $per   = (int) ceil(count($inputs) / $cols);
+                    $columns = array_chunk($inputs, max(1, $per));
+                    if ($columns === []) {
+                        $columns = [[]];
+                    }
+                    $last = count($columns) - 1;
+                    foreach ($outputs as $field) {
+                        $columns[$last][] = $field;
                     }
                 }
-                if ($inputs === []) {          // nothing typeable: keep the page as it was
-                    $inputs  = $outputs;
-                    $outputs = [];
+                /*
+                 * The matrix's own name for its layout. A converted page keeps
+                 * the string it was harvested with (`FR2`, `FR3_FR2`); a page
+                 * written by hand gets one column per share of the row.
+                 */
+                $grid = trim((string) ($block['grid'] ?? ''));
+                if ($grid === '') {
+                    $grid = implode('_', array_fill(0, count($columns), 'FR1'));
                 }
-                $per   = (int) ceil(count($inputs) / $cols);
-                $columns = array_chunk($inputs, max(1, $per));
-                if ($columns === []) {
-                    $columns = [[]];
-                }
-                $last = count($columns) - 1;
-                foreach ($outputs as $field) {
-                    $columns[$last][] = $field;
-                }
-                $grid = $cols === 2 ? 'FR1_FR1' : ($cols === 3 ? 'FR1_FR1_FR1' : 'FR1');
                 $matrices[] = [$grid, $columns];
             }
             $groups[] = [
@@ -567,12 +612,37 @@ final class CalcFile
         $type  = strtolower((string) ($f['type'] ?? 'number'));
 
         if ($type === 'note') {
+            /*
+             * A note is a line of text — unless it is several lines that take
+             * turns. `cases` carries that: each case is a condition and the
+             * words shown while the condition holds, which is how a harvested
+             * page says "10 cm (4 in)" in inches and "10 cm" in centimetres.
+             */
+            $cases = $f['cases'] ?? null;
+            if (is_array($cases) && $cases !== []) {
+                $rows = [];
+                foreach ($cases as $case) {
+                    if (!is_array($case)) {
+                        continue;
+                    }
+                    $text = (string) ($case['text'] ?? '');
+                    if ($text === '') {
+                        continue;
+                    }
+                    $when = $case['when'] ?? null;
+                    $rows[] = [$when === null || $when === '' ? null : (string) $when, $text];
+                }
+                return $rows === [] ? null : ['t' => 'x', 'c' => $rows];
+            }
             $text = (string) ($f['text'] ?? $f['label'] ?? '');
             return $text === '' ? null : ['t' => 'x', 'c' => [[null, $text]]];
         }
         if ($type === 'image') {
-            $url = (string) ($f['url'] ?? '');
-            return $url === '' ? null : ['t' => 'i', 'u' => [$url]];
+            $url = $f['url'] ?? '';
+            $urls = is_array($url)
+                ? array_values(array_filter(array_map('strval', $url), static fn (string $u): bool => $u !== ''))
+                : [(string) $url];
+            return $urls === [] ? null : ['t' => 'i', 'u' => $urls];
         }
         if ($name === '') {
             return null;
@@ -588,10 +658,12 @@ final class CalcFile
                 $rows     = [];
                 $firstUid = null;
                 $defaultUid = null;
+                $uidOf = [];
                 foreach ($options as $optLabel => $optValue) {
                     $optUid = 'o-' . self::hash($path . '|' . $name . '|' . (string) $optLabel);
                     $firstUid ??= $optUid;
                     $rows[] = ['uid' => $optUid, 'label' => (string) $optLabel, 'value' => (string) $optValue];
+                    $uidOf[(string) $optLabel] = $optUid;
                     if (array_key_exists('default', $f) && (string) $f['default'] === (string) $optLabel) {
                         $defaultUid = $optUid;
                     }
@@ -619,6 +691,29 @@ final class CalcFile
                 $out['vt']   = 'valueSelect';
                 $out['ds']   = $dsUid;
                 $out['opts'] = array_map(static fn (array $o): array => [$o['uid'], $o['label'], $o['value']], $rows);
+                /*
+                 * Several opening values: the box starts on the first, and
+                 * moves to the next when its condition holds (a page that
+                 * opens in inches for a reader who works in inches).
+                 */
+                if (isset($f['defaults']) && is_array($f['defaults'])) {
+                    $dfl = [];
+                    foreach ($f['defaults'] as $d) {
+                        if (!is_array($d)) {
+                            continue;
+                        }
+                        $label = (string) ($d['value'] ?? '');
+                        $uid   = $uidOf[$label] ?? null;
+                        if ($uid === null) {
+                            continue;
+                        }
+                        $when = $d['when'] ?? null;
+                        $dfl[] = ['v' => $uid, 'c' => $when === null || $when === '' ? null : (string) $when];
+                    }
+                    if ($dfl !== []) {
+                        $var['dfl'] = $dfl;
+                    }
+                }
                 break;
 
             case 'result':
@@ -634,6 +729,13 @@ final class CalcFile
             case 'date':
                 $var['type'] = 'date';
                 $out['vt']   = 'date';
+                break;
+
+            case 'presentation':
+                /* A value the page prints inside its own sentences rather than
+                   in a box of its own: no label, nothing to type into. */
+                $var['type'] = 'presentation';
+                $out['vt']   = 'presentation';
                 break;
 
             default:                                  // number
@@ -658,6 +760,24 @@ final class CalcFile
         }
         if (array_key_exists('default', $f) && $type !== 'select') {
             $var['dfl'] = [['v' => $f['default'], 'c' => null]];
+        }
+        if (isset($f['defaults']) && is_array($f['defaults']) && $type !== 'select') {
+            $dfl = [];
+            foreach ($f['defaults'] as $d) {
+                if (!is_array($d) || !array_key_exists('value', $d)) {
+                    continue;
+                }
+                $when = $d['when'] ?? null;
+                $dfl[] = ['v' => $d['value'], 'c' => $when === null || $when === '' ? null : (string) $when];
+            }
+            if ($dfl !== []) {
+                $var['dfl'] = $dfl;
+            }
+        }
+        /* The smallest value the box accepts, and the line it says when the
+           reader goes under it. */
+        if (isset($f['min']) && is_numeric($f['min'])) {
+            $var['min'] = 0 + $f['min'];
         }
         if (isset($f['rounding']) && is_array($f['rounding'])) {
             $var['rnd'] = array_values($f['rounding']);

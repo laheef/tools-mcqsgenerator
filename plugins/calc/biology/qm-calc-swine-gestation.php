@@ -11,275 +11,174 @@
 
 return [
     'name' => 'Swine gestation',
-    'meta' => ['title' => 'Swine gestation Calculator: Units & Formula', 'description' => 'Swine gestation turns breeding date into farrowing date. Nothing is stored between visits: the boxes are the only place your numbers live. No sign-up.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
-    'raw' => [
-        'vars' => [
-            'SuffixCheckJ' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'currentDate' => ['type' => 'date', 'rnd' => null],
-            'difference' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'earliestDue' => ['type' => 'date', 'rnd' => null],
-            'exposed' => ['type' => 'date', 'rnd' => null],
-            'farrowing' => ['type' => 'date', 'rnd' => null],
-            'latestDue' => ['type' => 'date', 'rnd' => null],
-            'negativeDifference' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'pregnancyDay' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'suffixCheckK' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'D1h-B2jHwb-zt_iCxH8Bm',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'exposed', 'vt' => 'date', 'l' => 'Breeding date'],
-                            ],
-                        ],
+    'meta' => ['title' => 'Swine gestation Calculator: Units & Formula', 'description' => 'Swine gestation turns breeding date into farrowing date. Every figure is computed. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Swine gestation Calculator', 'updated' => '2026-08-06'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'exposed', 'label' => 'Breeding date', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'farrowing', 'vt' => 'date', 'l' => 'Farrowing date'],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'farrowing', 'label' => 'Farrowing date', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['difference > 0', ' Your sow is going to farrow in {{difference.formattedValue}}&nbsp;days!'],
-                                        ['currentDate == farrowing', ' Your sow gave birth today!'],
-                                        ['difference < 0', ' Your sow gave birth {{negativeDifference.formattedValue}}&nbsp;days ago!'],
-                                        ['difference == 1', ' Your sow is going to farrow in {{difference.formattedValue}}&nbsp;day!'],
-                                        ['negativeDifference == 1', ' Your sow gave birth {{negativeDifference.formattedValue}}&nbsp;day ago!'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        ['not((SuffixCheckJ == 1 and suffixCheckK != 11) and (SuffixCheckJ == 2 and suffixCheckK != 12) and (SuffixCheckJ == 3 and suffixCheckK != 13))', 'Today is the {{pregnancyDay.formattedValue}}th day of the gestation.'],
-                                        ['SuffixCheckJ == 1 and suffixCheckK != 11', 'Today is the {{pregnancyDay.formattedValue}}st day of the gestation.'],
-                                        ['SuffixCheckJ == 2 and suffixCheckK != 12', 'Today is the {{pregnancyDay.formattedValue}}nd day of the gestation.'],
-                                        ['SuffixCheckJ == 3 and suffixCheckK != 13', 'Today is the {{pregnancyDay.formattedValue}}rd day of the gestation.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, '• Earliest possible farrowing: {{earliestDue.formattedValue}} • Latest possible farrowing: {{latestDue.formattedValue}}'],
-                                    ],
-                                ],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'difference > 0', 'text' => ' Your sow is going to farrow in {{difference.formattedValue}}&nbsp;days!'],
+                                ['when' => 'currentDate == farrowing', 'text' => ' Your sow gave birth today!'],
+                                ['when' => 'difference < 0', 'text' => ' Your sow gave birth {{negativeDifference.formattedValue}}&nbsp;days ago!'],
+                                ['when' => 'difference == 1', 'text' => ' Your sow is going to farrow in {{difference.formattedValue}}&nbsp;day!'],
+                                ['when' => 'negativeDifference == 1', 'text' => ' Your sow gave birth {{negativeDifference.formattedValue}}&nbsp;day ago!'],
                             ],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => '1C80nZlSUPtZ0UNxCBscw',
-                'title' => 'Hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'currentDate', 'vt' => 'date', 'l' => 'Current date'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => 'not((SuffixCheckJ == 1 and suffixCheckK != 11) and (SuffixCheckJ == 2 and suffixCheckK != 12) and (SuffixCheckJ == 3 and suffixCheckK != 13))', 'text' => 'Today is the {{pregnancyDay.formattedValue}}th day of the gestation.'],
+                                ['when' => 'SuffixCheckJ == 1 and suffixCheckK != 11', 'text' => 'Today is the {{pregnancyDay.formattedValue}}st day of the gestation.'],
+                                ['when' => 'SuffixCheckJ == 2 and suffixCheckK != 12', 'text' => 'Today is the {{pregnancyDay.formattedValue}}nd day of the gestation.'],
+                                ['when' => 'SuffixCheckJ == 3 and suffixCheckK != 13', 'text' => 'Today is the {{pregnancyDay.formattedValue}}rd day of the gestation.'],
                             ],
                         ],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'difference', 'vt' => 'numerical', 'l' => 'Difference'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'negativeDifference', 'vt' => 'numerical', 'l' => 'Negative difference'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'pregnancyDay', 'vt' => 'numerical', 'l' => 'Pregnancy day'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'SuffixCheckJ', 'vt' => 'numerical', 'l' => 'Suffix check j'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'suffixCheckK', 'vt' => 'numerical', 'l' => 'Suffix check k'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'earliestDue', 'vt' => 'date', 'l' => 'Earliest due'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'latestDue', 'vt' => 'date', 'l' => 'Latest due'],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => '• Earliest possible farrowing: {{earliestDue.formattedValue}} • Latest possible farrowing: {{latestDue.formattedValue}}'],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'farrowing = exposed + 114',
-                'var' => [
-                    [
-                        'l' => 'farrowing',
-                        'f' => 'exposed + 114',
-                        'r' => ['exposed'],
-                    ],
-                    [
-                        'l' => 'exposed',
-                        'f' => 'farrowing - 114',
-                        'r' => ['farrowing'],
+        [
+            'title' => 'Hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'currentDate', 'label' => 'Current date', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'difference = round(farrowing - currentDate)',
-                'var' => [
-                    [
-                        'l' => 'difference',
-                        'f' => 'round(-currentDate + farrowing)',
-                        'r' => ['currentDate', 'farrowing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'difference',
+                            'label' => 'Difference',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'negativeDifference = round(difference * -1)',
-                'var' => [
-                    [
-                        'l' => 'negativeDifference',
-                        'f' => 'round(-round(-currentDate + farrowing))',
-                        'r' => ['currentDate', 'farrowing'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'negativeDifference',
+                            'label' => 'Negative difference',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'pregnancyDay = round(currentDate - exposed)',
-                'var' => [
-                    [
-                        'l' => 'pregnancyDay',
-                        'f' => 'round(currentDate - exposed)',
-                        'r' => ['currentDate', 'exposed'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'pregnancyDay',
+                            'label' => 'Pregnancy day',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'earliestDue = exposed + 112',
-                'var' => [
-                    [
-                        'l' => 'earliestDue',
-                        'f' => 'exposed + 112',
-                        'r' => ['exposed'],
-                    ],
-                    [
-                        'l' => 'exposed',
-                        'f' => 'earliestDue - 112',
-                        'r' => ['earliestDue'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'SuffixCheckJ',
+                            'label' => 'Suffix check j',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'latestDue = exposed + 120',
-                'var' => [
-                    [
-                        'l' => 'latestDue',
-                        'f' => 'exposed + 120',
-                        'r' => ['exposed'],
-                    ],
-                    [
-                        'l' => 'exposed',
-                        'f' => 'latestDue - 120',
-                        'r' => ['latestDue'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'suffixCheckK',
+                            'label' => 'Suffix check k',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'SuffixCheckJ = round(mod(pregnancyDay, 10))',
-                'var' => [
-                    [
-                        'l' => 'SuffixCheckJ',
-                        'f' => 'round(mod(round(currentDate - exposed), 10))',
-                        'r' => ['currentDate', 'exposed'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'earliestDue', 'label' => 'Earliest due', 'type' => 'date'],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'suffixCheckK = round(mod(pregnancyDay, 100))',
-                'var' => [
-                    [
-                        'l' => 'suffixCheckK',
-                        'f' => 'round(mod(round(currentDate - exposed), 100))',
-                        'r' => ['currentDate', 'exposed'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'latestDue', 'label' => 'Latest due', 'type' => 'date'],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
+    ],
+    'formula' => [
+        [
+            'title' => 'farrowing = exposed + 114',
+            'results' => ['farrowing' => 'exposed + 114', 'exposed' => 'farrowing - 114'],
+        ],
+        [
+            'title' => 'difference = round(farrowing - currentDate)',
+            'results' => ['difference' => 'round(-currentDate + farrowing)'],
+        ],
+        [
+            'title' => 'negativeDifference = round(difference * -1)',
+            'results' => ['negativeDifference' => 'round(-round(-currentDate + farrowing))'],
+        ],
+        [
+            'title' => 'pregnancyDay = round(currentDate - exposed)',
+            'results' => ['pregnancyDay' => 'round(currentDate - exposed)'],
+        ],
+        [
+            'title' => 'earliestDue = exposed + 112',
+            'results' => ['earliestDue' => 'exposed + 112', 'exposed' => 'earliestDue - 112'],
+        ],
+        [
+            'title' => 'latestDue = exposed + 120',
+            'results' => ['latestDue' => 'exposed + 120', 'exposed' => 'latestDue - 120'],
+        ],
+        [
+            'title' => 'SuffixCheckJ = round(mod(pregnancyDay, 10))',
+            'results' => ['SuffixCheckJ' => 'round(mod(round(currentDate - exposed), 10))'],
+        ],
+        [
+            'title' => 'suffixCheckK = round(mod(pregnancyDay, 100))',
+            'results' => ['suffixCheckK' => 'round(mod(round(currentDate - exposed), 100))'],
+        ],
     ],
     'article' => [
         'intro' => <<<'TXT'
@@ -323,7 +222,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Farrowing date follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It counts in whole days.</strong> The differences are counted in whole days, so an answer is a date or a number of days rather than an interval in hours. Expect a day&#039;s uncertainty if the event itself happened at an unknown time.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Breeding date and the number you are missing is Farrowing date and Difference.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Two more from the same section come up alongside this one: <a href="/biology/cell-dilution">Cell dilution Calculator</a>, <a href="/biology/cell-doubling-time">Cell doubling time Calculator</a> and <a href="/biology/cell-seeding-density">Cell Seeding Density Calculator</a>.</p>
+            <p>Use it whenever the numbers you have are Breeding date and the number you are missing is Farrowing date and Difference.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

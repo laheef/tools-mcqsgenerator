@@ -11,357 +11,208 @@
 
 return [
     'name' => 'Dog heat cycle',
-    'meta' => ['title' => 'Dog heat cycle Calculator: Formula & Example', 'description' => 'Dog heat cycle takes the first day of the season and the cycle length you pick, then dates the next heats, the fertile window and the days between them.', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
-    'raw' => [
-        'vars' => [
-            'cycle1' => ['type' => 'date', 'rnd' => null],
-            'cycle2' => ['type' => 'date', 'rnd' => null],
-            'eightMonths' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '244', 'c' => null],
+    'meta' => ['title' => 'Dog heat cycle Calculator: Formula & Example', 'description' => 'Dog heat cycle turns first day of the cycle and heat cycle length into cycle1. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Dog heat cycle Calculator', 'updated' => '2026-08-19'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => ' Skip the math: create, edit, and save custom calculators  instantly just by typing what you need.'],
+                    ],
                 ],
-            ],
-            'eighteenDays' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '18', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'firstDay', 'label' => 'First day of the cycle', 'type' => 'date'],
+                    ],
                 ],
-            ],
-            'enter_heat_cycle' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => '4MhaGP2DO5L_md8W9hnsI', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'enter_heat_cycle',
+                            'label' => '',
+                            'type' => 'select',
+                            'options' => ['Enter your dog\'s heat cycle length (if you know it)' => '1', '' => '0'],
+                            'dataset' => 'Choose heat cycle length',
+                            'control' => 'CHECKBOX',
+                            'default' => '',
+                        ],
+                    ],
                 ],
-                'ds' => 'w-uJoHUW7pkKMDdhWSRDo',
-            ],
-            'firstDay' => ['type' => 'date', 'rnd' => null],
-            'fiveMonths' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '152', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'length',
+                            'label' => 'Heat cycle length',
+                            'type' => 'select',
+                            'options' => [
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                                '11' => '11',
+                                '12' => '12',
+                            ],
+                            'dataset' => 'Length',
+                            'control' => 'DROPDOWN',
+                            'suffix' => 'months',
+                            'default' => '6',
+                        ],
+                    ],
                 ],
-            ],
-            'length' => [
-                'type' => 'valueSelect',
-                'rnd' => null,
-                'dfl' => [
-                    ['v' => 'SmJOM4KUfVLcxoCn9xv7x', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => null, 'text' => ' Your dog\'s cycle will last up to {{cycle1.shortValue}} - {{cycle2.shortValue}}.'],
+                                ['when' => 'enter_heat_cycle==0', 'text' => ' You can expect the next heat cycle between {{nextCycle1.shortValue}} and {{nextCycle2.shortValue}}.&nbsp;'],
+                                ['when' => 'enter_heat_cycle==1', 'text' => ' You can expect the next heat on {{nextCycle3.shortValue}}.'],
+                            ],
+                        ],
+                    ],
                 ],
-                'ds' => 'I3GbN75PmyXFrKKeXiUNm',
-            ],
-            'length_value' => [
-                'type' => 'dependent',
-                'rnd' => ['omni', '0.0001'],
-            ],
-            'nextCycle1' => ['type' => 'date', 'rnd' => null],
-            'nextCycle2' => ['type' => 'date', 'rnd' => null],
-            'nextCycle3' => ['type' => 'date', 'rnd' => null],
-            'twentyoneDays' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-                'dfl' => [
-                    ['v' => '21', 'c' => null],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => ' Dogs of small breeds might go into heat more often (even every four months), while dogs of giant breeds - less frequently (e.g., once per year).'],
+                    ],
                 ],
             ],
         ],
-        'groups' => [
-            [
-                'uid' => 'SZR7P1BlbCRYxkGwCczJL',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Skip the math: create, edit, and save custom calculators  instantly just by typing what you need.'],
-                                    ],
-                                ],
-                            ],
-                        ],
+        [
+            'title' => 'Hidden variables',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'cycle1', 'label' => 'Day 18 of the cycle', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'firstDay', 'vt' => 'date', 'l' => 'First day of the cycle'],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'cycle2', 'label' => 'Day 21 of the cycle', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'enter_heat_cycle',
-                                    'vt' => 'valueSelect',
-                                    'l' => '',
-                                    'ds' => 'w-uJoHUW7pkKMDdhWSRDo',
-                                    'opts' => [
-                                        ['kwpww5FxEm32wPYMeZvhS', 'Enter your dog\'s heat cycle length (if you know it)', '1'],
-                                        ['4MhaGP2DO5L_md8W9hnsI', '', '0'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'length',
-                                    'vt' => 'valueSelect',
-                                    'l' => 'Heat cycle length',
-                                    'suf' => 'months',
-                                    'ds' => 'I3GbN75PmyXFrKKeXiUNm',
-                                    'opts' => [
-                                        ['CK4OvRewrE2EcPUlijkYf', '4', '4'],
-                                        ['pu_8vY4dOd3i6pAglybI6', '5', '5'],
-                                        ['SmJOM4KUfVLcxoCn9xv7x', '6', '6'],
-                                        ['ys3PuofM1WOXiN10XhfA9', '7', '7'],
-                                        ['TSdrM1ZTgE0lWrj63Z-2m', '8', '8'],
-                                        ['SGJLaHMs-CSmjakFiI3oz', '9', '9'],
-                                        ['w5UF41W4wrNGcXsXm6Y3k', '10', '10'],
-                                        ['BIa3HsO8V9JryI8VY5ZYI', '11', '11'],
-                                        ['qgvzojXHcO2ttD0i84zen', '12', '12'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Your dog\'s cycle will last up to {{cycle1.shortValue}} - {{cycle2.shortValue}}.'],
-                                        ['enter_heat_cycle==0', ' You can expect the next heat cycle between {{nextCycle1.shortValue}} and {{nextCycle2.shortValue}}.&nbsp;'],
-                                        ['enter_heat_cycle==1', ' You can expect the next heat on {{nextCycle3.shortValue}}.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Dogs of small breeds might go into heat more often (even every four months), while dogs of giant breeds - less frequently (e.g., once per year).'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'eightMonths',
+                            'label' => 'Days in eight months',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '244',
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'Nks1LHjtP3XnDgvaLipHy',
-                'title' => 'Hidden variables',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'cycle1', 'vt' => 'date', 'l' => 'Day 18 of the cycle'],
-                            ],
+                            'name' => 'eighteenDays',
+                            'label' => 'Days until day 18',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '18',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'cycle2', 'vt' => 'date', 'l' => 'Day 21 of the cycle'],
-                            ],
+                            'name' => 'fiveMonths',
+                            'label' => 'Days in five months',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '152',
                         ],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'eightMonths',
-                                    'vt' => 'numerical',
-                                    'l' => 'Days in eight months',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
+                            'name' => 'twentyoneDays',
+                            'label' => 'Days until day 21',
+                            'type' => 'number',
+                            'unit' => '19',
+                            'unit_default' => 'days',
+                            'rounding' => ['omni', '0.0001'],
+                            'default' => '21',
                         ],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'eighteenDays',
-                                    'vt' => 'numerical',
-                                    'l' => 'Days until day 18',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'nextCycle1', 'label' => 'Next cycle, five months on', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'fiveMonths',
-                                    'vt' => 'numerical',
-                                    'l' => 'Days in five months',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'nextCycle2', 'label' => 'Next cycle, eight months on', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'twentyoneDays',
-                                    'vt' => 'numerical',
-                                    'l' => 'Days until day 21',
-                                    'us' => '19',
-                                    'du' => 'days',
-                                ],
-                            ],
-                        ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['name' => 'nextCycle3', 'label' => 'Next cycle, from the length you chose', 'type' => 'date'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'nextCycle1', 'vt' => 'date', 'l' => 'Next cycle, five months on'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'nextCycle2', 'vt' => 'date', 'l' => 'Next cycle, eight months on'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'nextCycle3', 'vt' => 'date', 'l' => 'Next cycle, from the length you chose'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'length_value', 'vt' => 'dependent', 'l' => 'Cycle length, in months'],
-                            ],
+                            'name' => 'length_value',
+                            'label' => 'Cycle length, in months',
+                            'type' => 'result',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'cycle1=one_way(firstDay+eighteenDays)',
-                'var' => [
-                    [
-                        'l' => 'cycle1',
-                        'f' => '(eighteenDays + firstDay)',
-                        'r' => ['eighteenDays', 'firstDay'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'cycle2 = one_way(firstDay+twentyoneDays)',
-                'var' => [
-                    [
-                        'l' => 'cycle2',
-                        'f' => '(firstDay + twentyoneDays)',
-                        'r' => ['firstDay', 'twentyoneDays'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'nextCycle1 = one_way(firstDay+fiveMonths)',
-                'var' => [
-                    [
-                        'l' => 'nextCycle1',
-                        'f' => '(firstDay + fiveMonths)',
-                        'r' => ['firstDay', 'fiveMonths'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'nextCycle2 = one_way(firstDay+eightMonths)',
-                'var' => [
-                    [
-                        'l' => 'nextCycle2',
-                        'f' => '(eightMonths + firstDay)',
-                        'r' => ['eightMonths', 'firstDay'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'nextCycle3= one_way(firstDay+round(length*30.44))',
-                'var' => [
-                    [
-                        'l' => 'nextCycle3',
-                        'f' => '(firstDay + round((761/25)*length))',
-                        'r' => ['firstDay', 'length'],
-                    ],
-                ],
-            ],
+    ],
+    'formula' => [
+        [
+            'title' => 'cycle1=one_way(firstDay+eighteenDays)',
+            'results' => ['cycle1' => '(eighteenDays + firstDay)'],
         ],
-        'datasets' => [
-            'I3GbN75PmyXFrKKeXiUNm' => [
-                'name' => 'Length',
-                'uiType' => 'DROPDOWN',
-                'options' => [
-                    ['uid' => 'CK4OvRewrE2EcPUlijkYf', 'label' => '4', 'value' => '4'],
-                    ['uid' => 'pu_8vY4dOd3i6pAglybI6', 'label' => '5', 'value' => '5'],
-                    ['uid' => 'SmJOM4KUfVLcxoCn9xv7x', 'label' => '6', 'value' => '6'],
-                    ['uid' => 'ys3PuofM1WOXiN10XhfA9', 'label' => '7', 'value' => '7'],
-                    ['uid' => 'TSdrM1ZTgE0lWrj63Z-2m', 'label' => '8', 'value' => '8'],
-                    ['uid' => 'SGJLaHMs-CSmjakFiI3oz', 'label' => '9', 'value' => '9'],
-                    ['uid' => 'w5UF41W4wrNGcXsXm6Y3k', 'label' => '10', 'value' => '10'],
-                    ['uid' => 'BIa3HsO8V9JryI8VY5ZYI', 'label' => '11', 'value' => '11'],
-                    ['uid' => 'qgvzojXHcO2ttD0i84zen', 'label' => '12', 'value' => '12'],
-                ],
-            ],
-            'w-uJoHUW7pkKMDdhWSRDo' => [
-                'name' => 'Choose heat cycle length',
-                'uiType' => 'CHECKBOX',
-                'options' => [
-                    ['uid' => 'kwpww5FxEm32wPYMeZvhS', 'label' => 'Enter your dog\'s heat cycle length (if you know it)', 'value' => '1'],
-                    ['uid' => '4MhaGP2DO5L_md8W9hnsI', 'label' => '', 'value' => '0'],
-                ],
-            ],
+        [
+            'title' => 'cycle2 = one_way(firstDay+twentyoneDays)',
+            'results' => ['cycle2' => '(firstDay + twentyoneDays)'],
+        ],
+        [
+            'title' => 'nextCycle1 = one_way(firstDay+fiveMonths)',
+            'results' => ['nextCycle1' => '(firstDay + fiveMonths)'],
+        ],
+        [
+            'title' => 'nextCycle2 = one_way(firstDay+eightMonths)',
+            'results' => ['nextCycle2' => '(eightMonths + firstDay)'],
+        ],
+        [
+            'title' => 'nextCycle3= one_way(firstDay+round(length*30.44))',
+            'results' => ['nextCycle3' => '(firstDay + round((761/25)*length))'],
         ],
     ],
     'article' => [
@@ -404,7 +255,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> Day 18 of the cycle follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It counts in whole days.</strong> Dates are compared as calendar days, not as moments: two dates that differ by a few hours on the same day give the same answer, and there is no time-of-day input to set.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes First day of the cycle are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: First day of the cycle measured, Day 18 of the cycle and Day 21 of the cycle wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>Related work in the same category: <a href="/biology/gypsum-application-rate">Gypsum Application Rate Calculator</a>, <a href="/biology/hamster-age">Hamster age Calculator</a> and <a href="/biology/hardy-weinberg-equilibrium">Hardy-Weinberg equilibrium Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: First day of the cycle measured, Day 18 of the cycle and Day 21 of the cycle wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
             TXT],
         ],
         'faq' => [

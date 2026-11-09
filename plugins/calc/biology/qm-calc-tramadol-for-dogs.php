@@ -11,187 +11,117 @@
 
 return [
     'name' => 'Tramadol for dogs',
-    'meta' => ['title' => 'Tramadol for dogs Calculator: Steps & Units', 'description' => 'Tramadol for dogs works out minimum dose and maximum dose and reports both. Enter your dog\'s weight and max dose; the answer follows without a table lookup.', 'h1' => 'Tramadol for dogs Calculator', 'updated' => '2026-05-22'],
-    'raw' => [
-        'vars' => [
-            'Maximum_dose_allowed' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'Minimum_dose_tablets' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'maximum_dose' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'minimum_dose' => [
-                'type' => 'numerical',
-                'rnd' => ['standard', '0'],
-            ],
-            'weight' => [
-                'type' => 'numerical',
-                'rnd' => ['omni', '0.0001'],
-            ],
-        ],
-        'groups' => [
-            [
-                'uid' => 'R5NgzIXC2E3ugLPv35SR6',
-                'title' => '',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
+    'meta' => ['title' => 'Tramadol for dogs Calculator: Steps & Units', 'description' => 'Tramadol for dogs works out minimum dose and maximum dose and reports both. Each box lists the units it accepts, and the answer converts between them.', 'h1' => 'Tramadol for dogs Calculator', 'updated' => '2026-05-22'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                [
-                                    't' => 'v',
-                                    'n' => 'weight',
-                                    'vt' => 'numerical',
-                                    'l' => 'Your dog\'s weight',
-                                    'us' => '22',
-                                    'du' => 'kg',
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Fill in the field above to receive the recommended tramadol dose for your dog.'],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                [
-                                    't' => 'x',
-                                    'c' => [
-                                        [null, ' Recommended dosage: {{minimum_dose.formattedValue}}-{{maximum_dose.formattedValue}} mg.  Tramadol should be given every 8-12 hours (2-3 times per day).'],
-                                        ['minimum_dose >= 49', 'The minimal dosage requires a total of {{Minimum_dose_tablets.formattedValue}} tablets (strength: 50 mg) per day.'],
-                                        ['minimum_dose < 49', '&nbsp;'],
-                                        [null, ' Maximum dose allowed: {{Maximum_dose_allowed.formattedValue}} mg/day.'],
-                                    ],
-                                ],
-                            ],
+                            'name' => 'weight',
+                            'label' => 'Your dog\'s weight',
+                            'type' => 'number',
+                            'unit' => '22',
+                            'unit_default' => 'kg',
+                            'rounding' => ['omni', '0.0001'],
                         ],
                     ],
                 ],
-            ],
-            [
-                'uid' => 'U4_6YFGzRBQ3BSnmiVhRC',
-                'title' => 'hidden group',
-                'desc' => '',
-                'm' => [
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'maximum_dose', 'vt' => 'numerical', 'l' => 'Max dose'],
-                            ],
-                        ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        ['type' => 'note', 'text' => ' Fill in the field above to receive the recommended tramadol dose for your dog.'],
                     ],
-                    [
-                        'FR1',
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
                         [
-                            [
-                                ['t' => 'v', 'n' => 'minimum_dose', 'vt' => 'numerical', 'l' => 'Min dose'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'Maximum_dose_allowed', 'vt' => 'numerical', 'l' => 'Maximum dose allowed'],
-                            ],
-                        ],
-                    ],
-                    [
-                        'FR1',
-                        [
-                            [
-                                ['t' => 'v', 'n' => 'Minimum_dose_tablets', 'vt' => 'numerical', 'l' => 'Minimal dose allowed'],
+                            'type' => 'note',
+                            'cases' => [
+                                ['when' => null, 'text' => ' Recommended dosage: {{minimum_dose.formattedValue}}-{{maximum_dose.formattedValue}} mg.  Tramadol should be given every 8-12 hours (2-3 times per day).'],
+                                ['when' => 'minimum_dose >= 49', 'text' => 'The minimal dosage requires a total of {{Minimum_dose_tablets.formattedValue}} tablets (strength: 50 mg) per day.'],
+                                ['when' => 'minimum_dose < 49', 'text' => '&nbsp;'],
+                                ['when' => null, 'text' => ' Maximum dose allowed: {{Maximum_dose_allowed.formattedValue}} mg/day.'],
                             ],
                         ],
                     ],
                 ],
             ],
         ],
-        'eq' => [
-            [
-                'formula' => 'minimum_dose = 0.9 * weight ',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(10/9)*minimum_dose',
-                        'r' => ['minimum_dose'],
-                    ],
-                    [
-                        'l' => 'minimum_dose',
-                        'f' => '(9/10)*weight',
-                        'r' => ['weight'],
-                    ],
-                ],
-            ],
-            [
-                'formula' => 'maximum_dose = 2.25 * weight',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(4/9)*maximum_dose',
-                        'r' => ['maximum_dose'],
-                    ],
-                    [
-                        'l' => 'maximum_dose',
-                        'f' => '(9/4)*weight',
-                        'r' => ['weight'],
+        [
+            'title' => 'hidden group',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'maximum_dose',
+                            'label' => 'Max dose',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'Maximum_dose_allowed = 4.54 * weight',
-                'var' => [
-                    [
-                        'l' => 'weight',
-                        'f' => '(50/227)*Maximum_dose_allowed',
-                        'r' => ['Maximum_dose_allowed'],
-                    ],
-                    [
-                        'l' => 'Maximum_dose_allowed',
-                        'f' => '(227/50)*weight',
-                        'r' => ['weight'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'minimum_dose',
+                            'label' => 'Min dose',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
+                        ],
                     ],
                 ],
-            ],
-            [
-                'formula' => 'Minimum_dose_tablets = minimum_dose / 25',
-                'var' => [
-                    [
-                        'l' => 'Minimum_dose_tablets',
-                        'f' => '(1/25)*minimum_dose',
-                        'r' => ['minimum_dose'],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'Maximum_dose_allowed',
+                            'label' => 'Maximum dose allowed',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
+                        ],
                     ],
-                    [
-                        'l' => 'minimum_dose',
-                        'f' => '25*Minimum_dose_tablets',
-                        'r' => ['Minimum_dose_tablets'],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'Minimum_dose_tablets',
+                            'label' => 'Minimal dose allowed',
+                            'type' => 'number',
+                            'rounding' => ['standard', '0'],
+                        ],
                     ],
                 ],
             ],
         ],
-        'datasets' => [],
-        'js' => '"use strict";//# sourceURL=customJs.js',
     ],
+    'formula' => [
+        [
+            'title' => 'minimum_dose = 0.9 * weight ',
+            'results' => ['weight' => '(10/9)*minimum_dose', 'minimum_dose' => '(9/10)*weight'],
+        ],
+        [
+            'title' => 'maximum_dose = 2.25 * weight',
+            'results' => ['weight' => '(4/9)*maximum_dose', 'maximum_dose' => '(9/4)*weight'],
+        ],
+        [
+            'title' => 'Maximum_dose_allowed = 4.54 * weight',
+            'results' => ['weight' => '(50/227)*Maximum_dose_allowed', 'Maximum_dose_allowed' => '(227/50)*weight'],
+        ],
+        [
+            'title' => 'Minimum_dose_tablets = minimum_dose / 25',
+            'results' => ['Minimum_dose_tablets' => '(1/25)*minimum_dose', 'minimum_dose' => '25*Minimum_dose_tablets'],
+        ],
+    ],
+    'js' => '"use strict";//# sourceURL=customJs.js',
     'article' => [
         'intro' => <<<'TXT'
         Enter Your dog's weight into Tramadol for dogs and the answer comes back as Max dose and Min dose. Nothing is looked up on this page: max dose is computed from your dog's weight and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
@@ -237,7 +167,7 @@ return [
             <ul><li><strong>It scales in a straight line.</strong> The relationship behind Max dose is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>Only the listed units.</strong> The unit tables here are kilograms and nothing beyond them. There is no &quot;other&quot; option, so an unusual unit has to be converted by hand first.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Your dog&#039;s weight are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Your dog&#039;s weight measured, Max dose and Min dose wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p><p>Two more from the same section come up alongside this one: <a href="/biology/enzyme-unit-converter">Enzyme Unit Converter (U/mg, kcat) Calculator</a>, <a href="/biology/exponential-population-growth">Exponential Population Growth Calculator</a> and <a href="/biology/farm-pond-fish-stocking">Farm Pond Fish Stocking Calculator</a>.</p>
+            <p>The typical use is one direction of the relationship: Your dog&#039;s weight measured, Max dose and Min dose wanted.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
             TXT],
         ],
         'faq' => [

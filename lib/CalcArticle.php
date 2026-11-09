@@ -2126,7 +2126,7 @@ final class CalcArticle
     /** A label at the start of a sentence: it keeps its capital. */
     public static function atStart(string $label): string
     {
-        $label = trim($label);
+        $label = self::clean($label);
         if ($label === '') {
             return '';
         }
@@ -2145,7 +2145,8 @@ final class CalcArticle
      */
     public static function inSentence(string $label): string
     {
-        $label = trim($label);
+        /* A harvested label can carry the colon the form drew: "Given in:". */
+        $label = self::clean($label);
         if ($label === '' || preg_match('~^[^\p{L}]~u', $label) === 1) {
             return $label;
         }
