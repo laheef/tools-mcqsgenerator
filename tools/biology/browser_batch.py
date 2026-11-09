@@ -18,6 +18,7 @@ import tempfile
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get("CALC_BASE", "http://127.0.0.1:8080")
+PREFIX = os.environ.get("CALC_PREFIX", "/biology/")   # live serves /tool/biology/
 
 FILL = """
 (vals) => {
@@ -204,7 +205,7 @@ def check(slug: str) -> dict:
         attempts = [1, 2, None] if formula_page(inputs) else [None, 1]
         for limit in attempts:
             for values in VALUES:
-                page.goto(f"{BASE}/biology/{slug}", wait_until="domcontentloaded", timeout=25000)
+                page.goto(f"{BASE}{PREFIX}{slug}", wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(260)
                 filled = fill_subset(page, values, inputs, limit)
                 page.wait_for_timeout(140)

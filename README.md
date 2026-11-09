@@ -17,6 +17,7 @@ build in `assets/js/vendor/`, fonts are system fonts.
 | | |
 |---|---|
 | Calculators | **4 041** across 14 categories (320 biology) — every one of them a file, so they deploy without a database |
+| Calculator files | biology, chemistry and construction are **one file per calculator** (`plugins/calc/<cat>/`): 586 pages with the form, the formulas and the article in one place |
 | Sitemap | 4 057 URLs from files (4 065 once the CMS pages are imported), all under `/tool/` |
 | Engine | one declarative equation solver (PHP + JS) drives every page |
 | Repairs | 378 hand-written supplements where the harvested equations were incomplete |
