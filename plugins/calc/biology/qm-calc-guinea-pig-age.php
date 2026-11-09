@@ -36,7 +36,7 @@ return [
                         [
                             'name' => 'age',
                             'label' => 'Human age ‍',
-                            'type' => 'number',
+                            'type' => 'result',
                             'unit' => '19',
                             'unit_default' => 'yrs',
                             'rounding' => ['omni', '0.0001'],

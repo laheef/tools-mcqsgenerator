@@ -69,8 +69,10 @@ SEO rules count that. Titles are checked against the 50–60 window by
 |---|---|
 | `name` | the variable the formula reads — `[a-zA-Z_][a-zA-Z0-9_]*` |
 | `label` | what the box says |
-| `type` | `number`, `result`, `select`, `note`, `image`, `text`, `date` |
+| `type` | `number`, `result`, `select`, `note`, `image`, `text`, `date`, `presentation` |
 | `default` | the value the box opens with (for a select: the option's label) |
+| `defaults` | several opening values, each with a `when` condition — a refill rule |
+| `min` | the smallest value the box accepts |
 | `options` | select only: `['label' => value, …]`, in display order |
 | `dataset`, `control` | select only: the dataset's name and `RADIO` / `SELECT` / `DROPDOWN` / `CHECKBOX` |
 | `unit`, `unit_default` | a unit switcher — `'4'` is length, `'28'` area, `'omni'` none |
@@ -80,11 +82,37 @@ SEO rules count that. Titles are checked against the 50–60 window by
 | `readonly` | the box shows a number but cannot be typed into |
 
 A `note` field is a line of text: `['type' => 'note', 'text' => 'A – dominant, a – recessive']`.
-An `image` field is `['type' => 'image', 'url' => '/uploads/…svg']`.
+A note that takes turns is a list of cases, each with the condition that shows it:
+
+```php
+['type' => 'note', 'cases' => [
+    ['when' => 'choice == 1', 'text' => '{{a_percentage.formattedValue}}% of the population'],
+    ['when' => 'choice == 0', 'text' => '1 in {{a_proportion.formattedValue}} people'],
+]],
+```
+
+An `image` field is `['type' => 'image', 'url' => '/uploads/…svg']` (or a list of
+urls). A `presentation` field is a value the page prints inside its own
+sentences rather than in a box of its own.
 
 `columns` on a section is how the matrix is laid out: `1` gives every field its
 own row, `2` deals them into two columns (the first taking the extra one), `3`
 into three. That is the same arithmetic the harvested matrices were built with.
+
+A converted page keeps the exact matrix it was harvested with: `place` gives one
+column index per field, and `grid` carries the record's own name for the layout
+(`FR2`, `FR3_FR2`). Neither is needed in a form written by hand.
+
+```php
+'blocks' => [
+    [
+        'columns' => 2,
+        'grid'    => 'FR1_FR1',
+        'place'   => [0, 0, 0, 1, 1, 1, 1],   // which column each box sits in
+        'fields'  => [ /* … */ ],
+    ],
+],
+```
 
 ## 3. Formulas
 

@@ -11,7 +11,9 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import sys
+import tempfile
 
 from playwright.sync_api import sync_playwright
 
@@ -162,41 +164,72 @@ def fill_like_a_visitor(page, values: dict, inputs: dict[str, str]) -> int:
 
 
 def inputs_of(slug: str) -> dict[str, str]:
-    table = json.load(open("/tmp/inputs.json"))
+    table = json.load(open(os.path.join(tempfile.gettempdir(), "inputs.json")))
     return table.get(slug, {})
 
 
+def write_inputs(slugs: list[str]) -> None:
+    """Ask the site itself which boxes each page calls inputs."""
+    php = os.path.join(os.path.dirname(__file__), "inputs.php")
+    subprocess.run(["php", php, *slugs], check=True, capture_output=True)
+
+
+def fill_subset(page, values: dict, inputs: dict[str, str], limit: int | None) -> int:
+    """Fill at most `limit` of the record's inputs, in form order."""
+    chosen = {k: v for k, v in list(inputs.items())[:limit]} if limit else inputs
+    return fill_like_a_visitor(page, values, chosen)
+
+
+def formula_page(inputs: dict[str, str]) -> bool:
+    """True when every field is also a result: the page works either way round."""
+    kinds = [k for k, t in inputs.items() if t not in ("dependent", "presentation")]
+    return len(kinds) > 1
+
+
 def check(slug: str) -> dict:
+    """Try the page the way its own gate asks to be used.
+
+    A converter answers when one side is given; a calculator answers when the
+    inputs are filled. So the same page is tried with one value, then two, then
+    every input, and the first attempt that produces a result is the one
+    reported — with how many boxes it took.
+    """
     out = {"slug": slug, "answered": False}
+    inputs = inputs_of(slug)
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(viewport={"width": 1400, "height": 1000})
         errors: list[str] = []
         page.on("pageerror", lambda e: errors.append(str(e)[:160]))
-        for values in VALUES:
-            page.goto(f"{BASE}/biology/{slug}", wait_until="domcontentloaded", timeout=25000)
-            page.wait_for_timeout(280)
-            filled = fill_like_a_visitor(page, values, inputs_of(slug))
-            page.wait_for_timeout(150)
-            button = page.locator(".calc-go[data-calc-go]")
-            if button.count():
-                button.click()
-            page.wait_for_timeout(450)
-            read = page.evaluate(READ)
-            answered = (read["nrows"] > 0) or (read["nboxes"] > 0)
-            out.update(read)
-            out["filled"] = filled
-            out["errors"] = errors[:2]
-            if answered:
-                out["answered"] = True
-                out["values"] = values["num"]
-                break
+        attempts = [1, 2, None] if formula_page(inputs) else [None, 1]
+        for limit in attempts:
+            for values in VALUES:
+                page.goto(f"{BASE}/biology/{slug}", wait_until="domcontentloaded", timeout=25000)
+                page.wait_for_timeout(260)
+                filled = fill_subset(page, values, inputs, limit)
+                page.wait_for_timeout(140)
+                button = page.locator(".calc-go[data-calc-go]")
+                if button.count():
+                    button.click()
+                page.wait_for_timeout(430)
+                read = page.evaluate(READ)
+                answered = (read["nrows"] > 0) or (read["nboxes"] > 0)
+                out.update(read)
+                out["filled"] = filled
+                out["limit"] = limit
+                out["errors"] = errors[:2]
+                if answered:
+                    out["answered"] = True
+                    out["values"] = values["num"]
+                    browser.close()
+                    return out
         browser.close()
     return out
 
 
 def main() -> int:
     slugs = sys.argv[1:]
+    write_inputs(slugs)
     results = [check(s) for s in slugs]
     bad = [r for r in results if not r["answered"]]
     for r in results:

@@ -36,7 +36,7 @@ return [
                         [
                             'name' => 'age',
                             'label' => ' In human years it\'s',
-                            'type' => 'number',
+                            'type' => 'result',
                             'unit' => '19',
                             'unit_default' => 'yrs',
                             'rounding' => ['standard', '0'],
