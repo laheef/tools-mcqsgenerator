@@ -54,3 +54,23 @@ page with no result box at all can be answered by its sentences.
 `tools/verify_conversion.php` reports these 26 pages as differing from their
 harvested records in vars, groups and js. That is the point of the round: those
 differences are the fixes above, not drift.
+
+## After the sweep
+
+The sweep found two more things and both are fixed in the follow-up commit:
+
+* **The result boxes were still typable.** A `result` field is a `dependent`
+  variable, and the template only renders those read-only when the field is
+  marked output-only. `compile()` now marks every dependent field of a
+  *script-engine* page that way, so the panel's boxes are read-only on all 26
+  pages and the form no longer offers a second place to type them. Formula pages
+  are deliberately untouched: they still solve backwards when a result is typed
+  in.
+* **The harness accepted an empty panel.** It read the text of each result row,
+  where the number lives in a child `input`, so a stack of empty boxes counted
+  as an answer. It now reads the value inside the box, and a page that answers
+  through prose alone has to report `state=shown` with no empty box left behind.
+
+Live check after the deploy: `/tool/biology/reverse-complement` returns
+`length 39 · gc 56.41 · tm 70.8`, all three read-only; six pages re-run through
+the live harness answered 6 of 6.
