@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Reverse Translate Calculator',
-    'meta' => ['title' => 'Reverse Translate Calculator: Steps & Units', 'description' => 'Reverse Translate Calculator takes protein sequence and returns protein length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'turns a protein sequence into codons, choosing between the synonymous ones',
+    'meta' => ['title' => 'Reverse Translate Protein to DNA with Codon Choice', 'description' => 'Turn a protein sequence back into DNA using host-preferred or GC-balanced codons, with an optional stop, and read the length, GC content and melting point.', 'h1' => 'Reverse Translate Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -55,42 +57,37 @@ return [
                         [
                             'name' => 'length_aa',
                             'label' => 'Protein length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'aa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'length',
                             'label' => 'DNA length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'nt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc_pct',
                             'label' => 'GC content of the DNA',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'codons',
                             'label' => 'Codons',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Includes the stop codon when one is added',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'tm',
                             'label' => 'Melting temperature of the duplex',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
                             'help' => 'At 50 mM monovalent salt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -204,11 +201,11 @@ return [
           ctx.addHtml(block('Reverse translation', '—', 'Paste a protein sequence to back-translate.'));
           return;
         }
-        var stratSlug = String(ctx.getRawInput('strategy') || '');
+        var stratSlug = String(ctx.getChoice('strategy') || '');
         var strategy = /human/i.test(stratSlug) ? 'human'
           : /gc-balanced/i.test(stratSlug) ? 'gc'
           : /avoid/i.test(stratSlug) ? 'gchost' : 'ecoli';
-        var addStop = !/^no/i.test(String(ctx.getRawInput('tail') || 'yes').trim());
+        var addStop = !/^no/i.test(String(ctx.getChoice('tail') || 'yes').trim());
         var dna = '', unknown = [], residues = 0;
         for (var i = 0; i < raw.length; i++) {
           var aa = raw.charAt(i);
@@ -240,54 +237,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Reverse Translate takes Protein sequence, Codon choice and Add a stop codon and returns Protein length and DNA length. Nothing is looked up on this page: protein length is computed from protein sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Protein length is opened in aa; the chip beside it switches to any unit of the same quantity.
+        Reverse translation writes the DNA that could encode a protein. There is no single answer — most residues have several codons — so the page picks codons according to a strategy and shows the DNA it produced with its composition.
         TXT,
         'sections' => [
-            ['title' => 'How the Reverse Translate calculator works', 'html' => <<<'TXT'
-            <p>Reverse Translate answers one question from 3 numbers, and the answer is Protein length, DNA length and GC content of the DNA.</p><p>What comes back is Protein length, DNA length, GC content of the DNA and Codons — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It converts a protein into a DNA sequence using a codon table chosen for a host or balanced for GC content, adds a stop codon if you ask, and reports the length, GC percentage and melting temperature of the result.</p><p>The protein is cleaned and read residue by residue. Each residue is looked up in the chosen strategy: the most-used codon for the host, the most GC-rich or most AT-rich synonyms, or a balance between them. The chosen codons are concatenated, a stop is appended if requested, and the composition of the DNA is measured on the result.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; spaces, digits and FASTA headers are ignored</li><li><strong>Codon choice</strong> — a plain number, no unit</li><li><strong>Add a stop codon</strong> — a plain number, no unit</li></ul><p>The answers come back as Protein length in aa, DNA length in nt, GC content of the DNA in %, Codons, Melting temperature of the duplex in °C. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 3 things to fill in, and the order does not matter:</p><ul><li><strong>Protein sequence</strong> — a text box. Single-letter code; spaces, digits and FASTA headers are ignored.</li><li><strong>Codon choice</strong> — a drop-down with the choices the page offers.</li><li><strong>Add a stop codon</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 5 boxes: Protein length (aa), DNA length (nt), GC content of the DNA (%), Codons, Melting temperature of the duplex (°C). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Protein length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Protein length, DNA length and GC content of the DNA are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Protein sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Protein sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Codon choice left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Codon choice is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Add a stop codon left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Add a stop codon is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Protein sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Protein sequence</strong> is a text box. Single-letter code; spaces, digits and FASTA headers are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Codon choice</strong> is a drop-down with the choices the page offers. The choices are E. coli, most used codon, Human, most used codon, GC-balanced (50%) and Avoid rare codons (GC-rich hosts). Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Add a stop codon</strong> is a drop-down with the choices the page offers. The choices are Yes and No. Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>The boxes on the Reverse Translate form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Protein sequence</strong> takes a plain number with no unit attached. Single-letter code; spaces, digits and FASTA headers are ignored. Fill it from a measurement rather than a memory — Protein sequence is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Codon choice</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Codon choice is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Add a stop codon</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Add a stop codon is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Protein sequence</th><td>MKTAYIAKQRQISFVKSHFSRQDILDLWQ</td></tr><tr><th>Codon choice</th><td>E. coli</td></tr><tr><th>Add a stop codon</th><td>Yes</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Protein length</th><td>29 aa</td></tr><tr><th>DNA length</th><td>90 nt</td></tr><tr><th>GC content of the DNA</th><td>42.22 %</td></tr><tr><th>Codons</th><td>30</td></tr><tr><th>Melting temperature of the duplex</th><td>69.7 °C</td></tr></tbody></table><p>A 29-residue protein becomes 90 bases — three per residue — with a GC content of 42.22 per cent, using E. coli's preferred codons and a stop. The codon count of 30 includes that stop.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Protein sequence</th><td>MKWVTFISLLFLFSSAYSR</td></tr><tr><th>Codon choice</th><td>E. coli</td></tr><tr><th>Add a stop codon</th><td>No</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Protein length</th><td>19</td></tr><tr><th>DNA length</th><td>57</td></tr><tr><th>GC content of the DNA</th><td>45.61</td></tr><tr><th>Codons</th><td>19</td></tr><tr><th>Melting temperature of the duplex</th><td>66.8</td></tr></tbody></table><p>5 of the 5 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 5 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Protein length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>DNA length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>GC content of the DNA</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Codons</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Melting temperature of the duplex</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Protein length</strong> — residues in the paste.</li><li><strong>DNA length</strong> — bases produced, three per residue plus the stop if requested.</li><li><strong>GC content</strong> — the GC percentage of the DNA produced.</li><li><strong>Codons</strong> — codon count in the result, including the stop.</li><li><strong>Melting temperature</strong> — the predicted duplex melting point of the DNA produced.</li></ul><p>The GC content is the figure that decides whether the DNA is comfortable to synthesise. Very high GC means secondary structure and failed synthesis; very low GC means weak hybridisation and poor amplification. The DNA length should always be three times the residue count, plus three if a stop was added.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p><strong>Protein sequence</strong> takes text, not a number, so the way it is pasted decides whether the analysis is right.</p><ul><li><strong>No header line.</strong> A FASTA file starts with a line that begins with &quot;&gt;&quot; — a name, not a sequence. Paste from the line below it, or that line is read as characters of its own.</li><li><strong>No spaces or line numbers.</strong> Nucleotide and protein text is often printed in blocks of sixty or eighty characters. Line breaks are usually fine; spaces, tabs and the numbers down the side are not.</li><li><strong>Case is a choice you make.</strong> Upper-case is the convention, but lower-case is often used to mark a region such as soft-masked repeats. Whether the page folds case or respects it is part of what it is telling you, so keep the case you mean.</li><li><strong>Ambiguous characters are not rare.</strong> Sites where the read was uncertain are usually written as N or as a degenerate code. They are counted like any other character, which is right, but it means the answer describes the text as written rather than the molecule as it is.</li></ul><p>The quick check is always the same: does the reported length match the text you pasted? If Protein length, DNA length, GC content of the DNA and Codons disagree with what you can count by eye, the box is holding something you did not intend to give it.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Translate the first three codons of the output back with a genetic-code table; they should give the first three residues of your protein. Then check that the length is exactly three times the residue count, plus three for the stop.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>The calculation on this page is a procedure rather than one formula: it takes Reverse Translate, works through it, and the panel lists Protein sequence, Codon choice and Add a stop codon.</p><p>The processing runs locally: the text you enter stays in the page, the script reads it, and the results are printed beside it. Nothing about your input is stored after you leave.</p><p>Because the script works on exactly what it is given, the usual failure is not arithmetic but input: trailing spaces, a header line from a FASTA file, an ambiguous base in the middle of a sequence. Check that the box holds the characters you meant and nothing else.</p><p>What comes back is Protein length, DNA length, GC content of the DNA and Codons — the same input described several ways, which is why the panel lists them side by side rather than picking one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>DNA pasted as protein</strong> — A nucleotide sequence will reverse translate into a long string of alanine, threonine, glycine and cysteine — three times the length you expected is the giveaway.</li><li><strong>Stop codons</strong> — Whether the DNA ends with a stop is a setting. Forgetting it changes the length by three and can leave a construct without a terminator.</li><li><strong>One strategy</strong> — The codons are chosen by one rule. A codon-optimised gene for expression may need a different balance than one written for GC content.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Protein length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>No full optimisation</strong> — The page does not avoid restriction sites, repeats or strong secondary structure.</li><li><strong>One codon per residue</strong> — Except where a degenerate strategy is offered, a single codon is chosen.</li><li><strong>Standard code</strong> — Alternative genetic codes are not applied.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Reverse Translate Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Protein sequence, Codon choice and Add a stop codon measured, Protein length and DNA length wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>Getting the figure is half the job. The other half is what Reverse Translate is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Protein sequence, Codon choice and Add a stop codon beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            <p>Reverse translation is used to design a gene for synthesis, to write a peptide as orderable DNA, to check that a construct encodes the protein intended, and to see how much the GC content of a gene depends on the codons chosen.</p><p>The interesting comparison is between strategies. The same protein translated with host-preferred codons and with GC-balanced codons gives two DNA sequences with noticeably different GC content, and it is the lower one that usually synthesises and amplifies more easily. Running both takes a moment and often saves a redesign later.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Reverse Translate calculator work out?', 'a' => 'Protein length, DNA length, GC content of the DNA and Codons.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Protein sequence, Codon choice, Add a stop codon. Enter protein sequence, codon choice and add a stop codon; Protein length is the box to leave alone unless it is the value you came for.
+            ['q' => 'Is there one right DNA sequence for a protein?', 'a' => 'No. Most residues have several codons, and the choice trades expression, GC content and synthesis difficulty against each other.'],
+            ['q' => 'Why is my DNA longer than three times the protein?', 'a' => 'Because a stop codon was added, or because the paste contained characters that were read as extra residues. Check the residue count first.'],
+            ['q' => 'Does Reverse Translate Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Protein length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Protein length is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Protein length keeps more digits than the panel prints.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/relative-abundance', 'name' => 'Relative Abundance Calculator'],

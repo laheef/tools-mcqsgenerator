@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Codon Usage Calculator',
-    'meta' => ['title' => 'Codon Usage Calculator: Formula, Steps & Example', 'description' => 'Codon Usage Calculator reports complete codons and GC at the third position. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Codon Usage Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a coding sequence and counts every codon, then reports GC3s, start and stop codons and the number of distinct codons',
+    'meta' => ['title' => 'Codon Usage Calculator for DNA: GC3, Stops, Rare Codons', 'description' => 'Paste a coding sequence and read its codon count, GC content at third positions, stop codons, distinct codons used and rare codons in the chosen frame.', 'h1' => 'Codon Usage Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -48,40 +50,35 @@ return [
                         [
                             'name' => 'codons',
                             'label' => 'Complete codons',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc3',
                             'label' => 'GC at the third position',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
                             'help' => 'A high GC3 usually means a GC-rich organism',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'stops',
                             'label' => 'Stop codons',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'distinct',
                             'label' => 'Different codons used',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'of 64',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'rare',
                             'label' => 'Rare codons',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Under 10% within a family that appears at least five times — candidates for codon optimisation',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -155,7 +152,7 @@ return [
       omni.onResult(['sequence', 'frame'], function (ctx) {
         var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
         // the select's slug is "frame-2" for the second frame
-        var frameSlug = String(ctx.getRawInput('frame') || '');
+        var frameSlug = String(ctx.getChoice('frame') || '');
         var frame = parseInt(frameSlug.replace(/\D/g, ''), 10) - 1;
         if (!isFinite(frame) || frame < 0 || frame > 2) frame = 0;
         if (seq.length < 3) {
@@ -215,55 +212,61 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Codon Usage turns Coding sequence and Reading frame into Complete codons and GC at the third position. The arithmetic is the whole method: complete codons is worked out from coding sequence by one formula, applied once.
+        The codon usage calculator counts what a coding sequence is actually made of: how many codons it holds, how many distinct ones it uses, how GC-rich the third position is, and whether any stops fall inside the frame.
         TXT,
         'sections' => [
-            ['title' => 'How the Codon Usage calculator works', 'html' => <<<'TXT'
-            <p>The Codon Usage calculator applies one relationship to 2 numbers and reports Complete codons, GC at the third position and Stop codons.</p><p>What comes back is Complete codons, GC at the third position, Stop codons and Different codons used — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It gives you the raw composition of a coding sequence in codons rather than in bases: the total, the number of different codons, the GC3s value that bacterial gene-finders rely on, and the stop codons that should not be there.</p><p>The paste is cleaned and cut into codons from the frame you choose — frame 1 starts at the first base, frame 2 at the second, frame 3 at the third. Each codon is counted, the third base of each is tested for G or C, and stop codons are tallied separately. The distinct count is the number of different codons that appear at least once.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Coding sequence</strong> — a plain number, no unit. Paste DNA; FASTA headers, spaces and digits are ignored</li><li><strong>Reading frame</strong> — a plain number, no unit. Frame 1 starts at the first base</li></ul><p>What you get back is Complete codons, GC at the third position in %, Stop codons, Different codons used in of 64, Rare codons, shown next to the form rather than on a page of its own.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Coding sequence</strong> — a text box. Paste DNA; FASTA headers, spaces and digits are ignored.</li><li><strong>Reading frame</strong> — a drop-down with the choices the page offers. Frame 1 starts at the first base.</li></ul><p>The answer comes back as 5 boxes: Complete codons, GC at the third position (%), Stop codons, Different codons used (of 64), Rare codons. They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Complete codons takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Complete codons, GC at the third position and Stop codons are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Coding sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Coding sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Reading frame left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Reading frame is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Coding sequence to one scale before entering anything.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Coding sequence</strong> is a text box. Paste DNA; FASTA headers, spaces and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Reading frame</strong> is a drop-down with the choices the page offers. The choices are Frame 1, Frame 2 and Frame 3. Frame 1 starts at the first base Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>The boxes on the Codon Usage form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Coding sequence</strong> takes a plain number with no unit attached. Paste DNA; FASTA headers, spaces and digits are ignored. Fill it from a measurement rather than a memory — Coding sequence is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Reading frame</strong> takes a plain number with no unit attached. Frame 1 starts at the first base. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Reading frame is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Coding sequence</th><td>ATGGCTGCTAAAATTGAACGTCTGAAACGTCTGGAAGATCTGAAACGTGCT</td></tr><tr><th>Reading frame</th><td>Frame 1</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Complete codons</th><td>17</td></tr><tr><th>GC at the third position</th><td>23.5 %</td></tr><tr><th>Stop codons</th><td>0</td></tr><tr><th>Different codons used</th><td>8 of 64</td></tr><tr><th>Rare codons</th><td>0</td></tr></tbody></table><p>Choosing frame 3 on the same 33-base paste leaves only three complete codons and catches one stop: exactly the kind of difference a frame choice makes. In frame 1 the same sequence reads as eleven codons with no stops at all.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Coding sequence</th><td>ATGTTTAAACCCGGGTTTAAAGGGCCC</td></tr><tr><th>Reading frame</th><td>Frame 2</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Complete codons</th><td>8</td></tr><tr><th>GC at the third position</th><td>50</td></tr><tr><th>Stop codons</th><td>0</td></tr><tr><th>Different codons used</th><td>7</td></tr><tr><th>Rare codons</th><td>0</td></tr></tbody></table><p>3 of the 5 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 5 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Complete codons</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>GC at the third position</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Stop codons</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Different codons used</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Rare codons</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Codons</strong> — complete codons in the chosen frame.</li><li><strong>GC3s</strong> — the GC percentage at the third position of each codon, the classic signal for bacterial coding regions.</li><li><strong>Stops</strong> — stop codons inside the frame. In a real gene this should be one, at the end.</li><li><strong>Distinct codons</strong> — how many different codons appear; a 64-codon maximum, 61 for coding sequence.</li><li><strong>Rare codons</strong> — codons the reference table marks as poorly used in the chosen host.</li></ul><p>A high distinct count with a low codon count means a varied sequence; a low distinct count in a long gene means heavy repetition, which is worth knowing before you try to synthesise it. The GC3s figure is the one gene-finding tools compare against their thresholds, and an internal stop is an error to fix before anything else.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p><strong>Coding sequence</strong> takes text, not a number, so the way it is pasted decides whether the analysis is right.</p><ul><li><strong>No header line.</strong> A FASTA file starts with a line that begins with &quot;&gt;&quot; — a name, not a sequence. Paste from the line below it, or that line is read as characters of its own.</li><li><strong>No spaces or line numbers.</strong> Nucleotide and protein text is often printed in blocks of sixty or eighty characters. Line breaks are usually fine; spaces, tabs and the numbers down the side are not.</li><li><strong>Case is a choice you make.</strong> Upper-case is the convention, but lower-case is often used to mark a region such as soft-masked repeats. Whether the page folds case or respects it is part of what it is telling you, so keep the case you mean.</li><li><strong>Ambiguous characters are not rare.</strong> Sites where the read was uncertain are usually written as N or as a degenerate code. They are counted like any other character, which is right, but it means the answer describes the text as written rather than the molecule as it is.</li></ul><p>The quick check is always the same: does the reported length match the text you pasted? If Complete codons, GC at the third position, Stop codons and Different codons used disagree with what you can count by eye, the box is holding something you did not intend to give it.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Divide the cleaned sequence length by three and compare with the codon count. Then count the stops by eye: TAA, TAG and TGA in frame should appear exactly once, at the end, for a complete gene.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>The calculation on this page is a procedure rather than one formula: it takes Codon Usage, works through it, and the panel lists Coding sequence and Reading frame.</p><p>The processing runs locally: the text you enter stays in the page, the script reads it, and the results are printed beside it. Nothing about your input is stored after you leave.</p><p>Because the script works on exactly what it is given, the usual failure is not arithmetic but input: trailing spaces, a header line from a FASTA file, an ambiguous base in the middle of a sequence. Check that the box holds the characters you meant and nothing else.</p><p>What comes back is Complete codons, GC at the third position, Stop codons and Different codons used — the same input described several ways, which is why the panel lists them side by side rather than picking one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> Have Coding sequence and Reading frame ready and all in one unit. The page will convert whatever a chip says it is; it cannot tell that one of the numbers was measured in something else.</li><li><strong>Enter them and press Calculate.</strong> Fill the form — starting with Coding sequence — and press Calculate. The panel updates in place, and the fields you typed into keep your numbers.</li><li><strong>Read the answer against the defaults.</strong> Check Complete codons against the worked example above. If the two disagree by a round factor, the chip or the decimal separator is the place to look first.</li><li><strong>Change one box to check your understanding.</strong> Double one input, leaving the rest alone, and press Calculate again. The direction the answer moves tells you whether that box sits in the numerator or the denominator — and whether the number you got a moment ago was plausible.</li></ol><p>That is the whole procedure. Everything else on this page is the reasoning behind it.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>The frame selector</strong> — Frame 2 and frame 3 read the same paste in a different register. For a gene, frame 1 is almost always the one you want.</li><li><strong>Untrimmed flanks</strong> — Sequence before the start codon belongs to the 5′ UTR and shifts everything after it.</li><li><strong>Gel-purified fragments</strong> — A trace of a second product can add codons that are not really in your clone.</li><li><strong>Stops in the middle</strong> — One internal stop means a frameshift, a sequencing error or the wrong frame — not a rare event worth ignoring.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Complete codons follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Counts only</strong> — The page does not tell you how well the sequence is expressed, only what it contains.</li><li><strong>One frame at a time</strong> — The figures describe the frame you selected; the other two are not shown.</li><li><strong>Threshold-dependent</strong> — The rare-codon count depends on the host table and its cut-off, so two tools can disagree about a borderline codon.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Codon Usage Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Coding sequence and Reading frame measured, Complete codons and GC at the third position wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>Getting the figure is half the job. The other half is what Codon Usage is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Coding sequence and Reading frame beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            <p>Codon usage comes up in cloning: confirming that an open reading frame is really open, checking a synthetic construct against the supplier's sequence, deciding whether a gene looks bacterial, and spotting the internal stop that explains why a protein never appeared.</p><p>The distinct-codon figure is the one people underuse. A 300-codon gene that uses only 25 different codons is repetitive, and repeat-rich genes are hard to synthesise and hard to assemble: the same short string occurs many times, which is exactly what recombination and synthesis errors like. A look at that number before ordering a gene can save a failed build.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Codon Usage calculator work out?', 'a' => 'Complete codons, GC at the third position, Stop codons and Different codons used.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Coding sequence, Reading frame. Enter coding sequence and reading frame; Complete codons is the box to leave alone unless it is the value you came for.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            The arithmetic runs at full precision and only the display of Complete codons is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.
+            ['q' => 'Why is GC3s used to find genes?', 'a' => <<<'TXT'
+            Bacterial coding regions have a characteristic bias at the third position that non-coding DNA does not share, which makes it a useful signal for gene-finding algorithms.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Complete codons is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Complete codons keeps more digits than the panel prints.'],
+            ['q' => 'My sequence has one internal stop — is the gene broken?', 'a' => 'Usually yes. Check for a frameshift or a sequencing error before anything else; a genuine read-through is rare and would need a specific context.'],
+            ['q' => 'Why do the codon counts differ between tools?', 'a' => <<<'TXT'
+            Because they cut the sequence at different starting points. A tool that trims to the first ATG and one that starts at the first pasted base will report different totals.
+            TXT],
+            ['q' => 'Does Codon Usage Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
+            TXT],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/solids-retention-time', 'name' => 'Solids Retention Time (SRT) Calculator'],

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Double Digest Buffer Compatibility Calculator',
-    'meta' => ['title' => 'Double Digest Buffer Compatibility: Steps & Units', 'description' => 'Double Digest Buffer Compatibility Calculator turns enzyme 1 and enzyme 2 into buffers that suit both. The formula is printed in the form\'s own words.', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'compares the buffer requirements of two enzymes and reports the buffers that suit both',
+    'meta' => ['title' => 'Double Digest Buffer Compatibility for Two Enzymes', 'description' => 'Compare two restriction enzymes and see which buffers suit both, the best combined activity, and whether the digest has to be done one enzyme at a time.', 'h1' => 'Double Digest Buffer Compatibility Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -94,26 +96,23 @@ return [
                         [
                             'name' => 'suitable',
                             'label' => 'Buffers that suit both',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Out of the buffers available',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'best',
                             'label' => 'Best combined activity',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
                             'help' => 'Predicted, weaker of the two',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'sequential',
                             'label' => 'Enzymes that need their own buffer',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => '0 or 1',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -209,10 +208,10 @@ return [
         return steps === 0 ? 100 : steps === 1 ? 60 : 20;
       }
       omni.onResult(['enzyme1', 'enzyme2', 'classic_only'], function (ctx) {
-        var e1 = resolve(ctx.getRawInput('enzyme1'), SALT, SALT.ecori);
-        var e2 = resolve(ctx.getRawInput('enzyme2'), SALT, SALT.sali);
+        var e1 = resolve(ctx.getChoice('enzyme1'), SALT, SALT.ecori);
+        var e2 = resolve(ctx.getChoice('enzyme2'), SALT, SALT.sali);
         if (e1.name === e2.name) e2 = SALT.ecori === e1 ? SALT.sali : SALT.ecori;
-        var classicOnly = /true|yes|1/i.test(String(ctx.getRawInput('classic_only') || ''));
+        var classicOnly = /true|yes|1/i.test(String(ctx.getChoice('classic_only') || ''));
         var list = classicOnly ? BUFFERS.slice(0, 3) : BUFFERS;
         var rows = [], bestName = '', bestMin = -1, suitable = 0;
         for (var i = 0; i < list.length; i++) {
@@ -248,58 +247,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Double Digest Buffer Compatibility takes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and returns Buffers that suit both and Best combined activity. There is no hidden constant here: change buffers that suit both and enzyme 1 moves with it.
+        A double digest only works if one buffer suits both enzymes at once. This page compares the two and tells you whether a shared buffer exists, how much activity each enzyme keeps in it, and whether a sequential digest is the better plan.
         TXT,
         'sections' => [
-            ['title' => 'How the Double Digest Buffer Compatibility calculator works', 'html' => <<<'TXT'
-            <p>There is one relationship behind Double Digest Buffer Compatibility: it takes 3 numbers and reports Buffers that suit both, Best combined activity and Enzymes that need their own buffer.</p><p>What comes back is Buffers that suit both, Best combined activity and Enzymes that need their own buffer — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It answers the practical question before a digest is set up: can these two enzymes work in the same buffer, and if not, which order should they be used in?</p><p>Each enzyme carries a salt requirement — the concentration at which it works best — and the page compares the two against a panel of buffers, with an option to restrict the panel to the classic buffers or to include the modern universal ones. For each buffer it computes the activity both enzymes would retain. A buffer that keeps both above a usable threshold counts as suitable, and the best combined figure is the weaker of the two activities in the best buffer.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>Enzyme 1</strong> — a plain number, no unit</li><li><strong>Enzyme 2</strong> — a plain number, no unit</li><li><strong>I only have the classic three buffers (no universal buffer)</strong> — a plain number, no unit. Uncheck to model a kit that includes a CutSmart-type buffer</li></ul><p>The answers come back as Buffers that suit both, Best combined activity in %, Enzymes that need their own buffer. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 3 things to fill in, and the order does not matter:</p><ul><li><strong>Enzyme 1</strong> — a drop-down with the choices the page offers.</li><li><strong>Enzyme 2</strong> — a drop-down with the choices the page offers.</li><li><strong>I only have the classic three buffers (no universal buffer)</strong> — a drop-down with the choices the page offers. Uncheck to model a kit that includes a CutSmart-type buffer.</li></ul><p>The answer comes back as 3 boxes: Buffers that suit both, Best combined activity (%), Enzymes that need their own buffer. They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Buffers that suit both takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Enzyme 1</strong> is a drop-down with the choices the page offers. The choices are EcoRI, HindIII, BamHI, SalI, XhoI, NotI, PstI and SacI. Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Enzyme 2</strong> is a drop-down with the choices the page offers. The choices are BamHI, EcoRI, HindIII, SalI, XhoI, NotI, PstI and SacI. Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>I only have the classic three buffers (no universal buffer)</strong> is a drop-down with the choices the page offers. The choices are Yes and No. Uncheck to model a kit that includes a CutSmart-type buffer Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Buffers that suit both, Best combined activity and Enzymes that need their own buffer are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Enzyme 1 left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Enzyme 1 is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Enzyme 2 left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Enzyme 2 is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>I only have the classic three buffers (no universal buffer) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If I only have the classic three buffers (no universal buffer) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Enzyme 1 is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Enzyme 1</th><td>EcoRI</td></tr><tr><th>Enzyme 2</th><td>BamHI</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Buffers that suit both</th><td>1</td></tr><tr><th>Best combined activity</th><td>100 %</td></tr><tr><th>Enzymes that need their own buffer</th><td>0</td></tr></tbody></table><p>EcoRI and BamHI in classic buffers give one suitable buffer and a best combined activity of 100 per cent — they share an optimal buffer, and no sequential digest is needed.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Enzyme 1</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Enzyme 1 is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Enzyme 2</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Enzyme 2 is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>I only have the classic three buffers (no universal buffer)</strong> takes a plain number with no unit attached. Uncheck to model a kit that includes a CutSmart-type buffer. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: I only have the classic three buffers (no universal buffer) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Enzyme 1</th><td>HindIII</td></tr><tr><th>Enzyme 2</th><td>XhoI</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Buffers that suit both</th><td>1</td></tr><tr><th>Best combined activity</th><td>100</td></tr><tr><th>Enzymes that need their own buffer</th><td>0</td></tr></tbody></table><p>0 of the 3 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Buffers that suit both</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Best combined activity</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Enzymes that need their own buffer</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <ul><li><strong>Buffers that suit both</strong> — how many of the buffers in the panel keep both enzymes at usable activity.</li><li><strong>Best combined activity</strong> — the activity of the weaker enzyme in the best shared buffer, as a percentage of its optimum.</li><li><strong>Sequential</strong> — whether a one-enzyme-then-the-other protocol is needed, given the shared buffers available.</li></ul><p>Read the suitable count first: zero means no shared buffer and a sequential digest. The best combined figure tells you how comfortable the shared buffer is; anything below about 50 per cent means the digest will be slow and may need more enzyme or more time.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>Double Digest Buffer Compatibility is not a single equation with a single answer. It reads Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer), applies the analysis the page is built around, and reports Buffers that suit both, Best combined activity and Enzymes that need their own buffer.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Buffers that suit both, Best combined activity and Enzymes that need their own buffer. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Look up the two enzymes in the supplier's compatibility chart and see whether the buffer the page names appears in both columns at a high percentage. Supplier charts remain the authority; the page is a fast cross-check.</p>
             TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer). Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Enzyme 1 into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Buffers that suit both with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Universal buffers</strong> — Modern kits include a buffer that suits nearly everything. Leaving it out of the panel makes incompatible enzymes look worse than they are.</li><li><strong>Star activity</strong> — Some enzymes become less specific at high salt or in the wrong buffer, cutting at near-cognate sites. A "suitable" buffer is not always a safe one.</li><li><strong>Heat inactivation</strong> — If you plan a sequential digest, the first enzyme must be inactivatable before the second is added.</li></ul><p>Nothing here is pasted from a file: every box is short enough to type, and the choice lists mean the answer depends on which entry is selected rather than on how it is spelled.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Buffers that suit both follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>A fixed panel</strong> — The buffers modelled are the common ones; a supplier-specific formulation may differ.</li><li><strong>No star activity model</strong> — The page weighs activity, not fidelity.</li><li><strong>Two enzymes</strong> — A triple digest needs pairwise checks.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Double Digest Buffer Compatibility Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Enzyme 1, Enzyme 2 and I only have the classic three buffers (no universal buffer) and the number you are missing is Buffers that suit both and Best combined activity.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
-            TXT],
-            ['title' => 'About this page', 'html' => <<<'TXT'
-            <p>The page you are reading is built around one calculation. The form, the formula and the worked examples all describe the same relationship, and the panel is the only place the answer exists — it is computed when you press the button, not fetched.</p><p>Every figure quoted in the article above was produced by this page&#039;s formulas, with the inputs listed beside it. That is deliberate — it is the only way a reader can check the page without trusting it.</p><p>Nothing you enter is stored. The form is local to the page, the calculation runs on it, and the only way your numbers travel anywhere is if you copy the link that carries them.</p><p>The page is one of a catalogue that works the same way: every calculator prints the relationship it uses, runs a worked example from its own defaults, and lets you solve for any one of its variables rather than only the one in the title.</p><p>If a figure here disagrees with a source you trust, the useful thing to check first is the unit on each box, then the formula shown above, and only then the arithmetic — in that order, because that is the order mistakes happen in.</p>
+            <p>It is used before setting up a double digest, when a diagnostic digest gives partial products, and when deciding whether to buy a universal-buffer enzyme for a step that keeps failing.</p><p>The salt requirement behind the page is worth knowing, because it explains the failure rather than just predicting it. Enzymes that need high salt work poorly in low-salt buffers and slow down; enzymes that need low salt will still work at high salt but often lose specificity first, cutting at near-cognate sites. That is why a compromise buffer is a compromise on fidelity as well as on speed. If a digest in a shared buffer gives extra bands rather than fewer, star activity is the first explanation to test. Reducing the enzyme, shortening the incubation and lowering the glycerol carried over from the first digest are the usual fixes.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Double Digest Buffer Compatibility calculator work out?', 'a' => 'Buffers that suit both, Best combined activity and Enzymes that need their own buffer.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Enzyme 1, Enzyme 2, I only have the classic three buffers (no universal buffer). Fill enzyme 1, enzyme 2 and i only have the classic three buffers (no universal buffer) and leave Buffers that suit both empty if you would rather have that one solved instead.
+            ['q' => 'What does a combined activity of 50 per cent mean in practice?', 'a' => 'Each enzyme works at half its optimal rate. Doubling the enzyme or the incubation time usually compensates, but the reaction is less forgiving.'],
+            ['q' => 'Why would a digest need to be sequential?', 'a' => 'Because no single buffer keeps both enzymes active enough, so each is given its own optimal conditions in turn.'],
+            ['q' => 'Does Double Digest Buffer Compatibility Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Internally Buffers that suit both is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Buffers that suit both, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Buffers that suit both keeps more digits than the panel prints.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/dihybrid-cross-punnett-square', 'name' => 'Dihybrid cross Punnett square Calculator'],

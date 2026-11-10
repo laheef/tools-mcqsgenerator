@@ -11,9 +11,9 @@
 
 return [
     'name' => 'Primer Dimer Checker',
-    'meta' => ['title' => 'Primer Dimer Checker Calculator: Units & Formula', 'description' => <<<'TXT'
-    Primer Dimer Checker works out 3′ complementary run from forward primer (5′→3′). Each box lists the units it accepts, and the answer converts between them.
-    TXT, 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'checks a primer pair for complementary runs, 3-prime complementarity and the risk of forming dimers',
+    'meta' => ['title' => 'Primer Dimer Checker: Self-Pairs, Hairpins and Risk', 'description' => 'Check a primer pair for complementary runs, 3-prime self-complementarity, hairpins and cross-dimers, and read a single risk rating for the pair before ordering.', 'h1' => 'Primer Dimer Checker', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -51,61 +51,54 @@ return [
                         [
                             'name' => 'tail_run',
                             'label' => '3′ complementary run',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
                             'help' => '3 or more is a risk',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'any_run',
                             'label' => 'Longest complementary run',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
                             'help' => 'Anywhere in the pair',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'self_fwd',
                             'label' => 'Forward self-dimer run',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'self_rev',
                             'label' => 'Reverse self-dimer run',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'hairpin_fwd',
                             'label' => 'Forward hairpin stem',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
                             'help' => '4 or more can misprime',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'hairpin_rev',
                             'label' => 'Reverse hairpin stem',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'risk',
                             'label' => 'Dimer risk score',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'of 10',
                             'help' => '0 is clean, 10 is a guaranteed dimer',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -240,56 +233,58 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Primer Dimer Checker turns Forward primer (5′→3′) and Reverse primer (5′→3′) into 3′ complementary run and Longest complementary run. There is no hidden constant here: change 3′ complementary run and forward primer (5′→3′) moves with it. The main result, 3′ complementary run, is reported in bases.
+        Primer dimers consume primers before they can amplify anything, and they show up as a low-molecular-weight band rather than an error. This page checks a pair for the complements that make dimers form and summarises the result as a risk rating.
         TXT,
         'sections' => [
-            ['title' => 'How the Primer Dimer Checker calculator works', 'html' => <<<'TXT'
-            <p>The Primer Dimer Checker calculator applies one relationship to 2 numbers and reports 3′ complementary run, Longest complementary run and Forward self-dimer run.</p><p>The answers are 3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It looks for the patterns that let primers pair with themselves or with each other: a complementary run anywhere in the pair, a run at the 3′ end where extension can start, and a hairpin where a primer folds back on itself.</p><p>The page takes each primer and builds its reverse complement, then slides the two against each other to find the longest complementary stretch. A run anywhere in the pair is reported as potential dimerisation; a run at the 3′ end is reported separately because that is the end a polymerase extends from, so a 3′ dimer is far worse than an internal one. The same alignment run against the primer itself gives the hairpin length, and the risk rating combines the length of the worst 3′ run with the hairpin figures.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Forward primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li><li><strong>Reverse primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li></ul><p>What you get back is 3′ complementary run in bases, Longest complementary run in bases, Forward self-dimer run in bases, Reverse self-dimer run in bases, Forward hairpin stem in bases, Reverse hairpin stem in bases, Dimer risk score in of 10, shown next to the form rather than on a page of its own.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Forward primer (5′→3′)</strong> — a text box. Paste the primer.</li><li><strong>Reverse primer (5′→3′)</strong> — a text box. Paste the primer.</li></ul><p>The answer comes back as 7 boxes: 3′ complementary run (bases), Longest complementary run (bases), Forward self-dimer run (bases), Reverse self-dimer run (bases), Forward hairpin stem (bases), Reverse hairpin stem (bases), Dimer risk score (of 10). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: 3′ complementary run takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Forward primer (5′→3′)</strong> is a text box. Paste the primer Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Reverse primer (5′→3′)</strong> is a text box. Paste the primer Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with 3′ complementary run, Longest complementary run and Forward self-dimer run are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Forward primer (5′→3′) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Forward primer (5′→3′) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Reverse primer (5′→3′) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Reverse primer (5′→3′) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Forward primer (5′→3′) to one scale before entering anything.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Forward primer (5′→3′)</th><td>ATGGCCATTGTAATGGGCC</td></tr><tr><th>Reverse primer (5′→3′)</th><td>GCTGAAAGGGTGCCCGATAG</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>3′ complementary run</th><td>1 bases</td></tr><tr><th>Longest complementary run</th><td>4 bases</td></tr><tr><th>Forward self-dimer run</th><td>8 bases</td></tr><tr><th>Reverse self-dimer run</th><td>3 bases</td></tr><tr><th>Forward hairpin stem</th><td>5 bases</td></tr><tr><th>Reverse hairpin stem</th><td>3 bases</td></tr><tr><th>Dimer risk score</th><td>4 of 10</td></tr></tbody></table><p>A 19-mer and a 20-mer with no 3′ complementarity still show an eight-base run internally, and a five-base hairpin in each. The risk of four reflects the internal run rather than a 3′ problem — the pair will probably work, but it is not a clean pair.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>The boxes on the Primer Dimer Checker form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>Forward primer (5′→3′)</strong> takes a plain number with no unit attached. Paste the primer. Fill it from a measurement rather than a memory — Forward primer (5′→3′) is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Reverse primer (5′→3′)</strong> takes a plain number with no unit attached. Paste the primer. Fill it from a measurement rather than a memory — Reverse primer (5′→3′) is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Forward primer (5′→3′)</th><td>ATGGCCATTGTAATGGGCC</td></tr><tr><th>Reverse primer (5′→3′)</th><td>GGCCCATTACAATGGCCAT</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>3′ complementary run</th><td>0</td></tr><tr><th>Longest complementary run</th><td>19</td></tr><tr><th>Forward self-dimer run</th><td>8</td></tr><tr><th>Reverse self-dimer run</th><td>8</td></tr><tr><th>Forward hairpin stem</th><td>5</td></tr><tr><th>Reverse hairpin stem</th><td>5</td></tr><tr><th>Dimer risk score</th><td>4</td></tr></tbody></table><p>4 of the 7 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>3′ complementary run</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Longest complementary run</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Forward self-dimer run</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Reverse self-dimer run</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Forward hairpin stem</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Reverse hairpin stem</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Dimer risk score</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>3′ complementary run</strong> — the longest complementary stretch at the 3′ end, where extension begins.</li><li><strong>Longest complementary run</strong> — the longest complement anywhere between the two primers.</li><li><strong>Self-pair, forward</strong> — the longest stretch where the forward primer is complementary to itself.</li><li><strong>Hairpin, forward</strong> — the longest fold-back a single primer can form with itself.</li><li><strong>Risk</strong> — a combined rating from the 3′ and internal figures.</li></ul><p>Read the 3′ figures first: a complementary run of three or more bases at the 3′ end is the one that ruins reactions. Internal runs of six to eight bases are common and usually tolerable. Hairpins under about five bases rarely matter; longer ones can hide the 3′ end from the polymerase.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p><strong>Forward primer (5′→3′)</strong> and <strong>Reverse primer (5′→3′)</strong> takes text, not a number, so the way it is pasted decides whether the analysis is right.</p><ul><li><strong>No header line.</strong> A FASTA file starts with a line that begins with &quot;&gt;&quot; — a name, not a sequence. Paste from the line below it, or that line is read as characters of its own.</li><li><strong>No spaces or line numbers.</strong> Nucleotide and protein text is often printed in blocks of sixty or eighty characters. Line breaks are usually fine; spaces, tabs and the numbers down the side are not.</li><li><strong>Case is a choice you make.</strong> Upper-case is the convention, but lower-case is often used to mark a region such as soft-masked repeats. Whether the page folds case or respects it is part of what it is telling you, so keep the case you mean.</li><li><strong>Ambiguous characters are not rare.</strong> Sites where the read was uncertain are usually written as N or as a degenerate code. They are counted like any other character, which is right, but it means the answer describes the text as written rather than the molecule as it is.</li></ul><p>The quick check is always the same: does the reported length match the text you pasted? If 3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run disagree with what you can count by eye, the box is holding something you did not intend to give it.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Write the reverse complement of the forward primer and line it up against the reverse primer by hand. The longest run where the letters pair is the figure the page reports. Then look at whether that run reaches the 3′ end.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>The calculation on this page is a procedure rather than one formula: it takes Primer Dimer Checker, works through it, and the panel lists Forward primer (5′→3′) and Reverse primer (5′→3′).</p><p>The processing runs locally: the text you enter stays in the page, the script reads it, and the results are printed beside it. Nothing about your input is stored after you leave.</p><p>Because the script works on exactly what it is given, the usual failure is not arithmetic but input: trailing spaces, a header line from a FASTA file, an ambiguous base in the middle of a sequence. Check that the box holds the characters you meant and nothing else.</p><p>What comes back is 3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run — the same input described several ways, which is why the panel lists them side by side rather than picking one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Reading the wrong end</strong> — A 3′ run is the dangerous one. The same run moved five bases inward is usually harmless.</li><li><strong>Sequence direction</strong> — The reverse primer must be entered 5′ to 3′ as ordered, not as it appears in the template.</li><li><strong>Ignoring concentration</strong> — Dimer formation depends on concentration and temperature as well as sequence; a borderline pair can be fine at low concentration.</li></ul><p>Nothing here is pasted from a file: every box is short enough to type, and the choice lists mean the answer depends on which entry is selected rather than on how it is spelled.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> 3′ complementary run follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Forward primer (5′→3′) and Reverse primer (5′→3′) are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>Two primers only</strong> — Multiplex reactions need every pair checked, which this page does one pair at a time.</li><li><strong>No thermodynamics</strong> — The runs are counted, not scored by nearest-neighbour thermodynamics, so the rating is a guide rather than a free energy.</li><li><strong>No product level</strong> — It checks the primers against each other, not against the template.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Primer Dimer Checker has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Forward primer (5′→3′) and Reverse primer (5′→3′) and the number you are missing is 3′ complementary run and Longest complementary run.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>An answer from Primer Dimer Checker is a number to act on, so the useful question is what to do with 3′ complementary run (bases), Longest complementary run (bases) and Forward self-dimer run (bases) once the panel shows it.</p><ul><li><strong>Record the inputs with the answer.</strong> A number on its own is not reproducible. Write down Forward primer (5′→3′) and Reverse primer (5′→3′) alongside it — a week later the answer is checkable and the reasoning is not.</li><li><strong>Re-run it when a measurement changes.</strong> The page keeps nothing between visits, which is a feature: every figure is worked out from the numbers in front of it, so updating one input and pressing Calculate again gives a fresh answer rather than an average of the old and the new.</li><li><strong>Keep the formula with the figure.</strong> A number from a page like this one travels better than a number from a spreadsheet cell, because the formula that produced it is visible on the same page and does not depend on a file being kept.</li><li><strong>Compare rather than convert.</strong> Run it once for the case in front of you and once for a case you understand well. The gap between the two answers tells you more about your own situation than either number does on its own.</li></ul><p>The page is a calculator, not a system of record. Copy what you need out of it, keep it with the inputs that produced it, and come back with different numbers whenever the inputs change.</p>
+            <p>Dimer checks are run before ordering a pair, when a reaction produces a band at the bottom of the gel instead of a product, and when a primer that worked at one concentration stops working at another.</p><p>The figures describe the primers at the moment they are mixed, before any template is added. That is why dimer problems scale with primer concentration and why reducing the primer in the reaction often fixes a failing pair without redesigning anything: the same complementary run is present, but it finds a partner less often. Raising the annealing temperature has the same effect for the same reason, and both changes are cheaper than a new pair of primers. If neither works, the 3′ figure is the one to look at rather than the internal run: it is the run a polymerase can extend, and it is reported separately for exactly this reason. A pair with a long internal run and a clean 3′ end is usually worth trying before ordering replacements.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Primer Dimer Checker calculator work out?', 'a' => '3′ complementary run, Longest complementary run, Forward self-dimer run and Reverse self-dimer run.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Forward primer (5′→3′), Reverse primer (5′→3′). Enter forward primer (5′→3′) and reverse primer (5′→3′); 3′ complementary run is the box to leave alone unless it is the value you came for.
+            ['q' => 'What counts as a bad 3′ run?', 'a' => 'Three or more complementary bases at the 3′ end. That is enough for a polymerase to extend the dimer and consume both primers.'],
+            ['q' => 'Are hairpins always a problem?', 'a' => <<<'TXT'
+            No. Short ones open and close constantly and the polymerase displaces them. A hairpin that includes the 3′ end and runs five or more bases is the one to avoid.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            3′ complementary run is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            ['q' => 'Does Primer Dimer Checker use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: 3′ complementary run is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of 3′ complementary run keeps more digits than the panel prints.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/specific-growth-rate-od', 'name' => 'Specific Growth Rate from OD Calculator'],

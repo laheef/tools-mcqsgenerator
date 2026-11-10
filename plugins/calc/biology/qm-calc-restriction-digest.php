@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Restriction Digest Calculator',
-    'meta' => ['title' => 'Restriction Digest Calculator: Steps & Units', 'description' => 'Restriction Digest Calculator takes DNA sequence and returns sequence length. A worked example walks through the arithmetic with this page\'s own numbers.', 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'finds every cut site for the chosen enzymes and reports the fragments the digest produces',
+    'meta' => ['title' => 'Restriction Digest Calculator: Cut Sites and Fragments', 'description' => 'Paste DNA, choose one or two enzymes and a linear or circular molecule, and read the cut sites, the number of fragments and their largest and smallest sizes.', 'h1' => 'Restriction Digest Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -87,40 +89,35 @@ return [
                         [
                             'name' => 'length',
                             'label' => 'Sequence length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bp',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'sites',
                             'label' => 'Cut sites',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Both enzymes together',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'fragments',
                             'label' => 'Fragments',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'largest',
                             'label' => 'Largest fragment',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bp',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'smallest',
                             'label' => 'Smallest fragment',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bp',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -233,11 +230,23 @@ return [
           ctx.addHtml(block('Restriction map', '—', 'Paste a DNA sequence of at least 8 bp.'));
           return;
         }
-        var circular = /circular/i.test(String(ctx.getRawInput('topology') || ''));
-        // the option slug is "<key>-<site>", e.g. "bamhi-g-gatcc", so the key is the
-        // part before the first hyphen
-        var key1 = String(ctx.getRawInput('enzyme1') || 'ecori').split('-')[0];
-        var key2 = String(ctx.getRawInput('enzyme2') || 'none').split('-')[0];
+        var circular = /circular/i.test(String(ctx.getChoice('topology') || ''));
+        /*
+         * The choice hands back the label the visitor reads — "BamHI (G^GATCC)" —
+         * so the key is found by looking for the enzyme's own name inside it,
+         * not by splitting on a hyphen that only the harvested slug had.
+         */
+        function enzymeKey(raw, fallback) {
+          var n = String(raw || '').toLowerCase();
+          if (/^none/.test(n)) { return 'none'; }
+          for (var k in ENZYMES) {
+            if (Object.prototype.hasOwnProperty.call(ENZYMES, k)
+                && n.indexOf(ENZYMES[k].name.toLowerCase()) === 0) { return k; }
+          }
+          return fallback;
+        }
+        var key1 = enzymeKey(ctx.getChoice('enzyme1'), 'ecori');
+        var key2 = enzymeKey(ctx.getChoice('enzyme2'), 'none');
         var e1 = ENZYMES[key1] || ENZYMES.ecori;
         var e2 = key2 === 'none' ? null : (ENZYMES[key2] || null);
         if (e2 && e2.name === e1.name) e2 = null;
@@ -283,53 +292,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Restriction Digest turns DNA sequence, Enzyme 1 and Enzyme 2 into Sequence length and Cut sites. It is a single relationship that reads sequence length out of DNA sequence, not a table of canned results keyed by them. Units for Sequence length default to bp and can be changed on the answer itself.
+        A restriction digest turns a sequence into fragment sizes. Paste the DNA, choose the enzymes, say whether the molecule is linear or circular, and the page reports where it cuts and what the gel would show.
         TXT,
         'sections' => [
-            ['title' => 'How the Restriction Digest calculator works', 'html' => <<<'TXT'
-            <p>There is one relationship behind Restriction Digest: it takes 4 numbers and reports Sequence length, Cut sites and Fragments.</p><p>What comes back is Sequence length, Cut sites, Fragments and Largest fragment — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It predicts the fragments a digest will produce: how many sites each enzyme has, how many pieces result, and how big the largest and smallest are.</p><p>Each enzyme has a recognition sequence and a cut position within it. The page scans the sequence for both, on the forward strand and, for non-palindromic sites, on the reverse complement, converting each hit back to a top-strand coordinate. If the molecule is circular, the sequence is scanned across the origin as well, so a site spanning the join is found. The cut coordinates are sorted, and the distances between them are the fragments — with the closing distance added for a circle, and the two end pieces added for a line.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 4 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste the plasmid or the whole amplicon; FASTA headers are ignored</li><li><strong>Enzyme 1</strong> — a plain number, no unit</li><li><strong>Enzyme 2</strong> — a plain number, no unit</li><li><strong>Molecule</strong> — a plain number, no unit</li></ul><p>What you get back is Sequence length in bp, Cut sites, Fragments, Largest fragment in bp, Smallest fragment in bp, shown next to the form rather than on a page of its own.</p>
+            <p>There are 4 things to fill in, and the order does not matter:</p><ul><li><strong>DNA sequence</strong> — a text box. Paste the plasmid or the whole amplicon; FASTA headers are ignored.</li><li><strong>Enzyme 1</strong> — a drop-down with the choices the page offers.</li><li><strong>Enzyme 2</strong> — a drop-down with the choices the page offers.</li><li><strong>Molecule</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 5 boxes: Sequence length (bp), Cut sites, Fragments, Largest fragment (bp), Smallest fragment (bp). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Sequence length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>DNA sequence</strong> is a text box. Paste the plasmid or the whole amplicon; FASTA headers are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Enzyme 1</strong> is a drop-down with the choices the page offers. The choices are EcoRI (G^AATTC), BamHI (G^GATCC), HindIII (A^AGCTT), NotI (GC^GGCCGC), XhoI (C^TCGAG), SalI (G^TCGAC), PstI (CTGCA^G) and XbaI (T^CTAGA). Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Enzyme 2</strong> is a drop-down with the choices the page offers. The choices are None, BamHI (G^GATCC), HindIII (A^AGCTT), NotI (GC^GGCCGC), XhoI (C^TCGAG), SalI (G^TCGAC), XbaI (T^CTAGA) and NcoI (C^CATGG). Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Molecule</strong> is a drop-down with the choices the page offers. The choices are Linear and Circular (plasmid). Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Sequence length, Cut sites and Fragments are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>DNA sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If DNA sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Enzyme 1 left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Enzyme 1 is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Enzyme 2 left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Enzyme 2 is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If DNA sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>DNA sequence</th><td>GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTTGAATTCGGATCC… (72 characters)</td></tr><tr><th>Enzyme 1</th><td>EcoRI</td></tr><tr><th>Enzyme 2</th><td>HindIII</td></tr><tr><th>Molecule</th><td>Linear</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Sequence length</th><td>72 bp</td></tr><tr><th>Cut sites</th><td>4</td></tr><tr><th>Fragments</th><td>5</td></tr><tr><th>Largest fragment</th><td>30 bp</td></tr><tr><th>Smallest fragment</th><td>1 bp</td></tr></tbody></table><p>Seventy-two bases with two EcoRI sites and two HindIII sites give four cuts and five fragments: the largest is 30 bases and the smallest is a single base, which is the fragment between two cuts that fall one base apart.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>The boxes on the Restriction Digest form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>DNA sequence</strong> takes a plain number with no unit attached. Paste the plasmid or the whole amplicon; FASTA headers are ignored. Fill it from a measurement rather than a memory — DNA sequence is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Enzyme 1</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Enzyme 1 is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Enzyme 2</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Enzyme 2 is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Molecule</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Molecule is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>DNA sequence</th><td>GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTTGAATTCGGATCC… (72 characters)</td></tr><tr><th>Enzyme 1</th><td>EcoRI</td></tr><tr><th>Enzyme 2</th><td>HindIII</td></tr><tr><th>Molecule</th><td>Circular</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Sequence length</th><td>72</td></tr><tr><th>Cut sites</th><td>4</td></tr><tr><th>Fragments</th><td>4</td></tr><tr><th>Largest fragment</th><td>30</td></tr><tr><th>Smallest fragment</th><td>6</td></tr></tbody></table><p>2 of the 5 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 5 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Sequence length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Cut sites</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Fragments</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Largest fragment</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Smallest fragment</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Sequence length</strong> — bases after cleaning.</li><li><strong>Cut sites</strong> — positions where the chosen enzymes cut, counting both enzymes together.</li><li><strong>Fragments</strong> — pieces produced, one more than the cuts on a line and equal to the cuts on a circle.</li><li><strong>Largest</strong> — the biggest fragment, in bases.</li><li><strong>Smallest</strong> — the smallest fragment — often the one that runs off the gel.</li></ul><p>Fragment sizes are what a gel reports, so they are the figures to compare with a picture. The site count is diagnostic: one site in a circular plasmid gives one fragment the size of the plasmid, which looks like nothing happened on a gel unless you compare it with the uncut lane.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p><strong>DNA sequence</strong> takes text, not a number, so the way it is pasted decides whether the analysis is right.</p><ul><li><strong>No header line.</strong> A FASTA file starts with a line that begins with &quot;&gt;&quot; — a name, not a sequence. Paste from the line below it, or that line is read as characters of its own.</li><li><strong>No spaces or line numbers.</strong> Nucleotide and protein text is often printed in blocks of sixty or eighty characters. Line breaks are usually fine; spaces, tabs and the numbers down the side are not.</li><li><strong>Case is a choice you make.</strong> Upper-case is the convention, but lower-case is often used to mark a region such as soft-masked repeats. Whether the page folds case or respects it is part of what it is telling you, so keep the case you mean.</li><li><strong>Ambiguous characters are not rare.</strong> Sites where the read was uncertain are usually written as N or as a degenerate code. They are counted like any other character, which is right, but it means the answer describes the text as written rather than the molecule as it is.</li></ul><p>The quick check is always the same: does the reported length match the text you pasted? If Sequence length, Cut sites, Fragments and Largest fragment disagree with what you can count by eye, the box is holding something you did not intend to give it.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Count the recognition sites by eye and add one for a linear molecule, or leave the count as it is for a circle. Then check that the fragment sizes add up to the sequence length for a line, and to the same length for a circle.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>The calculation on this page is a procedure rather than one formula: it takes Restriction Digest, works through it, and the panel lists DNA sequence, Enzyme 1, Enzyme 2 and Molecule.</p><p>The processing runs locally: the text you enter stays in the page, the script reads it, and the results are printed beside it. Nothing about your input is stored after you leave.</p><p>Because the script works on exactly what it is given, the usual failure is not arithmetic but input: trailing spaces, a header line from a FASTA file, an ambiguous base in the middle of a sequence. Check that the box holds the characters you meant and nothing else.</p><p>What comes back is Sequence length, Cut sites, Fragments and Largest fragment — the same input described several ways, which is why the panel lists them side by side rather than picking one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Wrong topology</strong> — A circular plasmid with two sites gives two fragments, not three. Choosing linear changes the answer completely.</li><li><strong>Methylation</strong> — A methylated site is not cut in a real reaction, and the page cannot see methylation.</li><li><strong>Partial digests</strong> — The page predicts a complete digest. Fewer, larger fragments on the gel usually mean the enzyme did not finish.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Sequence length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>A fixed enzyme panel</strong> — Only the enzymes listed are modelled. Others need a different tool or a hand search.</li><li><strong>Exact matches only</strong> — The page looks for the exact recognition sequence; degenerate isoschizomes are separate entries.</li><li><strong>No gel physics</strong> — It reports sizes, not how they will resolve or run.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Restriction Digest Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: DNA sequence, Enzyme 1 and Enzyme 2 measured, Sequence length and Cut sites wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
+            <p>Digest prediction is used to design a diagnostic digest, to check that a clone has the insert in the right orientation, to choose enzymes for a double digest, and to explain a gel that shows more bands than expected.</p><p>The number of bands is not the number of fragments on a gel: two fragments of the same size run as one band, so a predicted five-fragment digest can show four. That is the commonest reason a correct prediction looks wrong on a photograph.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Restriction Digest calculator work out?', 'a' => 'Sequence length, Cut sites, Fragments and Largest fragment.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            DNA sequence, Enzyme 1, Enzyme 2, Molecule. Fill DNA sequence, enzyme 1 and enzyme 2 and leave Sequence length empty if you would rather have that one solved instead.
+            ['q' => 'Why does my digest show fewer bands than predicted?', 'a' => 'Co-migrating fragments of similar size, a partial digest, or a fragment too small to see. Compare the sizes before assuming a problem.'],
+            ['q' => 'Why does circular DNA give fewer fragments?', 'a' => 'Because the two ends are joined. With the same number of cuts a circle always gives one fewer piece than a line.'],
+            ['q' => 'Does Restriction Digest Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Internally Sequence length is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Sequence length is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Sequence length at the moment it is drawn.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/puppy-adult-weight-predictor', 'name' => 'Puppy Adult Weight Predictor Calculator'],

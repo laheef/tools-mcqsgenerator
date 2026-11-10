@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA Pattern Finder',
-    'meta' => ['title' => 'DNA Pattern Finder Calculator: Steps & Units', 'description' => 'DNA Pattern Finder takes sequence, Pattern (IUPAC allowed) and strand and returns matches, forward strand and matches, reverse strand. Every figure is computed.', 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'searches a sequence for a pattern on both strands and reports every match and the spacing between them',
+    'meta' => ['title' => 'DNA Pattern Finder with IUPAC Codes and Both Strands', 'description' => 'Search a DNA sequence for a motif, including IUPAC codes, on the forward strand, the reverse strand or both, and see every match counted position by position.', 'h1' => 'DNA Pattern Finder', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -54,31 +56,27 @@ return [
                         [
                             'name' => 'matches_fwd',
                             'label' => 'Matches, forward strand',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'matches_rev',
                             'label' => 'Matches, reverse strand',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'total',
                             'label' => 'Total sites',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'spacing',
                             'label' => 'Average spacing',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bp',
                             'help' => 'Blank when there is only one site',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -189,7 +187,7 @@ return [
         }
         var fwd = findAll(seq, re);
         var rev = [];
-        if (!/forward-only/i.test(String(ctx.getRawInput('strand') || ''))) {
+        if (!/forward-only/i.test(String(ctx.getChoice('strand') || ''))) {
           var rc = revcomp(seq);
           findAll(rc, re).forEach(function (p) {
             var start = seq.length - (p - 1) - raw.length + 1;
@@ -224,56 +222,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        DNA Pattern Finder turns Sequence, Pattern (IUPAC allowed) and Strand into Matches, forward strand and Matches, reverse strand. Nothing is looked up on this page: matches, forward strand is computed from sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        Paste a sequence and a motif and this page tells you how often the motif appears, on the forward strand and on the reverse, with IUPAC codes accepted so "GGWCC" finds both GGACC and GGTCC.
         TXT,
         'sections' => [
-            ['title' => 'How the DNA Pattern Finder calculator works', 'html' => <<<'TXT'
-            <p>DNA Pattern Finder answers one question from 3 numbers, and the answer is Matches, forward strand, Matches, reverse strand and Total sites.</p><p>The answers are Matches, forward strand, Matches, reverse strand, Total sites and Average spacing; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It finds a pattern in a DNA sequence rather than a literal string. Ambiguity codes are expanded into the letters they stand for, and the search runs over the complement too, because a recognition site is a site whichever strand carries the text.</p><p>The sequence and the pattern are both cleaned and uppercased. Each IUPAC character is translated into a set of bases — N is anything, R is A or G, Y is C or T, W is A or T, S is G or C, K is G or T, M is A or C. Every position is tested against the expanded pattern, which makes the search a scan with one comparison per base rather than a substring match. When both strands are requested, the reverse complement is scanned the same way and the two counts are reported separately as well as together.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 3 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA; headers, spaces and digits are ignored</li><li><strong>Pattern (IUPAC allowed)</strong> — a plain number, no unit. N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C</li><li><strong>Strand</strong> — a plain number, no unit</li></ul><p>What you get back is Matches, forward strand, Matches, reverse strand, Total sites, Average spacing in bp, shown next to the form rather than on a page of its own.</p>
+            <p>There are 3 things to fill in, and the order does not matter:</p><ul><li><strong>Sequence</strong> — a text box. Paste DNA; headers, spaces and digits are ignored.</li><li><strong>Pattern (IUPAC allowed)</strong> — a text box. N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C.</li><li><strong>Strand</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 4 boxes: Matches, forward strand, Matches, reverse strand, Total sites, Average spacing (bp). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Matches, forward strand takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Matches, forward strand, Matches, reverse strand and Total sites are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Pattern (IUPAC allowed) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Pattern (IUPAC allowed) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Strand left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Strand is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Sequence to one scale before entering anything.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Sequence</strong> is a text box. Paste DNA; headers, spaces and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Pattern (IUPAC allowed)</strong> is a text box. N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Strand</strong> is a drop-down with the choices the page offers. The choices are Both strands and Forward only. Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Sequence</strong> takes a plain number with no unit attached. Paste DNA; headers, spaces and digits are ignored. Have it to hand before you start: Sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Pattern (IUPAC allowed)</strong> takes a plain number with no unit attached. N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C. Have it to hand before you start: Pattern (IUPAC allowed) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Strand</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Strand is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Sequence</th><td>GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTT</td></tr><tr><th>Pattern (IUPAC allowed)</th><td>GAATTC</td></tr><tr><th>Strand</th><td>Both strands</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Matches, forward strand</th><td>1</td></tr><tr><th>Matches, reverse strand</th><td>0</td></tr><tr><th>Total sites</th><td>1</td></tr></tbody></table><p>One match on the forward strand and none on the reverse: the 36-base sequence contains GAATTC once, and its reverse complement GAATTC appears nowhere else. Total one.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Sequence</th><td>TTAGGACCGGATCCTAGGTCCTAGGTCC</td></tr><tr><th>Pattern (IUPAC allowed)</th><td>GGWCC</td></tr><tr><th>Strand</th><td>Both strands</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Matches, forward strand</th><td>3</td></tr><tr><th>Matches, reverse strand</th><td>0</td></tr><tr><th>Total sites</th><td>3</td></tr><tr><th>Average spacing</th><td>10</td></tr></tbody></table><p>3 of the 4 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Matches, forward strand</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Matches, reverse strand</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Total sites</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Average spacing</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>Matches, forward</strong> — occurrences of the pattern as written.</li><li><strong>Matches, reverse</strong> — occurrences of the pattern read on the complementary strand.</li><li><strong>Total</strong> — the two added together — the number of physical sites when the motif is asymmetric, twice the number when it is palindromic.</li></ul><p>The forward and reverse counts are reported separately on purpose. A palindromic site such as GAATTC is found on both strands, so a both-strands count of two means one site, not two. Non-palindromic motifs appear on one strand only, and the split tells you which.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Sequence</strong> and <strong>Pattern (IUPAC allowed)</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Matches, forward strand, Matches, reverse strand, Total sites and Average spacing. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Count the motif by eye in the paste, then count it in the reverse complement written out by hand. Palindromes should appear in both; anything else in one.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>DNA Pattern Finder is not a single equation with a single answer. It reads Sequence, Pattern (IUPAC allowed) and Strand, applies the analysis the page is built around, and reports Matches, forward strand, Matches, reverse strand, Total sites and Average spacing.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Matches, forward strand, Matches, reverse strand, Total sites and Average spacing. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Overlapping matches</strong> — A motif like ATAT in ATATAT occurs twice, not once, because the scan advances one base at a time.</li><li><strong>Ambiguity codes</strong> — A pattern of all N matches every position of a sequence long enough, which is correct and useless.</li><li><strong>Uracil</strong> — RNA is read as DNA here, with U taken as T. That is usually what you want; it is worth knowing.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Matches, forward strand follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Sequence, Pattern (IUPAC allowed) and Strand are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>No mismatches</strong> — Every position must satisfy the pattern. A one-mismatch search is a different tool.</li><li><strong>Length floor</strong> — A pattern shorter than about four bases will match by chance many times in any real sequence.</li><li><strong>Plain text only</strong> — Regular expressions and position weight matrices are not accepted.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>DNA Pattern Finder has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Sequence, Pattern (IUPAC allowed) and Strand measured, Matches, forward strand and Matches, reverse strand wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>An answer from DNA Pattern Finder is a number to act on, so the useful question is what to do with Matches, forward strand, Matches, reverse strand and Total sites once the panel shows it.</p><ul><li><strong>Record the inputs with the answer.</strong> A number on its own is not reproducible. Write down Sequence, Pattern (IUPAC allowed) and Strand alongside it — a week later the answer is checkable and the reasoning is not.</li><li><strong>Re-run it when a measurement changes.</strong> The page keeps nothing between visits, which is a feature: every figure is worked out from the numbers in front of it, so updating one input and pressing Calculate again gives a fresh answer rather than an average of the old and the new.</li><li><strong>Keep the formula with the figure.</strong> A number from a page like this one travels better than a number from a spreadsheet cell, because the formula that produced it is visible on the same page and does not depend on a file being kept.</li><li><strong>Compare rather than convert.</strong> Run it once for the case in front of you and once for a case you understand well. The gap between the two answers tells you more about your own situation than either number does on its own.</li></ul><p>The page is a calculator, not a system of record. Copy what you need out of it, keep it with the inputs that produced it, and come back with different numbers whenever the inputs change.</p>
+            <p>Pattern searches are used to count restriction sites, to check whether a primer site is unique in a plasmid, to look for regulatory motifs, and to confirm that a synthesised construct still contains the sequence it was designed around.</p><p>When a search returns more hits than you expected, the useful next step is to look at where they fall rather than at the count. Two hits a few bases apart are a cluster and often mean a repeated element; hits spread evenly through a long sequence usually mean a short motif and a large sequence, which is arithmetic rather than biology.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the DNA Pattern Finder calculator work out?', 'a' => 'Matches, forward strand, Matches, reverse strand, Total sites and Average spacing.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Sequence, Pattern (IUPAC allowed), Strand. With sequence, pattern (IUPAC allowed) and strand in place, Matches, forward strand can stay blank and the page will work it out.
+            ['q' => 'Why does a palindromic site count twice on both strands?', 'a' => 'Because it is its own reverse complement. The site exists once in the duplex, but the text appears on both strands, and the page counts the text.'],
+            ['q' => 'Can I search for a degenerate restriction site?', 'a' => 'Yes. Write it in IUPAC codes, for example GGWCC for a BamHI-family site with either base at the third position.'],
+            ['q' => 'Does DNA Pattern Finder use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Matches, forward strand is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Matches, forward strand, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Matches, forward strand at the moment it is drawn.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/goat-years-to-human-years', 'name' => 'Goat Years to Human Years Calculator'],

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA to Protein Translation Calculator',
-    'meta' => ['title' => 'DNA to Protein Translation Calculator: Steps & Units', 'description' => 'DNA to Protein Translation Calculator reports coding length, amino acids in the longest frame, stop codons in frame 1 and mass of the frame-1 protein.', 'h1' => 'DNA to Protein Translation Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'translates a DNA sequence in all three frames and reports the coding length, amino-acid count, stops and molecular weight',
+    'meta' => ['title' => 'DNA to Protein Translation: Six Frames and Longest ORF', 'description' => 'Translate a DNA sequence in any frame, find the longest open reading frame across all six frames, and read its coding length, residue count, stops and mass.', 'h1' => 'DNA to Protein Translation Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -39,33 +41,29 @@ return [
                         ],
                         [
                             'name' => 'length',
-                            'label' => 'Coding length',
-                            'type' => 'number',
+                            'label' => 'Coding length of the longest ORF',
+                            'type' => 'result',
                             'suffix' => 'bp',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'aa_count',
-                            'label' => 'Amino acids in the longest frame',
-                            'type' => 'number',
+                            'label' => 'Amino acids in the longest ORF',
+                            'type' => 'result',
                             'suffix' => 'aa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'stop_codons',
                             'label' => 'Stop codons in frame 1',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw',
-                            'label' => 'Mass of the frame-1 protein',
-                            'type' => 'number',
+                            'label' => 'Mass of the longest ORF\'s protein',
+                            'type' => 'result',
                             'suffix' => 'kDa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -147,10 +145,11 @@ return [
     
       omni.onResult(['sequence'], function (ctx) {
         var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
-        var startSlug = String(ctx.getRawInput('start') || '');
-        // slugs: all-six-frames / frame-1-only / stop-at-the-first-stop-codon
-        var mode = /first-stop|stop-at/i.test(startSlug) ? 'orf'
-          : /frame-1-only|one/i.test(startSlug) ? 'one' : 'six';
+        var startSlug = String(ctx.getChoice('start') || '');
+        /* the choice hands back the words on the page: "All six frames",
+           "Frame 1 only", "Stop at the first stop codon" */
+        var mode = /stop at|first stop/i.test(startSlug) ? 'orf'
+          : /frame 1 only|first frame|frame-1/i.test(startSlug) ? 'one' : 'six';
         if (!seq) {
           ctx.addHtml(block('Translation', '—', 'Paste a DNA sequence to translate it in every frame.'));
           return;
@@ -163,10 +162,25 @@ return [
         var stops = 0;
         for (var k = 0; k < f1.length; k++) if (f1.charAt(k) === '*') stops++;
     
-        ctx.exportValue('length', seq.length);
-        ctx.exportValue('aa_count', f1.replace(/\*/g, '').length);
+        /*
+         * The figures describe the longest open reading frame, not the raw
+         * paste. "Coding length" was the whole input once — a 39 nt paste with
+         * a 33 nt ORF reported 39, which is the sequence length under another
+         * name. Frame 1 is the floor; the six-frame mode may find a longer one.
+         */
+        var best = longestORF(f1);
+        if (mode === 'six') {
+          var all = [translate(seq, 1), translate(seq, 2), translate(comp, 0),
+                     translate(comp, 1), translate(comp, 2)];
+          for (var q = 0; q < all.length; q++) {
+            var cand = longestORF(all[q]);
+            if (cand.length > best.length) best = cand;
+          }
+        }
+        ctx.exportValue('length', best.length * 3);
+        ctx.exportValue('aa_count', best.length);
         ctx.exportValue('stop_codons', stops);
-        ctx.exportValue('mw', Math.round(massOf(f1.replace(/\*/g, '')) * 100) / 100);
+        ctx.exportValue('mw', Math.round(massOf(best) * 100) / 100);
     
         if (mode === 'one') {
           ctx.addHtml(block('Frame 1', wrap(f1, 60), f1.length + ' aa including stops'));
@@ -202,56 +216,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Enter DNA sequence and Frame handling into DNA to Protein Translation and the answer comes back as Coding length and Amino acids in the longest frame. It is a single relationship that reads coding length out of DNA sequence, not a table of canned results keyed by them. Units for Coding length default to bp and can be changed on the answer itself.
+        Translate a DNA sequence into protein and the first thing to decide is the frame. This page translates it in one, in six, or up to the first stop, and reports the longest open reading frame with its length and mass.
         TXT,
         'sections' => [
-            ['title' => 'How the DNA to Protein Translation calculator works', 'html' => <<<'TXT'
-            <p>DNA to Protein Translation answers one question from 2 numbers, and the answer is Coding length, Amino acids in the longest frame and Stop codons in frame 1.</p><p>The result panel carries Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein, each in a box of its own rather than buried in a sentence.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It turns a nucleotide sequence into the protein it encodes, and reports the figures that go with that: the coding length of the longest open reading frame, how many residues it holds, how many stops fall in frame 1, and the mass of the protein.</p><p>The paste is cleaned and translated codon by codon against the standard code, in frame 1, in all six frames, or up to the first stop, depending on the setting you choose. An open reading frame is the longest run between stops. The page takes that run, multiplies its residue count by three for the coding length, and sums average residue masses for the molecular weight.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste DNA; headers and numbers are removed</li><li><strong>Frame handling</strong> — a plain number, no unit</li></ul><p>What you get back is Coding length in bp, Amino acids in the longest frame in aa, Stop codons in frame 1, Mass of the frame-1 protein in kDa, shown next to the form rather than on a page of its own.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>DNA sequence</strong> — a text box. Paste DNA; headers and numbers are removed.</li><li><strong>Frame handling</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 4 boxes: Coding length of the longest ORF (bp), Amino acids in the longest ORF (aa), Stop codons in frame 1, Mass of the longest ORF&#039;s protein (kDa). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>As far as Coding length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>DNA sequence</strong> is a text box. Paste DNA; headers and numbers are removed Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Frame handling</strong> is a drop-down with the choices the page offers. The choices are All six frames, Frame 1 only and Stop at the first stop codon. Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> Coding length, Amino acids in the longest frame and Stop codons in frame 1 are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>DNA sequence left as a guess.</strong> Anything typed into DNA sequence is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Frame handling left as a guess.</strong> Anything typed into Frame handling is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in DNA sequence and let the panel round the answer once.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>DNA sequence</th><td>GGTACCATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGTAA</td></tr><tr><th>Frame handling</th><td>All six frames</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Coding length of the longest ORF</th><td>48 bp</td></tr><tr><th>Amino acids in the longest ORF</th><td>16 aa</td></tr><tr><th>Stop codons in frame 1</th><td>3</td></tr><tr><th>Mass of the longest ORF&#039;s protein</th><td>1.6 kDa</td></tr></tbody></table><p>A 54-base paste with a deliberate ATG in the middle: all six frames find a 16-residue reading frame of 48 bases, because a longer ORF opens on the other strand than the one you might first read. Frame 1 only reports 9 residues, the difference between the two settings.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>DNA sequence</strong> takes a plain number with no unit attached. Paste DNA; headers and numbers are removed. Have it to hand before you start: DNA sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Frame handling</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Frame handling is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>DNA sequence</th><td>ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG</td></tr><tr><th>Frame handling</th><td>Frame 1 only</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Coding length of the longest ORF</th><td>21</td></tr><tr><th>Amino acids in the longest ORF</th><td>7</td></tr><tr><th>Stop codons in frame 1</th><td>2</td></tr><tr><th>Mass of the longest ORF&#039;s protein</th><td>0.78</td></tr></tbody></table><p>4 of the 4 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Coding length</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Amino acids in the longest frame</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Stop codons in frame 1</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Mass of the frame-1 protein</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>Coding length</strong> — three times the residues of the longest open reading frame, in base pairs.</li><li><strong>Amino acids</strong> — the residue count of that same reading frame.</li><li><strong>Stop codons in frame 1</strong> — how many stop codons appear when the sequence is read from its first base.</li><li><strong>Mass of the ORF&#039;s protein</strong> — the average molecular weight of the translated frame, in kDa.</li></ul><p>The coding length and the residue count are the same figure in different units, so they should always agree. The stop count in frame 1 is a diagnostic, not part of the protein: several stops means the frame is open in short stretches and closed in others, which is normal for a random sequence and suspicious for a cloned gene.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>DNA sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Find the ATG by eye, read triplets from it to the next stop, and translate with a table. The residue count should match your count of triplets; if it does not, the frame you read by eye is not the frame the page picked.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>DNA to Protein Translation is not a single equation with a single answer. It reads DNA sequence and Frame handling, applies the analysis the page is built around, and reports Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need DNA sequence and Frame handling. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type DNA sequence into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Coding length in bp with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Forgetting the reverse strand</strong> — Half of all open reading frames sit on the other strand. The six-frame setting exists for exactly that.</li><li><strong>No start codon</strong> — The page reports the longest stop-free stretch, which need not begin at an ATG. A real gene does.</li><li><strong>Rare codons and stops</strong> — Translation here is mechanical; it does not know about read-through, selenocysteine or suppression.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> The relationship behind Coding length is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes DNA sequence and Frame handling are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>Standard genetic code</strong> — Mitochondrial codes, and codons reassigned in some organisms, are not applied.</li><li><strong>No introns</strong> — Eukaryotic genes are translated as contiguous sequence, introns included.</li><li><strong>Average mass</strong> — The molecular weight is a sum of average residue masses with no modifications.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>DNA to Protein Translation Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are DNA sequence and Frame handling and the number you are missing is Coding length and Amino acids in the longest frame.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
+            <p>Translation is used to check that a cloned insert is in frame, to find the protein a random piece of DNA would make, to work out whether a mutation is silent, and to estimate the size of a product before running it on a gel.</p><p>The six-frame answer is not the same as the right answer. In a bacterial genome roughly half of all genes sit on the reverse strand, so both are plausible; in a eukaryotic cDNA the coding frame almost always starts at the first ATG and ends at the first stop after it. Use the six-frame figure to find the candidate, and the frame-1 or first-stop setting to describe it once found.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the DNA to Protein Translation calculator work out?', 'a' => 'Coding length, Amino acids in the longest frame, Stop codons in frame 1 and Mass of the frame-1 protein.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'DNA sequence, Frame handling. With DNA sequence and frame handling in place, Coding length can stay blank and the page will work it out.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            The arithmetic runs at full precision and only the display of Coding length is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.
+            ['q' => 'Which setting should I use?', 'a' => 'For a known gene, frame 1 from the start codon. For an unknown sequence, all six frames — the protein may be encoded on the reverse strand.'],
+            ['q' => 'Why is the protein shorter than the DNA suggests?', 'a' => 'Because the reading frame starts at a start codon and ends at a stop. DNA between them and the ends of the paste is not part of the protein.'],
+            ['q' => 'Does DNA to Protein Translation Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Coding length, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'It rounds for display only; the underlying value of Coding length keeps more digits than the panel prints.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/tree-diameter', 'name' => 'Tree diameter Calculator'],

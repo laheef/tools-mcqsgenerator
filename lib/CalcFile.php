@@ -193,14 +193,64 @@ final class CalcFile
         $fields  = self::fields($def);
         $formula = self::formulaMap($def);
         $script  = trim((string) ($def['js'] ?? ''));
+        $engine  = strtolower(trim((string) ($def['engine'] ?? 'formula')));
         if ($fields === []) {
             return $fail('the form has no fields');
         }
-        /* A page whose arithmetic lives in its own script (a DNA reverse
-           complement, a protein digest) has no formula entry and does not need
-           one; everything else must answer from a formula. */
-        if ($formula === [] && $script === '') {
+        if (!in_array($engine, ['formula', 'script'], true)) {
+            return $fail('engine must be "formula" or "script"');
+        }
+        /*
+         * Two engines answer a page.
+         *
+         * `formula` (the default) is the expression language: the numbers go
+         * in, the algebra comes out. `script` is a page whose working is a
+         * string transformation — the other strand of a DNA molecule, a
+         * protein read off a codon table, a digest cut at every recognition
+         * site. None of that is algebra, so it cannot be written as one; the
+         * file declares the engine, and the script has to produce every result
+         * box the form shows. A page that declares the script engine and then
+         * leaves a result to nothing is refused here.
+         */
+        if ($engine === 'script' && $script === '') {
+            return $fail('engine is "script" but the file carries no js');
+        }
+        if ($engine === 'formula' && $formula === [] && $script === '') {
             return $fail('there is no formula');
+        }
+        if ($engine === 'script' && $formula === []) {
+            foreach ($fields as $f) {
+                $name = trim((string) ($f['name'] ?? ''));
+                $out  = strtolower((string) ($f['type'] ?? '')) === 'result' || !empty($f['readonly']);
+                if (!$out || $name === '') {
+                    continue;
+                }
+                if (preg_match('~exportValue\(\s*["\']' . preg_quote($name, '~') . '["\']~', $script) !== 1) {
+                    return $fail('the script never produces "' . $name . '", which the form shows as a result');
+                }
+            }
+            /*
+             * The other half of the same promise: a box the visitor can fill that
+             * the script never asks for is not a control, it is decoration. A name
+             * counts as read when it appears in the script, or when the script
+             * builds it from a prefix, as rabbit-color does with 'sire_' + locus.
+             */
+            foreach ($fields as $f) {
+                $name = trim((string) ($f['name'] ?? ''));
+                $out  = strtolower((string) ($f['type'] ?? '')) === 'result' || !empty($f['readonly']);
+                if ($out || $name === '') {
+                    continue;
+                }
+                if (strpos($script, $name) !== false) {
+                    continue;
+                }
+                $cut    = strrpos($name, '_');
+                $prefix = $cut === false ? '' : substr($name, 0, $cut + 1);
+                if ($prefix !== '' && preg_match('~["\']' . preg_quote($prefix, '~') . '["\']\s*\+~', $script) === 1) {
+                    continue;
+                }
+                return $fail('"' . $name . '" is a box the visitor can fill, and the script never reads it');
+            }
         }
 
         $inputs = [];

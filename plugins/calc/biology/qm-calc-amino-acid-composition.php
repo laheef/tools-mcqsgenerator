@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Amino Acid Composition Calculator',
-    'meta' => ['title' => 'Amino Acid Composition Calculator: Steps & Units', 'description' => 'Amino Acid Composition Calculator works out length from protein sequence. The formula is printed in the form\'s own words, so the arithmetic can be checked.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a protein sequence and works out its length, molecular weight, GRAVY, aromatic fraction, charge balance and cysteine count',
+    'meta' => ['title' => 'Amino Acid Composition Calculator: MW, GRAVY and Charge', 'description' => 'Paste a protein sequence and read its length, molecular weight, GRAVY, aromatic fraction, charge balance and cysteine count, worked out in the browser.', 'h1' => 'Amino Acid Composition Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -40,50 +42,44 @@ return [
                         [
                             'name' => 'length',
                             'label' => 'Length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'aa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw_kda',
                             'label' => 'Molecular weight',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'kDa',
                             'help' => 'Average residue masses, no modifications',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gravy',
                             'label' => 'GRAVY',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Positive means hydrophobic',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'aromatic',
                             'label' => 'Aromatic residues (F + W + Y)',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'charge_balance',
                             'label' => 'Acidic minus basic residues',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Positive means acidic overall',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'cysteine',
                             'label' => 'Cysteines',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Pairs set the maximum number of disulfides',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -219,50 +215,61 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Amino Acid Composition turns Protein sequence into Length and Molecular weight. The arithmetic is the whole method: length is worked out from protein sequence by one formula, applied once. Length comes back in aa unless you switch the unit chip beside the box.
+        Amino acid composition reads one protein sequence and describes it in six numbers: how long it is, how heavy, how hydrophobic, how aromatic, how charged and how many cysteines it carries. Nothing is uploaded — the sequence is read letter by letter in the tab you are looking at.
         TXT,
         'sections' => [
-            ['title' => 'How the Amino Acid Composition calculator works', 'html' => <<<'TXT'
-            <p>Amino Acid Composition answers one question from 1 number, and the answer is Length, Molecular weight and GRAVY.</p><p>What comes back is Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y) — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>The page takes a protein in single-letter code and turns it into the handful of figures people actually ask for: length, average molecular weight, GRAVY, the share of aromatic residues, the acidic-minus-basic balance and the cysteine count.</p><p>It cleans the paste first, keeping only letters, so a FASTA header line, a row of digits from a sequence viewer or a stray space cannot change the answer. It then walks the cleaned string once, counting each residue against a table of average residue masses and against the Kyte-Doolittle hydropathy scale. The molecular weight is the sum of the free amino-acid masses minus one water molecule for every peptide bond; GRAVY is the sum of the hydropathy values divided by the number of residues; the aromatic figure is the count of phenylalanine, tryptophan and tyrosine as a percentage of the chain.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>The form asks for 1 box, and nothing else.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; headers, spaces and digits are ignored</li></ul><p>The answers come back as Length in aa, Molecular weight in kDa, GRAVY, Aromatic residues (F + W + Y) in %, Acidic minus basic residues, Cysteines. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 1 things to fill in, and the order does not matter:</p><ul><li><strong>Protein sequence</strong> — a text box. Single-letter code; headers, spaces and digits are ignored.</li></ul><p>The answer comes back as 6 boxes: Length (aa), Molecular weight (kDa), GRAVY, Aromatic residues (F + W + Y) (%), Acidic minus basic residues, Cysteines. They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Length, Molecular weight and GRAVY are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Protein sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Protein sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Protein sequence and let the panel round the answer once.</li></ul>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Protein sequence</strong> takes a plain number with no unit attached. Single-letter code; headers, spaces and digits are ignored. Have it to hand before you start: Protein sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Protein sequence</strong> is a text box. Single-letter code; headers, spaces and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p>
+            TXT],
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Protein sequence</th><td>MKTAYIAKQRQISFVKSHFSRQDILDLWQ</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Length</th><td>29 aa</td></tr><tr><th>Molecular weight</th><td>3.56 kDa</td></tr><tr><th>GRAVY</th><td>-0.476</td></tr><tr><th>Aromatic residues (F + W + Y)</th><td>13.79 %</td></tr><tr><th>Acidic minus basic residues</th><td>-4</td></tr><tr><th>Cysteines</th><td>0</td></tr></tbody></table><p>Twenty-nine residues, 3.56 kDa, a GRAVY of −0.476 and no cysteine: the sequence is small, slightly hydrophilic and carries no disulfide bond. The charge balance of −4 says the acidic residues outnumber the basic ones by four, which is the first thing to check against a calculated pI.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Protein sequence</th><td>MKWVTFISLLFLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFK</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Length</th><td>44</td></tr><tr><th>Molecular weight</th><td>5.34</td></tr><tr><th>GRAVY</th><td>-0.323</td></tr><tr><th>Aromatic residues (F + W + Y)</th><td>18.18</td></tr><tr><th>Acidic minus basic residues</th><td>-6</td></tr><tr><th>Cysteines</th><td>0</td></tr></tbody></table><p>5 of the 6 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 6 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Molecular weight</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>GRAVY</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Aromatic residues (F + W + Y)</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Acidic minus basic residues</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Cysteines</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Length</strong> — the number of residues after headers, spaces and digits are removed.</li><li><strong>Molecular weight</strong> — the sum of average residue masses in kilodaltons, with one water lost per peptide bond. No modifications, no isotopes, no signal peptide removal.</li><li><strong>GRAVY</strong> — the grand average of hydropathy: positive is hydrophobic, negative is hydrophilic, and the scale runs roughly from −4.5 to +4.5.</li><li><strong>Aromatic residues</strong> — phenylalanine, tryptophan and tyrosine as a percentage of the chain — the residues that absorb at 280 nm.</li><li><strong>Acidic minus basic</strong> — aspartate and glutamate counted against lysine, arginine and histidine. Positive means the chain is net acidic at neutral pH.</li><li><strong>Cysteines</strong> — how many cysteine residues there are. Two are needed for one disulfide bond, and only if they are close enough to pair.</li></ul><p>Read the six figures as a description of one molecule, not as six unrelated measurements. A negative GRAVY with a charge balance near zero describes a soluble, globular protein; a positive GRAVY with a high aromatic percentage describes something that prefers a membrane or a hydrophobic core. The cysteine count is the ceiling on disulfide bonds, never the number of bonds itself.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Protein sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y). If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>A molecular weight is checkable by hand. Count the residues, multiply by an average residue mass of about 110 Da, and compare: 29 residues gives roughly 3.2 kDa, and the page says 3.56 because the sequence is rich in the heavier residues. For an exact figure, add the free amino-acid masses from a table and subtract 18.015 Da for every peptide bond. GRAVY is easier still: add the Kyte-Doolittle values for each residue and divide by the length.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>Amino Acid Composition is not a single equation with a single answer. It reads Protein sequence, applies the analysis the page is built around, and reports Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y).</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y). They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need Protein sequence. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Protein sequence into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Length in aa with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>DNA pasted by mistake</strong> — A nucleotide string is made of A, C, G and T, and all four are real amino-acid letters. The page will happily read a 39-base oligo as a 39-residue peptide and report a weight for it.</li><li><strong>Ambiguous codes</strong> — X, B, Z and J are accepted as letters but carry no mass on a table of the twenty standard residues, so a sequence full of X will come out lighter than the protein it stands for.</li><li><strong>Modifications</strong> — A phosphorylated serine, a glycosylated asparagine or an N-terminal acetyl group changes the mass, and none of them is in the string.</li><li><strong>The length box</strong> — If you typed a length yourself, it is the sequence that decides the other five figures, not the number beside it.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Average, not monoisotopic</strong> — The mass is the average over natural isotope abundance, which is what a mass spectrometer reports for a large protein and what a gel image is consistent with. A monoisotopic mass can differ in the third decimal place for a short peptide.</li><li><strong>Counts, not bonds</strong> — The page counts cysteines; it cannot know which of them are bonded, so it will not tell you how many disulfides a folded protein has.</li><li><strong>Composition only</strong> — Nothing here describes secondary structure, stability or function. Two proteins with identical composition can fold into entirely different shapes.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Amino Acid Composition Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Protein sequence measured, Length and Molecular weight wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
+            <p>Composition figures come up whenever a protein is being handled rather than studied: checking that a synthetic peptide matches the mass the supplier quoted, estimating how much of a protein a gel band contains, deciding whether a construct will run at the position a ladder predicts, or finding out whether a sequence is unusual enough in its aromatic content to explain a strange absorbance reading.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Amino Acid Composition calculator work out?', 'a' => 'Length, Molecular weight, GRAVY and Aromatic residues (F + W + Y).'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Protein sequence. Fill protein sequence and leave Length empty if you would rather have that one solved instead.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            ['q' => 'Why does the page ignore my FASTA header?', 'a' => <<<'TXT'
+            The header is a description, not sequence. Keeping only letters drops the ">" line and its text, which is what you want: otherwise the letters of the description would be counted as residues.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Is the molecular weight the same as the one my mass spec reports?', 'a' => <<<'TXT'
+            Close, but not identical. This is an average mass with no modifications; a mass spectrometer reports the masses of the actual ions, including every phosphorylation and every N-terminal methionine that was or was not removed.
+            TXT],
+            ['q' => 'What does a positive GRAVY mean?', 'a' => 'Hydrophobic overall. Values above roughly +0.5 usually mean a membrane-spanning or core-forming protein; values below −0.5 usually mean a soluble one.'],
+            ['q' => 'Does Amino Acid Composition Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
+            TXT],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/osmolarity-osmotic-pressure', 'name' => 'Osmolarity / Osmotic Pressure Calculator'],

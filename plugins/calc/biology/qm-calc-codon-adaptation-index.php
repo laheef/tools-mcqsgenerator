@@ -11,9 +11,9 @@
 
 return [
     'name' => 'Codon Adaptation Index Calculator',
-    'meta' => ['title' => 'Codon Adaptation Index Calculator: Steps & Units', 'description' => <<<'TXT'
-    Enter Coding sequence (DNA) and reference host and Codon Adaptation Index Calculator returns codons scored and rare codons (w ≤ 0.2). A worked example follows.
-    TXT, 'h1' => 'Codon Adaptation Index Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a coding sequence and works out the codon adaptation index from the reference usage table',
+    'meta' => ['title' => 'Codon Adaptation Index Calculator: Score a Gene for Its Host', 'description' => 'Paste a coding sequence, choose a host, and read its codon adaptation index, rare codon count and third-position GC content. All worked out in your browser.', 'h1' => 'Codon Adaptation Index Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -49,32 +49,28 @@ return [
                         [
                             'name' => 'cai',
                             'label' => 'Codon adaptation index',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Geometric mean of the weights',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'codons',
                             'label' => 'Codons scored',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Met, Trp and stops are excluded',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'rare',
                             'label' => 'Rare codons (w ≤ 0.2)',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc3',
                             'label' => 'GC at third position',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -197,7 +193,7 @@ return [
     
       omni.onResult(['sequence', 'host'], function (ctx) {
         var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
-        var key = resolve(ctx.getRawInput('host'), { ecoli: 'ecoli', human: 'human', yeast: 'yeast' }, 'ecoli');
+        var key = resolve(ctx.getChoice('host'), { ecoli: 'ecoli', human: 'human', yeast: 'yeast' }, 'ecoli');
         var W = CODON_W[key] || CODON_W.ecoli;
         if (seq.length < 3) {
           ctx.addHtml(block('Codon adaptation index', '—', 'Paste a coding sequence of at least 3 bp.'));
@@ -260,58 +256,59 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Codon Adaptation Index works out Codon adaptation index and Codons scored from Coding sequence (DNA) and Reference host. It is a single relationship that reads codon adaptation index out of coding sequence (DNA), not a table of canned results keyed by them.
+        The codon adaptation index scores how well a coding sequence matches the codons a host uses in its own highly expressed genes. Paste an open reading frame, pick the host, and the page reports CAI, the number of codons read, how many of them are rare, and GC3s.
         TXT,
         'sections' => [
-            ['title' => 'How the Codon Adaptation Index calculator works', 'html' => <<<'TXT'
-            <p>The Codon Adaptation Index calculator applies one relationship to 2 numbers and reports Codon adaptation index, Codons scored and Rare codons (w ≤ 0.2).</p><p>The answers are Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2) and GC at third position; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It scores a coding sequence against a host's codon usage table, so you can see whether the same protein will translate smoothly in E. coli, in yeast or in a human cell line. It also reports the practical figures behind that score: how many complete codons were read, how many were rare, and how GC-rich the third position is.</p><p>The sequence is cleaned to letters, split into codons from the first base, and each codon is looked up in the chosen host table. A codon that the host uses often in highly expressed genes gets a weight near 1; a rare codon gets a weight near 0. The CAI is the geometric mean of those weights across the sequence, so a few rare codons pull the score down more than their share of the length suggests. Third-position GC is computed on the same codon split, which is why changing the frame changes it.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>There are 2 boxes to fill in; every one of them is used by the formula.</p><ul><li><strong>Coding sequence (DNA)</strong> — a plain number, no unit. Paste the open reading frame; the first codon is read as the start</li><li><strong>Reference host</strong> — a plain number, no unit. The codon usage table the weights come from</li></ul><p>The answers come back as Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2), GC at third position in %. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Coding sequence (DNA)</strong> — a text box. Paste the open reading frame; the first codon is read as the start.</li><li><strong>Reference host</strong> — a drop-down with the choices the page offers. The codon usage table the weights come from.</li></ul><p>The answer comes back as 4 boxes: Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2), GC at third position (%). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>As far as Codon adaptation index is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Coding sequence (DNA)</strong> is a text box. Paste the open reading frame; the first codon is read as the start Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Reference host</strong> is a drop-down with the choices the page offers. The choices are E. coli K-12, Human (Homo sapiens) and Yeast (S. cerevisiae). The codon usage table the weights come from Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> Codon adaptation index, Codons scored and Rare codons (w ≤ 0.2) are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Coding sequence (DNA) left as a guess.</strong> Anything typed into Coding sequence (DNA) is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Reference host left as a guess.</strong> Anything typed into Reference host is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Coding sequence (DNA) to one scale before entering anything.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Coding sequence (DNA)</th><td>ATGGCTGCTAAAATTGAACGTCTGAAACGTCTGGAAGATCTGAAACGTGCT</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Codon adaptation index</th><td>0.788</td></tr><tr><th>Codons scored</th><td>16</td></tr><tr><th>Rare codons (w ≤ 0.2)</th><td>0</td></tr><tr><th>GC at third position</th><td>18.75 %</td></tr></tbody></table><p>A 48-base reading frame gives 16 codons and a CAI of 0.788 in E. coli K-12: mostly well-used codons, no rare ones, and a low GC3s of 18.75 per cent, since the sequence is written with the AT-ending codons E. coli prefers. The same sequence scores differently in human or yeast because the tables differ.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Coding sequence (DNA)</strong> takes a plain number with no unit attached. Paste the open reading frame; the first codon is read as the start. Have it to hand before you start: Coding sequence (DNA) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Reference host</strong> takes a plain number with no unit attached. The codon usage table the weights come from. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Reference host is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Coding sequence (DNA)</th><td>ATGAGGCGGTTAAGGCTTAGGCTAAGGAGGCGG</td></tr><tr><th>Reference host</th><td>E. coli K-12</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Codon adaptation index</th><td>0.033</td></tr><tr><th>Codons scored</th><td>10</td></tr><tr><th>Rare codons (w ≤ 0.2)</th><td>10</td></tr><tr><th>GC at third position</th><td>70</td></tr></tbody></table><p>4 of the 4 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Codon adaptation index</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Codons scored</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Rare codons (w ≤ 0.2)</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>GC at third position</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Treat the first significant digit as the answer and the rest as information about precision — the last digits move when an input moves, and that is normal. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>CAI</strong> — the geometric mean of relative adaptiveness over all codons, on a scale from 0 to 1.</li><li><strong>Codons</strong> — complete codons after the frame split; a trailing one or two bases cannot form a codon and is not counted.</li><li><strong>Rare codons</strong> — codons whose relative adaptiveness falls below the threshold the page uses — the ones most likely to slow translation.</li><li><strong>GC3s</strong> — the GC percentage at the third codon position, often used as a proxy for codon bias in bacteria.</li></ul><p>A CAI near 1 means the sequence uses the codons the host leans on in its fastest-translated genes; a score below about 0.5 usually means a heterologous gene that may benefit from resynthesis. The rare-codon count matters more for expression than the score itself: a single rare codon cluster can stall a ribosome even when the average looks good.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Coding sequence (DNA)</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2) and GC at third position. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Pick three codons from your sequence, look each up in the host table, and multiply their relative adaptiveness values; the cube root of that product is the CAI those three codons contribute. Doing this for the whole sequence by hand is tedious but possible, and the first few codons will tell you whether the score is in the right region.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>Codon Adaptation Index is not a single equation with a single answer. It reads Coding sequence (DNA) and Reference host, applies the analysis the page is built around, and reports Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2) and GC at third position.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2) and GC at third position. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need Coding sequence (DNA) and Reference host. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Coding sequence (DNA) into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Codon adaptation index with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Not an open reading frame</strong> — If the sequence has no start codon, or begins mid-gene, every codon is shifted and the score describes the wrong reading frame.</li><li><strong>Wrong host</strong> — The index is relative to a table. A score of 0.8 in E. coli says nothing about the same gene in CHO cells.</li><li><strong>Short sequences</strong> — Under about 20 codons the geometric mean is dominated by single outliers, and the score swings wildly.</li><li><strong>Internal stops</strong> — A stop codon inside the frame is a warning about the sequence, not about the host; the page will still score it.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> The relationship behind Codon adaptation index is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Coding sequence (DNA) and Reference host are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>One table per host</strong> — The page offers a small set of reference tables. A strain with a different codon usage — or a gene expressed at a different growth rate — will score slightly differently in reality.</li><li><strong>No tRNA model</strong> — CAI assumes codon usage is a proxy for tRNA availability. It knows nothing about tRNA charging, modification or the position of a rare codon in the transcript.</li><li><strong>Expression is more than codons</strong> — mRNA structure, ribosome binding, promoter strength and protein folding all matter more than CAI in most expression experiments.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Codon Adaptation Index Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Coding sequence (DNA) and Reference host and the number you are missing is Codon adaptation index and Codons scored.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
+            <p>CAI is a screening number. It is used to decide whether a synthetic gene needs redesigning before it goes into an expression vector, to compare two versions of a construct, and to flag a sequence that looks fine on a gel but translates poorly.</p><p>A second use of the index is comparison. Score the same gene against E. coli, yeast and human tables before choosing an expression system: a gene that scores well in two of the three is a safer construct than one that is excellent in a single host and poor in the others, because it leaves you room to change systems without redesigning the sequence.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Codon Adaptation Index calculator work out?', 'a' => 'Codon adaptation index, Codons scored, Rare codons (w ≤ 0.2) and GC at third position.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Coding sequence (DNA), Reference host. Enter coding sequence (DNA) and reference host; Codon adaptation index is the box to leave alone unless it is the value you came for.
+            ['q' => 'What CAI should I aim for before synthesising a gene?', 'a' => 'Most suppliers and protocols aim for at least 0.8 in the chosen host. Below about 0.5, resynthesis with host-optimised codons usually pays for itself.'],
+            ['q' => 'Does a high CAI guarantee high expression?', 'a' => 'No. It removes one common obstacle. Promoter, copy number, mRNA structure and the protein itself decide the rest.'],
+            ['q' => 'Why does the codon count change when I trim one base?', 'a' => <<<'TXT'
+            Trimming shifts the reading frame by one, so every codon after the cut is different. The count is of complete codons in the frame, and the frame starts at the first base you paste.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Internally Codon adaptation index is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
+            ['q' => 'Does Codon Adaptation Index Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Codon adaptation index, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Codon adaptation index at the moment it is drawn.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/guinea-pig-age', 'name' => 'Guinea pig years to human years'],

@@ -11,7 +11,9 @@
 
 return [
     'name' => 'ORF Finder',
-    'meta' => ['title' => 'ORF Finder Calculator: Formula, Steps & Example', 'description' => 'ORF Finder turns DNA sequence and minimum protein length into open reading frames and Longest ORF. Every box can be solved for, not only the one in the title.', 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'finds every open reading frame in a sequence and reports their count and the longest one',
+    'meta' => ['title' => 'ORF Finder for DNA: Six Frames, Both Strands, Longest ORF', 'description' => 'Paste a DNA sequence to find every open reading frame above a length you set, on the forward and reverse strands, and see the longest and the stop count.', 'h1' => 'ORF Finder', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -57,38 +59,33 @@ return [
                         [
                             'name' => 'orfs',
                             'label' => 'Open reading frames',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'longest',
                             'label' => 'Longest ORF',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'aa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'forward',
                             'label' => 'On the forward strand',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'reverse',
                             'label' => 'On the reverse strand',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'stops',
                             'label' => 'Stop codons in frame',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'All six frames together',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -177,7 +174,7 @@ return [
           ctx.addHtml(block('Open reading frames', '—', 'Paste at least a dozen bases.'));
           return;
         }
-        var starts = /bacterial/i.test(String(ctx.getRawInput('starts') || ''))
+        var starts = /bacterial/i.test(String(ctx.getChoice('starts') || ''))
           ? ['ATG', 'GTG', 'TTG'] : ['ATG'];
         var rc = revcomp(seq);
         var all = [], stops = 0, i;
@@ -220,51 +217,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        ORF Finder takes DNA sequence, Minimum protein length and Count as a start and returns Open reading frames and Longest ORF. Nothing is looked up on this page: open reading frames is computed from DNA sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        An open reading frame is a run of codons with no stop in it, read from a start codon. This page finds all of them on a sequence, on both strands, above whatever minimum length you set.
         TXT,
         'sections' => [
-            ['title' => 'How the ORF Finder calculator works', 'html' => <<<'TXT'
-            <p>There is one relationship behind ORF Finder: it takes 3 numbers and reports Open reading frames, Longest ORF and On the forward strand.</p><p>The answers are Open reading frames, Longest ORF, On the forward strand and On the reverse strand; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It scans a DNA sequence for every stretch that could encode a protein: start codon, then codons, then a stop. It reports how many there are, which strand they sit on, how long the longest is, and how many stops the sequence contains.</p><p>The sequence is cleaned and read in all three forward frames and all three reverse frames. In each frame the page looks for the start codons it has been told to accept — ATG alone, or ATG, GTG and TTG in bacterial mode — and follows each one until the next stop codon. Runs shorter than the minimum length you set are discarded. The reverse strand is built as the reverse complement and read the same way, with each ORF reported back in the coordinates of the strand you pasted.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>The form asks for 3 boxes, and nothing else.</p><ul><li><strong>DNA sequence</strong> — a plain number, no unit. Paste DNA; FASTA headers and digits are ignored</li><li><strong>Minimum protein length</strong> — in aa. Shorter ORFs are ignored</li><li><strong>Count as a start</strong> — a plain number, no unit</li></ul><p>The answers come back as Open reading frames, Longest ORF in aa, On the forward strand, On the reverse strand, Stop codons in frame. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 3 things to fill in, and the order does not matter:</p><ul><li><strong>DNA sequence</strong> — a text box. Paste DNA; FASTA headers and digits are ignored.</li><li><strong>Minimum protein length</strong> — a number box. Shorter ORFs are ignored.</li><li><strong>Count as a start</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 5 boxes: Open reading frames, Longest ORF (aa), On the forward strand, On the reverse strand, Stop codons in frame. They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Open reading frames takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Open reading frames, Longest ORF and On the forward strand are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>DNA sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If DNA sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Minimum protein length left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Minimum protein length is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Count as a start left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Count as a start is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert DNA sequence to one scale before entering anything.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>DNA sequence</strong> is a text box. Paste DNA; FASTA headers and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Minimum protein length</strong> is a number box. Shorter ORFs are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Count as a start</strong> is a drop-down with the choices the page offers. The choices are ATG only and ATG, GTG and TTG (bacterial). Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>The boxes on the ORF Finder form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>DNA sequence</strong> takes a plain number with no unit attached. Paste DNA; FASTA headers and digits are ignored. Fill it from a measurement rather than a memory — DNA sequence is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Minimum protein length</strong> is measured in aa. Shorter ORFs are ignored. Fill it from a measurement rather than a memory — Minimum protein length is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Count as a start</strong> takes a plain number with no unit attached. This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — Count as a start is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>DNA sequence</th><td>ATGAAACCCGGGTTTAAACCCGGGTTTAAACCCGGGTAA</td></tr><tr><th>Minimum protein length</th><td>3</td></tr><tr><th>Count as a start</th><td>ATG only</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Open reading frames</th><td>1</td></tr><tr><th>Longest ORF</th><td>12 aa</td></tr><tr><th>On the forward strand</th><td>1</td></tr><tr><th>On the reverse strand</th><td>0</td></tr><tr><th>Stop codons in frame</th><td>6</td></tr></tbody></table><p>One ORF of twelve residues, on the forward strand, with six stop codons in the sequence overall: a single short open frame in a paste that is mostly stops, which is what an unselected sequence looks like.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>DNA sequence</th><td>TTTAAACCCGGGTTTAAACAT</td></tr><tr><th>Minimum protein length</th><td>3</td></tr><tr><th>Count as a start</th><td>ATG only</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Open reading frames</th><td>1</td></tr><tr><th>Longest ORF</th><td>7</td></tr><tr><th>On the forward strand</th><td>0</td></tr><tr><th>On the reverse strand</th><td>1</td></tr><tr><th>Stop codons in frame</th><td>4</td></tr></tbody></table><p>4 of the 5 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 5 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Open reading frames</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Longest ORF</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>On the forward strand</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>On the reverse strand</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li><li><strong>Stop codons in frame</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. Nothing about it is saved, so if the figure matters, copy it out — the page will not remember it for you.</li></ul>
+            <ul><li><strong>Open reading frames</strong> — start-to-stop runs above the minimum length.</li><li><strong>Longest ORF</strong> — the residue count of the longest one found.</li><li><strong>Forward</strong> — ORFs on the strand as pasted.</li><li><strong>Reverse</strong> — ORFs on the reverse complement.</li><li><strong>Stops</strong> — stop codons in the sequence, in all frames.</li></ul><p>Strand matters. A high proportion of real genes sit on the reverse strand, and an ORF finder that only reads forward will report nothing for half of all bacterial genes. The stop count is context: many stops with few ORFs means a sequence with no coding pressure at all.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p><strong>DNA sequence</strong> takes text, not a number, so the way it is pasted decides whether the analysis is right.</p><ul><li><strong>No header line.</strong> A FASTA file starts with a line that begins with &quot;&gt;&quot; — a name, not a sequence. Paste from the line below it, or that line is read as characters of its own.</li><li><strong>No spaces or line numbers.</strong> Nucleotide and protein text is often printed in blocks of sixty or eighty characters. Line breaks are usually fine; spaces, tabs and the numbers down the side are not.</li><li><strong>Case is a choice you make.</strong> Upper-case is the convention, but lower-case is often used to mark a region such as soft-masked repeats. Whether the page folds case or respects it is part of what it is telling you, so keep the case you mean.</li><li><strong>Ambiguous characters are not rare.</strong> Sites where the read was uncertain are usually written as N or as a degenerate code. They are counted like any other character, which is right, but it means the answer describes the text as written rather than the molecule as it is.</li></ul><p>The quick check is always the same: does the reported length match the text you pasted? If Open reading frames, Longest ORF, On the forward strand and On the reverse strand disagree with what you can count by eye, the box is holding something you did not intend to give it.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Find the first ATG by eye, read triplets until a stop, and count them. That is one ORF; if it is above your minimum, the page should list it. Then write out the reverse complement of the first twenty bases and check that an ORF on that strand appears in the reverse list.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>The calculation on this page is a procedure rather than one formula: it takes ORF Finder, works through it, and the panel lists DNA sequence, Minimum protein length and Count as a start.</p><p>The processing runs locally: the text you enter stays in the page, the script reads it, and the results are printed beside it. Nothing about your input is stored after you leave.</p><p>Because the script works on exactly what it is given, the usual failure is not arithmetic but input: trailing spaces, a header line from a FASTA file, an ambiguous base in the middle of a sequence. Check that the box holds the characters you meant and nothing else.</p><p>What comes back is Open reading frames, Longest ORF, On the forward strand and On the reverse strand — the same input described several ways, which is why the panel lists them side by side rather than picking one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Minimum length</strong> — A minimum of twenty residues hides every short peptide. Lower it when the question is whether anything could be encoded here.</li><li><strong>Start codons</strong> — Bacterial genes often begin with GTG or TTG. Eukaryotic ones almost always begin with ATG.</li><li><strong>Nested frames</strong> — Reading the same sequence in frame 2 shifts every codon; an ORF in one frame is a stop-rich mess in another.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Open reading frames follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>No scoring</strong> — Every ORF is reported as equal; there is no ribosomal binding site, promoter or codon-bias weighting.</li><li><strong>Contiguous sequence only</strong> — Introns and spliced genes are read as one continuous frame.</li><li><strong>Six frames, one code</strong> — The standard genetic code is used; mitochondrial codes are not.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>ORF Finder has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: DNA sequence, Minimum protein length and Count as a start measured, Open reading frames and Longest ORF wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
+            <p>ORF finding is used to look for genes in an unknown sequence, to check whether a cloned fragment could encode a peptide, to confirm that a construct is in frame, and to find the second gene that a small plasmid is quietly carrying.</p><p>A useful habit is to run the same sequence with two different minimum lengths. If the list changes shape between them, the shorter ORFs are noise; if a single long frame survives both, that is the candidate worth following up. On a plasmid, the one that matters is usually the longest, not the first one reported.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the ORF Finder calculator work out?', 'a' => 'Open reading frames, Longest ORF, On the forward strand and On the reverse strand.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            DNA sequence, Minimum protein length (aa), Count as a start. Fill DNA sequence, minimum protein length and count as a start and leave Open reading frames empty if you would rather have that one solved instead.
+            ['q' => 'Why do I get ORFs in all six frames?', 'a' => 'Because three frames on each strand are possible and the page reports all of them; only one frame is the real coding frame for any given gene.'],
+            ['q' => 'Should I include GTG and TTG as starts?', 'a' => 'For bacterial sequences, yes. For eukaryotic ones, ATG alone is right.'],
+            ['q' => 'Does ORF Finder use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Open reading frames is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'The page needs every box filled: Open reading frames is fixed as the value it works out, so there is nothing to solve for when an input is missing.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Open reading frames keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/water-soluble-fertilizer', 'name' => 'Water soluble fertilizer Calculator'],

@@ -1,0 +1,230 @@
+<?php
+/* Hand-written copy for the last seven script pages. */
+return [
+    'random-sequence-generator' => [
+        'title' => 'Random DNA Sequence Generator with Set GC Content',
+        'desc' => 'Generate a random DNA or RNA sequence of any length with a target GC content, a fixed seed for reproducibility, and an optional start codon.',
+        'intro' => 'Random sequences are the null hypothesis of molecular biology: if a motif appears in one, it appeared by chance. This page generates them to a chosen length and GC content, reproducibly, with an optional start codon at the front.',
+        'does' => 'It builds a DNA or RNA sequence at the length you ask for, drawing bases so that the GC content lands near your target rather than drifting, and reports what GC content it actually produced.',
+        'how' => 'The page splits the requested length into the number of G and C bases and the number of A and T bases that match your target percentage, then shuffles those bases with a pseudo-random generator seeded from the number you supply. A seed makes the run reproducible: the same seed and the same settings always give the same sequence. If you ask for a start codon, the first three bases are set to ATG and the rest of the sequence is drawn around it.',
+        'example_note' => 'Sixty bases at a requested 50 per cent GC came out at 48.33 per cent: with a fixed count of G and C there are only so many positions, and the page reports the achieved figure rather than the requested one.',
+        'read' => 'The achieved GC content is the figure to quote. Because the page fixes the counts before shuffling, the achieved value is always close to the request, but it is the achieved value that describes the sequence on screen.',
+        'defs' => [
+            'GC content of the output' => 'the GC percentage actually present in the generated sequence, which can differ from the target by rounding.',
+        ],
+        'check' => 'Count the Gs and Cs in the generated sequence and divide by the length; the result should match the reported percentage. Regenerate with the same seed and the same sequence should come back — that is the check that the seed is being honoured.',
+        'pitfalls' => [
+            'Assuming the target is exact' => 'A fixed number of bases cannot always express a percentage exactly, so the achieved figure is the one to use.',
+            'Comparing unseeded runs' => 'Two random sequences differ by definition. Fix the seed when you need to compare two downstream results.',
+            'Start codons' => 'Asking for a start codon removes three bases from the random draw, which shifts the composition slightly.',
+        ],
+        'limits' => [
+            'Uniform composition only' => 'The generator matches GC content, not dinucleotide frequencies. Real genomes have structure that this does not reproduce.',
+            'Not cryptographic' => 'The pseudo-random generator is reproducible by design and is not suitable for anything security-related.',
+            'Sequence only' => 'It produces letters; it does not make a plausible gene, a promoter or a repeat.',
+        ],
+        'uses' => 'Random sequences are used as negative controls in motif searches, as null models when asking whether an observed GC content is unusual, as filler DNA in a construct, and as test input when checking that a pipeline handles sequence it has never seen.',
+        'extra' => 'The useful habit is to generate several sequences at the same GC content when running a null test. One random sequence is an anecdote; two hundred of them give a distribution, and it is the distribution that tells you whether your real sequence is unusual.',
+        'faq' => [
+            ['q' => 'Why is the GC content not exactly what I asked for?', 'a' => 'Because the number of bases is a whole number. The page builds as close as the length allows and reports what it made.'],
+            ['q' => 'What is the seed for?', 'a' => 'Reproducibility. The same seed and settings always produce the same sequence, so two people can compare results on identical input.'],
+        ],
+    ],
+
+    'restriction-buffer-compatibility' => [
+        'title' => 'Double Digest Buffer Compatibility for Two Enzymes',
+        'desc' => 'Compare two restriction enzymes and see which buffers suit both, the best combined activity, and whether the digest has to be done one enzyme at a time.',
+        'intro' => 'A double digest only works if one buffer suits both enzymes at once. This page compares the two and tells you whether a shared buffer exists, how much activity each enzyme keeps in it, and whether a sequential digest is the better plan.',
+        'does' => 'It answers the practical question before a digest is set up: can these two enzymes work in the same buffer, and if not, which order should they be used in?',
+        'how' => 'Each enzyme carries a salt requirement — the concentration at which it works best — and the page compares the two against a panel of buffers, with an option to restrict the panel to the classic buffers or to include the modern universal ones. For each buffer it computes the activity both enzymes would retain. A buffer that keeps both above a usable threshold counts as suitable, and the best combined figure is the weaker of the two activities in the best buffer.',
+        'example_note' => 'EcoRI and BamHI in classic buffers give one suitable buffer and a best combined activity of 100 per cent — they share an optimal buffer, and no sequential digest is needed.',
+        'read' => 'Read the suitable count first: zero means no shared buffer and a sequential digest. The best combined figure tells you how comfortable the shared buffer is; anything below about 50 per cent means the digest will be slow and may need more enzyme or more time.',
+        'defs' => [
+            'Buffers that suit both' => 'how many of the buffers in the panel keep both enzymes at usable activity.',
+            'Best combined activity' => 'the activity of the weaker enzyme in the best shared buffer, as a percentage of its optimum.',
+            'Sequential' => 'whether a one-enzyme-then-the-other protocol is needed, given the shared buffers available.',
+        ],
+        'check' => 'Look up the two enzymes in the supplier\'s compatibility chart and see whether the buffer the page names appears in both columns at a high percentage. Supplier charts remain the authority; the page is a fast cross-check.',
+        'pitfalls' => [
+            'Universal buffers' => 'Modern kits include a buffer that suits nearly everything. Leaving it out of the panel makes incompatible enzymes look worse than they are.',
+            'Star activity' => 'Some enzymes become less specific at high salt or in the wrong buffer, cutting at near-cognate sites. A "suitable" buffer is not always a safe one.',
+            'Heat inactivation' => 'If you plan a sequential digest, the first enzyme must be inactivatable before the second is added.',
+        ],
+        'limits' => [
+            'A fixed panel' => 'The buffers modelled are the common ones; a supplier-specific formulation may differ.',
+            'No star activity model' => 'The page weighs activity, not fidelity.',
+            'Two enzymes' => 'A triple digest needs pairwise checks.',
+        ],
+        'uses' => 'It is used before setting up a double digest, when a diagnostic digest gives partial products, and when deciding whether to buy a universal-buffer enzyme for a step that keeps failing.',
+        'extra' => 'A sequential digest is not a failure. When the two enzymes have no shared buffer, digesting with the salt-tolerant one first, then adjusting the buffer and adding the second, is more reliable than compromising both. The page tells you when that is the better route rather than leaving you to discover it from a partial digest.',
+        'faq' => [
+            ['q' => 'What does a combined activity of 50 per cent mean in practice?', 'a' => 'Each enzyme works at half its optimal rate. Doubling the enzyme or the incubation time usually compensates, but the reaction is less forgiving.'],
+            ['q' => 'Why would a digest need to be sequential?', 'a' => 'Because no single buffer keeps both enzymes active enough, so each is given its own optimal conditions in turn.'],
+        ],
+    ],
+
+    'restriction-digest' => [
+        'title' => 'Restriction Digest Calculator: Cut Sites and Fragments',
+        'desc' => 'Paste DNA, choose one or two enzymes and a linear or circular molecule, and read the cut sites, the fragments and their largest and smallest sizes.',
+        'intro' => 'A restriction digest turns a sequence into fragment sizes. Paste the DNA, choose the enzymes, say whether the molecule is linear or circular, and the page reports where it cuts and what the gel would show.',
+        'does' => 'It predicts the fragments a digest will produce: how many sites each enzyme has, how many pieces result, and how big the largest and smallest are.',
+        'how' => 'Each enzyme has a recognition sequence and a cut position within it. The page scans the sequence for both, on the forward strand and, for non-palindromic sites, on the reverse complement, converting each hit back to a top-strand coordinate. If the molecule is circular, the sequence is scanned across the origin as well, so a site spanning the join is found. The cut coordinates are sorted, and the distances between them are the fragments — with the closing distance added for a circle, and the two end pieces added for a line.',
+        'example_note' => 'Seventy-two bases with two EcoRI sites and two HindIII sites give four cuts and five fragments: the largest is 30 bases and the smallest is a single base, which is the fragment between two cuts that fall one base apart.',
+        'read' => 'Fragment sizes are what a gel reports, so they are the figures to compare with a picture. The site count is diagnostic: one site in a circular plasmid gives one fragment the size of the plasmid, which looks like nothing happened on a gel unless you compare it with the uncut lane.',
+        'defs' => [
+            'Sequence length' => 'bases after cleaning.',
+            'Cut sites' => 'positions where the chosen enzymes cut, counting both enzymes together.',
+            'Fragments' => 'pieces produced, one more than the cuts on a line and equal to the cuts on a circle.',
+            'Largest' => 'the biggest fragment, in bases.',
+            'Smallest' => 'the smallest fragment — often the one that runs off the gel.',
+        ],
+        'check' => 'Count the recognition sites by eye and add one for a linear molecule, or leave the count as it is for a circle. Then check that the fragment sizes add up to the sequence length for a line, and to the same length for a circle.',
+        'pitfalls' => [
+            'Wrong topology' => 'A circular plasmid with two sites gives two fragments, not three. Choosing linear changes the answer completely.',
+            'Methylation' => 'A methylated site is not cut in a real reaction, and the page cannot see methylation.',
+            'Partial digests' => 'The page predicts a complete digest. Fewer, larger fragments on the gel usually mean the enzyme did not finish.',
+        ],
+        'limits' => [
+            'A fixed enzyme panel' => 'Only the enzymes listed are modelled. Others need a different tool or a hand search.',
+            'Exact matches only' => 'The page looks for the exact recognition sequence; degenerate isoschizomes are separate entries.',
+            'No gel physics' => 'It reports sizes, not how they will resolve or run.',
+        ],
+        'uses' => 'Digest prediction is used to design a diagnostic digest, to check that a clone has the insert in the right orientation, to choose enzymes for a double digest, and to explain a gel that shows more bands than expected.',
+        'extra' => 'The number of bands is not the number of fragments on a gel: two fragments of the same size run as one band, so a predicted five-fragment digest can show four. That is the commonest reason a correct prediction looks wrong on a photograph.',
+        'faq' => [
+            ['q' => 'Why does my digest show fewer bands than predicted?', 'a' => 'Co-migrating fragments of similar size, a partial digest, or a fragment too small to see. Compare the sizes before assuming a problem.'],
+            ['q' => 'Why does circular DNA give fewer fragments?', 'a' => 'Because the two ends are joined. With the same number of cuts a circle always gives one fewer piece than a line.'],
+        ],
+    ],
+
+    'restriction-enzyme-finder' => [
+        'title' => 'Restriction Enzyme Finder: Cutters, Unique Sites',
+        'desc' => 'Scan a sequence against a panel of restriction enzymes and read which ones cut, which cut once, and which do not cut at all, linear or circular.',
+        'intro' => 'Before choosing an enzyme for a digest, you need to know which ones cut your sequence at all. This page scans a DNA sequence against a panel of enzymes and sorts them into cutters, unique cutters and non-cutters.',
+        'does' => 'It tells you which enzymes in the panel have sites in your sequence, how many cut exactly once, and how many do not cut at all — the list you want when choosing an enzyme for a diagnostic digest or a cloning strategy.',
+        'how' => 'The sequence is cleaned and each enzyme in the panel is searched for its recognition site, on both strands where the site is not palindromic. A site that spans the origin counts when the molecule is marked circular. Enzymes are then grouped by how many sites they have: none, one, or more than one. A unique cutter is the useful kind for linearising a plasmid.',
+        'example_note' => 'Twenty-six enzymes in the panel, five of them cutting this 36-base fragment, none of them exactly once, and twenty-one with no site at all — a short sequence gives a lot of non-cutters.',
+        'read' => 'Unique cutters are the ones that linearise a plasmid in one place. Enzymes with several sites are for diagnostic digests; enzymes with none are the ones a cloning strategy has to avoid. The proportion matters too: a short sequence will always show many non-cutters.',
+        'defs' => [
+            'Enzymes that cut' => 'panel members with at least one site.',
+            'Unique cutters' => 'enzymes with exactly one site.',
+            'No site' => 'enzymes in the panel with none.',
+        ],
+        'check' => 'Pick one enzyme from the cutter list and find its recognition sequence in the paste by eye. The count you find should match the page, and for a circular molecule remember to check across the join as well.',
+        'pitfalls' => [
+            'Circular versus linear' => 'A site spanning the origin exists only on a circle. Marking the molecule wrongly changes the unique-cutters list.',
+            'Methylation' => 'Dam and Dcm methylation block some enzymes, and the page cannot see it.',
+            'Panel limits' => 'An enzyme missing from the panel looks like a non-cutter; it is just not modelled.',
+        ],
+        'limits' => [
+            'Fixed panel' => 'Only the enzymes listed are searched.',
+            'No isoschizomers' => 'Enzymes that recognise the same site but come from different organisms are separate entries only when listed.',
+            'No star activity' => 'The scan finds exact sites and says nothing about near-cognate cutting.',
+        ],
+        'uses' => 'It is used to choose a linearising enzyme for a plasmid, to check that a cloning site is unique, to plan a diagnostic digest that distinguishes two constructs, and to avoid an enzyme that would cut an insert in half.',
+        'extra' => 'For a cloning strategy the list to keep is the unique cutters: they are the enzymes that will open the vector once. Enzymes with several sites are useful later, for checking the construct, and the non-cutter list is what you check the insert against before choosing a site to cut at.',
+        'faq' => [
+            ['q' => 'Why do I have no unique cutters?', 'a' => 'Because at least two enzymes in the panel have sites, and none of them exactly one. On a small fragment that is normal; on a plasmid it usually means the panel has several common sites.'],
+            ['q' => 'Does a circular molecule find more sites?', 'a' => 'Yes. A site that spans the origin exists only when the sequence is joined end to end.'],
+        ],
+    ],
+
+    'reverse-complement' => [
+        'title' => 'Reverse Complement Calculator for DNA and RNA',
+        'desc' => 'Paste a DNA or RNA sequence and get the opposite strand, written in lines you choose, with the length, GC content and melting temperature of the duplex.',
+        'intro' => 'A reverse complement is the other strand of a duplex: read backwards, with each base replaced by its partner. Paste a sequence and this page writes it out, in lines of the width you choose, with the composition figures beside it.',
+        'does' => 'It gives you the strand a primer would bind to, or the sequence a polymerase would read, in the opposite orientation — the everyday operation behind primer design, cloning and any search on both strands.',
+        'how' => 'The sequence is cleaned, uppercased and read from the end backwards, with each base replaced by its complement — A with T (or U, for RNA), G with C, and ambiguity codes by their own partners. The result is then wrapped at the line width you set, with zero meaning one long line. Length, GC content and melting temperature are computed on the original sequence, because a duplex has the same composition either way round.',
+        'example_note' => 'A 39-base sequence gives 39 bases back, with the same 56.41 per cent GC and the same 70.8 °C melting point — the composition of a duplex does not depend on which strand you read.',
+        'read' => 'The output is the strand, not the answer to a question, so the figures beside it are there to confirm that the paste is what you expected. A GC content that looks wrong usually means a DNA sequence was pasted into RNA mode, or the other way round.',
+        'defs' => [
+            'Length' => 'bases in the sequence you pasted, unchanged by complementing.',
+            'GC content' => 'the percentage of G and C, identical for both strands.',
+            'Melting temperature' => 'the predicted duplex melting point from composition and length.',
+        ],
+        'check' => 'Do the first three bases by hand: A becomes T, T becomes A, G becomes C, and their order reverses. Then confirm that the last base of the input is the first base of the output.',
+        'pitfalls' => [
+            'Complement without reversing' => 'The two operations are separate. Complementing without reversing gives the wrong strand entirely.',
+            'RNA versus DNA' => 'In RNA, A pairs with U, not T. Choosing the wrong alphabet leaves Ts or Us scattered through the output.',
+            'Ambiguity codes' => 'N pairs with N, R with Y, and so on; a code the page does not know is passed through unchanged.',
+        ],
+        'limits' => [
+            'Letters only' => 'Nothing else is interpreted: no reading frames, no genes, no annotation.',
+            'One strand at a time' => 'A mixed paste is complemented as one sequence, not split into records.',
+            'No verification' => 'The page does not check that the result is a sensible molecule.',
+        ],
+        'uses' => 'Reverse complements are used every time a reverse primer is designed, when a motif is searched on both strands, when a sequence is flipped into the orientation a database expects, and when checking that two sequences are the same molecule read in opposite directions.',
+        'extra' => 'A quick sanity check worth doing on any reverse complement: the two sequences should have identical base counts in total, and their first and last bases should swap. If the counts differ, a letter was dropped rather than complemented — usually a T in an RNA paste or a character the page did not recognise.',
+        'faq' => [
+            ['q' => 'What is the difference between complement and reverse complement?', 'a' => 'The complement replaces each base and keeps the order. The reverse complement replaces each base and reverses the order, which is what the opposite strand actually looks like written 5′ to 3′.'],
+            ['q' => 'Why did my T disappear?', 'a' => 'Because the RNA alphabet was selected. RNA has U in place of T, and the page follows that rule strictly.'],
+        ],
+    ],
+
+    'reverse-translate' => [
+        'title' => 'Reverse Translate Protein to DNA with Codon Choice',
+        'desc' => 'Turn a protein sequence back into DNA using host-preferred or GC-balanced codons, with an optional stop, and read the length, GC content and melting point.',
+        'intro' => 'Reverse translation writes the DNA that could encode a protein. There is no single answer — most residues have several codons — so the page picks codons according to a strategy and shows the DNA it produced with its composition.',
+        'does' => 'It converts a protein into a DNA sequence using a codon table chosen for a host or balanced for GC content, adds a stop codon if you ask, and reports the length, GC percentage and melting temperature of the result.',
+        'how' => 'The protein is cleaned and read residue by residue. Each residue is looked up in the chosen strategy: the most-used codon for the host, the most GC-rich or most AT-rich synonyms, or a balance between them. The chosen codons are concatenated, a stop is appended if requested, and the composition of the DNA is measured on the result.',
+        'example_note' => 'A 29-residue protein becomes 90 bases — three per residue — with a GC content of 42.22 per cent, using E. coli\'s preferred codons and a stop. The codon count of 30 includes that stop.',
+        'read' => 'The GC content is the figure that decides whether the DNA is comfortable to synthesise. Very high GC means secondary structure and failed synthesis; very low GC means weak hybridisation and poor amplification. The DNA length should always be three times the residue count, plus three if a stop was added.',
+        'defs' => [
+            'Protein length' => 'residues in the paste.',
+            'DNA length' => 'bases produced, three per residue plus the stop if requested.',
+            'GC content' => 'the GC percentage of the DNA produced.',
+            'Codons' => 'codon count in the result, including the stop.',
+            'Melting temperature' => 'the predicted duplex melting point of the DNA produced.',
+        ],
+        'check' => 'Translate the first three codons of the output back with a genetic-code table; they should give the first three residues of your protein. Then check that the length is exactly three times the residue count, plus three for the stop.',
+        'pitfalls' => [
+            'DNA pasted as protein' => 'A nucleotide sequence will reverse translate into a long string of alanine, threonine, glycine and cysteine — three times the length you expected is the giveaway.',
+            'Stop codons' => 'Whether the DNA ends with a stop is a setting. Forgetting it changes the length by three and can leave a construct without a terminator.',
+            'One strategy' => 'The codons are chosen by one rule. A codon-optimised gene for expression may need a different balance than one written for GC content.',
+        ],
+        'limits' => [
+            'No full optimisation' => 'The page does not avoid restriction sites, repeats or strong secondary structure.',
+            'One codon per residue' => 'Except where a degenerate strategy is offered, a single codon is chosen.',
+            'Standard code' => 'Alternative genetic codes are not applied.',
+        ],
+        'uses' => 'Reverse translation is used to design a gene for synthesis, to write a peptide as orderable DNA, to check that a construct encodes the protein intended, and to see how much the GC content of a gene depends on the codons chosen.',
+        'extra' => 'The interesting comparison is between strategies. The same protein translated with host-preferred codons and with GC-balanced codons gives two DNA sequences with noticeably different GC content, and it is the lower one that usually synthesises and amplifies more easily. Running both takes a moment and often saves a redesign later.',
+        'faq' => [
+            ['q' => 'Is there one right DNA sequence for a protein?', 'a' => 'No. Most residues have several codons, and the choice trades expression, GC content and synthesis difficulty against each other.'],
+            ['q' => 'Why is my DNA longer than three times the protein?', 'a' => 'Because a stop codon was added, or because the paste contained characters that were read as extra residues. Check the residue count first.'],
+        ],
+    ],
+
+    'sequence-shuffler' => [
+        'title' => 'DNA and Protein Sequence Shuffler with Fixed Seed',
+        'desc' => 'Shuffle a DNA or protein sequence while keeping its exact composition, mononucleotide or dinucleotide, with a seed so the same shuffle repeats.',
+        'intro' => 'A shuffled sequence keeps the letters and loses the order. That makes it the standard null model for asking whether an order-dependent feature — a motif, a repeat, a secondary structure — is really there.',
+        'does' => 'It rearranges a sequence without changing its composition, in one of two modes: shuffling single bases, or shuffling dinucleotides so that the pair frequencies survive as well. The seed makes the result reproducible.',
+        'how' => 'In single-base mode the letters are collected and dealt out again in a pseudo-random order, so the counts of A, C, G and T are identical to the input. In dinucleotide mode the sequence is split into overlapping pairs, the pairs are permuted, and the sequence is reconstructed from them, which preserves both the base composition and the frequency of each dinucleotide. The page then reports the length, GC content, how many positions changed, and the Hamming distance as a percentage.',
+        'example_note' => 'A 36-base sequence shuffled by single bases kept its 55.56 per cent GC exactly, changed 23 positions out of 36, and came out 63.9 per cent different from the original — the composition is fixed and everything else moved.',
+        'read' => 'The changed count is the measure of how much the order actually matters. A low figure means the shuffled sequence is close to the original, which makes it a weak null; a high one means the comparison will be sensitive. GC content should be identical in single-base mode and near-identical in dinucleotide mode.',
+        'defs' => [
+            'Length' => 'bases or residues in the sequence.',
+            'GC content' => 'unchanged in single-base shuffling, by construction.',
+            'Changed positions' => 'how many positions hold a different letter from the input.',
+            'Hamming distance' => 'the changed count as a percentage of the length.',
+        ],
+        'check' => 'Count the bases before and after: they must be identical. Then fix the seed and rerun; the same sequence should come back, which is the test that the shuffle is reproducible.',
+        'pitfalls' => [
+            'Dinucleotide mode expectations' => 'It preserves pairs, so a shuffled sequence can still contain the motif you were testing against. That is the point, but it catches people out.',
+            'Short sequences' => 'Under about twenty bases, a shuffle barely changes anything and the null is useless.',
+            'One shuffle' => 'A single shuffled sequence is one sample from a distribution. A proper null test needs many.',
+        ],
+        'limits' => [
+            'Composition only' => 'The shuffle preserves base or pair counts, nothing about structure or codon usage.',
+            'Not a model of evolution' => 'It produces a null, not a plausible relative.',
+            'Seed-dependent' => 'A different seed gives a different sequence; that variation is part of the result.',
+        ],
+        'uses' => 'Shuffling is used to test whether a motif occurrence is more than chance, to check whether a predicted hairpin depends on base order, and to build control sets for any analysis that compares sequences.',
+        'extra' => 'The right way to use a shuffler is in numbers. Generate a hundred shuffles, measure the feature you care about in each, and compare the real sequence with that distribution. A single shuffle can be more or less extreme than the real sequence by accident, and a conclusion drawn from one comparison is not a test.',
+        'faq' => [
+            ['q' => 'What is the difference between the two modes?', 'a' => 'Single-base shuffling preserves only the counts of A, C, G and T. Dinucleotide shuffling also preserves how often each pair occurs, which keeps more of the sequence\'s character.'],
+            ['q' => 'Why does the GC content stay the same?', 'a' => 'Because shuffling rearranges the letters that are there; it never adds or removes one.'],
+        ],
+    ],
+];

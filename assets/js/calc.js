@@ -717,6 +717,30 @@
         var v = state.values[name];
         return v === undefined || v === null ? '' : String(v);
       },
+      /*
+       * The words the visitor sees for a choice, not its stored value.
+       *
+       * A choice control keeps an opaque id (`o-a1ff4d8500b4`) as its value, so a
+       * page script that asked for the raw input could not tell "Circular" from
+       * "Linear" and quietly ran its default branch. This returns the label of
+       * the checked radio, or the text of the selected option.
+       */
+      getChoice: function (name) {
+        var radio = widget.querySelector('input[type="radio"][name="' + name + '"]:checked');
+        if (radio) {
+          var lab = radio;
+          while (lab && lab.tagName !== 'LABEL') { lab = lab.parentNode; }
+          var words = lab ? String(lab.textContent || '').replace(/\s+/g, ' ').trim() : '';
+          return words !== '' ? words : radio.value;
+        }
+        var sel = widget.querySelector('select[data-var="' + name + '"]');
+        if (sel && sel.selectedIndex >= 0 && sel.options[sel.selectedIndex]) {
+          return String(sel.options[sel.selectedIndex].textContent || '').replace(/\s+/g, ' ').trim();
+        }
+        var inp = widget.querySelector('input[data-var="' + name + '"], textarea[data-var="' + name + '"]');
+        if (inp) { return inp.value; }
+        return '';
+      },
       getInput: function (name) {
         var v = state.values[name];
         if (v === undefined || v === null) return null;

@@ -11,9 +11,9 @@
 
 return [
     'name' => 'PCR Primer Stats Calculator',
-    'meta' => ['title' => 'PCR Primer Stats Calculator: Units & Formula', 'description' => <<<'TXT'
-    PCR Primer Stats Calculator turns forward primer (5′→3′) and reverse primer (5′→3′) into forward length. The formula is printed in the form's own words.
-    TXT, 'h1' => 'PCR Primer Stats Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a primer pair and works out length, GC content, melting temperature, hairpins and dimers',
+    'meta' => ['title' => 'PCR Primer Stats Calculator: Tm, GC Content and Annealing', 'description' => 'Paste a primer pair and read each primer\'s length, GC content and melting temperature, plus the annealing temperature and the gap between the two primers.', 'h1' => 'PCR Primer Stats Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -53,77 +53,68 @@ return [
                         [
                             'name' => 'fwd_len',
                             'label' => 'Forward length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'nt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'fwd_gc',
                             'label' => 'Forward GC',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'fwd_tm',
                             'label' => 'Forward Tm',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
                             'help' => 'Wallace under 14 nt, GC rule to 40 nt, then the long form',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'rev_len',
                             'label' => 'Reverse length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'nt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'rev_gc',
                             'label' => 'Reverse GC',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'rev_tm',
                             'label' => 'Reverse Tm',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'ta',
                             'label' => 'Suggested annealing temperature',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
                             'help' => 'About the lower primer Tm minus 5',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'dtm',
                             'label' => 'Difference in Tm',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
                             'help' => 'Under 5 °C is the usual target',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'dimer',
                             'label' => 'Longest 3′ complementary run',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bases',
                             'help' => '3 or more risks primer dimers',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -297,53 +288,58 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        PCR Primer Stats turns Forward primer (5′→3′) and Reverse primer (5′→3′) into Forward length and Forward GC. The arithmetic is the whole method: forward length is worked out from forward primer (5′→3′) by one formula, applied once. Forward length comes back in nt unless you switch the unit chip beside the box.
+        Before a primer pair goes into a reaction, four numbers decide whether it will work: length, GC content, melting temperature and how closely the two melting temperatures match. This page reports all four for both primers and the annealing temperature that follows.
         TXT,
         'sections' => [
-            ['title' => 'How the PCR Primer Stats calculator works', 'html' => <<<'TXT'
-            <p>PCR Primer Stats answers one question from 2 numbers, and the answer is Forward length, Forward GC and Forward Tm.</p><p>What comes back is Forward length, Forward GC, Forward Tm and Reverse length — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It describes a primer pair the way a thermocycler needs to see it, and flags the two pair-level problems that single-primer tools miss: a large difference between the two melting temperatures, and a pair that would rather bind to itself.</p><p>Each primer is cleaned to letters and its length and GC content counted. The melting temperature is estimated from length and composition using the standard rules: the Wallace rule for very short primers, the GC-percentage form for typical ones, and a thermodynamic approximation for longer ones. The annealing temperature is derived from the pair, and the temperature gap is the difference between the two melting points — the figure that decides whether one annealing step can serve both primers.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Forward primer (5′→3′)</strong> — a plain number, no unit. Paste the primer</li><li><strong>Reverse primer (5′→3′)</strong> — a plain number, no unit. Paste the primer as ordered</li></ul><p>The result boxes are Forward length in nt, Forward GC in %, Forward Tm in °C, Reverse length in nt, Reverse GC in %, Reverse Tm in °C, Suggested annealing temperature in °C, Difference in Tm in °C, Longest 3′ complementary run in bases; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Forward primer (5′→3′)</strong> — a text box. Paste the primer.</li><li><strong>Reverse primer (5′→3′)</strong> — a text box. Paste the primer as ordered.</li></ul><p>The answer comes back as 9 boxes: Forward length (nt), Forward GC (%), Forward Tm (°C), Reverse length (nt), Reverse GC (%), Reverse Tm (°C), Suggested annealing temperature (°C), Difference in Tm (°C), Longest 3′ complementary run (bases). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>None of the boxes on this page carries a unit chip: Forward length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Forward length, Forward GC and Forward Tm are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Forward primer (5′→3′) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Forward primer (5′→3′) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Reverse primer (5′→3′) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Reverse primer (5′→3′) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Forward primer (5′→3′) and let the panel round the answer once.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Forward primer (5′→3′)</strong> is a text box. Paste the primer Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Reverse primer (5′→3′)</strong> is a text box. Paste the primer as ordered Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Forward primer (5′→3′)</strong> takes a plain number with no unit attached. Paste the primer. Have it to hand before you start: Forward primer (5′→3′) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Reverse primer (5′→3′)</strong> takes a plain number with no unit attached. Paste the primer as ordered. Have it to hand before you start: Reverse primer (5′→3′) is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Forward primer (5′→3′)</th><td>ATGGCCATTGTAATGGGCC</td></tr><tr><th>Reverse primer (5′→3′)</th><td>GCTGAAAGGGTGCCCGATAG</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Forward length</th><td>19 nt</td></tr><tr><th>Forward GC</th><td>52.6 %</td></tr><tr><th>Forward Tm</th><td>51.1 °C</td></tr><tr><th>Reverse length</th><td>20 nt</td></tr><tr><th>Reverse GC</th><td>60 %</td></tr><tr><th>Reverse Tm</th><td>55.9 °C</td></tr><tr><th>Suggested annealing temperature</th><td>46.1 °C</td></tr><tr><th>Difference in Tm</th><td>4.8 °C</td></tr><tr><th>Longest 3′ complementary run</th><td>1 bases</td></tr></tbody></table><p>A 19-mer at 52.6 per cent GC melts at 51.1 °C; the 20-mer at 60 per cent melts at 55.9 °C. The 4.8 °C gap is wide enough to matter, and the annealing temperature of 46.1 °C sits below both so that neither primer is asked to anneal above its own melting point.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Forward primer (5′→3′)</th><td>CGGATCCGTCGACCTGCAG</td></tr><tr><th>Reverse primer (5′→3′)</th><td>AAGCTTGTCGACCTGCAGG</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Forward length</th><td>19</td></tr><tr><th>Forward GC</th><td>68.4</td></tr><tr><th>Forward Tm</th><td>57.6</td></tr><tr><th>Reverse length</th><td>19</td></tr><tr><th>Reverse GC</th><td>57.9</td></tr><tr><th>Reverse Tm</th><td>53.2</td></tr><tr><th>Suggested annealing temperature</th><td>48.2</td></tr><tr><th>Difference in Tm</th><td>4.3</td></tr><tr><th>Longest 3′ complementary run</th><td>0</td></tr></tbody></table><p>8 of the 9 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 9 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Forward length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Forward GC</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Forward Tm</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Reverse length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Reverse GC</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Reverse Tm</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Suggested annealing temperature</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Difference in Tm</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Longest 3′ complementary run</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Forward length</strong> — bases in the forward primer.</li><li><strong>Forward GC</strong> — the percentage of G and C in the forward primer.</li><li><strong>Forward Tm</strong> — the estimated melting temperature of the forward primer on its own.</li><li><strong>Annealing temperature</strong> — the suggested annealing step for the pair, below the lower melting point.</li><li><strong>Temperature gap</strong> — the difference between the two melting temperatures.</li><li><strong>Pair Tm</strong> — the melting point of the two primers as a pair, which is what the annealing step is really about.</li></ul><p>A well-matched pair is within about 2 °C on melting temperature. A gap of five degrees or more means one primer will anneal while the other is still coming off, and the product will be weak or absent. The annealing temperature is a starting point, not a guarantee: the first few cycles of a gradient will tell you more than any formula.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Forward primer (5′→3′)</strong> and <strong>Reverse primer (5′→3′)</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Forward length, Forward GC, Forward Tm and Reverse length. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Use the Wallace rule on a primer under twenty bases: two degrees for every A or T and four for every G or C. A 19-mer with 10 GC gives about 56 °C by that rule, and the page's more careful estimate is usually a few degrees below it. If your hand figure is far off, count the GC content again.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>PCR Primer Stats is not a single equation with a single answer. It reads Forward primer (5′→3′) and Reverse primer (5′→3′), applies the analysis the page is built around, and reports Forward length, Forward GC, Forward Tm and Reverse length.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Forward length, Forward GC, Forward Tm and Reverse length. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Pasting the reverse primer reversed</strong> — The reverse primer is written 5′ to 3′ as ordered. Pasting its complement, or its reverse, changes the melting figure.</li><li><strong>Short primers</strong> — Under about eighteen bases the melting estimate is sensitive to length and the figures move in steps.</li><li><strong>Stocks versus order</strong> — The numbers describe the primer sequence, not the concentration you resuspend it to.</li></ul><p>Nothing here is pasted from a file: every box is short enough to type, and the choice lists mean the answer depends on which entry is selected rather than on how it is spelled.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Forward length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Composition-based Tm</strong> — Salt, magnesium, dNTPs and primer concentration all move the real melting point and none of them is a box here.</li><li><strong>No product check</strong> — The page scores the primers; it does not check whether they point at each other or amplify one product.</li><li><strong>No specificity</strong> — Whether the primers match the genome you are using is a separate search.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>PCR Primer Stats Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Forward primer (5′→3′) and Reverse primer (5′→3′) measured, Forward length and Forward GC wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
+            <p>Primer statistics are checked when ordering a new pair, when explaining why one reaction in a plate worked and another did not, and when deciding whether to redesign the weaker primer of a pair rather than change the whole protocol.</p><p>The pair figures are the ones to act on. If the two melting temperatures disagree by more than a couple of degrees, changing the shorter primer shifts the annealing temperature of the whole reaction, whereas changing the longer one usually does not. When the temperature gap is already small, the useful next check is the pair's tendency to form dimers, which is a separate page.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the PCR Primer Stats calculator work out?', 'a' => 'Forward length, Forward GC, Forward Tm and Reverse length.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Forward primer (5′→3′), Reverse primer (5′→3′). With forward primer (5′→3′) and reverse primer (5′→3′) in place, Forward length can stay blank and the page will work it out.
+            ['q' => 'Why is the annealing temperature lower than both melting points?', 'a' => <<<'TXT'
+            Because the published rules describe the temperature at which half the primer is bound. Annealing at that temperature gives weak priming; five degrees below it gives specific product.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Internally Forward length is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
+            ['q' => 'How close should the two melting temperatures be?', 'a' => 'Within about two degrees. Beyond that the pair is really two primers designed for different reactions.'],
+            ['q' => 'Does PCR Primer Stats Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Forward length, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Forward length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/cephalic-index', 'name' => 'Cephalic Index Calculator'],

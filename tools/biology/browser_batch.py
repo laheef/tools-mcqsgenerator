@@ -61,19 +61,25 @@ FILL = """
 READ = """
 () => {
   const g = document.querySelector('[data-calculator]');
-  const res = document.querySelector('.calc-results');
   const rows = [...document.querySelectorAll('.calc-results .calc-result')]
     .map(r => r.innerText.replace(/\\s+/g, ' ').trim()).filter(Boolean);
-  const boxes = [...document.querySelectorAll('.calc-field[data-output]')]
-    .filter(f => f.offsetParent !== null)
-    .map(f => { const e = f.querySelector('input,textarea'); return [f.getAttribute('data-var'), (e && e.value || '').trim()]; })
-    .filter(x => x[1] !== '');
+  /*
+   * A result row holds its number in an input, and innerText does not reach it:
+   * a page whose answers were all empty still produced three rows, and the
+   * sweep called it answered. The value is what is read now.
+   */
+  const boxes = [...document.querySelectorAll('.calc-results input, .calc-results textarea, .calc-field[data-output] input')]
+    .filter(e => e.offsetParent !== null)
+    .map(e => [e.closest('[data-result-slot]')?.getAttribute('data-result-slot')
+                || e.closest('[data-var]')?.getAttribute('data-var') || '', (e.value || '').trim()]);
+  const filled = boxes.filter(x => x[1] !== '');
   const errs = [...document.querySelectorAll('.calc-widget .calc-help, .calc-msg')]
     .map(e => e.innerText.trim())
     .filter(t => /required|enter a value from|outside/i.test(t));
   return { state: g ? g.getAttribute('data-results') : null,
            rows: rows.slice(0, 4), nrows: rows.length,
-           boxes: boxes.slice(0, 4), nboxes: boxes.length, errs: errs.slice(0, 2) };
+           boxes: filled.slice(0, 4), nboxes: filled.length,
+           slots: boxes.length, errs: errs.slice(0, 2) };
 }
 """
 
@@ -214,7 +220,10 @@ def check(slug: str) -> dict:
                     button.click()
                 page.wait_for_timeout(430)
                 read = page.evaluate(READ)
-                answered = (read["nrows"] > 0) or (read["nboxes"] > 0)
+                # An answered page shows a value. A panel of empty boxes is a
+                # page of empty boxes; only a page with no result box at all
+                # can be answered by its sentences alone.
+                answered = read["nboxes"] > 0 or (read.get("slots", 0) == 0 and read["nrows"] > 0)
                 out.update(read)
                 out["filled"] = filled
                 out["limit"] = limit

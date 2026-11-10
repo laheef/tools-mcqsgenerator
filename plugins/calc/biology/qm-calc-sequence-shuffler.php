@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA Sequence Shuffler',
-    'meta' => ['title' => 'DNA Sequence Shuffler Calculator: Steps & Units', 'description' => 'DNA Sequence Shuffler works out length and GC content from sequence and shuffle by. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'shuffles a sequence while keeping its composition and reports what changed',
+    'meta' => ['title' => 'DNA and Protein Sequence Shuffler with a Fixed Seed', 'description' => 'Shuffle a DNA or protein sequence while keeping its exact composition, by single bases or dinucleotides, with a seed so the same shuffle can be repeated.', 'h1' => 'DNA Sequence Shuffler', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -64,32 +66,28 @@ return [
                         [
                             'name' => 'length',
                             'label' => 'Length',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc_pct',
                             'label' => 'GC content',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
                             'help' => 'Unchanged by mononucleotide shuffling',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'changes',
                             'label' => 'Positions changed',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'hamming',
                             'label' => 'Difference from the input',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -193,7 +191,7 @@ return [
         return a.join('');
       }
       omni.onResult(['sequence', 'mode', 'type', 'seed'], function (ctx) {
-        var kind = /protein/i.test(String(ctx.getRawInput('type') || '')) ? 'protein' : 'dna';
+        var kind = /protein/i.test(String(ctx.getChoice('type') || '')) ? 'protein' : 'dna';
         var seq = cleanSeq(ctx.getRawInput('sequence'), kind);
         if (!seq) {
           ctx.addHtml(block('Shuffled sequence', '—', 'Paste a sequence to shuffle.'));
@@ -202,7 +200,7 @@ return [
         var seed = Number(ctx.getRawInput('seed'));
         if (!isFinite(seed)) seed = 42;
         var rnd = mulberry32(Math.floor(seed) || 1);
-        var mode = /dinucleotide/i.test(String(ctx.getRawInput('mode') || '')) ? 'di' : 'mono';
+        var mode = /dinucleotide/i.test(String(ctx.getChoice('mode') || '')) ? 'di' : 'mono';
         var out = seq.length < 2 ? seq : (mode === 'di' ? shuffleDi(seq, rnd) : shuffleMono(seq, rnd));
     
         var changed = 0;
@@ -231,52 +229,58 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        DNA Sequence Shuffler works out Length and GC content from Sequence, Shuffle by and Molecule. Nothing is looked up on this page: length is computed from sequence and the other boxes, so an unusual pair of values gives an honest answer rather than an error.
+        A shuffled sequence keeps the letters and loses the order. That makes it the standard null model for asking whether an order-dependent feature — a motif, a repeat, a secondary structure — is really there.
         TXT,
         'sections' => [
-            ['title' => 'How the DNA Sequence Shuffler calculator works', 'html' => <<<'TXT'
-            <p>DNA Sequence Shuffler answers one question from 4 numbers, and the answer is Length, GC content and Positions changed.</p><p>The answers are Length, GC content, Positions changed and Difference from the input; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It rearranges a sequence without changing its composition, in one of two modes: shuffling single bases, or shuffling dinucleotides so that the pair frequencies survive as well. The seed makes the result reproducible.</p><p>In single-base mode the letters are collected and dealt out again in a pseudo-random order, so the counts of A, C, G and T are identical to the input. In dinucleotide mode the sequence is split into overlapping pairs, the pairs are permuted, and the sequence is reconstructed from them, which preserves both the base composition and the frequency of each dinucleotide. The page then reports the length, GC content, how many positions changed, and the Hamming distance as a percentage.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 4 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA or protein; headers, spaces and digits are ignored</li><li><strong>Shuffle by</strong> — a plain number, no unit. Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive</li><li><strong>Molecule</strong> — a plain number, no unit</li><li><strong>Random seed</strong> — a plain number, no unit. Same seed, same result — useful for reproducible nulls</li></ul><p>The answers come back as Length, GC content in %, Positions changed, Difference from the input in %. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 4 things to fill in, and the order does not matter:</p><ul><li><strong>Sequence</strong> — a text box. Paste DNA or protein; headers, spaces and digits are ignored.</li><li><strong>Shuffle by</strong> — a drop-down with the choices the page offers. Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive.</li><li><strong>Molecule</strong> — a drop-down with the choices the page offers.</li><li><strong>Random seed</strong> — a number box. Same seed, same result — useful for reproducible nulls.</li></ul><p>The answer comes back as 4 boxes: Length, GC content (%), Positions changed, Difference from the input (%). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>As far as Length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> Length, GC content and Positions changed are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Sequence left as a guess.</strong> Anything typed into Sequence is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Shuffle by left as a guess.</strong> Anything typed into Shuffle by is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Molecule left as a guess.</strong> Anything typed into Molecule is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> Two numbers measured in different units, or one taken at the start of a season and one at the end, are the commonest source of an answer that is internally consistent and still wrong. Convert Sequence to one scale before entering anything.</li></ul>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Sequence</strong> is a text box. Paste DNA or protein; headers, spaces and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Shuffle by</strong> is a drop-down with the choices the page offers. The choices are Single bases and Dinucleotides. Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Molecule</strong> is a drop-down with the choices the page offers. The choices are DNA and Protein. Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Random seed</strong> is a number box. Same seed, same result — useful for reproducible nulls Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Sequence</strong> takes a plain number with no unit attached. Paste DNA or protein; headers, spaces and digits are ignored. Have it to hand before you start: Sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Shuffle by</strong> takes a plain number with no unit attached. Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Shuffle by is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Molecule</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Molecule is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Random seed</strong> takes a plain number with no unit attached. Same seed, same result — useful for reproducible nulls. Have it to hand before you start: Random seed is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Sequence</th><td>AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT</td></tr><tr><th>Shuffle by</th><td>Single bases</td></tr><tr><th>Molecule</th><td>DNA</td></tr><tr><th>Random seed</th><td>7</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Length</th><td>36</td></tr><tr><th>GC content</th><td>55.56 %</td></tr><tr><th>Positions changed</th><td>23</td></tr><tr><th>Difference from the input</th><td>63.9 %</td></tr></tbody></table><p>A 36-base sequence shuffled by single bases kept its 55.56 per cent GC exactly, changed 23 positions out of 36, and came out 63.9 per cent different from the original — the composition is fixed and everything else moved.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Sequence</th><td>AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT</td></tr><tr><th>Shuffle by</th><td>Dinucleotides</td></tr><tr><th>Molecule</th><td>DNA</td></tr><tr><th>Random seed</th><td>3</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Length</th><td>36</td></tr><tr><th>GC content</th><td>55.56</td></tr><tr><th>Positions changed</th><td>27</td></tr><tr><th>Difference from the input</th><td>75</td></tr></tbody></table><p>2 of the 4 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 4 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>GC content</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Positions changed</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Difference from the input</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>Length</strong> — bases or residues in the sequence.</li><li><strong>GC content</strong> — unchanged in single-base shuffling, by construction.</li><li><strong>Changed positions</strong> — how many positions hold a different letter from the input.</li><li><strong>Hamming distance</strong> — the changed count as a percentage of the length.</li></ul><p>The changed count is the measure of how much the order actually matters. A low figure means the shuffled sequence is close to the original, which makes it a weak null; a high one means the comparison will be sensitive. GC content should be identical in single-base mode and near-identical in dinucleotide mode.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Length, GC content, Positions changed and Difference from the input. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Count the bases before and after: they must be identical. Then fix the seed and rerun; the same sequence should come back, which is the test that the shuffle is reproducible.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>DNA Sequence Shuffler is not a single equation with a single answer. It reads Sequence, Shuffle by, Molecule and Random seed, applies the analysis the page is built around, and reports Length, GC content, Positions changed and Difference from the input.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Length, GC content, Positions changed and Difference from the input. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need Sequence, Shuffle by, Molecule and Random seed. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Sequence into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Length with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Dinucleotide mode expectations</strong> — It preserves pairs, so a shuffled sequence can still contain the motif you were testing against. That is the point, but it catches people out.</li><li><strong>Short sequences</strong> — Under about twenty bases, a shuffle barely changes anything and the null is useless.</li><li><strong>One shuffle</strong> — A single shuffled sequence is one sample from a distribution. A proper null test needs many.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> The relationship behind Length is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Composition only</strong> — The shuffle preserves base or pair counts, nothing about structure or codon usage.</li><li><strong>Not a model of evolution</strong> — It produces a null, not a plausible relative.</li><li><strong>Seed-dependent</strong> — A different seed gives a different sequence; that variation is part of the result.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>DNA Sequence Shuffler has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Reach for this page when Sequence, Shuffle by and Molecule is what you already know and Length and GC content is what you need — the reverse of that situation is what the rearranged form is for.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
+            <p>Shuffling is used to test whether a motif occurrence is more than chance, to check whether a predicted hairpin depends on base order, and to build control sets for any analysis that compares sequences.</p><p>The right way to use a shuffler is in numbers. Generate a hundred shuffles, measure the feature you care about in each, and compare the real sequence with that distribution. A single shuffle can be more or less extreme than the real sequence by accident, and a conclusion drawn from one comparison is not a test.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the DNA Sequence Shuffler calculator work out?', 'a' => 'Length, GC content, Positions changed and Difference from the input.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Shuffle by, Molecule, Random seed. Enter sequence, shuffle by and molecule; Length is the box to leave alone unless it is the value you came for.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            ['q' => 'What is the difference between the two modes?', 'a' => <<<'TXT'
+            Single-base shuffling preserves only the counts of A, C, G and T. Dinucleotide shuffling also preserves how often each pair occurs, which keeps more of the sequence's character.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'No — the rounding you see is formatting applied to Length at the moment it is drawn.'],
+            ['q' => 'Why does the GC content stay the same?', 'a' => 'Because shuffling rearranges the letters that are there; it never adds or removes one.'],
+            ['q' => 'Does DNA Sequence Shuffler use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
+            TXT],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/sds-page-gel', 'name' => 'SDS-PAGE Gel Calculator'],

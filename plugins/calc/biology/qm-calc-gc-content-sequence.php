@@ -11,7 +11,9 @@
 
 return [
     'name' => 'GC Content from a Sequence',
-    'meta' => ['title' => 'GC Content from a Sequence Calculator: Worked Example', 'description' => 'Enter sequence and window size and GC Content from a Sequence returns length and G + C bases. Every box can be solved for, not only the one in the title.', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a DNA sequence and counts G and C to report length, GC content, AT content and the melting temperature',
+    'meta' => ['title' => 'GC Content Calculator: Percentage, Counts and Melting', 'description' => 'Paste a DNA or RNA sequence and read its length, G plus C count, GC and AT percentages, and the melting temperature those bases predict for the duplex.', 'h1' => 'GC Content from a Sequence', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -43,41 +45,36 @@ return [
                         [
                             'name' => 'length',
                             'label' => 'Length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'bp',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc_count',
                             'label' => 'G + C bases',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc_pct',
                             'label' => 'GC content',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'at_pct',
                             'label' => 'AT content',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'tm_gc',
                             'label' => 'Melting temperature of the duplex',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '°C',
                             'help' => 'At 50 mM monovalent salt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -158,57 +155,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        GC Content from a Sequence works out Length and G + C bases from Sequence and Window size. There is no hidden constant here: change length and sequence moves with it. The main result, Length, is reported in bp.
+        GC content is the share of a sequence made of guanine and cytosine. Paste a sequence here and the page counts G and C, reports the percentage, the AT balance and the melting temperature that composition implies.
         TXT,
         'sections' => [
-            ['title' => 'How the GC Content from a Sequence calculator works', 'html' => <<<'TXT'
-            <p>The GC Content from a Sequence calculator applies one relationship to 2 numbers and reports Length, G + C bases and GC content.</p><p>What comes back is Length, G + C bases, GC content and AT content — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It turns a sequence into the composition figures that decide how a duplex behaves: how much of it is GC, how much AT, and how hot it has to get before the two strands separate.</p><p>The sequence is cleaned and uppercased, then counted base by base. GC content is G plus C over the length; AT content is A plus T (or U, in RNA) over the same length, so the two add to 100. The melting temperature is then estimated from the composition and the length using the usual rules — the Wallace rule for very short oligos, the GC-percentage form for moderate lengths, and the long-duplex form above that.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste DNA or RNA</li><li><strong>Window size</strong> — in bp. GC is computed in windows of this length</li></ul><p>The answers come back as Length in bp, G + C bases, GC content in %, AT content in %, Melting temperature of the duplex in °C. Those boxes are written by the page, not by you, so there is nothing to submit.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Sequence</strong> — a text box. Paste DNA or RNA.</li><li><strong>Window size</strong> — a number box. GC is computed in windows of this length.</li></ul><p>The answer comes back as 5 boxes: Length (bp), G + C bases, GC content (%), AT content (%), Melting temperature of the duplex (°C). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>As far as Length is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Sequence</strong> is a text box. Paste DNA or RNA Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Window size</strong> is a number box. GC is computed in windows of this length Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> Length, G + C bases and GC content are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Sequence left as a guess.</strong> Anything typed into Sequence is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Window size left as a guess.</strong> Anything typed into Window size is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Sequence</th><td>ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG</td></tr><tr><th>Window size</th><td>10</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Length</th><td>39 bp</td></tr><tr><th>G + C bases</th><td>22</td></tr><tr><th>GC content</th><td>56.41 %</td></tr><tr><th>AT content</th><td>43.59 %</td></tr><tr><th>Melting temperature of the duplex</th><td>70.8 °C</td></tr></tbody></table><p>Twenty-two of thirty-nine bases are G or C, giving 56.41 per cent GC and 43.59 per cent AT — the two add to 100, which is the quickest check that the count is sane. A melting temperature of 70.8 °C follows from that composition.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Sequence</strong> takes a plain number with no unit attached. Paste DNA or RNA. Have it to hand before you start: Sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Window size</strong> is measured in bp. GC is computed in windows of this length. Have it to hand before you start: Window size is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Sequence</th><td>GGGCCCGGGCCCGGGCCCGGGCCC</td></tr><tr><th>Window size</th><td>6</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Length</th><td>24</td></tr><tr><th>G + C bases</th><td>24</td></tr><tr><th>GC content</th><td>100</td></tr><tr><th>AT content</th><td>0</td></tr><tr><th>Melting temperature of the duplex</th><td>77.9</td></tr></tbody></table><p>5 of the 5 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 5 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>G + C bases</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>GC content</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>AT content</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Melting temperature of the duplex</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>Length</strong> — bases after cleaning.</li><li><strong>G + C bases</strong> — the raw count, which should equal the percentage times the length.</li><li><strong>GC content</strong> — G plus C as a percentage of the length.</li><li><strong>AT content</strong> — A plus T (or U) as a percentage; together with GC it must make 100.</li><li><strong>Melting temperature</strong> — the predicted duplex melting point in °C from composition and length.</li></ul><p>GC content is a property of the paste, so a figure above about 65 per cent usually means a GC-rich region or a repeat, and a figure below 35 per cent means an AT-rich one. The melting temperature is an estimate from composition alone: salt, length and mismatches move it, and no composition rule accounts for secondary structure.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Length, G + C bases, GC content and AT content. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Count the Gs and Cs in the first ten bases by hand and extrapolate: the percentage should be close to the page's, and the count should equal the percentage times the length to within rounding. If GC and AT do not add to 100, something in the paste is not a base.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>GC Content from a Sequence is not a single equation with a single answer. It reads Sequence and Window size, applies the analysis the page is built around, and reports Length, G + C bases, GC content and AT content.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Length, G + C bases, GC content and AT content. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
-            TXT],
-            ['title' => 'Getting an answer, step by step', 'html' => <<<'TXT'
-            <ol><li><strong>Collect the inputs.</strong> You need Sequence and Window size. Write them down in the unit the chip shows before you type, because the conversion happens inside the page and a mixed set of units is the commonest wrong answer.</li><li><strong>Enter them and press Calculate.</strong> Type Sequence into the form and press the button. The results appear in the panel; nothing is submitted anywhere and no account is needed.</li><li><strong>Read the answer against the defaults.</strong> Compare Length in bp with the figure the page&#039;s own defaults give. A result of the same order of magnitude is credible; one that is ten or a hundred times out is almost always a unit or a decimal point.</li><li><strong>Change one box to check your understanding.</strong> The last step is a check, not a calculation: move one box and see that the answer moves the way the formula says it should. When it does, the answer is yours to use.</li></ol><p>Nothing above needs an account, a download or a second visit: the page works the same way the first time and the hundredth.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Ambiguous bases</strong> — N, R, Y and the other IUPAC codes are not G, C, A or T, so they are not counted in either percentage — which is why the two can add to less than 100 on a real sequence.</li><li><strong>RNA in a DNA box</strong> — U is counted as a base and treated as T for the AT side; a mixed paste will still count but the melting figure is meaningless.</li><li><strong>Short oligos</strong> — Under about fourteen bases the Wallace rule dominates and a single mismatch moves the number by degrees.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> The relationship behind Length is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Composition only</strong> — The melting temperature ignores salt, buffer, mismatches and secondary structure.</li><li><strong>Window average</strong> — The window size you set is used for the melting estimate on long sequences; the percentages are for the whole paste.</li><li><strong>No interpretation</strong> — A GC content is a fact about the sequence, not a prediction of whether it will amplify or clone.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>GC Content from a Sequence has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Sequence and Window size and the number you are missing is Length and G + C bases.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
-            TXT],
-            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
-            <p>Getting the figure is half the job. The other half is what GC Content from a Sequence is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put Sequence and Window size beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            <p>GC content is checked before designing primers, when choosing a polymerase and its denaturation steps, when comparing a bacterial genome with a eukaryotic one, and when deciding whether a sequence is likely to form a stable hairpin.</p><p>GC content is not uniform along a genome, and it is rarely uniform along a single amplicon either. A primer that sits in a GC-rich island will behave differently from one twenty bases away in an AT-rich stretch, which is why primer design tools compute the figure over the primer and not over the template. Checking the local value in the window round the intended site is more informative than the whole-sequence number. A primer that sits at the junction of a GC-rich and an AT-rich block can look well matched by whole-sequence figures and still fail, because the three or four bases at its 3′ end are what the polymerase actually grips.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the GC Content from a Sequence calculator work out?', 'a' => 'Length, G + C bases, GC content and AT content.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Window size (bp). Enter sequence and window size; Length is the box to leave alone unless it is the value you came for.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            The arithmetic runs at full precision and only the display of Length is rounded. Rounding twice — once by hand, once by the page — is what makes two answers that should match differ in the last digit.
+            ['q' => 'Why do GC and AT not add to 100?', 'a' => 'Because the paste contains letters that are neither: N, or other ambiguity codes. Those bases are skipped by both counts.'],
+            ['q' => 'Is a GC-rich sequence always better?', 'a' => 'No. High GC makes a duplex more stable and a template harder to denature, which is why GC-rich regions are often the ones that fail to amplify.'],
+            ['q' => 'Does GC Content from a Sequence use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/chicken-years-to-human-years', 'name' => 'Chicken Years to Human Years Calculator'],

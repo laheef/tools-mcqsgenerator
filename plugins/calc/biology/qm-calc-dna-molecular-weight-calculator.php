@@ -11,7 +11,9 @@
 
 return [
     'name' => 'DNA Molecular Weight Calculator',
-    'meta' => ['title' => 'DNA Molecular Weight Calculator: Units & Formula', 'description' => 'DNA Molecular Weight Calculator takes sequence and molecule and returns length and GC content. Every box can be solved for, not only the one in the title.', 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a DNA sequence and works out its length, GC content and single- and double-stranded molecular weight',
+    'meta' => ['title' => 'DNA Molecular Weight Calculator: dsDNA, ssDNA and RNA', 'description' => 'Paste one strand and read its length, GC content, single- and double-stranded molecular weight in daltons and kDa, and how many picomoles one microgram holds.', 'h1' => 'DNA Molecular Weight Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -48,50 +50,44 @@ return [
                         [
                             'name' => 'length',
                             'label' => 'Length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'nt',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gc_pct',
                             'label' => 'GC content',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => '%',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw_ss',
                             'label' => 'Molecular weight, one strand',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'Da',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw',
                             'label' => 'Molecular weight of the molecule',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'Da',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw_kda',
                             'label' => 'Molecular weight',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'kDa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'pmol_per_ug',
                             'label' => 'Amount in 1 µg',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'pmol',
                             'help' => 'Handy for setting up a ligation',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -165,7 +161,7 @@ return [
       omni.onResult(['sequence', 'strands'], function (ctx) {
         // A select hands back the option's slug ("single-stranded-rna"), not its
         // value, so the kind is matched on words rather than compared to a code.
-        var pick = String(ctx.getRawInput('strands') || '');
+        var pick = String(ctx.getChoice('strands') || '');
         var kind = /rna/i.test(pick) ? 'rna' : /single/i.test(pick) ? 'ss' : 'ds';
         var seq = cleanSeq(ctx.getRawInput('sequence'), 'dna');
         if (kind === 'rna') seq = seq.replace(/T/g, 'U');
@@ -215,47 +211,58 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        DNA Molecular Weight turns Sequence and Molecule into Length and GC content. The arithmetic is the whole method: length is worked out from sequence by one formula, applied once. Length comes back in nt unless you switch the unit chip beside the box.
+        This page turns a DNA strand into a mass. Paste one strand of a duplex — or a single-stranded oligo — and it reports length, GC content, both molecular weights and the picomole count that makes a µg of it.
         TXT,
         'sections' => [
-            ['title' => 'How the DNA Molecular Weight calculator works', 'html' => <<<'TXT'
-            <p>There is one relationship behind DNA Molecular Weight: it takes 2 numbers and reports Length, GC content and Molecular weight, one strand.</p><p>What comes back is Length, GC content, Molecular weight, one strand and Molecular weight of the molecule — each answer is a box on the form, so you read it beside the numbers that produced it.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It converts between a sequence and the quantities a bench actually needs: how heavy a molecule is, how much of it a microgram contains, and how much of that weight comes from GC pairs.</p><p>The sequence is cleaned to letters and its length and GC content counted. Each base is given its residue mass in a single strand — the free nucleotide mass minus one water — and the single-strand weight is their sum. A double-stranded figure adds the complementary strand: an A-T pair contributes the mass of an A plus a T, a G-C pair the mass of a G plus a C, and the two hydrogen bonds do not count. The picomole figure is one microgram divided by the molecular weight, converted to moles.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>Sequence</strong> — a plain number, no unit. Paste one strand; the other is assumed to be its exact complement</li><li><strong>Molecule</strong> — a plain number, no unit</li></ul><p>What you get back is Length in nt, GC content in %, Molecular weight, one strand in Da, Molecular weight of the molecule in Da, Molecular weight in kDa, Amount in 1 µg in pmol, shown next to the form rather than on a page of its own.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Sequence</strong> — a text box. Paste one strand; the other is assumed to be its exact complement.</li><li><strong>Molecule</strong> — a drop-down with the choices the page offers.</li></ul><p>The answer comes back as 6 boxes: Length (nt), GC content (%), Molecular weight, one strand (Da), Molecular weight of the molecule (Da), Molecular weight (kDa), Amount in 1 µg (pmol). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => '<p>None of the boxes on this page carries a unit chip: Length takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>'],
-            ['title' => 'Checking an answer by hand', 'html' => '<p>A result here can always be checked: enter it in its own box, leave a different one empty, and the page should hand the first value back.</p>'],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Length, GC content and Molecular weight, one strand are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>Sequence left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Sequence is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Molecule left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Molecule is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in Sequence and let the panel round the answer once.</li></ul>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Sequence</strong> takes a plain number with no unit attached. Paste one strand; the other is assumed to be its exact complement. Have it to hand before you start: Sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>Molecule</strong> takes a plain number with no unit attached. It is picked from a list, and the list matters — the options are not labels for the same number. Have it to hand before you start: Molecule is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Sequence</strong> is a text box. Paste one strand; the other is assumed to be its exact complement Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>Molecule</strong> is a drop-down with the choices the page offers. The choices are Double-stranded DNA, Single-stranded DNA and Single-stranded RNA. Leave it empty only if you mean to — a blank box is not a zero.</p>
+            TXT],
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Sequence</th><td>AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT</td></tr><tr><th>Molecule</th><td>Double-stranded DNA</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Length</th><td>36 nt</td></tr><tr><th>GC content</th><td>55.56 %</td></tr><tr><th>Molecular weight, one strand</th><td>11021 Da</td></tr><tr><th>Molecular weight of the molecule</th><td>22042 Da</td></tr><tr><th>Molecular weight</th><td>22 kDa</td></tr><tr><th>Amount in 1 µg</th><td>45.367 pmol</td></tr></tbody></table><p>Thirty-six bases, 55.56 per cent GC, 11,021 Da for one strand and 22,042 for the duplex — exactly double, because the complement of a 36-base strand is another 36 bases of the same pair masses. One microgram holds 45.4 pmol of it.</p>
+            TXT],
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Sequence</th><td>ATGCGTACGTAGCTAGCTAGCATCGATCGTAGCTAGCTGATCG</td></tr><tr><th>Molecule</th><td>Single-stranded DNA</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Length</th><td>43</td></tr><tr><th>GC content</th><td>51.16</td></tr><tr><th>Molecular weight, one strand</th><td>13259</td></tr><tr><th>Molecular weight of the molecule</th><td>13259</td></tr><tr><th>Molecular weight</th><td>13.3</td></tr><tr><th>Amount in 1 µg</th><td>75.422</td></tr></tbody></table><p>6 of the 6 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>Each box below is a different question about the same calculation. Read them in this order:</p><ul><li><strong>Length</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>GC content</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Molecular weight, one strand</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Molecular weight of the molecule</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Molecular weight</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Amount in 1 µg</strong> is a plain number. It is produced by the page's own calculation, which reads the form rather than one equation. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            <ul><li><strong>Length</strong> — bases in the cleaned sequence.</li><li><strong>GC content</strong> — the percentage of G and C, which drives both the mass and the melting behaviour.</li><li><strong>Single-stranded weight</strong> — the mass of the strand you pasted, in daltons.</li><li><strong>Double-stranded weight</strong> — the mass of the duplex, counting the complementary strand base by base.</li><li><strong>kDa</strong> — the same double-stranded mass in kilodaltons, for comparison with protein sizes.</li><li><strong>pmol per µg</strong> — how many picomoles one microgram of this molecule represents.</li></ul><p>Use the double-stranded figure for plasmid and amplicon work, and the single-stranded figure for oligos, primers and probes, which are ordered as one strand. The picomole figure is the one to reach for when a protocol asks for "X pmol of primer" and your balance reading is in micrograms.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Length, GC content, Molecular weight, one strand and Molecular weight of the molecule. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>A rough hand check: the average base pair mass is about 650 Da, so a 36 bp duplex should weigh roughly 23,400 Da and the page says 22,042 — the difference is the GC-rich composition, which is lighter per pair than AT. For an exact figure, use 313.2 Da per A-T pair and 618.4 per G-C pair in a rough table and compare to within one per cent.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>DNA Molecular Weight is not a single equation with a single answer. It reads Sequence and Molecule, applies the analysis the page is built around, and reports Length, GC content, Molecular weight, one strand and Molecular weight of the molecule.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Length, GC content, Molecular weight, one strand and Molecular weight of the molecule. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Mixing strand types</strong> — An oligo is single-stranded even though every base could pair. Choose the single-strand figure or you will report double its mass.</li><li><strong>Assuming perfect complementarity</strong> — The duplex figure assumes the other strand is the exact complement. A mismatch or an overhang changes it.</li><li><strong>Read length</strong> — An amplicon from a primer pair is single- or double-stranded depending on when you weigh it; the sequence alone does not tell you.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> Length follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> The page assumes Sequence and Molecule are measured, independent and in the unit the chip says. It has no way to know that one of them was estimated, that two were taken at different times of day, or that the relationship shifts at the extremes of its range.</li></ul>
+            <ul><li><strong>No modifications</strong> — A 5′ phosphate, a fluorophore or a quencher adds mass that is not in the sequence and not in this figure.</li><li><strong>Average masses</strong> — The base masses are average over natural isotopes; monoisotopic masses differ slightly.</li><li><strong>No secondary structure</strong> — A hairpin does not change mass, though it changes how the oligo behaves in a spectrophotometer.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>DNA Molecular Weight Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>The typical use is one direction of the relationship: Sequence and Molecule measured, Length and GC content wanted.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p>
+            <p>Molecular weight is used to convert a mass into moles when preparing primers, to check that an oligo synthesis matches its certificate, to normalise a digested plasmid against a protein standard on a gel, and to work out how much DNA is in a band of known length.</p><p>The picomole figure is worth keeping in mind when a protocol asks for a specific number of moles. A nanogram of a 36-base oligo is about 45 femtomoles, while a nanogram of a 3,000-base plasmid is about 0.5 femtomoles: the same mass, ninety times fewer molecules. Most mistakes in normalising DNA come from comparing masses across very different lengths.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the DNA Molecular Weight calculator work out?', 'a' => 'Length, GC content, Molecular weight, one strand and Molecular weight of the molecule.'],
-            ['q' => 'Which values do I need before I start?', 'a' => 'Sequence, Molecule. Fill sequence and molecule and leave Length empty if you would rather have that one solved instead.'],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Length is computed at full precision and rounded once at the end, so what you read is a view of the number the formula produced rather than a second calculation from a rounded one.
+            ['q' => 'Which figure do I use for a primer?', 'a' => 'The single-stranded one. Primers are ordered and delivered as one strand, and their certificates quote that mass.'],
+            ['q' => 'Why is the duplex exactly twice the single strand?', 'a' => <<<'TXT'
+            For a perfectly complementary duplex of even composition each base pair contributes two nucleotide residues, so the total is the sum of both strands. It is not exactly double for odd lengths or mismatched pairs.
             TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => 'Every box has to have a number in it. What this page returns is Length, so an empty input simply leaves the result blank rather than choosing a new unknown.'],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Length keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Does DNA Molecular Weight Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
+            TXT],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/protein-gravy-calculator', 'name' => 'Protein GRAVY (Hydropathy) Calculator'],

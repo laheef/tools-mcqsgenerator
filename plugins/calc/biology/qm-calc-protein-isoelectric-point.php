@@ -11,7 +11,9 @@
 
 return [
     'name' => 'Protein Isoelectric Point Calculator',
-    'meta' => ['title' => 'Protein Isoelectric Point Calculator: Steps & Units', 'description' => 'Protein Isoelectric Point Calculator reports net charge at the given pH and length. Each figure is computed from the boxes you fill, never read from a table.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
+    'engine' => 'script',
+    'engine_note' => 'reads a protein sequence and finds the pH at which its net charge is zero',
+    'meta' => ['title' => 'Protein Isoelectric Point Calculator with Net Charge', 'description' => 'Paste a protein to find its isoelectric point and net charge at a chosen pH, with length, mass, acidic and basic residue counts and GRAVY reported alongside.', 'h1' => 'Protein Isoelectric Point Calculator', 'updated' => '2026-10-29'],
     'sections' => [
         [
             'title' => '',
@@ -51,56 +53,49 @@ return [
                         [
                             'name' => 'pi',
                             'label' => 'Isoelectric point',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'pH',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'charge',
                             'label' => 'Net charge at the given pH',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'e',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'length',
                             'label' => 'Length',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'aa',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'mw_kda',
                             'label' => 'Molecular weight',
-                            'type' => 'number',
+                            'type' => 'result',
                             'suffix' => 'kDa',
                             'help' => 'Average residue masses, no PTMs',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'acidic',
                             'label' => 'Acidic residues (D + E)',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'basic',
                             'label' => 'Basic residues (K + R + H)',
-                            'type' => 'number',
-                            'readonly' => true,
+                            'type' => 'result',
                             'rounding' => ['omni', '0.0001'],
                         ],
                         [
                             'name' => 'gravy',
                             'label' => 'GRAVY (hydrophobicity)',
-                            'type' => 'number',
+                            'type' => 'result',
                             'help' => 'Positive means hydrophobic',
-                            'readonly' => true,
                             'rounding' => ['omni', '0.0001'],
                         ],
                     ],
@@ -246,55 +241,56 @@ return [
     TXT,
     'article' => [
         'intro' => <<<'TXT'
-        Enter Protein sequence and pH for the charge calculation into Protein Isoelectric Point and the answer comes back as Isoelectric point and Net charge at the given pH. There is no hidden constant here: change isoelectric point and protein sequence moves with it. The main result, Isoelectric point, is reported in pH.
+        The isoelectric point is the pH at which a protein carries no net charge. This page finds it by titration: it computes the charge at a chosen pH from the sequence, then searches for the pH where that charge crosses zero.
         TXT,
         'sections' => [
-            ['title' => 'How the Protein Isoelectric Point calculator works', 'html' => <<<'TXT'
-            <p>The Protein Isoelectric Point calculator applies one relationship to 2 numbers and reports Isoelectric point, Net charge at the given pH and Length.</p><p>The answers are Isoelectric point, Net charge at the given pH, Length and Molecular weight; they are reported together because a single calculation usually settles more than one question.</p>
+            ['title' => 'How this calculator works', 'html' => <<<'TXT'
+            <p>It reports the pH at which the protein is neutral, the charge it carries at the pH you specify, and the composition figures that explain both: length, mass, acidic and basic residue counts, and GRAVY.</p><p>Every ionisable group in the sequence — the carboxylates of aspartate and glutamate, the amines of lysine and arginine, histidine's imidazole, the termini, and cysteine and tyrosine where present — is given a pKa. At a given pH each group's charge follows from the Henderson-Hasselbalch relation, and the charges are summed. The page evaluates the sum across the pH range and finds the point where it crosses zero: that is the isoelectric point. The charge at your chosen pH is the same sum evaluated once.</p>
             TXT],
             ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
-            <p>The form asks for 2 boxes, and nothing else.</p><ul><li><strong>Protein sequence</strong> — a plain number, no unit. Single-letter code; headers, spaces and digits are ignored</li><li><strong>pH for the charge calculation</strong> — in pH. Net charge is reported at this pH</li></ul><p>The result boxes are Isoelectric point in pH, Net charge at the given pH in e, Length in aa, Molecular weight in kDa, Acidic residues (D + E), Basic residues (K + R + H), GRAVY (hydrophobicity); they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
+            <p>There are 2 things to fill in, and the order does not matter:</p><ul><li><strong>Protein sequence</strong> — a text box. Single-letter code; headers, spaces and digits are ignored.</li><li><strong>pH for the charge calculation</strong> — a number box. Net charge is reported at this pH.</li></ul><p>The answer comes back as 7 boxes: Isoelectric point (pH), Net charge at the given pH (e), Length (aa), Molecular weight (kDa), Acidic residues (D + E), Basic residues (K + R + H), GRAVY (hydrophobicity). They are written by the page, not typed into — there is no second box to fill and nothing to submit.</p>
             TXT],
-            ['title' => 'Reading the answer', 'html' => <<<'TXT'
-            <p>As far as Isoelectric point is concerned the numbers are unitless — it neither converts nor guesses a unit, so enter every value in the same scale you intend to read the answer in.</p>
+            ['title' => 'Using it in a hurry', 'html' => <<<'TXT'
+            <ol><li><strong>Put the sequence in.</strong> Paste the letters into the box that asks for them, without a header line, and check the first and last few characters of what landed.</li><li><strong>Set the choices.</strong> Every drop-down and radio has a default. Change the ones that do not describe your case before you press anything.</li><li><strong>Press Calculate once.</strong> The panel fills in every result box at the same time. Nothing is submitted and nothing is uploaded.</li><li><strong>Read the figures in the order they are listed</strong> — the first one is the headline and the rest qualify it. A figure that looks impossible is almost always a paste problem, not a calculation problem.</li><li><strong>Change one thing to check it.</strong> Move a single input and watch which figures move. That tells you what the answer is actually built from.</li></ol><p>The whole page is those five steps. There is no account, no upload and no second screen.</p>
             TXT],
-            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
-            <p>There is one relationship on this page, so any answer can be checked by putting it back into the box that owns it and seeing whether the remaining ones agree.</p>
+            ['title' => 'The form, box by box', 'html' => <<<'TXT'
+            <p><strong>Protein sequence</strong> is a text box. Single-letter code; headers, spaces and digits are ignored Leave it empty only if you mean to — a blank box is not a zero.</p><p><strong>pH for the charge calculation</strong> is a number box. Net charge is reported at this pH Leave it empty only if you mean to — a blank box is not a zero.</p>
             TXT],
-            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
-            <ul><li><strong>The answer typed back in.</strong> Isoelectric point, Net charge at the given pH and Length are results, and each can be typed into. Putting a past answer back into one of them turns the calculation round and solves for whichever box is then empty — useful, but only if that is what you meant to do.</li><li><strong>Protein sequence left as a guess.</strong> Anything typed into Protein sequence is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>pH for the charge calculation left as a guess.</strong> Anything typed into pH for the charge calculation is treated as measured. The page has no way to flag an estimate, and the answer will read exactly as confidently either way.</li><li><strong>Measurements mixed across scales.</strong> A calculation cannot tell a measured value from an estimated one. If Protein sequence is an estimate, the answer is only as good as that number, whatever precision the panel displays.</li></ul>
+            ['title' => 'A worked example on this page', 'html' => <<<'TXT'
+            <p>These are real values produced by this page in a browser, not numbers chosen to look tidy. The boxes were filled like this:</p><table><tbody><tr><th>Protein sequence</th><td>MKTAYIAKQRQISFVKSHFSRQDILDLWQ</td></tr><tr><th>pH for the charge calculation</th><td>7</td></tr></tbody></table><p>and the page reported:</p><table><tbody><tr><th>Isoelectric point</th><td>10.41 pH</td></tr><tr><th>Net charge at the given pH</th><td>3.03 e</td></tr><tr><th>Length</th><td>29 aa</td></tr><tr><th>Molecular weight</th><td>3.56 kDa</td></tr><tr><th>Acidic residues (D + E)</th><td>2</td></tr><tr><th>Basic residues (K + R + H)</th><td>6</td></tr><tr><th>GRAVY (hydrophobicity)</th><td>-0.476</td></tr></tbody></table><p>A 29-residue peptide with two acidic and six basic residues gives a pI of 10.41 and a charge of +3.03 at pH 7 — strongly basic, as the residue counts predict. GRAVY of −0.476 says it is hydrophilic anyway, which is the combination that keeps small basic peptides soluble.</p>
             TXT],
-            ['title' => 'What each box means', 'html' => <<<'TXT'
-            <p>Before the arithmetic, the form itself. Each box below is named the way it is named on the page, with the unit it opens on and the error it invites if it is filled in carelessly.</p><ul><li><strong>Protein sequence</strong> takes a plain number with no unit attached. Single-letter code; headers, spaces and digits are ignored. Have it to hand before you start: Protein sequence is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li><li><strong>pH for the charge calculation</strong> is measured in pH. Net charge is reported at this pH. Have it to hand before you start: pH for the charge calculation is read the moment another box is filled, and a placeholder typed to see what happens becomes an answer.</li></ul><p>None of the boxes has to be filled in a particular order. The page reads them together and works out which single value is missing, so the last one you fill is the one it answers from.</p>
+            ['title' => 'A second run, and what moved', 'html' => <<<'TXT'
+            <p>The same page run a second time, with different text in the boxes, is the quickest way to see what the answer is actually made of. This time the inputs were:</p><table><tbody><tr><th>Protein sequence</th><td>MDDDDKKKEEEEDDDDK</td></tr><tr><th>pH for the charge calculation</th><td>7</td></tr></tbody></table><p>and the panel returned:</p><table><tbody><tr><th>Isoelectric point</th><td>3.6</td></tr><tr><th>Net charge at the given pH</th><td>-8.05</td></tr><tr><th>Length</th><td>17</td></tr><tr><th>Molecular weight</th><td>2.12</td></tr><tr><th>Acidic residues (D + E)</th><td>12</td></tr><tr><th>Basic residues (K + R + H)</th><td>4</td></tr><tr><th>GRAVY (hydrophobicity)</th><td>-3.276</td></tr></tbody></table><p>7 of the 7 figures moved. That is the point of the exercise: a figure that changes when the paste changes is being computed from it, and a figure that stays put is reporting something else — a setting, a count of what you filled in, or a default.</p>
             TXT],
             ['title' => 'What each result tells you', 'html' => <<<'TXT'
-            <p>The panel reports 7 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Isoelectric point</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Net charge at the given pH</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Length</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Molecular weight</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Acidic residues (D + E)</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>Basic residues (K + R + H)</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li><li><strong>GRAVY (hydrophobicity)</strong> is a plain number. The page computes it from the form as a whole rather than from one line of the formula. Read it as an order of magnitude first and a decimal second: a result that is out by a factor of ten usually means a unit or a decimal point, not a formula that has stopped working. It is not stored, logged or carried to the next page: change a box and you get a new number, close the tab and it is gone.</li></ul>
+            <ul><li><strong>Isoelectric point</strong> — the pH where the summed charge is zero.</li><li><strong>Net charge</strong> — the sum of all group charges at the pH you entered.</li><li><strong>Acidic residues</strong> — aspartate and glutamate — negative at neutral pH.</li><li><strong>Basic residues</strong> — lysine, arginine and histidine — positive at neutral pH.</li><li><strong>GRAVY</strong> — average hydropathy; a positive value means the chain is hydrophobic overall.</li></ul><p>The pI is a single number with a large practical effect: below it the protein is positive and binds cation exchangers, above it the protein is negative and binds anion exchangers. A pI far from 7 also means the protein carries a strong net charge at physiological pH, which affects how it runs on a gel and how it behaves in a buffer.</p><p>Every figure in the panel is worked out from the same input at the same moment, so they belong together: reading one without the others is how a plausible number gets mistaken for a right one. The figures carry the units shown beside them, and no unit is converted behind your back — a length is the length of the sequence in the box, a percentage is a percentage of that same sequence.</p>
             TXT],
-            ['title' => 'Pasting the sequence correctly', 'html' => <<<'TXT'
-            <p>The box labelled <strong>Protein sequence</strong> is the input the whole page is built around. It holds characters, and the page reads every one of them.</p><ul><li><strong>No header line.</strong> If the text was copied out of a file, check that the first line is not a description. Anything before the first real base or residue is counted as data.</li><li><strong>No spaces or line numbers.</strong> Sequence viewers wrap the text and number the lines. The numbers are not part of the sequence, and a paste that includes them will fail or, worse, half-succeed.</li><li><strong>Case is a choice you make.</strong> Many tools treat upper and lower case as the same letters and others do not. Paste the sequence in the case that carries the meaning you intend.</li><li><strong>Ambiguous characters are not rare.</strong> An N in a sequence, an X in a protein, or an IUPAC code standing for two possible bases is a real value, not a typo. The page will count it; interpret the answer with that in mind.</li></ul><p>Paste once, check the first and last few characters of what landed in the box, and then read Isoelectric point, Net charge at the given pH, Length and Molecular weight. If one of those figures is impossible — a length that does not match the text, a count larger than the sequence — the paste is the thing to look at first, not the formula.</p>
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Count the acidic and basic residues: a protein with many more basic than acidic residues must have a pI above 7, and the further the counts diverge, the further from 7 it goes. For the charge at a chosen pH, remember that a residue counts as fully charged only when the pH is two units away from its pKa.</p>
             TXT],
-            ['title' => 'How the page computes', 'html' => <<<'TXT'
-            <p>Protein Isoelectric Point is not a single equation with a single answer. It reads Protein sequence and pH for the charge calculation, applies the analysis the page is built around, and reports Isoelectric point, Net charge at the given pH, Length and Molecular weight.</p><p>That work happens in your browser, on the text you paste, and nothing is sent anywhere to be analysed. Close the tab and the sequence is gone; there is no record of it on the server and no account attached to it.</p><p>What that means in practice is that the answer is only as good as the text you give it. A stray character, a line break in the wrong place or a lower-case where the format expects upper-case will change the result, and the page has no way to know which of those happened — it analyses exactly what it is handed.</p><p>The results to look at are Isoelectric point, Net charge at the given pH, Length and Molecular weight. They are reported together because they describe the same input from different angles, and reading one without the others is how a plausible number gets mistaken for a good one.</p>
+            ['title' => 'Where the answer usually goes wrong', 'html' => <<<'TXT'
+            <p>Three things account for most wrong answers on a page like this:</p><ul><li><strong>Terminal charges</strong> — The N- and C-termini are charged too. On a short peptide they matter as much as any residue.</li><li><strong>Cysteines and tyrosines</strong> — Their pKa values are high and their contribution depends on whether they are protonated, which the sequence does not say.</li><li><strong>Modifications</strong> — Phosphorylation adds negative charge that no residue count will show.</li></ul><p>A sequence box is the one part of this form that fails silently. Header lines, line numbers, spaces and lower case are the four things that change an answer without any warning: a FASTA description line in front of the bases is read as sequence unless it is removed, the numbers down the left of a viewer are read as letters, and case means whatever the page says it means. Paste the bare letters, check the first and last few characters in the box, and only then press Calculate.</p>
             TXT],
             ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
-            <ul><li><strong>It scales in a straight line.</strong> The relationship behind Isoelectric point is a straight-line one: proportionally more input gives proportionally more output, which is what makes the sensitivity table above a set of constants rather than a curve.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            <ul><li><strong>Model pKa values</strong> — The pKa of a group depends on its local environment in a folded protein; a sequence-based calculation cannot see that.</li><li><strong>No structure</strong> — Buried groups titrate differently from exposed ones, and this page treats them alike.</li><li><strong>Standard residues only</strong> — Unusual residues and modified termini are not modelled.</li></ul>
+            TXT],
+            ['title' => 'How the page computes', 'html' => <<<'TXT'
+            <p>Protein Isoelectric Point Calculator has no formula box, and that is deliberate. Its working is a string transformation — letters in, letters out — and a string transformation does not reduce to arithmetic on numbers. The page carries a script instead of an expression, and the script is the calculator: it reads the boxes above, does the work in your browser, and writes each answer into the box that carries its name.</p><p>That has two consequences worth stating plainly. Nothing is sent anywhere: the text you paste is analysed on your own machine and never leaves the tab. And there is no reverse solve: on a formula page you can type a result back in and solve for a missing input, but a script cannot be run backwards, so the result boxes here are read-only by design.</p>
+            TXT],
+            ['title' => 'If the answer looks wrong', 'html' => <<<'TXT'
+            <p>Work through these in order; on a page like this one of them usually explains it.</p><ul><li><strong>The paste is not what you think</strong> — a header line, a line number or a lower-case block changes the input without any visible sign. Clear the box, paste again, and look at the first and last characters before pressing Calculate.</li><li><strong>The choice is still on its default</strong> — every drop-down and radio starts on the most common option. If your case is any other one, set it deliberately.</li><li><strong>A box was left empty</strong> — an empty box is not a zero. Fill it or leave the whole question alone; half a set of inputs produces half an answer, or none.</li><li><strong>The input is too short</strong> — below a few dozen characters most of these figures describe the fragment rather than the molecule. Re-run on the full length.</li><li><strong>The sequence is the wrong molecule</strong> — DNA read as protein, protein read as DNA, RNA pasted into a DNA box — the letters overlap enough that nothing complains, and the numbers are simply about something else.</li></ul><p>If none of that explains it, the useful next step is the second-run section above: change one input, read the panel again, and see which figures move. A figure that moves is computed from your input; a figure that does not is reporting a setting.</p>
             TXT],
             ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
-            <p>Use it whenever the numbers you have are Protein sequence and pH for the charge calculation and the number you are missing is Isoelectric point and Net charge at the given pH.</p><p>It is worth having the calculation written down even when you only need the answer once: an entered figure can be checked, and a remembered one cannot.</p>
+            <p>The pI is used to choose a buffer for ion-exchange chromatography, to choose the pH of a gel, to predict whether a protein will precipitate at low salt, and to explain why a protein sticks to one column and not another.</p><p>The practical use of a calculated pI is not the number itself but the margin you leave around it. Running an ion-exchange column at a pH within half a unit of the pI gives a protein that is neither reliably positive nor reliably negative, so it binds badly and elutes in a broad peak. Two units away, the behaviour is predictable.</p>
             TXT],
         ],
         'faq' => [
-            ['q' => 'What does the Protein Isoelectric Point calculator work out?', 'a' => 'Isoelectric point, Net charge at the given pH, Length and Molecular weight.'],
-            ['q' => 'Which values do I need before I start?', 'a' => <<<'TXT'
-            Protein sequence, pH for the charge calculation (pH). Fill protein sequence and pH for the charge calculation and leave Isoelectric point empty if you would rather have that one solved instead.
+            ['q' => 'Why does my calculated pI differ from the one in a database?', 'a' => 'Because databases use different pKa sets and sometimes different terminal handling. A difference of a few tenths is normal.'],
+            ['q' => 'What pH should I run an ion-exchange column at?', 'a' => 'At least one unit away from the pI, on the side that gives the protein the charge the column wants.'],
+            ['q' => 'Does Protein Isoelectric Point Calculator use a formula I can read?', 'a' => <<<'TXT'
+            No. The working is a script that handles the letters themselves, so there is no single expression to print. What you can check is the output: every result box is named, and every one of them is produced by the script from the inputs above it.
             TXT],
-            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
-            Internally Isoelectric point is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
-            TXT],
-            ['q' => 'What happens if I leave a box empty?', 'a' => <<<'TXT'
-            Every box has to have a number in it. What this page returns is Isoelectric point, so an empty input simply leaves the result blank rather than choosing a new unknown.
-            TXT],
-            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Isoelectric point keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+            ['q' => 'Is the sequence I paste uploaded anywhere?', 'a' => 'No. The script runs in your browser and the page makes no request with your input. Close the tab and the text is gone.'],
         ],
         'related' => [
             ['path' => '/biology/compost-application-rate', 'name' => 'Compost Application Rate Calculator'],

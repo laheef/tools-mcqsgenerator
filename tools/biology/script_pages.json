@@ -1,0 +1,3084 @@
+{
+ "amino-acid-composition": {
+  "inputs": [
+   {
+    "name": "protein",
+    "label": "Protein sequence",
+    "suffix": "",
+    "help": "Single-letter code; headers, spaces and digits are ignored",
+    "type": "text"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "aa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw_kda",
+    "label": "Molecular weight",
+    "suffix": "kDa",
+    "help": "Average residue masses, no modifications",
+    "type": "result"
+   },
+   {
+    "name": "gravy",
+    "label": "GRAVY",
+    "suffix": "",
+    "help": "Positive means hydrophobic",
+    "type": "result"
+   },
+   {
+    "name": "aromatic",
+    "label": "Aromatic residues (F + W + Y)",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "charge_balance",
+    "label": "Acidic minus basic residues",
+    "suffix": "",
+    "help": "Positive means acidic overall",
+    "type": "result"
+   },
+   {
+    "name": "cysteine",
+    "label": "Cysteines",
+    "suffix": "",
+    "help": "Pairs set the maximum number of disulfides",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "protein": "MKTAYIAKQRQISFVKSHFSRQDILDLWQ"
+   },
+   "values": [
+    [
+     "length",
+     "29"
+    ],
+    [
+     "mw_kda",
+     "3.56"
+    ],
+    [
+     "gravy",
+     "-0.476"
+    ],
+    [
+     "aromatic",
+     "13.79"
+    ],
+    [
+     "charge_balance",
+     "-4"
+    ],
+    [
+     "cysteine",
+     "0"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "protein": "MKWVTFISLLFLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFK"
+   },
+   "values": [
+    [
+     "length",
+     "44"
+    ],
+    [
+     "mw_kda",
+     "5.34"
+    ],
+    [
+     "gravy",
+     "-0.323"
+    ],
+    [
+     "aromatic",
+     "18.18"
+    ],
+    [
+     "charge_balance",
+     "-6"
+    ],
+    [
+     "cysteine",
+     "0"
+    ]
+   ]
+  }
+ },
+ "codon-adaptation-index": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Coding sequence (DNA)",
+    "suffix": "",
+    "help": "Paste the open reading frame; the first codon is read as the start",
+    "type": "text"
+   },
+   {
+    "name": "host",
+    "label": "Reference host",
+    "suffix": "",
+    "help": "The codon usage table the weights come from",
+    "options": [
+     "E. coli K-12",
+     "Human (Homo sapiens)",
+     "Yeast (S. cerevisiae)"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "cai",
+    "label": "Codon adaptation index",
+    "suffix": "",
+    "help": "Geometric mean of the weights",
+    "type": "result"
+   },
+   {
+    "name": "codons",
+    "label": "Codons scored",
+    "suffix": "",
+    "help": "Met, Trp and stops are excluded",
+    "type": "result"
+   },
+   {
+    "name": "rare",
+    "label": "Rare codons (w ≤ 0.2)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc3",
+    "label": "GC at third position",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGGCTGCTAAAATTGAACGTCTGAAACGTCTGGAAGATCTGAAACGTGCT"
+   },
+   "values": [
+    [
+     "cai",
+     "0.788"
+    ],
+    [
+     "codons",
+     "16"
+    ],
+    [
+     "rare",
+     "0"
+    ],
+    [
+     "gc3",
+     "18.75"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ATGAGGCGGTTAAGGCTTAGGCTAAGGAGGCGG",
+    "host": "E. coli K-12"
+   },
+   "values": [
+    [
+     "cai",
+     "0.033"
+    ],
+    [
+     "codons",
+     "10"
+    ],
+    [
+     "rare",
+     "10"
+    ],
+    [
+     "gc3",
+     "70"
+    ]
+   ]
+  }
+ },
+ "codon-plot": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Coding sequence (DNA)",
+    "suffix": "",
+    "help": "Paste the open reading frame; long sequences are summarised window by window",
+    "type": "text"
+   },
+   {
+    "name": "window",
+    "label": "Window size",
+    "suffix": "codons",
+    "help": "How many codons each summary point covers",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "codons",
+    "label": "Codons read",
+    "suffix": "",
+    "help": "Whole codons only",
+    "type": "result"
+   },
+   {
+    "name": "rare",
+    "label": "Rare codons (w ≤ 0.2)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "clusters",
+    "label": "Runs of 3+ rare codons",
+    "suffix": "",
+    "help": "The stalling risk",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGGCTGCTAAAATTGAACGTCTGAAACGTCTGGAAGATCTGAAACGTGCT",
+    "window": "10"
+   },
+   "values": [
+    [
+     "codons",
+     "17"
+    ],
+    [
+     "rare",
+     "0"
+    ],
+    [
+     "clusters",
+     "0"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ATGAGGCGGTTAAGGCTTAGGCTAAGGAGGCGG",
+    "window": "5"
+   },
+   "values": [
+    [
+     "codons",
+     "11"
+    ],
+    [
+     "rare",
+     "10"
+    ],
+    [
+     "clusters",
+     "1"
+    ]
+   ]
+  }
+ },
+ "codon-usage-calculator": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Coding sequence",
+    "suffix": "",
+    "help": "Paste DNA; FASTA headers, spaces and digits are ignored",
+    "type": "text"
+   },
+   {
+    "name": "frame",
+    "label": "Reading frame",
+    "suffix": "",
+    "help": "Frame 1 starts at the first base",
+    "options": [
+     "Frame 1",
+     "Frame 2",
+     "Frame 3"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "codons",
+    "label": "Complete codons",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc3",
+    "label": "GC at the third position",
+    "suffix": "%",
+    "help": "A high GC3 usually means a GC-rich organism",
+    "type": "result"
+   },
+   {
+    "name": "stops",
+    "label": "Stop codons",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "distinct",
+    "label": "Different codons used",
+    "suffix": "of 64",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rare",
+    "label": "Rare codons",
+    "suffix": "",
+    "help": "Under 10% within a family that appears at least five times — candidates for codon optimisation",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGGCTGCTAAAATTGAACGTCTGAAACGTCTGGAAGATCTGAAACGTGCT",
+    "frame": "Frame 1"
+   },
+   "values": [
+    [
+     "codons",
+     "17"
+    ],
+    [
+     "gc3",
+     "23.5"
+    ],
+    [
+     "stops",
+     "0"
+    ],
+    [
+     "distinct",
+     "8"
+    ],
+    [
+     "rare",
+     "0"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ATGTTTAAACCCGGGTTTAAAGGGCCC",
+    "frame": "Frame 2"
+   },
+   "values": [
+    [
+     "codons",
+     "8"
+    ],
+    [
+     "gc3",
+     "50"
+    ],
+    [
+     "stops",
+     "0"
+    ],
+    [
+     "distinct",
+     "7"
+    ],
+    [
+     "rare",
+     "0"
+    ]
+   ]
+  }
+ },
+ "cpg-island-finder": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste DNA; 200 bp or more gives a meaningful answer",
+    "type": "text"
+   },
+   {
+    "name": "window",
+    "label": "Window",
+    "suffix": "bp",
+    "help": "Gardiner-Garden uses 200 bp",
+    "type": "number"
+   },
+   {
+    "name": "gc_min",
+    "label": "Minimum GC in the window",
+    "suffix": "%",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "oe_min",
+    "label": "Minimum observed/expected CpG",
+    "suffix": "",
+    "help": "0.6 is the classical cut-off",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "gc_pct",
+    "label": "GC content of the sequence",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "cpg_obs",
+    "label": "CpG dinucleotides observed",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "cpg_oe",
+    "label": "Observed / expected CpG",
+    "suffix": "",
+    "help": "Below 0.6 suggests the CG has been methylated and lost",
+    "type": "result"
+   },
+   {
+    "name": "islands",
+    "label": "CpG islands found",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "longest",
+    "label": "Longest island",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "CGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCGCGCGATCGCCGGCGCCGATCGCG",
+    "window": "50",
+    "gc_min": "60",
+    "oe_min": "0.6"
+   },
+   "values": [
+    [
+     "gc_pct",
+     "82.6"
+    ],
+    [
+     "cpg_obs",
+     "160"
+    ],
+    [
+     "cpg_oe",
+     "2.04"
+    ],
+    [
+     "islands",
+     "1"
+    ],
+    [
+     "longest",
+     "460"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "AAATTTAAATTTAAATTTAAATTTAAATTTAAATTTAAATTTAAATTTAAATTTAAATTT",
+    "window": "50",
+    "gc_min": "50",
+    "oe_min": "0.6"
+   },
+   "values": [
+    [
+     "gc_pct",
+     "0"
+    ],
+    [
+     "cpg_obs",
+     "0"
+    ],
+    [
+     "cpg_oe",
+     "0"
+    ],
+    [
+     "islands",
+     "0"
+    ],
+    [
+     "longest",
+     "0"
+    ]
+   ]
+  }
+ },
+ "dna-molecular-weight-calculator": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste one strand; the other is assumed to be its exact complement",
+    "type": "text"
+   },
+   {
+    "name": "strands",
+    "label": "Molecule",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "Double-stranded DNA",
+     "Single-stranded DNA",
+     "Single-stranded RNA"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "nt",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc_pct",
+    "label": "GC content",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw_ss",
+    "label": "Molecular weight, one strand",
+    "suffix": "Da",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw",
+    "label": "Molecular weight of the molecule",
+    "suffix": "Da",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw_kda",
+    "label": "Molecular weight",
+    "suffix": "kDa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "pmol_per_ug",
+    "label": "Amount in 1 µg",
+    "suffix": "pmol",
+    "help": "Handy for setting up a ligation",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "strands": "Double-stranded DNA"
+   },
+   "values": [
+    [
+     "length",
+     "36"
+    ],
+    [
+     "gc_pct",
+     "55.56"
+    ],
+    [
+     "mw_ss",
+     "11021"
+    ],
+    [
+     "mw",
+     "22042"
+    ],
+    [
+     "mw_kda",
+     "22"
+    ],
+    [
+     "pmol_per_ug",
+     "45.367"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ATGCGTACGTAGCTAGCTAGCATCGATCGTAGCTAGCTGATCG",
+    "strands": "Single-stranded DNA"
+   },
+   "values": [
+    [
+     "length",
+     "43"
+    ],
+    [
+     "gc_pct",
+     "51.16"
+    ],
+    [
+     "mw_ss",
+     "13259"
+    ],
+    [
+     "mw",
+     "13259"
+    ],
+    [
+     "mw_kda",
+     "13.3"
+    ],
+    [
+     "pmol_per_ug",
+     "75.422"
+    ]
+   ]
+  }
+ },
+ "dna-pattern-finder": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste DNA; headers, spaces and digits are ignored",
+    "type": "text"
+   },
+   {
+    "name": "pattern",
+    "label": "Pattern (IUPAC allowed)",
+    "suffix": "",
+    "help": "N = any base, R = A/G, Y = C/T, W = A/T, S = G/C, K = G/T, M = A/C",
+    "type": "text"
+   },
+   {
+    "name": "strand",
+    "label": "Strand",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "Both strands",
+     "Forward only"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "matches_fwd",
+    "label": "Matches, forward strand",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "matches_rev",
+    "label": "Matches, reverse strand",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "total",
+    "label": "Total sites",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "spacing",
+    "label": "Average spacing",
+    "suffix": "bp",
+    "help": "Blank when there is only one site",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "pattern": "GAATTC",
+    "strand": "Both strands"
+   },
+   "values": [
+    [
+     "matches_fwd",
+     "1"
+    ],
+    [
+     "matches_rev",
+     "0"
+    ],
+    [
+     "total",
+     "1"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "TTAGGACCGGATCCTAGGTCCTAGGTCC",
+    "pattern": "GGWCC",
+    "strand": "Both strands"
+   },
+   "values": [
+    [
+     "matches_fwd",
+     "3"
+    ],
+    [
+     "matches_rev",
+     "0"
+    ],
+    [
+     "total",
+     "3"
+    ],
+    [
+     "spacing",
+     "10"
+    ]
+   ]
+  }
+ },
+ "dna-to-mrna": {
+  "inputs": [
+   {
+    "name": "choice",
+    "label": "Convert sequence from:",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "DNA to mRNA",
+     "mRNA to DNA"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "input_DNA_strand",
+    "label": "Input DNA sequence",
+    "suffix": "",
+    "help": "DNA uses A, C, G, T. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.",
+    "type": "text"
+   },
+   {
+    "name": "input_mRNA_strand",
+    "label": "Input mRNA sequence",
+    "suffix": "",
+    "help": "mRNA uses A, C, G, U. Any other letters or characters (numbers, punctuation, etc.) are ignored automatically.",
+    "type": "text"
+   }
+  ],
+  "results": [
+   {
+    "name": "dna_out_1",
+    "label": "DNA, in codons",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mrna_out_1",
+    "label": "Messenger RNA transcript",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "protein_out_1",
+    "label": "Protein",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "dna_out_2",
+    "label": "DNA from your messenger RNA",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mrna_out_2",
+    "label": "Messenger RNA you entered",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "protein_out_2",
+    "label": "Protein from that mRNA",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "choice": "DNA to mRNA",
+    "input_DNA_strand": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG"
+   },
+   "values": [
+    [
+     "dna_out_1",
+     "ATG GCC ATT GTA ATG GGC CGC TGA AAG GGT GCC CGA TAG"
+    ],
+    [
+     "mrna_out_1",
+     "AUG GCC AUU GUA AUG GGC CGC UGA AAG GGU GCC CGA UAG"
+    ],
+    [
+     "protein_out_1",
+     "Met-Ala-Ile-Val-Met-Gly-Arg-Stop"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "choice": "mRNA to DNA",
+    "input_mRNA_strand": "AUGGCCAUUGUA"
+   },
+   "values": [
+    [
+     "dna_out_2",
+     "ATG GCC ATT GTA"
+    ],
+    [
+     "mrna_out_2",
+     "AUG GCC AUU GUA"
+    ],
+    [
+     "protein_out_2",
+     "Met-Ala-Ile-Val"
+    ]
+   ]
+  }
+ },
+ "dna-to-protein": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "DNA sequence",
+    "suffix": "",
+    "help": "Paste DNA; headers and numbers are removed",
+    "type": "text"
+   },
+   {
+    "name": "start",
+    "label": "Frame handling",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "All six frames",
+     "Frame 1 only",
+     "Stop at the first stop codon"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Coding length of the longest ORF",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "aa_count",
+    "label": "Amino acids in the longest ORF",
+    "suffix": "aa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "stop_codons",
+    "label": "Stop codons in frame 1",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw",
+    "label": "Mass of the longest ORF's protein",
+    "suffix": "kDa",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "GGTACCATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAGTAA",
+    "start": "All six frames"
+   },
+   "values": [
+    [
+     "length",
+     "48"
+    ],
+    [
+     "aa_count",
+     "16"
+    ],
+    [
+     "stop_codons",
+     "3"
+    ],
+    [
+     "mw",
+     "1.6"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG",
+    "start": "Frame 1 only"
+   },
+   "values": [
+    [
+     "length",
+     "21"
+    ],
+    [
+     "aa_count",
+     "7"
+    ],
+    [
+     "stop_codons",
+     "2"
+    ],
+    [
+     "mw",
+     "0.78"
+    ]
+   ]
+  }
+ },
+ "dog-coat-color": {
+  "inputs": [
+   {
+    "name": "e_locus",
+    "label": "E locus (extension)",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "E/E — black allowed",
+     "E/e — black allowed, carries red",
+     "e/e — no black, red or yellow"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "k_locus",
+    "label": "K locus (dominant black / brindle)",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "K^B — solid black",
+     "K^br — brindle",
+     "k^y/k^y — lets the A locus show"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "b_locus",
+    "label": "B locus (brown)",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "B/B — black pigment",
+     "B/b — black, carries brown",
+     "b/b — brown (chocolate)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "d_locus",
+    "label": "D locus (dilution)",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "D/D — full colour",
+     "D/d — full colour, carries dilute",
+     "d/d — diluted (blue, lilac)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "ticking",
+    "label": "Ticking or roan spotting (T locus)",
+    "suffix": "",
+    "help": "Small coloured flecks on white areas",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "coat",
+    "label": "Predicted coat colour",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "e_locus": "E/e — black allowed, carries red",
+    "k_locus": "k^y/k^y — lets the A locus show",
+    "b_locus": "B/b — black, carries brown",
+    "d_locus": "d/d — diluted (blue, lilac)",
+    "ticking": "No"
+   },
+   "values": [
+    [
+     "coat",
+     "blue, or blue agouti"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "e_locus": "e/e — no black, red or yellow",
+    "k_locus": "k^y/k^y — lets the A locus show",
+    "b_locus": "B/B — black pigment",
+    "d_locus": "D/D — full colour",
+    "ticking": "Yes"
+   },
+   "values": [
+    [
+     "coat",
+     "red / yellow / golden, with ticking"
+    ]
+   ]
+  }
+ },
+ "dog-life-expectancy": {
+  "inputs": [
+   {
+    "name": "dog_age",
+    "label": "How old is the dog, in years?",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "breed_size",
+    "label": "Size of the breed",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "Toy — under 5 kg (Chihuahua, Yorkie)",
+     "Small — 5 to 10 kg (Pug, Beagle)",
+     "Medium — 10 to 25 kg (Border collie, Labrador)",
+     "Large — 25 to 40 kg (German shepherd, Rottweiler)",
+     "Giant — over 40 kg (Great Dane, Mastiff)"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "human_age",
+    "label": "Age in human years",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "expected_life",
+    "label": "Typical lifespan for this size (years)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "years_left",
+    "label": "Years likely left",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "life_stage",
+    "label": "Life stage (1 puppy, 2 adult, 3 mature, 4 senior)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "dog_age": "5",
+    "breed_size": "Medium"
+   },
+   "values": [
+    [
+     "human_age",
+     "36.9"
+    ],
+    [
+     "expected_life",
+     "12"
+    ],
+    [
+     "years_left",
+     "7"
+    ],
+    [
+     "life_stage",
+     "Young adult"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "dog_age": "11",
+    "breed_size": "Large"
+   },
+   "values": [
+    [
+     "human_age",
+     "69"
+    ],
+    [
+     "expected_life",
+     "10"
+    ],
+    [
+     "years_left",
+     "0"
+    ],
+    [
+     "life_stage",
+     "Mature adult"
+    ]
+   ]
+  }
+ },
+ "fuzzy-protein-search": {
+  "inputs": [
+   {
+    "name": "protein",
+    "label": "Protein sequence",
+    "suffix": "",
+    "help": "Paste the protein; FASTA headers and non-letter characters are ignored",
+    "type": "text"
+   },
+   {
+    "name": "pattern",
+    "label": "Pattern to find",
+    "suffix": "",
+    "help": "Amino-acid letters, X for any residue, B = D/N, Z = E/Q, J = I/L",
+    "type": "text"
+   },
+   {
+    "name": "mismatch",
+    "label": "Mismatches allowed",
+    "suffix": "",
+    "help": "0 = exact, but X still matches any residue",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "hits",
+    "label": "Matches found",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "best",
+    "label": "Fewest mismatches in a hit",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "total",
+    "label": "Residues searched",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "protein": "MKTAYIAKQRQISFVKSHFSRQDILDLWQ",
+    "pattern": "MKTAYIAKQ",
+    "mismatch": "1"
+   },
+   "values": [
+    [
+     "hits",
+     "1"
+    ],
+    [
+     "best",
+     "0"
+    ],
+    [
+     "total",
+     "29"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "protein": "MKWVTFISLLFLFSSAYSRGVFRRDTHKSEIAHRFKDLGEEHFK",
+    "pattern": "MKWVTF",
+    "mismatch": "2"
+   },
+   "values": [
+    [
+     "hits",
+     "1"
+    ],
+    [
+     "best",
+     "0"
+    ],
+    [
+     "total",
+     "44"
+    ]
+   ]
+  }
+ },
+ "gc-content-sequence": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste DNA or RNA",
+    "type": "text"
+   },
+   {
+    "name": "window",
+    "label": "Window size",
+    "suffix": "bp",
+    "help": "GC is computed in windows of this length",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc_count",
+    "label": "G + C bases",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc_pct",
+    "label": "GC content",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "at_pct",
+    "label": "AT content",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "tm_gc",
+    "label": "Melting temperature of the duplex",
+    "suffix": "°C",
+    "help": "At 50 mM monovalent salt",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG",
+    "window": "10"
+   },
+   "values": [
+    [
+     "length",
+     "39"
+    ],
+    [
+     "gc_count",
+     "22"
+    ],
+    [
+     "gc_pct",
+     "56.41"
+    ],
+    [
+     "at_pct",
+     "43.59"
+    ],
+    [
+     "tm_gc",
+     "70.8"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "GGGCCCGGGCCCGGGCCCGGGCCC",
+    "window": "6"
+   },
+   "values": [
+    [
+     "length",
+     "24"
+    ],
+    [
+     "gc_count",
+     "24"
+    ],
+    [
+     "gc_pct",
+     "100"
+    ],
+    [
+     "at_pct",
+     "0"
+    ],
+    [
+     "tm_gc",
+     "77.9"
+    ]
+   ]
+  }
+ },
+ "multi-reverse-translate": {
+  "inputs": [
+   {
+    "name": "proteins",
+    "label": "Protein sequences (one or more)",
+    "suffix": "",
+    "help": "One sequence per line, FASTA headers allowed — every sequence is translated separately",
+    "type": "text"
+   },
+   {
+    "name": "host",
+    "label": "Codon choice",
+    "suffix": "",
+    "help": "Host-preferred codons, or one degenerate codon per residue",
+    "options": [
+     "E. coli K-12",
+     "Human (Homo sapiens)",
+     "Yeast (S. cerevisiae)",
+     "Degenerate (IUPAC)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "stop",
+    "label": "Add a stop codon at the end",
+    "suffix": "",
+    "help": "Uses the host's preferred stop",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "sequences",
+    "label": "Sequences translated",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "residues",
+    "label": "Residues translated",
+    "suffix": "",
+    "help": "Stop characters excluded",
+    "type": "result"
+   },
+   {
+    "name": "gc",
+    "label": "GC content of the output",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "proteins": "MKTAYIAKQRQISFVKSHFSRQDILDLWQ",
+    "host": "E. coli",
+    "stop": "Yes"
+   },
+   "values": [
+    [
+     "sequences",
+     "1"
+    ],
+    [
+     "residues",
+     "29"
+    ],
+    [
+     "gc",
+     "52.22"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "proteins": "MKTAYIAKQR\nMGSSHHHHHHSSGLVPR",
+    "host": "E. coli",
+    "stop": "Yes"
+   },
+   "values": [
+    [
+     "sequences",
+     "1"
+    ],
+    [
+     "residues",
+     "27"
+    ],
+    [
+     "gc",
+     "58.33"
+    ]
+   ]
+  }
+ },
+ "orf-finder": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "DNA sequence",
+    "suffix": "",
+    "help": "Paste DNA; FASTA headers and digits are ignored",
+    "type": "text"
+   },
+   {
+    "name": "min_aa",
+    "label": "Minimum protein length",
+    "suffix": "aa",
+    "help": "Shorter ORFs are ignored",
+    "type": "number"
+   },
+   {
+    "name": "starts",
+    "label": "Count as a start",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "ATG only",
+     "ATG, GTG and TTG (bacterial)"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "orfs",
+    "label": "Open reading frames",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "longest",
+    "label": "Longest ORF",
+    "suffix": "aa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "forward",
+    "label": "On the forward strand",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "reverse",
+    "label": "On the reverse strand",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "stops",
+    "label": "Stop codons in frame",
+    "suffix": "",
+    "help": "All six frames together",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGAAACCCGGGTTTAAACCCGGGTTTAAACCCGGGTAA",
+    "min_aa": "3",
+    "starts": "ATG only"
+   },
+   "values": [
+    [
+     "orfs",
+     "1"
+    ],
+    [
+     "longest",
+     "12"
+    ],
+    [
+     "forward",
+     "1"
+    ],
+    [
+     "reverse",
+     "0"
+    ],
+    [
+     "stops",
+     "6"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "TTTAAACCCGGGTTTAAACAT",
+    "min_aa": "3",
+    "starts": "ATG only"
+   },
+   "values": [
+    [
+     "orfs",
+     "1"
+    ],
+    [
+     "longest",
+     "7"
+    ],
+    [
+     "forward",
+     "0"
+    ],
+    [
+     "reverse",
+     "1"
+    ],
+    [
+     "stops",
+     "4"
+    ]
+   ]
+  }
+ },
+ "pcr-primer-stats": {
+  "inputs": [
+   {
+    "name": "forward",
+    "label": "Forward primer (5′→3′)",
+    "suffix": "",
+    "help": "Paste the primer",
+    "type": "text"
+   },
+   {
+    "name": "reverse",
+    "label": "Reverse primer (5′→3′)",
+    "suffix": "",
+    "help": "Paste the primer as ordered",
+    "type": "text"
+   }
+  ],
+  "results": [
+   {
+    "name": "fwd_len",
+    "label": "Forward length",
+    "suffix": "nt",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "fwd_gc",
+    "label": "Forward GC",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "fwd_tm",
+    "label": "Forward Tm",
+    "suffix": "°C",
+    "help": "Wallace under 14 nt, GC rule to 40 nt, then the long form",
+    "type": "result"
+   },
+   {
+    "name": "rev_len",
+    "label": "Reverse length",
+    "suffix": "nt",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rev_gc",
+    "label": "Reverse GC",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rev_tm",
+    "label": "Reverse Tm",
+    "suffix": "°C",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "ta",
+    "label": "Suggested annealing temperature",
+    "suffix": "°C",
+    "help": "About the lower primer Tm minus 5",
+    "type": "result"
+   },
+   {
+    "name": "dtm",
+    "label": "Difference in Tm",
+    "suffix": "°C",
+    "help": "Under 5 °C is the usual target",
+    "type": "result"
+   },
+   {
+    "name": "dimer",
+    "label": "Longest 3′ complementary run",
+    "suffix": "bases",
+    "help": "3 or more risks primer dimers",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "forward": "ATGGCCATTGTAATGGGCC",
+    "reverse": "GCTGAAAGGGTGCCCGATAG"
+   },
+   "values": [
+    [
+     "fwd_len",
+     "19"
+    ],
+    [
+     "fwd_gc",
+     "52.6"
+    ],
+    [
+     "fwd_tm",
+     "51.1"
+    ],
+    [
+     "rev_len",
+     "20"
+    ],
+    [
+     "rev_gc",
+     "60"
+    ],
+    [
+     "rev_tm",
+     "55.9"
+    ],
+    [
+     "ta",
+     "46.1"
+    ],
+    [
+     "dtm",
+     "4.8"
+    ],
+    [
+     "dimer",
+     "1"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "forward": "CGGATCCGTCGACCTGCAG",
+    "reverse": "AAGCTTGTCGACCTGCAGG"
+   },
+   "values": [
+    [
+     "fwd_len",
+     "19"
+    ],
+    [
+     "fwd_gc",
+     "68.4"
+    ],
+    [
+     "fwd_tm",
+     "57.6"
+    ],
+    [
+     "rev_len",
+     "19"
+    ],
+    [
+     "rev_gc",
+     "57.9"
+    ],
+    [
+     "rev_tm",
+     "53.2"
+    ],
+    [
+     "ta",
+     "48.2"
+    ],
+    [
+     "dtm",
+     "4.3"
+    ],
+    [
+     "dimer",
+     "0"
+    ]
+   ]
+  }
+ },
+ "primer-dimer-checker": {
+  "inputs": [
+   {
+    "name": "forward",
+    "label": "Forward primer (5′→3′)",
+    "suffix": "",
+    "help": "Paste the primer",
+    "type": "text"
+   },
+   {
+    "name": "reverse",
+    "label": "Reverse primer (5′→3′)",
+    "suffix": "",
+    "help": "Paste the primer",
+    "type": "text"
+   }
+  ],
+  "results": [
+   {
+    "name": "tail_run",
+    "label": "3′ complementary run",
+    "suffix": "bases",
+    "help": "3 or more is a risk",
+    "type": "result"
+   },
+   {
+    "name": "any_run",
+    "label": "Longest complementary run",
+    "suffix": "bases",
+    "help": "Anywhere in the pair",
+    "type": "result"
+   },
+   {
+    "name": "self_fwd",
+    "label": "Forward self-dimer run",
+    "suffix": "bases",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "self_rev",
+    "label": "Reverse self-dimer run",
+    "suffix": "bases",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "hairpin_fwd",
+    "label": "Forward hairpin stem",
+    "suffix": "bases",
+    "help": "4 or more can misprime",
+    "type": "result"
+   },
+   {
+    "name": "hairpin_rev",
+    "label": "Reverse hairpin stem",
+    "suffix": "bases",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "risk",
+    "label": "Dimer risk score",
+    "suffix": "of 10",
+    "help": "0 is clean, 10 is a guaranteed dimer",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "forward": "ATGGCCATTGTAATGGGCC",
+    "reverse": "GCTGAAAGGGTGCCCGATAG"
+   },
+   "values": [
+    [
+     "tail_run",
+     "1"
+    ],
+    [
+     "any_run",
+     "4"
+    ],
+    [
+     "self_fwd",
+     "8"
+    ],
+    [
+     "self_rev",
+     "3"
+    ],
+    [
+     "hairpin_fwd",
+     "5"
+    ],
+    [
+     "hairpin_rev",
+     "3"
+    ],
+    [
+     "risk",
+     "4"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "forward": "ATGGCCATTGTAATGGGCC",
+    "reverse": "GGCCCATTACAATGGCCAT"
+   },
+   "values": [
+    [
+     "tail_run",
+     "0"
+    ],
+    [
+     "any_run",
+     "19"
+    ],
+    [
+     "self_fwd",
+     "8"
+    ],
+    [
+     "self_rev",
+     "8"
+    ],
+    [
+     "hairpin_fwd",
+     "5"
+    ],
+    [
+     "hairpin_rev",
+     "5"
+    ],
+    [
+     "risk",
+     "4"
+    ]
+   ]
+  }
+ },
+ "protein-isoelectric-point": {
+  "inputs": [
+   {
+    "name": "protein",
+    "label": "Protein sequence",
+    "suffix": "",
+    "help": "Single-letter code; headers, spaces and digits are ignored",
+    "type": "text"
+   },
+   {
+    "name": "ph",
+    "label": "pH for the charge calculation",
+    "suffix": "pH",
+    "help": "Net charge is reported at this pH",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "pi",
+    "label": "Isoelectric point",
+    "suffix": "pH",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "charge",
+    "label": "Net charge at the given pH",
+    "suffix": "e",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "aa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "mw_kda",
+    "label": "Molecular weight",
+    "suffix": "kDa",
+    "help": "Average residue masses, no PTMs",
+    "type": "result"
+   },
+   {
+    "name": "acidic",
+    "label": "Acidic residues (D + E)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "basic",
+    "label": "Basic residues (K + R + H)",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gravy",
+    "label": "GRAVY (hydrophobicity)",
+    "suffix": "",
+    "help": "Positive means hydrophobic",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "protein": "MKTAYIAKQRQISFVKSHFSRQDILDLWQ",
+    "ph": "7"
+   },
+   "values": [
+    [
+     "pi",
+     "10.41"
+    ],
+    [
+     "charge",
+     "3.03"
+    ],
+    [
+     "length",
+     "29"
+    ],
+    [
+     "mw_kda",
+     "3.56"
+    ],
+    [
+     "acidic",
+     "2"
+    ],
+    [
+     "basic",
+     "6"
+    ],
+    [
+     "gravy",
+     "-0.476"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "protein": "MDDDDKKKEEEEDDDDK",
+    "ph": "7"
+   },
+   "values": [
+    [
+     "pi",
+     "3.6"
+    ],
+    [
+     "charge",
+     "-8.05"
+    ],
+    [
+     "length",
+     "17"
+    ],
+    [
+     "mw_kda",
+     "2.12"
+    ],
+    [
+     "acidic",
+     "12"
+    ],
+    [
+     "basic",
+     "4"
+    ],
+    [
+     "gravy",
+     "-3.276"
+    ]
+   ]
+  }
+ },
+ "rabbit-color": {
+  "inputs": [
+   {
+    "name": "sire_A",
+    "label": "Sire, Agouti banding (A dominant over a) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "sire_B",
+    "label": "Sire, Black or chocolate (B dominant over b) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "sire_C",
+    "label": "Sire, Full colour (C dominant over c) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "sire_D",
+    "label": "Sire, Dense colour (D dominant over d) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "sire_E",
+    "label": "Sire, Extension (E dominant over e) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "dam_A",
+    "label": "Dam, Agouti banding (A dominant over a) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "dam_B",
+    "label": "Dam, Black or chocolate (B dominant over b) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "dam_C",
+    "label": "Dam, Full colour (C dominant over c) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "dam_D",
+    "label": "Dam, Dense colour (D dominant over d) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   },
+   {
+    "name": "dam_E",
+    "label": "Dam, Extension (E dominant over e) — dominant alleles (0, 1 or 2)",
+    "suffix": "",
+    "help": "",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "rb_albino",
+    "label": "Albino (ruby-eyed white) %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_nonext",
+    "label": "Non-extension — red, fawn, tortoiseshell %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_chestnut",
+    "label": "Agouti, black-based — chestnut %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_agouti_other",
+    "label": "Agouti in chocolate, opal, cinnamon or lilac %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_self_black",
+    "label": "Self black %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_self_other",
+    "label": "Self in chocolate, blue or lilac %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_coloured",
+    "label": "Not albino %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "rb_top",
+    "label": "Most likely colour class — chance %",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sire_A": "2",
+    "sire_B": "2",
+    "sire_C": "1",
+    "sire_D": "2",
+    "sire_E": "1",
+    "dam_A": "0",
+    "dam_B": "2",
+    "dam_C": "0",
+    "dam_D": "0",
+    "dam_E": "0"
+   },
+   "values": [
+    [
+     "rb_albino",
+     "50"
+    ],
+    [
+     "rb_nonext",
+     "25"
+    ],
+    [
+     "rb_chestnut",
+     "25"
+    ],
+    [
+     "rb_agouti_other",
+     "0"
+    ],
+    [
+     "rb_self_black",
+     "0"
+    ],
+    [
+     "rb_self_other",
+     "0"
+    ],
+    [
+     "rb_coloured",
+     "50"
+    ],
+    [
+     "rb_top",
+     "50"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sire_A": "0",
+    "sire_B": "2",
+    "sire_C": "2",
+    "sire_D": "2",
+    "sire_E": "2",
+    "dam_A": "2",
+    "dam_B": "0",
+    "dam_C": "1",
+    "dam_D": "0",
+    "dam_E": "1"
+   },
+   "values": [
+    [
+     "rb_albino",
+     "0"
+    ],
+    [
+     "rb_nonext",
+     "0"
+    ],
+    [
+     "rb_chestnut",
+     "100"
+    ],
+    [
+     "rb_agouti_other",
+     "0"
+    ],
+    [
+     "rb_self_black",
+     "0"
+    ],
+    [
+     "rb_self_other",
+     "0"
+    ],
+    [
+     "rb_coloured",
+     "100"
+    ],
+    [
+     "rb_top",
+     "100"
+    ]
+   ]
+  }
+ },
+ "random-sequence-generator": {
+  "inputs": [
+   {
+    "name": "kind",
+    "label": "Alphabet",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "DNA (ACGT)",
+     "RNA (ACGU)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "residues",
+    "help": "1 to 100 000",
+    "type": "number"
+   },
+   {
+    "name": "gc",
+    "label": "Target GC content",
+    "suffix": "%",
+    "help": "DNA and RNA only",
+    "type": "number"
+   },
+   {
+    "name": "seed",
+    "label": "Seed",
+    "suffix": "",
+    "help": "Same seed, same sequence — any whole number",
+    "type": "number"
+   },
+   {
+    "name": "start",
+    "label": "Make the sequence start with ATG",
+    "suffix": "",
+    "help": "DNA only — gives you a start codon",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "gc_actual",
+    "label": "GC content of the output",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "length": "60",
+    "gc": "50",
+    "seed": "7"
+   },
+   "values": [
+    [
+     "gc_actual",
+     "48.33"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "length": "120",
+    "gc": "35",
+    "seed": "42"
+   },
+   "values": [
+    [
+     "gc_actual",
+     "40"
+    ]
+   ]
+  }
+ },
+ "restriction-buffer-compatibility": {
+  "inputs": [
+   {
+    "name": "enzyme1",
+    "label": "Enzyme 1",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "EcoRI",
+     "HindIII",
+     "BamHI",
+     "SalI",
+     "XhoI",
+     "NotI",
+     "PstI",
+     "SacI"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "enzyme2",
+    "label": "Enzyme 2",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "BamHI",
+     "EcoRI",
+     "HindIII",
+     "SalI",
+     "XhoI",
+     "NotI",
+     "PstI",
+     "SacI"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "classic_only",
+    "label": "I only have the classic three buffers (no universal buffer)",
+    "suffix": "",
+    "help": "Uncheck to model a kit that includes a CutSmart-type buffer",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "suitable",
+    "label": "Buffers that suit both",
+    "suffix": "",
+    "help": "Out of the buffers available",
+    "type": "result"
+   },
+   {
+    "name": "best",
+    "label": "Best combined activity",
+    "suffix": "%",
+    "help": "Predicted, weaker of the two",
+    "type": "result"
+   },
+   {
+    "name": "sequential",
+    "label": "Enzymes that need their own buffer",
+    "suffix": "",
+    "help": "0 or 1",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "enzyme1": "EcoRI",
+    "enzyme2": "BamHI"
+   },
+   "values": [
+    [
+     "suitable",
+     "1"
+    ],
+    [
+     "best",
+     "100"
+    ],
+    [
+     "sequential",
+     "0"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "enzyme1": "HindIII",
+    "enzyme2": "XhoI"
+   },
+   "values": [
+    [
+     "suitable",
+     "1"
+    ],
+    [
+     "best",
+     "100"
+    ],
+    [
+     "sequential",
+     "0"
+    ]
+   ]
+  }
+ },
+ "restriction-digest": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "DNA sequence",
+    "suffix": "",
+    "help": "Paste the plasmid or the whole amplicon; FASTA headers are ignored",
+    "type": "text"
+   },
+   {
+    "name": "enzyme1",
+    "label": "Enzyme 1",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "EcoRI (G^AATTC)",
+     "BamHI (G^GATCC)",
+     "HindIII (A^AGCTT)",
+     "NotI (GC^GGCCGC)",
+     "XhoI (C^TCGAG)",
+     "SalI (G^TCGAC)",
+     "PstI (CTGCA^G)",
+     "XbaI (T^CTAGA)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "enzyme2",
+    "label": "Enzyme 2",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "None",
+     "BamHI (G^GATCC)",
+     "HindIII (A^AGCTT)",
+     "NotI (GC^GGCCGC)",
+     "XhoI (C^TCGAG)",
+     "SalI (G^TCGAC)",
+     "XbaI (T^CTAGA)",
+     "NcoI (C^CATGG)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "topology",
+    "label": "Molecule",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "Linear",
+     "Circular (plasmid)"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Sequence length",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "sites",
+    "label": "Cut sites",
+    "suffix": "",
+    "help": "Both enzymes together",
+    "type": "result"
+   },
+   {
+    "name": "fragments",
+    "label": "Fragments",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "largest",
+    "label": "Largest fragment",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "smallest",
+    "label": "Smallest fragment",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTTGAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "enzyme1": "EcoRI",
+    "enzyme2": "HindIII",
+    "topology": "Linear"
+   },
+   "values": [
+    [
+     "length",
+     "72"
+    ],
+    [
+     "sites",
+     "4"
+    ],
+    [
+     "fragments",
+     "5"
+    ],
+    [
+     "largest",
+     "30"
+    ],
+    [
+     "smallest",
+     "1"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTTGAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "enzyme1": "EcoRI",
+    "enzyme2": "HindIII",
+    "topology": "Circular"
+   },
+   "values": [
+    [
+     "length",
+     "72"
+    ],
+    [
+     "sites",
+     "4"
+    ],
+    [
+     "fragments",
+     "4"
+    ],
+    [
+     "largest",
+     "30"
+    ],
+    [
+     "smallest",
+     "6"
+    ]
+   ]
+  }
+ },
+ "restriction-enzyme-finder": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "DNA sequence",
+    "suffix": "",
+    "help": "Paste the plasmid or the amplicon; FASTA headers are ignored",
+    "type": "text"
+   },
+   {
+    "name": "circular",
+    "label": "Treat the molecule as circular (plasmid)",
+    "suffix": "",
+    "help": "Sites that span the origin are counted too",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "cutters",
+    "label": "Enzymes that cut",
+    "suffix": "",
+    "help": "Out of the panel",
+    "type": "result"
+   },
+   {
+    "name": "unique",
+    "label": "Unique cutters",
+    "suffix": "",
+    "help": "Exactly one site",
+    "type": "result"
+   },
+   {
+    "name": "nocut",
+    "label": "Enzymes that do not cut",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTTCCGGATCCAAGCTTGTCGACCTGCAGGCATGCAATTC",
+    "circular": "No"
+   },
+   "values": [
+    [
+     "cutters",
+     "5"
+    ],
+    [
+     "unique",
+     "0"
+    ],
+    [
+     "nocut",
+     "21"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "GAATTCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "circular": "Yes"
+   },
+   "values": [
+    [
+     "cutters",
+     "6"
+    ],
+    [
+     "unique",
+     "6"
+    ],
+    [
+     "nocut",
+     "20"
+    ]
+   ]
+  }
+ },
+ "reverse-complement": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste DNA; spaces, line breaks and FASTA headers are ignored",
+    "type": "text"
+   },
+   {
+    "name": "alphabet",
+    "label": "Alphabet",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "DNA (A, C, G, T)",
+     "RNA (A, C, G, U)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "width",
+    "label": "Base pairs per line",
+    "suffix": "",
+    "help": "0 for one line",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "bp",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc",
+    "label": "GC content",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "tm",
+    "label": "Melting temperature of the duplex",
+    "suffix": "°C",
+    "help": "Wallace under 14 nt, GC rule to 40 nt, long-duplex form above",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG",
+    "alphabet": "DNA (A, C, G, T)",
+    "width": "10"
+   },
+   "values": [
+    [
+     "length",
+     "39"
+    ],
+    [
+     "gc",
+     "56.41"
+    ],
+    [
+     "tm",
+     "70.8"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "ACGTACGTACGT",
+    "alphabet": "DNA (A, C, G, T)",
+    "width": "0"
+   },
+   "values": [
+    [
+     "length",
+     "12"
+    ],
+    [
+     "gc",
+     "50"
+    ],
+    [
+     "tm",
+     "36"
+    ]
+   ]
+  }
+ },
+ "reverse-translate": {
+  "inputs": [
+   {
+    "name": "protein",
+    "label": "Protein sequence",
+    "suffix": "",
+    "help": "Single-letter code; spaces, digits and FASTA headers are ignored",
+    "type": "text"
+   },
+   {
+    "name": "strategy",
+    "label": "Codon choice",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "E. coli, most used codon",
+     "Human, most used codon",
+     "GC-balanced (50%)",
+     "Avoid rare codons (GC-rich hosts)"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "tail",
+    "label": "Add a stop codon",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "type": "select"
+   }
+  ],
+  "results": [
+   {
+    "name": "length_aa",
+    "label": "Protein length",
+    "suffix": "aa",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "length",
+    "label": "DNA length",
+    "suffix": "nt",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc_pct",
+    "label": "GC content of the DNA",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "codons",
+    "label": "Codons",
+    "suffix": "",
+    "help": "Includes the stop codon when one is added",
+    "type": "result"
+   },
+   {
+    "name": "tm",
+    "label": "Melting temperature of the duplex",
+    "suffix": "°C",
+    "help": "At 50 mM monovalent salt",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "protein": "MKTAYIAKQRQISFVKSHFSRQDILDLWQ",
+    "strategy": "E. coli",
+    "tail": "Yes"
+   },
+   "values": [
+    [
+     "length_aa",
+     "29"
+    ],
+    [
+     "length",
+     "90"
+    ],
+    [
+     "gc_pct",
+     "42.22"
+    ],
+    [
+     "codons",
+     "30"
+    ],
+    [
+     "tm",
+     "69.7"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "protein": "MKWVTFISLLFLFSSAYSR",
+    "strategy": "E. coli",
+    "tail": "No"
+   },
+   "values": [
+    [
+     "length_aa",
+     "19"
+    ],
+    [
+     "length",
+     "57"
+    ],
+    [
+     "gc_pct",
+     "45.61"
+    ],
+    [
+     "codons",
+     "19"
+    ],
+    [
+     "tm",
+     "66.8"
+    ]
+   ]
+  }
+ },
+ "sequence-shuffler": {
+  "inputs": [
+   {
+    "name": "sequence",
+    "label": "Sequence",
+    "suffix": "",
+    "help": "Paste DNA or protein; headers, spaces and digits are ignored",
+    "type": "text"
+   },
+   {
+    "name": "mode",
+    "label": "Shuffle by",
+    "suffix": "",
+    "help": "Dinucleotide shuffling keeps the same pairs, so dinucleotide biases survive",
+    "options": [
+     "Single bases",
+     "Dinucleotides"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "type",
+    "label": "Molecule",
+    "suffix": "",
+    "help": "",
+    "options": [
+     "DNA",
+     "Protein"
+    ],
+    "type": "select"
+   },
+   {
+    "name": "seed",
+    "label": "Random seed",
+    "suffix": "",
+    "help": "Same seed, same result — useful for reproducible nulls",
+    "type": "number"
+   }
+  ],
+  "results": [
+   {
+    "name": "length",
+    "label": "Length",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "gc_pct",
+    "label": "GC content",
+    "suffix": "%",
+    "help": "Unchanged by mononucleotide shuffling",
+    "type": "result"
+   },
+   {
+    "name": "changes",
+    "label": "Positions changed",
+    "suffix": "",
+    "help": "",
+    "type": "result"
+   },
+   {
+    "name": "hamming",
+    "label": "Difference from the input",
+    "suffix": "%",
+    "help": "",
+    "type": "result"
+   }
+  ],
+  "example": {
+   "inputs": {
+    "sequence": "AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "mode": "Single bases",
+    "type": "DNA",
+    "seed": "7"
+   },
+   "values": [
+    [
+     "length",
+     "36"
+    ],
+    [
+     "gc_pct",
+     "55.56"
+    ],
+    [
+     "changes",
+     "23"
+    ],
+    [
+     "hamming",
+     "63.9"
+    ]
+   ]
+  },
+  "second": {
+   "inputs": {
+    "sequence": "AATTCCGGATCCGTCGACCTGCAGGCATGCAAGCTT",
+    "mode": "Dinucleotides",
+    "type": "DNA",
+    "seed": "3"
+   },
+   "values": [
+    [
+     "length",
+     "36"
+    ],
+    [
+     "gc_pct",
+     "55.56"
+    ],
+    [
+     "changes",
+     "27"
+    ],
+    [
+     "hamming",
+     "75"
+    ]
+   ]
+  }
+ }
+}
