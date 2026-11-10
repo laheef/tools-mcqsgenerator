@@ -651,6 +651,26 @@ final class CalcFile
         if (!empty($def['checks']) && is_array($def['checks'])) {
             $rec['checks'] = $def['checks'];
         }
+        /*
+         * A page whose working is a script cannot be run backwards. Its result
+         * boxes are written by the page and never read from it, so they are
+         * marked output-only: the panel shows them, the form does not offer them
+         * as something to fill. A formula page keeps the solver's reverse solve,
+         * which is why this is scoped to the script engine and nothing else.
+         */
+        if (strtolower(trim((string) ($def['engine'] ?? 'formula'))) === 'script') {
+            foreach ($rec['groups'] as $gi => $group) {
+                foreach ((array) ($group['m'] ?? []) as $mi => $matrix) {
+                    foreach ((array) ($matrix[1] ?? []) as $ci => $column) {
+                        foreach ((array) $column as $fi => $field) {
+                            if (is_array($field) && ($field['vt'] ?? '') === 'dependent') {
+                                $rec['groups'][$gi]['m'][$mi][1][$ci][$fi]['oo'] = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         return $rec;
     }
 

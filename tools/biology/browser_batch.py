@@ -69,7 +69,6 @@ READ = """
    * sweep called it answered. The value is what is read now.
    */
   const boxes = [...document.querySelectorAll('.calc-results input, .calc-results textarea, .calc-field[data-output] input')]
-    .filter(e => e.offsetParent !== null)
     .map(e => [e.closest('[data-result-slot]')?.getAttribute('data-result-slot')
                 || e.closest('[data-var]')?.getAttribute('data-var') || '', (e.value || '').trim()]);
   const filled = boxes.filter(x => x[1] !== '');
@@ -223,7 +222,12 @@ def check(slug: str) -> dict:
                 # An answered page shows a value. A panel of empty boxes is a
                 # page of empty boxes; only a page with no result box at all
                 # can be answered by its sentences alone.
-                answered = read["nboxes"] > 0 or (read.get("slots", 0) == 0 and read["nrows"] > 0)
+                # A page with result boxes answers when it fills one. A page that
+                # answers through injected prose alone is accepted only when it
+                # says so: state=shown, rows, and no empty box left behind.
+                answered = read["nboxes"] > 0 or (
+                    read.get("state") == "shown" and read.get("slots", 0) == 0 and read["nrows"] > 0
+                )
                 out.update(read)
                 out["filled"] = filled
                 out["limit"] = limit
