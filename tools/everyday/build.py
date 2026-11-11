@@ -51,7 +51,10 @@ def check(spec: Spec) -> list[str]:
         problems.append("no results")
     keys = {f["name"] for f in spec.fields} | {r["name"] for r in spec.results}
     for key in spec.formula:
-        if key not in keys:
+        # a helper is a step the page needs but never shows; a result is a box.
+        # Anything else is a typo, and a typo in a left-hand side silently drops
+        # the formula from the written file.
+        if key not in keys and spec.formula[key] == "":
             problems.append(f"formula for unknown field {key}")
     env = spec.formula_env()
     numeric = [f for f in spec.fields
