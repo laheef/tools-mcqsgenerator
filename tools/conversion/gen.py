@@ -150,7 +150,11 @@ def num(v: Any) -> str:
         return str(v)
     if v == int(v) and abs(v) < 1e15:
         return f"{int(v):,}".replace(",", "\u2009")
-    if abs(v) >= 1e5 or abs(v) < 1e-4:
+    if abs(v) >= 1e5 or abs(v) < 1:
+        # Small factors carry their meaning in the leading digits: 0.000621
+        # loses the difference between a mile and a kilometre, so anything
+        # below one is written with six significant figures instead of six
+        # decimal places.
         return f"{v:.6g}"
     return f"{v:.6f}".rstrip("0").rstrip(".")
 

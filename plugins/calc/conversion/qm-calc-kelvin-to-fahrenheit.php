@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Kelvin to Celsius Converter
+ * Kelvin to Fahrenheit Converter
  * /conversion/kelvin-to-fahrenheit
  *
  * One calculator, one file. Edit the form, the formulas or the
@@ -11,11 +11,11 @@
 
 return [
     'authored' => true,
-    'name' => 'Kelvin to Celsius Converter',
+    'name' => 'Kelvin to Fahrenheit Converter',
     'meta' => [
-        'title' => 'Kelvin to Celsius Converter: Celsius, Fahrenheit',
+        'title' => 'Kelvin to Fahrenheit Converter: Celsius, Fahrenheit',
         'description' => 'Convert Kelvin to Celsius, Fahrenheit, Kelvin and Rankine with the offsets written out, a worked example and a table that crosses the freezing and boiling.',
-        'h1' => 'Kelvin to Celsius Converter',
+        'h1' => 'Kelvin to Fahrenheit Converter',
         'updated' => '2026-11-11',
     ],
     'sections' => [
@@ -83,7 +83,7 @@ return [
     ],
     'formula' => [
         [
-            'title' => 'Kelvin to Celsius Converter',
+            'title' => 'Kelvin to Fahrenheit Converter',
             'results' => [
                 'celsius' => 'value - 273.15',
                 'fahrenheit' => '(value - 273.15) * 9 / 5 + 32',
@@ -162,7 +162,7 @@ return [
         ],
         'faq' => [
             [
-                'q' => 'What does the Kelvin to Celsius Converter work out?',
+                'q' => 'What does the Kelvin to Fahrenheit Converter work out?',
                 'a' => 'It returns celsius, fahrenheit, kelvin and rankine from temperature in Kelvin. The relationship is Temperature in Kelvin - 273.15.',
             ],
             [

@@ -1,0 +1,10254 @@
+[
+ {
+  "slug": "acre-to-are-conversion",
+  "problems": [],
+  "answers": {
+   "result": "80.937",
+   "base": "8 093.713",
+   "factor": "40.469"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "40.469"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "acreage",
+  "problems": [],
+  "answers": {
+   "m2": "8 093.713",
+   "square-foot": "87 120",
+   "square-yard": "9 680",
+   "km2": "0.008",
+   "hectare": "0.809",
+   "square-mile": "0.003",
+   "square-inch": "12 545 280",
+   "cm2": "80 937 200"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m2": "",
+    "square-foot": "",
+    "square-yard": "",
+    "km2": "",
+    "hectare": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "acres-to-hectares-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.809",
+   "base": "8 093.713",
+   "factor": "0.405"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.405"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "acres-to-square-feet-converter",
+  "problems": [],
+  "answers": {
+   "result": "87 120",
+   "base": "8 093.713",
+   "factor": "43 560"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "43 560"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "acres-to-square-miles",
+  "problems": [],
+  "answers": {
+   "result": "0.003",
+   "base": "8 093.713",
+   "factor": "0.002"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.002"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "angle-converter",
+  "problems": [],
+  "answers": {
+   "radian": "0.035",
+   "gradian": "2.222",
+   "arcminute": "120",
+   "arcsecond": "7 200",
+   "turn": "0.006"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 5,
+   "empty": {
+    "radian": "",
+    "gradian": "",
+    "arcminute": "",
+    "arcsecond": "",
+    "turn": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "angstrom-to-nm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.2",
+   "base": "2.000 ×10^-10",
+   "factor": "0.1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "area-converter",
+  "problems": [],
+  "answers": {
+   "square-foot": "21.528",
+   "square-yard": "2.392",
+   "km2": "2.000 ×10^-6",
+   "hectare": "2.000 ×10^-4",
+   "acre": "4.942 ×10^-4",
+   "square-mile": "7.722 ×10^-7",
+   "square-inch": "3 100.006",
+   "cm2": "20 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "square-foot": "",
+    "square-yard": "",
+    "km2": "",
+    "hectare": "",
+    "acre": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ares-to-cents",
+  "problems": [],
+  "answers": {
+   "result": "4.942",
+   "base": "200",
+   "factor": "2.471"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.471"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ares-to-hectares",
+  "problems": [],
+  "answers": {
+   "result": "0.02",
+   "base": "200",
+   "factor": "0.01"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.01"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "astronomical-unit",
+  "problems": [],
+  "answers": {
+   "m": "299 195 741 400",
+   "cm": "29 919 574 140 000",
+   "mm": "299 195 741 400 000",
+   "km": "299 196 000",
+   "inch": "11 779 360 000 000",
+   "foot": "981 614 000 000",
+   "yard": "327 204 000 000",
+   "mile": "185 911 600"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "atm-conversion",
+  "problems": [],
+  "answers": {
+   "pa": "202 650",
+   "kpa": "202.65",
+   "mpa": "0.203",
+   "bar": "2.026",
+   "psi": "29.392",
+   "mmhg": "1 520",
+   "torr": "1 520",
+   "inh2o": "813.565"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "pa": "",
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "atm-to-pascals-conversion",
+  "problems": [],
+  "answers": {
+   "result": "202 650",
+   "base": "202 650",
+   "factor": "101 325"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "101 325"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "bar-to-atm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "1.974",
+   "base": "200 000",
+   "factor": "0.987"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.987"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "bar-to-psi-conversion",
+  "problems": [],
+  "answers": {
+   "result": "29.008",
+   "base": "200 000",
+   "factor": "14.504"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "14.504"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "bar-to-psig-conversion",
+  "problems": [],
+  "answers": {
+   "psig": "14.312",
+   "psia": "29.008",
+   "kpa": "200"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "psig": "",
+    "psia": "",
+    "kpa": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "bar",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "barometric-pressure-conversion",
+  "problems": [],
+  "answers": {
+   "pa": "266.645",
+   "kpa": "0.267",
+   "mpa": "2.666 ×10^-4",
+   "bar": "0.003",
+   "psi": "0.039",
+   "atm": "0.003",
+   "torr": "2",
+   "inh2o": "1.07"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "pa": "",
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "billion-to-trillion-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2 000 000 000",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "binary",
+  "problems": [],
+  "answers": {
+   "binary": "10",
+   "octal": "2",
+   "hex": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "binary": "",
+    "octal": "",
+    "hex": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "number",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "binary-to-hexadecimal",
+  "problems": [],
+  "answers": {
+   "hex": "2A",
+   "octal": "52",
+   "decimal": "42"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "binary-to-octal",
+  "problems": [],
+  "answers": {
+   "octal": "52",
+   "hex": "2A",
+   "decimal": "42"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "byte-converter",
+  "problems": [],
+  "answers": {
+   "kilobyte": "0.002",
+   "megabyte": "2.000 ×10^-6",
+   "gigabyte": "2.000 ×10^-9",
+   "terabyte": "2.000 ×10^-12",
+   "bit": "16",
+   "kibibyte": "0.002",
+   "mebibyte": "1.907 ×10^-6",
+   "petabyte": "2.000 ×10^-15"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "kilobyte": "",
+    "megabyte": "",
+    "gigabyte": "",
+    "terabyte": "",
+    "bit": "",
+    "kibibyte": "",
+    "mebibyte": "",
+    "petabyte": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "capacitance-conversion",
+  "problems": [],
+  "answers": {
+   "nanofarad": "2 000",
+   "picofarad": "2 000 000",
+   "millifarad": "0.002",
+   "farad": "2.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "nanofarad": "",
+    "picofarad": "",
+    "millifarad": "",
+    "farad": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cc-to-grams-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.004",
+   "litres": "0.002",
+   "kilograms": "4.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cc-to-liter-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "0.002",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cc-to-ml-converter",
+  "problems": [],
+  "answers": {
+   "result": "2",
+   "base": "0.002",
+   "factor": "1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cc-to-oz-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.068",
+   "base": "0.002",
+   "factor": "0.034"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.034"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ccf-to-gallons-conversion",
+  "problems": [],
+  "answers": {
+   "result": "1 496.104",
+   "base": "5 663.369",
+   "factor": "748.052"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "748.052"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ccf-to-therms",
+  "problems": [],
+  "answers": {
+   "therms": "4",
+   "kwh": "117.228",
+   "m3": "5.663"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "therms": "",
+    "kwh": "",
+    "m3": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "ccf",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "celsius-converter",
+  "problems": [],
+  "answers": {
+   "celsius": "2",
+   "fahrenheit": "35.6",
+   "kelvin": "275.15",
+   "rankine": "495.27"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "celsius-to-fahrenheit",
+  "problems": [],
+  "answers": {
+   "celsius": "2",
+   "fahrenheit": "35.6",
+   "kelvin": "275.15",
+   "rankine": "495.27"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cent-to-square-meter-converter",
+  "problems": [],
+  "answers": {
+   "result": "80.937",
+   "base": "80.937",
+   "factor": "40.469"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "40.469"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "centigrade-to-celsius",
+  "problems": [],
+  "answers": {
+   "celsius": "2",
+   "fahrenheit": "35.6",
+   "kelvin": "275.15",
+   "rankine": "495.27"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "centimeter",
+  "problems": [],
+  "answers": {
+   "m": "0.02",
+   "mm": "20",
+   "km": "2.000 ×10^-5",
+   "inch": "0.787",
+   "foot": "0.066",
+   "yard": "0.022",
+   "mile": "1.243 ×10^-5",
+   "nm": "20 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cents-to-dollars",
+  "problems": [],
+  "answers": {
+   "dollars": "0.02",
+   "cents": "2",
+   "per_dollar": "100"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "dollars": "",
+    "cents": "",
+    "per_dollar": "100"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cents-to-euros",
+  "problems": [],
+  "answers": {
+   "euros": "0.04",
+   "dollars": "0.02",
+   "rate_used": "2"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "euros": "",
+    "dollars": "",
+    "rate_used": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "cents",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cgs-system-of-units",
+  "problems": [],
+  "answers": {
+   "m": "0.02",
+   "mm": "20",
+   "km": "2.000 ×10^-5",
+   "inch": "0.787",
+   "foot": "0.066",
+   "yard": "0.022",
+   "mile": "1.243 ×10^-5",
+   "nm": "20 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-height-conversion",
+  "problems": [],
+  "answers": {
+   "ft": "0",
+   "in": "0.787",
+   "inches_total": "0.787"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "ft": "",
+    "in": "",
+    "inches_total": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "cm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-to-ft-in-converter",
+  "problems": [],
+  "answers": {
+   "feet": "0",
+   "inches": "0.787",
+   "total_inches": "0.787"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "feet": "",
+    "inches": "",
+    "total_inches": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "cm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-to-in",
+  "problems": [],
+  "answers": {
+   "result": "0.787",
+   "base": "0.02",
+   "factor": "0.394"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.394"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-to-km-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2.000 ×10^-5",
+   "base": "0.02",
+   "factor": "1.000 ×10^-5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.000 ×10^-5"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-to-m",
+  "problems": [],
+  "answers": {
+   "result": "0.02",
+   "base": "0.02",
+   "factor": "0.01"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.01"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cm-to-mm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "20",
+   "base": "0.02",
+   "factor": "10"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "10"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "color-converter",
+  "problems": [],
+  "answers": {
+   "rgb": "rgb(52, 152, 219)",
+   "hsl": "hsl(204, 70%, 53%)",
+   "luminance": "0.5317"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "conversion-calculator",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "coordinates-converter",
+  "problems": [],
+  "answers": {
+   "lat_dms": "2° 0′ 0.0″ N",
+   "lon_dms": "2° 0′ 0.0″ E",
+   "decimal": "2.000000, 2.000000"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "lat_dms": "",
+    "lon_dms": "",
+    "decimal": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "latitude",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cps-converter",
+  "problems": [],
+  "answers": {
+   "poise": "0.02",
+   "pas": "0.002",
+   "stokes": "20",
+   "centistokes": "2 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "poise": "",
+    "pas": "",
+    "stokes": "",
+    "centistokes": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "crore-to-lakh",
+  "problems": [],
+  "answers": {
+   "result": "200",
+   "base": "20 000 000",
+   "factor": "100"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "100"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "crore-to-million",
+  "problems": [],
+  "answers": {
+   "result": "20",
+   "base": "20 000 000",
+   "factor": "10"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "10"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-feet",
+  "problems": [],
+  "answers": {
+   "l": "56.634",
+   "ml": "56 633.693",
+   "tsp": "11 490.078",
+   "tbsp": "3 830.026",
+   "floz": "1 915.013",
+   "cup": "239.377",
+   "pint": "119.688",
+   "quart": "59.844"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "l": "",
+    "ml": "",
+    "tsp": "",
+    "tbsp": "",
+    "floz": "",
+    "cup": "",
+    "pint": "",
+    "quart": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-feet-to-cubic-meters",
+  "problems": [],
+  "answers": {
+   "result": "0.057",
+   "base": "56.634",
+   "factor": "0.028"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.028"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-feet-to-gallons",
+  "problems": [],
+  "answers": {
+   "result": "14.961",
+   "base": "56.634",
+   "factor": "7.481"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "7.481"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-feet-to-pounds",
+  "problems": [],
+  "answers": {
+   "result": "0.25",
+   "litres": "56.634",
+   "kilograms": "0.113"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-inches-to-gallons",
+  "problems": [],
+  "answers": {
+   "result": "0.009",
+   "base": "0.033",
+   "factor": "0.004"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.004"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-meter",
+  "problems": [],
+  "answers": {
+   "l": "2 000",
+   "ml": "2 000 000",
+   "tsp": "405 768",
+   "tbsp": "135 256.091",
+   "floz": "67 628.045",
+   "cup": "8 453.506",
+   "pint": "4 226.753",
+   "quart": "2 113.376"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "l": "",
+    "ml": "",
+    "tsp": "",
+    "tbsp": "",
+    "floz": "",
+    "cup": "",
+    "pint": "",
+    "quart": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-meter-to-ton",
+  "problems": [],
+  "answers": {
+   "result": "0.004",
+   "litres": "2 000",
+   "kilograms": "4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cubic-yards-to-tons",
+  "problems": [],
+  "answers": {
+   "result": "0.003",
+   "litres": "1 529.11",
+   "kilograms": "3.058"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cups-to-gallons-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.125",
+   "base": "0.473",
+   "factor": "0.063"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.063"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cups-to-oz",
+  "problems": [],
+  "answers": {
+   "result": "16",
+   "base": "0.473",
+   "factor": "8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "8"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cups-to-pints-converter",
+  "problems": [],
+  "answers": {
+   "result": "1",
+   "base": "0.473",
+   "factor": "0.5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.5"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "cups-to-quarts-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.5",
+   "base": "0.473",
+   "factor": "0.25"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.25"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "day-converter",
+  "problems": [],
+  "answers": {
+   "s": "172 800",
+   "ms": "172 800 000",
+   "minute": "2 880",
+   "hour": "48",
+   "week": "0.286",
+   "month": "0.066",
+   "year": "0.005",
+   "decade": "5.476 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "s": "",
+    "ms": "",
+    "minute": "",
+    "hour": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "days-to-months",
+  "problems": [],
+  "answers": {
+   "result": "0.066",
+   "base": "172 800",
+   "factor": "0.033"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.033"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "days-to-weeks",
+  "problems": [],
+  "answers": {
+   "result": "0.286",
+   "base": "172 800",
+   "factor": "0.143"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.143"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "days-to-years",
+  "problems": [],
+  "answers": {
+   "result": "0.005",
+   "base": "172 800",
+   "factor": "0.003"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.003"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "dbm-to-watts",
+  "problems": [],
+  "answers": {
+   "watts": "0.002",
+   "milliwatts": "1.585",
+   "dbw": "-28"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "watts": "",
+    "milliwatts": "",
+    "dbw": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "dbm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "decagram-to-gram",
+  "problems": [],
+  "answers": {
+   "result": "20",
+   "base": "0.02",
+   "factor": "10"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "10"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "decimal-to-hexadecimal",
+  "problems": [],
+  "answers": {
+   "hex": "2",
+   "binary": "10",
+   "octal": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "hex": "",
+    "binary": "",
+    "octal": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "number",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "decimal-to-octal",
+  "problems": [],
+  "answers": {
+   "octal": "2",
+   "binary": "10",
+   "hex": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "octal": "",
+    "binary": "",
+    "hex": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "number",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "decimeter-to-meter",
+  "problems": [],
+  "answers": {
+   "result": "0.2",
+   "base": "0.2",
+   "factor": "0.1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "degrees-minutes-seconds",
+  "problems": [],
+  "answers": {
+   "decimal": "2.033889",
+   "total_minutes": "122.033",
+   "total_seconds": "7 322"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 3,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "decimal": "",
+    "total_minutes": "",
+    "total_seconds": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "degrees",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "degrees-to-minutes",
+  "problems": [],
+  "answers": {
+   "result": "120",
+   "base": "0.035",
+   "factor": "60"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "60"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "degrees-to-radians",
+  "problems": [],
+  "answers": {
+   "result": "0.035",
+   "base": "0.035",
+   "factor": "0.017"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.017"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "degrees-to-seconds",
+  "problems": [],
+  "answers": {
+   "result": "7 200",
+   "base": "0.035",
+   "factor": "3 600"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3 600"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "density-converter",
+  "problems": [],
+  "answers": {
+   "gcm3": "0.002",
+   "gml": "0.002",
+   "lbft3": "0.125",
+   "lbgal": "0.017",
+   "gl": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 5,
+   "empty": {
+    "gcm3": "",
+    "gml": "",
+    "lbft3": "",
+    "lbgal": "",
+    "gl": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "dimensional-analysis",
+  "problems": [],
+  "answers": {
+   "power": "0.301",
+   "mantissa": "2",
+   "engineering": "0"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "power": "",
+    "mantissa": "",
+    "engineering": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "dimes-to-dollars",
+  "problems": [],
+  "answers": {
+   "dollars": "0.2",
+   "cents": "20",
+   "per_dollar": "10"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "dollars": "",
+    "cents": "",
+    "per_dollar": "10"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "distance-converter",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "dm-conversion",
+  "problems": [],
+  "answers": {
+   "m": "0.2",
+   "cm": "20",
+   "mm": "200",
+   "km": "2.000 ×10^-4",
+   "inch": "7.874",
+   "foot": "0.656",
+   "yard": "0.219",
+   "mile": "1.243 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "drops-to-ml-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.1",
+   "base": "1.000 ×10^-4",
+   "factor": "0.05"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.05"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "energy-conversion",
+  "problems": [],
+  "answers": {
+   "kj": "0.002",
+   "cal": "0.478",
+   "kcal": "4.780 ×10^-4",
+   "wh": "5.556 ×10^-4",
+   "kwh": "5.556 ×10^-7",
+   "btu": "0.002",
+   "therm": "1.896 ×10^-8",
+   "ftlb": "1.475"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "kj": "",
+    "cal": "",
+    "kcal": "",
+    "wh": "",
+    "kwh": "",
+    "btu": "",
+    "therm": "",
+    "ftlb": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "fahrenheit",
+  "problems": [],
+  "answers": {
+   "celsius": "-16.667",
+   "fahrenheit": "2",
+   "kelvin": "256.483",
+   "rankine": "461.67"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "fahrenheit-to-celsius",
+  "problems": [],
+  "answers": {
+   "celsius": "-16.667",
+   "fahrenheit": "2",
+   "kelvin": "256.483",
+   "rankine": "461.67"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "feet-and-inches",
+  "problems": [],
+  "answers": {
+   "m": "0.66",
+   "cm": "66.04",
+   "total_inches": "26"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "total_inches": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "feet",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "feet-converter",
+  "problems": [],
+  "answers": {
+   "m": "0.61",
+   "cm": "60.96",
+   "mm": "609.6",
+   "km": "6.096 ×10^-4",
+   "inch": "24",
+   "yard": "0.667",
+   "mile": "3.788 ×10^-4",
+   "nm": "609 600 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "feet-to-inches",
+  "problems": [],
+  "answers": {
+   "result": "24",
+   "base": "0.61",
+   "factor": "12"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "12"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "feet-to-miles",
+  "problems": [],
+  "answers": {
+   "result": "3.788 ×10^-4",
+   "base": "0.61",
+   "factor": "1.894 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.894 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "feet-to-yards-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.667",
+   "base": "0.61",
+   "factor": "0.333"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.333"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "fluid-ounces-to-pounds-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2.608 ×10^-4",
+   "litres": "0.059",
+   "kilograms": "1.183 ×10^-4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "foot-to-centimeter-converter",
+  "problems": [],
+  "answers": {
+   "result": "60.96",
+   "base": "0.61",
+   "factor": "30.48"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "30.48"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "force-conversion",
+  "problems": [],
+  "answers": {
+   "kn": "0.002",
+   "lbf": "0.45",
+   "kgf": "0.204",
+   "dyn": "200 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "kn": "",
+    "lbf": "",
+    "kgf": "",
+    "dyn": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ft-to-m",
+  "problems": [],
+  "answers": {
+   "result": "0.61",
+   "base": "0.61",
+   "factor": "0.305"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.305"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "fuel-economy-converter",
+  "problems": [],
+  "answers": {
+   "l100": "117.607",
+   "kmpl": "0.85",
+   "mpg_imp": "2.402"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "l100": "",
+    "kmpl": "",
+    "mpg_imp": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mpg",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "g-to-lbs",
+  "problems": [],
+  "answers": {
+   "result": "0.004",
+   "base": "0.002",
+   "factor": "0.002"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.002"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "g-to-oz",
+  "problems": [],
+  "answers": {
+   "result": "0.071",
+   "base": "0.002",
+   "factor": "0.035"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.035"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gaj-to-square-yard-converter",
+  "problems": [],
+  "answers": {
+   "result": "2",
+   "base": "1.672",
+   "factor": "1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gal-to-kg",
+  "problems": [],
+  "answers": {
+   "result": "0.015",
+   "litres": "7.571",
+   "kilograms": "0.015"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallon",
+  "problems": [],
+  "answers": {
+   "l": "7.571",
+   "ml": "7 570.824",
+   "tsp": "1 536",
+   "tbsp": "512",
+   "floz": "256",
+   "cup": "32",
+   "pint": "16",
+   "quart": "8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "l": "",
+    "ml": "",
+    "tsp": "",
+    "tbsp": "",
+    "floz": "",
+    "cup": "",
+    "pint": "",
+    "quart": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallon-to-tons",
+  "problems": [],
+  "answers": {
+   "result": "1.669 ×10^-5",
+   "litres": "7.571",
+   "kilograms": "0.015"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-cubic-feet",
+  "problems": [],
+  "answers": {
+   "result": "0.267",
+   "base": "7.571",
+   "factor": "0.134"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.134"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-cups-converter",
+  "problems": [],
+  "answers": {
+   "result": "32",
+   "base": "7.571",
+   "factor": "16"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "16"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-grams",
+  "problems": [],
+  "answers": {
+   "result": "15.142",
+   "litres": "7.571",
+   "kilograms": "0.015"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-pints-converter",
+  "problems": [],
+  "answers": {
+   "result": "16",
+   "base": "7.571",
+   "factor": "8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "8"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-pounds",
+  "problems": [],
+  "answers": {
+   "result": "0.033",
+   "litres": "7.571",
+   "kilograms": "0.015"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gallons-to-quarts-converter",
+  "problems": [],
+  "answers": {
+   "result": "8",
+   "base": "7.571",
+   "factor": "4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gematria",
+  "problems": [],
+  "answers": {
+   "total": "52",
+   "reduced": "7",
+   "letters": "5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "gr-to-ml-converter",
+  "problems": [],
+  "answers": {
+   "result": "64.799",
+   "litres": "0.065",
+   "kilograms": "1.296 ×10^-4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gr-to-tsp-converter",
+  "problems": [],
+  "answers": {
+   "result": "13.147",
+   "litres": "0.065",
+   "kilograms": "1.296 ×10^-4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gram-to-liter-conversion",
+  "problems": [],
+  "answers": {
+   "result": "1",
+   "litres": "1",
+   "kilograms": "0.002"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "grams-in-ml-converter",
+  "problems": [],
+  "answers": {
+   "result": "1 000",
+   "litres": "1",
+   "kilograms": "0.002"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "grams-to-calories",
+  "problems": [],
+  "answers": {
+   "kcal": "8",
+   "kj": "33.472",
+   "share": "0.4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "kcal": "",
+    "kj": "",
+    "share": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "grams",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "grams-to-fl-oz",
+  "problems": [],
+  "answers": {
+   "result": "33.814",
+   "litres": "1",
+   "kilograms": "0.002"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "greek-gematria",
+  "problems": [],
+  "answers": {
+   "total": "373",
+   "letters": "5",
+   "words": "1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "hardness-conversion",
+  "problems": [],
+  "answers": {
+   "hrc": "-15.812",
+   "hv": "2.1",
+   "tensile": "6.9"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "hrc": "",
+    "hv": "",
+    "tensile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "hb",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hectares-to-acres-converter",
+  "problems": [],
+  "answers": {
+   "result": "4.942",
+   "base": "20 000",
+   "factor": "2.471"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.471"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "height-converter",
+  "problems": [],
+  "answers": {
+   "m": "0.02",
+   "feet": "0",
+   "inches": "0.787"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "m": "",
+    "feet": "",
+    "inches": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "cm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "height-in-inches",
+  "problems": [],
+  "answers": {
+   "total_inches": "26",
+   "cm": "66.04",
+   "m": "0.66"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "total_inches": "",
+    "cm": "",
+    "m": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "feet",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hex-to-rgb",
+  "problems": [],
+  "answers": {
+   "r": "255",
+   "g": "136",
+   "b": "0"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "hexadecimal",
+  "problems": [],
+  "answers": {
+   "binary": "11111111",
+   "octal": "377",
+   "decimal": "255"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "hour-converter",
+  "problems": [],
+  "answers": {
+   "s": "7 200",
+   "ms": "7 200 000",
+   "minute": "120",
+   "day": "0.083",
+   "week": "0.012",
+   "month": "0.003",
+   "year": "2.282 ×10^-4",
+   "decade": "2.282 ×10^-5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "s": "",
+    "ms": "",
+    "minute": "",
+    "day": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hours-to-days",
+  "problems": [],
+  "answers": {
+   "result": "0.083",
+   "base": "7 200",
+   "factor": "0.042"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.042"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hours-to-minutes-converter",
+  "problems": [],
+  "answers": {
+   "result": "120",
+   "base": "7 200",
+   "factor": "60"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "60"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hours-to-seconds-converter",
+  "problems": [],
+  "answers": {
+   "result": "7 200",
+   "base": "7 200",
+   "factor": "3 600"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3 600"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hours-to-week",
+  "problems": [],
+  "answers": {
+   "result": "0.012",
+   "base": "7 200",
+   "factor": "0.006"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.006"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "hours-to-years",
+  "problems": [],
+  "answers": {
+   "result": "2.282 ×10^-4",
+   "base": "7 200",
+   "factor": "1.141 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.141 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "imperial",
+  "problems": [],
+  "answers": {
+   "m": "0.61",
+   "cm": "60.96",
+   "mm": "609.6",
+   "km": "6.096 ×10^-4",
+   "inch": "24",
+   "yard": "0.667",
+   "mile": "3.788 ×10^-4",
+   "nm": "609 600 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "imperial-to-metric-conversion",
+  "problems": [],
+  "answers": {
+   "m": "0.61",
+   "cm": "60.96",
+   "mm": "609.6",
+   "km": "6.096 ×10^-4",
+   "inch": "24",
+   "yard": "0.667",
+   "mile": "3.788 ×10^-4",
+   "nm": "609 600 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "in-to-cm",
+  "problems": [],
+  "answers": {
+   "result": "5.08",
+   "base": "0.051",
+   "factor": "2.54"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.54"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inch-converter",
+  "problems": [],
+  "answers": {
+   "m": "0.051",
+   "cm": "5.08",
+   "mm": "50.8",
+   "km": "5.080 ×10^-5",
+   "foot": "0.167",
+   "yard": "0.056",
+   "mile": "3.157 ×10^-5",
+   "nm": "50 800 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inch-lbs-to-nm",
+  "problems": [],
+  "answers": {
+   "result": "0.226",
+   "base": "0.226",
+   "factor": "0.113"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.113"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inch-pounds-to-foot-pounds",
+  "problems": [],
+  "answers": {
+   "result": "0.167",
+   "base": "0.226",
+   "factor": "0.083"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.083"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inch-to-meter",
+  "problems": [],
+  "answers": {
+   "result": "0.051",
+   "base": "0.051",
+   "factor": "0.025"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.025"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inches-to-fraction",
+  "problems": [],
+  "answers": {
+   "whole": "2",
+   "numerator": "0",
+   "denominator": "32",
+   "nm32": "0"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "whole": "",
+    "numerator": "",
+    "denominator": "32",
+    "nm32": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "inches",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "inches-to-yard-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.056",
+   "base": "0.051",
+   "factor": "0.028"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.028"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "joules-to-volts",
+  "problems": [],
+  "answers": {
+   "volts": "1.414",
+   "charge": "2.828",
+   "microfarad": "2 000 000"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "volts": "",
+    "charge": "",
+    "microfarad": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "energy",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "katha-to-square-feet-converter",
+  "problems": [],
+  "answers": {
+   "result": "1 440.002",
+   "base": "133.781",
+   "factor": "720.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "720.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kelvin-converter",
+  "problems": [],
+  "answers": {
+   "celsius": "-271.15",
+   "fahrenheit": "-456.07",
+   "kelvin": "2",
+   "rankine": "3.6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kelvin-to-celsius",
+  "problems": [],
+  "answers": {
+   "celsius": "-271.15",
+   "fahrenheit": "-456.07",
+   "kelvin": "2",
+   "rankine": "3.6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kelvin-to-fahrenheit",
+  "problems": [],
+  "answers": {
+   "celsius": "-271.15",
+   "fahrenheit": "-456.07",
+   "kelvin": "2",
+   "rankine": "3.6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-cm2-to-psi-converter",
+  "problems": [],
+  "answers": {
+   "result": "28.447",
+   "base": "196 133",
+   "factor": "14.223"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "14.223"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-gallons",
+  "problems": [],
+  "answers": {
+   "result": "264.172",
+   "litres": "1 000",
+   "kilograms": "2"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-lbs-converter",
+  "problems": [],
+  "answers": {
+   "result": "4.409",
+   "base": "2",
+   "factor": "2.205"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.205"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-liter",
+  "problems": [],
+  "answers": {
+   "result": "1 000",
+   "litres": "1 000",
+   "kilograms": "2"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-ml",
+  "problems": [],
+  "answers": {
+   "result": "1 000 000",
+   "litres": "1 000",
+   "kilograms": "2"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-ounce-converter",
+  "problems": [],
+  "answers": {
+   "result": "70.548",
+   "base": "2",
+   "factor": "35.274"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "35.274"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kg-to-stones-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.315",
+   "base": "2",
+   "factor": "0.157"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.157"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kilobytes-to-megabytes",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2 000",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kilometer",
+  "problems": [],
+  "answers": {
+   "m": "2 000",
+   "cm": "200 000",
+   "mm": "2 000 000",
+   "inch": "78 740.157",
+   "foot": "6 561.68",
+   "yard": "2 187.227",
+   "mile": "1.243",
+   "nm": "2 000 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kilometer-meter-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2 000",
+   "base": "2 000",
+   "factor": "1 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1 000"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kilometers-to-miles",
+  "problems": [],
+  "answers": {
+   "result": "1.243",
+   "base": "2 000",
+   "factor": "0.621"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.621"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "km-to-feet-conversion",
+  "problems": [],
+  "answers": {
+   "result": "6 561.68",
+   "base": "2 000",
+   "factor": "3 280.84"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3 280.84"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "knots-to-kph",
+  "problems": [],
+  "answers": {
+   "result": "3.704",
+   "base": "1.029",
+   "factor": "1.852"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.852"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "knots-to-mph",
+  "problems": [],
+  "answers": {
+   "result": "2.302",
+   "base": "1.029",
+   "factor": "1.151"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.151"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kpa-conversion",
+  "problems": [],
+  "answers": {
+   "pa": "2 000",
+   "mpa": "0.002",
+   "bar": "0.02",
+   "psi": "0.29",
+   "atm": "0.02",
+   "mmhg": "15.001",
+   "torr": "15.001",
+   "inh2o": "8.029"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "pa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kpa-to-atm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.02",
+   "base": "2 000",
+   "factor": "0.01"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.01"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kpa-to-mmhg-conversion",
+  "problems": [],
+  "answers": {
+   "result": "15.001",
+   "base": "2 000",
+   "factor": "7.501"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "7.501"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "kpa-to-psi-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.29",
+   "base": "2 000",
+   "factor": "0.145"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.145"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ksi-to-mpa-conversion",
+  "problems": [],
+  "answers": {
+   "result": "13.79",
+   "base": "13 789 520",
+   "factor": "6.895"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "6.895"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ksi-to-psi-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2 000",
+   "base": "13 789 520",
+   "factor": "1 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1 000"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "l-to-gal",
+  "problems": [],
+  "answers": {
+   "result": "0.528",
+   "base": "2",
+   "factor": "0.264"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.264"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "land-area",
+  "problems": [],
+  "answers": {
+   "m2": "8 093.713",
+   "square-foot": "87 120",
+   "square-yard": "9 680",
+   "km2": "0.008",
+   "hectare": "0.809",
+   "square-mile": "0.003",
+   "square-inch": "12 545 280",
+   "cm2": "80 937 200"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m2": "",
+    "square-foot": "",
+    "square-yard": "",
+    "km2": "",
+    "hectare": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lat-long-to-utm",
+  "problems": [],
+  "answers": {
+   "easting": "388786.70",
+   "northing": "221094.87",
+   "zone": "31N"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "easting": "",
+    "northing": "",
+    "zone": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "latitude",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-g",
+  "problems": [],
+  "answers": {
+   "result": "907.185",
+   "base": "0.907",
+   "factor": "453.592"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "453.592"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-kg-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.907",
+   "base": "0.907",
+   "factor": "0.454"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.454"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-newton",
+  "problems": [],
+  "answers": {
+   "newtons": "8.896",
+   "kgf": "0.907",
+   "kn": "0.009"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "newtons": "",
+    "kgf": "",
+    "kn": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "pounds",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-pounds",
+  "problems": [],
+  "answers": {
+   "pounds": "2",
+   "kg": "0.907",
+   "oz": "32"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "pounds": "",
+    "kg": "",
+    "oz": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-psi",
+  "problems": [],
+  "answers": {
+   "psi": "1",
+   "kpa": "6.895",
+   "bar": "0.069"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "psi": "",
+    "kpa": "",
+    "bar": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "force",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lbs-to-stone-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.143",
+   "base": "0.907",
+   "factor": "0.071"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.071"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "leet-speak",
+  "problems": [],
+  "answers": {
+   "leet": "31173 h4ck3r",
+   "changed": "7",
+   "length": "12"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "length-converter",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "light-year-conversion",
+  "problems": [],
+  "answers": {
+   "m": "1.892 ×10^16",
+   "cm": "1.892 ×10^18",
+   "mm": "1.892 ×10^19",
+   "km": "18 921 460 000 000",
+   "inch": "7.449 ×10^17",
+   "foot": "6.208 ×10^16",
+   "yard": "2.069 ×10^16",
+   "mile": "11 757 260 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "liter-cc",
+  "problems": [],
+  "answers": {
+   "result": "2 000",
+   "base": "2",
+   "factor": "1 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1 000"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "liters-to-cl",
+  "problems": [],
+  "answers": {
+   "result": "200",
+   "base": "2",
+   "factor": "100"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "100"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "liters-to-pounds",
+  "problems": [],
+  "answers": {
+   "result": "0.009",
+   "litres": "2",
+   "kilograms": "0.004"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lot-size-to-acres",
+  "problems": [],
+  "answers": {
+   "acres": "9.183 ×10^-5",
+   "sqft": "4",
+   "hectares": "3.716 ×10^-5"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "acres": "",
+    "sqft": "",
+    "hectares": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "width",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lot-size-to-square-feet",
+  "problems": [],
+  "answers": {
+   "sqft": "4",
+   "sqm": "0.372",
+   "acres": "9.183 ×10^-5"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "sqft": "",
+    "sqm": "",
+    "acres": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "width",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lowercase-to-uppercase-converter",
+  "problems": [],
+  "answers": {
+   "upper": "THE QUICK BROWN FOX",
+   "changed": "16",
+   "length": "19"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "m-to-ft",
+  "problems": [],
+  "answers": {
+   "result": "6.562",
+   "base": "2",
+   "factor": "3.281"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3.281"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mb-to-gb-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2 000 000",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mbps-converter",
+  "problems": [],
+  "answers": {
+   "kbps": "2 000",
+   "gbps": "0.002",
+   "bps": "2 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "kbps": "",
+    "gbps": "",
+    "bps": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mbps-to-gbps",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2 000 000",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mcg-to-mg",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2.000 ×10^-9",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mcg-to-ml",
+  "problems": [],
+  "answers": {
+   "result": "0.001",
+   "litres": "1.000 ×10^-6",
+   "kilograms": "2.000 ×10^-9"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "measurement-converter",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mesh-to-micron-converter",
+  "problems": [],
+  "answers": {
+   "micron": "7 450",
+   "mm": "7.45",
+   "inch": "0.293"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "micron": "",
+    "mm": "",
+    "inch": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mesh",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "meter-conversion",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "meter-to-mile-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.001",
+   "base": "2",
+   "factor": "6.214 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "6.214 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "meters-to-feet",
+  "problems": [],
+  "answers": {
+   "result": "6.562",
+   "base": "2",
+   "factor": "3.281"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3.281"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "metric-converter",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "metric-to-imperial-conversion",
+  "problems": [],
+  "answers": {
+   "cm": "200",
+   "mm": "2 000",
+   "km": "0.002",
+   "inch": "78.74",
+   "foot": "6.562",
+   "yard": "2.187",
+   "mile": "0.001",
+   "nm": "2 000 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "metric-to-inches",
+  "problems": [],
+  "answers": {
+   "result": "0.787",
+   "base": "0.02",
+   "factor": "0.394"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.394"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "metric-to-sae",
+  "problems": [],
+  "answers": {
+   "inches": "0.079",
+   "n32": "3",
+   "decimal32": "0.094"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "inches": "",
+    "n32": "",
+    "decimal32": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "metric-to-standard-converter",
+  "problems": [],
+  "answers": {
+   "inches": "0.079",
+   "nm64": "5",
+   "decimal64": "0.078"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "inches": "",
+    "nm64": "",
+    "decimal64": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mg-to-cc",
+  "problems": [],
+  "answers": {
+   "result": "1",
+   "litres": "0.001",
+   "kilograms": "2.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mg-to-lbs",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "litres": "0.001",
+   "kilograms": "2.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mg-to-ml",
+  "problems": [],
+  "answers": {
+   "result": "1",
+   "litres": "0.001",
+   "kilograms": "2.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mg-to-tablespoon-converter",
+  "problems": [],
+  "answers": {
+   "tbsp": "0.068",
+   "tsp": "0.203",
+   "ml": "1"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "tbsp": "",
+    "tsp": "",
+    "ml": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mg",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mg-to-teaspoon-converter",
+  "problems": [],
+  "answers": {
+   "tsp": "0.203",
+   "ml": "1",
+   "tbsp": "0.068"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "tsp": "",
+    "ml": "",
+    "tbsp": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mg",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "micrometer-conversion",
+  "problems": [],
+  "answers": {
+   "m": "2.000 ×10^-6",
+   "cm": "2.000 ×10^-4",
+   "mm": "0.002",
+   "km": "2.000 ×10^-9",
+   "inch": "7.874 ×10^-5",
+   "foot": "6.562 ×10^-6",
+   "yard": "2.187 ×10^-6",
+   "mile": "1.243 ×10^-9"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "micron-to-mil-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.079",
+   "base": "2.000 ×10^-6",
+   "factor": "0.039"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.039"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mil-conversion",
+  "problems": [],
+  "answers": {
+   "m": "5.080 ×10^-5",
+   "cm": "0.005",
+   "mm": "0.051",
+   "km": "5.080 ×10^-8",
+   "inch": "0.002",
+   "foot": "1.667 ×10^-4",
+   "yard": "5.556 ×10^-5",
+   "mile": "3.157 ×10^-8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mil-to-inch-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "5.080 ×10^-5",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mil-to-mm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.051",
+   "base": "5.080 ×10^-5",
+   "factor": "0.025"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.025"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mile-conversion",
+  "problems": [],
+  "answers": {
+   "m": "3 218.688",
+   "cm": "321 868",
+   "mm": "3 218 688",
+   "km": "3.219",
+   "inch": "126 720",
+   "foot": "10 560",
+   "yard": "3 520",
+   "nm": "3 218 688 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "military-time",
+  "problems": [],
+  "answers": {
+   "military": "15:45",
+   "hours": "15",
+   "minutes": "45"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "millimeter",
+  "problems": [],
+  "answers": {
+   "m": "0.002",
+   "cm": "0.2",
+   "km": "2.000 ×10^-6",
+   "inch": "0.079",
+   "foot": "0.007",
+   "yard": "0.002",
+   "mile": "1.243 ×10^-6",
+   "nm": "2 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "million-to-billion",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "2 000 000",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "million-to-lakh",
+  "problems": [],
+  "answers": {
+   "result": "20",
+   "base": "2 000 000",
+   "factor": "10"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "10"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "million-to-thousand-converter",
+  "problems": [],
+  "answers": {
+   "result": "2 000",
+   "base": "2 000 000",
+   "factor": "1 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1 000"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "milliseconds-converter",
+  "problems": [],
+  "answers": {
+   "s": "0.002",
+   "minute": "3.333 ×10^-5",
+   "hour": "5.556 ×10^-7",
+   "day": "2.315 ×10^-8",
+   "week": "3.307 ×10^-9",
+   "month": "7.605 ×10^-10",
+   "year": "6.338 ×10^-11",
+   "decade": "6.338 ×10^-12"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "s": "",
+    "minute": "",
+    "hour": "",
+    "day": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minute-converter",
+  "problems": [],
+  "answers": {
+   "s": "120",
+   "ms": "120 000",
+   "hour": "0.033",
+   "day": "0.001",
+   "week": "1.984 ×10^-4",
+   "month": "4.563 ×10^-5",
+   "year": "3.803 ×10^-6",
+   "decade": "3.803 ×10^-7"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "s": "",
+    "ms": "",
+    "hour": "",
+    "day": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minutes-to-days",
+  "problems": [],
+  "answers": {
+   "result": "0.001",
+   "base": "120",
+   "factor": "6.944 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "6.944 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minutes-to-decimal-conversion",
+  "problems": [],
+  "answers": {
+   "hours": "0.033",
+   "whole": "0",
+   "rest": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "hours": "",
+    "whole": "",
+    "rest": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "minutes",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minutes-to-hours-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.033",
+   "base": "120",
+   "factor": "0.017"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.017"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minutes-to-seconds-converter",
+  "problems": [],
+  "answers": {
+   "result": "120",
+   "base": "120",
+   "factor": "60"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "60"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "minutes-to-years-conversion",
+  "problems": [],
+  "answers": {
+   "result": "3.803 ×10^-6",
+   "base": "120",
+   "factor": "1.901 ×10^-6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.901 ×10^-6"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-tbsp-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.135",
+   "base": "0.002",
+   "factor": "0.068"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.068"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-cc-converter",
+  "problems": [],
+  "answers": {
+   "result": "2",
+   "base": "0.002",
+   "factor": "1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-cups",
+  "problems": [],
+  "answers": {
+   "result": "0.008",
+   "base": "0.002",
+   "factor": "0.004"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.004"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-kg",
+  "problems": [],
+  "answers": {
+   "result": "4.000 ×10^-6",
+   "litres": "0.002",
+   "kilograms": "4.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-lbs",
+  "problems": [],
+  "answers": {
+   "result": "8.818 ×10^-6",
+   "litres": "0.002",
+   "kilograms": "4.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-oz-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.068",
+   "base": "0.002",
+   "factor": "0.034"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.034"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-to-ul-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2 000",
+   "base": "0.002",
+   "factor": "1 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1 000"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ml-tsp-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.406",
+   "base": "0.002",
+   "factor": "0.203"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.203"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-millimeters",
+  "problems": [],
+  "answers": {
+   "m": "0.002",
+   "cm": "0.2",
+   "km": "2.000 ×10^-6",
+   "inch": "0.079",
+   "foot": "0.007",
+   "yard": "0.002",
+   "mile": "1.243 ×10^-6",
+   "nm": "2 000 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-to-atm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.003",
+   "base": "266.645",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-to-foot-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.007",
+   "base": "0.002",
+   "factor": "0.003"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.003"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-to-inches-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.079",
+   "base": "0.002",
+   "factor": "0.039"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.039"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-to-km-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2.000 ×10^-6",
+   "base": "0.002",
+   "factor": "1.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.000 ×10^-6"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mm-to-m-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "0.002",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mmhg-to-atm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.003",
+   "base": "266.645",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "months-to-years",
+  "problems": [],
+  "answers": {
+   "result": "0.167",
+   "base": "5 259 492",
+   "factor": "0.083"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.083"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mpa-conversion",
+  "problems": [],
+  "answers": {
+   "pa": "2 000 000",
+   "kpa": "2 000",
+   "bar": "20",
+   "psi": "290.075",
+   "atm": "19.738",
+   "mmhg": "15 001.232",
+   "torr": "15 001.234",
+   "inh2o": "8 029.262"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "pa": "",
+    "kpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mpa-to-psi-conversion",
+  "problems": [],
+  "answers": {
+   "result": "290.075",
+   "base": "2 000 000",
+   "factor": "145.038"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "145.038"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mpa-to-psig-conversion",
+  "problems": [],
+  "answers": {
+   "psig": "275.38",
+   "psia": "290.075",
+   "bar": "20"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "psig": "",
+    "psia": "",
+    "bar": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "mpa",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ms-to-kmh",
+  "problems": [],
+  "answers": {
+   "result": "7.2",
+   "base": "2",
+   "factor": "3.6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3.6"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ms-to-seconds-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.002",
+   "base": "0.002",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "natural-gas-converter",
+  "problems": [],
+  "answers": {
+   "therms": "4",
+   "kwh": "117.228",
+   "cost": "8"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 3,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "therms": "",
+    "kwh": "",
+    "cost": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "ccf",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "newton-meter",
+  "problems": [],
+  "answers": {
+   "j": "2",
+   "kj": "0.002",
+   "cal": "0.478",
+   "kcal": "4.780 ×10^-4",
+   "wh": "5.556 ×10^-4",
+   "kwh": "5.556 ×10^-7",
+   "btu": "0.002",
+   "therm": "1.896 ×10^-8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "j": "",
+    "kj": "",
+    "cal": "",
+    "kcal": "",
+    "wh": "",
+    "kwh": "",
+    "btu": "",
+    "therm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "newton-to-joules",
+  "problems": [],
+  "answers": {
+   "joules": "4",
+   "ftlb": "2.95",
+   "kj": "0.004"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "joules": "",
+    "ftlb": "",
+    "kj": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "force",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nickels-to-dollars",
+  "problems": [],
+  "answers": {
+   "dollars": "0.1",
+   "cents": "10",
+   "per_dollar": "20"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "dollars": "",
+    "cents": "",
+    "per_dollar": "20"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nm-converter",
+  "problems": [],
+  "answers": {
+   "m": "2.000 ×10^-9",
+   "cm": "2.000 ×10^-7",
+   "mm": "2.000 ×10^-6",
+   "km": "2.000 ×10^-12",
+   "inch": "7.874 ×10^-8",
+   "foot": "6.562 ×10^-9",
+   "yard": "2.187 ×10^-9",
+   "mile": "1.243 ×10^-12"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "yard": "",
+    "mile": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nm-to-ft-lb",
+  "problems": [],
+  "answers": {
+   "result": "1.475",
+   "base": "2",
+   "factor": "0.738"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.738"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nm-to-in-lbs",
+  "problems": [],
+  "answers": {
+   "result": "17.701",
+   "base": "2",
+   "factor": "8.851"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "8.851"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "nm-to-m-conversion",
+  "problems": [],
+  "answers": {
+   "result": "2.000 ×10^-9",
+   "base": "2.000 ×10^-9",
+   "factor": "1.000 ×10^-9"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.000 ×10^-9"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "number-to-billion-converter",
+  "problems": [],
+  "answers": {
+   "billion": "2.000 ×10^-9",
+   "thousands": "0.002",
+   "lakh": "2.000 ×10^-5",
+   "crore": "2.000 ×10^-7"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "billion": "",
+    "thousands": "",
+    "lakh": "",
+    "crore": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "number-to-million",
+  "problems": [],
+  "answers": {
+   "million": "2.000 ×10^-6",
+   "thousands": "0.002",
+   "lakh": "2.000 ×10^-5",
+   "crore": "2.000 ×10^-7"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "million": "",
+    "thousands": "",
+    "lakh": "",
+    "crore": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ounce-to-kg-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.057",
+   "base": "0.057",
+   "factor": "0.028"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.028"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ounces-to-cups",
+  "problems": [],
+  "answers": {
+   "result": "0.25",
+   "base": "0.059",
+   "factor": "0.125"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.125"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ounces-to-grams-converter",
+  "problems": [],
+  "answers": {
+   "result": "56.699",
+   "base": "0.057",
+   "factor": "28.35"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "28.35"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ounces-to-pounds-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.125",
+   "base": "0.057",
+   "factor": "0.063"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.063"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "oz-ml-converter",
+  "problems": [],
+  "answers": {
+   "result": "59.147",
+   "base": "0.059",
+   "factor": "29.574"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "29.574"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "oz-to-cc-converter",
+  "problems": [],
+  "answers": {
+   "result": "59.147",
+   "base": "0.059",
+   "factor": "29.574"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "29.574"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pa-to-psi-converter",
+  "problems": [],
+  "answers": {
+   "result": "2.901 ×10^-4",
+   "base": "2",
+   "factor": "1.450 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.450 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "paper-quantity",
+  "problems": [],
+  "answers": {
+   "reams": "0.004",
+   "quires": "0.08",
+   "sheets_left": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "reams": "",
+    "quires": "",
+    "sheets_left": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "sheets",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pascal-conversion",
+  "problems": [],
+  "answers": {
+   "kpa": "0.002",
+   "mpa": "2.000 ×10^-6",
+   "bar": "2.000 ×10^-5",
+   "psi": "2.901 ×10^-4",
+   "atm": "1.974 ×10^-5",
+   "mmhg": "0.015",
+   "torr": "0.015",
+   "inh2o": "0.008"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pennies-to-dollars",
+  "problems": [],
+  "answers": {
+   "dollars": "0.02",
+   "cents": "2",
+   "per_dollar": "100"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "dollars": "",
+    "cents": "",
+    "per_dollar": "100"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pint-to-pound",
+  "problems": [],
+  "answers": {
+   "result": "0.004",
+   "litres": "0.946",
+   "kilograms": "0.002"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pints-to-cups-converter",
+  "problems": [],
+  "answers": {
+   "result": "4",
+   "base": "0.946",
+   "factor": "2"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pints-to-gallons-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.25",
+   "base": "0.946",
+   "factor": "0.125"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.125"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pixels-to-inches",
+  "problems": [],
+  "answers": {
+   "inches": "1",
+   "cm": "2.54",
+   "mm": "25.4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "inches": "",
+    "cm": "",
+    "mm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "px",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pounds-ounces",
+  "problems": [],
+  "answers": {
+   "kg": "0.964",
+   "g": "963.884",
+   "total_oz": "34"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "kg": "",
+    "g": "",
+    "total_oz": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "pounds",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pounds-to-grams",
+  "problems": [],
+  "answers": {
+   "result": "907.185",
+   "base": "0.907",
+   "factor": "453.592"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "453.592"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pounds-to-lbs",
+  "problems": [],
+  "answers": {
+   "lbs": "2",
+   "kg": "0.907",
+   "g": "907.185"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "lbs": "",
+    "kg": "",
+    "g": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pounds-to-ounces-converter",
+  "problems": [],
+  "answers": {
+   "result": "32",
+   "base": "0.907",
+   "factor": "16"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "16"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pounds-to-stone",
+  "problems": [],
+  "answers": {
+   "result": "0.143",
+   "base": "0.907",
+   "factor": "0.071"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.071"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "power-conversion",
+  "problems": [],
+  "answers": {
+   "kw": "0.002",
+   "hp": "0.003",
+   "ps": "0.003",
+   "btuph": "6.824",
+   "mw-power": "2.000 ×10^-6"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 5,
+   "empty": {
+    "kw": "",
+    "hp": "",
+    "ps": "",
+    "btuph": "",
+    "mw-power": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ppm",
+  "problems": [],
+  "answers": {
+   "percent": "2.000 ×10^-4",
+   "mgl": "2",
+   "ratio": "500 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "percent": "",
+    "mgl": "",
+    "ratio": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "ppm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "ppm-to-mgl-converter",
+  "problems": [],
+  "answers": {
+   "mgl": "4",
+   "mgkg": "2",
+   "percent": "2.000 ×10^-4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "mgl": "",
+    "mgkg": "",
+    "percent": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "ppm",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pressure-converter",
+  "problems": [],
+  "answers": {
+   "kpa": "0.002",
+   "mpa": "2.000 ×10^-6",
+   "bar": "2.000 ×10^-5",
+   "psi": "2.901 ×10^-4",
+   "atm": "1.974 ×10^-5",
+   "mmhg": "0.015",
+   "torr": "0.015",
+   "inh2o": "0.008"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "pressure-unit-conversion",
+  "problems": [],
+  "answers": {
+   "kpa": "0.002",
+   "mpa": "2.000 ×10^-6",
+   "bar": "2.000 ×10^-5",
+   "psi": "2.901 ×10^-4",
+   "atm": "1.974 ×10^-5",
+   "mmhg": "0.015",
+   "torr": "0.015",
+   "inh2o": "0.008"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "psi": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "price-per-liter-to-price-per-gallon",
+  "problems": [],
+  "answers": {
+   "per_gallon": "7.571",
+   "per_quart": "1.893",
+   "per_100km": "14"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "per_gallon": "",
+    "per_quart": "",
+    "per_100km": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "price",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "psi-conversion",
+  "problems": [],
+  "answers": {
+   "pa": "13 789.515",
+   "kpa": "13.79",
+   "mpa": "0.014",
+   "bar": "0.138",
+   "atm": "0.136",
+   "mmhg": "103.43",
+   "torr": "103.43",
+   "inh2o": "55.36"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "pa": "",
+    "kpa": "",
+    "mpa": "",
+    "bar": "",
+    "atm": "",
+    "mmhg": "",
+    "torr": "",
+    "inh2o": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "psi-to-atm-conversion",
+  "problems": [],
+  "answers": {
+   "result": "0.136",
+   "base": "13 789.515",
+   "factor": "0.068"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.068"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "psi-to-gpm",
+  "problems": [],
+  "answers": {
+   "gpm": "337.6",
+   "lpm": "1 277.954",
+   "velocity": "17.239"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 3,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "gpm": "",
+    "lpm": "",
+    "velocity": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "psi",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "psi-to-inches-of-water-conversion",
+  "problems": [],
+  "answers": {
+   "result": "55.36",
+   "base": "13 789.515",
+   "factor": "27.68"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "27.68"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "psig-to-psia-conversion",
+  "problems": [],
+  "answers": {
+   "psia": "4",
+   "bar": "0.276",
+   "kpa": "27.579"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "psia": "",
+    "bar": "",
+    "kpa": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "psig",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "px-to-em",
+  "problems": [],
+  "answers": {
+   "em": "1",
+   "rem": "1",
+   "pt": "1.5",
+   "percent": "100"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 3,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "em": "",
+    "rem": "",
+    "pt": "",
+    "percent": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "px",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "quantity-converter",
+  "problems": [],
+  "answers": {
+   "dozen": "0.167",
+   "score": "0.1",
+   "gross": "0.014",
+   "hundred": "0.02",
+   "thousand": "0.002",
+   "million": "2.000 ×10^-6",
+   "lakh": "2.000 ×10^-5",
+   "crore": "2.000 ×10^-7"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "dozen": "",
+    "score": "",
+    "gross": "",
+    "hundred": "",
+    "thousand": "",
+    "million": "",
+    "lakh": "",
+    "crore": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "quarters-to-dollars",
+  "problems": [],
+  "answers": {
+   "dollars": "0.5",
+   "cents": "50",
+   "per_dollar": "4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "dollars": "",
+    "cents": "",
+    "per_dollar": "4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "quarts-to-cups-converter",
+  "problems": [],
+  "answers": {
+   "result": "8",
+   "base": "1.893",
+   "factor": "4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "quarts-to-gallons-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.5",
+   "base": "1.893",
+   "factor": "0.25"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.25"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "quarts-to-pounds",
+  "problems": [],
+  "answers": {
+   "result": "0.008",
+   "litres": "1.893",
+   "kilograms": "0.004"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "radians-to-degrees",
+  "problems": [],
+  "answers": {
+   "result": "114.592",
+   "base": "2",
+   "factor": "57.296"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "57.296"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "radiation-converter",
+  "problems": [],
+  "answers": {
+   "sievert": "2",
+   "becquerel": "2",
+   "curie": "5.405 ×10^-11",
+   "rad-dose": "200",
+   "rem": "200",
+   "roentgen": "7 751.938"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 6,
+   "empty": {
+    "sievert": "",
+    "becquerel": "",
+    "curie": "",
+    "rad-dose": "",
+    "rem": "",
+    "roentgen": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "rgb-to-hex",
+  "problems": [],
+  "answers": {
+   "hex": "#020202",
+   "rgb": "rgb(2, 2, 2)",
+   "total": "6"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 3,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "hex": "",
+    "rgb": "",
+    "total": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "r",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "rms-to-watts",
+  "problems": [],
+  "answers": {
+   "watts": "2",
+   "amps": "1",
+   "peak": "2.828"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "watts": "",
+    "amps": "",
+    "peak": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "vrms",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "roman-numerals",
+  "problems": [],
+  "answers": {
+   "roman_out": "MCMLXXXVII",
+   "arabic_out": "2 024",
+   "length": "10"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 0,
+   "texts": 2,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "scale-conversion",
+  "problems": [],
+  "answers": {
+   "km": "4.000 ×10^-5",
+   "m": "0.004",
+   "miles": "2.485 ×10^-5"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "km": "",
+    "m": "",
+    "miles": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "scale",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seconds-converter",
+  "problems": [],
+  "answers": {
+   "ms": "2 000",
+   "minute": "0.033",
+   "hour": "5.556 ×10^-4",
+   "day": "2.315 ×10^-5",
+   "week": "3.307 ×10^-6",
+   "month": "7.605 ×10^-7",
+   "year": "6.338 ×10^-8",
+   "decade": "6.338 ×10^-9"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "ms": "",
+    "minute": "",
+    "hour": "",
+    "day": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seconds-to-days-converter",
+  "problems": [],
+  "answers": {
+   "result": "2.315 ×10^-5",
+   "base": "2",
+   "factor": "1.157 ×10^-5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "1.157 ×10^-5"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seconds-to-hours-converter",
+  "problems": [],
+  "answers": {
+   "result": "5.556 ×10^-4",
+   "base": "2",
+   "factor": "2.778 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.778 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seconds-to-minutes-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.033",
+   "base": "2",
+   "factor": "0.017"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.017"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seconds-to-years-conversion",
+  "problems": [],
+  "answers": {
+   "result": "6.338 ×10^-8",
+   "base": "2",
+   "factor": "3.169 ×10^-8"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "3.169 ×10^-8"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "speed-converter",
+  "problems": [],
+  "answers": {
+   "kph": "7.2",
+   "mph": "4.474",
+   "knot": "3.888",
+   "fps": "6.562"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "kph": "",
+    "mph": "",
+    "knot": "",
+    "fps": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-centimeters-to-square-millimeters-converter",
+  "problems": [],
+  "answers": {
+   "result": "200",
+   "base": "2.000 ×10^-4",
+   "factor": "100"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "100"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-feet-converter",
+  "problems": [],
+  "answers": {
+   "m2": "0.186",
+   "square-yard": "0.222",
+   "km2": "1.858 ×10^-7",
+   "hectare": "1.858 ×10^-5",
+   "acre": "4.591 ×10^-5",
+   "square-mile": "7.174 ×10^-8",
+   "square-inch": "288",
+   "cm2": "1 858.061"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m2": "",
+    "square-yard": "",
+    "km2": "",
+    "hectare": "",
+    "acre": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-feet-to-acres-converter",
+  "problems": [],
+  "answers": {
+   "result": "4.591 ×10^-5",
+   "base": "0.186",
+   "factor": "2.296 ×10^-5"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.296 ×10^-5"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-inch-to-square-foot-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.014",
+   "base": "0.001",
+   "factor": "0.007"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.007"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-kilometers-to-acres",
+  "problems": [],
+  "answers": {
+   "result": "494.211",
+   "base": "2 000 000",
+   "factor": "247.105"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "247.105"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-meter-converter",
+  "problems": [],
+  "answers": {
+   "square-foot": "21.528",
+   "square-yard": "2.392",
+   "km2": "2.000 ×10^-6",
+   "hectare": "2.000 ×10^-4",
+   "acre": "4.942 ×10^-4",
+   "square-mile": "7.722 ×10^-7",
+   "square-inch": "3 100.006",
+   "cm2": "20 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "square-foot": "",
+    "square-yard": "",
+    "km2": "",
+    "hectare": "",
+    "acre": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-meters-to-square-feet-converter",
+  "problems": [],
+  "answers": {
+   "result": "21.528",
+   "base": "2",
+   "factor": "10.764"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "10.764"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-miles-to-square-km-converter",
+  "problems": [],
+  "answers": {
+   "result": "5.18",
+   "base": "5 179 980",
+   "factor": "2.59"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.59"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "square-yard-converter",
+  "problems": [],
+  "answers": {
+   "m2": "1.672",
+   "square-foot": "18",
+   "km2": "1.672 ×10^-6",
+   "hectare": "1.672 ×10^-4",
+   "acre": "4.132 ×10^-4",
+   "square-mile": "6.457 ×10^-7",
+   "square-inch": "2 592",
+   "cm2": "16 722.547"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m2": "",
+    "square-foot": "",
+    "km2": "",
+    "hectare": "",
+    "acre": "",
+    "square-mile": "",
+    "square-inch": "",
+    "cm2": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "stone-to-kg",
+  "problems": [],
+  "answers": {
+   "result": "12.701",
+   "base": "12.701",
+   "factor": "6.35"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "6.35"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "stone-to-lbs",
+  "problems": [],
+  "answers": {
+   "result": "28",
+   "base": "12.701",
+   "factor": "14"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "14"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "tbsp-to-grams",
+  "problems": [],
+  "answers": {
+   "result": "0.059",
+   "litres": "0.03",
+   "kilograms": "5.915 ×10^-5"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "tbsp-to-ml",
+  "problems": [],
+  "answers": {
+   "result": "29.574",
+   "base": "0.03",
+   "factor": "14.787"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "14.787"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "temperature-converter",
+  "problems": [],
+  "answers": {
+   "celsius": "2",
+   "fahrenheit": "35.6",
+   "kelvin": "275.15",
+   "rankine": "495.27"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 4,
+   "empty": {
+    "celsius": "",
+    "fahrenheit": "",
+    "kelvin": "",
+    "rankine": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "time-unit-converter",
+  "problems": [],
+  "answers": {
+   "ms": "2 000",
+   "minute": "0.033",
+   "hour": "5.556 ×10^-4",
+   "day": "2.315 ×10^-5",
+   "week": "3.307 ×10^-6",
+   "month": "7.605 ×10^-7",
+   "year": "6.338 ×10^-8",
+   "decade": "6.338 ×10^-9"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "ms": "",
+    "minute": "",
+    "hour": "",
+    "day": "",
+    "week": "",
+    "month": "",
+    "year": "",
+    "decade": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "time-zones",
+  "problems": [],
+  "answers": {
+   "converted": "02:00",
+   "hours": "2",
+   "minutes": "0"
+  },
+  "notes": {
+   "fill": 3,
+   "numbers": 0,
+   "texts": 3,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "torque-to-horsepower",
+  "problems": [],
+  "answers": {
+   "kw": "4.189 ×10^-4",
+   "hp": "5.617 ×10^-4",
+   "ps": "5.695 ×10^-4"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "kw": "",
+    "hp": "",
+    "ps": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "torque",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "torr-to-atm",
+  "problems": [],
+  "answers": {
+   "result": "0.003",
+   "base": "266.645",
+   "factor": "0.001"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.001"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "tsp-ml-converter",
+  "problems": [],
+  "answers": {
+   "result": "9.858",
+   "base": "0.01",
+   "factor": "4.929"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "4.929"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "tsp-to-grams",
+  "problems": [],
+  "answers": {
+   "result": "0.02",
+   "litres": "0.01",
+   "kilograms": "1.972 ×10^-5"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 2,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "litres": "",
+    "kilograms": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "unicode-text",
+  "problems": [],
+  "answers": {
+   "codes": "U+0041",
+   "count": "1",
+   "bytes": "1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "unix-time",
+  "problems": [],
+  "answers": {
+   "date": "2023-11-14 22:13:20 UTC",
+   "year": "2 023",
+   "days": "19 675"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "uppercase-to-lowercase-converter",
+  "problems": [],
+  "answers": {
+   "lower": "the quick brown fox",
+   "changed": "4",
+   "length": "19"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 0,
+   "texts": 1,
+   "outputs": 3
+  }
+ },
+ {
+  "slug": "volume-conversion",
+  "problems": [],
+  "answers": {
+   "ml": "2 000",
+   "tsp": "405.768",
+   "tbsp": "135.256",
+   "floz": "67.628",
+   "cup": "8.454",
+   "pint": "4.227",
+   "quart": "2.113",
+   "gallon": "0.528"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "ml": "",
+    "tsp": "",
+    "tbsp": "",
+    "floz": "",
+    "cup": "",
+    "pint": "",
+    "quart": "",
+    "gallon": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "weeks-to-months",
+  "problems": [],
+  "answers": {
+   "result": "0.46",
+   "base": "1 209 600",
+   "factor": "0.23"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.23"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "weeks-to-years-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.038",
+   "base": "1 209 600",
+   "factor": "0.019"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.019"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "weight-converter",
+  "problems": [],
+  "answers": {
+   "g": "2 000",
+   "mg": "2 000 000",
+   "ounce": "70.548",
+   "pound": "4.409",
+   "stone": "0.315",
+   "tonne": "0.002",
+   "ton": "0.002",
+   "slug": "0.137"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "g": "",
+    "mg": "",
+    "ounce": "",
+    "pound": "",
+    "stone": "",
+    "tonne": "",
+    "ton": "",
+    "slug": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "weird-units",
+  "problems": [],
+  "answers": {
+   "fathom": "1.094",
+   "rod": "0.398",
+   "hand": "19.685",
+   "chain": "0.099",
+   "furlong": "0.01",
+   "league": "4.142 ×10^-4",
+   "angstrom": "20 000 000 000",
+   "astronomical-unit": "1.337 ×10^-11"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "fathom": "",
+    "rod": "",
+    "hand": "",
+    "chain": "",
+    "furlong": "",
+    "league": "",
+    "angstrom": "",
+    "astronomical-unit": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "yard-conversion",
+  "problems": [],
+  "answers": {
+   "m": "1.829",
+   "cm": "182.88",
+   "mm": "1 828.8",
+   "km": "0.002",
+   "inch": "72",
+   "foot": "6",
+   "mile": "0.001",
+   "nm": "1 828 800 000"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 8,
+   "empty": {
+    "m": "",
+    "cm": "",
+    "mm": "",
+    "km": "",
+    "inch": "",
+    "foot": "",
+    "mile": "",
+    "nm": ""
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "yard-to-meter-conversion",
+  "problems": [],
+  "answers": {
+   "result": "1.829",
+   "base": "1.829",
+   "factor": "0.914"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.914"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "yard-to-mile-converter",
+  "problems": [],
+  "answers": {
+   "result": "0.001",
+   "base": "1.829",
+   "factor": "5.682 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "5.682 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "yards-to-acres",
+  "problems": [],
+  "answers": {
+   "result": "4.132 ×10^-4",
+   "base": "1.672",
+   "factor": "2.066 ×10^-4"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "2.066 ×10^-4"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "yards-to-meters",
+  "problems": [],
+  "answers": {
+   "result": "1.829",
+   "base": "1.829",
+   "factor": "0.914"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.914"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "years-to-decades",
+  "problems": [],
+  "answers": {
+   "result": "0.2",
+   "base": "63 113 904",
+   "factor": "0.1"
+  },
+  "notes": {
+   "fill": 1,
+   "numbers": 1,
+   "texts": 0,
+   "outputs": 3,
+   "empty": {
+    "result": "",
+    "base": "",
+    "factor": "0.1"
+   },
+   "letter_value": "",
+   "letter_note": [
+    {
+     "name": "value",
+     "msg": "Numbers only — this box takes digits, one decimal point and a minus sign.",
+     "shown": true,
+     "hasErrorClass": true,
+     "value": ""
+    }
+   ]
+  }
+ },
+ {
+  "slug": "zulu-time-converter",
+  "problems": [],
+  "answers": {
+   "zulu": "09:30Z",
+   "hours": "9",
+   "day": "0"
+  },
+  "notes": {
+   "fill": 2,
+   "numbers": 0,
+   "texts": 2,
+   "outputs": 3
+  }
+ }
+]

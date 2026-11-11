@@ -352,13 +352,13 @@ def multi(slug: str, base_key: str, only: list[str] | None = None) -> Spec:
         f"Type one figure in {a.plural} and read it in {len(outs) + 1} units of "
         f"{SUBJECT[a.dim]}, with the factor for each written out.")
 
-    formula = {u.key: f"value * {num(u.factor / a.factor)}" for u in outs}
+    formula = {u.key: f"value * {num(a.factor / u.factor)}" for u in outs}
     results = [R(u.key, f"In {u.plural}", suffix=u.symbol) for u in outs]
 
     head = "".join(f"<th>{cap(u.plural)}</th>" for u in outs[:4])
     body = ""
     for v in (1, 2, 5, 10, 25, 50, 100):
-        cells = "".join(f"<td>{num(v * u.factor / a.factor)}</td>" for u in outs[:4])
+        cells = "".join(f"<td>{num(v * a.factor / u.factor)}</td>" for u in outs[:4])
         shown = fmt(v) + ((" " + a.symbol) if a.symbol else "")
         body += f"<tr><td>{shown}</td>{cells}</tr>"
     extra = (
@@ -435,10 +435,15 @@ def temperature(slug: str, from_scale: str) -> Spec:
     scale_name = {"C": "Celsius", "F": "Fahrenheit", "K": "Kelvin"}[from_scale]
     if slug == "centigrade-to-celsius":
         name = "Centigrade to Celsius Converter"
+    elif "-to-" in slug:
+        # The target is in the slug: kelvin-to-fahrenheit is Kelvin to
+        # Fahrenheit. The old rule guessed "Celsius" for anything starting
+        # with kelvin or fahrenheit, which named the Kelvin-to-Fahrenheit page
+        # after the wrong scale in its title and its h1.
+        _src, _dst = slug.split("-to-", 1)
+        name = f"{scale_name} to {_dst.replace('-', ' ').title()} Converter"
     else:
-        name = f"{scale_name} Converter" if slug.endswith("-converter") or slug in (
-            "fahrenheit", "celsius-converter", "kelvin-converter") else \
-            f"{scale_name} to {'Celsius' if slug.startswith('kelvin') or slug.startswith('fahrenheit') else 'Fahrenheit'} Converter"
+        name = f"{scale_name} Converter"
     if slug == "temperature-converter":
         name = "Temperature Converter"
     title = fit_title([
