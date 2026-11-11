@@ -528,7 +528,7 @@ def build_specs(only: str) -> list[dict]:
     for slug, (a, b) in catalog.PAIRS.items():
         if a not in FACTS or b not in FACTS:
             continue
-        specs.append({"kind": "unit", "slug": slug, "inputs": {},
+        specs.append({"kind": "unit", "slug": slug, "inputs": {}, "a": a, "b": b, "pair": True,
                       "expect": lambda v, a=a, b=b: {
                           "result": v * FACTS[a] / FACTS[b],
                           "base": v * FACTS[a],
@@ -542,7 +542,7 @@ def build_specs(only: str) -> list[dict]:
             r"'([a-z0-9\-]+)' => 'value \* [0-9]",
             open(os.path.join(ROOT, "plugins", "calc", "conversion",
                               f"qm-calc-{slug}.php")).read())]
-        specs.append({"kind": "unit", "slug": slug, "inputs": {},
+        specs.append({"kind": "unit", "slug": slug, "inputs": {}, "a": a,
                       "expect": lambda v, a=a, outs=tuple(outs): {
                           k: v * FACTS[a] / FACTS[k] for k in outs if k in FACTS}})
         seen.add(slug)
@@ -728,6 +728,194 @@ def run_explicit(spec: dict, page) -> list[str]:
     return problems
 
 
+# --------------------------------------------------------------------------
+# The article's "four units, seven values" table is generated from the same
+# factors as the panel, so it can be read without a browser and checked cell by
+# cell. One request per pair page, 4 400 numbers.
+# --------------------------------------------------------------------------
+
+def _rows(html: str) -> list[list[str]]:
+    """Cell contents as raw HTML, so a ×10<sup>6</sup> reading survives."""
+    rows = []
+    for tr in re.findall(r"<tr>(.*?)</tr>", html, re.S):
+        rows.append(re.findall(r"<t[dh]>(.*?)</t[dh]>", tr, re.S))
+    return rows
+
+
+def _clean(cell: str) -> str:
+    """'1.609 ×10<sup>6</sup>' -> '1.609 ×10^6'; '160 934.4' -> unchanged text."""
+    import html as htmlmod
+    out = re.sub(r"<sup>(.*?)</sup>", r"^\1", cell)
+    out = re.sub(r"<[^>]+>", "", out)
+    return htmlmod.unescape(out).strip()
+
+
+def _row_value(cell: str, a: str) -> float:
+    """The input as the panel would receive it, in unit `a`.
+
+    A row labelled '2 1,000,000' states two million — already counted in the
+    base unit — while '2 mi' states two miles. The first is divided back into
+    unit `a` before the pair's factor is applied.
+    """
+    # A thin space groups thousands inside a number; an ordinary space is the
+    # gap between the count and the base figure ('1 000 1,000,000').
+    tok = r"[0-9]+(?:\.[0-9]+)?(?:[,\u00a0\u2009\u202f][0-9]{3})*"
+    head = re.split(r"[A-Za-z]", _clean(cell))[0].strip()
+    m = re.fullmatch(rf"({tok}) +({tok})", head)
+    if m:
+        def val(t: str) -> float:
+            return float(re.sub(r"[ ,\u00a0\u2009\u202f]", "", t))
+        return val(m.group(1)) * val(m.group(2)) / FACTS[a]
+    return _first_num(cell)
+
+
+def _numtext(cell: str) -> str:
+    """The number out of a table cell that also carries its unit."""
+    t = _clean(cell)
+    m = re.match(r"\s*(-?[0-9][0-9\s\u00a0\u2009\u202f]*(?:\.[0-9]+)?"
+                 r"(?:\s*\u00d7\s*10\^?-?\d+)?)", t)
+    return m.group(1).strip() if m else t
+
+
+def _first_num(cell: str) -> float:
+    """'1 000 cm' -> 1000.0. The thin space is the site's thousands separator.
+
+    The money-of-scale pages label a row '2 1,000,000', meaning two million, so
+    a grouped number after a bare number is a multiplication, not a separator.
+    """
+    raw = re.sub(r"[\s\u00a0\u2009\u202f]", " ", _clean(cell)).strip()
+    m = re.match(r"^([0-9]+(?:\.[0-9]+)?)\s+([0-9]{1,3}(?:,[0-9]{3})+)", raw)
+    if m:
+        return float(m.group(1)) * float(m.group(2).replace(",", ""))
+    t = re.sub(r"[\s\u00a0\u2009\u202f]", "", _clean(cell))
+    m = re.match(r"-?[0-9]*\.?[0-9]+", t)
+    if not m:
+        raise ValueError(cell)
+    return float(m.group(0))
+
+
+def check_table_number(shown: str, want: float) -> str:
+    """Like check_number, but one whole unit in the last place, not half.
+
+    The article tables print six decimals below one (the panel prints four
+    significant figures), so the last digit is thrown away either way; half an
+    ulp is too tight for a value that has already been rounded twice.
+    """
+    try:
+        got, half = parse_display(shown)
+    except ValueError:
+        return f"{shown!r} is not a number, wanted {want:g}"
+    if abs(got - want) > max(half * 1.5, abs(want) * 1e-6):
+        return f"shows {shown} ({got!r}), wanted {want:.10g}"
+    return ""
+
+
+def _check_pair_article(page: str, slug: str, a: str, b: str) -> tuple[list[str], int]:
+    """The two tables a pair page carries, read against FACTS.
+
+    One is four columns of [input, answer, base, factor]; the other is a plain
+    two-column reverse table. Every cell has to be one of the numbers the pair
+    can produce, computed here rather than read from the page.
+    """
+    problems, checked = [], 0
+    ratio, back = FACTS[a] / FACTS[b], FACTS[b] / FACTS[a]
+
+    for block in re.findall(r'<table class="calc-table">(.*?)</table>', page, re.S):
+        cand = _rows(block)
+        if not cand:
+            continue
+        width = len(cand[0])
+        data = [r for r in cand[1:] if len(r) == width]
+
+        if width == 4 and len(data) >= 4 and len({_clean(r[3]) for r in data}) == 1:
+            for row in data:
+                try:
+                    v = _row_value(row[0], a)
+                except (ValueError, KeyError):
+                    continue
+                allowed = [v * ratio, v * FACTS[a], ratio, FACTS[a]]
+                for cell in row[1:]:
+                    checked += 1
+                    if not any(check_table_number(_numtext(cell), w) == "" for w in allowed):
+                        problems.append(
+                            f"{slug}: table {_clean(row[0])!r} cell {_clean(cell)!r} is none of "
+                            f"{[round(w, 6) for w in allowed]}")
+            return problems, checked
+
+        if width == 2 and len(data) >= 6:
+            for row in data:
+                try:
+                    v = _row_value(row[0], a)
+                except (ValueError, KeyError):
+                    continue
+                checked += 1
+                cells = [_numtext(row[1])]
+                if not any(check_table_number(c, v * ratio) == "" or check_table_number(c, v * back) == ""
+                           for c in cells):
+                    problems.append(
+                        f"{slug}: table {_clean(row[0])!r} -> {cells[0]!r} is neither "
+                        f"{v * ratio:.6g} nor {v * back:.6g}")
+            return problems, checked
+    return [f"{slug}: no table found in the article"], 0
+
+
+def check_static_tables(specs: list[dict]) -> tuple[list[str], int]:
+    import urllib.request
+    from units import UNITS
+
+    plural = {}
+    for key in FACTS:
+        if key in UNITS:
+            plural.setdefault(UNITS[key].plural.lower(), key)
+
+    problems, checked = [], 0
+    for spec in specs:
+        if spec["kind"] != "unit":
+            continue
+        slug = spec["slug"]
+        try:
+            with urllib.request.urlopen(f"{HOST}/conversion/{slug}", timeout=30) as fh:
+                page = fh.read().decode("utf-8", "replace")
+        except Exception as exc:  # noqa: BLE001
+            problems.append(f"{slug}: table fetch failed {str(exc)[:80]}")
+            continue
+        cut = page.find("multiplied by one factor")
+        start = page.find("<table", cut) if cut >= 0 else -1
+        if start < 0:
+            if spec.get("pair"):
+                pp, pn = _check_pair_article(page, spec["slug"], spec["a"], spec["b"])
+                problems += pp
+                checked += pn
+                continue
+            continue
+        a = spec.get("a")
+        if not a:
+            problems.append(f"{slug}: table has no source unit in its spec")
+            continue
+        rows = _rows(page[start:page.find("</table>", start)])
+        if not rows:
+            problems.append(f"{slug}: empty table")
+            continue
+        heads = [plural.get(_clean(h).lower()) for h in rows[0][1:]]
+        if None in heads:
+            problems.append(f"{slug}: unknown column {[_clean(h) for h in rows[0][1:]]}")
+            continue
+        for row in rows[1:]:
+            if len(row) != len(heads) + 1:
+                continue
+            try:
+                v = _row_value(row[0], a)
+            except (ValueError, KeyError):
+                continue
+            for key, cell in zip(heads, row[1:]):
+                checked += 1
+                want = v * FACTS[a] / FACTS[key]
+                why = check_table_number(_numtext(cell), want)
+                if why:
+                    problems.append(f"{slug}: table {_clean(row[0])} {key} {why}")
+    return problems, checked
+
+
 def main() -> int:
     global HOST
     ap = argparse.ArgumentParser()
@@ -735,6 +923,8 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--only", default="")
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--tables", action="store_true",
+                    help="also check the four-unit table in each pair page's article")
     args = ap.parse_args()
 
     specs = build_specs(args.only)
@@ -779,6 +969,19 @@ def main() -> int:
 
     print(f"\n{len(results) - len(bad)}/{len(results)} pages give the right answer"
           f" ({answers} individual answers compared)")
+    tables = {"cells": 0, "wrong": []}
+    if args.tables:
+        tp, tn = check_static_tables(specs)
+        tables = {"cells": tn, "wrong": tp}
+        print(f"article tables: {tn} cells compared, {len(tp)} wrong")
+        for line in tp[:20]:
+            print("  ! " + line)
+        with open(out, "w", encoding="utf-8") as fh:
+            json.dump({"host": HOST, "pages": len(results), "answers_checked": answers,
+                       "coverage": cov, "tables": tables,
+                       "results": [{"slug": s, "kind": k, "problems": p} for s, k, p in results]},
+                      fh, indent=1, ensure_ascii=False)
+
     print(f"outputs not covered by an expectation: {len(loose)} pages"
           + (f" — {sorted(loose)[:6]}" if loose else ""))
     for slug, kind, problems in bad[:60]:

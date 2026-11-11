@@ -359,7 +359,7 @@ def multi(slug: str, base_key: str, only: list[str] | None = None) -> Spec:
     head = "".join(f"<th>{cap(u.plural)}</th>" for u in outs[:4])
     body = ""
     for v in (1, 2, 5, 10, 25, 50, 100):
-        cells = "".join(f"<td>{num(v * a.factor / u.factor)}</td>" for u in outs[:4])
+        cells = "".join(f"<td>{fmt(v * a.factor / u.factor)}</td>" for u in outs[:4])
         shown = fmt(v) + ((" " + a.symbol) if a.symbol else "")
         body += f"<tr><td>{shown}</td>{cells}</tr>"
     extra = (
