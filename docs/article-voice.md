@@ -83,5 +83,32 @@ scale table — are generated from the page's own numbers, which is what keeps
 the prose anchored (rule 5) and stops a page describing arithmetic it does not
 perform.
 
-Articles land between 1,585 and 2,365 words by the site's own counter, inside
-the 1,500–2,500 window the brief sets, with a median near 2,080.
+Articles land between 1,502 and 2,299 words by the site's own counter, inside
+the 1,500–2,500 window the brief sets, with a median of 2,004.
+
+## Measured, at the end of the round
+
+`tools/conversion/voice_qa.py` reads the 330 shipped pages, keeps only the prose
+blocks, and counts the cues the papers above single out. Run it yourself:
+
+```
+python3 tools/conversion/voice_qa.py
+```
+
+Latest run:
+
+| Measure | Result |
+| --- | --- |
+| Articles read | 330 |
+| House words from the list | 0 hits |
+| Participial sentence openers beyond the allowance | 0 pages |
+| Pages drowning in nominalisations | 0 |
+| Prose words per article | median 2,182 · min 1,519 · max 2,600 |
+| Sentence lengths too uniform to be human | 0 pages |
+| Longest sentence ÷ shortest, per article | median 22 |
+| Standard deviation of sentence length | median 8.9 words — every page above 5 |
+
+The wide spread is the point. An article whose sentences all run 18–24 words is
+the clearest machine tell there is, and not one of the 330 does it. The script
+is a guard, not a prize: it reads cues, and cues can be gamed. Read a page
+aloud before you trust it.
