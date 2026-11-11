@@ -16,6 +16,10 @@ def S(slug, name, what, fields, results, js, prose=None):
 
 
 def out(name, label, **kw):
+    """An answer box. A text answer is a `result` row: the site gives it a plain
+    box that the script can write a string into, which a number box cannot."""
+    if kw.get("type") == "text":
+        return {"name": name, "label": label, "type": "result"}
     return R(name, label, **kw)
 
 

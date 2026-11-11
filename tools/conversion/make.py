@@ -7,8 +7,8 @@ the article has something to say that only this page can say.
 from __future__ import annotations
 
 import catalog
-from gen import (F, R, SEL, Spec, T, cap, clean, fit_desc, fit_title, fmt, num,
-                 solve, unit_of)
+from gen import (DEFAULT_PROSE, F, R, SEL, Spec, T, cap, clean, fit_desc, fit_title, fmt,
+                 num, solve, unit_of)
 import units
 from units import UNITS, factor, get
 
@@ -706,6 +706,14 @@ def script_page(slug: str, name: str, what: str, fields: list[dict], results: li
         "formula_note": (f"<p>There is no algebraic relationship to rearrange here, which is "
                          f"why the table is empty. The script on the page is the calculator, "
                          f"and the rules it applies are listed in the article below it.</p>"),
+        "reading": DEFAULT_PROSE["reading"] + (
+                    f"<p>{cap(what.split('.')[0])}. The answer arrives in the boxes beside the "
+                    f"form, and every box is written by the same script, so a figure that "
+                    f"appears in one and not another means the input it needed was empty.</p>"
+                    f"<p>Copy what you need before you change the input: nothing on the page is "
+                    f"saved, and the previous answer is gone the moment the next one is "
+                    f"computed. Where the output is text, it is copied character for character, "
+                    f"including any spacing the rules add.</p>"),
     }
     if prose:
         p.update(prose)

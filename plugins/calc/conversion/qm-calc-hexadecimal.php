@@ -41,22 +41,12 @@ return [
                 [
                     'name' => 'binary',
                     'label' => 'Binary',
-                    'type' => 'text',
-                    'readonly' => true,
-                    'rounding' => [
-                        'omni',
-                        '0.0001',
-                    ],
+                    'type' => 'result',
                 ],
                 [
                     'name' => 'octal',
                     'label' => 'Octal',
-                    'type' => 'text',
-                    'readonly' => true,
-                    'rounding' => [
-                        'omni',
-                        '0.0001',
-                    ],
+                    'type' => 'result',
                 ],
             ],
         ],
@@ -89,7 +79,7 @@ return [
             ],
             [
                 'title' => 'Reading the answer',
-                'html' => '<p>Read the answer with its unit, not on its own. A bare number carried into a report is where conversions go wrong months later. The panel keeps the unit beside every figure for that reason, and the table above repeats it.</p><p>Ask whether the size is plausible before you use it. One acre is smaller than a football pitch; a kilogram is a little over two pounds; a litre of water weighs a kilogram. Comparison with something you can picture catches most slips faster than rechecking the arithmetic.</p><p>Decimal, binary and octal should land in the range you expected before you pressed anything. A figure ten times out, or a thousand times out, is the usual shape of a unit slip and not of a calculation error.</p>',
+                'html' => '<p>Read the answer with its unit, not on its own. A bare number carried into a report is where conversions go wrong months later. The panel keeps the unit beside every figure for that reason, and the table above repeats it.</p><p>Ask whether the size is plausible before you use it. One acre is smaller than a football pitch; a kilogram is a little over two pounds; a litre of water weighs a kilogram. Comparison with something you can picture catches most slips faster than rechecking the arithmetic.</p><p>A hexadecimal figure read back into decimal, binary and octal. The answer arrives in the boxes beside the form, and every box is written by the same script, so a figure that appears in one and not another means the input it needed was empty.</p><p>Copy what you need before you change the input: nothing on the page is saved, and the previous answer is gone the moment the next one is computed. Where the output is text, it is copied character for character, including any spacing the rules add.</p><p>Decimal, binary and octal should land in the range you expected before you pressed anything. A figure ten times out, or a thousand times out, is the usual shape of a unit slip and not of a calculation error.</p>',
             ],
             [
                 'title' => 'How much each input moves the answer',
