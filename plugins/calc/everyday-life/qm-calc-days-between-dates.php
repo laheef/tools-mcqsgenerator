@@ -36,7 +36,7 @@ return [
                     'type' => 'select',
                     'options' => ['Yes, include it' => 1, 'No, stop the day before' => 0],
                     'control' => 'SELECT',
-                    'default' => '1',
+                    'default' => 'Yes, include it',
                 ],
                 [
                     'name' => 'days',

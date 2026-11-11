@@ -81,6 +81,10 @@ def main() -> int:
             bad += 1
             continue
         values = ans["values"]
+        # a date or clock result comes back in milliseconds, the unit its box holds
+        for fld in spec.results:
+            if fld.get("type") in ("date", "time") and values.get(fld["name"]) is not None:
+                values[fld["name"]] = values[fld["name"]] / 86400000.0
         for key, want in expected.items():
             if not close(values.get(key), float(want), tol):
                 print(f"  ! {spec.slug} {inputs}: {key} = {values.get(key)!r}, "
@@ -89,10 +93,11 @@ def main() -> int:
 
     # every page builds and solves at its own defaults
     for spec in specs:
-        env = spec.default_env()
-        wire = {f["name"]: input_value(f, env[f["name"]]) for f in spec.fields
-                if f["name"] in env and f.get("type") != "select"}
-        wire.update({f["name"]: env[f["name"]] for f in spec.fields if f.get("type") == "select"})
+        env = spec.formula_env()
+        shown = spec.default_env()          # the values as the boxes hold them
+        wire = {f["name"]: input_value(f, shown[f["name"]]) for f in spec.fields
+                if f["name"] in shown and f.get("type") != "select"}
+        wire.update({f["name"]: shown[f["name"]] for f in spec.fields if f.get("type") == "select"})
         try:
             py = solve(spec, env)
         except Exception as exc:                        # noqa: BLE001
@@ -104,9 +109,13 @@ def main() -> int:
             print(f"  ! {spec.slug}: defaults refused: {ans.get('error')}")
             bad += 1
             continue
+        vals = dict(ans["values"])
+        for fld in spec.results:
+            if fld.get("type") in ("date", "time") and vals.get(fld["name"]) is not None:
+                vals[fld["name"]] = vals[fld["name"]] / 86400000.0
         for r in spec.results:
-            if not close(ans["values"].get(r["name"]), py.get(r["name"], 0.0), 1e-6):
-                print(f"  ! {spec.slug}: default {r['name']} PHP={ans['values'].get(r['name'])!r} "
+            if not close(vals.get(r["name"]), py.get(r["name"], 0.0), 1e-6):
+                print(f"  ! {spec.slug}: default {r['name']} PHP={vals.get(r['name'])!r} "
                       f"Python={py.get(r['name'])!r}")
                 bad += 1
 

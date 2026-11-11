@@ -97,7 +97,7 @@ SPECS.append(S(
     ],
     related=[("/everyday-life/drive-time", "Drive time"),
              ("/everyday-life/fuel-cost", "Fuel cost"),
-             ("/everyday-life/pace-calculator", "Pace calculator")],
+             ("/everyday-life/speed", "Speed calculator")],
     checks=[
         ({"distance": 10, "hours": 0, "minutes": 30},
          {"speed": 20, "mph": 12.4274, "ms": 5.5556, "pace": 3}, 0.001),

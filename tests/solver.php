@@ -62,8 +62,12 @@ $cases = [
      'expect' => ['voltage' => 12, 'power' => 24], 'note' => 'V = IR, P = VI'],
     ['calc' => 'physics--ohms-law', 'inputs' => ['voltage' => 12, 'power' => 24],
      'expect' => ['current' => 2, 'resistance' => 6], 'note' => 'solve the other way round'],
-    ['calc' => 'everyday-life--speed', 'inputs' => ['distance' => 100, 'time' => 10],
-     'expect' => ['speed' => 10], 'note' => '100 m in 10 s = 10 m/s'],
+    /* The page takes a distance in km and the time as whole hours plus minutes;
+       the three answers are the same speed in km/h, mph and m/s. Thecase used to
+       feed a single `time` field the page no longer has, so it read null. */
+    ['calc' => 'everyday-life--speed', 'inputs' => ['distance' => 100, 'hours' => 1, 'minutes' => 30],
+     'expect' => ['speed' => 66.66666666666667, 'mph' => 41.424742, 'ms' => 18.51851851851852],
+     'note' => '100 km in 1 h 30 min = 66.67 km/h'],
 
     // --- health -------------------------------------------------------------
     ['calc' => 'health--bmi', 'inputs' => ['mass' => 70, 'height' => 1.75],
@@ -123,11 +127,14 @@ $ok = $end === '16:30';
 printf("  %s  %-34s %-46s %s\n", $ok ? 'PASS' : 'FAIL', 'everyday-life--8-hour-shift', 'shift end after a break', $end);
 $ok ? $pass++ : $fail++;
 
+/* The page was rewritten as its own calculator file, so the variables are the
+   ones it now has: `start` and `end` in milliseconds, out as `total_days` and
+   `years`. 5 January 2020 to 10 March 2026 is 2 256 days, 2 256/365.2425 years. */
 $ybd = Data::calculator('everyday-life--years-between-dates.json');
-$ys = Solver::solve($ybd, ['date1' => 1773100800000, 'date2' => 1578182400000], $units);
-$days = isset($ys->values['time_between']) ? $ys->values['time_between'] / 86400 : NAN;
-$years = $ys->values['years_between'] ?? NAN;
-$ok = close_enough($days, -2256.0, 1e-6) && close_enough($years, -6.1766, 1e-4);
+$ys = Solver::solve($ybd, ['start' => 1578182400000, 'end' => 1773100800000], $units);
+$days = $ys->values['total_days'] ?? NAN;
+$years = $ys->values['years'] ?? NAN;
+$ok = close_enough($days, 2256.0, 1e-6) && close_enough($years, 6.1767182, 1e-6);
 printf("  %s  %-34s %-46s %.0f days / %.4f years\n", $ok ? 'PASS' : 'FAIL',
        'everyday-life--years-between-dates', 'days and years from two dates', $days, $years);
 $ok ? $pass++ : $fail++;

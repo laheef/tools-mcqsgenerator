@@ -38,7 +38,7 @@ return [
                     'type' => 'select',
                     'options' => ['Yes, already had it' => 1, 'No, not yet' => 0],
                     'control' => 'SELECT',
-                    'default' => '1',
+                    'default' => 'Yes, already had it',
                 ],
                 [
                     'name' => 'birth_year',

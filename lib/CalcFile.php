@@ -806,6 +806,23 @@ final class CalcFile
                 $out['vt']   = 'date';
                 break;
 
+            /*
+             * A clock time is a picker and a value in milliseconds, exactly like
+             * a date: Widget paints <input type="time"> for it and Solver reads
+             * the number. Without this case the field fell through to
+             * `numerical` and a visitor typing 09:00 met a box that strips
+             * letters and refuses the colon.
+             */
+            case 'time':
+                $var['type'] = 'time';
+                $out['vt']   = 'time';
+                break;
+
+            case 'datetime':
+                $var['type'] = 'datetime';
+                $out['vt']   = 'datetime';
+                break;
+
             case 'presentation':
                 /* A value the page prints inside its own sentences rather than
                    in a box of its own: no label, nothing to type into. */

@@ -55,6 +55,11 @@ SET_JS = """([pairs]) => {
     return done;
 }"""
 
+# Results come back from two places. A number the page gives its own box is
+# read from that box; a date the page prints as a sentence ("Mon 19 October
+# 2026") has no box at all and is read from the results panel, which is where
+# the visitor reads it. Reading only the boxes made every date answer look
+# missing.
 READ_JS = """() => {
     const out = {};
     document.querySelectorAll('[data-var]').forEach(el => {
@@ -63,8 +68,38 @@ READ_JS = """() => {
         if (!field || !field.hasAttribute('data-output')) return;
         out[el.getAttribute('data-var')] = String(el.value === undefined ? '' : el.value);
     });
+    /* The answers a page has no box for — a date said in words — are added to
+       the panel as extra rows, tagged data-extra-row. */
+    document.querySelectorAll('[data-extra-row]').forEach(row => {
+        const name = row.getAttribute('data-extra-row');
+        const val = row.querySelector('.calc-result-value');
+        if (val) out[name] = val.textContent.replace(/\\s+/g, ' ').trim();
+    });
+    document.querySelectorAll('[data-result-row]').forEach(row => {
+        const name = row.getAttribute('data-result-row');
+        if (out[name] !== undefined && out[name] !== '') return;
+        let text = row.textContent.replace(/\\s+/g, ' ').trim();
+        const label = row.querySelector('.calc-result-label');
+        if (label) text = text.slice(label.textContent.replace(/\\s+/g, ' ').trim().length);
+        text = text.replace(/^\\s*Copy\\s*/i, '').replace(/\\s*Copy\\s*$/, '').trim();
+        out[name] = text;
+    });
     return out;
 }"""
+
+
+MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+          "August", "September", "October", "November", "December"]
+
+
+def parse_human_date(text: str) -> float | None:
+    """"Mon 19 October 2026" as a day number, the unit the checks use."""
+    m = re.search(r"(\d{1,2})\s+([A-Z][a-z]+)\s+(\d{4})", text or "")
+    if not m or m.group(2) not in MONTHS:
+        return None
+    import datetime as _dt
+    d = _dt.date(int(m.group(3)), MONTHS.index(m.group(2)) + 1, int(m.group(1)))
+    return float((d - _dt.date(1970, 1, 1)).days)
 
 
 def parse_number(text: str) -> float | None:
@@ -118,7 +153,12 @@ def main() -> int:
                 shown = page.evaluate(READ_JS)
                 for key, want in expected.items():
                     field = next((r for r in spec.results if r["name"] == key), None)
-                    got = parse_number(shown.get(key, ""))
+                    raw = shown.get(key, "")
+                    got = parse_number(raw)
+                    if got is None or abs(float(want)) >= 1000:
+                        human = parse_human_date(raw)
+                        if human is not None and abs(float(want)) >= 1000:
+                            got = human
                     checked += 1
                     if got is None:
                         print(f"  ! {spec.slug} case {case_no}: {key} reads {shown.get(key)!r}")

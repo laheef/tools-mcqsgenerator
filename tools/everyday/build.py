@@ -53,7 +53,7 @@ def check(spec: Spec) -> list[str]:
     for key in spec.formula:
         if key not in keys:
             problems.append(f"formula for unknown field {key}")
-    env = spec.default_env()
+    env = spec.formula_env()
     numeric = [f for f in spec.fields
                if f.get("type") not in ("select", "note") and f not in spec.results]
     if len(env) < len(numeric):

@@ -119,7 +119,19 @@ def SEL(key: str, label: str, options, default: Any = None, help: str = "") -> d
         "control": "SELECT",
     }
     if default is not None:
-        f["default"] = str(default)
+        # Calculator files pick a select default by the option's *label*, not
+        # by the value it exports: CalcFile compares `default` against each
+        # label. Writing the value there left these pages opening with no
+        # answer chosen, so Calculate refused with "choose one of these
+        # options". The label goes into the file; the value is kept beside it
+        # for the formula environment.
+        for lbl, val in options:
+            if str(val) == str(default) or str(lbl) == str(default):
+                f["default"] = str(lbl)
+                f["default_value"] = str(val)
+                break
+        else:
+            f["default"] = str(default)
     if help:
         f["help"] = help
     return f
@@ -155,11 +167,33 @@ class Spec:
     def inputs(self) -> dict[str, dict]:
         return {f["name"]: f for f in self.fields if f.get("type") != "note"}
 
+    def raw_units(self) -> bool:
+        """True when the formulas spell out their own date conversion.
+
+        Solver::formulaUnits leaves such a page alone (its `86400` test), so a
+        clock box arrives at the formula as milliseconds rather than as a
+        fraction of a day. The formulas and the Python side both have to know.
+        """
+        return any(BYPASS.search(expr) for expr in self.formula.values())
+
+    def formula_env(self) -> dict[str, float]:
+        """The defaults as the formulas will see them."""
+        env = self.default_env()
+        if not self.raw_units():
+            return env
+        out = {}
+        for f in self.fields:
+            if f["name"] not in env:
+                continue
+            out[f["name"]] = (env[f["name"]] * 86400000.0
+                              if f.get("type") in ("date", "time") else env[f["name"]])
+        return out
+
     def default_env(self) -> dict[str, float]:
         env: dict[str, float] = {}
         for f in self.fields:
             if f.get("type") == "select":
-                d = f.get("default")
+                d = f.get("default_value", f.get("default"))
                 try:
                     env[f["name"]] = float(d)          # a choice is a number to the formula
                 except (TypeError, ValueError):
@@ -170,6 +204,9 @@ class Spec:
                 continue
             env[f["name"]] = to_day(f, d) if f["type"] in ("date", "time") else float(d)
         return env
+
+
+BYPASS = re.compile(r"31557600|86400|604800|3600\b")
 
 
 def S(**kwargs: Any) -> Spec:
@@ -228,6 +265,29 @@ def _snap(x: float, up: bool) -> float:
     return math.ceil(x) if up else math.floor(x)
 
 
+def _shift_months(day: float, months: int) -> float:
+    """dateAtMonthsOld / dateAtYearsOld: move a day number by whole months.
+
+    The day of the month is clamped to the length of the month it lands in, so
+    31 January plus one month is 28 or 29 February, exactly as the site does it.
+    """
+    d = day_to_date(day)
+    total = (d.year * 12 + d.month - 1) + int(months)
+    year, month0 = divmod(total, 12)
+    month = month0 + 1
+    days = [31, 29 if (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)) else 28,
+            31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
+    return float((_dt.date(year, month, min(d.day, days)) - EPOCH).days)
+
+
+def _date_at_months_old(day: float, months: float) -> float:
+    return _shift_months(day, int(round(months)))
+
+
+def _date_at_years_old(day: float, years: float) -> float:
+    return _shift_months(day, 12 * int(round(years)))
+
+
 FUNCS: dict[str, Callable[..., Any]] = {
     "pow": pow,
     "sqrt": math.sqrt,
@@ -254,6 +314,18 @@ FUNCS: dict[str, Callable[..., Any]] = {
     "rad": math.radians,
     "pi": math.pi,
     "e": math.e,
+    # The calendar helpers the site exposes to a formula. A date is a day
+    # number, so each of these reads the calendar out of a number (lib/Expr.php).
+    "getDate": lambda d: day_to_date(d).day,
+    "getMonth": lambda d: day_to_date(d).month - 1,
+    "getYear": lambda d: day_to_date(d).year,
+    "getDayOfWeek": lambda d: day_to_date(d).isoweekday() % 7,
+    "getDayOfYear": lambda d: day_to_date(d).timetuple().tm_yday - 1,
+    "getHours": lambda d: int(round((d - math.floor(d)) * 24)) % 24,
+    "dateAtMonthsOld": _date_at_months_old,
+    "dateAtYearsOld": _date_at_years_old,
+    "daysBetween": lambda a, b: b - a,
+    "if_else": lambda c, a, b: a if c else b,
 }
 
 
@@ -411,7 +483,8 @@ def build_article(spec: Spec) -> dict:
     fields = [f for f in spec.fields if f.get("type") != "note"]
     results = spec.results
     inputs = [f for f in fields if f not in results]
-    env = spec.default_env()
+    env = spec.formula_env()
+    display_env = spec.default_env()
     solved = solve(spec, env)
 
     labels = {f["name"]: label_of(f) for f in fields}
@@ -482,7 +555,7 @@ def build_article(spec: Spec) -> dict:
         for r in results if r["name"] in solved)
 
     defaults_in = ", ".join(
-        f"{soft(label_of(f))} = {show_value(f, env[f['name']])}"
+        f"{soft(label_of(f))} = {show_value(f, display_env[f['name']])}"
         f"{(' ' + unit_of(f)) if unit_of(f) else ''}"
         for f in inputs if f["name"] in env)
 
@@ -848,6 +921,8 @@ def build_def(spec: Spec) -> dict:
     for f in fields:
         f.pop("_columns", None)
     fields = fields + [dict(r) for r in spec.results]
+    for f in fields:
+        f.pop("default_value", None)
 
     section: dict[str, Any] = {"columns": 2, "fields": fields}
     if spec.notes:
