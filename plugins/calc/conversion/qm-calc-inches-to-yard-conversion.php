@@ -74,9 +74,9 @@ return [
         [
             'title' => 'Inch to Yard Converter',
             'results' => [
-                'result' => 'value * 0.0277778',
+                'result' => 'value * 0.0277777777777778',
                 'base' => 'value * 0.0254',
-                'factor' => '0.0277778',
+                'factor' => '0.0277777777777778',
             ],
         ],
     ],
@@ -85,11 +85,11 @@ return [
         'sections' => [
             [
                 'title' => 'What this calculator works out',
-                'html' => '<p>One inch is 0.0277778 yards, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 36 inches to the yard, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>inches in yards, inches in metres and yards per inch</strong> from the boxes above it. The relationship is In inches × 0.0277778. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
+                'html' => '<p>One inch is 0.0277778 yards, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 36 inches to the yard, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>inches in yards, inches in metres and yards per inch</strong> from the boxes above it. The relationship is In inches × 0.0277777777777778. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Inches in yards</strong></td><td><code>In inches × 0.0277778</code></td></tr><tr><td><strong>Inches in metres</strong></td><td><code>In inches × 0.0254</code></td></tr><tr><td><strong>Yards per inch</strong></td><td><code>0.0277778</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Inches in yards</strong></td><td><code>In inches × 0.0277777777777778</code></td></tr><tr><td><strong>Inches in metres</strong></td><td><code>In inches × 0.0254</code></td></tr><tr><td><strong>Yards per inch</strong></td><td><code>0.0277777777777778</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -97,7 +97,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In inches = 1 in — and the results panel reads:</p><ul><li><strong>Inches in yards</strong> = <code>In inches × 0.0277778</code> = <strong>0.028 yd</strong></li><li><strong>Inches in metres</strong> = <code>In inches × 0.0254</code> = <strong>0.025 m</strong></li><li><strong>Yards per inch</strong> = <code>0.0277778</code> = <strong>0.028 yd/in</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In inches = 1 in — and the results panel reads:</p><ul><li><strong>Inches in yards</strong> = <code>In inches × 0.0277777777777778</code> = <strong>0.028 yd</strong></li><li><strong>Inches in metres</strong> = <code>In inches × 0.0254</code> = <strong>0.025 m</strong></li><li><strong>Yards per inch</strong> = <code>0.0277777777777778</code> = <strong>0.028 yd/in</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -109,7 +109,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Inches in yards</strong></td><td><code>1 × 0.0277778</code></td><td><strong>0.028</strong></td></tr><tr><td><strong>Inches in metres</strong></td><td><code>1 × 0.0254</code></td><td><strong>0.025</strong></td></tr><tr><td><strong>Yards per inch</strong></td><td><code>0.0277778</code></td><td><strong>0.028</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Inches in yards</strong></td><td><code>1 × 0.0277777777777778</code></td><td><strong>0.028</strong></td></tr><tr><td><strong>Inches in metres</strong></td><td><code>1 × 0.0254</code></td><td><strong>0.025</strong></td></tr><tr><td><strong>Yards per inch</strong></td><td><code>0.0277777777777778</code></td><td><strong>0.028</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',
@@ -151,7 +151,7 @@ return [
         'faq' => [
             [
                 'q' => 'What does the Inch to Yard Converter work out?',
-                'a' => 'It returns inches in yards, inches in metres and yards per inch from in inches. The relationship is In inches × 0.0277778.',
+                'a' => 'It returns inches in yards, inches in metres and yards per inch from in inches. The relationship is In inches × 0.0277777777777778.',
             ],
             [
                 'q' => 'Which values do I need before I start?',

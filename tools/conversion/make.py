@@ -8,7 +8,8 @@ from __future__ import annotations
 
 import catalog
 from gen import (DEFAULT_PROSE, F, R, SEL, Spec, T, cap, clean, fit_desc, fit_title, fmt,
-                 num, solve, unit_of)
+                 num, solve, unit_of,
+                 numf)
 import units
 from units import UNITS, factor, get
 
@@ -165,9 +166,9 @@ def pair(slug: str, a_key: str, b_key: str) -> Spec:
         f"Type a figure and read {b.plural}, the reverse rate and the same quantity in "
         f"{get(units.BASE[a.dim]).plural}.")
 
-    formula = {"result": f"value * {num(k)}",
-               "base": f"value * {num(a.factor)}",
-               "factor": num(k)}
+    formula = {"result": f"value * {numf(k)}",
+               "base": f"value * {numf(a.factor)}",
+               "factor": numf(k)}
     rows = "".join(f"<tr><td>{num(v)} {b.plural}</td><td>{num(v / k)} {a.plural}</td></tr>"
                    for v in (1, 2, 5, 10, 25, 50, 100, 250, 500, 1000))
     extra = (
@@ -257,14 +258,14 @@ def dens(slug: str, a_key: str, b_key: str) -> Spec:
         f"Convert {a.plural} to {b.plural} with the density as an input, because mass and "
         f"volume only meet through it. Type the figure, the density, and read both sides.")
     if mass_b:
-        formula = {"result": f"value * {num(a.factor)} / density * 1000 / {num(b.factor)}",
-                   "litres": f"value * {num(a.factor)} / density * 1000",
-                   "kilograms": f"value * {num(a.factor)}"}
+        formula = {"result": f"value * {numf(a.factor)} / density * 1000 / {numf(b.factor)}",
+                   "litres": f"value * {numf(a.factor)} / density * 1000",
+                   "kilograms": f"value * {numf(a.factor)}"}
         out_unit = b.symbol
     else:
-        formula = {"result": f"value * {num(a.factor)} / 1000 * density / {num(b.factor)}",
-                   "litres": f"value * {num(a.factor)}",
-                   "kilograms": f"value * {num(a.factor)} / 1000 * density"}
+        formula = {"result": f"value * {numf(a.factor)} / 1000 * density / {numf(b.factor)}",
+                   "litres": f"value * {numf(a.factor)}",
+                   "kilograms": f"value * {numf(a.factor)} / 1000 * density"}
         out_unit = b.symbol
 
     rows = "".join(
@@ -352,7 +353,7 @@ def multi(slug: str, base_key: str, only: list[str] | None = None) -> Spec:
         f"Type one figure in {a.plural} and read it in {len(outs) + 1} units of "
         f"{SUBJECT[a.dim]}, with the factor for each written out.")
 
-    formula = {u.key: f"value * {num(a.factor / u.factor)}" for u in outs}
+    formula = {u.key: f"value * {numf(a.factor / u.factor)}" for u in outs}
     results = [R(u.key, f"In {u.plural}", suffix=u.symbol) for u in outs]
 
     head = "".join(f"<th>{cap(u.plural)}</th>" for u in outs[:4])

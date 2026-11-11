@@ -159,6 +159,24 @@ def num(v: Any) -> str:
     return f"{v:.6f}".rstrip("0").rstrip(".")
 
 
+def numf(v: Any) -> str:
+    """A constant written into a formula: full precision, no grouping.
+
+    `num()` is for prose — six significant figures read well in a sentence. A
+    formula is arithmetic, and six figures are not enough there: 7.5 miles came
+    out as 1 207 005 cm instead of 1 207 008 because the constant written into
+    the page was 160934 rather than 160934.4. The error is invisible at one mile
+    and three centimetres wide at 7.5, so the formula gets the real number.
+    """
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return str(v)
+    if v == int(v) and abs(v) < 1e15:
+        return f"{int(v)}"
+    return f"{v:.15g}"
+
+
 def cap(text: str) -> str:
     return text[:1].upper() + text[1:] if text else text
 

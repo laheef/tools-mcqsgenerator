@@ -259,7 +259,7 @@ C("scale-conversion", "Scale Conversion Calculator",
    R("m", "Distance in metres", suffix="m"),
    R("miles", "Distance in miles", suffix="mi")],
   {"km": "length * scale / 100000",
-   "m": "length * scale / 1000",
+   "m": "length * scale / 100",
    "miles": "length * scale / 100000 * 0.621371192237334"})
 
 # --------------------------------------------------------------------- image

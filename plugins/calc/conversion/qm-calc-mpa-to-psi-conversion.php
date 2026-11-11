@@ -74,9 +74,9 @@ return [
         [
             'title' => 'Megapascal to Pound per square inch Converter',
             'results' => [
-                'result' => 'value * 145.037738',
+                'result' => 'value * 145.037737730217',
                 'base' => 'value * 1000000',
-                'factor' => '145.037738',
+                'factor' => '145.037737730217',
             ],
         ],
     ],
@@ -85,11 +85,11 @@ return [
         'sections' => [
             [
                 'title' => 'What this calculator works out',
-                'html' => '<p>One megapascal is 145.037738 pounds per square inch, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 0.00689476 megapascals to the pound per square inch, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>megapascals in pounds per square inch, megapascals in pascals and pounds per square inch per megapascal</strong> from the boxes above it. The relationship is In megapascals × 145.037738. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
+                'html' => '<p>One megapascal is 145.037738 pounds per square inch, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 0.00689476 megapascals to the pound per square inch, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>megapascals in pounds per square inch, megapascals in pascals and pounds per square inch per megapascal</strong> from the boxes above it. The relationship is In megapascals × 145.037737730217. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Megapascals in pounds per square inch</strong></td><td><code>In megapascals × 145.037738</code></td></tr><tr><td><strong>Megapascals in pascals</strong></td><td><code>In megapascals × 1000000</code></td></tr><tr><td><strong>Pounds per square inch per megapascal</strong></td><td><code>145.037738</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Megapascals in pounds per square inch</strong></td><td><code>In megapascals × 145.037737730217</code></td></tr><tr><td><strong>Megapascals in pascals</strong></td><td><code>In megapascals × 1000000</code></td></tr><tr><td><strong>Pounds per square inch per megapascal</strong></td><td><code>145.037737730217</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -97,7 +97,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In megapascals = 1 MPa — and the results panel reads:</p><ul><li><strong>Megapascals in pounds per square inch</strong> = <code>In megapascals × 145.037738</code> = <strong>145.038 psi</strong></li><li><strong>Megapascals in pascals</strong> = <code>In megapascals × 1000000</code> = <strong>1 × 10<sup>6</sup> Pa</strong></li><li><strong>Pounds per square inch per megapascal</strong> = <code>145.037738</code> = <strong>145.038 psi/MPa</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In megapascals = 1 MPa — and the results panel reads:</p><ul><li><strong>Megapascals in pounds per square inch</strong> = <code>In megapascals × 145.037737730217</code> = <strong>145.038 psi</strong></li><li><strong>Megapascals in pascals</strong> = <code>In megapascals × 1000000</code> = <strong>1 × 10<sup>6</sup> Pa</strong></li><li><strong>Pounds per square inch per megapascal</strong> = <code>145.037737730217</code> = <strong>145.038 psi/MPa</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -109,7 +109,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Megapascals in pounds per square inch</strong></td><td><code>1 × 145.037738</code></td><td><strong>145.038</strong></td></tr><tr><td><strong>Megapascals in pascals</strong></td><td><code>1 × 1000000</code></td><td><strong>1 × 10<sup>6</sup></strong></td></tr><tr><td><strong>Pounds per square inch per megapascal</strong></td><td><code>145.037738</code></td><td><strong>145.038</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>At these values the results span 6894.75728 times from smallest to largest, which is the sort of page where a misplaced decimal point survives a glance and only the unit gives it away.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Megapascals in pounds per square inch</strong></td><td><code>1 × 145.037737730217</code></td><td><strong>145.038</strong></td></tr><tr><td><strong>Megapascals in pascals</strong></td><td><code>1 × 1000000</code></td><td><strong>1 × 10<sup>6</sup></strong></td></tr><tr><td><strong>Pounds per square inch per megapascal</strong></td><td><code>145.037737730217</code></td><td><strong>145.038</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>At these values the results span 6894.757293 times from smallest to largest, which is the sort of page where a misplaced decimal point survives a glance and only the unit gives it away.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',
@@ -151,7 +151,7 @@ return [
         'faq' => [
             [
                 'q' => 'What does the Megapascal to Pound per square inch Converter work out?',
-                'a' => 'It returns megapascals in pounds per square inch, megapascals in pascals and pounds per square inch per megapascal from in megapascals. The relationship is In megapascals × 145.037738.',
+                'a' => 'It returns megapascals in pounds per square inch, megapascals in pascals and pounds per square inch per megapascal from in megapascals. The relationship is In megapascals × 145.037737730217.',
             ],
             [
                 'q' => 'Which values do I need before I start?',

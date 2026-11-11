@@ -74,9 +74,9 @@ return [
         [
             'title' => 'Kilometre to Foot Converter',
             'results' => [
-                'result' => 'value * 3280.839895',
+                'result' => 'value * 3280.83989501312',
                 'base' => 'value * 1000',
-                'factor' => '3280.839895',
+                'factor' => '3280.83989501312',
             ],
         ],
     ],
@@ -85,11 +85,11 @@ return [
         'sections' => [
             [
                 'title' => 'What this calculator works out',
-                'html' => '<p>One kilometre is 3280.839895 feet, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 0.0003048 kilometres to the foot, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>kilometres in feet, kilometres in metres and feet per kilometre</strong> from the boxes above it. The relationship is In kilometres × 3280.839895. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
+                'html' => '<p>One kilometre is 3280.839895 feet, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 0.0003048 kilometres to the foot, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>kilometres in feet, kilometres in metres and feet per kilometre</strong> from the boxes above it. The relationship is In kilometres × 3280.83989501312. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Kilometres in feet</strong></td><td><code>In kilometres × 3280.839895</code></td></tr><tr><td><strong>Kilometres in metres</strong></td><td><code>In kilometres × 1000</code></td></tr><tr><td><strong>Feet per kilometre</strong></td><td><code>3280.839895</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>Kilometres in feet</strong></td><td><code>In kilometres × 3280.83989501312</code></td></tr><tr><td><strong>Kilometres in metres</strong></td><td><code>In kilometres × 1000</code></td></tr><tr><td><strong>Feet per kilometre</strong></td><td><code>3280.83989501312</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -97,7 +97,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In kilometres = 1 km — and the results panel reads:</p><ul><li><strong>Kilometres in feet</strong> = <code>In kilometres × 3280.839895</code> = <strong>3 280.84 ft</strong></li><li><strong>Kilometres in metres</strong> = <code>In kilometres × 1000</code> = <strong>1 000 m</strong></li><li><strong>Feet per kilometre</strong> = <code>3280.839895</code> = <strong>3 280.84 ft/km</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In kilometres = 1 km — and the results panel reads:</p><ul><li><strong>Kilometres in feet</strong> = <code>In kilometres × 3280.83989501312</code> = <strong>3 280.84 ft</strong></li><li><strong>Kilometres in metres</strong> = <code>In kilometres × 1000</code> = <strong>1 000 m</strong></li><li><strong>Feet per kilometre</strong> = <code>3280.83989501312</code> = <strong>3 280.84 ft/km</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -109,7 +109,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Kilometres in feet</strong></td><td><code>1 × 3280.839895</code></td><td><strong>3 280.84</strong></td></tr><tr><td><strong>Kilometres in metres</strong></td><td><code>1 × 1000</code></td><td><strong>1 000</strong></td></tr><tr><td><strong>Feet per kilometre</strong></td><td><code>3280.839895</code></td><td><strong>3 280.84</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>Kilometres in feet</strong></td><td><code>1 × 3280.83989501312</code></td><td><strong>3 280.84</strong></td></tr><tr><td><strong>Kilometres in metres</strong></td><td><code>1 × 1000</code></td><td><strong>1 000</strong></td></tr><tr><td><strong>Feet per kilometre</strong></td><td><code>3280.83989501312</code></td><td><strong>3 280.84</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',
@@ -151,7 +151,7 @@ return [
         'faq' => [
             [
                 'q' => 'What does the Kilometre to Foot Converter work out?',
-                'a' => 'It returns kilometres in feet, kilometres in metres and feet per kilometre from in kilometres. The relationship is In kilometres × 3280.839895.',
+                'a' => 'It returns kilometres in feet, kilometres in metres and feet per kilometre from in kilometres. The relationship is In kilometres × 3280.83989501312.',
             ],
             [
                 'q' => 'Which values do I need before I start?',

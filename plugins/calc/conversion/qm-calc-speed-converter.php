@@ -86,9 +86,9 @@ return [
             'title' => 'Speed Converter',
             'results' => [
                 'kph' => 'value * 3.6',
-                'mph' => 'value * 2.236936',
-                'knot' => 'value * 1.943844',
-                'fps' => 'value * 3.28084',
+                'mph' => 'value * 2.2369362920544',
+                'knot' => 'value * 1.9438444924406',
+                'fps' => 'value * 3.28083989501312',
             ],
         ],
     ],
@@ -101,7 +101,7 @@ return [
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>kilometres per hour</strong></td><td><code>In metres per second × 3.6</code></td></tr><tr><td><strong>miles per hour</strong></td><td><code>In metres per second × 2.236936</code></td></tr><tr><td><strong>knots</strong></td><td><code>In metres per second × 1.943844</code></td></tr><tr><td><strong>feet per second</strong></td><td><code>In metres per second × 3.28084</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>kilometres per hour</strong></td><td><code>In metres per second × 3.6</code></td></tr><tr><td><strong>miles per hour</strong></td><td><code>In metres per second × 2.2369362920544</code></td></tr><tr><td><strong>knots</strong></td><td><code>In metres per second × 1.9438444924406</code></td></tr><tr><td><strong>feet per second</strong></td><td><code>In metres per second × 3.28083989501312</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -109,7 +109,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In metres per second = 1 m/s — and the results panel reads:</p><ul><li><strong>In kilometres per hour</strong> = <code>In metres per second × 3.6</code> = <strong>3.6 km/h</strong></li><li><strong>In miles per hour</strong> = <code>In metres per second × 2.236936</code> = <strong>2.237 mph</strong></li><li><strong>In knots</strong> = <code>In metres per second × 1.943844</code> = <strong>1.944 kn</strong></li><li><strong>In feet per second</strong> = <code>In metres per second × 3.28084</code> = <strong>3.281 ft/s</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In metres per second = 1 m/s — and the results panel reads:</p><ul><li><strong>In kilometres per hour</strong> = <code>In metres per second × 3.6</code> = <strong>3.6 km/h</strong></li><li><strong>In miles per hour</strong> = <code>In metres per second × 2.2369362920544</code> = <strong>2.237 mph</strong></li><li><strong>In knots</strong> = <code>In metres per second × 1.9438444924406</code> = <strong>1.944 kn</strong></li><li><strong>In feet per second</strong> = <code>In metres per second × 3.28083989501312</code> = <strong>3.281 ft/s</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -121,7 +121,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>In kilometres per hour</strong></td><td><code>1 × 3.6</code></td><td><strong>3.6</strong></td></tr><tr><td><strong>In miles per hour</strong></td><td><code>1 × 2.236936</code></td><td><strong>2.237</strong></td></tr><tr><td><strong>In knots</strong></td><td><code>1 × 1.943844</code></td><td><strong>1.944</strong></td></tr><tr><td><strong>In feet per second</strong></td><td><code>1 × 3.28084</code></td><td><strong>3.281</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>In kilometres per hour</strong></td><td><code>1 × 3.6</code></td><td><strong>3.6</strong></td></tr><tr><td><strong>In miles per hour</strong></td><td><code>1 × 2.2369362920544</code></td><td><strong>2.237</strong></td></tr><tr><td><strong>In knots</strong></td><td><code>1 × 1.9438444924406</code></td><td><strong>1.944</strong></td></tr><tr><td><strong>In feet per second</strong></td><td><code>1 × 3.28083989501312</code></td><td><strong>3.281</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',

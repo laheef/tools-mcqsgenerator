@@ -74,9 +74,9 @@ return [
         [
             'title' => 'US gallon to Cubic foot Converter',
             'results' => [
-                'result' => 'value * 0.133681',
-                'base' => 'value * 3.785412',
-                'factor' => '0.133681',
+                'result' => 'value * 0.133680555555556',
+                'base' => 'value * 3.785411784',
+                'factor' => '0.133680555555556',
             ],
         ],
     ],
@@ -85,11 +85,11 @@ return [
         'sections' => [
             [
                 'title' => 'What this calculator works out',
-                'html' => '<p>One US gallon is 0.133681 cubic feet, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 7.480519 US gallons to the cubic foot, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>US gallons in cubic feet, US gallons in litres and cubic feet per US gallon</strong> from the boxes above it. The relationship is In US gallons × 0.133681. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
+                'html' => '<p>One US gallon is 0.133681 cubic feet, and that figure is a definition rather than a measurement, so it is exact to as many digits as you print it. The reverse is 7.480519 US gallons to the cubic foot, which is the same fact written the other way round.</p><p>Both units belong to the same dimension, so the conversion is a single multiplication. That is worth saying plainly because half the arithmetic mistakes in this area come from treating a conversion like a formula with an offset in it: there is no offset here, and twice the figure is twice the answer.</p><p>The page reports <strong>US gallons in cubic feet, US gallons in litres and cubic feet per US gallon</strong> from the boxes above it. The relationship is In US gallons × 0.133680555555556. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>US gallons in cubic feet</strong></td><td><code>In US gallons × 0.133681</code></td></tr><tr><td><strong>US gallons in litres</strong></td><td><code>In US gallons × 3.785412</code></td></tr><tr><td><strong>Cubic feet per US gallon</strong></td><td><code>0.133681</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>US gallons in cubic feet</strong></td><td><code>In US gallons × 0.133680555555556</code></td></tr><tr><td><strong>US gallons in litres</strong></td><td><code>In US gallons × 3.785411784</code></td></tr><tr><td><strong>Cubic feet per US gallon</strong></td><td><code>0.133680555555556</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -97,7 +97,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In US gallons = 1 gal — and the results panel reads:</p><ul><li><strong>US gallons in cubic feet</strong> = <code>In US gallons × 0.133681</code> = <strong>0.134 ft³</strong></li><li><strong>US gallons in litres</strong> = <code>In US gallons × 3.785412</code> = <strong>3.785 L</strong></li><li><strong>Cubic feet per US gallon</strong> = <code>0.133681</code> = <strong>0.134 ft³/gal</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In US gallons = 1 gal — and the results panel reads:</p><ul><li><strong>US gallons in cubic feet</strong> = <code>In US gallons × 0.133680555555556</code> = <strong>0.134 ft³</strong></li><li><strong>US gallons in litres</strong> = <code>In US gallons × 3.785411784</code> = <strong>3.785 L</strong></li><li><strong>Cubic feet per US gallon</strong> = <code>0.133680555555556</code> = <strong>0.134 ft³/gal</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -109,7 +109,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>US gallons in cubic feet</strong></td><td><code>1 × 0.133681</code></td><td><strong>0.134</strong></td></tr><tr><td><strong>US gallons in litres</strong></td><td><code>1 × 3.785412</code></td><td><strong>3.785</strong></td></tr><tr><td><strong>Cubic feet per US gallon</strong></td><td><code>0.133681</code></td><td><strong>0.134</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>US gallons in cubic feet</strong></td><td><code>1 × 0.133680555555556</code></td><td><strong>0.134</strong></td></tr><tr><td><strong>US gallons in litres</strong></td><td><code>1 × 3.785411784</code></td><td><strong>3.785</strong></td></tr><tr><td><strong>Cubic feet per US gallon</strong></td><td><code>0.133680555555556</code></td><td><strong>0.134</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',
@@ -151,7 +151,7 @@ return [
         'faq' => [
             [
                 'q' => 'What does the US gallon to Cubic foot Converter work out?',
-                'a' => 'It returns US gallons in cubic feet, US gallons in litres and cubic feet per US gallon from in US gallons. The relationship is In US gallons × 0.133681.',
+                'a' => 'It returns US gallons in cubic feet, US gallons in litres and cubic feet per US gallon from in US gallons. The relationship is In US gallons × 0.133680555555556.',
             ],
             [
                 'q' => 'Which values do I need before I start?',

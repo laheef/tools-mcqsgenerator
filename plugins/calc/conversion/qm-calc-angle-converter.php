@@ -96,11 +96,11 @@ return [
         [
             'title' => 'Angle Converter',
             'results' => [
-                'radian' => 'value * 0.0174533',
-                'gradian' => 'value * 1.111111',
+                'radian' => 'value * 0.0174532925199433',
+                'gradian' => 'value * 1.11111111111111',
                 'arcminute' => 'value * 60',
                 'arcsecond' => 'value * 3600',
-                'turn' => 'value * 0.00277778',
+                'turn' => 'value * 0.00277777777777778',
             ],
         ],
     ],
@@ -109,11 +109,11 @@ return [
         'sections' => [
             [
                 'title' => 'What this calculator works out',
-                'html' => '<p>Most conversions are asked one at a time: how many of these in one of those. That is fine until you are looking at a specification sheet in one unit, a form asking for another, and a tape measure reading a third. This page shows the figure in 6 units at once so the one you need is already on screen.</p><p>Every reading comes from the same input and the same base unit, so the columns cannot disagree with each other. What they can do is make a mismatch obvious: a figure that looks plausible in one unit and absurd in another is usually a figure typed in the wrong one.</p><p>The page reports <strong>radians, gradians, arcminutes, arcseconds and turns</strong> from the boxes above it. The relationship is In degrees × 0.0174533. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
+                'html' => '<p>Most conversions are asked one at a time: how many of these in one of those. That is fine until you are looking at a specification sheet in one unit, a form asking for another, and a tape measure reading a third. This page shows the figure in 6 units at once so the one you need is already on screen.</p><p>Every reading comes from the same input and the same base unit, so the columns cannot disagree with each other. What they can do is make a mismatch obvious: a figure that looks plausible in one unit and absurd in another is usually a figure typed in the wrong one.</p><p>The page reports <strong>radians, gradians, arcminutes, arcseconds and turns</strong> from the boxes above it. The relationship is In degrees × 0.0174532925199433. Every line of the table below is that same relationship arranged for a different unknown, so the working can be followed from whichever quantity you already have.</p>',
             ],
             [
                 'title' => 'The formula, and every way round it',
-                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>radians</strong></td><td><code>In degrees × 0.0174533</code></td></tr><tr><td><strong>gradians</strong></td><td><code>In degrees × 1.111111</code></td></tr><tr><td><strong>arcminutes</strong></td><td><code>In degrees × 60</code></td></tr><tr><td><strong>arcseconds</strong></td><td><code>In degrees × 3600</code></td></tr><tr><td><strong>turns</strong></td><td><code>In degrees × 0.00277778</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
+                'html' => '<p>One relationship drives the page. Each line below is the same relationship arranged for a different unknown, which is what you need when the quantity you already know is not the one this page reports.</p><table class="calc-table"><thead><tr><th>Solving for</th><th>Expression</th></tr></thead><tbody><tr><td><strong>radians</strong></td><td><code>In degrees × 0.0174532925199433</code></td></tr><tr><td><strong>gradians</strong></td><td><code>In degrees × 1.11111111111111</code></td></tr><tr><td><strong>arcminutes</strong></td><td><code>In degrees × 60</code></td></tr><tr><td><strong>arcseconds</strong></td><td><code>In degrees × 3600</code></td></tr><tr><td><strong>turns</strong></td><td><code>In degrees × 0.00277777777777778</code></td></tr></tbody></table><p>Nothing is applied twice. The factor you see is the ratio of two definitions, so once a figure is in the base unit of its dimension the rest is multiplication or division by a number written on the page. That is why the same factor works at any size, and why a conversion of one or of a million gives the same ratio.</p>',
             ],
             [
                 'title' => 'What to enter, and what comes back',
@@ -121,7 +121,7 @@ return [
             ],
             [
                 'title' => 'A worked example you can reproduce',
-                'html' => '<p>Enter the values the page is built around — In degrees = 1 ° — and the results panel reads:</p><ul><li><strong>In radians</strong> = <code>In degrees × 0.0174533</code> = <strong>0.017 rad</strong></li><li><strong>In gradians</strong> = <code>In degrees × 1.111111</code> = <strong>1.111 gon</strong></li><li><strong>In arcminutes</strong> = <code>In degrees × 60</code> = <strong>60 ′</strong></li><li><strong>In arcseconds</strong> = <code>In degrees × 3600</code> = <strong>3 600 ″</strong></li><li><strong>In turns</strong> = <code>In degrees × 0.00277778</code> = <strong>0.003 turn</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
+                'html' => '<p>Enter the values the page is built around — In degrees = 1 ° — and the results panel reads:</p><ul><li><strong>In radians</strong> = <code>In degrees × 0.0174532925199433</code> = <strong>0.017 rad</strong></li><li><strong>In gradians</strong> = <code>In degrees × 1.11111111111111</code> = <strong>1.111 gon</strong></li><li><strong>In arcminutes</strong> = <code>In degrees × 60</code> = <strong>60 ′</strong></li><li><strong>In arcseconds</strong> = <code>In degrees × 3600</code> = <strong>3 600 ″</strong></li><li><strong>In turns</strong> = <code>In degrees × 0.00277777777777778</code> = <strong>0.003 turn</strong></li></ul><p>Nothing is rounded between steps: the arithmetic is done at full precision and only the display is shortened.</p><p>Reproduce this on a calculator and you should land on the same figures, give or take the last decimal. If you land a factor of ten away, the value you entered was in a different unit from the one the box names, and no amount of care with the arithmetic will fix that.</p>',
             ],
             [
                 'title' => 'Reading the answer',
@@ -133,7 +133,7 @@ return [
             ],
             [
                 'title' => 'The arithmetic, line by line',
-                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>In radians</strong></td><td><code>1 × 0.0174533</code></td><td><strong>0.017</strong></td></tr><tr><td><strong>In gradians</strong></td><td><code>1 × 1.111111</code></td><td><strong>1.111</strong></td></tr><tr><td><strong>In arcminutes</strong></td><td><code>1 × 60</code></td><td><strong>60</strong></td></tr><tr><td><strong>In arcseconds</strong></td><td><code>1 × 3600</code></td><td><strong>3 600</strong></td></tr><tr><td><strong>In turns</strong></td><td><code>1 × 0.00277778</code></td><td><strong>0.003</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>At these values the results span 1.296e+06 times from smallest to largest, which is the sort of page where a misplaced decimal point survives a glance and only the unit gives it away.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
+                'html' => '<p>The same working with the numbers written in place of the names. Nothing is applied between the two columns that the formula table above does not show.</p><table class="calc-table"><thead><tr><th>Result</th><th>With the values in</th><th>Answer</th></tr></thead><tbody><tr><td><strong>In radians</strong></td><td><code>1 × 0.0174532925199433</code></td><td><strong>0.017</strong></td></tr><tr><td><strong>In gradians</strong></td><td><code>1 × 1.11111111111111</code></td><td><strong>1.111</strong></td></tr><tr><td><strong>In arcminutes</strong></td><td><code>1 × 60</code></td><td><strong>60</strong></td></tr><tr><td><strong>In arcseconds</strong></td><td><code>1 × 3600</code></td><td><strong>3 600</strong></td></tr><tr><td><strong>In turns</strong></td><td><code>1 × 0.00277777777777778</code></td><td><strong>0.003</strong></td></tr></tbody></table><p>Read the middle column against the formula table if a figure surprises you: the two should differ only in that the names have been replaced.</p><p>At these values the results span 1.296e+06 times from smallest to largest, which is the sort of page where a misplaced decimal point survives a glance and only the unit gives it away.</p><p>Doing the arithmetic by hand once, at the values the page opens with, is the quickest way to find out whether you understand the relationship or have simply learned to trust the panel. Where the hand answer and the panel disagree, the middle column shows which input you used differently.</p>',
             ],
             [
                 'title' => 'The same conversion at other values',
@@ -175,7 +175,7 @@ return [
         'faq' => [
             [
                 'q' => 'What does the Angle Converter work out?',
-                'a' => 'It returns radians, gradians, arcminutes, arcseconds and turns from in degrees. The relationship is In degrees × 0.0174533.',
+                'a' => 'It returns radians, gradians, arcminutes, arcseconds and turns from in degrees. The relationship is In degrees × 0.0174532925199433.',
             ],
             [
                 'q' => 'Which values do I need before I start?',
