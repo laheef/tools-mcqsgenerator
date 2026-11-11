@@ -53,7 +53,7 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 | --- | --- |
 | `php tests/calc_files.php` (whole site) | **8,235 passed, 0 failed** |
 | Category index `/conversion` | 330 links out; every page carries a breadcrumb and ~24 internal links |
-| `php tests/calc_files.php conversion` | 330 files, titles 330/330 in window, descriptions 330/330, 2,969 passed, 0 failed |
+| `php tests/calc_files.php conversion` | 330 files, titles 330/330 in window, descriptions 330/330, **computing 330/330**, 2,970 passed, 0 failed |
 | `php -l` on all 330 files | 0 errors |
 | `tools/conversion/qa.py` | 330/330 routes answer, one `<h1>`, a form, no "no formula" banner |
 | `tools/conversion/js_qa.py` | 23/23 script fixtures pass |
@@ -63,10 +63,10 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 | Titles | 330/330 inside 50–60 with the site suffix |
 | Descriptions | 330/330 inside 150–160 |
 
-One page, `/conversion/binary`, produced no number under the PHP test's sample
-input, because its only box was a text box at the time. It is a number now — a
-decimal figure belongs in a number box — and the page was rebuilt, so the
-server-side count and the browser both pass it.
+Every page computes from the server side too: `computing: 330/330`. The last
+page to get there was `/conversion/binary`, whose only box was a text box in the
+first build; a decimal figure belongs in a number box, so it was rebuilt as one,
+and the server-side count and the browser now both pass it.
 
 ## On the live site
 
