@@ -51,9 +51,9 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 
 | Check | Result |
 | --- | --- |
-| `php tests/calc_files.php` (whole site) | **8,235 passed, 0 failed** |
+| `php tests/calc_files.php` (whole site) | **8,236 passed, 0 failed** |
 | Category index `/conversion` | 330 links out; every page carries a breadcrumb and ~24 internal links |
-| `php tests/calc_files.php conversion` | 330 files, titles 330/330 in window, descriptions 330/330, **computing 330/330**, 2,970 passed, 0 failed |
+| `php tests/calc_files.php conversion` | 330 files, titles 330/330 in window, descriptions 330/330, **computing 330/330**, 0 failed |
 | `php -l` on all 330 files | 0 errors |
 | `tools/conversion/qa.py` | 330/330 routes answer, one `<h1>`, a form, no "no formula" banner |
 | `tools/conversion/js_qa.py` | 23/23 script fixtures pass |
