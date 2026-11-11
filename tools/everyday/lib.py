@@ -479,13 +479,38 @@ def show_value(field: dict, value: float) -> str:
 
 # ------------------------------------------------------------------ article
 
+def solve_display(spec: Spec, env: dict) -> dict:
+    """solve(), with dates and clock times in the units the page shows.
+
+    A page whose formulas spell out the millisecond conversion hands the solver
+    raw milliseconds for every date and time box, and gets milliseconds back.
+    The article talks about those values the way a reader sees them — 2026-10-23
+    and 17:30 — so this wrapper converts on the way in and back out again and
+    leaves everything else alone.
+    """
+    kinds = {f["name"]: f.get("type") for f in spec.fields}
+    kinds.update({r["name"]: r.get("type") for r in spec.results})
+    raw = spec.raw_units()
+    wire = dict(env)
+    if raw:
+        for k, v in list(wire.items()):
+            if kinds.get(k) in ("date", "time"):
+                wire[k] = v * 86400000.0
+    out = solve(spec, wire)
+    if raw:
+        for k, v in list(out.items()):
+            if kinds.get(k) in ("date", "time"):
+                out[k] = v / 86400000.0
+    return out
+
+
 def build_article(spec: Spec) -> dict:
     fields = [f for f in spec.fields if f.get("type") != "note"]
     results = spec.results
     inputs = [f for f in fields if f not in results]
-    env = spec.formula_env()
     display_env = spec.default_env()
-    solved = solve(spec, env)
+    env = display_env                       # display units from here on
+    solved = solve_display(spec, display_env)
 
     labels = {f["name"]: label_of(f) for f in fields}
     for f in fields:
@@ -577,7 +602,7 @@ def build_article(spec: Spec) -> dict:
         else:
             bumped[k] = base[k] * 1.1 if base[k] else 0.1
             move = "+10 %"
-        alt = solve(spec, bumped)
+        alt = solve_display(spec, bumped)
         cells, worst = [], 0.0
         for r in results:
             rk = r["name"]
@@ -608,6 +633,11 @@ def build_article(spec: Spec) -> dict:
     # ---- the first result written out with its numbers, one step at a time
     first_result = results[0] if results else None
     numeric_line = ""
+    if spec.raw_units():
+        # the expression is written in milliseconds while the boxes show clock
+        # times and dates, so substituting them would print a line that does
+        # not evaluate. The step-by-step table above already carries the work.
+        first_result = None
     if first_result and first_result["name"] in live_formula:
         nums = dict(env)
         nums.update(solved)
@@ -648,7 +678,7 @@ def build_article(spec: Spec) -> dict:
                 label = "+10 hours"
             else:
                 ten[k] = base[k] * 10 if base[k] else 1
-            alt = solve(spec, ten)
+            alt = solve_display(spec, ten)
             if first["name"] in alt and first["name"] in base:
                 a, b = base[first["name"]], alt[first["name"]]
                 if is_datey(first):
@@ -672,7 +702,7 @@ def build_article(spec: Spec) -> dict:
         for v in ([base_v * k for k in (0.5, 1, 2, 5, 10)] if base_v else []):
             trial = dict(env)
             trial[first_in["name"]] = v
-            out = solve(spec, trial)
+            out = solve_display(spec, trial)
             cells = "".join(f"<td>{show_value(r, out[r['name']])}</td>"
                             for r in results if r["name"] in out)
             ladder_rows.append(
@@ -700,7 +730,7 @@ def build_article(spec: Spec) -> dict:
         for k, v in sc["inputs"].items():
             fld = next((f for f in inputs if f["name"] == k), None)
             values[k] = to_day(fld, v) if fld and is_datey(fld) else float(v)
-        out = solve(spec, values)
+        out = solve_display(spec, values)
         given = ", ".join(
             f"{html.escape(soft(labels.get(k, k)))} = "
             f"{show_value(next((f for f in inputs if f['name'] == k), {}), values[k])}"

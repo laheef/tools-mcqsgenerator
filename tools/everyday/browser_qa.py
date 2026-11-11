@@ -155,6 +155,11 @@ def main() -> int:
                     field = next((r for r in spec.results if r["name"] == key), None)
                     raw = shown.get(key, "")
                     got = parse_number(raw)
+                    if got is None and field and field.get("type") == "time":
+                        # a clock answer reads 10:30, and the checks are in minutes
+                        hm = re.match(r"\s*(\d{1,2}):(\d{2})", raw)
+                        if hm:
+                            got = int(hm.group(1)) * 60 + int(hm.group(2))
                     if got is None or abs(float(want)) >= 1000:
                         human = parse_human_date(raw)
                         if human is not None and abs(float(want)) >= 1000:

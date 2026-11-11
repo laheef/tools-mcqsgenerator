@@ -81,10 +81,16 @@ def main() -> int:
             bad += 1
             continue
         values = ans["values"]
-        # a date or clock result comes back in milliseconds, the unit its box holds
+        # A date or clock result comes back in milliseconds. A date is compared as
+        # a day number and a clock as minutes from midnight, which are the units a
+        # hand-worked check is written in.
         for fld in spec.results:
-            if fld.get("type") in ("date", "time") and values.get(fld["name"]) is not None:
+            if values.get(fld["name"]) is None:
+                continue
+            if fld.get("type") == "date":
                 values[fld["name"]] = values[fld["name"]] / 86400000.0
+            elif fld.get("type") == "time":
+                values[fld["name"]] = values[fld["name"]] / 60000.0
         for key, want in expected.items():
             if not close(values.get(key), float(want), tol):
                 print(f"  ! {spec.slug} {inputs}: {key} = {values.get(key)!r}, "
@@ -100,6 +106,15 @@ def main() -> int:
         wire.update({f["name"]: shown[f["name"]] for f in spec.fields if f.get("type") == "select"})
         try:
             py = solve(spec, env)
+            # only a page that spells the millisecond conversion itself gets
+            # milliseconds back from Python; the rest already work in days
+            for fld in (spec.results if spec.raw_units() else []):
+                if py.get(fld["name"]) is None:
+                    continue
+                if fld.get("type") == "date":
+                    py[fld["name"]] = py[fld["name"]] / 86400000.0
+                elif fld.get("type") == "time":
+                    py[fld["name"]] = py[fld["name"]] / 60000.0
         except Exception as exc:                        # noqa: BLE001
             print(f"  ! {spec.slug}: python solve failed: {exc}")
             bad += 1
@@ -111,8 +126,12 @@ def main() -> int:
             continue
         vals = dict(ans["values"])
         for fld in spec.results:
-            if fld.get("type") in ("date", "time") and vals.get(fld["name"]) is not None:
+            if vals.get(fld["name"]) is None:
+                continue
+            if fld.get("type") == "date":
                 vals[fld["name"]] = vals[fld["name"]] / 86400000.0
+            elif fld.get("type") == "time":
+                vals[fld["name"]] = vals[fld["name"]] / 60000.0
         for r in spec.results:
             if not close(vals.get(r["name"]), py.get(r["name"], 0.0), 1e-6):
                 print(f"  ! {spec.slug}: default {r['name']} PHP={vals.get(r['name'])!r} "
