@@ -79,7 +79,14 @@ the next calculator written inherits it rather than rediscovering it.
 | `voice_qa.py` · `inventory_qa.py` | 0 rules tripped · PASS |
 
 The nine exact readings are new and are the point of the round: they compare the
-*string* in the box, not a tolerance.
+*string* in the box, not a tolerance. All nine were then re-run against
+production, and the screenshots below are the live panel.
+
+![One inch, live: 0.0254 m](R86_panel_inch.png)
+
+The paragraph above one result is unchanged (`1 mi` still reads `1.609 km`, and
+`22.8571` still reads `22.857`), so the wider reading is limited to the range
+where the extra digit is the answer rather than noise.
 
 ```
 inch-to-meter            1 in  -> 0.0254
