@@ -95,6 +95,10 @@ final class Shape
             'rating'      => (int) ($rec['rate'] ?? 0),
             'needsJs'     => (bool) ($rec['needsJs'] ?? false),
             'js'          => isset($rec['js']) && $rec['js'] !== '' ? (string) $rec['js'] : null,
+            /* A page written here rather than harvested: the widget may show a
+               choice the author defaulted, because that default is a decision
+               and not the reference site's prefill. */
+            'authored'    => !empty($rec['authored']),
             'faq'         => $faq,
             'related'     => is_array($content['related'] ?? null) ? $content['related'] : [],
             'article'     => $article,

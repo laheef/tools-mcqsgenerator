@@ -40,8 +40,17 @@ def T(name: str, label: str, **kw: Any) -> dict:
 
 
 def SEL(name: str, label: str, options: dict[str, str], **kw: Any) -> dict:
+    """A choice. The file stores the default as an option *label*, because that
+    is what the engine matches on; a default given as a value is translated
+    here so the two can never drift apart."""
     f = {"name": name, "label": label, "type": "select", "options": options}
     f.update(kw)
+    d = f.get("default")
+    if d is not None and d not in options:
+        for opt_label, opt_value in options.items():
+            if str(opt_value) == str(d):
+                f["default"] = opt_label
+                break
     return f
 
 
@@ -75,6 +84,10 @@ class Spec:
             d = f.get("default")
             if d is None:
                 continue
+            if f.get("type") == "select":
+                # the file stores the option label; the arithmetic wants its value
+                opts = f.get("options") or {}
+                d = opts.get(d, d)
             try:
                 out[f["name"]] = float(d)
             except (TypeError, ValueError):
@@ -657,10 +670,54 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
     links = " ".join(f'<a href="{p}">{html.escape(n)}</a>' for p, n in spec.related)
     link_text = f"<p>Where the answer is one step further on: {links}.</p>" if links else ""
 
+    rules_html = "".join(f"<li>{r}</li>" for r in spec.prose.get("rules", []))
+    examples_html = ""
+    examples = spec.prose.get("examples_out") or []
+    if examples:
+        head_cells = "".join(f"<th>{html.escape(str(k))}</th>" for k in examples[0][0])
+        body = ""
+        for given, got, note in examples:
+            cells = "".join(f"<td>{html.escape(str(v))}</td>" for v in given.values())
+            answers = " · ".join(f"<strong>{html.escape(k)}</strong> {html.escape(str(v))}"
+                                 for k, v in got.items())
+            body += f"<tr>{cells}<td>{answers}</td></tr>"
+        # what the runs say taken together, computed rather than described
+        first_key = next(iter(examples[0][1]), None)
+        spread_note = ""
+        if first_key:
+            vals = [str(got.get(first_key, "")) for _g, got, _n in examples]
+            lengths = [len(v) for v in vals]
+            if min(lengths) != max(lengths):
+                spread_note = (
+                    f"<p>Taking the runs together, the {first_key} answer ranges from "
+                    f"{min(lengths)} to {max(lengths)} characters — "
+                    f"{html.escape(min(vals, key=len))} is the shortest and "
+                    f"{html.escape(max(vals, key=len))} the longest. A rule that is applied "
+                    f"evenly produces answers whose length tracks the input; a run whose answer "
+                    f"is much shorter than its neighbours has usually had characters dropped "
+                    f"by the clean-up step, not by the conversion.</p>")
+        count = {1: "One run", 2: "Two runs", 3: "Three runs", 4: "Four runs"}.get(
+            len(examples), f"{len(examples)} runs")
+        examples_html = (
+            f"<p>{count} through this page, with the input in the first columns and what "
+            "the panel returns beside it. They are not illustrations: each row is the page's "
+            "own output for the input shown, which is why a row you can reproduce by hand is a "
+            "check on the whole script.</p>"
+            f"<table class=\"calc-table\"><thead><tr>{head_cells}<th>What comes back</th>"
+            f"</tr></thead><tbody>{body}</tbody></table>"
+            "<p>Read the rows against each other rather than one at a time. Where one input "
+            "changes and the answer does not, that input is not consulted for this case; where "
+            "two rows give the same answer, the difference between them was outside the range "
+            "the rules look at.</p>"
+            + spread_note)
+
     first_rule = (f"The relationship is {plain(list(spec.formula.values())[0], labels)}."
                   if spec.formula else
                   (f"It {spec.engine_note}." if spec.engine_note else
                    "It reads the inputs and reports the result."))
+
+    if spec.engine == "script":
+        prose["reading"] = spec.prose.get("reading_script", prose["reading"])
 
     reading_extra = (f"<p>{cap(names_out)} should land in the range you expected before you "
                      "pressed anything. A figure ten times out, or a thousand times out, is the "
@@ -671,15 +728,27 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
         ("What this calculator works out",
          prose["why"]
          + f"<p>The page reports <strong>{names_out}</strong> from the boxes above it. "
-           f"{first_rule} Every line of the table below is that same relationship arranged for "
-           f"a different unknown, so the working can be followed from whichever quantity you "
-           f"already have.</p>"),
-        ("The formula, and every way round it",
-         "<p>One relationship drives the page. Each line below is the same relationship "
-         "arranged for a different unknown, which is what you need when the quantity you "
-         "already know is not the one this page reports.</p>"
-         "<table class=\"calc-table\"><thead><tr><th>Solving for</th><th>Expression</th>"
-         f"</tr></thead><tbody>{rows}</tbody></table>" + prose["formula_note"]),
+           f"{first_rule}"
+         + (" Every line of the table below is that same relationship arranged for a different "
+            "unknown, so the working can be followed from whichever quantity you already have.</p>"
+            if spec.formula else "</p>")),
+        (("The rules it applies" if not spec.formula else "The formula, and every way round it"),
+         ("<p>There is no equation here to rearrange, so the table an ordinary converter would "
+          "carry is empty on purpose. What replaces it is the list of rules the page applies, "
+          "each one written the way the script implements it.</p>"
+          + (f"<ul>{rules_html}</ul>" if rules_html else "")
+          + (f"<p>The list is a sequence rather than a menu: the clean-up happens first, the "
+             f"conversion second and the formatting last. That order matters, because a "
+             f"character thrown away at the top never reaches the step below it — which is why "
+             f"an answer can look wrong when the rule that changed it was the tidying, not the "
+             f"arithmetic.</p>" if rules_html else "")
+          + prose["formula_note"])
+         if not spec.formula else
+         ("<p>One relationship drives the page. Each line below is the same relationship "
+          "arranged for a different unknown, which is what you need when the quantity you "
+          "already know is not the one this page reports.</p>"
+          "<table class=\"calc-table\"><thead><tr><th>Solving for</th><th>Expression</th>"
+          f"</tr></thead><tbody>{rows}</tbody></table>" + prose["formula_note"])),
         ("What to enter, and what comes back",
          f"<p>Fill in {len(fields)} box{'es' if len(fields) != 1 else ''} and the page has "
          f"everything it needs. It reports {names_out}.</p><ul>{''.join(inlist)}</ul>"
@@ -687,14 +756,20 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
          "<p>Every input needs a value before the page can answer. Nothing is carried over "
          "from a previous run, so a result that stays blank means an input is missing rather "
          "than that the page has kept an older number. The result boxes are read-only and "
-         "recomputed from the inputs, so the page always works forwards; to go the other way "
-         "the table above gives the rearrangement.</p>"),
+         "recomputed from the inputs, so the page always works forwards"
+         + (", and the rules above are what a conversion to the other direction would need.</p>"
+            if spec.engine == "script" else
+            "; to go the other way the table above gives the rearrangement.</p>")),
         ("A worked example you can reproduce",
-         f"<p>Enter the values the page is built around — {numbered} — and the results panel "
-         f"reads:</p><ul>{''.join(worked)}</ul>"
-         "<p>Nothing is rounded between steps: the arithmetic is done at full precision and "
-         "only the display is shortened.</p>" + prose["example_note"]),
+         (f"<p>Enter the values the page is built around — {numbered} — and the results panel "
+          f"reads:</p><ul>{''.join(worked)}</ul>"
+          "<p>Nothing is rounded between steps: the arithmetic is done at full precision and "
+          "only the display is shortened.</p>" + prose["example_note"])
+         if worked else examples_html + prose["example_note"]),
         ("Reading the answer", prose["reading"] + reading_extra),
+    ]
+    if sens_rows:
+        sections.append(
         ("How much each input moves the answer",
          "<p>Take the values above, raise one box by ten per cent and re-solve. The percentage "
          "is how far each result moves:</p>"
@@ -702,11 +777,12 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
          f"<tbody>{''.join(sens_rows)}</tbody></table>" + prose["sensitivity_note"]
          + (f"<p>The box the answer is most exposed to is <strong>{html.escape(worst[0])}</strong>: "
             f"ten per cent there moves a result by about {fmt(worst[1] * 100, 1)} per cent. That "
-            f"is the number to measure twice.</p>" if worst[0] else "")),
+            f"is the number to measure twice.</p>" if worst[0] else "")))
+    if scen:
+        sections.append(
         ("Two more scenarios, worked through",
          "<p>One example shows the page computes. Two more show how it behaves away from the "
-         f"values above:</p><ul>{''.join(scen)}</ul>" + prose["scenario_note"]),
-    ]
+         f"values above:</p><ul>{''.join(scen)}</ul>" + prose["scenario_note"]))
     if steps_html:
         sections.append(("The arithmetic, line by line", steps_html))
     if scale_html:
@@ -725,20 +801,22 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
          "thousand, and the answer still looks plausible.</li>"
          "<li><strong>A past answer typed back in.</strong> The result boxes are read-only, so "
          "a previous answer has to be worked back through the inputs.</li></ul>"),
-        ("Units and precision",
-         "<p>Each box carries its unit beside it, and each result is reported in the unit named "
-         "with it: "
-         + ", ".join(out_name(r) + ((f" ({unit_of(r)})") if unit_of(r) else "") for r in results)
-         + ".</p>"
-         "<p>No answer on this site is printed with more than three decimals, and values far "
-         "from everyday size are shown in scientific notation so the significant figures stay "
-         "readable. Display rounding never feeds back into the calculation: the value behind "
-         "the number keeps its full precision until an input changes.</p>"
-         "<p>Units in a formula behave like ordinary algebra: feet times feet leaves square "
-         "feet, and a square footage times a thickness divided by twelve leaves cubic feet. If "
-         "a result comes out with the wrong order of magnitude, writing the units of each box "
-         "into the formula usually shows which one was entered on the wrong scale.</p>"
-         + prose["units_note"]),
+        (("What it does not do" if spec.engine == "script" else "Units and precision"),
+         prose["units_note"] if spec.engine == "script" and not any(
+             unit_of(r) or unit_of(f) for r in results for f in fields) else
+         ("<p>Each box carries its unit beside it, and each result is reported in the unit "
+          "named with it: "
+          + ", ".join(out_name(r) + ((f" ({unit_of(r)})") if unit_of(r) else "")
+                      for r in results) + ".</p>"
+          "<p>No answer on this site is printed with more than three decimals, and values far "
+          "from everyday size are shown in scientific notation so the significant figures stay "
+          "readable. Display rounding never feeds back into the calculation: the value behind "
+          "the number keeps its full precision until an input changes.</p>"
+          "<p>Units in a formula behave like ordinary algebra: feet times feet leaves square "
+          "feet, and a square footage times a thickness divided by twelve leaves cubic feet. "
+          "If a result comes out with the wrong order of magnitude, writing the units of each "
+          "box into the formula usually shows which one was entered on the wrong scale.</p>"
+          + prose["units_note"])),
         ("Getting an answer, step by step",
          "<ol>"
          f"<li><strong>Collect the inputs.</strong> You need {names_in}. Note the unit each one "
@@ -752,6 +830,9 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
          "<li><strong>Change one box to check the direction.</strong> Move a single input and "
          "confirm the result moves the way the formula says it should.</li></ol>"
          "<p>Write the answer down with its unit and the values that produced it.</p>"),
+    ]
+    if ten_rows:
+        sections.append(
         ("When one input is out by a factor of ten",
          "<p>A decimal slip is the commonest arithmetic error in a conversion, and it leaves an "
          "answer that still looks like an answer. Here is what the first result does if each "
@@ -762,7 +843,8 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
          "relationship is linear in that box and a unit slip goes straight through to the "
          "answer. Where the effect is weaker, the box sits inside a logarithm, a power or a sum "
          "and the mistake is partly absorbed — which is more dangerous, because the result then "
-         "looks reasonable.</p>"),
+         "looks reasonable.</p>"))
+    sections += [
         ("What the page does before it answers",
          "<p>Nothing is submitted and nothing is stored: the arithmetic runs in the browser "
          "each time an input changes. A result stays blank until every value it needs is "
@@ -817,8 +899,9 @@ def build_article(spec: Spec) -> dict:  # noqa: C901
     # A page whose tables are full of large numbers can run past the top of the
     # window on its own; the least essential computed sections go first.
     for _title in ("The same conversion at other values", "How the two inputs combine",
-                   "Two more scenarios, worked through"):
-        if _words(sections) <= 2480:
+                   "Two more scenarios, worked through", "The arithmetic, line by line",
+                   "Checking the answer against a nearby value"):
+        if _words(sections) + _words([("", spec.what)]) <= 2430:
             break
         for _i, (_t, _h) in enumerate(sections):
             if _t == _title:

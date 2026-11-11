@@ -706,6 +706,37 @@ def script_page(slug: str, name: str, what: str, fields: list[dict], results: li
         "formula_note": (f"<p>There is no algebraic relationship to rearrange here, which is "
                          f"why the table is empty. The script on the page is the calculator, "
                          f"and the rules it applies are listed in the article below it.</p>"),
+        "units_note": ("<p>The boxes on this page take what you type and nothing else: there is "
+                       "no unit chip to get wrong and no scale to match, which is one class of "
+                       "error this page simply does not have. What it can do is decline: a value "
+                       "it cannot read leaves the answer boxes empty rather than producing a "
+                       "plausible-looking substitute.</p>"
+                       "<p>Text is copied character for character, including the spacing the "
+                       "rules add, so a result pasted into another document keeps its shape. "
+                       "Nothing is normalised on the way out — no trimming, no case folding, no "
+                       "smart quotes.</p>"
+                       "<p>That also means the page has a narrow definition of success: a value "
+                       "either reads as the kind of input the rules expect or it does not, and "
+                       "a partial match is treated as a mistake rather than guessed at. A page "
+                       "that guessed would be more convenient once and wrong quietly "
+                       "afterwards.</p>"
+                       "<p>What the page does not do is check the result against the outside "
+                       "world. It has no table of real codes, no list of valid dates and no "
+                       "opinion on whether the value you typed means what you think it means. "
+                       "It converts the syntax, and the meaning is yours.</p>"),
+        "example_note": ("<p>The figures in the table are the page's own output for the inputs "
+                         "shown, taken from the script that runs in your browser rather than "
+                         "written into the article by hand. Reproduce a row by typing the same "
+                         "input and reading the panel: if it disagrees, the page and this "
+                         "article have drifted apart and the page is the one to believe.</p>"),
+        "reading_script": (
+            "<p>Read the answer as a whole rather than a first character. A base conversion "
+            "looks right or wrong at a glance once you know the alphabet of the base it is "
+            "written in, and a single slipped digit is the usual failure rather than a totally "
+            "wrong figure.</p>"
+            "<p>Where the page reports more than one reading, compare them. A hexadecimal "
+            "figure that disagrees with its own binary column is a rule applied twice, not a "
+            "typing error, and the disagreement is the diagnosis.</p>"),
         "reading": DEFAULT_PROSE["reading"] + (
                     f"<p>{cap(what.split('.')[0])}. The answer arrives in the boxes beside the "
                     f"form, and every box is written by the same script, so a figure that "

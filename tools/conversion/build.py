@@ -9,8 +9,10 @@ from __future__ import annotations
 
 import glob
 import importlib
+import json
 import os
 import re
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -32,6 +34,33 @@ def load_specs(only: list[str] | None = None) -> list:
     return specs
 
 
+HARNESS = os.path.join(HERE, "js_harness.js")
+
+
+def run_examples(spec) -> None:
+    """Run each example input through the page's own script and keep the output,
+    so the figures an article prints are the figures the page produces."""
+    examples = spec.prose.get("examples") or []
+    if spec.engine != "script" or not examples:
+        return
+    tmp = f"/tmp/spec_{spec.slug}.js"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        fh.write(spec.js)
+    out = []
+    for given in examples:
+        proc = subprocess.run(["node", HARNESS, tmp, json.dumps(given)],
+                              capture_output=True, text=True, timeout=60)
+        try:
+            got = json.loads(proc.stdout.strip().splitlines()[-1])
+        except Exception:                                          # noqa: BLE001
+            continue
+        if not got.get("ok"):
+            continue
+        answers = {k: v for k, v in got["out"].items() if str(v) != ""}
+        out.append((given, answers, ""))
+    spec.prose["examples_out"] = out
+
+
 def words_of(html_text: str) -> int:
     text = re.sub(r"<[^>]+>", " ", str(html_text))
     return sum(1 for tok in text.split() if re.search(r"[A-Za-z0-9]", tok))
@@ -41,9 +70,12 @@ def check(spec) -> list[str]:
     problems: list[str] = []
     art = build_article(spec)
     words = sum(words_of(b["html"]) for b in art["sections"]) + words_of(art["intro"])
-    if words < 1500:
+    # The site counts words its own way (str_word_count, hyphens joined), which
+    # lands a little under this count; the floor carries that margin so the page
+    # a visitor sees is inside the 1 500-2 500 window too.
+    if words < 1530:
         problems.append(f"article short: {words} words")
-    if words > 2500:
+    if words > 2450:
         problems.append(f"article long: {words} words")
     if not (T_MIN <= len(spec.title) <= T_MAX):
         problems.append(f"title {len(spec.title)} characters: {spec.title}")
@@ -85,6 +117,8 @@ def main(argv: list[str]) -> int:
     only = [a.split("=", 1)[1] for a in argv if a.startswith("--only=")]
     only = [s for chunk in only for s in chunk.split(",") if s]
     specs = load_specs(only or None)
+    for spec in specs:
+        run_examples(spec)
     print(f"{len(specs)} specs")
 
     seen_titles: dict[str, str] = {}
