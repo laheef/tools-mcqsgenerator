@@ -635,6 +635,11 @@ final class CalcFile
             'eq'       => $eq,
             'datasets' => $datasets,
         ];
+        /* A file written here rather than harvested: the defaults in it were
+           chosen deliberately, so the widget may prefill them. */
+        if (!empty($def['authored'])) {
+            $rec['authored'] = true;
+        }
         if (trim((string) ($def['js'] ?? '')) !== '') {
             $rec['js'] = (string) $def['js'];
         }
