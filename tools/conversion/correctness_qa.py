@@ -521,7 +521,7 @@ SCRIPT_SPECS = script_expectations()
 # ---------------------------------------------------------------------------
 
 
-def build_specs(only: str) -> list[dict]:
+def build_specs(only: str, wanted: set[str] | None = None) -> list[dict]:
     specs: list[dict] = []
     seen: set[str] = set()
 
@@ -578,6 +578,8 @@ def build_specs(only: str) -> list[dict]:
 
     if only:
         specs = [s for s in specs if s["slug"].startswith(only)]
+    if wanted:
+        specs = [s for s in specs if s["slug"] in wanted]
     return specs
 
 
@@ -921,13 +923,16 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--host", default=HOST)
     ap.add_argument("--workers", type=int, default=4)
-    ap.add_argument("--only", default="")
+    ap.add_argument("--only", default="", help="slug prefix")
+    ap.add_argument("--slugs", default="", help="comma-separated exact slugs")
     ap.add_argument("--verbose", action="store_true")
     ap.add_argument("--tables", action="store_true",
                     help="also check the four-unit table in each pair page's article")
     args = ap.parse_args()
+    HOST = args.host.rstrip("/")
 
-    specs = build_specs(args.only)
+    wanted = {x.strip() for x in args.slugs.split(",") if x.strip()}
+    specs = build_specs(args.only, wanted)
     print(f"{len(specs)} pages to check against an independent answer")
 
     results: list[tuple[str, str, list[str]]] = []
