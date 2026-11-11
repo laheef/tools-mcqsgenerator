@@ -1,6 +1,6 @@
 """The 23 pages whose working is a script rather than an equation."""
 
-from gen import R, T
+from gen import F, R, T
 from make import script_page
 
 SPECS = []
@@ -89,7 +89,7 @@ omni.onResult(["binary"], function (ctx) {
 S("decimal-to-hexadecimal", "Decimal to Hexadecimal Converter",
   "Hexadecimal is base sixteen: counts run 0 to 9 and then A to F before the next place. The "
   "page divides repeatedly and reports the remainder string.",
-  [T("number", "Decimal number", default="255")],
+  [F("number", "Decimal number", default="255")],
   [out("hex", "Hexadecimal", type="text", readonly=True),
    out("binary", "Binary", type="text", readonly=True),
    out("octal", "Octal", type="text", readonly=True)],
@@ -105,7 +105,7 @@ omni.onResult(["number"], function (ctx) {
 S("decimal-to-octal", "Decimal to Octal Converter",
   "Base eight survives in file permissions and in a few old interfaces. The page converts a "
   "decimal count into octal, binary and hexadecimal at once.",
-  [T("number", "Decimal number", default="64")],
+  [F("number", "Decimal number", default="64")],
   [out("octal", "Octal", type="text", readonly=True),
    out("binary", "Binary", type="text", readonly=True),
    out("hex", "Hexadecimal", type="text", readonly=True)],
@@ -361,9 +361,9 @@ omni.onResult(["hex"], function (ctx) {
 S("rgb-to-hex", "RGB to HEX Converter",
   "Three channels from 0 to 255 written as six hex digits, two per channel, with a clamp so a "
   "value typed outside the range cannot produce a broken colour.",
-  [T("r", "Red", default="52"),
-   T("g", "Green", default="152"),
-   T("b", "Blue", default="219")],
+  [F("r", "Red", default="52"),
+   F("g", "Green", default="152"),
+   F("b", "Blue", default="219")],
   [out("hex", "Hex colour", type="text", readonly=True),
    out("rgb", "RGB", type="text", readonly=True),
    out("total", "Channel sum", readonly=True)],
@@ -474,8 +474,8 @@ omni.onResult(["timestamp"], function (ctx) {
 S("coordinates-converter", "Coordinates Converter",
   "A latitude or longitude can be written as a decimal or as degrees, minutes and seconds. "
   "The page writes each of the two into both forms.",
-  [T("latitude", "Latitude (decimal)", default="51.507222"),
-   T("longitude", "Longitude (decimal)", default="-0.1275")],
+  [F("latitude", "Latitude (decimal)", default="51.507222"),
+   F("longitude", "Longitude (decimal)", default="-0.1275")],
   [out("lat_dms", "Latitude in DMS", type="text", readonly=True),
    out("lon_dms", "Longitude in DMS", type="text", readonly=True),
    out("decimal", "Decimal pair", type="text", readonly=True)],
@@ -498,8 +498,8 @@ omni.onResult(["latitude", "longitude"], function (ctx) {
 S("lat-long-to-utm", "Lat Long to UTM Converter",
   "The Universal Transverse Mercator grid divides the world into sixty zones, each six degrees "
   "of longitude wide, and gives metres east and north inside the zone.",
-  [T("latitude", "Latitude", default="-33.8688"),
-   T("longitude", "Longitude", default="151.2093")],
+  [F("latitude", "Latitude", default="-33.8688"),
+   F("longitude", "Longitude", default="151.2093")],
   [out("easting", "Easting", suffix="m", readonly=True),
    out("northing", "Northing", suffix="m", readonly=True),
    out("zone", "Zone", readonly=True)],
@@ -542,9 +542,9 @@ omni.onResult(["latitude", "longitude"], function (ctx) {
 S("degrees-minutes-seconds", "Degrees Minutes Seconds Converter",
   "One degree is sixty minutes and one minute is sixty seconds, so the parts are base sixty "
   "even though the degrees themselves are decimal.",
-  [T("degrees", "Degrees", default="51"),
-   T("minutes", "Minutes", default="30"),
-   T("seconds", "Seconds", default="26")],
+  [F("degrees", "Degrees", default="51"),
+   F("minutes", "Minutes", default="30"),
+   F("seconds", "Seconds", default="26")],
   [out("decimal", "Decimal degrees", readonly=True),
    out("total_minutes", "Total minutes", readonly=True),
    out("total_seconds", "Total seconds", readonly=True)],

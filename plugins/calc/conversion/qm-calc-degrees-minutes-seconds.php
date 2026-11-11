@@ -25,19 +25,31 @@ return [
                 [
                     'name' => 'degrees',
                     'label' => 'Degrees',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '51',
                 ],
                 [
                     'name' => 'minutes',
                     'label' => 'Minutes',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '30',
                 ],
                 [
                     'name' => 'seconds',
                     'label' => 'Seconds',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '26',
                 ],
                 [

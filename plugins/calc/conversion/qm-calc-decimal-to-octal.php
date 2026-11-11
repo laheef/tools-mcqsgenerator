@@ -25,7 +25,11 @@ return [
                 [
                     'name' => 'number',
                     'label' => 'Decimal number',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '64',
                 ],
                 [

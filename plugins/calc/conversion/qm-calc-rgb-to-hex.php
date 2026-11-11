@@ -25,19 +25,31 @@ return [
                 [
                     'name' => 'r',
                     'label' => 'Red',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '52',
                 ],
                 [
                     'name' => 'g',
                     'label' => 'Green',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '152',
                 ],
                 [
                     'name' => 'b',
                     'label' => 'Blue',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '219',
                 ],
                 [

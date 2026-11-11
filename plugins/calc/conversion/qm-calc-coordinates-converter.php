@@ -25,13 +25,21 @@ return [
                 [
                     'name' => 'latitude',
                     'label' => 'Latitude (decimal)',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '51.507222',
                 ],
                 [
                     'name' => 'longitude',
                     'label' => 'Longitude (decimal)',
-                    'type' => 'text',
+                    'type' => 'number',
+                    'rounding' => [
+                        'omni',
+                        '0.0001',
+                    ],
                     'default' => '-0.1275',
                 ],
                 [
