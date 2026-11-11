@@ -59,13 +59,30 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 | `tools/conversion/js_qa.py` | 23/23 script fixtures pass |
 | `tools/conversion/browser_qa.py` | 330/330 pages answer in Chromium: every result box fills and moves when an input changes |
 | Article length (site counter) | min 1,502 · median 2,004 · mean 1,967 · max 2,299 |
+| `/tool/sitemap.xml` | 330 conversion URLs |
 | Titles | 330/330 inside 50–60 with the site suffix |
 | Descriptions | 330/330 inside 150–160 |
 
-One page, `/conversion/binary`, has a text box as its only input, so the PHP
-solver has nothing numeric to try; its numbers are produced in the browser and
-its fixture passes. It is the only page of the 330 without a server-side
-number.
+One page, `/conversion/binary`, produced no number under the PHP test's sample
+input, because its only box was a text box at the time. It is a number now — a
+decimal figure belongs in a number box — and the page was rebuilt, so the
+server-side count and the browser both pass it.
+
+## On the live site
+
+Deployed from `main`; everything below was run against
+`https://mcqsgenerator.com/tool`.
+
+| Check | Result |
+| --- | --- |
+| All 330 routes | **330/330 return 200** |
+| Titles, descriptions, `<h1>` on live | 330/330 title in window, 330/330 description in window, exactly one `<h1>` each |
+| Canonicals | 330/330 point at their own `/tool/conversion/…` URL |
+| Category index | 330 cards, every one linking into the category |
+| Sitemap | 330 conversion `<loc>` entries |
+| Script pages on live | 23/23 match their fixtures (values identical; the live display groups thousands with thin spaces and rounds to three decimals, which is the site-wide rule) |
+| Real-browser sweep of every page | **330/330 answered** — every result box filled from the page's own defaults |
+| Spot checks on live | acre→are 5 ac = 202.343 ares; orifice 0.5 in at 30 psi, Cd 0.62 = 25.333 gpm / 95.896 L/min; leet "Elite hacker" = "31173 h4ck3r"; 100 g carbohydrate = 400 kcal |
 
 ## Arithmetic spot checks
 
