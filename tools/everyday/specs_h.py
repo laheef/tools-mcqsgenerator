@@ -1175,7 +1175,7 @@ SPECS.append(S(
             "which is four inches on an 8-inch rim.",
             "<strong>Ignoring the width change.</strong> A wider rim at the same offset adds "
             "half the extra width inside and half outside. It is the width, not the offset, "
-            "that usually causes rubbing.</li>".replace("</li>", ""),
+            "that usually causes rubbing.",
         ],
         "limits": [
             "<li><strong>Rim measurements only.</strong> Tyre section width is wider than the "

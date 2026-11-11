@@ -65,7 +65,7 @@ SPECS.append(S(
             "work in January is nearer 70 per cent of that.",
             "<strong>Charging in hours when the work is in minutes.</strong> A fifteen-minute "
             "consultation billed as an hour is a discount nobody records, and a hundred of them "
-            "is two weeks of unpaid time.</li>".replace("</li>", ""),
+            "is two weeks of unpaid time.",
         ],
         "limits": [
             "<li><strong>No overhead.</strong> The rate covers the person, not the office, the "
@@ -154,7 +154,7 @@ SPECS.append(S(
             "including the four people who are listening and the one who is answering email.",
             "<strong>Forgetting the preparation.</strong> An hour of meeting usually carries "
             "twenty to forty minutes of somebody's reading. It is the same money and it is "
-            "invisible because it happens on the Thursday before.</li>".replace("</li>", ""),
+            "invisible because it happens on the Thursday before.",
         ],
         "limits": [
             "<li><strong>Wages only.</strong> Rooms, travel and the opportunity cost of what "
@@ -245,7 +245,7 @@ SPECS.append(S(
             "<strong>Forgetting loose tobacco and the papers.</strong> Roll-your-own changes the "
             "price per cigarette by half, and the count usually rises.",
             "<strong>Pricing the habit at the cheapest pack.</strong> Use what you actually "
-            "pay, including the pack from the garage at the weekend that costs a dollar more.</li>".replace("</li>", ""),
+            "pay, including the pack from the garage at the weekend that costs a dollar more.",
         ],
         "limits": [
             "<li><strong>Money only.</strong> Health effects, insurance and the cost of smoking "
@@ -335,7 +335,7 @@ SPECS.append(S(
             "also more of a commitment if the size is wrong.",
             "<strong>Forgetting wipes and the nappy bin.</strong> Wipes run to about ten per "
             "cent of the nappy bill and the sacks and cream are another line that does not fit "
-            "this page.</li>".replace("</li>", ""),
+            "this page.",
         ],
         "limits": [
             "<li><strong>Disposables only.</strong> Reusable nappies have a large upfront cost "
@@ -423,7 +423,7 @@ SPECS.append(S(
             "mix changes with the cycle. The field takes a total, so add them before typing.",
             "<strong>Assuming the price is steady.</strong> Ten years of the same product at a "
             "price that tracks inflation is more than ten times today's figure, and the "
-            "difference is exactly the tax a reusable product avoids.</li>".replace("</li>", ""),
+            "difference is exactly the tax a reusable product avoids.",
         ],
         "limits": [
             "<li><strong>Products only.</strong> Pain relief, hot water bottles and the laundry "
@@ -512,7 +512,7 @@ SPECS.append(S(
             "assumes.",
             "<strong>Comparing tubes by price alone.</strong> A 75 ml tube at 2.50 is 3.3 cents "
             "a ml and a 100 ml at 3.50 is 3.5 — the smaller one is slightly cheaper and holds "
-            "less, which is exactly the comparison the shelf avoids.</li>".replace("</li>", ""),
+            "less, which is exactly the comparison the shelf avoids.",
         ],
         "limits": [
             "<li><strong>Paste only.</strong> Brushes, floss and mouthwash are separate lines, "
@@ -608,7 +608,7 @@ SPECS.append(S(
             "that dose. A day at the beach is four to six applications, not one.",
             "<strong>Trusting water resistance.</strong> \"Very water resistant\" means forty "
             "minutes of swimming to the same standard. It is a longer interval, not a licence "
-            "to skip the second application.</li>".replace("</li>", ""),
+            "to skip the second application.",
         ],
         "limits": [
             "<li><strong>Body surface only.</strong> Hats, shirts and shade do the work this "
@@ -700,7 +700,7 @@ SPECS.append(S(
             "lunches and takeaways are a separate budget and often a third of the total.",
             "<strong>Comparing baskets with different contents.</strong> A cheaper basket is "
             "only cheaper if it feeds the same people the same meals. Count what is in it "
-            "before celebrating the difference.</li>".replace("</li>", ""),
+            "before celebrating the difference.",
         ],
         "limits": [
             "<li><strong>A steady basket.</strong> Holiday weeks are double and the week before "
@@ -790,7 +790,7 @@ SPECS.append(S(
             "are not the same product and the price per clean is the only fair comparison.",
             "<strong>Using more than the label.</strong> Doubling the dose doubles the cost and "
             "usually leaves a residue that needs a second wipe. The label rate exists for a "
-            "reason.</li>".replace("</li>", ""),
+            "reason.",
         ],
         "limits": [
             "<li><strong>One product, one job.</strong> A cleaning cupboard has six bottles and "
@@ -876,7 +876,7 @@ SPECS.append(S(
             "the delivery fee and the car park are three more lines, and none of them are in "
             "the advertised price either.",
             "<strong>Comparing face values across venues.</strong> The same act at two venues "
-            "can have fees that differ by ten per cent, so the true price is what to compare.</li>".replace("</li>", ""),
+            "can have fees that differ by ten per cent, so the true price is what to compare.",
         ],
         "limits": [
             "<li><strong>One price structure.</strong> Fees that scale with the number of "
@@ -963,7 +963,11 @@ SPECS.append(S(
             "<strong>Assuming the note's value affects its weight.</strong> It does not, in "
             "dollars. In coins it very much does, and a bag of pennies is the classic example.",
             "<strong>Forgetting the wrapping.</strong> A strap of a hundred notes adds a paper "
-            "band, and a hundred straps is a box. The arithmetic here is the paper only.</li>".replace("</li>", ""),
+            "band, and a hundred straps is a box. The arithmetic here is the paper only.",
+        ],
+        "limits": [
+            "<li><strong>Notes, not coins.</strong> A jar of coins follows metal and the weight "
+            "varies by denomination, so the gram-a-note rule does not carry over.</li>",
         ],
         "uses": [
             "<li>Settling the film-briefcase argument.</li>",
@@ -1045,7 +1049,7 @@ SPECS.append(S(
             "grams and not 20 pounds a ream; it is a basis weight from a different sheet size. "
             "Convert to gsm before comparing.",
             "<strong>Forgetting the card stock.</strong> Above 160 gsm a sheet starts to jam a "
-            "printer that was designed for 80, and the weight figure is the early warning.</li>".replace("</li>", ""),
+            "printer that was designed for 80, and the weight figure is the early warning.",
         ],
         "limits": [
             "<li><strong>Nominal size.</strong> Cut sheets are slightly under size, and the "
@@ -1138,7 +1142,7 @@ SPECS.append(S(
             "day.",
             "<strong>Forgetting the helium in the balloons you abandon.</strong> Half-inflated "
             "balloons and a knot that slips are waste the percentage absorbs, not the "
-            "arithmetic.</li>".replace("</li>", ""),
+            "arithmetic.",
         ],
         "limits": [
             "<li><strong>Latex, room temperature.</strong> Foil balloons hold far more gas for "
@@ -1229,7 +1233,7 @@ SPECS.append(S(
             "Sixty per cent is the figure that lets it mould to a person without collapsing.",
             "<strong>Forgetting the shape is not a box.</strong> Most covers are sewn to a "
             "rounded shape, so the true volume is less than length times width times height. "
-            "The beads settle and the spare bag is the answer.</li>".replace("</li>", ""),
+            "The beads settle and the spare bag is the answer.",
         ],
         "limits": [
             "<li><strong>Rectangular cover.</strong> A teardrop bag or one with a curved back "

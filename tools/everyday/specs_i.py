@@ -414,7 +414,7 @@ SPECS.append(S(
             "resolution. The figure is what you actually listen to, not what you subscribe to.",
             "<strong>Ignoring the playback speed.</strong> Half the people listening to five "
             "hours a week are doing it at 1.5x, which is really three hours of attention and "
-            "the audiobook-speed page has the correction.</li>".replace("</li>", ""),
+            "the audiobook-speed page has the correction.",
         ],
         "limits": [
             "<li><strong>Episodes, not attention.</strong> A podcast with the radio on in the "
@@ -852,7 +852,7 @@ SPECS.append(S(
             "figure by forty per cent.",
             "<strong>Assuming the rate holds.</strong> A rate per second is an average. A "
             "traffic figure that peaks at 1 000 a second does not average 1 000, and the page "
-            "is for averages.</li>".replace("</li>", ""),
+            "is for averages.",
         ],
         "limits": [
             "<li><strong>One rate, no ramp.</strong> Startup, teardown and the hour after lunch "
@@ -940,7 +940,7 @@ SPECS.append(S(
             "that is already full.",
             "<strong>Assuming every hour is displaced.</strong> Watching while cooking or "
             "ironing is not three hours of lost time, and a fair comparison would account for "
-            "the overlap.</li>".replace("</li>", ""),
+            "the overlap.",
         ],
         "limits": [
             "<li><strong>One habit, one year.</strong> Seasonality is real — winter viewing is "
@@ -1036,7 +1036,7 @@ SPECS.append(S(
             "of a standard one, and two packs of twelve can differ by 600 sheets.",
             "<strong>Ignoring the sheet size.</strong> A sheet is about 10 by 10 centimetres "
             "and the plies differ. Two hundred large three-ply sheets and two hundred small "
-            "two-ply ones are not the same paper.</li>".replace("</li>", ""),
+            "two-ply ones are not the same paper.",
         ],
         "limits": [
             "<li><strong>Count, not quality.</strong> Sheets differ in size, ply and strength, "
@@ -1133,7 +1133,7 @@ SPECS.append(S(
             "the tube you can see through.",
             "<strong>Assuming the length varies with the diameter.</strong> Doubling the "
             "diameter quadruples the area, so a roll twice as thick across has four times the "
-            "material minus the core. Length follows area, not diameter.</li>".replace("</li>", ""),
+            "material minus the core. Length follows area, not diameter.",
         ],
         "limits": [
             "<li><strong>No air, no stretch.</strong> Fabric, foam and anything that compresses "
@@ -1222,7 +1222,7 @@ SPECS.append(S(
             "hundred or more.",
             "<strong>Forgetting the compression.</strong> A stack pressed by a weight measures "
             "thinner than a loose one. Measure with the paper as it sits, and accept the "
-            "variation.</li>".replace("</li>", ""),
+            "variation.",
         ],
         "limits": [
             "<li><strong>Average thickness.</strong> A coated sheet is thicker than its base "
