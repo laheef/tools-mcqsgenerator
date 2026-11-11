@@ -42,7 +42,7 @@ function toBase(n, base) {
 S("binary", "Binary Converter",
   "A decimal number written in base two, with base eight and base sixteen beside it so the "
   "same figure can be checked in three bases at once.",
-  [T("number", "Decimal number", default="42")],
+  [F("number", "Decimal number", default="42")],
   [out("binary", "Binary", type="text", readonly=True),
    out("octal", "Octal", type="text", readonly=True),
    out("hex", "Hexadecimal", type="text", readonly=True)],
