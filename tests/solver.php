@@ -89,7 +89,8 @@ $cases = [
     ['calc' => 'other--test-grade', 'inputs' => ['nr_right' => 18, 'nr_wrong' => 2],
      'expect' => ['total_questions' => 20, 'percentage' => 90], 'note' => '18 right, 2 wrong = 90%'],
     ['calc' => 'construction--square-footage', 'inputs' => ['length' => 5, 'width' => 4, 'quantity' => 2],
-     'expect' => ['area_rec' => 40], 'note' => '5 x 4 ft, two rooms'],
+     'expect' => ['area_ft2' => 40, 'area_yd2' => 40 / 9],
+     'note' => '5 x 4 ft, two rooms'],
     ['calc' => 'health--ideal-weight', 'inputs' => ['height' => 1.8],
      'expect' => ['Robinson_men' => 72.64566929133858], 'note' => 'Robinson formula at 1.8 m'],
     ['calc' => 'math--scientific-notation', 'inputs' => ['decimal' => 1500],
@@ -254,9 +255,16 @@ $renderCases = [
     // value, precision, algorithm, expected text
     [204978.4, '2', 'standard', '204978.4'],
     [854.0839, '2', 'standard', '854.08'],
-    [22.857142857, '0.0001', 'omni', '22.8571'],
+    [22.857142857, '0.0001', 'omni', '22.857'],
     [0.049995, '0.0001', 'omni', '0.05'],
     [1500.0, '0', 'standard', '1500'],
+    // below one the box keeps four significant figures, because three decimals
+    // would answer "one inch is 0.025 m" and lose the figure that matters
+    [0.0254, '0.0001', 'omni', '0.0254'],
+    [0.6213711922, '0.0001', 'omni', '0.6214'],
+    [0.45359237, '0.0001', 'omni', '0.4536'],
+    [0.9144, '0.0001', 'omni', '0.9144'],
+    [0.000621371, '0.0001', 'omni', '6.214 ×10^-4'],
 ];
 $plain = new ReflectionMethod(Onim\Widget::class, 'plainNumber');
 $plain->setAccessible(true);

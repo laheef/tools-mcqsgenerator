@@ -215,7 +215,7 @@ JavaScript), and by the all-page browser sweep below.
 
 ---
 
-## 6. One thing left as it is, deliberately
+## 6. One thing left as it is, deliberately — **since fixed, see `qa/R86_number_display.md`**
 
 The results panel prints **at most three decimals** (`MAX_DECIMALS` in
 `assets/js/calc.js`). For a conversion whose answer is smaller than that, the
@@ -223,9 +223,10 @@ third decimal is all you see: one inch reads `0.025 m`, and the fourth digit is
 below what any box prints. Values under a thousandth switch to scientific
 notation, so nothing is ever rounded to a bare `0`.
 
-This is the site-wide rule and it was left alone. It is worth knowing when
-reading a small conversion, and worth revisiting only if the rule itself
-changes.
+This was the site-wide rule and it was left alone in R85. It has since been
+changed on request: below one, a result now keeps four significant figures, so
+one inch reads `0.0254 m`. The rule above one — three decimals — is unchanged.
+See `qa/R86_number_display.md`.
 
 ---
 

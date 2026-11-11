@@ -854,14 +854,38 @@
    *   omni     — precision is a step ("0.0001")
    */
   /*
-   * No answer on this site is printed with more than three decimals.
+   * Three decimals — or four significant figures, whichever the number needs.
    *
-   * The harvested rounding asks for four (a step of 0.0001) on most pages, and
-   * the results panel honoured it: 3.3333, 0.1837, 1.66668. A reader cannot use
-   * the fourth digit for anything, and it makes the same page disagree with
-   * itself when the number is rounded in the box but not in the row beside it.
+   * The harvested rounding asks for four decimals (a step of 0.0001) on most
+   * pages, and a flat cap of three kept the panel readable: 3.3333 became
+   * 3.333. The same cap ruined every answer below one, though. One inch is
+   * 0.0254 m and the panel said 0.025; a kilometre in miles is 0.621 371 and
+   * the panel said 0.621. In those digits the answer is the whole point.
+   *
+   * So the cap above one stays at three decimals, and below one the number
+   * keeps four significant figures instead — never more than six decimals,
+   * which is exactly what four figures need at the bottom of the range that
+   * is printed as a decimal at all (0.0010).
    */
   var MAX_DECIMALS = 3;
+  var SMALL_SIG = 4;
+  var SMALL_MAX_DECIMALS = 6;
+  /* A mantissa keeps four figures too: 6.214 ×10^-4, not 6.21 ×10^-4. */
+  var SCI_DECIMALS = 3;
+
+  /**
+   * Decimals a figure below one needs for SMALL_SIG significant digits.
+   *
+   * Only for `omni` rounding, where the precision is a step and the cap is the
+   * only thing standing between the reader and the fourth figure. A `standard`
+   * precision is an author's decimal count ("2" = 22.86), and it is respected.
+   */
+  function smallDecimals(v, dec, algo) {
+    var abs = Math.abs(v);
+    if (algo === 'standard' || !(abs > 0) || abs >= 1) return dec;
+    var need = SMALL_SIG - 1 - Math.floor(Math.log10(abs) + 1e-12);
+    return Math.max(dec, Math.min(SMALL_MAX_DECIMALS, need));
+  }
 
   function decimalsFor(precision, algo) {
     if (algo === 'standard') {
@@ -884,7 +908,7 @@
 
   function formatNumber(v, precision, algo) {
     if (v === null || v === undefined || !isFinite(v)) return '';
-    var dec = decimalsFor(precision, algo);
+    var dec = smallDecimals(v, decimalsFor(precision, algo), algo);
     if (algo === 'standard' && dec >= 0) v = Math.round(v * Math.pow(10, dec)) / Math.pow(10, dec);
     var abs = Math.abs(v);
     /*
@@ -893,7 +917,7 @@
      * and stays readable.
      */
     if (abs !== 0 && (abs >= 1e15 || abs < 1e-3)) {
-      return sciText(v, dec);
+      return sciText(v, SCI_DECIMALS);
     }
     var s = Math.abs(v).toFixed(dec);
     if (dec > 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
@@ -928,7 +952,7 @@
       /* A 24-digit population is unreadable in a box, and the digits past the
          first few carry no information the formula did not already lose to
          floating point. Scientific form, same as the results rows. */
-      return sciText(v, decimalsFor(precision, algo));
+      return sciText(v, SCI_DECIMALS);
     }
     /*
      * Below a thousandth, three decimals print 0.000 — the box would show a
@@ -936,9 +960,9 @@
      * use scientific form here; the boxes now agree with them.
      */
     if (v !== 0 && Math.abs(v) < 1e-3) {
-      return sciText(v, decimalsFor(precision, algo));
+      return sciText(v, SCI_DECIMALS);
     }
-    var dec = decimalsFor(precision, algo);
+    var dec = smallDecimals(v, decimalsFor(precision, algo), algo);
     if (algo === 'standard') v = Math.round(v * Math.pow(10, dec)) / Math.pow(10, dec);
     var s = v.toFixed(dec);
     if (dec > 0) s = s.replace(/0+$/, '').replace(/\.$/, '');

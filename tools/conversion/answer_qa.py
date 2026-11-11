@@ -159,9 +159,7 @@ def static() -> list[str]:
 # gallon 3.785411784 L, the acre 4046.8564224 m², one atmosphere 101 325 Pa.
 ANCHORS: list[tuple[str, dict[str, str], dict[str, float], float]] = [
     # length
-    # 1 000 inches, not 1: the panel shows at most three decimals, so a single
-    # inch reads 0.025 and the fourth digit is below what any box prints.
-    ("inch-to-meter", {"value": "1000"}, {"result": 25.4}, 1e-4),
+    ("inch-to-meter", {"value": "1"}, {"result": 0.0254}, 1e-4),
     ("cm-to-in", {"value": "2.54"}, {"result": 1.0}, 1e-3),
     ("m-to-ft", {"value": "1"}, {"result": 3.280839895}, 1e-3),
     ("mm-to-inches-conversion", {"value": "25.4"}, {"result": 1.0}, 1e-3),
@@ -171,7 +169,7 @@ ANCHORS: list[tuple[str, dict[str, str], dict[str, float], float]] = [
     ("light-year-conversion", {"value": "1"}, {"m": 9.4607304725808e15}, 1e-3),
     ("angstrom-to-nm-conversion", {"value": "10"}, {"result": 1.0}, 1e-3),
     ("micrometer-conversion", {"value": "1000"}, {"m": 0.001}, 1e-3),
-    ("mil-to-mm-conversion", {"value": "1000"}, {"result": 25.4}, 1e-4),
+    ("mil-to-mm-conversion", {"value": "1"}, {"result": 0.0254}, 1e-4),
     ("gallon", {"value": "1"}, {"l": 3.785411784}, 1e-3),
     # mass
     ("lbs-to-kg-converter", {"value": "1"}, {"result": 0.45359237}, 1e-3),
@@ -260,6 +258,20 @@ ANCHORS: list[tuple[str, dict[str, str], dict[str, float], float]] = [
     ("paper-quantity", {"sheets": "500"}, {"reams": 1.0, "quires": 20.0}, 1e-4),
 ]
 
+# What the box must read, character for character. Three decimals above one,
+# four significant figures below it, ×10ⁿ under a thousandth.
+DISPLAY_ANCHORS: list[tuple[str, dict[str, str], dict[str, str]]] = [
+    ("inch-to-meter", {"value": "1"}, {"result": "0.0254"}),
+    ("mil-to-mm-conversion", {"value": "1"}, {"result": "0.0254"}),
+    ("kilometers-to-miles", {"value": "1"}, {"result": "0.6214"}),
+    ("lbs-to-kg-converter", {"value": "1"}, {"result": "0.4536"}),
+    ("g-to-oz", {"value": "1"}, {"result": "0.03527"}),
+    ("l-to-gal", {"value": "1"}, {"result": "0.2642"}),
+    ("mile-conversion", {"value": "1"}, {"km": "1.609"}),
+    ("micrometer-conversion", {"value": "1"}, {"m": "1.000 ×10^-6", "mm": "0.001"}),
+    ("meters-to-feet", {"value": "3"}, {"result": "9.843"}),
+]
+
 # Pages that answer in words; compared exactly, spaces normalised.
 TEXT_ANCHORS: list[tuple[str, dict[str, str], dict[str, str]]] = [
     ("decimal-to-hexadecimal", {"number": "255"},
@@ -341,6 +353,30 @@ def browser_pass(host: str) -> list[str]:
                 if not close(value, want, tol):
                     bad.append(f"{slug}: {key} = {raw} (wanted {want:g})")
 
+        for slug, inputs, expected in DISPLAY_ANCHORS:
+            page.goto(f"{host}/conversion/{slug}", wait_until="networkidle", timeout=45000)
+            for name, value in inputs.items():
+                page.evaluate(
+                    """([n, v]) => { const e = document.querySelector(
+                        '.calc-field:not([data-output]) [data-var="' + n + '"]');
+                        if (!e) return; e.value = v;
+                        e.dispatchEvent(new Event('input', { bubbles: true }));
+                        e.dispatchEvent(new Event('change', { bubbles: true })); }""",
+                    [name, value])
+            page.wait_for_timeout(220)
+            got = read(page)
+            if not any(got.values()):
+                try:
+                    page.click(".calc-go", timeout=1500)
+                except Exception:                                      # noqa: BLE001
+                    pass
+                page.wait_for_timeout(300)
+                got = read(page)
+            for key, want in expected.items():
+                raw = " ".join((got.get(key) or "").split())
+                if raw != want:
+                    bad.append(f"{slug}: {key} reads {raw!r}, should read {want!r}")
+
         for slug, inputs, expected in TEXT_ANCHORS:
             page.goto(f"{host}/conversion/{slug}", wait_until="networkidle", timeout=45000)
             for name, value in inputs.items():
@@ -387,7 +423,8 @@ def main() -> int:
     browser_bad = []
     if not args.no_browser:
         browser_bad = browser_pass(args.host)
-        print(f"\nbrowser anchors: {len(ANCHORS) + len(TEXT_ANCHORS)} hand-checked conversions")
+        print(f"\nbrowser anchors: {len(ANCHORS) + len(TEXT_ANCHORS)} numbers + "
+              f"{len(DISPLAY_ANCHORS)} exact readings")
         print(f"  {len(browser_bad)} wrong")
         for row in browser_bad[:30]:
             print("   !", row)

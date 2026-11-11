@@ -36,9 +36,9 @@
    "m2": "8 093.713",
    "square-foot": "87 120",
    "square-yard": "9 680",
-   "km2": "0.008",
-   "hectare": "0.809",
-   "square-mile": "0.003",
+   "km2": "0.008094",
+   "hectare": "0.8094",
+   "square-mile": "0.003125",
    "square-inch": "12 545 280",
    "cm2": "80 937 200"
   },
@@ -73,9 +73,9 @@
   "slug": "acres-to-hectares-converter",
   "problems": [],
   "answers": {
-   "result": "0.809",
+   "result": "0.8094",
    "base": "8 093.713",
-   "factor": "0.405"
+   "factor": "0.4047"
   },
   "notes": {
    "fill": 1,
@@ -85,7 +85,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.405"
+    "factor": "0.4047"
    },
    "letter_value": "",
    "letter_note": [
@@ -133,9 +133,9 @@
   "slug": "acres-to-square-miles",
   "problems": [],
   "answers": {
-   "result": "0.003",
+   "result": "0.003125",
    "base": "8 093.713",
-   "factor": "0.002"
+   "factor": "0.001563"
   },
   "notes": {
    "fill": 1,
@@ -145,7 +145,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.002"
+    "factor": "0.001563"
    },
    "letter_value": "",
    "letter_note": [
@@ -163,11 +163,11 @@
   "slug": "angle-converter",
   "problems": [],
   "answers": {
-   "radian": "0.035",
+   "radian": "0.03491",
    "gradian": "2.222",
    "arcminute": "120",
    "arcsecond": "7 200",
-   "turn": "0.006"
+   "turn": "0.005556"
   },
   "notes": {
    "fill": 1,
@@ -369,7 +369,7 @@
   "answers": {
    "pa": "202 650",
    "kpa": "202.65",
-   "mpa": "0.203",
+   "mpa": "0.2026",
    "bar": "2.026",
    "psi": "29.392",
    "mmhg": "1 520",
@@ -439,7 +439,7 @@
   "answers": {
    "result": "1.974",
    "base": "200 000",
-   "factor": "0.987"
+   "factor": "0.9869"
   },
   "notes": {
    "fill": 1,
@@ -449,7 +449,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.987"
+    "factor": "0.9869"
    },
    "letter_value": "",
    "letter_note": [
@@ -528,11 +528,11 @@
   "problems": [],
   "answers": {
    "pa": "266.645",
-   "kpa": "0.267",
+   "kpa": "0.2666",
    "mpa": "2.666 ×10^-4",
-   "bar": "0.003",
-   "psi": "0.039",
-   "atm": "0.003",
+   "bar": "0.002666",
+   "psi": "0.03867",
+   "atm": "0.002632",
    "torr": "2",
    "inh2o": "1.07"
   },
@@ -662,7 +662,7 @@
    "gigabyte": "2.000 ×10^-9",
    "terabyte": "2.000 ×10^-12",
    "bit": "16",
-   "kibibyte": "0.002",
+   "kibibyte": "0.001953",
    "mebibyte": "1.907 ×10^-6",
    "petabyte": "2.000 ×10^-15"
   },
@@ -819,9 +819,9 @@
   "slug": "cc-to-oz-converter",
   "problems": [],
   "answers": {
-   "result": "0.068",
+   "result": "0.06763",
    "base": "0.002",
-   "factor": "0.034"
+   "factor": "0.03381"
   },
   "notes": {
    "fill": 1,
@@ -831,7 +831,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.034"
+    "factor": "0.03381"
    },
    "letter_value": "",
    "letter_note": [
@@ -1038,9 +1038,9 @@
    "m": "0.02",
    "mm": "20",
    "km": "2.000 ×10^-5",
-   "inch": "0.787",
-   "foot": "0.066",
-   "yard": "0.022",
+   "inch": "0.7874",
+   "foot": "0.06562",
+   "yard": "0.02187",
    "mile": "1.243 ×10^-5",
    "nm": "20 000 000"
   },
@@ -1138,9 +1138,9 @@
    "m": "0.02",
    "mm": "20",
    "km": "2.000 ×10^-5",
-   "inch": "0.787",
-   "foot": "0.066",
-   "yard": "0.022",
+   "inch": "0.7874",
+   "foot": "0.06562",
+   "yard": "0.02187",
    "mile": "1.243 ×10^-5",
    "nm": "20 000 000"
   },
@@ -1176,8 +1176,8 @@
   "problems": [],
   "answers": {
    "ft": "0",
-   "in": "0.787",
-   "inches_total": "0.787"
+   "in": "0.7874",
+   "inches_total": "0.7874"
   },
   "notes": {
    "fill": 1,
@@ -1206,8 +1206,8 @@
   "problems": [],
   "answers": {
    "feet": "0",
-   "inches": "0.787",
-   "total_inches": "0.787"
+   "inches": "0.7874",
+   "total_inches": "0.7874"
   },
   "notes": {
    "fill": 1,
@@ -1235,9 +1235,9 @@
   "slug": "cm-to-in",
   "problems": [],
   "answers": {
-   "result": "0.787",
+   "result": "0.7874",
    "base": "0.02",
-   "factor": "0.394"
+   "factor": "0.3937"
   },
   "notes": {
    "fill": 1,
@@ -1247,7 +1247,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.394"
+    "factor": "0.3937"
    },
    "letter_value": "",
    "letter_note": [
@@ -1376,7 +1376,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -1572,9 +1572,9 @@
   "slug": "cubic-feet-to-cubic-meters",
   "problems": [],
   "answers": {
-   "result": "0.057",
+   "result": "0.05663",
    "base": "56.634",
-   "factor": "0.028"
+   "factor": "0.02832"
   },
   "notes": {
    "fill": 1,
@@ -1584,7 +1584,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.028"
+    "factor": "0.02832"
    },
    "letter_value": "",
    "letter_note": [
@@ -1632,9 +1632,9 @@
   "slug": "cubic-feet-to-pounds",
   "problems": [],
   "answers": {
-   "result": "0.25",
+   "result": "0.2497",
    "litres": "56.634",
-   "kilograms": "0.113"
+   "kilograms": "0.1133"
   },
   "notes": {
    "fill": 2,
@@ -1662,9 +1662,9 @@
   "slug": "cubic-inches-to-gallons",
   "problems": [],
   "answers": {
-   "result": "0.009",
-   "base": "0.033",
-   "factor": "0.004"
+   "result": "0.008658",
+   "base": "0.03277",
+   "factor": "0.004329"
   },
   "notes": {
    "fill": 1,
@@ -1674,7 +1674,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.004"
+    "factor": "0.004329"
    },
    "letter_value": "",
    "letter_note": [
@@ -1762,7 +1762,7 @@
   "slug": "cubic-yards-to-tons",
   "problems": [],
   "answers": {
-   "result": "0.003",
+   "result": "0.003371",
    "litres": "1 529.11",
    "kilograms": "3.058"
   },
@@ -1793,8 +1793,8 @@
   "problems": [],
   "answers": {
    "result": "0.125",
-   "base": "0.473",
-   "factor": "0.063"
+   "base": "0.4732",
+   "factor": "0.0625"
   },
   "notes": {
    "fill": 1,
@@ -1804,7 +1804,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.063"
+    "factor": "0.0625"
    },
    "letter_value": "",
    "letter_note": [
@@ -1823,7 +1823,7 @@
   "problems": [],
   "answers": {
    "result": "16",
-   "base": "0.473",
+   "base": "0.4732",
    "factor": "8"
   },
   "notes": {
@@ -1853,7 +1853,7 @@
   "problems": [],
   "answers": {
    "result": "1",
-   "base": "0.473",
+   "base": "0.4732",
    "factor": "0.5"
   },
   "notes": {
@@ -1883,7 +1883,7 @@
   "problems": [],
   "answers": {
    "result": "0.5",
-   "base": "0.473",
+   "base": "0.4732",
    "factor": "0.25"
   },
   "notes": {
@@ -1916,9 +1916,9 @@
    "ms": "172 800 000",
    "minute": "2 880",
    "hour": "48",
-   "week": "0.286",
-   "month": "0.066",
-   "year": "0.005",
+   "week": "0.2857",
+   "month": "0.06571",
+   "year": "0.005476",
    "decade": "5.476 ×10^-4"
   },
   "notes": {
@@ -1952,9 +1952,9 @@
   "slug": "days-to-months",
   "problems": [],
   "answers": {
-   "result": "0.066",
+   "result": "0.06571",
    "base": "172 800",
-   "factor": "0.033"
+   "factor": "0.03285"
   },
   "notes": {
    "fill": 1,
@@ -1964,7 +1964,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.033"
+    "factor": "0.03285"
    },
    "letter_value": "",
    "letter_note": [
@@ -1982,9 +1982,9 @@
   "slug": "days-to-weeks",
   "problems": [],
   "answers": {
-   "result": "0.286",
+   "result": "0.2857",
    "base": "172 800",
-   "factor": "0.143"
+   "factor": "0.1429"
   },
   "notes": {
    "fill": 1,
@@ -1994,7 +1994,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.143"
+    "factor": "0.1429"
    },
    "letter_value": "",
    "letter_note": [
@@ -2012,9 +2012,9 @@
   "slug": "days-to-years",
   "problems": [],
   "answers": {
-   "result": "0.005",
+   "result": "0.005476",
    "base": "172 800",
-   "factor": "0.003"
+   "factor": "0.002738"
   },
   "notes": {
    "fill": 1,
@@ -2024,7 +2024,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.003"
+    "factor": "0.002738"
    },
    "letter_value": "",
    "letter_note": [
@@ -2042,7 +2042,7 @@
   "slug": "dbm-to-watts",
   "problems": [],
   "answers": {
-   "watts": "0.002",
+   "watts": "0.001585",
    "milliwatts": "1.585",
    "dbw": "-28"
   },
@@ -2223,7 +2223,7 @@
   "problems": [],
   "answers": {
    "result": "120",
-   "base": "0.035",
+   "base": "0.03491",
    "factor": "60"
   },
   "notes": {
@@ -2252,9 +2252,9 @@
   "slug": "degrees-to-radians",
   "problems": [],
   "answers": {
-   "result": "0.035",
-   "base": "0.035",
-   "factor": "0.017"
+   "result": "0.03491",
+   "base": "0.03491",
+   "factor": "0.01745"
   },
   "notes": {
    "fill": 1,
@@ -2264,7 +2264,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.017"
+    "factor": "0.01745"
    },
    "letter_value": "",
    "letter_note": [
@@ -2283,7 +2283,7 @@
   "problems": [],
   "answers": {
    "result": "7 200",
-   "base": "0.035",
+   "base": "0.03491",
    "factor": "3 600"
   },
   "notes": {
@@ -2314,8 +2314,8 @@
   "answers": {
    "gcm3": "0.002",
    "gml": "0.002",
-   "lbft3": "0.125",
-   "lbgal": "0.017",
+   "lbft3": "0.1249",
+   "lbgal": "0.01669",
    "gl": "2"
   },
   "notes": {
@@ -2412,7 +2412,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -2451,8 +2451,8 @@
    "mm": "200",
    "km": "2.000 ×10^-4",
    "inch": "7.874",
-   "foot": "0.656",
-   "yard": "0.219",
+   "foot": "0.6562",
+   "yard": "0.2187",
    "mile": "1.243 ×10^-4"
   },
   "notes": {
@@ -2521,7 +2521,7 @@
    "kcal": "4.780 ×10^-4",
    "wh": "5.556 ×10^-4",
    "kwh": "5.556 ×10^-7",
-   "btu": "0.002",
+   "btu": "0.001896",
    "therm": "1.896 ×10^-8",
    "ftlb": "1.475"
   },
@@ -2620,7 +2620,7 @@
   "slug": "feet-and-inches",
   "problems": [],
   "answers": {
-   "m": "0.66",
+   "m": "0.6604",
    "cm": "66.04",
    "total_inches": "26"
   },
@@ -2650,12 +2650,12 @@
   "slug": "feet-converter",
   "problems": [],
   "answers": {
-   "m": "0.61",
+   "m": "0.6096",
    "cm": "60.96",
    "mm": "609.6",
    "km": "6.096 ×10^-4",
    "inch": "24",
-   "yard": "0.667",
+   "yard": "0.6667",
    "mile": "3.788 ×10^-4",
    "nm": "609 600 000"
   },
@@ -2691,7 +2691,7 @@
   "problems": [],
   "answers": {
    "result": "24",
-   "base": "0.61",
+   "base": "0.6096",
    "factor": "12"
   },
   "notes": {
@@ -2721,7 +2721,7 @@
   "problems": [],
   "answers": {
    "result": "3.788 ×10^-4",
-   "base": "0.61",
+   "base": "0.6096",
    "factor": "1.894 ×10^-4"
   },
   "notes": {
@@ -2750,9 +2750,9 @@
   "slug": "feet-to-yards-conversion",
   "problems": [],
   "answers": {
-   "result": "0.667",
-   "base": "0.61",
-   "factor": "0.333"
+   "result": "0.6667",
+   "base": "0.6096",
+   "factor": "0.3333"
   },
   "notes": {
    "fill": 1,
@@ -2762,7 +2762,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.333"
+    "factor": "0.3333"
    },
    "letter_value": "",
    "letter_note": [
@@ -2781,7 +2781,7 @@
   "problems": [],
   "answers": {
    "result": "2.608 ×10^-4",
-   "litres": "0.059",
+   "litres": "0.05915",
    "kilograms": "1.183 ×10^-4"
   },
   "notes": {
@@ -2811,7 +2811,7 @@
   "problems": [],
   "answers": {
    "result": "60.96",
-   "base": "0.61",
+   "base": "0.6096",
    "factor": "30.48"
   },
   "notes": {
@@ -2841,8 +2841,8 @@
   "problems": [],
   "answers": {
    "kn": "0.002",
-   "lbf": "0.45",
-   "kgf": "0.204",
+   "lbf": "0.4496",
+   "kgf": "0.2039",
    "dyn": "200 000"
   },
   "notes": {
@@ -2872,9 +2872,9 @@
   "slug": "ft-to-m",
   "problems": [],
   "answers": {
-   "result": "0.61",
-   "base": "0.61",
-   "factor": "0.305"
+   "result": "0.6096",
+   "base": "0.6096",
+   "factor": "0.3048"
   },
   "notes": {
    "fill": 1,
@@ -2884,7 +2884,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.305"
+    "factor": "0.3048"
    },
    "letter_value": "",
    "letter_note": [
@@ -2903,7 +2903,7 @@
   "problems": [],
   "answers": {
    "l100": "117.607",
-   "kmpl": "0.85",
+   "kmpl": "0.8503",
    "mpg_imp": "2.402"
   },
   "notes": {
@@ -2932,9 +2932,9 @@
   "slug": "g-to-lbs",
   "problems": [],
   "answers": {
-   "result": "0.004",
+   "result": "0.004409",
    "base": "0.002",
-   "factor": "0.002"
+   "factor": "0.002205"
   },
   "notes": {
    "fill": 1,
@@ -2944,7 +2944,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.002"
+    "factor": "0.002205"
    },
    "letter_value": "",
    "letter_note": [
@@ -2962,9 +2962,9 @@
   "slug": "g-to-oz",
   "problems": [],
   "answers": {
-   "result": "0.071",
+   "result": "0.07055",
    "base": "0.002",
-   "factor": "0.035"
+   "factor": "0.03527"
   },
   "notes": {
    "fill": 1,
@@ -2974,7 +2974,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.035"
+    "factor": "0.03527"
    },
    "letter_value": "",
    "letter_note": [
@@ -3022,9 +3022,9 @@
   "slug": "gal-to-kg",
   "problems": [],
   "answers": {
-   "result": "0.015",
+   "result": "0.01514",
    "litres": "7.571",
-   "kilograms": "0.015"
+   "kilograms": "0.01514"
   },
   "notes": {
    "fill": 2,
@@ -3094,7 +3094,7 @@
   "answers": {
    "result": "1.669 ×10^-5",
    "litres": "7.571",
-   "kilograms": "0.015"
+   "kilograms": "0.01514"
   },
   "notes": {
    "fill": 2,
@@ -3122,9 +3122,9 @@
   "slug": "gallons-to-cubic-feet",
   "problems": [],
   "answers": {
-   "result": "0.267",
+   "result": "0.2674",
    "base": "7.571",
-   "factor": "0.134"
+   "factor": "0.1337"
   },
   "notes": {
    "fill": 1,
@@ -3134,7 +3134,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.134"
+    "factor": "0.1337"
    },
    "letter_value": "",
    "letter_note": [
@@ -3184,7 +3184,7 @@
   "answers": {
    "result": "15.142",
    "litres": "7.571",
-   "kilograms": "0.015"
+   "kilograms": "0.01514"
   },
   "notes": {
    "fill": 2,
@@ -3242,9 +3242,9 @@
   "slug": "gallons-to-pounds",
   "problems": [],
   "answers": {
-   "result": "0.033",
+   "result": "0.03338",
    "litres": "7.571",
-   "kilograms": "0.015"
+   "kilograms": "0.01514"
   },
   "notes": {
    "fill": 2,
@@ -3318,7 +3318,7 @@
   "problems": [],
   "answers": {
    "result": "64.799",
-   "litres": "0.065",
+   "litres": "0.0648",
    "kilograms": "1.296 ×10^-4"
   },
   "notes": {
@@ -3348,7 +3348,7 @@
   "problems": [],
   "answers": {
    "result": "13.147",
-   "litres": "0.065",
+   "litres": "0.0648",
    "kilograms": "1.296 ×10^-4"
   },
   "notes": {
@@ -3574,7 +3574,7 @@
   "answers": {
    "m": "0.02",
    "feet": "0",
-   "inches": "0.787"
+   "inches": "0.7874"
   },
   "notes": {
    "fill": 1,
@@ -3604,7 +3604,7 @@
   "answers": {
    "total_inches": "26",
    "cm": "66.04",
-   "m": "0.66"
+   "m": "0.6604"
   },
   "notes": {
    "fill": 2,
@@ -3665,9 +3665,9 @@
    "s": "7 200",
    "ms": "7 200 000",
    "minute": "120",
-   "day": "0.083",
-   "week": "0.012",
-   "month": "0.003",
+   "day": "0.08333",
+   "week": "0.0119",
+   "month": "0.002738",
    "year": "2.282 ×10^-4",
    "decade": "2.282 ×10^-5"
   },
@@ -3702,9 +3702,9 @@
   "slug": "hours-to-days",
   "problems": [],
   "answers": {
-   "result": "0.083",
+   "result": "0.08333",
    "base": "7 200",
-   "factor": "0.042"
+   "factor": "0.04167"
   },
   "notes": {
    "fill": 1,
@@ -3714,7 +3714,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.042"
+    "factor": "0.04167"
    },
    "letter_value": "",
    "letter_note": [
@@ -3792,9 +3792,9 @@
   "slug": "hours-to-week",
   "problems": [],
   "answers": {
-   "result": "0.012",
+   "result": "0.0119",
    "base": "7 200",
-   "factor": "0.006"
+   "factor": "0.005952"
   },
   "notes": {
    "fill": 1,
@@ -3804,7 +3804,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.006"
+    "factor": "0.005952"
    },
    "letter_value": "",
    "letter_note": [
@@ -3852,12 +3852,12 @@
   "slug": "imperial",
   "problems": [],
   "answers": {
-   "m": "0.61",
+   "m": "0.6096",
    "cm": "60.96",
    "mm": "609.6",
    "km": "6.096 ×10^-4",
    "inch": "24",
-   "yard": "0.667",
+   "yard": "0.6667",
    "mile": "3.788 ×10^-4",
    "nm": "609 600 000"
   },
@@ -3892,12 +3892,12 @@
   "slug": "imperial-to-metric-conversion",
   "problems": [],
   "answers": {
-   "m": "0.61",
+   "m": "0.6096",
    "cm": "60.96",
    "mm": "609.6",
    "km": "6.096 ×10^-4",
    "inch": "24",
-   "yard": "0.667",
+   "yard": "0.6667",
    "mile": "3.788 ×10^-4",
    "nm": "609 600 000"
   },
@@ -3933,7 +3933,7 @@
   "problems": [],
   "answers": {
    "result": "5.08",
-   "base": "0.051",
+   "base": "0.0508",
    "factor": "2.54"
   },
   "notes": {
@@ -3962,12 +3962,12 @@
   "slug": "inch-converter",
   "problems": [],
   "answers": {
-   "m": "0.051",
+   "m": "0.0508",
    "cm": "5.08",
    "mm": "50.8",
    "km": "5.080 ×10^-5",
-   "foot": "0.167",
-   "yard": "0.056",
+   "foot": "0.1667",
+   "yard": "0.05556",
    "mile": "3.157 ×10^-5",
    "nm": "50 800 000"
   },
@@ -4032,9 +4032,9 @@
   "slug": "inch-pounds-to-foot-pounds",
   "problems": [],
   "answers": {
-   "result": "0.167",
+   "result": "0.1667",
    "base": "0.226",
-   "factor": "0.083"
+   "factor": "0.08333"
   },
   "notes": {
    "fill": 1,
@@ -4044,7 +4044,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.083"
+    "factor": "0.08333"
    },
    "letter_value": "",
    "letter_note": [
@@ -4062,9 +4062,9 @@
   "slug": "inch-to-meter",
   "problems": [],
   "answers": {
-   "result": "0.051",
-   "base": "0.051",
-   "factor": "0.025"
+   "result": "0.0508",
+   "base": "0.0508",
+   "factor": "0.0254"
   },
   "notes": {
    "fill": 1,
@@ -4074,7 +4074,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.025"
+    "factor": "0.0254"
    },
    "letter_value": "",
    "letter_note": [
@@ -4124,9 +4124,9 @@
   "slug": "inches-to-yard-conversion",
   "problems": [],
   "answers": {
-   "result": "0.056",
-   "base": "0.051",
-   "factor": "0.028"
+   "result": "0.05556",
+   "base": "0.0508",
+   "factor": "0.02778"
   },
   "notes": {
    "fill": 1,
@@ -4136,7 +4136,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.028"
+    "factor": "0.02778"
    },
    "letter_value": "",
    "letter_note": [
@@ -4490,9 +4490,9 @@
   "slug": "kg-to-stones-converter",
   "problems": [],
   "answers": {
-   "result": "0.315",
+   "result": "0.3149",
    "base": "2",
-   "factor": "0.157"
+   "factor": "0.1575"
   },
   "notes": {
    "fill": 1,
@@ -4502,7 +4502,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.157"
+    "factor": "0.1575"
    },
    "letter_value": "",
    "letter_note": [
@@ -4622,7 +4622,7 @@
   "answers": {
    "result": "1.243",
    "base": "2 000",
-   "factor": "0.621"
+   "factor": "0.6214"
   },
   "notes": {
    "fill": 1,
@@ -4632,7 +4632,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.621"
+    "factor": "0.6214"
    },
    "letter_value": "",
    "letter_note": [
@@ -4743,8 +4743,8 @@
    "pa": "2 000",
    "mpa": "0.002",
    "bar": "0.02",
-   "psi": "0.29",
-   "atm": "0.02",
+   "psi": "0.2901",
+   "atm": "0.01974",
    "mmhg": "15.001",
    "torr": "15.001",
    "inh2o": "8.029"
@@ -4780,9 +4780,9 @@
   "slug": "kpa-to-atm-conversion",
   "problems": [],
   "answers": {
-   "result": "0.02",
+   "result": "0.01974",
    "base": "2 000",
-   "factor": "0.01"
+   "factor": "0.009869"
   },
   "notes": {
    "fill": 1,
@@ -4792,7 +4792,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.01"
+    "factor": "0.009869"
    },
    "letter_value": "",
    "letter_note": [
@@ -4840,7 +4840,7 @@
   "slug": "kpa-to-psi-conversion",
   "problems": [],
   "answers": {
-   "result": "0.29",
+   "result": "0.2901",
    "base": "2 000",
    "factor": "0.145"
   },
@@ -4930,9 +4930,9 @@
   "slug": "l-to-gal",
   "problems": [],
   "answers": {
-   "result": "0.528",
+   "result": "0.5283",
    "base": "2",
-   "factor": "0.264"
+   "factor": "0.2642"
   },
   "notes": {
    "fill": 1,
@@ -4942,7 +4942,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.264"
+    "factor": "0.2642"
    },
    "letter_value": "",
    "letter_note": [
@@ -4963,9 +4963,9 @@
    "m2": "8 093.713",
    "square-foot": "87 120",
    "square-yard": "9 680",
-   "km2": "0.008",
-   "hectare": "0.809",
-   "square-mile": "0.003",
+   "km2": "0.008094",
+   "hectare": "0.8094",
+   "square-mile": "0.003125",
    "square-inch": "12 545 280",
    "cm2": "80 937 200"
   },
@@ -5031,7 +5031,7 @@
   "problems": [],
   "answers": {
    "result": "907.185",
-   "base": "0.907",
+   "base": "0.9072",
    "factor": "453.592"
   },
   "notes": {
@@ -5060,9 +5060,9 @@
   "slug": "lbs-to-kg-converter",
   "problems": [],
   "answers": {
-   "result": "0.907",
-   "base": "0.907",
-   "factor": "0.454"
+   "result": "0.9072",
+   "base": "0.9072",
+   "factor": "0.4536"
   },
   "notes": {
    "fill": 1,
@@ -5072,7 +5072,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.454"
+    "factor": "0.4536"
    },
    "letter_value": "",
    "letter_note": [
@@ -5091,8 +5091,8 @@
   "problems": [],
   "answers": {
    "newtons": "8.896",
-   "kgf": "0.907",
-   "kn": "0.009"
+   "kgf": "0.9072",
+   "kn": "0.008896"
   },
   "notes": {
    "fill": 1,
@@ -5121,7 +5121,7 @@
   "problems": [],
   "answers": {
    "pounds": "2",
-   "kg": "0.907",
+   "kg": "0.9072",
    "oz": "32"
   },
   "notes": {
@@ -5152,7 +5152,7 @@
   "answers": {
    "psi": "1",
    "kpa": "6.895",
-   "bar": "0.069"
+   "bar": "0.06895"
   },
   "notes": {
    "fill": 2,
@@ -5180,9 +5180,9 @@
   "slug": "lbs-to-stone-converter",
   "problems": [],
   "answers": {
-   "result": "0.143",
-   "base": "0.907",
-   "factor": "0.071"
+   "result": "0.1429",
+   "base": "0.9072",
+   "factor": "0.07143"
   },
   "notes": {
    "fill": 1,
@@ -5192,7 +5192,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.071"
+    "factor": "0.07143"
    },
    "letter_value": "",
    "letter_note": [
@@ -5231,7 +5231,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -5365,7 +5365,7 @@
   "slug": "liters-to-pounds",
   "problems": [],
   "answers": {
-   "result": "0.009",
+   "result": "0.008818",
    "litres": "2",
    "kilograms": "0.004"
   },
@@ -5426,7 +5426,7 @@
   "problems": [],
   "answers": {
    "sqft": "4",
-   "sqm": "0.372",
+   "sqm": "0.3716",
    "acres": "9.183 ×10^-5"
   },
   "notes": {
@@ -5656,7 +5656,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -5692,7 +5692,7 @@
   "answers": {
    "micron": "7 450",
    "mm": "7.45",
-   "inch": "0.293"
+   "inch": "0.2933"
   },
   "notes": {
    "fill": 1,
@@ -5726,7 +5726,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -5760,7 +5760,7 @@
   "slug": "meter-to-mile-conversion",
   "problems": [],
   "answers": {
-   "result": "0.001",
+   "result": "0.001243",
    "base": "2",
    "factor": "6.214 ×10^-4"
   },
@@ -5826,7 +5826,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -5866,7 +5866,7 @@
    "inch": "78.74",
    "foot": "6.562",
    "yard": "2.187",
-   "mile": "0.001",
+   "mile": "0.001243",
    "nm": "2 000 000 000"
   },
   "notes": {
@@ -5900,9 +5900,9 @@
   "slug": "metric-to-inches",
   "problems": [],
   "answers": {
-   "result": "0.787",
+   "result": "0.7874",
    "base": "0.02",
-   "factor": "0.394"
+   "factor": "0.3937"
   },
   "notes": {
    "fill": 1,
@@ -5912,7 +5912,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.394"
+    "factor": "0.3937"
    },
    "letter_value": "",
    "letter_note": [
@@ -5930,9 +5930,9 @@
   "slug": "metric-to-sae",
   "problems": [],
   "answers": {
-   "inches": "0.079",
+   "inches": "0.07874",
    "n32": "3",
-   "decimal32": "0.094"
+   "decimal32": "0.09375"
   },
   "notes": {
    "fill": 1,
@@ -5960,9 +5960,9 @@
   "slug": "metric-to-standard-converter",
   "problems": [],
   "answers": {
-   "inches": "0.079",
+   "inches": "0.07874",
    "nm64": "5",
-   "decimal64": "0.078"
+   "decimal64": "0.07813"
   },
   "notes": {
    "fill": 1,
@@ -6020,7 +6020,7 @@
   "slug": "mg-to-lbs",
   "problems": [],
   "answers": {
-   "result": "0.002",
+   "result": "0.002205",
    "litres": "0.001",
    "kilograms": "2.000 ×10^-6"
   },
@@ -6080,8 +6080,8 @@
   "slug": "mg-to-tablespoon-converter",
   "problems": [],
   "answers": {
-   "tbsp": "0.068",
-   "tsp": "0.203",
+   "tbsp": "0.06763",
+   "tsp": "0.2029",
    "ml": "1"
   },
   "notes": {
@@ -6110,9 +6110,9 @@
   "slug": "mg-to-teaspoon-converter",
   "problems": [],
   "answers": {
-   "tsp": "0.203",
+   "tsp": "0.2029",
    "ml": "1",
-   "tbsp": "0.068"
+   "tbsp": "0.06763"
   },
   "notes": {
    "fill": 2,
@@ -6180,9 +6180,9 @@
   "slug": "micron-to-mil-conversion",
   "problems": [],
   "answers": {
-   "result": "0.079",
+   "result": "0.07874",
    "base": "2.000 ×10^-6",
-   "factor": "0.039"
+   "factor": "0.03937"
   },
   "notes": {
    "fill": 1,
@@ -6192,7 +6192,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.039"
+    "factor": "0.03937"
    },
    "letter_value": "",
    "letter_note": [
@@ -6211,8 +6211,8 @@
   "problems": [],
   "answers": {
    "m": "5.080 ×10^-5",
-   "cm": "0.005",
-   "mm": "0.051",
+   "cm": "0.00508",
+   "mm": "0.0508",
    "km": "5.080 ×10^-8",
    "inch": "0.002",
    "foot": "1.667 ×10^-4",
@@ -6280,9 +6280,9 @@
   "slug": "mil-to-mm-conversion",
   "problems": [],
   "answers": {
-   "result": "0.051",
+   "result": "0.0508",
    "base": "5.080 ×10^-5",
-   "factor": "0.025"
+   "factor": "0.0254"
   },
   "notes": {
    "fill": 1,
@@ -6292,7 +6292,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.025"
+    "factor": "0.0254"
    },
    "letter_value": "",
    "letter_note": [
@@ -6368,9 +6368,9 @@
    "m": "0.002",
    "cm": "0.2",
    "km": "2.000 ×10^-6",
-   "inch": "0.079",
-   "foot": "0.007",
-   "yard": "0.002",
+   "inch": "0.07874",
+   "foot": "0.006562",
+   "yard": "0.002187",
    "mile": "1.243 ×10^-6",
    "nm": "2 000 000"
   },
@@ -6537,8 +6537,8 @@
   "answers": {
    "s": "120",
    "ms": "120 000",
-   "hour": "0.033",
-   "day": "0.001",
+   "hour": "0.03333",
+   "day": "0.001389",
    "week": "1.984 ×10^-4",
    "month": "4.563 ×10^-5",
    "year": "3.803 ×10^-6",
@@ -6575,7 +6575,7 @@
   "slug": "minutes-to-days",
   "problems": [],
   "answers": {
-   "result": "0.001",
+   "result": "0.001389",
    "base": "120",
    "factor": "6.944 ×10^-4"
   },
@@ -6605,7 +6605,7 @@
   "slug": "minutes-to-decimal-conversion",
   "problems": [],
   "answers": {
-   "hours": "0.033",
+   "hours": "0.03333",
    "whole": "0",
    "rest": "2"
   },
@@ -6635,9 +6635,9 @@
   "slug": "minutes-to-hours-converter",
   "problems": [],
   "answers": {
-   "result": "0.033",
+   "result": "0.03333",
    "base": "120",
-   "factor": "0.017"
+   "factor": "0.01667"
   },
   "notes": {
    "fill": 1,
@@ -6647,7 +6647,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.017"
+    "factor": "0.01667"
    },
    "letter_value": "",
    "letter_note": [
@@ -6725,9 +6725,9 @@
   "slug": "ml-tbsp-converter",
   "problems": [],
   "answers": {
-   "result": "0.135",
+   "result": "0.1353",
    "base": "0.002",
-   "factor": "0.068"
+   "factor": "0.06763"
   },
   "notes": {
    "fill": 1,
@@ -6737,7 +6737,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.068"
+    "factor": "0.06763"
    },
    "letter_value": "",
    "letter_note": [
@@ -6785,9 +6785,9 @@
   "slug": "ml-to-cups",
   "problems": [],
   "answers": {
-   "result": "0.008",
+   "result": "0.008453",
    "base": "0.002",
-   "factor": "0.004"
+   "factor": "0.004227"
   },
   "notes": {
    "fill": 1,
@@ -6797,7 +6797,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.004"
+    "factor": "0.004227"
    },
    "letter_value": "",
    "letter_note": [
@@ -6875,9 +6875,9 @@
   "slug": "ml-to-oz-converter",
   "problems": [],
   "answers": {
-   "result": "0.068",
+   "result": "0.06763",
    "base": "0.002",
-   "factor": "0.034"
+   "factor": "0.03381"
   },
   "notes": {
    "fill": 1,
@@ -6887,7 +6887,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.034"
+    "factor": "0.03381"
    },
    "letter_value": "",
    "letter_note": [
@@ -6935,9 +6935,9 @@
   "slug": "ml-tsp-converter",
   "problems": [],
   "answers": {
-   "result": "0.406",
+   "result": "0.4058",
    "base": "0.002",
-   "factor": "0.203"
+   "factor": "0.2029"
   },
   "notes": {
    "fill": 1,
@@ -6947,7 +6947,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.203"
+    "factor": "0.2029"
    },
    "letter_value": "",
    "letter_note": [
@@ -6968,9 +6968,9 @@
    "m": "0.002",
    "cm": "0.2",
    "km": "2.000 ×10^-6",
-   "inch": "0.079",
-   "foot": "0.007",
-   "yard": "0.002",
+   "inch": "0.07874",
+   "foot": "0.006562",
+   "yard": "0.002187",
    "mile": "1.243 ×10^-6",
    "nm": "2 000 000"
   },
@@ -7005,9 +7005,9 @@
   "slug": "mm-to-atm-conversion",
   "problems": [],
   "answers": {
-   "result": "0.003",
+   "result": "0.002632",
    "base": "266.645",
-   "factor": "0.001"
+   "factor": "0.001316"
   },
   "notes": {
    "fill": 1,
@@ -7017,7 +7017,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.001"
+    "factor": "0.001316"
    },
    "letter_value": "",
    "letter_note": [
@@ -7035,9 +7035,9 @@
   "slug": "mm-to-foot-converter",
   "problems": [],
   "answers": {
-   "result": "0.007",
+   "result": "0.006562",
    "base": "0.002",
-   "factor": "0.003"
+   "factor": "0.003281"
   },
   "notes": {
    "fill": 1,
@@ -7047,7 +7047,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.003"
+    "factor": "0.003281"
    },
    "letter_value": "",
    "letter_note": [
@@ -7065,9 +7065,9 @@
   "slug": "mm-to-inches-conversion",
   "problems": [],
   "answers": {
-   "result": "0.079",
+   "result": "0.07874",
    "base": "0.002",
-   "factor": "0.039"
+   "factor": "0.03937"
   },
   "notes": {
    "fill": 1,
@@ -7077,7 +7077,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.039"
+    "factor": "0.03937"
    },
    "letter_value": "",
    "letter_note": [
@@ -7155,9 +7155,9 @@
   "slug": "mmhg-to-atm-conversion",
   "problems": [],
   "answers": {
-   "result": "0.003",
+   "result": "0.002632",
    "base": "266.645",
-   "factor": "0.001"
+   "factor": "0.001316"
   },
   "notes": {
    "fill": 1,
@@ -7167,7 +7167,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.001"
+    "factor": "0.001316"
    },
    "letter_value": "",
    "letter_note": [
@@ -7185,9 +7185,9 @@
   "slug": "months-to-years",
   "problems": [],
   "answers": {
-   "result": "0.167",
+   "result": "0.1667",
    "base": "5 259 492",
-   "factor": "0.083"
+   "factor": "0.08333"
   },
   "notes": {
    "fill": 1,
@@ -7197,7 +7197,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.083"
+    "factor": "0.08333"
    },
    "letter_value": "",
    "letter_note": [
@@ -7411,7 +7411,7 @@
    "kcal": "4.780 ×10^-4",
    "wh": "5.556 ×10^-4",
    "kwh": "5.556 ×10^-7",
-   "btu": "0.002",
+   "btu": "0.001896",
    "therm": "1.896 ×10^-8"
   },
   "notes": {
@@ -7547,7 +7547,7 @@
   "answers": {
    "result": "1.475",
    "base": "2",
-   "factor": "0.738"
+   "factor": "0.7376"
   },
   "notes": {
    "fill": 1,
@@ -7557,7 +7557,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.738"
+    "factor": "0.7376"
    },
    "letter_value": "",
    "letter_note": [
@@ -7699,9 +7699,9 @@
   "slug": "ounce-to-kg-converter",
   "problems": [],
   "answers": {
-   "result": "0.057",
-   "base": "0.057",
-   "factor": "0.028"
+   "result": "0.0567",
+   "base": "0.0567",
+   "factor": "0.02835"
   },
   "notes": {
    "fill": 1,
@@ -7711,7 +7711,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.028"
+    "factor": "0.02835"
    },
    "letter_value": "",
    "letter_note": [
@@ -7730,7 +7730,7 @@
   "problems": [],
   "answers": {
    "result": "0.25",
-   "base": "0.059",
+   "base": "0.05915",
    "factor": "0.125"
   },
   "notes": {
@@ -7760,7 +7760,7 @@
   "problems": [],
   "answers": {
    "result": "56.699",
-   "base": "0.057",
+   "base": "0.0567",
    "factor": "28.35"
   },
   "notes": {
@@ -7790,8 +7790,8 @@
   "problems": [],
   "answers": {
    "result": "0.125",
-   "base": "0.057",
-   "factor": "0.063"
+   "base": "0.0567",
+   "factor": "0.0625"
   },
   "notes": {
    "fill": 1,
@@ -7801,7 +7801,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.063"
+    "factor": "0.0625"
    },
    "letter_value": "",
    "letter_note": [
@@ -7820,7 +7820,7 @@
   "problems": [],
   "answers": {
    "result": "59.147",
-   "base": "0.059",
+   "base": "0.05915",
    "factor": "29.574"
   },
   "notes": {
@@ -7850,7 +7850,7 @@
   "problems": [],
   "answers": {
    "result": "59.147",
-   "base": "0.059",
+   "base": "0.05915",
    "factor": "29.574"
   },
   "notes": {
@@ -7946,7 +7946,7 @@
    "atm": "1.974 ×10^-5",
    "mmhg": "0.015",
    "torr": "0.015",
-   "inh2o": "0.008"
+   "inh2o": "0.008029"
   },
   "notes": {
    "fill": 1,
@@ -8009,9 +8009,9 @@
   "slug": "pint-to-pound",
   "problems": [],
   "answers": {
-   "result": "0.004",
-   "litres": "0.946",
-   "kilograms": "0.002"
+   "result": "0.004173",
+   "litres": "0.9464",
+   "kilograms": "0.001893"
   },
   "notes": {
    "fill": 2,
@@ -8040,7 +8040,7 @@
   "problems": [],
   "answers": {
    "result": "4",
-   "base": "0.946",
+   "base": "0.9464",
    "factor": "2"
   },
   "notes": {
@@ -8070,7 +8070,7 @@
   "problems": [],
   "answers": {
    "result": "0.25",
-   "base": "0.946",
+   "base": "0.9464",
    "factor": "0.125"
   },
   "notes": {
@@ -8129,7 +8129,7 @@
   "slug": "pounds-ounces",
   "problems": [],
   "answers": {
-   "kg": "0.964",
+   "kg": "0.9639",
    "g": "963.884",
    "total_oz": "34"
   },
@@ -8160,7 +8160,7 @@
   "problems": [],
   "answers": {
    "result": "907.185",
-   "base": "0.907",
+   "base": "0.9072",
    "factor": "453.592"
   },
   "notes": {
@@ -8190,7 +8190,7 @@
   "problems": [],
   "answers": {
    "lbs": "2",
-   "kg": "0.907",
+   "kg": "0.9072",
    "g": "907.185"
   },
   "notes": {
@@ -8220,7 +8220,7 @@
   "problems": [],
   "answers": {
    "result": "32",
-   "base": "0.907",
+   "base": "0.9072",
    "factor": "16"
   },
   "notes": {
@@ -8249,9 +8249,9 @@
   "slug": "pounds-to-stone",
   "problems": [],
   "answers": {
-   "result": "0.143",
-   "base": "0.907",
-   "factor": "0.071"
+   "result": "0.1429",
+   "base": "0.9072",
+   "factor": "0.07143"
   },
   "notes": {
    "fill": 1,
@@ -8261,7 +8261,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.071"
+    "factor": "0.07143"
    },
    "letter_value": "",
    "letter_note": [
@@ -8280,8 +8280,8 @@
   "problems": [],
   "answers": {
    "kw": "0.002",
-   "hp": "0.003",
-   "ps": "0.003",
+   "hp": "0.002682",
+   "ps": "0.002719",
    "btuph": "6.824",
    "mw-power": "2.000 ×10^-6"
   },
@@ -8380,7 +8380,7 @@
    "atm": "1.974 ×10^-5",
    "mmhg": "0.015",
    "torr": "0.015",
-   "inh2o": "0.008"
+   "inh2o": "0.008029"
   },
   "notes": {
    "fill": 1,
@@ -8420,7 +8420,7 @@
    "atm": "1.974 ×10^-5",
    "mmhg": "0.015",
    "torr": "0.015",
-   "inh2o": "0.008"
+   "inh2o": "0.008029"
   },
   "notes": {
    "fill": 1,
@@ -8485,9 +8485,9 @@
   "answers": {
    "pa": "13 789.515",
    "kpa": "13.79",
-   "mpa": "0.014",
-   "bar": "0.138",
-   "atm": "0.136",
+   "mpa": "0.01379",
+   "bar": "0.1379",
+   "atm": "0.1361",
    "mmhg": "103.43",
    "torr": "103.43",
    "inh2o": "55.36"
@@ -8523,9 +8523,9 @@
   "slug": "psi-to-atm-conversion",
   "problems": [],
   "answers": {
-   "result": "0.136",
+   "result": "0.1361",
    "base": "13 789.515",
-   "factor": "0.068"
+   "factor": "0.06805"
   },
   "notes": {
    "fill": 1,
@@ -8535,7 +8535,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.068"
+    "factor": "0.06805"
    },
    "letter_value": "",
    "letter_note": [
@@ -8614,7 +8614,7 @@
   "problems": [],
   "answers": {
    "psia": "4",
-   "bar": "0.276",
+   "bar": "0.2758",
    "kpa": "27.579"
   },
   "notes": {
@@ -8675,9 +8675,9 @@
   "slug": "quantity-converter",
   "problems": [],
   "answers": {
-   "dozen": "0.167",
+   "dozen": "0.1667",
    "score": "0.1",
-   "gross": "0.014",
+   "gross": "0.01389",
    "hundred": "0.02",
    "thousand": "0.002",
    "million": "2.000 ×10^-6",
@@ -8805,9 +8805,9 @@
   "slug": "quarts-to-pounds",
   "problems": [],
   "answers": {
-   "result": "0.008",
+   "result": "0.008345",
    "litres": "1.893",
-   "kilograms": "0.004"
+   "kilograms": "0.003785"
   },
   "notes": {
    "fill": 2,
@@ -9007,7 +9007,7 @@
   "problems": [],
   "answers": {
    "ms": "2 000",
-   "minute": "0.033",
+   "minute": "0.03333",
    "hour": "5.556 ×10^-4",
    "day": "2.315 ×10^-5",
    "week": "3.307 ×10^-6",
@@ -9106,9 +9106,9 @@
   "slug": "seconds-to-minutes-converter",
   "problems": [],
   "answers": {
-   "result": "0.033",
+   "result": "0.03333",
    "base": "2",
-   "factor": "0.017"
+   "factor": "0.01667"
   },
   "notes": {
    "fill": 1,
@@ -9118,7 +9118,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.017"
+    "factor": "0.01667"
    },
    "letter_value": "",
    "letter_note": [
@@ -9228,8 +9228,8 @@
   "slug": "square-feet-converter",
   "problems": [],
   "answers": {
-   "m2": "0.186",
-   "square-yard": "0.222",
+   "m2": "0.1858",
+   "square-yard": "0.2222",
    "km2": "1.858 ×10^-7",
    "hectare": "1.858 ×10^-5",
    "acre": "4.591 ×10^-5",
@@ -9269,7 +9269,7 @@
   "problems": [],
   "answers": {
    "result": "4.591 ×10^-5",
-   "base": "0.186",
+   "base": "0.1858",
    "factor": "2.296 ×10^-5"
   },
   "notes": {
@@ -9298,9 +9298,9 @@
   "slug": "square-inch-to-square-foot-converter",
   "problems": [],
   "answers": {
-   "result": "0.014",
-   "base": "0.001",
-   "factor": "0.007"
+   "result": "0.01389",
+   "base": "0.00129",
+   "factor": "0.006944"
   },
   "notes": {
    "fill": 1,
@@ -9310,7 +9310,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.007"
+    "factor": "0.006944"
    },
    "letter_value": "",
    "letter_note": [
@@ -9558,8 +9558,8 @@
   "slug": "tbsp-to-grams",
   "problems": [],
   "answers": {
-   "result": "0.059",
-   "litres": "0.03",
+   "result": "0.05915",
+   "litres": "0.02957",
    "kilograms": "5.915 ×10^-5"
   },
   "notes": {
@@ -9589,7 +9589,7 @@
   "problems": [],
   "answers": {
    "result": "29.574",
-   "base": "0.03",
+   "base": "0.02957",
    "factor": "14.787"
   },
   "notes": {
@@ -9651,7 +9651,7 @@
   "problems": [],
   "answers": {
    "ms": "2 000",
-   "minute": "0.033",
+   "minute": "0.03333",
    "hour": "5.556 ×10^-4",
    "day": "2.315 ×10^-5",
    "week": "3.307 ×10^-6",
@@ -9735,9 +9735,9 @@
   "slug": "torr-to-atm",
   "problems": [],
   "answers": {
-   "result": "0.003",
+   "result": "0.002632",
    "base": "266.645",
-   "factor": "0.001"
+   "factor": "0.001316"
   },
   "notes": {
    "fill": 1,
@@ -9747,7 +9747,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.001"
+    "factor": "0.001316"
    },
    "letter_value": "",
    "letter_note": [
@@ -9766,7 +9766,7 @@
   "problems": [],
   "answers": {
    "result": "9.858",
-   "base": "0.01",
+   "base": "0.009858",
    "factor": "4.929"
   },
   "notes": {
@@ -9795,8 +9795,8 @@
   "slug": "tsp-to-grams",
   "problems": [],
   "answers": {
-   "result": "0.02",
-   "litres": "0.01",
+   "result": "0.01972",
+   "litres": "0.009858",
    "kilograms": "1.972 ×10^-5"
   },
   "notes": {
@@ -9877,7 +9877,7 @@
    "cup": "8.454",
    "pint": "4.227",
    "quart": "2.113",
-   "gallon": "0.528"
+   "gallon": "0.5283"
   },
   "notes": {
    "fill": 1,
@@ -9940,9 +9940,9 @@
   "slug": "weeks-to-years-converter",
   "problems": [],
   "answers": {
-   "result": "0.038",
+   "result": "0.03833",
    "base": "1 209 600",
-   "factor": "0.019"
+   "factor": "0.01917"
   },
   "notes": {
    "fill": 1,
@@ -9952,7 +9952,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.019"
+    "factor": "0.01917"
    },
    "letter_value": "",
    "letter_note": [
@@ -9974,9 +9974,9 @@
    "mg": "2 000 000",
    "ounce": "70.548",
    "pound": "4.409",
-   "stone": "0.315",
+   "stone": "0.3149",
    "tonne": "0.002",
-   "ton": "0.002",
+   "ton": "0.002205",
    "slug": "0.137"
   },
   "notes": {
@@ -10011,10 +10011,10 @@
   "problems": [],
   "answers": {
    "fathom": "1.094",
-   "rod": "0.398",
+   "rod": "0.3977",
    "hand": "19.685",
-   "chain": "0.099",
-   "furlong": "0.01",
+   "chain": "0.09942",
+   "furlong": "0.009942",
    "league": "4.142 ×10^-4",
    "angstrom": "20 000 000 000",
    "astronomical-unit": "1.337 ×10^-11"
@@ -10053,10 +10053,10 @@
    "m": "1.829",
    "cm": "182.88",
    "mm": "1 828.8",
-   "km": "0.002",
+   "km": "0.001829",
    "inch": "72",
    "foot": "6",
-   "mile": "0.001",
+   "mile": "0.001136",
    "nm": "1 828 800 000"
   },
   "notes": {
@@ -10092,7 +10092,7 @@
   "answers": {
    "result": "1.829",
    "base": "1.829",
-   "factor": "0.914"
+   "factor": "0.9144"
   },
   "notes": {
    "fill": 1,
@@ -10102,7 +10102,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.914"
+    "factor": "0.9144"
    },
    "letter_value": "",
    "letter_note": [
@@ -10120,7 +10120,7 @@
   "slug": "yard-to-mile-converter",
   "problems": [],
   "answers": {
-   "result": "0.001",
+   "result": "0.001136",
    "base": "1.829",
    "factor": "5.682 ×10^-4"
   },
@@ -10182,7 +10182,7 @@
   "answers": {
    "result": "1.829",
    "base": "1.829",
-   "factor": "0.914"
+   "factor": "0.9144"
   },
   "notes": {
    "fill": 1,
@@ -10192,7 +10192,7 @@
    "empty": {
     "result": "",
     "base": "",
-    "factor": "0.914"
+    "factor": "0.9144"
    },
    "letter_value": "",
    "letter_note": [

@@ -63,9 +63,23 @@ final class Format
                 : $value; // omni: keep full precision, trim below
         }
 
+        /*
+         * Below one, four significant figures are worth more than a fixed
+         * decimal count. One inch is 0.025 4 m; with the harvested step of
+         * 0.0001 that already reads correctly, but a figure just under a
+         * thousandth used to lose everything (0.0006 for 0.000 621). Six
+         * decimals carry four figures down to 0.001, and below that the
+         * sentence uses ×10ⁿ exactly as the boxes do.
+         *
+         * `standard` is an author's decimal count and is left alone.
+         */
         $abs = abs($value);
-        if ($abs !== 0.0 && ($abs >= 1e15 || $abs < 1e-6)) {
-            return self::scientific($value, max(2, min(9, $decimals)));
+        if ($algorithm !== 'standard' && $abs !== 0.0 && $abs < 1.0) {
+            $need = 3 - (int) floor(log10($abs) + 1e-12);
+            $decimals = max($decimals, min(6, $need));
+        }
+        if ($abs !== 0.0 && ($abs >= 1e15 || $abs < 1e-3)) {
+            return self::scientific($value, 3);
         }
 
         $out = number_format($value, $decimals, '.', ' ');

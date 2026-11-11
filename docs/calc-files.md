@@ -78,8 +78,25 @@ SEO rules count that. Titles are checked against the 50–60 window by
 | `unit`, `unit_default` | a unit switcher — `'4'` is length, `'28'` area, `'omni'` none |
 | `prefix`, `suffix` | text inside the box (`'$'`, `'%'`, `'mmHg'`) |
 | `help` | the grey line under the label |
-| `rounding` | `['omni', '0.0001']` — how many decimals the result keeps |
+| `rounding` | `['omni', '0.0001']` — the step a result is rounded to (see *What a result reads like* below) |
 | `readonly` | the box shows a number but cannot be typed into |
+
+### What a result reads like
+
+Two rules, in `assets/js/calc.js` and mirrored in `lib/Widget.php` and
+`lib/Format.php`, so the box, the results row and the sentence inside the
+article all print the same digits.
+
+* **One and above** — at most **three decimals**. `3.3333` reads `3.333`.
+* **Below one** — **four significant figures**, never more than six decimals.
+  One inch is `0.025 4 m`, not `0.025 m`; a kilometre in miles is `0.621 4`,
+  not `0.621`.
+* **Below a thousandth** — `×10ⁿ`, four figures in the mantissa:
+  `6.214 ×10⁻⁴`.
+
+The `rounding` step still decides how the number is rounded; the rules above
+decide how much of it is printed. A `standard` precision (`['standard', '2']`)
+is an author's decimal count and is respected as written.
 
 A `note` field is a line of text: `['type' => 'note', 'text' => 'A – dominant, a – recessive']`.
 A note that takes turns is a list of cases, each with the condition that shows it:

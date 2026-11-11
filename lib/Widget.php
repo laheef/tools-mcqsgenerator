@@ -120,6 +120,14 @@ final class Widget
         if (!is_finite($v)) {
             return '';
         }
+        if (abs($v) >= 1e15) {
+            return self::sciText($v, 3);
+        }
+        /* Below a thousandth a decimal is unreadable — the box would print
+           0.000 — so the box switches to ×10ⁿ, as the results rows do. */
+        if ($v !== 0.0 && abs($v) < 1e-3) {
+            return self::sciText($v, 3);
+        }
         $decimals = 0;
         if ($algo === 'standard') {
             $decimals = (int) round((float) ($precision ?? 0));
@@ -129,7 +137,13 @@ final class Widget
                 $decimals = (int) ceil(-log10($step) - 1e-9);
             }
         }
-        $decimals = (int) max(0, min(12, $decimals));
+        /* Three decimals, as calc.js prints them; four significant figures
+           once the figure is below one (one inch is 0.0254 m, not 0.025). */
+        $decimals = (int) max(0, min(3, $decimals));
+        if ($algo !== 'standard' && $v !== 0.0 && abs($v) < 1.0) {
+            $need = 3 - (int) floor(log10(abs($v)) + 1e-12);
+            $decimals = max($decimals, min(6, $need));
+        }
         if ($algo === 'standard') {
             $v = round($v, $decimals);
         }
@@ -141,6 +155,15 @@ final class Widget
             $s = '0';
         }
         return $group ? self::groupDigits($s) : $s;
+    }
+
+    /** 6.214e-4 -> "6.214 ×10^-4", exactly as sciText() writes it in calc.js. */
+    private static function sciText(float $v, int $decimals): string
+    {
+        $raw = strtolower(sprintf('%.' . $decimals . 'e', $v));
+        [$mant, $exp] = explode('e', $raw);
+        $exp = preg_replace('/^\+?(\-?)0*(\d+)$/', '$1$2', $exp);
+        return $mant . ' ×10^' . $exp;
     }
 
     private function unitKey(string $name): ?string
