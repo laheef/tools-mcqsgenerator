@@ -188,7 +188,8 @@ var VALUES = {"Α":1,"Β":2,"Γ":3,"Δ":4,"Ε":5,"Ζ":7,"Η":8,"Θ":9,"Ι":10,"�
               "Ν":50,"Ξ":60,"Ο":70,"Π":80,"Ρ":100,"Σ":200,"Τ":300,"Υ":400,"Φ":500,"Χ":600,
               "Ψ":700,"Ω":800,"Ϛ":6,"Ͱ":8};
 omni.onResult(["text"], function (ctx) {
-  var raw = String(ctx.getRawInput("text")).toUpperCase();
+  var raw = String(ctx.getRawInput("text")).toUpperCase()
+    .normalize("NFD").replace(/[̀-ͯ]/g, "");
   var total = 0, letters = 0;
   for (var i = 0; i < raw.length; i++) {
     var ch = raw.charAt(i);

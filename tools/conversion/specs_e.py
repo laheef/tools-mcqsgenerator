@@ -178,7 +178,7 @@ S("leet-speak", "Leet Speak Converter",
    out("changed", "Letters replaced", readonly=True),
    out("length", "Characters", readonly=True)],
   """
-var MAP = {A:"4",B:"8",C:"(",E:"3",G:"6",I:"1",L:"1",O:"0",S:"5",T:"7",Z:"2"};
+var MAP = {A:"4",B:"8",E:"3",G:"6",I:"1",L:"1",O:"0",S:"5",T:"7",Z:"2"};
 omni.onResult(["text"], function (ctx) {
   var raw = String(ctx.getRawInput("text"));
   var out = "", changed = 0;
@@ -225,7 +225,8 @@ var VALUES = {"Α":1,"Β":2,"Γ":3,"Δ":4,"Ε":5,"Ζ":7,"Η":8,"Θ":9,"Ι":10,"�
               "Ν":50,"Ξ":60,"Ο":70,"Π":80,"Ρ":100,"Σ":200,"Τ":300,"Υ":400,"Φ":500,"Χ":600,
               "Ψ":700,"Ω":800,"Ϛ":6,"Ͱ":8};
 omni.onResult(["text"], function (ctx) {
-  var raw = String(ctx.getRawInput("text")).toUpperCase();
+  var raw = String(ctx.getRawInput("text")).toUpperCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   var total = 0, letters = 0;
   for (var i = 0; i < raw.length; i++) {
     var ch = raw.charAt(i);
