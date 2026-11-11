@@ -102,6 +102,7 @@ $cases = [
 ];
 
 $pass = 0;
+$fail = 0;
 /*
  * Dates and durations.
  *
@@ -119,12 +120,14 @@ $ok = $due === '2026-05-12';
 printf("  %s  %-34s %-46s %s\n", $ok ? 'PASS' : 'FAIL', 'biology--dog-pregnancy', $datenote, $due);
 $ok ? $pass++ : $fail++;
 
+/* The page was rebuilt as its own calculator file: a start time in hours, the
+   paid hours and the unpaid break. Nine o'clock, eight paid hours and half an
+   hour of break is half past five, 17.5 on the twenty-four hour clock. */
 $shift = Data::calculator('everyday-life--8-hour-shift.json');
-$ss = Solver::solve($shift, ['startOfShift' => 28800000, 'timeOfShift' => 28800,
-                             'breakDuration' => 1800], $units);        // 08:00, 8 h, 30 min
-$end = isset($ss->values['endOfShift']) ? gmdate('H:i', (int) round($ss->values['endOfShift'] / 1000)) : 'blank';
-$ok = $end === '16:30';
-printf("  %s  %-34s %-46s %s\n", $ok ? 'PASS' : 'FAIL', 'everyday-life--8-hour-shift', 'shift end after a break', $end);
+$ss = Solver::solve($shift, ['start' => 9, 'paid' => 8, 'break_min' => 30], $units);
+$end = isset($ss->values['end']) ? round($ss->values['end'], 6) : NAN;
+$ok = close_enough($end, 17.5, 1e-6);
+printf("  %s  %-34s %-46s %s\n", $ok ? 'PASS' : 'FAIL', 'everyday-life--8-hour-shift', 'clock out after a break', $end);
 $ok ? $pass++ : $fail++;
 
 /* The page was rewritten as its own calculator file, so the variables are the
@@ -139,7 +142,6 @@ printf("  %s  %-34s %-46s %.0f days / %.4f years\n", $ok ? 'PASS' : 'FAIL',
        'everyday-life--years-between-dates', 'days and years from two dates', $days, $years);
 $ok ? $pass++ : $fail++;
 
-$fail = 0;
 $tolerance = 1e-6;
 
 function close_enough(float $a, float $b, float $tol = 1e-6): bool
