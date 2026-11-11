@@ -52,12 +52,13 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 | Check | Result |
 | --- | --- |
 | `php tests/calc_files.php` (whole site) | **8,235 passed, 0 failed** |
+| Category index `/conversion` | 330 links out; every page carries a breadcrumb and ~24 internal links |
 | `php tests/calc_files.php conversion` | 330 files, titles 330/330 in window, descriptions 330/330, 2,969 passed, 0 failed |
 | `php -l` on all 330 files | 0 errors |
 | `tools/conversion/qa.py` | 330/330 routes answer, one `<h1>`, a form, no "no formula" banner |
 | `tools/conversion/js_qa.py` | 23/23 script fixtures pass |
 | `tools/conversion/browser_qa.py` | 330/330 pages answer in Chromium: every result box fills and moves when an input changes |
-| Article length (site counter) | min 1,585 · median 2,084 · mean 2,042 · max 2,365 |
+| Article length (site counter) | min 1,502 · median 2,004 · mean 1,967 · max 2,299 |
 | Titles | 330/330 inside 50–60 with the site suffix |
 | Descriptions | 330/330 inside 150–160 |
 
@@ -92,7 +93,22 @@ the ones that matter:
 * `lot-size-*` take width and depth; `grams-to-calories` takes the
   macronutrient; `hardness-conversion` says the correlations are empirical.
 * The 23 script pages declare `engine => 'script'`, keep `formula` empty, and
-  say so in the article. No page carries a formula it does not use.
+  say so in the article. No page carries a formula it does not use. Each of
+  them lists the rules it applies, and its worked-example table is the page's
+  own output for three inputs, captured by running the page's script through
+  `tools/conversion/js_harness.js` at build time — so the numbers in the prose
+  are the numbers the browser produces.
+
+## Two engine fixes this round needed
+
+* `lib/CalcFile.php` copies `authored` onto the compiled record, and
+  `lib/Shape.php` now carries it through to the shape the widget reads. Without
+  the second half the flag was set and then dropped, so a choice box the author
+  had defaulted opened unselected.
+* A `select` default is stored as the option *label* (what the engine matches
+  on), while the arithmetic needs its *value*; `gen.SEL` and `Spec.env` are the
+  two halves that translate between them, so `grams-to-calories` opens on
+  carbohydrate and computes 4 kcal/g rather than waiting for a choice.
 
 ## Files
 
