@@ -63,10 +63,25 @@ The run that produced the shipped files: **330 specs, 0 refusals.**
 | Titles | 330/330 inside 50–60 with the site suffix |
 | Descriptions | 330/330 inside 150–160 |
 
-Every page computes from the server side too: `computing: 330/330`. The last
-page to get there was `/conversion/binary`, whose only box was a text box in the
-first build; a decimal figure belongs in a number box, so it was rebuilt as one,
-and the server-side count and the browser now both pass it.
+Every page computes from the server side too: `computing: 330/330`.
+
+The last page to get there was `/conversion/binary`. Two separate things went
+wrong on it, and only one of them was the page's fault:
+
+1. **The page.** Its only input was declared as text. A decimal figure belongs
+   in a number box, so it is one now; that is what took the server-side count
+   from 329 to 330.
+2. **The test.** The browser sweep still reported "no result" after the page was
+   fixed. The page was not broken — the sweep was. It loaded with
+   `domcontentloaded`, filled the box 100 ms later, and sometimes typed into the
+   input before the widget's own script had attached, so nothing recalculated.
+   The same page, loaded with `networkidle` and filled a moment later, answered
+   `101010 / 52 / 2A`. The sweep now waits for `networkidle` and the full 330
+   pass.
+
+Worth writing down because the lesson is general: a failing browser check is a
+claim about the harness as much as about the page, and the way to tell them
+apart is to drive the page by hand.
 
 ## On the live site
 
