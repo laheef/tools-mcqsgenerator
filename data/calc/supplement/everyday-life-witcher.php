@@ -27,6 +27,12 @@ return [
 omni.onResult([], function (ctx, values) {
   // This repair covers the books-only path. Other modes remain outside its scope.
   if (Number(values.whatYouWannaDo) !== 1) return;
+  ['gameHours1', 'gameHours2', 'gameHours3', 'gameHours4', 'gameHours5',
+   'gameDays1', 'gameDays2', 'gameDays3', 'gameDays4', 'gameDays5',
+   'gameDaysTotal', 'gameFinishDate', 'seriesDays', 'seriesFinishDate',
+   'readingAndGameDaysTotal', 'bothFinishDate'].forEach(function (name) {
+    ctx.exportValue(name, null);
+  });
 
   var rate = Number(values.readingSpeedOptions);
   var pagesPerMinute = { 1: 0.25, 2: 0.5, 3: 1 }[rate];
