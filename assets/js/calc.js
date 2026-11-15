@@ -747,6 +747,12 @@
         if (typeof v !== 'number') return v;
         return toDisplay(v, unitKeyOf(name), currentUnit(name));
       },
+      /* The visitor's selected display unit, for page scripts that need to
+         interpret their inputs in a unit-specific rule (rather than as the
+         engine's internal base-unit value). */
+      getUnit: function (name) {
+        return currentUnit(name);
+      },
       exportValue: function (name, value) {
         if (typeof name !== 'string') return;
         if (value === null || value === undefined || value === '') {

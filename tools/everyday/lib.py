@@ -30,6 +30,7 @@ import datetime as _dt
 import html
 import math
 import re
+from html.parser import HTMLParser
 from dataclasses import dataclass, field as dc_field
 from decimal import Decimal
 from typing import Any, Callable
@@ -543,6 +544,8 @@ def build_article(spec: Spec) -> dict:
     if "scenarios" in prose:
         prose["scenarios"] = [dict(sc, note=fill(sc.get("note", "")))
                               for sc in prose["scenarios"]]
+    if isinstance(prose.get("formula_steps"), dict):
+        prose["formula_steps"] = {key: fill(value) for key, value in prose["formula_steps"].items()}
 
     def out_name(r: dict) -> str:
         stem = re.sub(r"\s*\([^)]*\)\s*$", "", label_of(r))
@@ -567,14 +570,15 @@ def build_article(spec: Spec) -> dict:
 
     known = {r["name"] for r in results}
     live_formula = {k: v for k, v in spec.formula.items() if k in known}
+    formula_steps = prose.get("formula_steps", {})
     rows = "".join(
         f"<tr><td><strong>{html.escape(labels.get(k, k))}</strong></td>"
-        f"<td><code>{plain(expr, labels)}</code></td></tr>"
+        f"<td><code>{html.escape(formula_steps[k]) if k in formula_steps else plain(expr, labels)}</code></td></tr>"
         for k, expr in live_formula.items())
 
     worked = "".join(
         f"<li><strong>{html.escape(label_of(r))}</strong> = "
-        f"<code>{plain(live_formula.get(r['name'], ''), labels)}</code> = "
+        f"<code>{html.escape(formula_steps[r['name']]) if r['name'] in formula_steps else plain(live_formula.get(r['name'], ''), labels)}</code> = "
         f"<strong>{show_value(r, solved[r['name']])}"
         f"{(' ' + html.escape(unit_of(r))) if unit_of(r) else ''}</strong></li>"
         for r in results if r["name"] in solved)
@@ -653,6 +657,8 @@ def build_article(spec: Spec) -> dict:
                         f"</strong>. Nothing is rounded before that last step, so a person "
                         f"reproducing it on paper should keep the intermediate figures in full "
                         f"and only round at the end.</p>")
+    if prose.get("paper_check"):
+        numeric_line = f"<p>{html.escape(prose['paper_check'])}</p>"
 
     default_rows = "".join(
         f"<li><strong>{html.escape(label_of(f))}</strong> opens at "
@@ -975,7 +981,25 @@ def build_def(spec: Spec) -> dict:
 
 
 def words(defn: dict) -> int:
-    text = (defn["article"]["intro"] + " "
-            + " ".join(re.sub(r"<[^>]+>", " ", s["html"]) for s in defn["article"]["sections"]))
-    text += " " + " ".join(q["a"] for q in defn["article"]["faq"])
-    return len(re.findall(r"[A-Za-z0-9\u00b7][A-Za-z0-9'\u00b7\-.,]*", text))
+    """Count visible words in the main body, matching the rendered-page audit.
+
+    Parse text nodes rather than stripping tags with a regex: some articles
+    include escaped formula operators that look like markup. Include the lead,
+    section headings and copy; exclude FAQ, calculator controls, reviews and
+    related links, which sit outside the 1,500–2,500-word article target.
+    """
+    class VisibleText(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.parts: list[str] = []
+
+        def handle_data(self, data: str) -> None:
+            self.parts.append(data)
+
+    article = defn["article"]
+    parser = VisibleText()
+    parser.feed(article.get("intro", ""))
+    for section in article.get("sections", []):
+        parser.feed("<h2>" + html.escape(section.get("title", "")) + "</h2>")
+        parser.feed(section.get("html", ""))
+    return len(re.findall(r"[A-Za-z0-9][A-Za-z0-9'\-]*", " ".join(parser.parts)))

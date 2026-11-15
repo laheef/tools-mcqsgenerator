@@ -27,14 +27,20 @@ SET_JS = """([pairs]) => {
     const done = [];
     for (const [name, value] of pairs) {
         const holder = document.querySelector('.calc-field[data-var="' + name + '"]');
-        let el = holder && holder.matches('fieldset')
-            ? [...holder.querySelectorAll('input[type=radio]')].find(r => {
-                  const lab = r.closest('label');
-                  return (lab ? lab.textContent : r.value).trim() === String(value);
-              })
-            : document.querySelector('.calc-field:not([data-output]) [data-var="' + name + '"]');
+        let el;
+        if (holder && holder.matches('fieldset')) {
+            el = holder.querySelector('select[data-var="' + name + '"]');
+            if (!el) {
+                el = [...holder.querySelectorAll('input[type=radio]')].find(r => {
+                    const lab = r.closest('label');
+                    return (lab ? lab.textContent : r.value).trim() === String(value);
+                });
+            }
+        } else {
+            el = document.querySelector('.calc-field:not([data-output]) [data-var="' + name + '"]');
+        }
         if (!holder || !el) continue;
-        if (holder.matches('fieldset')) {
+        if (holder.matches('fieldset') && el.tagName !== 'SELECT') {
             el.checked = true;
             el.dispatchEvent(new Event('input', { bubbles: true }));
             el.dispatchEvent(new Event('change', { bubbles: true }));

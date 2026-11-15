@@ -56,6 +56,12 @@ var SHAPES = {
        avoid: 'Narrow letterbox frames, which make a long face look longer.' }
 };
 
+function toMm(value, unit) {
+  var factors = { mm: 1, cm: 10, m: 1000, inch: 25.4, ft: 304.8, yd: 914.4, microm: 0.001 };
+  var factor = factors[String(unit || 'cm').toLowerCase()];
+  return Number(value) * (factor || 10);
+}
+
 function shapeFrom(forehead, cheek, jaw, length, sharpness) {
   var ratio = length / cheek;
   var sharp = Number(sharpness) > 0.7;
@@ -72,10 +78,12 @@ function shapeFrom(forehead, cheek, jaw, length, sharpness) {
 
 omni.onResult(['forehead_width', 'cheeks_width', 'jawline_length', 'face_length', 'sharpness',
                'gender'], function (ctx, v) {
-  var forehead = Number(v.forehead_width);
-  var cheek = Number(v.cheeks_width);
-  var jaw = Number(v.jawline_length);
-  var length = Number(v.face_length);
+  /* Page hooks receive display-unit values. This rule's thresholds and frame
+     dimensions are in millimetres, so normalize all four measurements first. */
+  var forehead = toMm(v.forehead_width, ctx.getUnit('forehead_width'));
+  var cheek = toMm(v.cheeks_width, ctx.getUnit('cheeks_width'));
+  var jaw = toMm(v.jawline_length, ctx.getUnit('jawline_length'));
+  var length = toMm(v.face_length, ctx.getUnit('face_length'));
 
   var missing = [forehead, cheek, jaw, length].some(function (n) { return !isFinite(n) || n <= 0; });
   if (missing) {

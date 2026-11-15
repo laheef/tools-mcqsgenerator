@@ -69,6 +69,13 @@ def age_in_years_months_days() -> dict:
                    "<p>The page does the three steps in order and shows the total day count "
                    "underneath. If the parts look wrong, the total is the line that proves it: "
                    "the three must add up to a span the day count agrees with.</p>",
+            "formula_steps": {
+                "years": "Count birthdays completed by the reference date.",
+                "months": "Floor the days since the last birthday divided by 30.436875.",
+                "days": "Keep the days left after those whole average months.",
+                "total_days": "Reference date minus date of birth.",
+            },
+            "paper_check": "From 17 May to 23 October is 159 days. Five average months use 152 whole days, leaving 6; 36 birthdays have passed, and the full date span is 13,308 days.",
             "formula_note": "Completed years by the birthday rule; months since the last "
                             "birthday divided by the average month and floored; days as the "
                             "remainder of that division. The total is the raw subtraction and "
@@ -317,6 +324,12 @@ def how_old_was_i() -> dict:
                    "first, then the months from the last birthday before that date, then the "
                    "days left over, which is the form a form asks for and the form a memory can "
                    "be checked against.</p>",
+            "formula_steps": {
+                "years": "Count birthdays completed by the chosen date.",
+                "months": "Floor the days since the last birthday divided by 30.436875.",
+                "days": "Keep the days left after those whole average months.",
+            },
+            "paper_check": "From 17 May to 12 June is 26 days. No full average month has passed, so the answer is 20 years, 0 months and 26 days.",
             "formula_note": "Completed years on the reference date, then the days since that "
                             "birthday divided by an average month for the months line, with the "
                             "remainder in days. The reference date can be in the past or the "
@@ -654,6 +667,13 @@ def chronological_age() -> dict:
                    "<p>The page gives the three-part form and the day total behind it. The day "
                    "total is what the three parts are checked against, and it is also the figure "
                    "a corrected-age calculation starts from for a premature baby.</p>",
+            "formula_steps": {
+                "years": "Count birthdays completed by the assessment date.",
+                "months": "Floor the days since the last birthday divided by 30.436875.",
+                "days": "Keep the days left after those whole average months.",
+                "total_days": "Assessment date minus date of birth.",
+            },
+            "paper_check": "From 17 May to 23 October is 159 days. Five average months use 152 whole days, leaving 6; the full date span is 13,308 days.",
             "formula_note": "Years by the birthday rule, months from the last birthday over an "
                             "average month, days as the remainder. The day total is the raw "
                             "subtraction of the two dates and is not derived from the parts.",

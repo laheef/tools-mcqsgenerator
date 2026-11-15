@@ -156,7 +156,9 @@ def main() -> int:
         slug = cat.get("slug") or ""
         name = cat.get("name") or slug.title()
         count = live.get(slug, 0)
-        if not slug:
+        # Match Data::categories(): "discover" is a legacy catalogue bucket,
+        # not a calculator category, and empty categories get no share card.
+        if not slug or slug == "discover" or count <= 0:
             continue
         card(
             f"{name} calculators",

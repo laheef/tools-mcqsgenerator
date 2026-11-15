@@ -99,8 +99,10 @@ def main() -> int:
             continue
         defn = build_def(spec)
         w = words(defn)
-        if w < 1500:
-            print(f"  ~ {spec.slug}: {w} words (thin)")
+        if not 1500 <= w <= 2500:
+            bad += 1
+            print(f"  ! {spec.slug}: article body {w} words (want 1,500–2,500)")
+            continue
         if not args.write:
             if args.report:
                 print(f"  ✓ {spec.slug} {w}w")
