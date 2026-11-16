@@ -1,19 +1,20 @@
 <div align="center">
 
-<img src="docs/screenshots/hero.png" alt="Onim Calculators on desktop and mobile" width="100%">
+<img src="docs/screenshots/hero.png" alt="Onim Tools on desktop and mobile" width="100%">
 
-# Onim Calculators
+# Onim Tools
 
-**4 041 calculators in plain PHP — every tool shows its working.**<br>
+**4 060 free online tools in plain PHP — calculators, converters and file tools that show their working.**<br>
 No framework, no build step, no Composer, no Node, no third-party calls at runtime.
 
 ![PHP 8.1+](https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white)
-![Calculators](https://img.shields.io/badge/calculators-4%20041-2f5bff)
-![Categories](https://img.shields.io/badge/categories-14-0ea5e9)
+![Tools](https://img.shields.io/badge/tools-4%20060-2f5bff)
+![Calculators](https://img.shields.io/badge/formula%20calculators-4%20041-6366f1)
+![Sections](https://img.shields.io/badge/tool%20sections-16-0ea5e9)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-16a34a)
 ![Deploy](https://img.shields.io/badge/deploy-git%20push-f59e0b)
 
-[Live site](https://mcqsgenerator.com/tool) · [Quick start](#quick-start-local) · [Deploy](#deploy) · [Calculator file format](docs/calc-files.md) · [Admin panel](docs/ADMIN-PANEL.md)
+[Live site](https://mcqsgenerator.com/tool) · [Quick start](#quick-start-local) · [Deploy](#deploy) · [Calculator files](docs/calc-files.md) · [Tool plugins](plugins/README.md) · [Admin panel](docs/ADMIN-PANEL.md)
 
 </div>
 
@@ -21,10 +22,30 @@ No framework, no build step, no Composer, no Node, no third-party calls at runti
 
 ## Screenshots
 
-| Home | Category page |
+### The toolbox
+
+| Home | All tools |
 |:---:|:---:|
-| <img src="docs/screenshots/home.png" alt="Home page"> | <img src="docs/screenshots/category-everyday-life.png" alt="Everyday life category with 287 calculators"> |
-| Search, popular topics and every category at a glance | A–Z index and in-category search |
+| <img src="docs/screenshots/home.png" alt="Onim home page"> | <img src="docs/screenshots/all-tools.png" alt="All tools, filtered by section"> |
+| Search, popular topics and every section at a glance | Interactive tools filtered by section |
+
+### Interactive tools
+
+File and design tools run entirely in the browser — nothing is uploaded.
+
+| CSS Box Shadow Generator | Image Converter |
+|:---:|:---:|
+| <img src="docs/screenshots/tool-box-shadow.png" alt="CSS box shadow generator with live preview"> | <img src="docs/screenshots/tool-image-converter.png" alt="Image converter, PNG JPEG WebP"> |
+| Live preview, sliders and copy-ready CSS | PNG, JPEG and WebP with the resulting size shown |
+
+| Tone Generator | Pomodoro Timer |
+|:---:|:---:|
+| <img src="docs/screenshots/tool-tone-generator.png" alt="Tone generator"> | <img src="docs/screenshots/tool-pomodoro.png" alt="Pomodoro timer"> |
+| Play and save tones on the page | Timers for focus sessions |
+
+### Formula calculators
+
+<p align="center"><img src="docs/screenshots/category-everyday-life.png" alt="Everyday life category with 287 calculators" width="80%"><br><sub>Category page — A–Z index and in-category search (287 everyday-life calculators)</sub></p>
 
 | Calculator, before | Calculator, after pressing Calculate |
 |:---:|:---:|
@@ -36,18 +57,21 @@ No framework, no build step, no Composer, no Node, no third-party calls at runti
   &nbsp;&nbsp;&nbsp;
   <img src="docs/screenshots/mobile-calculator.png" alt="Mobile calculator page" width="260">
 </p>
-<p align="center"><sub>Responsive down to phone width — same page, same engine.</sub></p>
+<p align="center"><sub>Responsive down to phone width — same pages, same engine.</sub></p>
 
 ## Highlights
 
+- **Tools, not only calculators.** 4 041 formula calculators across 14 categories, plus interactive tools for images, PDF, audio, video, text, CSS, security and more — 16 sections in all.
+- **Private by design.** File tools run in the browser and never upload your file.
 - **Calculate on demand.** No field is prefilled and nothing is computed until you press Calculate.
 - **Shows its working.** Every page prints the formula, a worked example and a written explanation.
 - **File-based catalogue.** Calculators are plain PHP files (`plugins/calc/<category>/`), so they deploy without a database.
 - **One engine.** A single declarative equation solver, in PHP and JS, drives every page.
 - **Everyday-life section.** 287 calculators for time, dates, sizes, fuel, text styling and more, each one file.
+- **Easy to extend.** A new tool is one PHP file in `plugins/` ([guide](plugins/README.md)); a new calculator is one file in `plugins/calc/` ([format](docs/calc-files.md)).
 - **Zero runtime dependencies.** Vendored Tailwind build, system fonts, vanilla JS.
 
-## How a calculator is served
+## How a page is served
 
 ```mermaid
 flowchart LR
@@ -62,7 +86,7 @@ flowchart LR
 
 ---
 
-The calculator site served at **mcqsgenerator.com/tool**.
+The tools site served at **mcqsgenerator.com/tool**.
 
 
 The brand is **Onim** — name, logo and all 16 social-card images — after a rename
@@ -70,7 +94,7 @@ from the original Omni name, which carried a trademark the site should not lean 
 `007_brand_rename.sql` moves the same name in the database, because three settings
 (`site_name`, `seo_title_suffix`, `mail_from_name`) override the code.
 
-A self-contained rebuild of the Onim Calculator catalogue, packaged to run from
+A self-contained rebuild of the Onim tools catalogue — calculators first, plus the interactive tools — packaged to run from
 **https://mcqsgenerator.com/tool** (a folder under the domain root, not a separate
 vhost). Plain PHP 8.1+, hand-written CSS, vanilla JS: no framework, no build step,
 no Composer, no Node, and no third-party call at runtime — Tailwind is a vendored
@@ -78,6 +102,7 @@ build in `assets/js/vendor/`, fonts are system fonts.
 
 | | |
 |---|---|
+| Tools | **4 060** in 16 sections: the formula calculators below plus interactive tools (image, PDF, audio, video, text, CSS, security, gaming and more) |
 | Calculators | **4 041** across 14 categories (320 biology) — every one of them a file, so they deploy without a database |
 | Calculator files | biology, chemistry and construction are **one file per calculator** (`plugins/calc/<cat>/`): 586 pages with the form, the formulas and the article in one place |
 | Sitemap | 4 057 URLs from files (4 065 once the CMS pages are imported), all under `/tool/` |
