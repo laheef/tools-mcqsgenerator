@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/screenshots/hero.png" alt="Onim Tools on desktop and mobile" width="100%">
+<img src="docs/screenshots/onim-tools-banner.png" alt="Onim Tools on desktop and mobile" width="100%">
 
 # Onim Tools
 

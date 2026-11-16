@@ -1,6 +1,6 @@
 # Admin panel
 
-A complete PHP + MySQL control panel for the catalogue: every calculator, page,
+A complete PHP + MySQL control panel for the catalogue: every calculator, tool, page,
 menu, homepage block, blog post, inbox message, media file, setting and source
 file can be managed from the browser. No file editing, no SQL, no rebuilds.
 
