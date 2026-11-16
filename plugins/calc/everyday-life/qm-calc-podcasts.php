@@ -117,6 +117,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Episodes a week</strong> ×10</td><td>3.75</td><td>37.5</td><td>ten times larger</td></tr><tr><td><strong>Average episode</strong> ×10</td><td>3.75</td><td>37.5</td><td>ten times larger</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Weekly listening habits add up quickly. Five episodes a week at 45 minutes each is 225 minutes weekly; over 52 weeks that is 11,700 minutes, or 195 hours—just over eight full days of continuous listening. The total assumes the same number and length of episodes every week. Enter a representative average if your feed mixes short updates with long interviews.</p><p>Use the result to plan a listening queue or compare it with another activity, not as a promise of calendar completion. Pauses, skipped episodes, variable playback speed and missed weeks change the actual time. If you listen faster than real time, check whether the page includes playback speed; otherwise convert the runtime yourself before interpreting the estimate.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Podcast Time calculator work out?', 'a' => <<<'TXT'

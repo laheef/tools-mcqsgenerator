@@ -78,6 +78,12 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Starting date</strong> +10 days</td><td>20 February 2027</td><td>2 March 2027</td><td>+10 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>A 120-day offset is four months only in some calendar spans. The calculator advances or retreats by a fixed number of dates, so the exact result depends on month lengths and any leap day crossed. Review the weekday and the final date rather than replacing the result with a date four months away.</p><p>For a project milestone, travel allowance or formal period, confirm the start date and whether the rule includes that date. Institutions may use business days or have special extensions for weekends and holidays; this page does not. Treat the output as a calendar arithmetic result, then verify any policy-based deadline with the source that set it.</p>
+            TXT],
+            ['title' => 'Additional practical checks', 'html' => <<<'TXT'
+            <p>A fixed 120-day count often approximates four months, but it is not the same as four calendar months. The exact date depends on the lengths of the months crossed and any leap day. Review the resulting date and weekday rather than assuming a month-based anniversary will match it.</p><p>For a project milestone or formal extension, check whether the start date counts toward the period and whether weekends or holidays affect the final deadline. This calculator shifts a date by calendar days; it does not interpret an institution’s policy or legal definition. Confirm important dates with the source that set the time limit.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the 120 Days From a Date calculator work out?', 'a' => 'It returns 120 days later and 120 days earlier and weekday 120 days later from starting date. The relationship is Starting date + 120.'],

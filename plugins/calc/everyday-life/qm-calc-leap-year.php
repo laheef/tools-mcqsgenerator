@@ -102,6 +102,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Year</strong> ×10</td><td>0</td><td>1</td><td>—</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>In the Gregorian calendar, a year is a leap year when it is divisible by four, except century years, which must also be divisible by 400. Thus 2000 was a leap year, while 1900 was not. The extra day is February 29. Applying only the divisible-by-four rule gives the wrong answer for century years, which is why the exception matters.</p><p>This rule is for the Gregorian calendar and may not apply to other calendar systems or historical dates before a region adopted it. If you are checking a legal or archival date, confirm which calendar the source used. A leap-year result can help with date arithmetic, but an event’s exact weekday or deadline still depends on the full date and any local counting convention.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Leap Year calculator work out?', 'a' => <<<'TXT'

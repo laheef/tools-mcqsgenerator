@@ -80,6 +80,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Starting date</strong> +10 days</td><td>22 November 2026</td><td>2 December 2026</td><td>+10 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Thirty days is a fixed number of calendar days, not the same as one calendar month. Adding 30 days to a date can land on a different day of the following month depending on the starting point. The before-and-after outputs and weekday help show the exact dates produced by the fixed interval.</p><p>If a contract, return policy or notice says “within 30 days,” confirm how that organization counts the first day and whether weekends or public holidays affect the deadline. This calculator simply adds or subtracts the stated number of dates. It cannot interpret a specific policy. For an important deadline, enter the exact start date, review the result and verify it with the issuing organization.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the 30 Days From a Date calculator work out?', 'a' => 'It returns 30 days later and 30 days earlier and weekday 30 days later from starting date. The relationship is Starting date + 30.'],

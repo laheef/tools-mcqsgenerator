@@ -125,6 +125,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Start time</strong> ×10</td><td>17.5</td><td>98.5</td><td>×5.629</td></tr><tr><td><strong>Paid hours</strong> ×10</td><td>17.5</td><td>89.5</td><td>×5.114</td></tr><tr><td><strong>Unpaid break</strong> ×10</td><td>17.5</td><td>22</td><td>×1.257</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>An eight-hour paid shift can occupy more than eight hours on the clock when an unpaid break is included. For example, a 09:00 start, eight paid hours and a 30-minute unpaid break leads to a 17:30 finish. The time on site is 8.5 hours, while paid time remains eight. Check which quantity each result labels so a break is not accidentally counted as paid work or subtracted twice.</p><p>Enter the break duration in the unit requested and decide whether it is paid under the policy that applies to the shift. The calculator checks clock arithmetic; it does not interpret labor law, overtime thresholds or employer rules. For a shift crossing midnight, use the day indicator as well as the clock-out time.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the 8 Hour Shift calculator work out?', 'a' => <<<'TXT'

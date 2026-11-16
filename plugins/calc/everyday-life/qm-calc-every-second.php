@@ -133,6 +133,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Rate per second</strong> ×10</td><td>60</td><td>600</td><td>ten times larger</td></tr><tr><td><strong>Hours a day</strong> ×10</td><td>60</td><td>60</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Multiplying a rate per second by the number of seconds in a period reveals how small repeated events accumulate. A rate of one event each second is 3,600 per hour and 86,400 per 24-hour day. For a work year, use the working-day or hours-per-day assumptions shown in the form rather than silently substituting every calendar day.</p><p>This kind of projection assumes the rate stays constant throughout the chosen period. A real process may pause, speed up or vary by season, so treat long-term totals as scenarios. Check whether the input is a count per second, a cost per second or another rate, and confirm the period’s units before interpreting the outputs. The multiplication is exact for the stated assumptions, not a forecast of future behavior.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Every Second calculator work out?', 'a' => <<<'TXT'

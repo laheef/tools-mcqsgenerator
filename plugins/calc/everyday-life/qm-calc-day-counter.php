@@ -99,6 +99,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date</strong> +10 days</td><td>296</td><td>306</td><td>×1.034</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>The day number depends on the selected calendar year. In a common day-of-year count, January 1 is day 1; later dates advance by one for each calendar day, and dates after February 29 shift by one in a leap year. The remaining-days figure and percentage provide another view of where the date sits in that year.</p><p>Check whether the page’s “days remaining” count includes the selected day or starts after it; that convention can matter near a deadline. The year percentage is a calendar position, not a measure of workdays elapsed, because weekends and holidays still count as dates. If you need business-day planning, use a calculator that explicitly accounts for the relevant weekends and holidays.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Day Counter calculator work out?', 'a' => 'It returns day of the year and days left in the year and days in this year and through the year from date. The relationship is getDayOfYear(Date) + 1.'],

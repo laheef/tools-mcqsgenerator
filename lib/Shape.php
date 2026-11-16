@@ -123,6 +123,7 @@ final class Shape
              */
             'kind'        => (string) ($rec['kind'] ?? 'formula'),
             'tool'        => is_array($rec['tool'] ?? null) ? $rec['tool'] : null,
+            'allowEmptyCalculate' => !empty($rec['allowEmptyCalculate']),
         ];
     }
 
@@ -361,6 +362,7 @@ final class Shape
                     : ['algorithm' => 'omni', 'precision' => ''],
                 'minDigits' => null,
                 'defaults'  => [],
+                'outputOnly' => !empty(($fields[$name] ?? [])['oo']),
             ];
 
             // prefilled values: the shard keeps them as {v, c} (value, condition)

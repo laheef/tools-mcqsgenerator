@@ -102,6 +102,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Start time</strong> +10 hours</td><td>16:05</td><td>02:05</td><td>-1 d</td></tr><tr><td><strong>Hours to add</strong> ×10</td><td>16:05</td><td>07:05</td><td>-0 d</td></tr><tr><td><strong>Minutes to add</strong> ×10</td><td>16:05</td><td>23:35</td><td>+0 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Enter hours and minutes as separate quantities, then check whether the resulting clock time crosses midnight. For example, adding 1 hour 45 minutes to 23:30 lands at 01:15 the following day. The result clock alone may not communicate the date change, so use the day indicator or note the next-day transition when planning a reminder or shift.</p><p>Minutes are base-60 units: 90 minutes is 1 hour 30 minutes, not 1 hour 90 minutes. If the form accepts large minute values, the calculator normalizes them in the result. Time-of-day arithmetic does not account for time zones or daylight-saving transitions; for a real-world event on a clock-change date, use dated times and the relevant zone.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Adding Hours and Minutes calculator work out?', 'a' => <<<'TXT'

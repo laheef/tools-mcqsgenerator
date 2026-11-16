@@ -94,6 +94,12 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Start time</strong> +10 hours</td><td>10:30</td><td>20:30</td><td>+0 d</td></tr><tr><td><strong>Minutes to add</strong> ×10</td><td>10:30</td><td>00:00</td><td>-0 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Adding minutes to a clock time is easiest to check by converting the start time to minutes after midnight, adding the requested amount and converting back to hours and minutes. For example, adding 90 minutes means adding one hour and 30 minutes. The minutes-from-midnight result provides an independent check on the displayed clock time.</p><p>If the answer wraps past midnight, use the day-change indicator or note the next date in your schedule. A clock-time calculator does not automatically include a time zone or daylight-saving change. For a short reminder in one time zone, the clock output is enough; for travel or a long-running event, include the dates and zones.</p>
+            TXT],
+            ['title' => 'Additional practical checks', 'html' => <<<'TXT'
+            <p>A quick manual check is to convert the start time to minutes after midnight, add the entered number, then convert the total back to a clock reading. For instance, 90 minutes equals one hour and 30 minutes. The “minutes from midnight” output is useful for checking the arithmetic independently of the formatted clock result.</p><p>If the result wraps past midnight, record the next day as well as the time. A clock-only calculator cannot account for time zones or daylight-saving changes; use full dates and a named zone for travel or events on a clock-change day. For reminders on an ordinary day, the resulting clock time is a simple scheduling aid.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Add Minutes to a Time calculator work out?', 'a' => <<<'TXT'

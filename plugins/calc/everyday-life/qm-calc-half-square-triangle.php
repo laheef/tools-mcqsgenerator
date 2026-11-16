@@ -120,6 +120,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Finished size</strong> ×10</td><td>4.875</td><td>40.875</td><td>×8.385</td></tr><tr><td><strong>Triangles wanted</strong> ×10</td><td>4.875</td><td>4.875</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>A half-square triangle is made by sewing two fabric squares diagonally and cutting them apart. A common quilting rule is to start with a square 7/8 inch larger than the desired finished unit: a four-inch finished half-square triangle therefore starts from a 4 7/8-inch square. The extra fabric accounts for two seam allowances along the diagonal; the block is trimmed after sewing.</p><p>Check whether the calculator asks for the finished size, unfinished size or starting square. Those measurements differ by seam allowance, and patterns may use a slightly larger trimming margin for accuracy. Fabric stretch, cutting precision and the chosen seam allowance affect the finished block. Make a test unit with the same fabric and method if exact dimensions matter, then follow the pattern’s own trimming instructions.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Half Square Triangle calculator work out?', 'a' => <<<'TXT'

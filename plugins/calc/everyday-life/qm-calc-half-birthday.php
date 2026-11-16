@@ -96,6 +96,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date of birth</strong> +10 days</td><td>14 August 2026</td><td>24 August 2026</td><td>+10 d</td></tr><tr><td><strong>Count from</strong> +10 days</td><td>14 August 2026</td><td>14 August 2026</td><td>+0 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>A half-birthday is usually treated as the calendar date six months after a birth date, but months have different lengths. A date near the end of a long month may need a convention when the destination month has fewer days. Check the page’s returned date and weekday, especially for dates near the 29th, 30th or 31st and for births on February 29.</p><p>The next half-birthday depends on the chosen reference date: if the date has already passed this year, the next occurrence may be in the following calendar cycle. This is a fun milestone, not a legal age or a medical measure. If you are planning an event, verify the date in your local calendar and consider whether the family celebrates on the calculated day or a nearby weekend.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Half Birthday calculator work out?', 'a' => <<<'TXT'

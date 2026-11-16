@@ -106,6 +106,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date of birth</strong> +10 days</td><td>36</td><td>36</td><td>unchanged</td></tr><tr><td><strong>As of</strong> +10 days</td><td>36</td><td>36</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Calendar age is usually expressed as completed years, then completed months, then remaining days. It is not found by dividing a total day count by a fixed number of days per month, because months vary in length. Enter the birth date and the reference date that the form asks for; the output describes the interval between those two dates.</p><p>Month-end dates and February 29 births can require a convention when a later month lacks the same day number. Different forms or institutions may define the anniversary differently, especially for legal eligibility. Use the displayed result as a calendar calculation and check the authority’s rule if the answer affects a formal decision. If you want age as of today, confirm the reference date is current.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Age in Years, Months and Days calculator work out?', 'a' => <<<'TXT'

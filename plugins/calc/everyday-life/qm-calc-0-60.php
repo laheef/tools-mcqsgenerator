@@ -141,6 +141,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>0-60 time</strong> ×10</td><td>13.538</td><td>1.354</td><td>ten times smaller</td></tr><tr><td><strong>Kerb weight</strong> ×10</td><td>13.538</td><td>13.538</td><td>unchanged</td></tr><tr><td><strong>Power</strong> ×10</td><td>13.538</td><td>13.538</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>The acceleration figures are averages over the measured interval. A car does not necessarily accelerate at one constant rate from rest to 60 mph, so the calculated average cannot describe every point in the launch. Timing methods also differ: rollout, surface grip, tyres, temperature, slope and vehicle load can change a real test. Use comparable test conditions when comparing two vehicles.</p><p>Distance and power-to-weight outputs are model-based interpretations of the supplied time, mass and power. Confirm whether weight is entered as mass or force and check the units shown beside each field. The calculation is useful for understanding scale, not for predicting stopping distance, safe road performance or a manufacturer’s official test result.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the 0 to 60 calculator work out?', 'a' => <<<'TXT'

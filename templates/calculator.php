@@ -285,6 +285,7 @@ $clientPayload = [
     'labels' => $calc['labels'] ?? [],
     'js' => $calc['js'] ?? null,
     'precision' => null,
+    'allowEmptyCalculate' => !empty($calc['allowEmptyCalculate']),
 ];
 ?>
 <div class="calc-shell">

@@ -635,6 +635,9 @@ final class CalcFile
             'eq'       => $eq,
             'datasets' => $datasets,
         ];
+        if (!empty($def['allowEmptyCalculate'])) {
+            $rec['allowEmptyCalculate'] = true;
+        }
         /* A file written here rather than harvested: the defaults in it were
            chosen deliberately, so the widget may prefill them. */
         if (!empty($def['authored'])) {

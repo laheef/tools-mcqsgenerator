@@ -106,6 +106,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date of birth</strong> +10 days</td><td>36</td><td>36</td><td>unchanged</td></tr><tr><td><strong>Date of assessment</strong> +10 days</td><td>36</td><td>36</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Chronological age is the calendar time from birth to a reference date. The years-months-days form follows calendar boundaries, while any total-day result counts intervening dates. These can answer different questions: a birthday age is not always equivalent to converting total days into a decimal number of years.</p><p>Enter the date of birth carefully and confirm the “as of” date. If the calculator does not ask for time of birth, it cannot resolve exact age at a specific hour or account for time zones. Medical, developmental and legal forms may specify a particular method for calculating age; follow their instructions rather than substituting a generic result. This tool is a date arithmetic aid, not an assessment of health or development.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Chronological Age calculator work out?', 'a' => <<<'TXT'

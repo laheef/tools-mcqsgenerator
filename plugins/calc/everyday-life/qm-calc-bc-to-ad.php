@@ -114,6 +114,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Starting year (BC)</strong> ×10</td><td>2 125</td><td>3 025</td><td>×1.424</td></tr><tr><td><strong>Ending year (AD)</strong> ×10</td><td>2 125</td><td>20 359</td><td>×9.581</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>The important calendar detail is that the traditional BC/AD sequence has no year zero: 1 BC is followed immediately by AD 1. A simple subtraction across the boundary can therefore be off by one if it treats the labels as ordinary signed integers. Use the calculator’s era fields as intended and read the result as an elapsed year count, not as a count of numbered labels that includes a nonexistent zero year.</p><p>For example, a span from 3 BC to AD 3 crosses the era boundary and should be reasoned through as 3 years before the change plus 3 years after it, with no year zero inserted. A year-only calculation cannot tell how many exact days separate two historical events; their months and days matter. Calendar reforms and local historical dating conventions can matter too, so use dated source records when precision is important.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the BC to AD Year calculator work out?', 'a' => <<<'TXT'

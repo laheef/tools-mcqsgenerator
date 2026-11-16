@@ -100,6 +100,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Start date</strong> +10 days</td><td>9</td><td>8</td><td>×0.889</td></tr><tr><td><strong>End date</strong> +10 days</td><td>9</td><td>9</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Months are calendar units, not blocks of a fixed number of days. A span from the 31st can encounter a month that has no 31st, so a month-based result and a total-day count answer different questions. Enter both dates and read the whole-month count alongside any remaining days rather than converting months using a constant such as 30 days.</p><p>This distinction matters for leases, subscriptions and notice periods: their terms may define a month or an end date in a particular way. The calculator gives a calendar comparison based on its rule, but it does not decide whether a contract counts the first day, includes the end date or shifts a due date that falls on a weekend. Check the governing terms before relying on a result for a formal deadline.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Month Counter calculator work out?', 'a' => <<<'TXT'

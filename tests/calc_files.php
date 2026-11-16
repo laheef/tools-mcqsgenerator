@@ -74,9 +74,24 @@ foreach ($files as $path => $file) {
        finite number is a page that answers nothing. */
     $inputs = [];
     foreach ($visible as $name => $_) {
+        /* A visible result box is not an input value. Feed the sample only into
+           fields a visitor can edit, so a tool cannot pass simply because a
+           test value was injected into one of its answer fields. */
+        if (!empty($calc['variables'][$name]['outputOnly'])) {
+            continue;
+        }
         $type = (string) ($calc['variables'][$name]['type'] ?? 'numerical');
         if ($type === 'numerical') {
             $inputs[$name] = 2.0;
+        } elseif ($type === 'date') {
+            $birth = preg_match('/birth|born/i', (string) $name) === 1;
+            $date = new DateTimeImmutable($birth ? '2000-01-15T12:00:00+00:00' : '2024-01-15T12:00:00+00:00');
+            $inputs[$name] = (float) $date->getTimestamp() * 1000;
+        } elseif ($type === 'datetime') {
+            $date = new DateTimeImmutable('2024-01-15T12:00:00+00:00');
+            $inputs[$name] = (float) $date->getTimestamp() * 1000;
+        } elseif ($type === 'time') {
+            $inputs[$name] = 10 * 60 * 60 * 1000;
         } elseif ($type === 'valueSelect') {
             $value = Solver::selectValue($calc, $name, $calc['variables'][$name], null);
             if ($value !== null) {

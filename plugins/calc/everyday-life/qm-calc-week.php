@@ -88,6 +88,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date</strong> +10 days</td><td>5</td><td>1</td><td>×0.2</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>A date belongs to a seven-day span, but week numbering depends on the convention being used. This page reports the weekday and the Monday-to-Sunday dates that bracket the selected date; check the displayed week number against the calendar standard your workplace, school or country uses. A week that crosses a year boundary can be numbered differently under different systems.</p><p>For scheduling, use the actual Monday and Sunday dates rather than relying only on a week number. The start-of-week convention can differ in calendars, and a date near New Year may belong to a numbered week associated with the previous or following year. This calculator is a date-planning aid; it does not account for local holidays or organizational work-week rules.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Week calculator work out?', 'a' => 'It returns weekday and day of the year and monday of that week and sunday of that week from date. The relationship is mod(Date + 3, 7) + 1.'],

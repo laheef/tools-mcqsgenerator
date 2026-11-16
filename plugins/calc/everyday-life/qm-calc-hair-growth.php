@@ -131,6 +131,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Growth per month</strong> ×10</td><td>15</td><td>150</td><td>ten times larger</td></tr><tr><td><strong>Months</strong> ×10</td><td>15</td><td>150</td><td>ten times larger</td></tr><tr><td><strong>Current length</strong> ×10</td><td>15</td><td>15</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Hair-growth estimates extend a chosen average rate over a period; they do not measure an individual follicle or predict an exact future length. Enter the starting length, time span and rate in the units shown. The result in centimetres and inches is a straight-line estimate, so a different assumed rate changes the projected length proportionally.</p><p>Actual growth and retained length vary with genetics, health, age, hair type, breakage, trims and styling. Some people measure from the scalp while others measure a visible strand, so keep the starting point consistent if you compare later measurements. Use the estimate for rough planning, such as seeing the scale of a few months’ growth, not as a medical assessment or guarantee.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Hair Growth calculator work out?', 'a' => <<<'TXT'

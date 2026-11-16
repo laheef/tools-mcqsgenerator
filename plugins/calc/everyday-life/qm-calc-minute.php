@@ -109,6 +109,12 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Minutes</strong> ×10</td><td>1.5</td><td>15</td><td>ten times larger</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>One minute is 60 seconds, 1/60 of an hour and 1/1,440 of a 24-hour day. Ninety minutes therefore equals 1.5 hours, 5,400 seconds or 0.0625 day. The same duration can look very different depending on the unit, so read the label beside each result and avoid interpreting a decimal fraction as a clock-format minute field.</p><p>When converting a real task, use the output that matches the next calculation. For a work duration, decimal hours may be needed; for a timer, minutes and seconds are clearer; for a portion of a day, use the day fraction. The calculator converts units only. It does not account for calendar days, breaks or time-zone changes.</p>
+            TXT],
+            ['title' => 'Detailed use notes', 'html' => <<<'TXT'
+            <p>Use a minute conversion by identifying the quantity you need next. There are 60 seconds in a minute, 60 minutes in an hour and 1,440 minutes in a 24-hour day. A minute is therefore 1/60 hour or 1/1,440 day. If the result is a fraction, it represents a proportion of that unit, not digits in a clock display.</p><p>For example, 90 minutes is 1.5 hours, while a clock reading of 1:30 means one hour and 30 minutes. Both can describe the same duration, but they are written differently. Use decimal hours for arithmetic with hourly rates and clock format for scheduling. Calendar events, breaks and daylight-saving changes require context beyond a simple unit conversion.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Minute calculator work out?', 'a' => 'It returns hours and seconds and days and share of a day from minutes. The relationship is Minutes ÷ 60.'],

@@ -1431,6 +1431,7 @@
    * a missing box.
    */
   function formSupplied() {
+    if (DEF.allowEmptyCalculate === true) return true;
     var any = false;
     inputs.forEach(function (i) {
       if (String(i.value || '').trim() !== '') any = true;

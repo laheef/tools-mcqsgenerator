@@ -94,6 +94,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>First date of birth</strong> +10 days</td><td>4.463</td><td>4.435</td><td>×0.994</td></tr><tr><td><strong>Second date of birth</strong> +10 days</td><td>4.463</td><td>4.49</td><td>×1.006</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Age differences depend on the two full dates of birth, not just the birth years. Someone born late in a year can be younger than another person born early in the following year, even when a simple subtraction suggests otherwise. Enter both dates in the correct fields and read the years, months and days together; those components describe one calendar interval.</p><p>The result is a date-based comparison, not a judgment about eligibility, legal age or developmental stage. If you are using it for a form or rule, check whether that rule defines age on a specific date and whether it uses whole years or elapsed time. For everyday comparisons, the chronological difference is a useful way to answer who is older and by how much.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Age Difference calculator work out?', 'a' => <<<'TXT'

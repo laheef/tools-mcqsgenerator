@@ -98,6 +98,12 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Date of birth</strong> +10 days</td><td>20</td><td>20</td><td>unchanged</td></tr><tr><td><strong>On this date</strong> +10 days</td><td>20</td><td>20</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>To find how old you were on a past or future date, enter your birth date and the reference date. Read the result as completed years with any remaining months and days; do not calculate it by subtracting year numbers alone, because the birthday may not yet have occurred in the reference year.</p><p>The result is based on calendar dates. If the form does not ask for birth time, it cannot determine age to the hour, and leap-day birthdays may follow different conventions in official rules. For a school record, application or legal question, use the age definition supplied by that organization. For personal curiosity, the calculator gives a clear date-based answer.</p>
+            TXT],
+            ['title' => 'Additional practical checks', 'html' => <<<'TXT'
+            <p>Enter the date of birth and the date you want to look back to. Age in completed years changes on the birthday, so subtracting one year number from another can be wrong before that birthday arrives. The years, months and days together describe the calendar interval more clearly than a single rough age.</p><p>If the reference date is before the birth date, check the entries and their order. This date calculator does not infer a birth time or time zone, and special rules may apply to leap-day birthdays. Use the result for a personal timeline; for a form, eligibility rule or official record, follow the organization’s stated age convention.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the How Old Was I calculator work out?', 'a' => <<<'TXT'

@@ -119,6 +119,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Sheets in the stack</strong> ×10</td><td>0.1</td><td>0.01</td><td>ten times smaller</td></tr><tr><td><strong>Height of the stack</strong> ×10</td><td>0.1</td><td>1</td><td>ten times larger</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Sheet thickness is often called caliper. Divide the measured stack thickness by the number of sheets to estimate the thickness of one sheet; for instance, a 10 mm stack of 100 sheets averages 0.1 mm per sheet. Use a stack large enough for the measurement to be reliable, and measure without compressing soft or textured paper more than the intended use would.</p><p>Paper weight and paper thickness are related but not identical: two stocks with the same basis weight can have different calipers because of pulp, coating and manufacturing. Ream size also matters when converting a stated paper weight. Use the result for estimating stack height, a print job or a binding allowance, and confirm with the paper supplier’s specification when a machine, envelope or spine has a tight tolerance.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Paper Thickness calculator work out?', 'a' => <<<'TXT'

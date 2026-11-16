@@ -117,6 +117,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Hourly rate</strong> ×10</td><td>0.75</td><td>7.5</td><td>ten times larger</td></tr><tr><td><strong>Time to cost</strong> ×10</td><td>0.75</td><td>0.75</td><td>unchanged</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>Divide an hourly rate by 60 to estimate the value of one minute. At $60 per hour, one minute corresponds to $1; a 15-minute meeting corresponds to $15 at that rate for one person. If several people attend, multiply by the number of attendees only when you want a group labor-cost estimate and when the same rate applies to each person.</p><p>This is an opportunity-cost calculation, not necessarily a cash expense or invoice amount. Salaries, overhead, billable rates and actual productivity are different concepts. Use a rate that matches the question, convert currencies and time units consistently, and avoid treating the result as a precise measure of a meeting’s value. The annualized output depends strongly on how many minutes recur and how many workdays the page assumes.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the Cost per Minute calculator work out?', 'a' => <<<'TXT'

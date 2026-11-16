@@ -80,6 +80,9 @@ return [
             ['title' => 'When one number is out by a factor of ten', 'html' => <<<'TXT'
             <p>A decimal slip leaves an answer that still looks like an answer. Here is what the first result does when each box is exaggerated:</p><table class="calc-table"><thead><tr><th>Change</th><th>Result</th><th>Becomes</th><th>Effect</th></tr></thead><tbody><tr><td><strong>Starting date</strong> +10 days</td><td>7 December 2026</td><td>17 December 2026</td><td>+10 d</td></tr></tbody></table><p>Where the effect column says ten times larger, that box feeds the answer directly, so a slip passes straight through. Where the effect is smaller, the box sits inside a sum or a ratio and the mistake is partly absorbed. That is worse, not better: the answer then looks believable.</p>
             TXT],
+            ['title' => 'Practical assumptions and checks', 'html' => <<<'TXT'
+            <p>A fixed 45-day offset is not the same as “a month and a half.” Months have different lengths, while a 45-day calculation advances by exactly 45 calendar dates under the page’s convention. The calculator also reports the weekday, which is a handy check on the resulting date. A negative offset, if accepted, counts backward rather than forward.</p><p>For notice periods, returns or contractual deadlines, verify whether the rule counts the start date, excludes weekends or moves a date that falls on a holiday. This page performs a calendar-day addition; it does not apply an institution’s special counting policy. Enter the actual reference date and use the result as a planning prompt, then check the source terms before relying on it.</p>
+            TXT],
         ],
         'faq' => [
             ['q' => 'What does the 45 Days From a Date calculator work out?', 'a' => 'It returns 45 days later and 45 days earlier and weekday 45 days later from starting date. The relationship is Starting date + 45.'],
