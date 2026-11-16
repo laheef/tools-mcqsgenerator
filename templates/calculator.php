@@ -74,7 +74,13 @@ foreach ($calc['groups'] as $g) {
                 if ($key !== null) {
                     /* Around the unit the box actually opens in, so the chip and
                        the article's "N units" are the same list. */
-                    $opening = $f['defaultUnit'] ?? $units->defaultUnit($key);
+                    /* The matrix field carries the opening unit as `du` (the
+                       record's own key); `defaultUnit` is what the variable
+                       record calls it. Reading only the latter trimmed the
+                       client's unit table around the switcher's default, so a
+                       box opening in kilometres offered a chip whose kilometres
+                       the script could not convert. */
+                    $opening = $f['unitDefault'] ?? $f['defaultUnit'] ?? $f['du'] ?? $units->defaultUnit($key);
                     foreach ($units->options($key, $opening) as $slug => $u) {
                         $unitExprs[$key][$slug] = $u['expr'];
                     }
