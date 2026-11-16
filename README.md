@@ -1,4 +1,66 @@
-# tools-mcqsgenerator — 4 041 calculators, plain PHP
+<div align="center">
+
+<img src="docs/screenshots/hero.png" alt="Onim Calculators on desktop and mobile" width="100%">
+
+# Onim Calculators
+
+**4 041 calculators in plain PHP — every tool shows its working.**<br>
+No framework, no build step, no Composer, no Node, no third-party calls at runtime.
+
+![PHP 8.1+](https://img.shields.io/badge/PHP-8.1%2B-777BB4?logo=php&logoColor=white)
+![Calculators](https://img.shields.io/badge/calculators-4%20041-2f5bff)
+![Categories](https://img.shields.io/badge/categories-14-0ea5e9)
+![Dependencies](https://img.shields.io/badge/dependencies-none-16a34a)
+![Deploy](https://img.shields.io/badge/deploy-git%20push-f59e0b)
+
+[Live site](https://mcqsgenerator.com/tool) · [Quick start](#quick-start-local) · [Deploy](#deploy) · [Calculator file format](docs/calc-files.md) · [Admin panel](docs/ADMIN-PANEL.md)
+
+</div>
+
+---
+
+## Screenshots
+
+| Home | Category page |
+|:---:|:---:|
+| <img src="docs/screenshots/home.png" alt="Home page"> | <img src="docs/screenshots/category-everyday-life.png" alt="Everyday life category with 287 calculators"> |
+| Search, popular topics and every category at a glance | A–Z index and in-category search |
+
+| Calculator, before | Calculator, after pressing Calculate |
+|:---:|:---:|
+| <img src="docs/screenshots/calculator-empty.png" alt="Fuel Cost Calculator, empty form with inline validation"> | <img src="docs/screenshots/calculator-result.png" alt="Fuel Cost Calculator with results and copy buttons"> |
+| Nothing is prefilled; missing fields are listed inline | Formatted results with units, one-click copy, worked-example article below |
+
+<p align="center">
+  <img src="docs/screenshots/mobile-home.png" alt="Mobile home page" width="260">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/mobile-calculator.png" alt="Mobile calculator page" width="260">
+</p>
+<p align="center"><sub>Responsive down to phone width — same page, same engine.</sub></p>
+
+## Highlights
+
+- **Calculate on demand.** No field is prefilled and nothing is computed until you press Calculate.
+- **Shows its working.** Every page prints the formula, a worked example and a written explanation.
+- **File-based catalogue.** Calculators are plain PHP files (`plugins/calc/<category>/`), so they deploy without a database.
+- **One engine.** A single declarative equation solver, in PHP and JS, drives every page.
+- **Everyday-life section.** 287 calculators for time, dates, sizes, fuel, text styling and more, each one file.
+- **Zero runtime dependencies.** Vendored Tailwind build, system fonts, vanilla JS.
+
+## How a calculator is served
+
+```mermaid
+flowchart LR
+    A[Request<br>/everyday-life/fuel-cost] --> B[router.php / .htaccess]
+    B --> C[index.php front controller]
+    C --> D[lib/CalcFile.php<br>loads plugins/calc/...]
+    D --> E[Declarative equations<br>+ article]
+    E --> F[templates/calculator.php]
+    F --> G[assets/js/calc.js<br>solves in the browser]
+    G --> H[Result with units,<br>formula and copy buttons]
+```
+
+---
 
 The calculator site served at **mcqsgenerator.com/tool**.
 
