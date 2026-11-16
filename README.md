@@ -75,13 +75,13 @@ File and design tools run entirely in the browser — nothing is uploaded.
 
 ```mermaid
 flowchart LR
-    A[Request<br>/everyday-life/fuel-cost] --> B[router.php / .htaccess]
-    B --> C[index.php front controller]
-    C --> D[lib/CalcFile.php<br>loads plugins/calc/...]
-    D --> E[Declarative equations<br>+ article]
-    E --> F[templates/calculator.php]
-    F --> G[assets/js/calc.js<br>solves in the browser]
-    G --> H[Result with units,<br>formula and copy buttons]
+    A["Request<br/>/everyday-life/fuel-cost"] --> B["router.php / .htaccess"]
+    B --> C["index.php<br/>front controller"]
+    C --> D["lib/CalcFile.php<br/>loads plugins/calc/..."]
+    D --> E["Declarative equations<br/>+ article"]
+    E --> F["templates/calculator.php"]
+    F --> G["assets/js/calc.js<br/>solves in the browser"]
+    G --> H["Result with units,<br/>formula and copy buttons"]
 ```
 
 ---
