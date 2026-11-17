@@ -117,9 +117,13 @@ if ($page === 'reset') {
         if ($problem !== null) {
             $error = $problem;
         } else {
-            Reset::consume($token, $pass, (int) $resetUser['id']);
-            Flash::success('Password updated. Sign in with the new one.');
-            redirect_to(admin_url('login'));
+            if (Reset::consume($token, $pass, (int) $resetUser['user_id'])) {
+                Flash::success('Password updated. Sign in with the new one.');
+                redirect_to(admin_url('login'));
+            }
+            // Do not claim success if the database rejected the update. The
+            // transaction leaves the password and token unchanged on failure.
+            $error = 'We could not save your new password. The reset link may have expired or the database could not complete the update. Please try again or request a new link.';
         }
     }
     render_plain('login', ['mode' => 'reset', 'error' => $error, 'token' => $token, 'resetUser' => $resetUser]);
