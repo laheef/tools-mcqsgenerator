@@ -142,6 +142,14 @@ column index per field, and `grid` carries the record's own name for the layout
 ],
 ```
 
+Input fields can also set numeric limits. `min` and `max` are inclusive and are checked before calculation; invalid values receive an inline field error. For example:
+
+```php
+['name' => 'share', 'label' => 'Share', 'type' => 'number', 'min' => '0', 'max' => '100'],
+```
+
+Cross-field constraints live in `checks`. Pairwise rules use `a`, `op`, and `b`; `terms` plus `limit` validates a sum (blank terms count as zero), and `expr` plus `vars` validates a relationship involving several fields. Every named variable must be present for an expression check. Set `field` to choose where the error appears and `msg` for its text. These checks run on Calculate, before formulas are evaluated.
+
 Several passes are allowed when one depends on another:
 
 ```php

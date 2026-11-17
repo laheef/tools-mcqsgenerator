@@ -31,8 +31,7 @@ use Onim\Admin\Reset;
 use Onim\Cms;
 use Onim\Db;
 
-$page = (string) ($_GET['p'] ?? 'dashboard');
-$page = preg_replace('~[^a-z0-9-]~', '', strtolower($page)) ?: 'dashboard';
+$page = admin_route_page();
 
 /* --------------------------------------------------------- not installed */
 

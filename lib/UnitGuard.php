@@ -319,9 +319,15 @@ final class UnitGuard
                 if (isset($block['fields'])) {
                     $def['sections'][$si]['blocks'][$bi]['fields'] = $walk((array) $block['fields']);
                 }
-                foreach ($block['columns'] ?? [] as $ci => $column) {
-                    if (is_array($column)) {
-                        $def['sections'][$si]['blocks'][$bi]['columns'][$ci] = $walk($column);
+                /* `columns` is normally an array of field columns, but some
+                   harvested definitions store the column count as an integer.
+                   Only walk the field-list shape; iterating a count emits a
+                   warning and cannot remove a unit from any field. */
+                if (is_array($block['columns'] ?? null)) {
+                    foreach ($block['columns'] as $ci => $column) {
+                        if (is_array($column)) {
+                            $def['sections'][$si]['blocks'][$bi]['columns'][$ci] = $walk($column);
+                        }
                     }
                 }
             }

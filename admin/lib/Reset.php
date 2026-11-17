@@ -48,7 +48,7 @@ final class Reset
             'requested_ip' => client_ip(),
         ]);
 
-        $url = site_url() . admin_base() . '/index.php?p=reset&token=' . $token;
+        $url = admin_absolute_url('reset', ['token' => $token]);
         $result = Mailer::send([
             'to'      => (string) $user['email'],
             'subject' => 'Reset your ' . Cms::siteName() . ' admin password',

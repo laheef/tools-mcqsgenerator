@@ -77,6 +77,50 @@ function admin_url(string $page = 'dashboard', array $params = []): string
     return admin_base() . '/index.php?' . http_build_query($query);
 }
 
+/** Resolve the query-string route and the panel's direct/pretty path aliases. */
+function admin_route_page(): string
+{
+    $requested = trim((string) ($_GET['p'] ?? ''));
+    if ($requested === '') {
+        $path = parse_url((string) ($_SERVER['REQUEST_URI'] ?? '/'), PHP_URL_PATH) ?: '/';
+        $base = admin_base();
+        if ($path === $base || $path === $base . '/') {
+            $requested = 'dashboard';
+        } elseif (str_starts_with($path, $base . '/')) {
+            $requested = trim(substr($path, strlen($base)), '/');
+        }
+    }
+
+    $requested = preg_replace('~[^a-z0-9-]~', '', strtolower($requested)) ?: 'dashboard';
+    $aliases = [
+        'indexphp' => 'dashboard',
+        'forgot-password' => 'forgot',
+        'password-reset' => 'reset',
+        'reset-password' => 'reset',
+        'change-password' => 'account',
+    ];
+    return $aliases[$requested] ?? $requested;
+}
+
+/** Absolute panel URL using the configured host and admin's actual base path. */
+function admin_absolute_url(string $page = 'dashboard', array $params = []): string
+{
+    $parts = parse_url(site_url());
+    if (!is_array($parts) || empty($parts['host'])) {
+        return admin_url($page, $params);
+    }
+    $scheme = (string) ($parts['scheme'] ?? 'https');
+    $host = (string) $parts['host'];
+    if (str_contains($host, ':') && !str_starts_with($host, '[')) {
+        $host = '[' . $host . ']';
+    }
+    $origin = $scheme . '://' . $host;
+    if (isset($parts['port'])) {
+        $origin .= ':' . (int) $parts['port'];
+    }
+    return $origin . admin_url($page, $params);
+}
+
 function admin_asset(string $path): string
 {
     return admin_base() . '/assets/' . ltrim($path, '/') . '?v=' . ADMIN_VERSION;

@@ -16,8 +16,10 @@ AddDefaultCharset UTF-8
     # directory inside this folder; served as files it would expose the whole
     # history (and config.db.php from any commit that ever contained it).
     RewriteRule (^|/)\.git(/|$) - [F,L]
-    # The panel keeps its own front controller.
+    # Keep panel requests inside /admin so its own .htaccess and front
+    # controller can handle routes such as /admin/forgot and /admin/reset.
     RewriteRule ^admin/(lib|views|controllers|migrations)/ - [F,L]
+    RewriteRule ^admin(/|$) - [L]
     # Data, caches, backups, tests and the build notes are not public.
     RewriteRule ^(data|tests|tools|docs|install|plugins)/ - [F,L]
     RewriteRule ^config\.(db|local|db\.sample)\.php - [F,L]

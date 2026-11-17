@@ -1,0 +1,184 @@
+<?php
+
+/**
+ * Long term care
+ * /finance/long-term-care
+ *
+ * One calculator, one file. Edit the form, the formulas or the
+ * article here; the page is rebuilt from this file on the next
+ * request. See docs/calc-files.md for the format.
+ */
+
+return [
+    'name' => 'Long term care',
+    'meta' => ['title' => 'Long term care Calculator — Formula & Results', 'description' => 'Long term care reports cost of present year (pc) and total inflated cost after the specified period. Results come back in USD, with any other unit a click away.', 'h1' => 'Long term care Calculator', 'updated' => '2026-09-01'],
+    'sections' => [
+        [
+            'title' => '',
+            'note' => '',
+            'blocks' => [
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'costPerDayOrMonth',
+                            'label' => 'The cost is ',
+                            'type' => 'select',
+                            'options' => ['per day' => '365', 'per month' => '12'],
+                            'dataset' => 'costPerDayOrMonth',
+                            'default' => 'per day',
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'cost',
+                            'label' => 'Cost (dc, mc)',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'costOfPresentYear',
+                            'label' => 'Cost of present year (pc)',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'noOfYears',
+                            'label' => 'No. of years (n)',
+                            'type' => 'number',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'rateOfInflation',
+                            'label' => 'Rate of inflation (r)',
+                            'type' => 'number',
+                            'suffix' => '%',
+                            'rounding' => ['omni', '0.0001'],
+                        ],
+                    ],
+                ],
+                [
+                    'columns' => 1,
+                    'fields' => [
+                        [
+                            'name' => 'totalInflatedCostAfterTheSpecifiedPeriod',
+                            'label' => 'Total inflated cost after the specified period',
+                            'type' => 'number',
+                            'unit' => '663',
+                            'unit_default' => 'USD',
+                            'rounding' => ['standard', '2'],
+                            'min' => 2,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'formula' => [
+        [
+            'title' => 'costOfPresentYear = cost * costPerDayOrMonth',
+            'results' => ['cost' => 'costOfPresentYear/costPerDayOrMonth', 'costOfPresentYear' => 'cost*costPerDayOrMonth', 'costPerDayOrMonth' => 'costOfPresentYear/cost'],
+        ],
+        [
+            'title' => 'totalInflatedCostAfterTheSpecifiedPeriod= TotalIncRate(costOfPresentYear, rateOfInflation, noOfYears)',
+            'results' => ['totalInflatedCostAfterTheSpecifiedPeriod' => 'TotalIncRate(costOfPresentYear, rateOfInflation, noOfYears)'],
+        ],
+    ],
+    'js' => <<<'TXT'
+    "use strict";omni.define("TotalIncRate",function(costOfPresentYear,rateOfInflation,noOfYears){var total=costOfPresentYear;var totalYears=noOfYears-1;while(totalYears>=1){total=+total+costOfPresentYear*Math.pow(1+rateOfInflation/100,totalYears);totalYears=totalYears-1}return total});//# sourceURL=customJs.js
+    TXT,
+    'article' => [
+        'intro' => <<<'TXT'
+        Long term care turns The cost is and Cost (dc, mc) into Cost of present year (pc) and Total inflated cost after the specified period. Nothing is looked up on this page: cost of present year (pc) is computed from the cost is and the other boxes, so an unusual pair of values gives an honest answer rather than an error. Cost of present year (pc) is opened in USD; the chip beside it switches to any unit of the same quantity.
+        TXT,
+        'sections' => [
+            ['title' => 'How the Long term care calculator works', 'html' => <<<'TXT'
+            <p>Long term care answers one question from 2 numbers, and the answer is Cost of present year (pc) and Total inflated cost after the specified period.</p><p>Written with the labels from the form, Cost of present year (pc) = Cost (dc, mc) × The cost is.</p><p>The answers are Cost of present year (pc) and Total inflated cost after the specified period; they are reported together because a single calculation usually settles more than one question.</p>
+            TXT],
+            ['title' => 'What to enter, and what comes back', 'html' => <<<'TXT'
+            <p>Fill in 2 boxes and the page has everything it needs.</p><ul><li><strong>The cost is</strong> — a plain number, no unit</li><li><strong>Cost (dc, mc)</strong> — in USD</li></ul><p>The result boxes are Cost of present year (pc) in USD, Total inflated cost after the specified period in USD; they fill in as soon as the inputs allow it, and they are updated rather than accumulated — change a number and the answers change with it.</p>
+            TXT],
+            ['title' => 'A worked example with numbers from this page', 'html' => <<<'TXT'
+            <p>Run the numbers the page opens with — No. of years (n) = 3 and Rate of inflation (r) = 4 % — through the same formula and the panel reports <strong>The cost is</strong> = 365.</p><ul><li><strong>The cost is</strong> = 365</li></ul><p>That is <strong>Cost of present year (pc)</strong> = <code>Cost (dc, mc) × The cost is</code>, with each symbol replaced by one of the boxes above.</p>
+            TXT],
+            ['title' => 'Reading the answer', 'html' => <<<'TXT'
+            <p>Treat the size of a result as part of the answer: <strong>The cost is</strong> = 365 is what this page produces from its own defaults, so a figure several orders of magnitude away from that is worth a second look at the inputs.</p><p>None of the boxes on this page carries a unit chip: Cost of present year (pc) takes a plain number and the answer inherits whatever scale the inputs were measured in.</p>
+            TXT],
+            ['title' => 'The formula, and what turns it round', 'html' => <<<'TXT'
+            <p>Below is the arithmetic in full. Every symbol on the right of an equals sign is one of the boxes on the form.</p><ul><li><strong>Cost of present year (pc)</strong> = <code>Cost (dc, mc) × The cost is</code></li><li><strong>Cost (dc, mc)</strong> = <code>Cost of present year (pc) ÷ The cost is</code></li><li><strong>The cost is</strong> = <code>Cost of present year (pc) ÷ Cost (dc, mc)</code></li><li><strong>Total inflated cost after the specified period</strong> = <code>TotalIncRate(Cost of present year (pc), Rate of inflation (r), No. of years (n))</code></li></ul><p>The rearrangements, with the case each one is for — the line the page picked is the one whose left-hand side was the empty box:</p><ul><li><strong>Cost of present year (pc)</strong> = <code>Cost (dc, mc) × The cost is</code> — the form to use when Cost (dc, mc) and The cost is are the values you have.</li><li><strong>Cost (dc, mc)</strong> = <code>Cost of present year (pc) ÷ The cost is</code> — the form to use when Cost of present year (pc) and The cost is are the values you have.</li><li><strong>The cost is</strong> = <code>Cost of present year (pc) ÷ Cost (dc, mc)</code> — the form to use when Cost of present year (pc) and Cost (dc, mc) are the values you have.</li><li><strong>Total inflated cost after the specified period</strong> = <code>TotalIncRate(Cost of present year (pc), Rate of inflation (r), No. of years (n))</code> — the form to use when Cost of present year (pc), Rate of inflation (r) and No. of years (n) are the values you have.</li></ul><p>Any one of Cost of present year (pc), Cost (dc, mc) and The cost is can be left empty: the page checks which box is blank and rearranges the relationship for it, which is why it converts as well as it calculates.</p>
+            TXT],
+            ['title' => 'Checking an answer by hand', 'html' => <<<'TXT'
+            <p>Change one box only — No. of years (n), from 3 to 6 — and the answers go from <strong>The cost is</strong> 365 to <strong>The cost is</strong> 365.</p><p>That is the check worth doing before a result is trusted: move each input by a factor you can hold in your head and see that the answer moves the way the formula says it should.</p>
+            TXT],
+            ['title' => 'Where the numbers usually go wrong', 'html' => <<<'TXT'
+            <ul><li><strong>The answer typed back in.</strong> A result box can be typed into, and doing so changes the question rather than the arithmetic: with Cost of present year (pc) and Total inflated cost after the specified period are results filled in, the page solves for a different variable instead. Check which box is blank before reading the panel.</li><li><strong>The cost is left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If The cost is is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Cost (dc, mc) left as a guess.</strong> A figure entered here because the box had to have something in it is the single most common way a correct formula produces a wrong answer. If Cost (dc, mc) is unknown, solve for it instead of estimating it — leave it blank.</li><li><strong>Measurements mixed across scales.</strong> Entering a rounded value is fine; rounding twice is not. Keep full precision in The cost is and let the panel round the answer once.</li></ul>
+            TXT],
+            ['title' => 'What each box means', 'html' => <<<'TXT'
+            <p>The boxes on the Long term care form, one at a time: what each one wants, how it is measured, and what the page does if you leave it empty.</p><ul><li><strong>The cost is</strong> takes a plain number with no unit attached. The page reads it when it works out Cost (dc, mc) and Cost of present year (pc). This one is a choice rather than a measurement: pick the option that matches your case, because the page applies a different relationship for each. Fill it from a measurement rather than a memory — The cost is is the kind of value that gets estimated once and then copied from page to page for years.</li><li><strong>Cost (dc, mc)</strong> takes a plain number with no unit attached. The page reads it when it works out Cost of present year (pc) and The cost is. Fill it from a measurement rather than a memory — Cost (dc, mc) is the kind of value that gets estimated once and then copied from page to page for years.</li></ul><p>Every one of those boxes is optional in a sense: fill all but one and the page solves for the one you left. It is only when two are blank that the page has nothing to choose between.</p>
+            TXT],
+            ['title' => 'What each result tells you', 'html' => <<<'TXT'
+            <p>The panel reports 2 values. Here is what each one is for, and what to compare it against.</p><ul><li><strong>Cost of present year (pc)</strong> is a plain number. It is computed from Cost (dc, mc) and The cost is, so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li><li><strong>Total inflated cost after the specified period</strong> is a plain number. It is computed from Cost of present year (pc), Rate of inflation (r) and No. of years (n), so it changes the moment any of them does. Compare it with the defaults above before trusting it. A figure far from that range is worth checking against a hand calculation. It can be typed back into as well as read from, which is how the same page solves backwards when you know the answer and want the input.</li></ul>
+            TXT],
+            ['title' => 'How much each input moves the answer', 'html' => <<<'TXT'
+            <p>Which box should you measure most carefully? The table answers it. Each row raises one input by ten per cent from the page&#039;s own defaults and records what happens to every answer:</p><table class="calc-table"><thead><tr><th>Box</th><th>The cost is</th></tr></thead><tbody><tr><td><strong>No. of years (n)</strong> +10%</td><td>+0%</td></tr><tr><td><strong>Rate of inflation (r)</strong> +10%</td><td>+0%</td></tr></tbody></table><p>Ranked by leverage, No. of years (n) sits at the top — a ten per cent error in that box shows up as roughly 0 per cent in the answer. By contrast, No. of years (n) and Rate of inflation (r) barely move the answers at all, so a rough figure there costs you little.</p><p>The numbers above come from the page&#039;s defaults, not a general rule of thumb. Re-run them with your own figures in the boxes — a box that is harmless at the defaults can dominate at the values you actually work with.</p>
+            TXT],
+            ['title' => 'Two more scenarios, worked through', 'html' => <<<'TXT'
+            <p>Two further runs, at numbers you are more likely to meet than the defaults:</p><ul><li>Feed in No. of years (n) = 1.5 and Rate of inflation (r) = 2 % and the page reports <strong>The cost is</strong> = 365.</li><li>Feed in No. of years (n) = 9 and Rate of inflation (r) = 4 % and the page reports <strong>The cost is</strong> = 365.</li></ul><p>The three runs together say more than any one of them: doubling one box while leaving the rest alone is how you check that you understand which way the formula leans.</p>
+            TXT],
+            ['title' => 'Limits worth knowing', 'html' => <<<'TXT'
+            <ul><li><strong>It scales in a straight line.</strong> Cost of present year (pc) follows from a proportional relationship, so a percentage error in one input passes through as roughly the same percentage error in the answer.</li><li><strong>It is a formula, not a model of your case.</strong> Nothing here corrects for measurement error, correlation between the inputs, or conditions outside the range the relationship was written for. Those are assumptions a reader brings; the arithmetic simply does what it says.</li></ul>
+            TXT],
+            ['title' => 'Where this calculation comes up', 'html' => <<<'TXT'
+            <p>Reach for this page when The cost is and Cost (dc, mc) is what you already know and Cost of present year (pc) and Total inflated cost after the specified period is what you need — the reverse of that situation is what the rearranged form is for.</p><p>Because nothing is stored between visits, the page is safe for one-off sums and for repeated ones — there is no history to clear and no account to keep.</p><p>If the answer you need is a step further on, the nearest pages are <a href="/finance/website-ad-revenue">Website ad revenue Calculator</a>, <a href="/finance/wedding-budget">Wedding budget Calculator</a> and <a href="/finance/week-over-week">Week over week Calculator</a>.</p>
+            TXT],
+            ['title' => 'Putting the answer to work', 'html' => <<<'TXT'
+            <p>Getting the figure is half the job. The other half is what Long term care is for, and what it is not.</p><ul><li><strong>Record the inputs with the answer.</strong> If the result is going into a note or a report, put The cost is and Cost (dc, mc) beside it. That is what makes the figure something a colleague can verify rather than take on trust.</li><li><strong>Re-run it when a measurement changes.</strong> There is no stored state to update and nothing to reconcile. If a measurement is revised, type the new value and the page recomputes from scratch.</li><li><strong>Keep the formula with the figure.</strong> The relationship is printed above, so a figure copied into a report can be defended later: the reader can see which inputs produced it and which relationship was applied. That is the difference between a number and a calculation.</li><li><strong>Compare rather than convert.</strong> The page is at its most useful when it is run twice — your case and the reference case — and the two answers compared. A single number is hard to judge; a pair shows which direction the difference lies in and roughly how big it is.</li></ul><p>None of that needs an account, and none of it leaves a record on this site: the fields are the only place your numbers exist, and closing the tab ends them. If the answer matters, the copy button under the panel is there for exactly that reason.</p>
+            TXT],
+        ],
+        'faq' => [
+            ['q' => 'What does the Long term care calculator work out?', 'a' => <<<'TXT'
+            Cost of present year (pc) and Total inflated cost after the specified period, from Cost (dc, mc) and The cost is. The relationship is Cost of present year (pc) = Cost (dc, mc) × The cost is.
+            TXT],
+            ['q' => 'Which values do I need before I start?', 'a' => 'The cost is, Cost (dc, mc) (USD). With the cost is and cost (dc, mc) in place, Cost of present year (pc) can stay blank and the page will work it out.'],
+            ['q' => 'Can it solve for a different variable?', 'a' => <<<'TXT'
+            It can. Leave any of Cost of present year (pc), Cost (dc, mc), The cost is and Total inflated cost after the specified period blank and the page solves for that one instead — nothing has to be switched first.
+            TXT],
+            ['q' => 'What answer do the default values give?', 'a' => 'The cost is = 365. That comes from the page\'s own defaults, entered in The cost is; change one of them and the whole set is recomputed.'],
+            ['q' => 'How precise is the result?', 'a' => <<<'TXT'
+            Internally Cost of present year (pc) is not rounded at all; the figure you read is formatted for legibility. Chaining it into another calculation is fine, but expect the last digit to move.
+            TXT],
+            ['q' => 'What happens if I leave a box empty?', 'a' => 'The empty box becomes the unknown: leave The cost is blank and the page solves for it, reporting Cost of present year (pc) instead of the usual answer.'],
+            ['q' => 'Does it round to the nearest whole number?', 'a' => 'Only for display. Cost of present year (pc) keeps its decimals behind the panel, and a figure copied out is the rounded one shown.'],
+        ],
+        'related' => [
+            ['path' => '/finance/website-ad-revenue', 'name' => 'Website ad revenue Calculator'],
+            ['path' => '/finance/wedding-budget', 'name' => 'Wedding budget Calculator'],
+            ['path' => '/finance/week-over-week', 'name' => 'Week over week Calculator'],
+        ],
+        'authors' => [],
+    ],
+];

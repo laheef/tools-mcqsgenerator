@@ -364,6 +364,12 @@ final class Shape
                 'defaults'  => [],
                 'outputOnly' => !empty(($fields[$name] ?? [])['oo']),
             ];
+            if (isset($def['min']) && is_numeric($def['min'])) {
+                $var['min'] = 0 + $def['min'];
+            }
+            if (isset($def['max']) && is_numeric($def['max'])) {
+                $var['max'] = 0 + $def['max'];
+            }
 
             // prefilled values: the shard keeps them as {v, c} (value, condition)
             foreach ($def['dfl'] ?? [] as $d) {

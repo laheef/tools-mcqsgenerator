@@ -1322,9 +1322,29 @@
     };
     for (var r = 0; r < rules.length; r++) {
       var rule = rules[r] || {};
-      var a = read(rule.a);
-      var b = read(rule.b);
-      if (a === null || b === null) continue;
+      var a, b;
+      if (Array.isArray(rule.terms) && rule.limit !== undefined) {
+        var total = 0;
+        rule.terms.forEach(function (term) {
+          var value = read(term);
+          if (value !== null) total += value;
+        });
+        a = total; b = Number(rule.limit);
+      } else if (rule.expr && Array.isArray(rule.vars) && rule.limit !== undefined) {
+        var expressionValues = {}, expressionComplete = true;
+        rule.vars.forEach(function (variable) {
+          var expressionValue = read(variable);
+          if (expressionValue === null) expressionComplete = false;
+          else expressionValues[variable] = expressionValue;
+        });
+        if (!expressionComplete) continue;
+        try { a = evalExpr(String(rule.expr), expressionValues); }
+        catch (e) { continue; }
+        b = Number(rule.limit);
+      } else {
+        a = read(rule.a); b = read(rule.b);
+        if (a === null || b === null) continue;
+      }
       var ok;
       switch (rule.op) {
         case '<=': ok = a <= b; break;
@@ -1338,7 +1358,7 @@
       if (ok) continue;
       var field = null;
       for (var f2 = 0; f2 < inputs.length; f2++) {
-        if (inputs[f2].getAttribute('data-var') === rule.a) {
+        if (inputs[f2].getAttribute('data-var') === (rule.field || rule.a)) {
           field = inputs[f2].closest('.calc-field');
           break;
         }
@@ -1377,10 +1397,26 @@
         return;
       }
       if (inp.getAttribute('data-datetype')) return;
-      if (parseNumber(raw) === null) {
+      var numericValue = parseNumber(raw);
+      if (numericValue === null) {
         problems.push(label + ' needs a number');
         firstBad = firstBad || field;
         setFieldError(field, 'Enter a number — letters and symbols are not allowed here.');
+        return;
+      }
+      var bounds = (DEF.vars && DEF.vars[name]) || {};
+      if (bounds.min !== undefined && numericValue < Number(bounds.min)) {
+        var minMessage = label + ' must be at least ' + bounds.min + '.';
+        problems.push(minMessage);
+        firstBad = firstBad || field;
+        setFieldError(field, minMessage);
+        return;
+      }
+      if (bounds.max !== undefined && numericValue > Number(bounds.max)) {
+        var maxMessage = label + ' must be no more than ' + bounds.max + '.';
+        problems.push(maxMessage);
+        firstBad = firstBad || field;
+        setFieldError(field, maxMessage);
         return;
       }
       if (wantsInteger(inp) && !/^\s*[-+]?\d+\s*$/.test(raw)) {

@@ -874,6 +874,9 @@ final class CalcFile
         if (isset($f['min']) && is_numeric($f['min'])) {
             $var['min'] = 0 + $f['min'];
         }
+        if (isset($f['max']) && is_numeric($f['max'])) {
+            $var['max'] = 0 + $f['max'];
+        }
         if (isset($f['rounding']) && is_array($f['rounding'])) {
             $var['rnd'] = array_values($f['rounding']);
         }
